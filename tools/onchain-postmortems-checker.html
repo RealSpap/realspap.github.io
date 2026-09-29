@@ -7,40 +7,99 @@
 <title>Onchain Postmortems Checker</title>
 <meta name="description" content="Browse 51 independently reconstructed on-chain exploits, about $798.5M recomputed from primary sources, and check any address against them.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://realspap.github.io/tools/onchain-postmortems-checker.html">
 <meta property="og:title" content="Onchain Postmortems Checker — Spap">
 <meta property="og:description" content="Browse 51 independently reconstructed on-chain exploits, about $798.5M recomputed from primary sources, and check any address against them.">
-<meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Onchain Postmortems Checker — Spap">
 <meta name="twitter:description" content="Browse 51 independently reconstructed on-chain exploits, about $798.5M recomputed from primary sources, and check any address against them.">
-<meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem('spap-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <style>
+  /* Same design tokens as realspap.github.io -- this page keeps every class
+     name and rule it already had, only the token VALUES changed, so one
+     block swap here restyles the whole page instead of touching every rule. */
   :root {
-    --bg: #0a0b0d;
-    --panel: #131417;
-    --panel-2: #0d0e11;
-    --panel-border: #23252b;
-    --text: #e6e7eb;
-    --text-dim: #8b8e98;
-    --text-faint: #5c5f68;
-    --accent: #a78bfa;
-    --accent-dim: #5f4f96;
-    --accent-bg: rgba(167,139,250,0.10);
-    --mono: "SF Mono", "Menlo", "Consolas", "Roboto Mono", monospace;
-    --sans: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-    --crit: #e05a5a;
+    --bg: #f6f4ef;
+    --panel: #ffffff;
+    --panel-2: #faf8f3;
+    --panel-border: #e1dbcb;
+    --text: #1c1a16;
+    --text-dim: #57534a;
+    --text-faint: #8a8474;
+    --accent: #8a5f22;
+    --accent-dim: rgba(168,120,48,.35);
+    --accent-bg: rgba(168,120,48,.14);
+    --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --crit: #8a5f22;
     --high: #e0a15a;
     --med: #dcd15a;
-    --low: #5aa7e0;
+    --low: #2c4a40;
     --neutral: #7a7d86;
-    --good: #5fd68a;
+    --good: #2c4a40;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14130f;
+      --panel: #1c1a14;
+      --panel-2: #201e16;
+      --panel-border: rgba(255,255,255,.09);
+      --text: #f3efe3;
+      --text-dim: #b3ac9c;
+      --text-faint: #8b8474;
+      --accent: #e0b878;
+      --accent-dim: rgba(224,184,120,.35);
+      --accent-bg: rgba(224,184,120,.14);
+      --crit: #e0b878;
+      --low: #5f9482;
+      --good: #5f9482;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14130f;
+    --panel: #1c1a14;
+    --panel-2: #201e16;
+    --panel-border: rgba(255,255,255,.09);
+    --text: #f3efe3;
+    --text-dim: #b3ac9c;
+    --text-faint: #8b8474;
+    --accent: #e0b878;
+    --accent-dim: rgba(224,184,120,.35);
+    --accent-bg: rgba(224,184,120,.14);
+    --crit: #e0b878;
+    --low: #5f9482;
+    --good: #5f9482;
+    color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
+
+  .theme-toggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:32px; height:32px; padding:0; flex-shrink:0;
+    border-radius:8px; border:1px solid var(--panel-border);
+    background:var(--panel); color:var(--text-dim);
+    cursor:pointer; float:right;
+  }
+  .theme-toggle:hover{ color:var(--text); background:var(--panel-2); }
+  .theme-toggle svg{ width:16px; height:16px; }
+  .theme-toggle .icon-sun{ display:none; }
+  .theme-toggle .icon-moon{ display:block; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{ display:block; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{ display:none; }
+  }
+  :root[data-theme="dark"] .theme-toggle .icon-sun{ display:block; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon{ display:none; }
+  :root[data-theme="light"] .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="light"] .theme-toggle .icon-moon{ display:block; }
 
   body {
     background: var(--bg);
@@ -82,7 +141,7 @@
   }
 
   .hero-number {
-    font-family: var(--mono);
+    font-family: var(--display);
     font-size: 64px;
     font-weight: 700;
     line-height: 1;
@@ -98,6 +157,13 @@
   }
 
   .hero-caption strong { color: var(--text); }
+
+  .freshness {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-faint);
+    margin-top: 10px;
+  }
 
   header p {
     color: var(--text-dim);
@@ -322,7 +388,7 @@
 
   tbody tr:last-child td { border-bottom: none; }
 
-  tbody tr:hover td { background: rgba(255,255,255,0.02); }
+  tbody tr:hover td { background: var(--panel-2); }
 
   .cell-mono { font-family: var(--mono); white-space: nowrap; font-size: 12.5px; }
 
@@ -365,7 +431,7 @@
 
   button {
     background: var(--accent);
-    color: #17102e;
+    color: #fff;
     border: none;
     font-weight: 600;
     font-size: 13px;
@@ -375,7 +441,7 @@
     white-space: nowrap;
   }
 
-  button:hover { background: #b8a1fc; }
+  button:hover { filter: brightness(1.12); }
 
   button:disabled {
     background: var(--panel-border);
@@ -404,7 +470,7 @@
     margin-bottom: 12px;
   }
 
-  .match-hit { background: rgba(224,90,90,0.16); color: var(--crit); }
+  .match-hit { background: var(--accent-bg); color: var(--crit); }
   .match-none { background: rgba(122,125,134,0.16); color: var(--neutral); }
 
   .checked-address {
@@ -470,6 +536,17 @@
   }
 
   .check-another a { font-size: 13px; }
+  .check-another a + a { margin-left: 18px; }
+
+  .iotd-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
 
   .disclaimer {
     font-size: 13px;
@@ -490,16 +567,19 @@
 </head>
 <body>
 <nav class="tools-nav" aria-label="Other free tools by Spap">
-  <a href="https://realspap.github.io">Spap&#8217;s research</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/check-your-safe.html">Check your Safe</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/admin-key-checker.html">Admin Key Checker</a><span class="tn-sep">&middot;</span><a href="https://github.com/RealSpap/multisig-overlap-showcase">Multisig Overlap</a>
+  <a href="https://realspap.github.io">Spap&#8217;s research</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/check-your-safe.html">Check your Safe</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/admin-key-checker.html">Admin Key Checker</a><span class="tn-sep">&middot;</span><a href="https://github.com/RealSpap/multisig-overlap-showcase">Multisig Overlap</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/onchain-postmortems-checker.html">Postmortems Checker</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/safe-tx-hash-verifier.html">Safe Tx Hash Verifier</a>
 </nav>
 <style>
-.tools-nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12.5px;color:#8a8a8a;padding:10px 20px;text-align:center;border-bottom:1px solid rgba(0,0,0,.08);line-height:1.8}
-.tools-nav a{color:#8a8a8a;text-decoration:none;border-bottom:1px solid transparent}
-.tools-nav a:hover{color:inherit;border-bottom-color:currentColor}
+.tools-nav{font-family:var(--sans);font-size:12.5px;color:var(--text-faint);padding:10px 20px;text-align:center;border-bottom:1px solid var(--panel-border);line-height:1.8;background:var(--bg)}
+.tools-nav a{color:var(--text-faint);text-decoration:none;border-bottom:1px solid transparent}
+.tools-nav a:hover{color:var(--accent);border-bottom-color:currentColor}
 .tools-nav .tn-sep{margin:0 8px;opacity:.5}
-@media (prefers-color-scheme:dark){.tools-nav{border-bottom-color:rgba(255,255,255,.12)}}
 </style>
 <header>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Basculer le thème clair/sombre">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+  </button>
   <div class="eyebrow">onchain-postmortems research</div>
   <div class="hero-stat">
     <div class="hero-number">$798.5M</div>
@@ -508,7 +588,13 @@
   <h1>Onchain postmortems: incident tracker and address checker</h1>
   <p>A static, closed-set companion to the research repository below. Every figure, date, and address here is copied verbatim from published incident writeups — nothing is fetched live, and nothing is projected or completed beyond what each writeup states. One example: DefiLlama tracked WealthManagementV2 as a $26,414 &ldquo;private key compromise&rdquo;; the real on-chain drain was $422,251.40, about 16x higher.</p>
   <p><a href="https://github.com/RealSpap/onchain-postmortems" target="_blank" rel="noopener">github.com/RealSpap/onchain-postmortems</a></p>
+  <div class="freshness" id="freshness"></div>
 </header>
+
+<div class="panel">
+  <div class="iotd-tag">Incident of the day</div>
+  <div id="iotd"></div>
+</div>
 
 <div class="panel">
   <h2>The biggest losses</h2>
@@ -782,6 +868,7 @@
   function appendCheckAnother() {
     var wrap = document.createElement("div");
     wrap.className = "check-another";
+
     var link = document.createElement("a");
     link.href = "#";
     link.textContent = "Check another address";
@@ -793,6 +880,27 @@
       addressInput.focus();
     });
     wrap.appendChild(link);
+
+    var copy = document.createElement("a");
+    copy.href = "#";
+    copy.textContent = "Copy link to this result";
+    copy.addEventListener("click", function (e) {
+      e.preventDefault();
+      var href = window.location.href;
+      var revert = function () { copy.textContent = "Copy link to this result"; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(href).then(function () {
+          copy.textContent = "Link copied";
+          setTimeout(revert, 1500);
+        }, function () {
+          window.prompt("Copy this link:", href);
+        });
+      } else {
+        window.prompt("Copy this link:", href);
+      }
+    });
+    wrap.appendChild(copy);
+
     resultsEl.appendChild(wrap);
   }
 
@@ -876,6 +984,31 @@
     msg.textContent = message;
     resultsEl.appendChild(msg);
   }
+
+  /* ---- Freshness line: latest incident date + how many landed that month ---- */
+  (function renderFreshness() {
+    var el = document.getElementById("freshness");
+    if (!el || !INCIDENTS.length) return;
+    var latest = INCIDENTS.reduce(function (m, inc) {
+      var k = dateKey(inc.date);
+      return k > m ? k : m;
+    }, "");
+    if (!latest) return;
+    var month = latest.slice(0, 7);
+    var monthCount = INCIDENTS.filter(function (inc) { return dateKey(inc.date).slice(0, 7) === month; }).length;
+    el.textContent = "Latest incident recomputed: " + latest + " · " + monthCount + " documented that month";
+  })();
+
+  /* ---- Incident of the day: same pick all day for everyone, rotates at midnight UTC ---- */
+  (function renderIotd() {
+    var el = document.getElementById("iotd");
+    if (!el || !INCIDENTS.length) return;
+    var today = new Date().toISOString().slice(0, 10);
+    var hash = 0;
+    for (var i = 0; i < today.length; i++) hash = (hash * 31 + today.charCodeAt(i)) >>> 0;
+    var incident = INCIDENTS[hash % INCIDENTS.length];
+    el.appendChild(buildIncidentCard(incident));
+  })();
 
   function handleCheck() {
     var raw = addressInput.value.trim();
@@ -1020,6 +1153,31 @@
       handleCheck();
     }
   })();
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var root = document.documentElement;
+  var KEY = "spap-theme";
+  function stored(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+  function save(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+  function systemPrefersDark(){
+    return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+  function effective(){
+    var s = stored();
+    if (s === "light" || s === "dark") return s;
+    return systemPrefersDark() ? "dark" : "light";
+  }
+  var btn = document.getElementById("theme-toggle");
+  if (btn) {
+    btn.addEventListener("click", function(){
+      var next = effective() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      save(next);
+    });
+  }
 })();
 </script>
 </body>
