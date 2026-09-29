@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E">
+<title>Onchain Postmortems Checker</title>
+<meta name="description" content="Browse 51 independently reconstructed on-chain exploits, about $798.5M recomputed from primary sources, and check any address against them.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://realspap.github.io/tools/onchain-postmortems-checker.html">
+<meta property="og:title" content="Onchain Postmortems Checker — Spap">
+<meta property="og:description" content="Browse 51 independently reconstructed on-chain exploits, about $798.5M recomputed from primary sources, and check any address against them.">
+<meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Onchain Postmortems Checker — Spap">
+<meta name="twitter:description" content="Browse 51 independently reconstructed on-chain exploits, about $798.5M recomputed from primary sources, and check any address against them.">
+<meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
+
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --panel: #131417;
+    --panel-2: #0d0e11;
+    --panel-border: #23252b;
+    --text: #e6e7eb;
+    --text-dim: #8b8e98;
+    --text-faint: #5c5f68;
+    --accent: #a78bfa;
+    --accent-dim: #5f4f96;
+    --accent-bg: rgba(167,139,250,0.10);
+    --mono: "SF Mono", "Menlo", "Consolas", "Roboto Mono", monospace;
+    --sans: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --crit: #e05a5a;
+    --high: #e0a15a;
+    --med: #dcd15a;
+    --low: #5aa7e0;
+    --neutral: #7a7d86;
+    --good: #5fd68a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.5;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  header {
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin: 0 0 20px;
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+
+  .hero-stat {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 4px 0 18px;
+  }
+
+  .hero-number {
+    font-family: var(--mono);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--crit);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-caption {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 280px;
+    line-height: 1.35;
+  }
+
+  .hero-caption strong { color: var(--text); }
+
+  header p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+
+  a:hover { border-bottom-color: var(--accent); }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 14px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 14px;
+  }
+
+  .panel-intro {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin: 0 0 16px;
+    line-height: 1.6;
+  }
+
+  .leaderboard-row {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--panel-border);
+  }
+
+  .leaderboard-row:last-child { border-bottom: none; }
+
+  .leaderboard-rank {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-faint);
+  }
+
+  .leaderboard-main a {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+  }
+
+  .leaderboard-main a:hover { border-bottom-color: var(--text-faint); }
+
+  .leaderboard-meta {
+    display: block;
+    color: var(--text-dim);
+    font-size: 12.5px;
+    margin-top: 2px;
+  }
+
+  .leaderboard-loss {
+    font-family: var(--mono);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--crit);
+    white-space: nowrap;
+  }
+
+  .chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .chart-grid { grid-template-columns: 1fr; }
+  }
+
+  .chart-title {
+    font-size: 12px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 72px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+  }
+
+  .bar-label {
+    color: var(--text-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bar-track {
+    background: var(--panel-2);
+    border-radius: 4px;
+    height: 16px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    background: var(--accent);
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .bar-value {
+    color: var(--text-faint);
+    font-family: var(--mono);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .filter-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .filter-field label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+
+  select {
+    background: var(--panel-2);
+    border: 1px solid var(--panel-border);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 7px;
+    outline: none;
+    min-width: 240px;
+  }
+
+  select:focus { border-color: var(--accent-dim); }
+
+  #search-filter {
+    background: var(--panel-2);
+    border: 1px solid var(--panel-border);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 7px;
+    outline: none;
+    min-width: 240px;
+  }
+
+  #search-filter:focus { border-color: var(--accent-dim); }
+
+  .row-count {
+    font-size: 12px;
+    color: var(--text-faint);
+    padding-bottom: 8px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 720px;
+  }
+
+  th {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--panel-border);
+    color: var(--text-dim);
+    font-weight: 600;
+    white-space: nowrap;
+    background: var(--panel-2);
+  }
+
+  th[data-sort-key] {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  th[data-sort-key]:hover { color: var(--text); }
+
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--panel-border);
+    vertical-align: top;
+    color: var(--text);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .cell-mono { font-family: var(--mono); white-space: nowrap; font-size: 12.5px; }
+
+  .cell-loss { color: var(--accent); font-weight: 600; }
+
+  .cell-chain { color: var(--text-dim); white-space: nowrap; }
+
+  .cell-technique { color: var(--text-dim); min-width: 280px; max-width: 420px; }
+
+  .cell-link a { font-size: 12.5px; white-space: nowrap; }
+
+  .empty-row { text-align: center; color: var(--text-faint); padding: 24px 12px; }
+
+  .table-note {
+    font-size: 12px;
+    color: var(--text-faint);
+    margin: 12px 0 0;
+    line-height: 1.6;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    background: var(--panel-2);
+    border: 1px solid var(--panel-border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 11px 12px;
+    border-radius: 7px;
+    outline: none;
+    min-width: 0;
+  }
+
+  input[type="text"]:focus { border-color: var(--accent-dim); }
+
+  button {
+    background: var(--accent);
+    color: #17102e;
+    border: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 0 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  button:hover { background: #b8a1fc; }
+
+  button:disabled {
+    background: var(--panel-border);
+    color: var(--text-faint);
+    cursor: not-allowed;
+  }
+
+  .hint {
+    font-size: 12px;
+    color: var(--text-faint);
+    margin: 10px 0 0;
+    line-height: 1.6;
+  }
+
+  .results { margin-top: 16px; }
+  .results:empty { margin-top: 0; }
+
+  .match-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+  }
+
+  .match-hit { background: rgba(224,90,90,0.16); color: var(--crit); }
+  .match-none { background: rgba(122,125,134,0.16); color: var(--neutral); }
+
+  .checked-address {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    word-break: break-all;
+    margin-bottom: 14px;
+  }
+
+  .finding-card {
+    background: var(--panel-2);
+    border: 1px solid var(--panel-border);
+    border-left: 3px solid var(--crit);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+
+  .finding-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .finding-meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+
+  .finding-technique {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+
+  .finding-link { font-size: 12.5px; }
+
+  .no-match-msg {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    background: var(--panel-2);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .error-msg {
+    color: var(--crit);
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .check-another {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--panel-border);
+  }
+
+  .check-another a { font-size: 13px; }
+
+  .disclaimer {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  footer {
+    margin-top: 36px;
+    font-size: 12px;
+    color: var(--text-faint);
+    text-align: center;
+  }
+
+  footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<nav class="tools-nav" aria-label="Other free tools by Spap">
+  <a href="https://realspap.github.io">Spap&#8217;s research</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/check-your-safe.html">Check your Safe</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/admin-key-checker.html">Admin Key Checker</a><span class="tn-sep">&middot;</span><a href="https://github.com/RealSpap/multisig-overlap-showcase">Multisig Overlap</a>
+</nav>
+<style>
+.tools-nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12.5px;color:#8a8a8a;padding:10px 20px;text-align:center;border-bottom:1px solid rgba(0,0,0,.08);line-height:1.8}
+.tools-nav a{color:#8a8a8a;text-decoration:none;border-bottom:1px solid transparent}
+.tools-nav a:hover{color:inherit;border-bottom-color:currentColor}
+.tools-nav .tn-sep{margin:0 8px;opacity:.5}
+@media (prefers-color-scheme:dark){.tools-nav{border-bottom-color:rgba(255,255,255,.12)}}
+</style>
+<header>
+  <div class="eyebrow">onchain-postmortems research</div>
+  <div class="hero-stat">
+    <div class="hero-number">$798.5M</div>
+    <div class="hero-caption">lost across <strong>51</strong> incidents, every figure recomputed from raw chain data, not copied from press or DefiLlama.</div>
+  </div>
+  <h1>Onchain postmortems: incident tracker and address checker</h1>
+  <p>A static, closed-set companion to the research repository below. Every figure, date, and address here is copied verbatim from published incident writeups — nothing is fetched live, and nothing is projected or completed beyond what each writeup states. One example: DefiLlama tracked WealthManagementV2 as a $26,414 &ldquo;private key compromise&rdquo;; the real on-chain drain was $422,251.40, about 16x higher.</p>
+  <p><a href="https://github.com/RealSpap/onchain-postmortems" target="_blank" rel="noopener">github.com/RealSpap/onchain-postmortems</a></p>
+</header>
+
+<div class="panel">
+  <h2>The biggest losses</h2>
+  <p class="panel-intro">Ranked by recomputed loss, not by how loud the press coverage was.</p>
+  <div id="leaderboard" class="leaderboard"></div>
+</div>
+
+<div class="panel">
+  <h2>Where the losses cluster</h2>
+  <p class="panel-intro">Computed live from the same dataset as the table below — no external query, nothing to re-run.</p>
+  <div class="chart-grid">
+    <div>
+      <h3 class="chart-title">By mechanism</h3>
+      <div id="chart-technique" class="bar-chart"></div>
+    </div>
+    <div>
+      <h3 class="chart-title">By chain</h3>
+      <div id="chart-chain" class="bar-chart"></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Documented incidents</h2>
+  <div class="filter-row">
+    <div class="filter-field">
+      <label for="search-filter">Search</label>
+      <input id="search-filter" type="text" placeholder="Protocol, chain, mechanism..." autocomplete="off" spellcheck="false">
+    </div>
+    <div class="filter-field">
+      <label for="chain-filter">Filter by chain</label>
+      <select id="chain-filter">
+        <option value="all">All chains</option>
+      </select>
+    </div>
+    <div class="row-count" id="row-count"></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Protocol</th>
+          <th>Chain</th>
+          <th data-sort-key="date" data-label="Date">Date</th>
+          <th data-sort-key="dollar" data-label="$ Lost">$ Lost</th>
+          <th>Technique</th>
+          <th>Writeup</th>
+        </tr>
+      </thead>
+      <tbody id="incident-tbody"></tbody>
+    </table>
+  </div>
+  <p class="table-note">Click "Date" or "$ Lost" to sort, click again to reverse. The ≥ / ≈ prefixes are copied as-is from each source writeup: ≥ means the writeup itself gives a lower bound, ≈ means it gives an approximation, neither is added by this page.</p>
+</div>
+
+<div class="panel">
+  <h2>Check an address against this dataset</h2>
+  <p class="panel-intro">Paste a 0x address. This checks it only against the finite list of attacker, exploiter, and cash-out addresses already named across the incidents above — it is not a general wallet safety check or a scam screen of any kind, and a "no match" result says nothing about an address beyond that.</p>
+  <label for="address-input">Address (0x...)</label>
+  <div class="input-row">
+    <input id="address-input" type="text" placeholder="0x..." autocomplete="off" spellcheck="false" autocapitalize="off">
+    <button id="check-btn" type="button">Check</button>
+  </div>
+  <p class="hint" id="address-coverage-hint"></p>
+  <div id="checker-results" class="results" aria-live="polite"></div>
+</div>
+
+<div class="panel">
+  <p class="disclaimer">This is an independent research project, not investment, legal, or security advice. It does not audit, endorse, or warn against any protocol, and it does not screen addresses generally — only against the closed set of incidents documented in the repository above. Corrections and disputes are invited: <a href="https://x.com/RealSpap" target="_blank" rel="noopener">x.com/RealSpap</a>.</p>
+</div>
+
+<footer>
+  <p>Static page. No account, no email capture, no API key, no live RPC calls — everything above runs from the dataset embedded in this file.</p>
+  <p>Source and full writeups: <a href="https://github.com/RealSpap/onchain-postmortems" target="_blank" rel="noopener">github.com/RealSpap/onchain-postmortems</a></p>
+</footer>
+
+<!-- Data taken verbatim from the public README as of 2026-09-17. -->
+<script>
+(function () {
+  "use strict";
+
+  var INCIDENTS = [{"protocol":"Liquid Network","chain":"Bitcoin + Liquid","date":"2026-09-06 / 09-07","dollarLoss":"≥ $46,568,719","technique":"Bridge — Range-proof cache-key collision in Elements let a peg-out register as fully backed; the federation's real multisig then genuinely signed the BTC release","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/liquid-rangeproof-cache/"},{"protocol":"Notional Finance (V1 Escrow)","chain":"Ethereum","date":"2026-09-03 / 09-04","dollarLoss":"$1,727,782","technique":"Rounding/Math-Bug — uint128 overflow/downcast in the legacy V1 Escrow contract's collateral valuation","addresses":["0xDaCC235a494750193695A111D715c2ca12b5Ce38","0xEc434A2f9B7b93AAD1beD77d6Bc512A75aE90d78"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/notional-v1-escrow/"},{"protocol":"XRP Healthcare (XRPH Wallet)","chain":"XRP Ledger + Ethereum","date":"2026-09-03 / 09-04","dollarLoss":"≥ $445,198","technique":"Key-Compromise — Mass wallet-side private-key compromise (not an XRPL protocol bug) swept thousands of externally-owned wallets to one collector, laundered via NEAR Intents into Ethereum and settled as DAI","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/xrph-wallet-key-compromise/"},{"protocol":"WealthManagementV2","chain":"BSC","date":"2026-09-08","dollarLoss":"≥ $422,251","technique":"Access-Control — Attacker-deployed, attacker-owned EIP-1967 proxy repeatedly called a withdraw() sweep function to drain a shared claim/interest pool contract to a collector wallet","addresses":["0xe439422afdd247503f75b4143c4a973eced04a36","0xaae7600005d8054bde7aaa80ec43d3feee34fa5b","0xafb73746ab72c34da59633129bb3b0e74a0d6c0a","0x6daa9ee0e594a4ac30765942bb8d99ba27e7a58f"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/wealthmanagementv2-selfowned-proxy-drain/"},{"protocol":"Symbiosis","chain":"Ethereum, BNB Chain, Rootstock","date":"2026-09-11","dollarLoss":"≥ $338,285","technique":"Bridge — Twelve unbacked syBTC mints authorised by the bridge's own live MPC signing key, across three chains","addresses":["0x025122b60470eee9e7947fbd922fe0d35f5d3ba2","0x666fedd4cdd4e890a5ad20e7b60975409435a64a"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/symbiosis-sybtc-mpc-signed-mint/"},{"protocol":"Cozy V2","chain":"Optimism","date":"2026-09-02 / 09-07","dollarLoss":"$174,311","technique":"Oracle — False answers to the UMA Optimistic Oracle left uncontested during its 5-day dispute window","addresses":["0x003FE7359A4E03C85Ac2f521eC699ED84C7c5ccB"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/cozy-v2-optimism/"},{"protocol":"Secured Finance (JPYC Lending Market)","chain":"Ethereum","date":"2026-09-05/09-06","dollarLoss":"≈ $45,445","technique":"Access-Control — Flash-loan-funded self-matched lend/borrow position on the JPYC market let TokenVault's collateral accounting treat the just-deposited amount as withdrawable, before the flash loan was repaid","addresses":["0xefb0eb625f472453d4750e4bc57ed7c5c4cd59d3"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/securedfinance-jpyc-tokenvault-selflend/"},{"protocol":"ether.fi Liquid (AtomicQueue)","chain":"Ethereum","date":"2026-09-11","dollarLoss":"≈ $38,004","technique":"Access-Control — Legacy Veda AtomicQueue.solve() never checks solver==msg.sender; attacker named victims as solver to spend their stale approvals. Reachable only for code-bearing accounts (9 of 11 were EIP-7702), fully reimbursed on-chain","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/etherfi-atomicqueue-eip7702-solver-drain/"},{"protocol":"Reddio (RedSonic Vault)","chain":"Ethereum","date":"2026-09-05","dollarLoss":"≈ $22,748","technique":"Access-Control — Permissionless registerErc20() let an unprivileged caller register a second share class over the same pooled collateral, letting a flash-loan-funded deposit be redeemed for more than it was worth","addresses":["0x70f2333d21Ed7E7D105F6578227A9A747687982C","0x39a2Aee44bd9eF106917D94880a9f8F7CfAf09d5"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/redsonic-vault-share-registration/"},{"protocol":"Moonwell (MAMO market)","chain":"Base","date":"2026-08-27","dollarLoss":"≈ $9,131,000","technique":"Donation-Attack — Donation attack on an illiquid market's exchange rate, combined with collateral/oracle manipulation","addresses":["0x719eae70d4A83f35bF82A2740699F5db84BE919D"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/moonwell-mamo-oracle/"},{"protocol":"Term Finance (Meta Vault)","chain":"Ethereum","date":"2026-08-17 / 08-23","dollarLoss":"≈ $8,500,000","technique":"Governance — Hijacked governance: a proposal self-voted by a fresh wallet through an attacker-deployed executor, normal 6-day delay elapsed with no veto","addresses":["0xa908b3472d76e7744baB0A5911768a4a6300612B","0x64E477800051EFb06Ae4086f4b258b270668b4dF","0x686457a7468B9B31c5dbA43b1b16077B48520691","0xD5183d8BfC65a50863C62aF2538198A8288FFc13"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/termfinance-metavault-governance/"},{"protocol":"Tectonic","chain":"Cronos","date":"2026-08-30","dollarLoss":"≈ $8,300,000","technique":"Donation-Attack — Donation attack (recursive collateral minting then direct donations to the market contract) inflating an exchange rate, massive borrowing against the inflated collateral, followed by a chain rollback","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/tectonic-cronos/"},{"protocol":"Coinsbuy","chain":"Ethereum + Tron","date":"2026-08-09","dollarLoss":"≥ $6,184,494","technique":"Access-Control — Under-an-hour drain of named Coinsbuy hot wallets on Ethereum and Tron via unauthorized withdrawals; Coinsbuy's own statement withholds the root-cause mechanism","addresses":["0x4d1bef2fe998b3e3c4029ef9ea6a0534d95661d3"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/coinsbuy-wallet-drain/"},{"protocol":"Cosmos EVM (MANTRA / TAC / KiiChain)","chain":"MANTRA + TAC + KiiChain (+ 3 unnamed Cosmos EVM chains)","date":"2026-08-20 / 08-22","dollarLoss":"≥ $5,720,000","technique":"Rounding/Math-Bug — Underflow then overflow of the native balance in a shared Cosmos EVM staking precompile","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/cosmos-evm-vesting-underflow/"},{"protocol":"Aquifer","chain":"Solana + Ethereum","date":"2026-08-31 / 09-01","dollarLoss":"≈ $2,418,164","technique":"Access-Control — Arbitrary external call on a verified cross-chain Sweeper contract redirected swept funds to the attacker's own address","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/aquifer-sweeper-arbitrary-call/"},{"protocol":"Maya Protocol (MAYAChain)","chain":"MAYAChain + Bitcoin + Arbitrum","date":"2026-08-18","dollarLoss":"≥ $1,343,181","technique":"Access-Control — Voter-clobber misrouted a multi-message deposit, an uncapped theft-slash subsidy then credited phantom CACAO to a near-empty pool, drained by a single-sided add/withdraw and swapped out to Bitcoin","addresses":["0xa2f246f82995CBcCA8eD0d9F251383881A5E423e"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/mayachain-cacao-slash-drain/"},{"protocol":"Radix (Hyperlane Warp Routes)","chain":"Radix + Ethereum","date":"2026-08-31","dollarLoss":"≈ $1,251,369","technique":"Access-Control — Missing owner check on direct vault references in the Radix Engine kernel let one manifest call take/lock_fee on 59 victim vaults across 6 Hyperlane-bridged assets directly, without a badge or proof, forcing validators to halt mainnet consensus for over a week","addresses":["0x626d7be5c2f2b6e9baa542e25b6313ac91d47cd2"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/radix-hyperlane-vault-access-drain/"},{"protocol":"Virtue Protocol (VUSD CDP)","chain":"IOTA","date":"2026-08-28","dollarLoss":"≈ $848,457","technique":"Oracle — All 14 Switchboard oracle signing keys for the IOTA price queue compromised, self-submitted a fake $10,000,000 IOTA price inside the same transaction that minted 4.94M VUSD against 1 IOTA of real collateral, then a crashed price triggered a real-user liquidation cascade","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/virtue-iota-switchboard-oracle/"},{"protocol":"Ajna Finance","chain":"Ethereum","date":"2026-08-28 / 08-29","dollarLoss":"≈ $775,400","technique":"Rounding/Math-Bug — Liquidation-math exploit (Kick) on pools deployed through a factory the protocol never documented","addresses":["0x6F2f5236b10FE7162Da077A2779f8b5f04b7827e","0x80AD419C4783A09252Ad6a576ce059f51Cc53D47","0xF0D1Bf3C09dB0bAfFa6ff638579Fef44056C68Ce","0x112616Fe7209FEA053D2d558F2Ba76ae651ff7B9","0xA60e1a120D076F650e7E3F5f79A8fEd18b05bb48"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/ajna-liquidation/"},{"protocol":"Sandbox (SAND / OFT)","chain":"Base + BSC + Ethereum","date":"2026-08-21 / 08-22","dollarLoss":"≥ $675,000","technique":"Bridge — LayerZero delegate hijack via a legacy approveAndCall primitive, a composition bug, not a compromised key","addresses":["0x67624BFadee937c9281B4f98Ce18aF1bee01257e","0xd7ca08ec1aee9cce8a8eda9365343ef197674e1a","0xa467CD7b1200AEFeBf823B1e56FD557432b37952","0x88cD1E826A7134b595eD7f2cF5A9C54607f532c6"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/sandbox-oft-delegate-hijack/"},{"protocol":"Avici (Rain Card Collateral)","chain":"Solana","date":"2026-08-28","dollarLoss":"≈ $500,859","technique":"Access-Control — Forged dual-signature authorization (Ed25519 instruction-offset reuse) on a shared Rain card-collateral program let one attacker-controlled signature satisfy a two-signer withdrawal check","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/avici-rain-collateral-withdraw/"},{"protocol":"MORE Markets (Ankr ankrFLOW E-Mode)","chain":"Flow EVM","date":"2026-08-31","dollarLoss":"≈ $415,398","technique":"Access-Control — Ankr's ankrFLOW liquid-staking contract let unbacked ankrFLOW be minted via a recursive stake/restake loop, supplied as E-Mode collateral to drain MORE Markets' WFLOW reserve","addresses":["0xa0c2fe72ad9b640994a9c4252f25fb058ddb3702","0xa1e4b05f9a0425136045d8fc8a4978b25bb6a7cc"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/more-markets-ankrflow-emode/"},{"protocol":"Balancer V1 (legacy pools)","chain":"Ethereum","date":"2026-08-30 / 08-31","dollarLoss":"≥ $234,000","technique":"Rounding/Math-Bug — Rounding error on unmaintained V1 pools, repeated 1-satoshi joins","addresses":["0x338C7Ec9BefbB451d66Fd8A468c32184f5689a41","0x0359E5006f83E8c2CaBDd434494354Be835f3450","0x5d0583cB69df5C3602292263FcA6700Cf273E2c9","0xed1A1379fDc6A7A0D2a6A3E290B059469825975e","0x9cAa8d0E44b22f50057d2F4ce0D1446529e11be3","0x9d0d918644c057b29538eb5567f9b48befb65f33","0xa86e7d84bf2d1de9497d0e8eb46a90f7e99551cc","0x0437fa52a192590440f885cf8e596aaa5e697ce5","0xade439ade910a20854d4270d645b8a982d8f273b"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/balancer-v1-rounding/"},{"protocol":"Coreum (XRPL Bridge)","chain":"XRP Ledger + Coreum","date":"2026-08-09","dollarLoss":"≈ $207,700","technique":"Bridge — Relayers accepted a self-transfer of the bridge's own already-issued wrapped-token IOU, carrying a forged bridge-deposit memo, as proof of a real XRP deposit, without ever checking that XRP reached the bridge's own reserve account","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/coreum-xrpl-bridge-deposit-forgery/"},{"protocol":"Full Sail (Sui Vaults)","chain":"Sui","date":"2026-08-29","dollarLoss":"≈ $91,606","technique":"Oracle — Compromised Switchboard oracle signing key pushed SUI/ETH/IKA prices ~100x below market inside the same PTB as a legitimate update and a vault deposit, bypassing the price-gated deposit/AUM check; restored and withdrawn at the real price moments later","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/fullsail-switchboard-vault-drain/"},{"protocol":"Weft Finance (Weft V2)","chain":"Radix","date":"2026-08-30","dollarLoss":"≈ $61,593","technique":"Oracle — Flash swap crashed a thin CaviarNine DEX pool's spot price for an obscure meme token (HUG); Weft's own price-feed oracle read that inflated valuation, letting the attacker post HUG as CDP collateral to borrow real LSULP and XRD before the collateral was removed","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/weft-finance-hug-collateral-manipulation/"},{"protocol":"Float Protocol (Hypervisor Vaults)","chain":"Ethereum","date":"2026-08-31","dollarLoss":"≈ $25,870","technique":"Oracle — Flash-loan-funded Uniswap V3 slot0 manipulation distorted two Gamma-style Hypervisor vaults' share pricing, letting deposit/withdraw pairs straddling the skewed price redeem more value than deposited","addresses":["0x3803729416aa5207fe801c1c565b906f6f3f8a28","0x7cf8431e086e1bcdc9524fd305f7d5d8622cd75f"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/float-protocol-hypervisor-spot-manipulation/"},{"protocol":"Oraichain (ICS-20 EVM Precompile)","chain":"Oraichain + Cosmos Hub + Osmosis + Injective","date":"2026-08-08/08-09","dollarLoss":"≥ $4,462","technique":"Bridge — Buggy ICS-20 EVM precompile refunded the sender the exact amount just escrowed by a self-referential IBC transfer via an erroneous coinbase mint, letting repeated calls double the sender's balance each time","addresses":["0xc5927292949338Fe2fB40FE498d9EFb57b77D157","0x6111774471a6bc4577E81f389f81Cab99f462f56","0xf3C34154C02c63a902C9F17aa1bE0EbbA0CE7D10"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/oraichain-ics20-precompile-selfmint/"},{"protocol":"COLDCARD (Weak Seed RNG)","chain":"Bitcoin","date":"2026-07-30","dollarLoss":"≥ $37,996,965","technique":"Key-Compromise — Build-flag/linker bug silently swapped the hardware RNG for a weak software PRNG in seed generation for 5+ years; resulting low-entropy wallets brute-forced and swept, first wave traced end to end","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/coldcard-rng-seed-theft/"},{"protocol":"AFX Bridge","chain":"Arbitrum + Ethereum","date":"2026-07-22","dollarLoss":"≈ $24,150,000","technique":"Bridge — 5-of-7 threshold bridge-validator signing keys compromised (social-engineering campaign attributed by Halborn to DPRK-linked UNC4899/TraderTraitor) authorized a fraudulent USDC withdrawal from the bridge's Arbitrum custody","addresses":["0x2f2974fabc54dba33442261211c06bd20e0feefc"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/afx-bridge-validator-key-compromise/"},{"protocol":"Ostium (PrivatePriceUpKeep Compromise)","chain":"Arbitrum","date":"2026-07-15","dollarLoss":"≈ $23,752,642","technique":"Oracle — Compromised off-chain oracle-signer credential pushed self-authored BTC/USD price reports through a trusted PrivatePriceUpKeep forwarder, extracting real USDC from the counterparty vault","addresses":["0x321df194646029e7a6193ea05573d4b9c398bfd9","0xd1794196f0fc99c7f27970e661597d77d9a85869","0xfe12f6360000de49d5506d52ee5ac4bc9dd5bd2e"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/ostium-oracle-forwarder-compromise/"},{"protocol":"Lazy Summer Protocol","chain":"Ethereum","date":"2026-07-06","dollarLoss":"≈ $6,016,632","technique":"Donation-Attack — Donation attack: a zeroed-cap Ark, still summed in totalAssets() despite being blocked from new deposits, was donated an over-valued token to inflate vault share price ~9.5%, redeemed after a flash-loan-funded deposit at the honest price","addresses":["0x7BF716167B48CF527725722C6d79494b45B3BDCa","0x0514F827C129C16418a0933E03C99A6AF982FC61"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/lazy-summer-stale-ark-donation/"},{"protocol":"Across Protocol (Solana Event Spoofing)","chain":"Solana + Ethereum","date":"2026-07-17","dollarLoss":"≈ $4,500,000","technique":"Bridge — Missing Anchor CPI event-discriminator check let a wrapper program forge FundsDeposited events via a read-only instruction, so the relayer paid real funds against Solana deposits that never escrowed anything","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/across-solana-event-spoofing/"},{"protocol":"BarnBridge SMART Yield","chain":"Ethereum","date":"2026-07-06/2026-07-23","dollarLoss":"≈ $1,931,365","technique":"Governance — Governance takeover of an abandoned DAO used to swap SMART Yield pool Controllers and drain live ERC-20 approvals","addresses":["0xf908610e9174c7cd6e9dfd371e238be4511297a1","0xa8ce49a57400445c6a4118ae3460ed4e46c815b8","0x2f6be6ac5af4af7ce7d618006ebd8d5137f2de11","0x66c6f3b4b4b458e6d764759ecf122484ebef7580","0x851e47f37e20712407990556376a7124de5c3d4a","0x8b5f73544e50f18791682d1bcb4bb5011ca81b00","0xa5df767a55f11d5f89ede46dcb685880036ea5a4"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/barnbridge-dormant-dao-controller-swap/"},{"protocol":"Allbridge (CCTP Forged Message)","chain":"Polygon + Base","date":"2026-07-25 / 08-19","dollarLoss":"≈ $190,156","technique":"Bridge — Forged Circle CCTP message accepted without checking the mint recipient, unlocked with a self-funded Aave flash loan to match the fabricated credit","addresses":["0x2419432344b0b892e592b2601b98eae702ba360e","0xb6fbdfa5f3cbeb139d4cce86d92f4ac8687b16c0"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/allbridge-cctp-forged-message/"},{"protocol":"Nomic (nBTC / Osmosis allBTC)","chain":"Bitcoin + Nomic + Osmosis","date":"2026-06-25","dollarLoss":"≈ $2,429,809","technique":"Bridge — Forged IBC sender field made a MsgTransfer appear to originate from the channel's own escrow account; a balance-map aliasing bug let the debit and credit resolve to the same key, so the escrow was never drawn down while Osmosis still minted real nBTC vouchers against the unconsumed packet","addresses":["0x8f36fd9ffc0a8ca373aa7a4787292536a489d2b5"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/nomic-nbtc-ibc-selfmint/"},{"protocol":"Verus-Ethereum Bridge","chain":"Ethereum + Verus","date":"2026-05-17","dollarLoss":"≥ $11,775,898","technique":"Bridge — Forged proof: an attacker-crafted output, provable by real Verus notarizations, was interpreted by the Ethereum bridge contract as a different output type than the Verus daemon intended, releasing funds with no matching real export","addresses":["0x5abb91b9c01a5ed3ae762d32b236595b459d5777","0x65Cb8b128Bf6e690761044CCECA422bb239C25F9","0xCFd0A20703cD11E0b9f665e1C3F1Ef989C142D54"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/verus-ethereum-bridge-forged-proof/"},{"protocol":"Gravity Bridge","chain":"Ethereum + Osmosis + Gravity Chain","date":"2026-05-30","dollarLoss":"≈ $5,397,931","technique":"Bridge — Permissionless deployERC20() plus a missing registry collision check let a fabricated Cosmos denom string embed a real custody token address, poisoning the bridge's ERC20 lookup","addresses":["0x73e95ae5f3b87e02d4547afe86d0d466e9450d6b","0x9a280B869A73b6fF812a599E40ABd8dbdFB738c2","0xC4E01e1Bf95f218e97303FA59D21240A93f27c37","0x198930Ca72F1ed2399FDAe362D3AC6e0b2bCae20","0x899C7b3A16ad95DB1aF5EBE17ceF9eDeF5b87cdb","0x7b582033061b96cc3f9421e73a749ed7c62da1f9"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/gravity-bridge-denom-poisoning/"},{"protocol":"Drift Protocol","chain":"Solana","date":"2026-04-01","dollarLoss":"≈ $295,706,375","technique":"Access-Control — Pre-signed durable-nonce Squads multisig approvals hijacked the program's admin key, which then whitelisted a fabricated token as collateral and disabled real markets' withdraw guards","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/drift-protocol-durable-nonce-admin-hijack/"},{"protocol":"Kelp DAO (rsETH / LayerZero DVN)","chain":"Ethereum","date":"2026-04-18","dollarLoss":"≈ $273,377,225","technique":"Bridge — Compromised LayerZero RPC nodes plus a DDoS-forced DVN failover let a forged cross-chain message pass a 1-of-1 verifier, minting real rsETH against a burn that never happened on the claimed source chain (Unichain)","addresses":["0x8b1b6c9a6db1304000412dd21ae6a70a82d60d3b"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/kelpdao-rseth-layerzero-rpc-spoofing/"},{"protocol":"Zentra Finance","chain":"Citrea","date":"2026-09-09","dollarLoss":"≈ $140,030","technique":"Rounding/Math-Bug — Aave v3 fork aToken _burnScaled capped the burn to the caller's balance, so repayWithATokens with zero aTokens cleared 140,000 ctUSD of debt while burning nothing; cap added by a 2026-06-25 upgrade","addresses":["0xa73d72d6a858df742fe756da5cb61c2288a95c17","0x8d85840f4c05a5d7385498f2a75daa54c6507b4b","0x4eb55301d7848750059300e5ca62ec8de3b4f56a"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/zentra-finance-atoken-burn-clamp/"},{"protocol":"BeatSwap (BTX Vesting Contracts)","chain":"BSC","date":"2026-09-09","dollarLoss":"≈ $63,705","technique":"Oracle — Two permissionless vesting deposit() functions sized the BTX leg of a V3 LP mint from a single PancakeSwap slot0 read; a flash-loan dump made both put their whole BTX reserve into positions the attacker bought back in the same transaction, leaving 22 depositors' vesting claims unpayable","addresses":["0x67b2f08683a735cfe6f6e57fa86909b62218c2a1","0x371700b96b484b501812e92cab5a388d105a922d"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/beatswap-vesting-slot0-reserve-drain/"},{"protocol":"Dream Health Chain","chain":"BSC","date":"2026-09-05","dollarLoss":"≈ $71,851","technique":"Rounding/Math-Bug — Award contract paid a fixed 10% of a position's declared amount on every claim, with no claimed-flag and no elapsed-time check, so re-entering the position for 2 wei re-armed the same payout; run 333 times across 5 positions in one block","addresses":["0xD3A8D0A9F55cf679fff6F277E49AfC95B49D2B07","0x226923D34A10f3D54B57b9F4b685E82c6Cba968A"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/dreamhealthchain-award-two-wei-reclaim/"},{"protocol":"Flamincome","chain":"Ethereum","date":"2026-09-16","dollarLoss":"≈ $345,903","technique":"Donation-Attack — Strategy booked Convex-staked usdp3CRV at the Curve pool's virtual_price although USDP had lost its peg, so LP bought cheaply and staked on the Strategy's behalf inflated the vault's share price inside a flash-loaned deposit and withdraw","addresses":["0x83381e7F7232775735169d72D237B858fFc36871","0x1C7EAceF3630E764519e6EA2E8caA2bDB7D8b486","0x875da4Bd7b4a52a806A533b1cf6D6fF92365d2E6","0x7B698Cc3697D530Afac1B5085B14106a9b3Dc306"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/flamincome-vaultyusdt-share-inflation/"},{"protocol":"Safe LP Module (rsETH Looper)","chain":"Ethereum","date":"2026-09-15","dollarLoss":"≈ $8,006,577","technique":"Access-Control — Two enabled but dormant Safe modules exposed an entry point any address could call, letting six unrelated senders make the Safe approve Permit2 and route its own aEthrsETH through Uniswap v4, 17 times in 77 minutes; the MEV bot that won the first race returned 2,882.37 rsETH the next day, leaving 83.63 rsETH actually taken","addresses":["0xfDE0d1575ed8E06FBf36256bcdfA1F359281455a","0x80BF7Db69556D9521c03461978B8fC731DBBD4e4","0x0dc2C5D6B05a317076Cf501f7e7be36A5dFe9b66","0x10605Ee48Ff962952c966277a5d2dAc0A0705cb1","0x41a1d3eC1aa6c2D35A3c20A378b7B1d10137f27B","0x2f7E143e27F2fa26ef3B8AC72698f1d321422F67","0xb8dAfF19d8dfD4E50AE11cd38cE94528656a99D8","0x0000000000382D3E66FAf4F7C563b76b2dA40f98","0x0000000000300a8C18629d5C4fc25A498F22b6bD"],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/safe-uniswapv4-module-unauthenticated-executor/"},{"protocol":"Chainflip (Tron USDT vault)","chain":"Tron","date":"2026-09-12","dollarLoss":"≈ $736,378","technique":"Bridge — A Chainflip deposit is swept into the Tron vault by a permissionless fetch transaction; the depositor broadcast six of those fetches himself with a forged 121-byte vault-swap memo attached, which the witnessing engine read as a separate failed swap and refunded on top of the deposit it had already credited, paying six rounds twice","addresses":[],"sourceLink":"https://github.com/RealSpap/onchain-postmortems/tree/main/chainflip-tron-fetch-memo-double-payout/"}, {"protocol": "Nimiq (Polygon gas abstraction)", "chain": "Polygon", "date": "2026-09-16", "dollarLoss": "\u2248 $50,463", "technique": "Access-Control \u2014 the OpenGSN forwarder half of Nimiq's HTLC handler discards all five parameters of execute, signature included, so any address that registered itself as a relay for a 1 POL stake could open HTLCs on behalf of a wallet that never signed, then redeem them with a hashlock of sha256(1).", "addresses": ["0x2258491525c21f334c5a2dc22ce55e55023fc45d", "0x8ed97c79a95b311e28b91eed6077af1576533fcd", "0x4b0e8b2c38b0044405e24db481d00be7d5419e04"], "sourceLink": "https://github.com/RealSpap/onchain-postmortems/tree/main/nimiq-gsn-forwarder-unsigned-execute/"}, {"protocol": "Fetch.ai / NuNet", "chain": "Ethereum", "date": "2026-09-19", "dollarLoss": "$1,992,730", "technique": "Key-Compromise \u2014 two separately compromised keys, a bridge conversion authorizer and a MINTER_ROLE holder, drained a FET converter and minted NTX to one shared address 28 minutes apart; the minted NTX left the recipient wallet 6h34m before NuNet paused the token, and the compromised key kept MINTER_ROLE and PAUSER_ROLE for 39.55 hours", "addresses": ["0x1572f2af7696b39c85e3221cde8efb640f86c362", "0x863f13e5b505f1eb17803b94ec9d3daf80092165", "0x2dcc1085fdcf418b421e45e86e4e54637cc21dfe"], "sourceLink": "https://github.com/RealSpap/onchain-postmortems/tree/main/fetchai-nunet-dual-key-compromise/"}, {"protocol": "The Internet Token", "chain": "Base", "date": "2026-09-21", "dollarLoss": "\u2248 $16,380", "technique": "Access-Control \u2014 LiquidityUnifier accepted a caller-supplied Uniswap V3 pool address and validated it by asking that same address for token0 and token1, then minted whatever delta it reported inside uniswapV3SwapCallback; the mint survived the unifier's own validateSupply and _clearPool only because a permissionless 38-line migration contract parked it in the legacy bridged token until both checks had passed", "addresses": ["0x5f7ce6395818857ac20730dc990f614356d1ec68", "0x4acac3ecb4912147cbbf9dc927368a046e35b5b6", "0x94d9b828a9fa0d7d788127c827c8c0a268a35f69"], "sourceLink": "https://github.com/RealSpap/onchain-postmortems/tree/main/internet-token-liquidityunifier-fake-pool-mint/"}, {"protocol": "Payy Network", "chain": "Ethereum", "date": "2026-09-24", "dollarLoss": "≈ $1,918,792", "technique": "Bridge — the RollupV1 bridge pays any burn listed in a proven, validator-signed batch and never checks the burn hash; two batches sent by the normal prover and signed by the bridge's single validator listed burns with a zero hash paying the attacker 1,828,589.378132 and then 90,202.820016 USDC, five hours apart", "addresses": ["0xaa4985dbdabfaca344237d40f7e06c4a0bb57e70", "0xb483b1742aad0a60a9fc91bb36c5a42dbe3f3d38"], "sourceLink": "https://github.com/RealSpap/onchain-postmortems/tree/main/payy-rollup-zero-hash-burn/"}, {"protocol": "Limit Break Payment Processor V2", "chain": "Ethereum", "date": "2026-09-25", "dollarLoss": "≈ $1,462,114", "technique": "Access-Control — a trusted-forwarder calldata offset makes Payment Processor read an attacker-chosen wallet as the buyer, so a victim's standing ERC-20 approval pays for the attacker's zero-value NFT listing; 541.38 WETH from 978 wallets plus USDC/WILD/APE, still active at end of window", "addresses": ["0x860bb7ce155d0a14574ce10033bec2c981739c8d"], "sourceLink": "https://github.com/RealSpap/onchain-postmortems/tree/main/limit-break-payment-processor-forwarder-spoof/"}];
+
+  var ADDRESS_RE = /^0x[a-fA-F0-9]{40}$/;
+
+  /* Flat, case-insensitive index built once from the dataset above. */
+  var ADDRESS_INDEX = {};
+  INCIDENTS.forEach(function (incident) {
+    (incident.addresses || []).forEach(function (addr) {
+      var key = addr.toLowerCase();
+      if (!ADDRESS_INDEX[key]) ADDRESS_INDEX[key] = [];
+      ADDRESS_INDEX[key].push(incident);
+    });
+  });
+
+  /* ---- Table: filter + sort, plain array methods, no library ---- */
+
+  var chainSelect = document.getElementById("chain-filter");
+  var searchInput = document.getElementById("search-filter");
+  var tableBody = document.getElementById("incident-tbody");
+  var rowCountEl = document.getElementById("row-count");
+  var sortableHeaders = document.querySelectorAll("th[data-sort-key]");
+  var sortState = { key: null, dir: 1 };
+
+  function parseDollar(str) {
+    var digits = (str || "").replace(/[^0-9.]/g, "");
+    var n = parseFloat(digits);
+    return isNaN(n) ? 0 : n;
+  }
+
+  function dateKey(str) {
+    var m = /^(\d{4}-\d{2}-\d{2})/.exec(str || "");
+    return m ? m[1] : (str || "");
+  }
+
+  function populateChainFilter() {
+    var chains = [];
+    INCIDENTS.forEach(function (inc) {
+      if (chains.indexOf(inc.chain) === -1) chains.push(inc.chain);
+    });
+    chains.sort();
+    chains.forEach(function (c) {
+      var opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = c;
+      chainSelect.appendChild(opt);
+    });
+  }
+
+  function currentRows() {
+    var chain = chainSelect.value;
+    var query = (searchInput.value || "").trim().toLowerCase();
+    var rows = INCIDENTS.slice();
+    if (chain !== "all") {
+      rows = rows.filter(function (r) { return r.chain === chain; });
+    }
+    if (query) {
+      rows = rows.filter(function (r) {
+        return (r.protocol + " " + r.chain + " " + r.technique).toLowerCase().indexOf(query) !== -1;
+      });
+    }
+    if (sortState.key) {
+      var key = sortState.key;
+      var dir = sortState.dir;
+      rows.sort(function (a, b) {
+        var av, bv;
+        if (key === "dollar") {
+          av = parseDollar(a.dollarLoss);
+          bv = parseDollar(b.dollarLoss);
+        } else {
+          av = dateKey(a.date);
+          bv = dateKey(b.date);
+        }
+        if (av < bv) return -1 * dir;
+        if (av > bv) return 1 * dir;
+        return 0;
+      });
+    }
+    return rows;
+  }
+
+  function updateSortIndicators() {
+    sortableHeaders.forEach(function (th) {
+      var key = th.getAttribute("data-sort-key");
+      var label = th.getAttribute("data-label");
+      if (sortState.key === key) {
+        th.textContent = label + (sortState.dir === 1 ? " ▲" : " ▼");
+      } else {
+        th.textContent = label;
+      }
+    });
+  }
+
+  function renderTable() {
+    tableBody.textContent = "";
+    var rows = currentRows();
+
+    rowCountEl.textContent = "Showing " + rows.length + " of " + INCIDENTS.length + " incidents";
+
+    if (rows.length === 0) {
+      var tr = document.createElement("tr");
+      var td = document.createElement("td");
+      td.colSpan = 6;
+      td.className = "empty-row";
+      td.textContent = "No incidents match this filter.";
+      tr.appendChild(td);
+      tableBody.appendChild(tr);
+      return;
+    }
+
+    rows.forEach(function (inc) {
+      var tr = document.createElement("tr");
+
+      var tdP = document.createElement("td");
+      tdP.textContent = inc.protocol;
+      tr.appendChild(tdP);
+
+      var tdC = document.createElement("td");
+      tdC.className = "cell-chain";
+      tdC.textContent = inc.chain;
+      tr.appendChild(tdC);
+
+      var tdD = document.createElement("td");
+      tdD.className = "cell-mono";
+      tdD.textContent = inc.date;
+      tr.appendChild(tdD);
+
+      var tdL = document.createElement("td");
+      tdL.className = "cell-mono cell-loss";
+      tdL.textContent = inc.dollarLoss;
+      tr.appendChild(tdL);
+
+      var tdT = document.createElement("td");
+      tdT.className = "cell-technique";
+      tdT.textContent = inc.technique;
+      tr.appendChild(tdT);
+
+      var tdS = document.createElement("td");
+      tdS.className = "cell-link";
+      var a = document.createElement("a");
+      a.href = inc.sourceLink;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = "Writeup";
+      tdS.appendChild(a);
+      tr.appendChild(tdS);
+
+      tableBody.appendChild(tr);
+    });
+  }
+
+  chainSelect.addEventListener("change", renderTable);
+  searchInput.addEventListener("input", renderTable);
+
+  sortableHeaders.forEach(function (th) {
+    th.addEventListener("click", function () {
+      var key = th.getAttribute("data-sort-key");
+      if (sortState.key === key) {
+        sortState.dir *= -1;
+      } else {
+        sortState.key = key;
+        sortState.dir = -1;
+      }
+      updateSortIndicators();
+      renderTable();
+    });
+  });
+
+  /* ---- Address checker: closed-set lookup only, no network calls ---- */
+
+  var addressInput = document.getElementById("address-input");
+  var checkBtn = document.getElementById("check-btn");
+  var resultsEl = document.getElementById("checker-results");
+
+  function clear(el) {
+    el.textContent = "";
+  }
+
+  function updateUrlAddress(address) {
+    var url = new URL(window.location.href);
+    url.searchParams.set("address", address);
+    window.history.replaceState(null, "", url.toString());
+  }
+
+  function clearUrlAddress() {
+    var url = new URL(window.location.href);
+    url.searchParams.delete("address");
+    window.history.replaceState(null, "", url.toString());
+  }
+
+  function appendCheckAnother() {
+    var wrap = document.createElement("div");
+    wrap.className = "check-another";
+    var link = document.createElement("a");
+    link.href = "#";
+    link.textContent = "Check another address";
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      addressInput.value = "";
+      clear(resultsEl);
+      clearUrlAddress();
+      addressInput.focus();
+    });
+    wrap.appendChild(link);
+    resultsEl.appendChild(wrap);
+  }
+
+  function buildIncidentCard(incident) {
+    var card = document.createElement("div");
+    card.className = "finding-card";
+
+    var name = document.createElement("div");
+    name.className = "finding-name";
+    name.textContent = incident.protocol;
+    card.appendChild(name);
+
+    var meta = document.createElement("div");
+    meta.className = "finding-meta";
+    meta.textContent = incident.chain + " — " + incident.date + " — " + incident.dollarLoss;
+    card.appendChild(meta);
+
+    var technique = document.createElement("div");
+    technique.className = "finding-technique";
+    technique.textContent = incident.technique;
+    card.appendChild(technique);
+
+    var link = document.createElement("a");
+    link.className = "finding-link";
+    link.href = incident.sourceLink;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Full writeup on GitHub";
+    card.appendChild(link);
+
+    return card;
+  }
+
+  function renderMatch(address, incidents) {
+    clear(resultsEl);
+
+    var badge = document.createElement("div");
+    badge.className = "match-badge match-hit";
+    badge.textContent = incidents.length === 1
+      ? "Match found in 1 documented incident"
+      : "Match found in " + incidents.length + " documented incidents";
+    resultsEl.appendChild(badge);
+
+    var addrLine = document.createElement("div");
+    addrLine.className = "checked-address";
+    addrLine.textContent = address;
+    resultsEl.appendChild(addrLine);
+
+    incidents.forEach(function (inc) {
+      resultsEl.appendChild(buildIncidentCard(inc));
+    });
+
+    appendCheckAnother();
+  }
+
+  function renderNoMatch(address) {
+    clear(resultsEl);
+
+    var badge = document.createElement("div");
+    badge.className = "match-badge match-none";
+    badge.textContent = "No match";
+    resultsEl.appendChild(badge);
+
+    var addrLine = document.createElement("div");
+    addrLine.className = "checked-address";
+    addrLine.textContent = address;
+    resultsEl.appendChild(addrLine);
+
+    var msg = document.createElement("div");
+    msg.className = "no-match-msg";
+    msg.textContent = "No match in this closed set of documented incidents. This checks only the addresses already named across these incidents, not a general screen of all crypto addresses.";
+    resultsEl.appendChild(msg);
+
+    appendCheckAnother();
+  }
+
+  function renderError(message) {
+    clear(resultsEl);
+    var msg = document.createElement("div");
+    msg.className = "error-msg";
+    msg.textContent = message;
+    resultsEl.appendChild(msg);
+  }
+
+  function handleCheck() {
+    var raw = addressInput.value.trim();
+    clear(resultsEl);
+
+    if (!ADDRESS_RE.test(raw)) {
+      renderError("That does not look like an address. Expected 0x followed by 40 hex characters.");
+      return;
+    }
+
+    var matches = ADDRESS_INDEX[raw.toLowerCase()];
+    if (matches && matches.length) {
+      renderMatch(raw, matches);
+    } else {
+      renderNoMatch(raw);
+    }
+    updateUrlAddress(raw);
+  }
+
+  checkBtn.addEventListener("click", handleCheck);
+  addressInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") handleCheck();
+  });
+
+  populateChainFilter();
+  updateSortIndicators();
+  renderTable();
+
+  (function renderClusterCharts() {
+    function groupBy(keyFn, maxRows) {
+      var totals = {};
+      INCIDENTS.forEach(function (inc) {
+        var key = keyFn(inc);
+        totals[key] = (totals[key] || 0) + parseDollar(inc.dollarLoss);
+      });
+      var rows = Object.keys(totals).map(function (k) { return { label: k, value: totals[k] }; });
+      rows.sort(function (a, b) { return b.value - a.value; });
+      if (maxRows && rows.length > maxRows) {
+        var head = rows.slice(0, maxRows - 1);
+        var restTotal = rows.slice(maxRows - 1).reduce(function (s, r) { return s + r.value; }, 0);
+        head.push({ label: "Other (" + (rows.length - maxRows + 1) + ")", value: restTotal });
+        rows = head;
+      }
+      return rows;
+    }
+
+    function formatUsd(n) {
+      if (n >= 1e6) return "$" + (n / 1e6).toFixed(1) + "M";
+      if (n >= 1e3) return "$" + (n / 1e3).toFixed(0) + "K";
+      return "$" + n.toFixed(0);
+    }
+
+    function renderBars(containerId, rows) {
+      var container = document.getElementById(containerId);
+      container.textContent = "";
+      var max = rows.reduce(function (m, r) { return Math.max(m, r.value); }, 0) || 1;
+      rows.forEach(function (r) {
+        var row = document.createElement("div");
+        row.className = "bar-row";
+
+        var label = document.createElement("div");
+        label.className = "bar-label";
+        label.title = r.label;
+        label.textContent = r.label;
+        row.appendChild(label);
+
+        var track = document.createElement("div");
+        track.className = "bar-track";
+        var fill = document.createElement("div");
+        fill.className = "bar-fill";
+        fill.style.width = Math.max(2, (r.value / max) * 100) + "%";
+        track.appendChild(fill);
+        row.appendChild(track);
+
+        var value = document.createElement("div");
+        value.className = "bar-value";
+        value.textContent = formatUsd(r.value);
+        row.appendChild(value);
+
+        container.appendChild(row);
+      });
+    }
+
+    renderBars("chart-technique", groupBy(function (inc) {
+      var m = /^([^—]+?)\s*—/.exec(inc.technique);
+      return m ? m[1].trim() : inc.technique;
+    }, 8));
+
+    renderBars("chart-chain", groupBy(function (inc) { return inc.chain; }, 8));
+  })();
+
+  (function renderLeaderboard() {
+    var container = document.getElementById("leaderboard");
+    var top = INCIDENTS.slice()
+      .sort(function (a, b) { return parseDollar(b.dollarLoss) - parseDollar(a.dollarLoss); })
+      .slice(0, 5);
+
+    top.forEach(function (inc, i) {
+      var row = document.createElement("div");
+      row.className = "leaderboard-row";
+
+      var rank = document.createElement("div");
+      rank.className = "leaderboard-rank";
+      rank.textContent = "#" + (i + 1);
+      row.appendChild(rank);
+
+      var main = document.createElement("div");
+      main.className = "leaderboard-main";
+      var link = document.createElement("a");
+      link.href = inc.sourceLink;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = inc.protocol;
+      main.appendChild(link);
+      var meta = document.createElement("span");
+      meta.className = "leaderboard-meta";
+      meta.textContent = inc.chain + " — " + inc.date;
+      main.appendChild(meta);
+      row.appendChild(main);
+
+      var loss = document.createElement("div");
+      loss.className = "leaderboard-loss";
+      loss.textContent = inc.dollarLoss;
+      row.appendChild(loss);
+
+      container.appendChild(row);
+    });
+  })();
+
+  (function renderAddressCoverageHint() {
+    var withAddress = INCIDENTS.filter(function (inc) { return inc.addresses && inc.addresses.length > 0; }).length;
+    var without = INCIDENTS.length - withAddress;
+    var hint = document.getElementById("address-coverage-hint");
+    hint.textContent = withAddress + " of the " + INCIDENTS.length + " incidents above name at least one full 0x-format address. The other " + without + " report the attacker on a chain that does not use 0x addresses (Bitcoin, Solana, XRP Ledger, IOTA, Sui, Radix, or a native Cosmos-chain address), or the only address given for the attacker in that writeup is truncated -- in both cases nothing was guessed or completed to fill the gap, so those incidents simply cannot be matched by address here.";
+  })();
+
+  (function initFromUrl() {
+    var params = new URLSearchParams(window.location.search);
+    var addr = params.get("address");
+    if (addr && ADDRESS_RE.test(addr.trim())) {
+      addressInput.value = addr.trim();
+      handleCheck();
+    }
+  })();
+})();
+</script>
+</body>
+</html>

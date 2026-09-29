@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E">
+<title>Admin Key Checker</title>
+<meta name="description" content="Checks whether a contract's admin role is a single externally-owned account able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://realspap.github.io/tools/admin-key-checker.html">
+<meta property="og:title" content="Admin Key Checker — Spap">
+<meta property="og:description" content="Checks whether a contract's admin role is a single externally-owned account able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
+<meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Admin Key Checker — Spap">
+<meta name="twitter:description" content="Checks whether a contract's admin role is a single externally-owned account able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
+<meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
+
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --panel: #131417;
+    --panel-border: #23252b;
+    --text: #e6e7eb;
+    --text-dim: #8b8e98;
+    --text-faint: #5c5f68;
+    --accent: #4fd1b5;
+    --accent-dim: #2f7a6a;
+    --mono: "SF Mono", "Menlo", "Consolas", "Roboto Mono", monospace;
+    --sans: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --crit: #e05a5a;
+    --high: #e0a15a;
+    --med: #dcd15a;
+    --low: #5aa7e0;
+    --neutral: #7a7d86;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.5;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  header {
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  header p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
+
+  header a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+
+  header a:hover { border-bottom-color: var(--accent); }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    background: #0d0e11;
+    border: 1px solid var(--panel-border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 11px 12px;
+    border-radius: 7px;
+    outline: none;
+    min-width: 0;
+  }
+
+  input[type="text"]:focus {
+    border-color: var(--accent-dim);
+  }
+
+  button {
+    background: var(--accent);
+    color: #04120e;
+    border: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 0 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  button:hover { background: #6bdcc3; }
+
+  button:disabled {
+    background: var(--panel-border);
+    color: var(--text-faint);
+    cursor: not-allowed;
+  }
+
+  .error-line {
+    color: var(--crit);
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .hint {
+    font-size: 12px;
+    color: var(--text-faint);
+    margin-top: 10px;
+  }
+
+  #status {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 14px;
+  }
+
+  #status .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 8px;
+    animation: pulse 1s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  .result-panel { display: none; }
+
+  .category-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+
+  .cat-renounced { background: rgba(90,167,224,0.15); color: var(--low); }
+  .cat-eoa { background: rgba(224,90,90,0.15); color: var(--crit); }
+  .cat-safe1 { background: rgba(224,161,90,0.15); color: var(--high); }
+  .cat-safeN { background: rgba(79,209,181,0.15); color: var(--accent); }
+  .cat-other { background: rgba(122,125,134,0.15); color: var(--neutral); }
+  .cat-fail { background: rgba(224,90,90,0.15); color: var(--crit); }
+
+  .field-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--panel-border);
+    font-size: 13px;
+  }
+
+  .field-row:last-child { border-bottom: none; }
+
+  .field-label { color: var(--text-dim); flex-shrink: 0; }
+
+  .field-value-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+  }
+
+  .field-value {
+    font-family: var(--mono);
+    text-align: right;
+    word-break: break-all;
+    color: var(--text);
+  }
+
+  .explorer-link {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  .explorer-link:hover { border-bottom-color: currentColor; }
+
+  .explain {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--panel-border);
+  }
+
+  .dataset-match {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--panel-border);
+    background: #0d0e11;
+  }
+
+  .dataset-match.hit {
+    border-color: var(--crit);
+    background: rgba(224,90,90,0.06);
+  }
+
+  .severity-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .sev-critical { background: rgba(224,90,90,0.18); color: var(--crit); }
+  .sev-high { background: rgba(224,161,90,0.18); color: var(--high); }
+  .sev-medium { background: rgba(220,209,90,0.18); color: var(--med); }
+  .sev-low { background: rgba(90,167,224,0.18); color: var(--low); }
+  .sev-other { background: rgba(122,125,134,0.18); color: var(--neutral); }
+
+  .dataset-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .dataset-context {
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  .no-match-line {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 14px;
+  }
+
+  h2 {
+    font-size: 14px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 14px;
+  }
+
+  .other-cases-list .dataset-match { margin-top: 12px; }
+  .other-cases-list .dataset-match:first-child { margin-top: 0; }
+
+  .other-cases-note {
+    font-size: 12px;
+    color: var(--text-faint);
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  .disclaimer {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .disclaimer a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+
+  .disclaimer a:hover { border-bottom-color: var(--accent); }
+
+  .check-another {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--panel-border);
+  }
+
+  .check-another a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+    font-size: 13px;
+  }
+
+  .check-another a:hover { border-bottom-color: var(--accent); }
+
+  footer {
+    margin-top: 36px;
+    font-size: 12px;
+    color: var(--text-faint);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<nav class="tools-nav" aria-label="Other free tools by Spap">
+  <a href="https://realspap.github.io">Spap&#8217;s research</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/check-your-safe.html">Check your Safe</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/admin-key-checker.html">Admin Key Checker</a><span class="tn-sep">&middot;</span><a href="https://github.com/RealSpap/multisig-overlap-showcase">Multisig Overlap</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/onchain-postmortems-checker.html">Postmortems Checker</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/safe-tx-hash-verifier.html">Safe Tx Hash Verifier</a>
+</nav>
+<style>
+.tools-nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12.5px;color:#8a8a8a;padding:10px 20px;text-align:center;border-bottom:1px solid rgba(0,0,0,.08);line-height:1.8}
+.tools-nav a{color:#8a8a8a;text-decoration:none;border-bottom:1px solid transparent}
+.tools-nav a:hover{color:inherit;border-bottom-color:currentColor}
+.tools-nav .tn-sep{margin:0 8px;opacity:.5}
+@media (prefers-color-scheme:dark){.tools-nav{border-bottom-color:rgba(255,255,255,.12)}}
+</style>
+<header>
+  <div class="eyebrow">defi-admin-key-risk</div>
+  <h1>Check your protocol's admin key</h1>
+  <p>Paste a contract address. This runs the same owner-resolution and Safe-detection method used across the research, live, against public RPCs, in your browser. Nothing is sent to any server other than the RPC endpoints below.</p>
+  <p><a href="https://github.com/RealSpap/defi-admin-key-risk-showcase" target="_blank" rel="noopener">github.com/RealSpap/defi-admin-key-risk-showcase</a></p>
+</header>
+
+<div class="panel">
+  <label for="addr-input">Contract address (0x...)</label>
+  <div class="input-row">
+    <input id="addr-input" type="text" placeholder="0x..." autocomplete="off" spellcheck="false">
+    <button id="check-btn">Check</button>
+  </div>
+  <div id="input-error" class="error-line" hidden></div>
+  <div id="status" hidden></div>
+  <div class="hint">No wallet connection needed. Read-only calls to public no-key RPC endpoints.</div>
+</div>
+
+<div id="result-panel" class="panel result-panel">
+  <div id="category-badge" class="category-badge"></div>
+  <div id="field-rows"></div>
+  <div id="explain" class="explain"></div>
+  <div id="match-section"></div>
+</div>
+
+<div class="panel">
+  <h2>Other known cases in this dataset</h2>
+  <div id="other-cases-list" class="other-cases-list"></div>
+  <div class="other-cases-note" id="ens-note"></div>
+</div>
+
+<div class="panel">
+  <p class="disclaimer">
+    This free check classifies the admin pattern only: renounced, bare EOA, 1-of-N Safe, real multisig, or a contract that needs a manual look. It does not chase a hit to a dollar figure and it does not check for documented third-party targeting. The licensed research method does both of those for every bare-EOA and 1-of-N-Safe result it flags, which is how the Critical / High / Medium / Low severity calls in the published cases are made. Questions or access to the full method: <a href="https://x.com/RealSpap" target="_blank" rel="noopener">x.com/RealSpap</a>.
+  </p>
+</div>
+
+<footer>Static page. No account, no email capture, no API key required to run this check.</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------------------------------------------------------------
+   * Method, matching the research's published methodology exactly:
+   *
+   *  a) eth_call owner() [0x8da5cb5b] on the input contract.
+   *     If it reverts (or returns nothing decodable), fall back to
+   *     admin() [0xf851a440] (the EIP-1967-style transparent proxy admin
+   *     getter). If both fail, or the resolved address is 0x0, the
+   *     contract is classified Renounced (0x0).
+   *
+   *  b) eth_getCode on the resolved controlling address. Empty code
+   *     ("0x") means the controller is a Bare EOA.
+   *
+   *  c) If the controller has code, try getOwners() [0xa0e67e2b] and
+   *     getThreshold() [0xe75235b8] on it (the same Gnosis Safe calls
+   *     used elsewhere in this research). Both succeeding means it's a
+   *     Safe: threshold == 1 is classified 1-of-N Safe, threshold >= 2
+   *     is classified as a real multisig.
+   *
+   *  d) If it has code but both Safe calls revert, it's classified
+   *     Other contract (Timelock or custom governance module) and this
+   *     tool says plainly it can't classify it further.
+   *
+   * RPC fallback list (no key, tried in this order, per call, only
+   * advancing to the next URL when a URL is unreachable or returns a
+   * malformed response -- a JSON-RPC error such as a revert is treated
+   * as a real answer, not a reason to try the next endpoint):
+   *   1. https://ethereum-rpc.publicnode.com
+   *   2. https://eth.drpc.org
+   *   3. https://1rpc.io/eth
+   * ------------------------------------------------------------------- */
+
+  var RPC_URLS = [
+    "https://ethereum-rpc.publicnode.com",
+    "https://eth.drpc.org",
+    "https://1rpc.io/eth"
+  ];
+
+  var SELECTORS = {
+    owner: "0x8da5cb5b",
+    admin: "0xf851a440",
+    getOwners: "0xa0e67e2b",
+    getThreshold: "0xe75235b8"
+  };
+
+  var ZERO_ADDRESS = "0x0000000000000000000000000000000000000000".slice(0, 42);
+
+  /* ---------------------------------------------------------------------
+   * Embedded dataset, byte-for-byte as supplied for this tool. Nothing
+   * added, nothing removed, no field altered.
+   * ------------------------------------------------------------------- */
+  var DATASET = {"known_identifiers":[{"identifier":"tokenworks.eth","display_name":"tokenworks.eth","severity":"Critical","one_line_context":"owner() on the Fake World Assets (FWA) token resolves to this bare EOA, tagged tokenworks.eth on Etherscan and matching the project's own declared Twitter handle (token_works), so it is the team's own key with real control over redirecting purchase proceeds."},{"identifier":"sifu.eth","display_name":"sifu.eth","severity":"High","one_line_context":"The UwU Lend governance/reward token's owner() is this bare EOA, publicly identified (via CoinDesk, Unchained, Protos, and ZachXBT's January 2022 doxxing) as Michael Patryn, co-founder of the collapsed QuadrigaCX exchange, and it still holds onlyOwner mint/burn power over the token more than a year after UwU's 2024 hack."},{"identifier":"wasabideployer.eth","display_name":"wasabideployer.eth","severity":"Not rated -- this is the Wasabi Protocol anchor incident described in 'What happened', not one of the 12 cases in the severity table, so the README assigns it no Critical/High/Medium/Low grade.","one_line_context":"On 2026-04-30 an attacker compromised this key's private key, which held unchecked admin authority (no multisig, no timelock) over every one of Wasabi Protocol's upgradeable vaults, causing the ~$5.9M loss across Ethereum, Base, Berachain and Blast that anchors this research."}],"truncated_addresses_excluded_count":4};
+
+  /* ---------------------------------------------------------------------
+   * ENS handling decision (stated here and repeated in the tool's
+   * summary): every identifier in the embedded dataset above is an ENS
+   * name (tokenworks.eth, sifu.eth, wasabideployer.eth), not a raw
+   * address. Matching an ENS name against a resolved 0x address requires
+   * either forward-resolving the name (namehash + ENS Registry + a
+   * resolver call, which needs a correct keccak-256 implementation) or
+   * reverse-resolving the address (reverse registrar + resolver call).
+   * Both are doable against the same no-key RPCs in principle, but
+   * hand-rolling keccak-256 and the resolver ABI without a library, in a
+   * single static file, is exactly the kind of thing that is easy to get
+   * subtly wrong and hard to verify from a code read alone.
+   *
+   * Chosen approach: skip auto-matching ENS-named entries. The dataset's
+   * generic matcher below (findAddressMatches) only ever compares
+   * identifiers that are themselves raw 0x addresses against the
+   * resolved controller and the input address, so it stays correct and
+   * future-proof if the dataset ever gains raw-address entries. Every
+   * entry that is an ENS name (all three, in this dataset) is instead
+   * always rendered in the "Other known cases in this dataset" panel
+   * for context, never claimed as an automatic match.
+   * ------------------------------------------------------------------- */
+
+  function isValidAddress(str) {
+    return typeof str === "string" && /^0x[0-9a-fA-F]{40}$/.test(str);
+  }
+
+  function isZeroAddress(addr) {
+    return typeof addr === "string" && /^0x0{40}$/i.test(addr);
+  }
+
+  function short(addr) {
+    if (!isValidAddress(addr)) return addr;
+    return addr.slice(0, 6) + "..." + addr.slice(-4);
+  }
+
+  /* ---- JSON-RPC ---------------------------------------------------- */
+
+  function rpcRequest(url, method, params) {
+    var controller = new AbortController();
+    var timeout = setTimeout(function () { controller.abort(); }, 9000);
+    return fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: method, params: params }),
+      signal: controller.signal
+    }).then(function (res) {
+      clearTimeout(timeout);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }).finally(function () { clearTimeout(timeout); });
+  }
+
+  // Tries each RPC URL in order. A URL that responds at all (even with a
+  // JSON-RPC error, e.g. a revert) ends the attempt for this call: that
+  // is a real answer, not an endpoint failure. Only a network failure,
+  // timeout, non-2xx HTTP status, or unparsable body advances to the
+  // next URL in the list.
+  function rpcCall(method, params) {
+    var i = 0;
+    function attempt() {
+      if (i >= RPC_URLS.length) {
+        return Promise.reject(new Error("All RPC endpoints failed or were unreachable."));
+      }
+      var url = RPC_URLS[i];
+      i += 1;
+      return rpcRequest(url, method, params).then(function (json) {
+        if (json && json.error) {
+          return { ok: false, error: json.error, url: url };
+        }
+        return { ok: true, result: json ? json.result : null, url: url };
+      }).catch(function () {
+        return attempt();
+      });
+    }
+    return attempt();
+  }
+
+  function ethCall(to, selector) {
+    return rpcCall("eth_call", [{ to: to, data: selector }, "latest"]).then(function (res) {
+      if (!res.ok) return { data: null, url: res.url };
+      if (!res.result || res.result === "0x") return { data: null, url: res.url };
+      return { data: res.result, url: res.url };
+    });
+  }
+
+  /* ---- ABI decoding (minimal, hand-rolled, no library) -------------- */
+
+  function decodeAddress(hex) {
+    if (!hex) return null;
+    var h = hex.replace(/^0x/, "");
+    if (h.length < 64) return null;
+    var word = h.slice(0, 64);
+    var addrHex = word.slice(24);
+    if (!/^[0-9a-fA-F]{40}$/.test(addrHex)) return null;
+    return "0x" + addrHex;
+  }
+
+  function decodeUint(hex) {
+    if (!hex) return null;
+    var h = hex.replace(/^0x/, "");
+    if (h.length < 64) return null;
+    try {
+      return BigInt("0x" + h.slice(0, 64));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function decodeAddressArray(hex) {
+    if (!hex) return [];
+    var h = hex.replace(/^0x/, "");
+    if (h.length < 128) return [];
+    try {
+      var offsetWords = parseInt(h.slice(0, 64), 16);
+      var lenStart = offsetWords * 2;
+      if (lenStart + 64 > h.length) return [];
+      var length = parseInt(h.slice(lenStart, lenStart + 64), 16);
+      var owners = [];
+      for (var i = 0; i < length; i++) {
+        var start = lenStart + 64 + i * 64;
+        if (start + 64 > h.length) break;
+        var word = h.slice(start, start + 64);
+        owners.push("0x" + word.slice(24));
+      }
+      return owners;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  /* ---- Classification ------------------------------------------------ */
+
+  function classify(address) {
+    var trace = { rpcUrlsUsed: [] };
+
+    function noteUrl(u) {
+      if (u && trace.rpcUrlsUsed.indexOf(u) === -1) trace.rpcUrlsUsed.push(u);
+    }
+
+    return ethCall(address, SELECTORS.owner).then(function (ownerRes) {
+      noteUrl(ownerRes.url);
+      var controller = decodeAddress(ownerRes.data);
+      var controllerSource = controller ? "owner()" : null;
+
+      var afterOwner = controller
+        ? Promise.resolve({ controller: controller, controllerSource: controllerSource })
+        : ethCall(address, SELECTORS.admin).then(function (adminRes) {
+            noteUrl(adminRes.url);
+            var adminAddr = decodeAddress(adminRes.data);
+            return { controller: adminAddr, controllerSource: adminAddr ? "admin()" : null };
+          });
+
+      return afterOwner.then(function (resolved) {
+        if (!resolved.controller || isZeroAddress(resolved.controller)) {
+          return {
+            category: "renounced",
+            controller: resolved.controller || ZERO_ADDRESS,
+            controllerSource: resolved.controllerSource,
+            trace: trace
+          };
+        }
+
+        return rpcCall("eth_getCode", [resolved.controller, "latest"]).then(function (codeRes) {
+          noteUrl(codeRes.url);
+          var code = codeRes.ok ? codeRes.result : "0x";
+
+          if (!code || code === "0x") {
+            return {
+              category: "eoa",
+              controller: resolved.controller,
+              controllerSource: resolved.controllerSource,
+              trace: trace
+            };
+          }
+
+          return Promise.all([
+            ethCall(resolved.controller, SELECTORS.getOwners),
+            ethCall(resolved.controller, SELECTORS.getThreshold)
+          ]).then(function (results) {
+            var ownersRes = results[0];
+            var thresholdRes = results[1];
+            noteUrl(ownersRes.url);
+            noteUrl(thresholdRes.url);
+
+            if (ownersRes.data && thresholdRes.data) {
+              var threshold = decodeUint(thresholdRes.data);
+              var owners = decodeAddressArray(ownersRes.data);
+              if (threshold !== null) {
+                return {
+                  category: threshold === 1n ? "safe1" : "safeN",
+                  controller: resolved.controller,
+                  controllerSource: resolved.controllerSource,
+                  threshold: threshold.toString(),
+                  owners: owners,
+                  trace: trace
+                };
+              }
+            }
+
+            return {
+              category: "other",
+              controller: resolved.controller,
+              controllerSource: resolved.controllerSource,
+              trace: trace
+            };
+          });
+        });
+      });
+    });
+  }
+
+  /* ---- Dataset matching ---------------------------------------------- */
+
+  function findAddressMatches(addr) {
+    if (!isValidAddress(addr)) return [];
+    var normalized = addr.toLowerCase();
+    return DATASET.known_identifiers.filter(function (item) {
+      return isValidAddress(item.identifier) && item.identifier.toLowerCase() === normalized;
+    });
+  }
+
+  function ensNamedEntries() {
+    return DATASET.known_identifiers.filter(function (item) {
+      return !isValidAddress(item.identifier);
+    });
+  }
+
+  /* ---- Rendering (textContent only, never innerHTML) ----------------- */
+
+  function el(tag, className, text) {
+    var e = document.createElement(tag);
+    if (className) e.className = className;
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+
+  function severityClass(sev) {
+    var s = (sev || "").trim().toLowerCase();
+    if (s.indexOf("critical") === 0) return "sev-critical";
+    if (s.indexOf("high") === 0) return "sev-high";
+    if (s.indexOf("medium") === 0) return "sev-medium";
+    if (s.indexOf("low") === 0) return "sev-low";
+    return "sev-other";
+  }
+
+  // Severity badges are a compact pill meant for a one-word label
+  // (Critical/High/Medium/Low). One dataset entry (wasabideployer.eth)
+  // carries a long explanatory sentence in its severity field instead,
+  // because it's the anchor incident, not one of the 12 rated cases.
+  // The badge shows a short label; the full original text is still
+  // shown in full below it (via renderDatasetEntry), never dropped.
+  function severityShortLabel(sev) {
+    var s = (sev || "").trim();
+    var low = s.toLowerCase();
+    if (low.indexOf("critical") === 0) return "Critical";
+    if (low.indexOf("high") === 0) return "High";
+    if (low.indexOf("medium") === 0) return "Medium";
+    if (low.indexOf("low") === 0) return "Low";
+    return "Not rated";
+  }
+
+  function renderDatasetEntry(container, item, extraClass) {
+    var box = el("div", "dataset-match" + (extraClass ? " " + extraClass : ""));
+    var shortLabel = severityShortLabel(item.severity);
+    var badge = el("span", "severity-badge " + severityClass(item.severity), shortLabel);
+    var name = el("div", "dataset-name", item.display_name);
+    var ctx = el("div", "dataset-context", item.one_line_context);
+    box.appendChild(badge);
+    box.appendChild(document.createElement("br"));
+    box.appendChild(name);
+    if (shortLabel !== item.severity.trim()) {
+      box.appendChild(el("div", "dataset-context", item.severity));
+    }
+    box.appendChild(ctx);
+    container.appendChild(box);
+  }
+
+  function renderOtherCases() {
+    var list = document.getElementById("other-cases-list");
+    list.textContent = "";
+    var entries = ensNamedEntries();
+    entries.forEach(function (item) {
+      renderDatasetEntry(list, item);
+    });
+    var note = document.getElementById("ens-note");
+    note.textContent = "These " + entries.length + " dataset entries are ENS names, not raw addresses. Matching an ENS name against a resolved on-chain address needs a separate forward or reverse ENS lookup this tool does not perform, so they are listed here for context rather than auto-matched against your result above. " + DATASET.truncated_addresses_excluded_count + " address(es) named only in truncated form in the source README were excluded rather than guessed.";
+  }
+
+  var CATEGORY_META = {
+    renounced: { label: "Renounced (0x0)", cls: "cat-renounced" },
+    eoa: { label: "Bare EOA", cls: "cat-eoa" },
+    safe1: { label: "1-of-N Safe", cls: "cat-safe1" },
+    safeN: { label: "Real multisig (Safe, threshold >= 2)", cls: "cat-safeN" },
+    other: { label: "Other contract (needs manual review)", cls: "cat-other" }
+  };
+
+  var CATEGORY_EXPLAIN = {
+    renounced: "owner() and admin() both reverted, or the resolved controller is the zero address. There is no live key that can call admin functions on this contract through either path.",
+    eoa: "The resolved controlling address has no contract code. A single private key can call admin functions on this contract directly, with no multisig and no timelock in front of it.",
+    safe1: "The controller is a Gnosis Safe, but its threshold is 1. Any single one of its owner keys can execute a transaction alone, so in practice this behaves like a bare EOA with extra steps.",
+    safeN: "The controller is a Gnosis Safe with a threshold of 2 or higher. Multiple independent keys must cooperate to execute an admin action.",
+    other: "The controller has code, but it is not a Gnosis Safe (getOwners() and getThreshold() both reverted). This is likely a Timelock or a custom governance module. This tool cannot classify it further; it needs a manual look."
+  };
+
+  function addField(container, label, value) {
+    var row = el("div", "field-row");
+    var l = el("div", "field-label", label);
+    var vWrap = el("div", "field-value-wrap");
+    var v = el("div", "field-value", value);
+    vWrap.appendChild(v);
+    if (/^0x[a-fA-F0-9]{40}$/.test(value || "")) {
+      var link = el("a", "explorer-link", "View on Etherscan ↗");
+      link.href = "https://etherscan.io/address/" + value;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      vWrap.appendChild(link);
+    }
+    row.appendChild(l);
+    row.appendChild(vWrap);
+    container.appendChild(row);
+  }
+
+  function renderResult(inputAddress, result) {
+    var panel = document.getElementById("result-panel");
+    panel.style.display = "block";
+
+    var badge = document.getElementById("category-badge");
+    badge.textContent = "";
+    var meta = CATEGORY_META[result.category];
+    badge.className = "category-badge " + meta.cls;
+    badge.textContent = meta.label;
+
+    var rows = document.getElementById("field-rows");
+    rows.textContent = "";
+    addField(rows, "Input address", inputAddress);
+    addField(rows, "Resolved via", result.controllerSource || "none (both owner() and admin() failed)");
+    addField(rows, "Controlling address", result.controller);
+    if (result.threshold !== undefined) {
+      addField(rows, "Safe threshold", result.threshold + " of " + result.owners.length);
+    }
+    if (result.trace && result.trace.rpcUrlsUsed.length) {
+      addField(rows, "RPC endpoint(s) used", result.trace.rpcUrlsUsed.join(", "));
+    }
+
+    document.getElementById("explain").textContent = CATEGORY_EXPLAIN[result.category];
+
+    var matchSection = document.getElementById("match-section");
+    matchSection.textContent = "";
+
+    var matches = [];
+    findAddressMatches(result.controller).forEach(function (m) { matches.push(m); });
+    if (inputAddress.toLowerCase() !== (result.controller || "").toLowerCase()) {
+      findAddressMatches(inputAddress).forEach(function (m) {
+        if (matches.indexOf(m) === -1) matches.push(m);
+      });
+    }
+
+    if (matches.length) {
+      var heading = el("div", "field-label", "Dataset match found:");
+      matchSection.appendChild(heading);
+      matches.forEach(function (item) {
+        renderDatasetEntry(matchSection, item, "hit");
+      });
+    } else {
+      matchSection.appendChild(el(
+        "div",
+        "no-match-line",
+        "No match in the embedded case dataset above. This is a live classification only, not a check against every case in the research. The full research covers 70+ protocols by hand."
+      ));
+    }
+
+    var oldCta = panel.querySelector(".check-another");
+    if (oldCta) panel.removeChild(oldCta);
+    appendCheckAnother(panel);
+  }
+
+  function renderFailure(message) {
+    var panel = document.getElementById("result-panel");
+    panel.style.display = "block";
+    var badge = document.getElementById("category-badge");
+    badge.className = "category-badge cat-fail";
+    badge.textContent = "Could not complete check";
+    document.getElementById("field-rows").textContent = "";
+    document.getElementById("explain").textContent = message;
+    document.getElementById("match-section").textContent = "";
+
+    var oldCta = panel.querySelector(".check-another");
+    if (oldCta) panel.removeChild(oldCta);
+    appendCheckAnother(panel);
+  }
+
+  function updateUrlAddress(address) {
+    var url = new URL(window.location.href);
+    url.searchParams.set("address", address);
+    window.history.replaceState(null, "", url.toString());
+  }
+
+  function clearUrlAddress() {
+    var url = new URL(window.location.href);
+    url.searchParams.delete("address");
+    window.history.replaceState(null, "", url.toString());
+  }
+
+  function appendCheckAnother(container) {
+    var wrap = el("div", "check-another");
+    var link = el("a", null, "Check another address");
+    link.href = "#";
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      input.value = "";
+      document.getElementById("result-panel").style.display = "none";
+      inputError.hidden = true;
+      inputError.textContent = "";
+      clearUrlAddress();
+      input.focus();
+    });
+    wrap.appendChild(link);
+    container.appendChild(wrap);
+  }
+
+  /* ---- Wiring ---------------------------------------------------------- */
+
+  var input = document.getElementById("addr-input");
+  var button = document.getElementById("check-btn");
+  var inputError = document.getElementById("input-error");
+  var status = document.getElementById("status");
+
+  function setStatus(text) {
+    status.textContent = "";
+    if (!text) { status.hidden = true; return; }
+    status.hidden = false;
+    var dot = el("span", "dot");
+    status.appendChild(dot);
+    status.appendChild(document.createTextNode(text));
+  }
+
+  function runCheck() {
+    var raw = input.value.trim();
+    inputError.hidden = true;
+    inputError.textContent = "";
+
+    if (!isValidAddress(raw)) {
+      inputError.hidden = false;
+      inputError.textContent = "Enter a valid contract address: 0x followed by 40 hex characters.";
+      return;
+    }
+
+    button.disabled = true;
+    document.getElementById("result-panel").style.display = "none";
+    setStatus("Calling owner() / admin()...");
+
+    classify(raw).then(function (result) {
+      setStatus(null);
+      button.disabled = false;
+      renderResult(raw, result);
+      updateUrlAddress(raw);
+    }).catch(function (err) {
+      setStatus(null);
+      button.disabled = false;
+      renderFailure("Could not reach any of the public RPC endpoints, or the response could not be parsed. Try again in a moment. (" + (err && err.message ? err.message : "unknown error") + ")");
+    });
+  }
+
+  button.addEventListener("click", runCheck);
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") runCheck();
+  });
+
+  renderOtherCases();
+
+  (function initFromUrl() {
+    var params = new URLSearchParams(window.location.search);
+    var addr = params.get("address");
+    if (addr && isValidAddress(addr.trim())) {
+      input.value = addr.trim();
+      runCheck();
+    }
+  })();
+})();
+</script>
+</body>
+</html>

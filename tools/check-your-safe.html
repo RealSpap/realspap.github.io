@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E">
+<title>Check Your Safe</title>
+<meta name="description" content="Reads any Gnosis Safe's owners live from chain and checks them against 343 protocols already researched for signer overlap. No account needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://realspap.github.io/tools/check-your-safe.html">
+<meta property="og:title" content="Check Your Safe — Spap">
+<meta property="og:description" content="Reads any Gnosis Safe's owners live from chain and checks them against 343 protocols already researched for signer overlap. No account needed.">
+<meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Check Your Safe — Spap">
+<meta name="twitter:description" content="Reads any Gnosis Safe's owners live from chain and checks them against 343 protocols already researched for signer overlap. No account needed.">
+<meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
+
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --panel: #131519;
+    --panel-2: #17191e;
+    --border: #262930;
+    --text: #e7e9ec;
+    --muted: #9199a3;
+    --muted-2: #6b7280;
+    --accent: #6c8ef5;
+    --finding-border: #b9944a;
+    --finding-bg: #1a1712;
+    --error-border: #8a4a4a;
+    --error-bg: #1a1414;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    color: var(--muted-2);
+    margin: 0 0 8px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: var(--text);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 40px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  #address-input {
+    flex: 1;
+    min-width: 0;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    padding: 11px 12px;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  #address-input:focus {
+    border-color: var(--accent);
+  }
+
+  #check-btn {
+    background: var(--accent);
+    color: #0a0b0d;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0 20px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #check-btn:hover {
+    filter: brightness(1.08);
+  }
+
+  #check-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .field-hint {
+    font-size: 12.5px;
+    color: var(--muted-2);
+    margin: 12px 0 0;
+  }
+
+  .results {
+    margin-top: 20px;
+  }
+
+  .results:empty {
+    margin-top: 0;
+  }
+
+  .status-line {
+    font-size: 14px;
+    color: var(--muted);
+    padding: 14px 0;
+  }
+
+  .owners-block {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+
+  .owners-header {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .owners-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .owner-address {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+    word-break: break-all;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .explorer-link {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 11.5px;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 1px solid transparent;
+  }
+
+  .explorer-link:hover {
+    border-bottom-color: currentColor;
+  }
+
+  .no-match, .not-safe, .error-msg {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .error-msg {
+    border-color: var(--error-border);
+    background: var(--error-bg);
+  }
+
+  .matches-header {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 4px 0 10px;
+  }
+
+  .finding-card {
+    background: var(--finding-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--finding-border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+
+  .finding-address {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--muted);
+    word-break: break-all;
+    margin-bottom: 4px;
+  }
+
+  .finding-card .explorer-link {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .finding-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .finding-protocols {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .finding-confidence {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .finding-context {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  .context-note {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .context-note p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .site-footer {
+    margin-top: 40px;
+  }
+
+  .site-footer p {
+    font-size: 12px;
+    color: var(--muted-2);
+    margin: 0;
+  }
+
+  .check-another {
+    margin-top: 18px;
+  }
+
+  .check-another a {
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<nav class="tools-nav" aria-label="Other free tools by Spap">
+  <a href="https://realspap.github.io">Spap&#8217;s research</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/check-your-safe.html">Check your Safe</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/admin-key-checker.html">Admin Key Checker</a><span class="tn-sep">&middot;</span><a href="https://github.com/RealSpap/multisig-overlap-showcase">Multisig Overlap</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/onchain-postmortems-checker.html">Postmortems Checker</a><span class="tn-sep">&middot;</span><a href="https://realspap.github.io/tools/safe-tx-hash-verifier.html">Safe Tx Hash Verifier</a>
+</nav>
+<style>
+.tools-nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12.5px;color:#8a8a8a;padding:10px 20px;text-align:center;border-bottom:1px solid rgba(0,0,0,.08);line-height:1.8}
+.tools-nav a{color:#8a8a8a;text-decoration:none;border-bottom:1px solid transparent}
+.tools-nav a:hover{color:inherit;border-bottom-color:currentColor}
+.tools-nav .tn-sep{margin:0 8px;opacity:.5}
+@media (prefers-color-scheme:dark){.tools-nav{border-bottom-color:rgba(255,255,255,.12)}}
+</style>
+  <div class="page">
+    <header>
+      <p class="eyebrow">multisig-overlap research</p>
+      <h1>Check your Safe</h1>
+      <p class="subtitle">
+        A small public utility from the
+        <a href="https://github.com/RealSpap/multisig-overlap-showcase" target="_blank" rel="noopener noreferrer">multisig-overlap-showcase</a>
+        research project. It reads a Safe's owner list directly from chain, in your browser, and checks each owner against the identities already named in that project's public README.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <label for="address-input">Safe address</label>
+        <div class="input-row">
+          <input id="address-input" type="text" placeholder="0x..." autocomplete="off" spellcheck="false" autocapitalize="off">
+          <button id="check-btn" type="button">Check</button>
+        </div>
+        <p class="field-hint">Works on a Gnosis Safe. Any other contract, or a plain wallet address, will just fail the check below, that is expected and not an error in this tool.</p>
+      </section>
+
+      <section id="results" class="results" aria-live="polite"></section>
+
+      <section class="context-note">
+        <p>
+          This free check only looks at three addresses, the ones already named in the public README for this research. The licensed method behind this project cross-references 343 protocols and 570 Safes. If that fuller check is relevant to your organization, ask about it at
+          <a href="https://x.com/RealSpap" target="_blank" rel="noopener noreferrer">x.com/RealSpap</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        This page calls public Ethereum RPC endpoints directly from your browser to read the Safe's owner list. Nothing you enter is sent to any server operated by this project. Source and methodology:
+        <a href="https://github.com/RealSpap/multisig-overlap-showcase" target="_blank" rel="noopener noreferrer">github.com/RealSpap/multisig-overlap-showcase</a>.
+      </p>
+    </footer>
+  </div>
+
+<script>
+'use strict';
+
+/* Embedded reference dataset: the three addresses already named with full
+   hex addresses in the public multisig-overlap-showcase README, verbatim. */
+var FLAGGED_DATA = {"flagged_addresses":[{"address":"0x8f02b4a44Eacd9b8eE7739aa0BA58833DD45d002","display_name":"Pablo Veyrat","protocols":["Morpho Blue","Angle Protocol"],"confidence":"High-confidence (README: 'identified with high confidence as Pablo Veyrat, co-founder of Angle Protocol and Merkl, named explicitly with this exact address by Morpho Association's own governance forum post proposing him as a multisig signer')","one_line_context":"Owner of both Morpho Blue's governance Safe (Base, World Chain, Fraxtal) and Angle Protocol's Guardian Safe (Optimism, Base, Celo) -- six Superchain Safe deployments plus both protocols' Ethereum mainnet Safes; Part 3 separately notes the same person (by name, not repeated address) also sits on Morpho Blue's DAO Safe on Arbitrum."},{"address":"0x9A73D57BB1fB280C5672A13f655675De25F13b70","display_name":"Unnamed (pseudonymous -- README gives no name or ENS, only the address)","protocols":["Compound III","Resolv"],"confidence":"Pseudonymous (README: 'the address recurs across protocols but no primary source ties it to a real name, so it's reported at address ... level only')","one_line_context":"Owner of both Compound III's Base Pause Guardian Safe and Resolv's Base and Soneium Token Owner Safes -- two protocols with no institutional relationship, surfaced by the research's own cross-reference logic."},{"address":"0xb291232F480F41c75802C4a60F1D2AC03404Afef","display_name":"Unnamed (pseudonymous -- README gives no name or ENS, only the address)","protocols":["Aave"],"confidence":"Pseudonymous (README explicitly calls this 'a pseudonymous signer')","one_line_context":"Confirmed on Aave's core Protocol Guardian Safe on four chains (Optimism, Base, Soneium, Celo) plus a separate cluster controlling four of Aave's Ink and Celo role-specific Safes (AFC, Budget Incentive, Ahab, Alc) -- seven Safe formations across five chains, all within Aave alone."}]};
+
+/* getOwners() has no arguments, so the call data is just the 4-byte selector. */
+var SELECTOR = '0xa0e67e2b';
+
+/* Public, no-key RPC endpoints. Tried in order; we move to the next one only
+   when a given endpoint fails to respond at all (network error, non-200,
+   unparseable body). The first endpoint that actually answers, including
+   with a revert, is treated as the answer and we stop there. */
+var RPC_ENDPOINTS = [
+  'https://ethereum-rpc.publicnode.com',
+  'https://eth.drpc.org',
+  'https://1rpc.io/eth'
+];
+
+var ADDRESS_RE = /^0x[a-fA-F0-9]{40}$/;
+
+var addressInput = document.getElementById('address-input');
+var checkBtn = document.getElementById('check-btn');
+var resultsEl = document.getElementById('results');
+
+function clear(el) {
+  el.textContent = '';
+}
+
+function setBusy(isBusy) {
+  checkBtn.disabled = isBusy;
+  checkBtn.textContent = isBusy ? 'Checking...' : 'Check';
+}
+
+/* Decodes a dynamic address[] ABI return value.
+   Layout: [offset (32B)] ... [length (32B)] [addr1 (32B)] [addr2 (32B)] ... */
+function decodeAddressArray(hexData) {
+  var data = hexData.indexOf('0x') === 0 ? hexData.slice(2) : hexData;
+  if (data.length < 128) {
+    throw new Error('return data too short to be an address[]');
+  }
+  var offsetWord = data.slice(0, 64);
+  var offset = parseInt(offsetWord, 16) * 2;
+  if (!(offset >= 0) || offset + 64 > data.length) {
+    throw new Error('invalid array offset in return data');
+  }
+  var lengthWord = data.slice(offset, offset + 64);
+  var length = parseInt(lengthWord, 16);
+  if (!(length >= 0) || length > 10000) {
+    throw new Error('invalid array length in return data');
+  }
+  var pos = offset + 64;
+  var owners = [];
+  for (var i = 0; i < length; i++) {
+    var word = data.slice(pos, pos + 64);
+    if (word.length < 64) {
+      throw new Error('return data truncated before end of array');
+    }
+    owners.push('0x' + word.slice(24));
+    pos += 64;
+  }
+  return owners;
+}
+
+/* Tries each RPC endpoint in order. Stops at the first one that actually
+   answers (whether that answer is owner data or a revert). Only advances
+   to the next endpoint on a network-level failure. */
+function ethCallGetOwners(address) {
+  var payload = JSON.stringify({
+    jsonrpc: '2.0',
+    id: 1,
+    method: 'eth_call',
+    params: [{ to: address, data: SELECTOR }, 'latest']
+  });
+
+  var i = 0;
+  var lastNetworkError = null;
+
+  function tryNext() {
+    if (i >= RPC_ENDPOINTS.length) {
+      var msg = 'No RPC endpoint responded';
+      if (lastNetworkError) {
+        msg += ': ' + lastNetworkError.message;
+      }
+      return Promise.reject(new Error(msg));
+    }
+    var endpoint = RPC_ENDPOINTS[i];
+    i++;
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload
+    }).then(function (resp) {
+      if (!resp.ok) {
+        lastNetworkError = new Error(endpoint + ' returned HTTP ' + resp.status);
+        return tryNext();
+      }
+      return resp.json().then(function (json) {
+        if (json && json.error) {
+          return { status: 'revert', message: json.error.message || 'execution reverted' };
+        }
+        if (!json || !json.result || json.result === '0x') {
+          return { status: 'revert', message: 'empty result' };
+        }
+        return { status: 'ok', data: json.result };
+      });
+    }, function (err) {
+      lastNetworkError = err;
+      return tryNext();
+    });
+  }
+
+  return tryNext();
+}
+
+function findMatches(owners) {
+  var matches = [];
+  for (var i = 0; i < owners.length; i++) {
+    var ownerLower = owners[i].toLowerCase();
+    for (var j = 0; j < FLAGGED_DATA.flagged_addresses.length; j++) {
+      var entry = FLAGGED_DATA.flagged_addresses[j];
+      if (entry.address.toLowerCase() === ownerLower) {
+        matches.push({ owner: owners[i], entry: entry });
+      }
+    }
+  }
+  return matches;
+}
+
+function appendExplorerLink(parent, address) {
+  var link = document.createElement('a');
+  link.href = 'https://etherscan.io/address/' + address;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.className = 'explorer-link';
+  link.textContent = 'View on Etherscan ↗';
+  parent.appendChild(link);
+}
+
+function buildFindingCard(owner, entry) {
+  var card = document.createElement('div');
+  card.className = 'finding-card';
+
+  var addrLine = document.createElement('div');
+  addrLine.className = 'finding-address';
+  addrLine.textContent = owner;
+  card.appendChild(addrLine);
+  appendExplorerLink(card, owner);
+
+  var nameLine = document.createElement('div');
+  nameLine.className = 'finding-name';
+  nameLine.textContent = entry.display_name;
+  card.appendChild(nameLine);
+
+  var protocolsLine = document.createElement('div');
+  protocolsLine.className = 'finding-protocols';
+  protocolsLine.textContent = 'Protocols: ' + entry.protocols.join(', ');
+  card.appendChild(protocolsLine);
+
+  var confidenceLine = document.createElement('div');
+  confidenceLine.className = 'finding-confidence';
+  confidenceLine.textContent = entry.confidence;
+  card.appendChild(confidenceLine);
+
+  var contextLine = document.createElement('div');
+  contextLine.className = 'finding-context';
+  contextLine.textContent = entry.one_line_context;
+  card.appendChild(contextLine);
+
+  return card;
+}
+
+function updateUrlAddress(address) {
+  var url = new URL(window.location.href);
+  url.searchParams.set('address', address);
+  window.history.replaceState(null, '', url.toString());
+}
+
+function clearUrlAddress() {
+  var url = new URL(window.location.href);
+  url.searchParams.delete('address');
+  window.history.replaceState(null, '', url.toString());
+}
+
+function appendCheckAnother() {
+  var wrap = document.createElement('div');
+  wrap.className = 'check-another';
+  var link = document.createElement('a');
+  link.href = '#';
+  link.textContent = 'Check another address';
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    addressInput.value = '';
+    clear(resultsEl);
+    clearUrlAddress();
+    addressInput.focus();
+  });
+  wrap.appendChild(link);
+  resultsEl.appendChild(wrap);
+}
+
+function renderResult(owners) {
+  clear(resultsEl);
+
+  var ownersBlock = document.createElement('div');
+  ownersBlock.className = 'owners-block';
+
+  var header = document.createElement('div');
+  header.className = 'owners-header';
+  header.textContent = owners.length === 1
+    ? 'Found 1 owner on this Safe:'
+    : 'Found ' + owners.length + ' owners on this Safe:';
+  ownersBlock.appendChild(header);
+
+  var list = document.createElement('ul');
+  list.className = 'owners-list';
+  for (var i = 0; i < owners.length; i++) {
+    var li = document.createElement('li');
+    li.className = 'owner-address';
+    var addrSpan = document.createElement('span');
+    addrSpan.textContent = owners[i];
+    li.appendChild(addrSpan);
+    appendExplorerLink(li, owners[i]);
+    list.appendChild(li);
+  }
+  ownersBlock.appendChild(list);
+  resultsEl.appendChild(ownersBlock);
+
+  var matches = findMatches(owners);
+  if (matches.length > 0) {
+    var matchesHeader = document.createElement('div');
+    matchesHeader.className = 'matches-header';
+    matchesHeader.textContent = matches.length === 1
+      ? 'One owner overlaps with an identity already public in this research:'
+      : matches.length + ' owners overlap with identities already public in this research:';
+    resultsEl.appendChild(matchesHeader);
+
+    for (var m = 0; m < matches.length; m++) {
+      resultsEl.appendChild(buildFindingCard(matches[m].owner, matches[m].entry));
+    }
+  } else {
+    var noMatch = document.createElement('div');
+    noMatch.className = 'no-match';
+    noMatch.textContent = 'No overlap with the identities already public in this research. This only checks the owners above against a short list of three addresses named in the public README, not the full 343-protocol, 570-Safe dataset behind the licensed method, so this result does not mean the Safe is clean or safe, only that it does not match this small public list.';
+    resultsEl.appendChild(noMatch);
+  }
+
+  appendCheckAnother();
+}
+
+function renderNotASafe() {
+  clear(resultsEl);
+  var msg = document.createElement('div');
+  msg.className = 'not-safe';
+  msg.textContent = "Couldn't read this as a Gnosis Safe. Either this address isn't a Safe, or it's running a version whose getOwners() call doesn't match what this tool expects.";
+  resultsEl.appendChild(msg);
+  appendCheckAnother();
+}
+
+function renderError(message) {
+  clear(resultsEl);
+  var msg = document.createElement('div');
+  msg.className = 'error-msg';
+  msg.textContent = message;
+  resultsEl.appendChild(msg);
+}
+
+function handleCheck() {
+  var raw = addressInput.value.trim();
+  clear(resultsEl);
+
+  if (!ADDRESS_RE.test(raw)) {
+    renderError('That does not look like an Ethereum address. Expected 0x followed by 40 hex characters.');
+    return;
+  }
+
+  setBusy(true);
+  ethCallGetOwners(raw).then(function (outcome) {
+    if (outcome.status === 'revert') {
+      renderNotASafe();
+      updateUrlAddress(raw);
+      return;
+    }
+    var owners;
+    try {
+      owners = decodeAddressArray(outcome.data);
+    } catch (decodeErr) {
+      renderNotASafe();
+      updateUrlAddress(raw);
+      return;
+    }
+    renderResult(owners);
+    updateUrlAddress(raw);
+  }).catch(function () {
+    renderError('Could not reach any RPC endpoint just now. Public endpoints occasionally rate-limit, try again in a moment.');
+  }).then(function () {
+    setBusy(false);
+  });
+}
+
+checkBtn.addEventListener('click', handleCheck);
+addressInput.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    handleCheck();
+  }
+});
+
+(function initFromUrl() {
+  var params = new URLSearchParams(window.location.search);
+  var addr = params.get('address');
+  if (addr && ADDRESS_RE.test(addr.trim())) {
+    addressInput.value = addr.trim();
+    handleCheck();
+  }
+})();
+</script>
+</body>
+</html>
