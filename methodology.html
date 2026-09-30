@@ -4,25 +4,29 @@
 <meta charset="UTF-8">
 <script>(function(){try{var t=localStorage.getItem('spap-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Methodology &amp; Disclaimer — Spap</title>
+<title>Methodology, Disclaimer &amp; License | Spap</title>
 <meta name="description" content="Shared methodology, disclaimer, and licensing notes referenced by every repo in Spap's on-chain research program.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://realspap.github.io/methodology.html">
-<meta property="og:title" content="Methodology &amp; Disclaimer — Spap">
+<meta property="og:title" content="Methodology, Disclaimer &amp; License | Spap">
 <meta property="og:description" content="Shared methodology, disclaimer, and licensing notes referenced by every repo in Spap's on-chain research program.">
 <meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Methodology &amp; Disclaimer — Spap">
+<meta name="twitter:title" content="Methodology, Disclaimer &amp; License | Spap">
 <meta name="twitter:description" content="Shared methodology, disclaimer, and licensing notes referenced by every repo in Spap's on-chain research program.">
 <meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://realspap.github.io/methodology.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <style>
-  /* ---------- design tokens — light (default) ---------- */
+  /* ---------- design tokens, light (default) ---------- */
   :root{
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
     --bg:#f6f4ef;
     --bg-alt:#efebe1;
     --surface:#ffffff;
@@ -97,7 +101,7 @@
     margin:0;
     background:var(--bg);
     color:var(--text);
-    font-family:"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family:var(--font-sans);
     font-size:16px;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
@@ -115,7 +119,7 @@
     position:absolute; left:1rem; top:-3rem;
     background:var(--gold-text); color:#fff;
     padding:.7rem 1.1rem; border-radius:6px;
-    font-family:"IBM Plex Mono",monospace; font-size:.85rem; font-weight:600;
+    font-family:var(--font-mono); font-size:.85rem; font-weight:600;
     text-decoration:none; z-index:1000;
     transition:top .15s var(--ease);
   }
@@ -127,8 +131,8 @@
     border-radius:4px;
   }
 
-  .font-display{ font-family:"Fraunces", Georgia, "Times New Roman", serif; }
-  .font-mono{ font-family:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace; }
+  .font-display{ font-family:var(--font-display); }
+  .font-mono{ font-family:var(--font-mono); }
 
   .wrap{ max-width:780px; margin:0 auto; padding:0 1.5rem; }
 
@@ -152,10 +156,10 @@
     padding:.4rem .2rem;
   }
   .brand-mark{
-    font-family:"Fraunces", serif; font-weight:700; font-size:1.28rem; letter-spacing:-.01em;
+    font-family:var(--font-display); font-weight:700; font-size:1.28rem; letter-spacing:-.01em;
   }
   .brand-tag{
-    font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.09em;
+    font-family:var(--font-mono); font-size:.68rem; letter-spacing:.09em;
     text-transform:uppercase; color:var(--text-muted);
     display:none;
   }
@@ -196,11 +200,11 @@
   /* ---------- page content ---------- */
   .page-header{ padding:3rem 0 1.5rem; border-bottom:1px solid var(--border); }
   .section-eyebrow{
-    font-family:"IBM Plex Mono",monospace; font-size:.78rem; letter-spacing:.14em;
+    font-family:var(--font-mono); font-size:.78rem; letter-spacing:.14em;
     text-transform:uppercase; color:var(--gold-text); font-weight:600; margin-bottom:.9rem;
   }
   .page-header h1{
-    font-family:"Fraunces", serif; font-weight:600;
+    font-family:var(--font-display); font-weight:600;
     font-size:clamp(2rem, 4.5vw, 2.8rem);
     letter-spacing:-.01em;
     margin-bottom:1rem;
@@ -214,7 +218,7 @@
   .doc-section{ margin-bottom:2.75rem; }
   .doc-section:last-child{ margin-bottom:0; }
   .doc-section h2{
-    font-family:"Fraunces", serif; font-weight:600;
+    font-family:var(--font-display); font-weight:600;
     font-size:clamp(1.4rem,2.6vw,1.7rem); letter-spacing:-.01em;
     margin-bottom:1rem;
     padding-top:1.75rem;
@@ -241,7 +245,7 @@
     display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
     gap:1rem;
   }
-  .footer-brand{ font-family:"Fraunces",serif; font-weight:600; font-size:1.05rem; }
+  .footer-brand{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; }
   .footer-links{ display:flex; flex-wrap:wrap; gap:.3rem; }
   .footer-links a{
     display:inline-flex; align-items:center; min-height:24px;
@@ -275,7 +279,7 @@
   <div class="wrap">
     <p class="section-eyebrow">Reference document</p>
     <h1>Methodology, Disclaimer &amp; License</h1>
-    <p class="page-intro">Shared methodology, disclaimer, and licensing notes referenced by every repo in this program — corrected in one place.</p>
+    <p class="page-intro">Shared methodology, disclaimer, and licensing notes referenced by every repo in this program, corrected in one place.</p>
   </div>
 </div>
 
@@ -284,18 +288,18 @@
 
     <section class="doc-section">
       <h2>About this research program</h2>
-      <p>An ongoing program of independent on-chain research, same discipline throughout: primary-source anchors, on-chain reconstruction, corrections issued openly when something's found wrong. Ongoing work: <a href="https://x.com/RealSpap">X</a>. Want this method for your own protocol or portfolio? DM <a href="https://x.com/RealSpap">@RealSpap</a>.</p>
+      <p>An ongoing program of independent on-chain research, same discipline throughout: primary-source anchors, on-chain reconstruction, corrections issued openly when something's found wrong. Findings and on-chain sources are always public; the verification method is available under license. Ongoing work: <a href="https://x.com/RealSpap">X</a>. Want this method for your own protocol or portfolio? DM <a href="https://x.com/RealSpap">@RealSpap</a>.</p>
     </section>
 
     <section class="doc-section">
       <h2>Disclaimer</h2>
-      <p>Independent, factual analysis of public on-chain data as of the date noted in each repo's Status/Method section. Role claims (admin, multisig, governance, infrastructure) come solely from on-chain records and cited public sources — not allegations of wrongdoing, fraud, or illegal conduct. Concentration of control or key-holder identity is reported as a structural fact, not a moral or legal judgment. Findings are a snapshot; on-chain state changes after publication and reports aren't auto-updated. Independent research, not commissioned or audited by any protocol, builder, or relay discussed; not legal, financial, or investment advice. Believe something here is inaccurate? Contact via <a href="https://x.com/RealSpap">X</a> with evidence and it's corrected promptly. Verify all cited addresses, transactions, and figures independently.</p>
+      <p>Independent, factual analysis of public on-chain data as of the date noted in each repo's Status/Method section. Role claims (admin, multisig, governance, infrastructure) come solely from on-chain records and cited public sources; they are not allegations of wrongdoing, fraud, or illegal conduct. Concentration of control or key-holder identity is reported as a structural fact, not a moral or legal judgment. Findings are a snapshot; on-chain state changes after publication and reports aren't auto-updated. Independent research, not commissioned or audited by any protocol or team discussed; not legal, financial, or investment advice. Believe something here is inaccurate? Contact via <a href="https://x.com/RealSpap">X</a> with evidence and it's corrected promptly. Verify all cited addresses, transactions, and figures independently.</p>
       <p>onchain-postmortems uses its own disclaimer, tailored to individual exploit reconstructions rather than portfolio-wide screening; see that repo's own Disclaimer section.</p>
     </section>
 
     <section class="doc-section">
       <h2>License note</h2>
-      <p>Unless a repo states otherwise, findings are documented under all-rights-reserved licensing; the underlying verification method/tool is available under a separate commercial license — see each repo's own License section for specifics. onchain-postmortems is the exception: MIT licensed in full, including its reconstruction scripts, since reproducibility on already-public historical incidents is the point.</p>
+      <p>Unless a repo states otherwise, findings are documented under all-rights-reserved licensing; the underlying verification method/tool is available under a separate commercial license; see each repo's own License section for specifics. onchain-postmortems is the exception: MIT licensed in full, including its reconstruction scripts, since reproducibility on already-public historical incidents is the point.</p>
     </section>
 
   </div>
@@ -304,7 +308,7 @@
 <footer>
   <div class="wrap footer-inner">
     <span class="footer-brand">Spap</span>
-    <nav class="footer-links" aria-label="Social">
+    <nav class="footer-links" aria-label="Footer">
       <a href="https://realspap.github.io/">All projects</a>
       <a href="https://github.com/RealSpap">GitHub ↗</a>
       <a href="https://x.com/RealSpap">X ↗</a>

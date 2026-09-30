@@ -5,27 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E">
 <title>Admin Key Checker</title>
-<meta name="description" content="Checks whether a contract's admin role is a single externally-owned account able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
+<meta name="description" content="Checks whether a contract's admin role sits with a single key (a bare EOA or a 1-of-N Safe) able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://realspap.github.io/tools/admin-key-checker.html">
-<meta property="og:title" content="Admin Key Checker — Spap">
-<meta property="og:description" content="Checks whether a contract's admin role is a single externally-owned account able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
+<meta property="og:title" content="Admin Key Checker | Spap">
+<meta property="og:description" content="Checks whether a contract's admin role sits with a single key (a bare EOA or a 1-of-N Safe) able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
 <meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Admin Key Checker — Spap">
-<meta name="twitter:description" content="Checks whether a contract's admin role is a single externally-owned account able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
+<meta name="twitter:title" content="Admin Key Checker | Spap">
+<meta name="twitter:description" content="Checks whether a contract's admin role sits with a single key (a bare EOA or a 1-of-N Safe) able to mint, pause, or redirect funds, the same pattern behind Wasabi Protocol's $5.9M loss.">
 <meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script>(function(){try{var t=localStorage.getItem('spap-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <style>
-  /* Mêmes jetons de couleur que realspap.github.io -- noms de variables
-     inchangés (dont crit/high/med/low, sémantiques, non touchés), seules les
-     valeurs de marque ont bougé. */
+  /* Same color tokens as the main site. */
   :root {
     --bg: #f6f4ef;
     --panel: #ffffff;
@@ -36,9 +31,9 @@
     --accent: #8a5f22;
     --accent-dim: rgba(168,120,48,.35);
     --on-accent: #fefcf7;
-    --mono: "IBM Plex Mono", "SF Mono", "Menlo", "Consolas", monospace;
-    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --display: ui-serif, Georgia, "Times New Roman", serif;
     --crit: #b23b3b;
     --high: #b5772c;
     --med: #8a7c1f;
@@ -440,17 +435,17 @@
 .tools-nav .tn-sep{margin:0 8px;opacity:.5}
 </style>
 <header>
-  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Basculer le thème clair/sombre">
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">
     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
   </button>
-  <div class="eyebrow">defi-admin-key-risk</div>
+  <div class="eyebrow">DeFi admin-key research</div>
   <div class="hero-stat">
-    <div class="hero-number">21</div>
-    <div class="hero-caption">admin-key risk cases confirmed across 95+ DeFi protocols and vault owners checked on-chain, several repeating Wasabi Protocol's <strong>$5.9M</strong> loss.</div>
+    <div class="hero-number">23</div>
+    <div class="hero-caption">single-key admin cases (2 Critical, 6 High, 7 Medium, 8 Low) among 99 DeFi protocols and Morpho vault owners checked by hand on-chain. The same pattern was behind Wasabi Protocol's <strong>$5.9M</strong> loss.</div>
   </div>
   <h1>Check your protocol's admin key</h1>
-  <p>Paste a contract address. This runs the same owner-resolution and Safe-detection method used across the research, live, against public RPCs, in your browser. Nothing is sent to any server other than the RPC endpoints below.</p>
+  <p>Paste a contract address on Ethereum mainnet. This runs a simplified, free subset of the research method, live in your browser: owner(), admin(), the standard proxy admin and beacon slots, and the owners and threshold of any Safe found. It does not read role-based access control (AccessControl) or immutable proxy admins. When you press Check, the address is sent only to the three public RPC endpoints named at the bottom of this page. The page loads no third-party fonts, scripts or trackers.</p>
   <p><a href="https://github.com/RealSpap/defi-admin-key-risk-showcase" target="_blank" rel="noopener">github.com/RealSpap/defi-admin-key-risk-showcase</a></p>
 </header>
 
@@ -462,7 +457,7 @@
   </div>
   <div id="input-error" class="error-line" hidden></div>
   <div id="status" hidden></div>
-  <div class="hint">No wallet connection needed. Read-only calls to public no-key RPC endpoints.</div>
+  <div class="hint">Ethereum mainnet only. No wallet connection needed. Read-only calls to public no-key RPC endpoints.</div>
 </div>
 
 <div id="result-panel" class="panel result-panel">
@@ -473,53 +468,52 @@
 </div>
 
 <div class="panel">
-  <h2>Other known cases in this dataset</h2>
+  <h2>Known cases matched by this tool</h2>
   <div id="other-cases-list" class="other-cases-list"></div>
   <div class="other-cases-note" id="ens-note"></div>
 </div>
 
 <div class="panel">
   <p class="disclaimer">
-    This free check classifies the admin pattern only: renounced, bare EOA, 1-of-N Safe, real multisig, or a contract that needs a manual look. It does not chase a hit to a dollar figure and it does not check for documented third-party targeting. The licensed research method does both of those for every bare-EOA and 1-of-N-Safe result it flags, which is how the Critical / High / Medium / Low severity calls in the published cases are made. Questions or access to the full method: <a href="https://x.com/RealSpap" target="_blank" rel="noopener">x.com/RealSpap</a>.
+    This free check classifies the admin pattern only: bare EOA, 1-of-N Safe, real multisig, renounced, or a contract that needs a manual look. When it cannot verify (an RPC error), it says so and gives no verdict. It does not chase a hit to a dollar figure and it does not check for documented third-party targeting. The licensed research method does both of those for every bare-EOA and 1-of-N-Safe result it flags, which is how the Critical / High / Medium / Low severity calls in the published cases are made. Questions or access to the full method: <a href="https://x.com/RealSpap" target="_blank" rel="noopener">x.com/RealSpap</a>.
   </p>
 </div>
 
-<footer>Static page. No account, no email capture, no API key required to run this check.</footer>
+<footer>Static page. No account, no email capture, no API key required to run this check. RPC endpoints called from your browser, in this order: ethereum-rpc.publicnode.com, eth.drpc.org, 1rpc.io.</footer>
 
 <script>
 (function () {
   "use strict";
 
   /* ---------------------------------------------------------------------
-   * Method, matching the research's published methodology exactly:
+   * Method (a simplified, free subset of the research method):
    *
-   *  a) eth_call owner() [0x8da5cb5b] on the input contract.
-   *     If it reverts (or returns nothing decodable), fall back to
-   *     admin() [0xf851a440] (the EIP-1967-style transparent proxy admin
-   *     getter). If both fail, or the resolved address is 0x0, the
-   *     contract is classified Renounced (0x0).
+   *  1. eth_getCode on the input address. No code means it is not a
+   *     contract on Ethereum mainnet (a wallet, a typo, or a contract
+   *     that only exists on another chain): no verdict about keys.
+   *  2. Read, on the input contract: owner() [0x8da5cb5b], admin()
+   *     [0xf851a440], the EIP-1967 admin, beacon and implementation
+   *     slots, and the legacy ZeppelinOS admin and implementation slots.
+   *  3. Every non-zero address found is a key. Each key is classified:
+   *     no code = bare EOA; getOwners() + getThreshold() answer = Safe
+   *     (threshold 0 = uninitialized, 1 = 1-of-N, 2+ = multisig); other
+   *     code = one level of owner() is followed (ProxyAdmin, beacon),
+   *     otherwise "other contract, needs manual review".
+   *  4. "Renounced" only when a getter explicitly returns 0x0 and no
+   *     proxy admin or beacon is stored. No getter and no proxy admin
+   *     at all = "unknown, needs manual review", never "renounced".
    *
-   *  b) eth_getCode on the resolved controlling address. Empty code
-   *     ("0x") means the controller is a Bare EOA.
+   * Not covered: role-based access control (OpenZeppelin AccessControl),
+   * immutable proxy admins, modules, other chains.
    *
-   *  c) If the controller has code, try getOwners() [0xa0e67e2b] and
-   *     getThreshold() [0xe75235b8] on it (the same Gnosis Safe calls
-   *     used elsewhere in this research). Both succeeding means it's a
-   *     Safe: threshold == 1 is classified 1-of-N Safe, threshold >= 2
-   *     is classified as a real multisig.
-   *
-   *  d) If it has code but both Safe calls revert, it's classified
-   *     Other contract (Timelock or custom governance module) and this
-   *     tool says plainly it can't classify it further.
-   *
-   * RPC fallback list (no key, tried in this order, per call, only
-   * advancing to the next URL when a URL is unreachable or returns a
-   * malformed response -- a JSON-RPC error such as a revert is treated
-   * as a real answer, not a reason to try the next endpoint):
-   *   1. https://ethereum-rpc.publicnode.com
-   *   2. https://eth.drpc.org
-   *   3. https://1rpc.io/eth
+   * Errors: a revert (JSON-RPC code 3, "execution reverted", invalid
+   * opcode...) is an answer about the contract. Any other JSON-RPC error
+   * (rate limit, node error), HTTP error, timeout or malformed body is
+   * NOT an answer: the next endpoint is tried, and if all fail the check
+   * stops with "could not verify" instead of guessing a verdict.
    * ------------------------------------------------------------------- */
+
+  /* ==== CORE START (pure logic, no DOM) ==== */
 
   var RPC_URLS = [
     "https://ethereum-rpc.publicnode.com",
@@ -534,36 +528,15 @@
     getThreshold: "0xe75235b8"
   };
 
-  var ZERO_ADDRESS = "0x0000000000000000000000000000000000000000".slice(0, 42);
+  var SLOTS = {
+    eip1967Admin: "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+    eip1967Impl: "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+    eip1967Beacon: "0xa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d50",
+    zosAdmin: "0x10d6a54a4754c8869d6886b5f5d7fbfa5b4522237ea5c60d11bc4e7a1ff9390b",
+    zosImpl: "0x7050c9e0f4ca769c69bd3a8ef740bc37934f8e2c036e5a723fd8ee048ed3f8c3"
+  };
 
-  /* ---------------------------------------------------------------------
-   * Embedded dataset, byte-for-byte as supplied for this tool. Nothing
-   * added, nothing removed, no field altered.
-   * ------------------------------------------------------------------- */
-  var DATASET = {"known_identifiers":[{"identifier":"tokenworks.eth","display_name":"tokenworks.eth","severity":"Critical","one_line_context":"owner() on the Fake World Assets (FWA) token resolves to this bare EOA, tagged tokenworks.eth on Etherscan and matching the project's own declared Twitter handle (token_works), so it is the team's own key with real control over redirecting purchase proceeds."},{"identifier":"sifu.eth","display_name":"sifu.eth","severity":"High","one_line_context":"The UwU Lend governance/reward token's owner() is this bare EOA, publicly identified (via CoinDesk, Unchained, Protos, and ZachXBT's January 2022 doxxing) as Michael Patryn, co-founder of the collapsed QuadrigaCX exchange, and it still holds onlyOwner mint/burn power over the token more than a year after UwU's 2024 hack."},{"identifier":"wasabideployer.eth","display_name":"wasabideployer.eth","severity":"Not rated -- this is the Wasabi Protocol anchor incident described in 'What happened', not one of the 12 cases in the severity table, so the README assigns it no Critical/High/Medium/Low grade.","one_line_context":"On 2026-04-30 an attacker compromised this key's private key, which held unchecked admin authority (no multisig, no timelock) over every one of Wasabi Protocol's upgradeable vaults, causing the ~$5.9M loss across Ethereum, Base, Berachain and Blast that anchors this research."}],"truncated_addresses_excluded_count":4};
-
-  /* ---------------------------------------------------------------------
-   * ENS handling decision (stated here and repeated in the tool's
-   * summary): every identifier in the embedded dataset above is an ENS
-   * name (tokenworks.eth, sifu.eth, wasabideployer.eth), not a raw
-   * address. Matching an ENS name against a resolved 0x address requires
-   * either forward-resolving the name (namehash + ENS Registry + a
-   * resolver call, which needs a correct keccak-256 implementation) or
-   * reverse-resolving the address (reverse registrar + resolver call).
-   * Both are doable against the same no-key RPCs in principle, but
-   * hand-rolling keccak-256 and the resolver ABI without a library, in a
-   * single static file, is exactly the kind of thing that is easy to get
-   * subtly wrong and hard to verify from a code read alone.
-   *
-   * Chosen approach: skip auto-matching ENS-named entries. The dataset's
-   * generic matcher below (findAddressMatches) only ever compares
-   * identifiers that are themselves raw 0x addresses against the
-   * resolved controller and the input address, so it stays correct and
-   * future-proof if the dataset ever gains raw-address entries. Every
-   * entry that is an ENS name (all three, in this dataset) is instead
-   * always rendered in the "Other known cases in this dataset" panel
-   * for context, never claimed as an automatic match.
-   * ------------------------------------------------------------------- */
+  var usedUrls = [];
 
   function isValidAddress(str) {
     return typeof str === "string" && /^0x[0-9a-fA-F]{40}$/.test(str);
@@ -573,12 +546,11 @@
     return typeof addr === "string" && /^0x0{40}$/i.test(addr);
   }
 
-  function short(addr) {
-    if (!isValidAddress(addr)) return addr;
-    return addr.slice(0, 6) + "..." + addr.slice(-4);
+  // An EIP-7702 delegation designator (0xef0100 + address) is the code of
+  // a key-controlled account, not of a contract.
+  function isDelegatedEoaCode(code) {
+    return /^0xef0100[0-9a-fA-F]{40}$/.test(code);
   }
-
-  /* ---- JSON-RPC ---------------------------------------------------- */
 
   function rpcRequest(url, method, params) {
     var controller = new AbortController();
@@ -589,55 +561,83 @@
       body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: method, params: params }),
       signal: controller.signal
     }).then(function (res) {
-      clearTimeout(timeout);
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
     }).finally(function () { clearTimeout(timeout); });
   }
 
-  // Tries each RPC URL in order. A URL that responds at all (even with a
-  // JSON-RPC error, e.g. a revert) ends the attempt for this call: that
-  // is a real answer, not an endpoint failure. Only a network failure,
-  // timeout, non-2xx HTTP status, or unparsable body advances to the
-  // next URL in the list.
+  // A failed execution is a real answer about the contract. Rate limits,
+  // node errors and anything else are not.
+  function isExecutionError(err) {
+    if (!err) return false;
+    if (err.code === 3) return true;
+    return /revert|invalid opcode|out of gas|stack underflow|stack overflow|invalid jump/i.test(String(err.message || ""));
+  }
+
   function rpcCall(method, params) {
     var i = 0;
+    var lastErr = null;
     function attempt() {
       if (i >= RPC_URLS.length) {
-        return Promise.reject(new Error("All RPC endpoints failed or were unreachable."));
+        return Promise.reject(new Error("every public RPC endpoint failed (last: " + (lastErr ? lastErr.message : "no answer") + ")"));
       }
       var url = RPC_URLS[i];
       i += 1;
       return rpcRequest(url, method, params).then(function (json) {
         if (json && json.error) {
-          return { ok: false, error: json.error, url: url };
+          if (isExecutionError(json.error)) {
+            if (usedUrls.indexOf(url) === -1) usedUrls.push(url);
+            return { reverted: true, result: null };
+          }
+          lastErr = new Error(url + ": " + (json.error.message || ("JSON-RPC error " + json.error.code)));
+          return attempt();
         }
-        return { ok: true, result: json ? json.result : null, url: url };
-      }).catch(function () {
+        if (!json || typeof json.result !== "string" || !/^0x[0-9a-fA-F]*$/.test(json.result)) {
+          lastErr = new Error(url + ": malformed response");
+          return attempt();
+        }
+        if (usedUrls.indexOf(url) === -1) usedUrls.push(url);
+        return { reverted: false, result: json.result };
+      }, function (e) {
+        lastErr = new Error(url + ": " + (e && e.message ? e.message : "unreachable"));
         return attempt();
       });
     }
     return attempt();
   }
 
+  // Returns the raw return data, or null for a revert or empty return.
   function ethCall(to, selector) {
     return rpcCall("eth_call", [{ to: to, data: selector }, "latest"]).then(function (res) {
-      if (!res.ok) return { data: null, url: res.url };
-      if (!res.result || res.result === "0x") return { data: null, url: res.url };
-      return { data: res.result, url: res.url };
+      if (res.reverted || res.result === "0x") return null;
+      return res.result;
     });
   }
 
-  /* ---- ABI decoding (minimal, hand-rolled, no library) -------------- */
+  function getCode(addr) {
+    return rpcCall("eth_getCode", [addr, "latest"]).then(function (res) {
+      if (res.reverted) throw new Error("eth_getCode returned an execution error");
+      return res.result;
+    });
+  }
+
+  // Address stored in a storage slot, or null when the slot is empty.
+  function getSlotAddress(addr, slot) {
+    return rpcCall("eth_getStorageAt", [addr, slot, "latest"]).then(function (res) {
+      var h = (res.result || "").replace(/^0x/, "");
+      if (res.reverted || h.length !== 64) throw new Error("eth_getStorageAt returned an unexpected value");
+      var a = "0x" + h.slice(24);
+      return isZeroAddress(a) ? null : a;
+    });
+  }
 
   function decodeAddress(hex) {
     if (!hex) return null;
     var h = hex.replace(/^0x/, "");
     if (h.length < 64) return null;
     var word = h.slice(0, 64);
-    var addrHex = word.slice(24);
-    if (!/^[0-9a-fA-F]{40}$/.test(addrHex)) return null;
-    return "0x" + addrHex;
+    if (!/^0{24}[0-9a-fA-F]{40}$/.test(word)) return null;
+    return "0x" + word.slice(24);
   }
 
   function decodeUint(hex) {
@@ -651,107 +651,136 @@
     }
   }
 
+  // null when the data is not a well-formed address[].
   function decodeAddressArray(hex) {
-    if (!hex) return [];
+    if (!hex) return null;
     var h = hex.replace(/^0x/, "");
-    if (h.length < 128) return [];
-    try {
-      var offsetWords = parseInt(h.slice(0, 64), 16);
-      var lenStart = offsetWords * 2;
-      if (lenStart + 64 > h.length) return [];
-      var length = parseInt(h.slice(lenStart, lenStart + 64), 16);
-      var owners = [];
-      for (var i = 0; i < length; i++) {
-        var start = lenStart + 64 + i * 64;
-        if (start + 64 > h.length) break;
-        var word = h.slice(start, start + 64);
-        owners.push("0x" + word.slice(24));
-      }
-      return owners;
-    } catch (e) {
-      return [];
+    if (h.length < 128) return null;
+    var lenStart = parseInt(h.slice(0, 64), 16) * 2;
+    if (!(lenStart >= 0) || lenStart + 64 > h.length) return null;
+    var length = parseInt(h.slice(lenStart, lenStart + 64), 16);
+    if (!(length >= 0) || lenStart + 64 + length * 64 > h.length) return null;
+    var owners = [];
+    for (var i = 0; i < length; i++) {
+      var start = lenStart + 64 + i * 64;
+      owners.push("0x" + h.slice(start + 24, start + 64));
     }
+    return owners;
   }
 
-  /* ---- Classification ------------------------------------------------ */
-
-  function classify(address) {
-    var trace = { rpcUrlsUsed: [] };
-
-    function noteUrl(u) {
-      if (u && trace.rpcUrlsUsed.indexOf(u) === -1) trace.rpcUrlsUsed.push(u);
-    }
-
-    return ethCall(address, SELECTORS.owner).then(function (ownerRes) {
-      noteUrl(ownerRes.url);
-      var controller = decodeAddress(ownerRes.data);
-      var controllerSource = controller ? "owner()" : null;
-
-      var afterOwner = controller
-        ? Promise.resolve({ controller: controller, controllerSource: controllerSource })
-        : ethCall(address, SELECTORS.admin).then(function (adminRes) {
-            noteUrl(adminRes.url);
-            var adminAddr = decodeAddress(adminRes.data);
-            return { controller: adminAddr, controllerSource: adminAddr ? "admin()" : null };
-          });
-
-      return afterOwner.then(function (resolved) {
-        if (!resolved.controller || isZeroAddress(resolved.controller)) {
+  // Classifies one key. depth 0 may follow one owner() hop (ProxyAdmin,
+  // beacon, ownable wrapper); depth 1 never follows further.
+  function classifyKey(addr, depth) {
+    return getCode(addr).then(function (code) {
+      if (code === "0x") return { category: "eoa", address: addr };
+      if (isDelegatedEoaCode(code)) return { category: "eoa", address: addr, delegated: true };
+      return Promise.all([
+        ethCall(addr, SELECTORS.getOwners),
+        ethCall(addr, SELECTORS.getThreshold)
+      ]).then(function (r) {
+        var owners = decodeAddressArray(r[0]);
+        var threshold = decodeUint(r[1]);
+        if (owners && threshold !== null) {
           return {
-            category: "renounced",
-            controller: resolved.controller || ZERO_ADDRESS,
-            controllerSource: resolved.controllerSource,
-            trace: trace
+            category: threshold === 0n ? "safe0" : (threshold === 1n ? "safe1" : "safeN"),
+            address: addr,
+            threshold: threshold.toString(),
+            owners: owners
           };
         }
-
-        return rpcCall("eth_getCode", [resolved.controller, "latest"]).then(function (codeRes) {
-          noteUrl(codeRes.url);
-          var code = codeRes.ok ? codeRes.result : "0x";
-
-          if (!code || code === "0x") {
-            return {
-              category: "eoa",
-              controller: resolved.controller,
-              controllerSource: resolved.controllerSource,
-              trace: trace
-            };
+        if (depth > 0) return { category: "other", address: addr };
+        return ethCall(addr, SELECTORS.owner).then(function (ownerData) {
+          var inner = decodeAddress(ownerData);
+          if (!inner || isZeroAddress(inner) || inner.toLowerCase() === addr.toLowerCase()) {
+            return { category: "other", address: addr };
           }
-
-          return Promise.all([
-            ethCall(resolved.controller, SELECTORS.getOwners),
-            ethCall(resolved.controller, SELECTORS.getThreshold)
-          ]).then(function (results) {
-            var ownersRes = results[0];
-            var thresholdRes = results[1];
-            noteUrl(ownersRes.url);
-            noteUrl(thresholdRes.url);
-
-            if (ownersRes.data && thresholdRes.data) {
-              var threshold = decodeUint(thresholdRes.data);
-              var owners = decodeAddressArray(ownersRes.data);
-              if (threshold !== null) {
-                return {
-                  category: threshold === 1n ? "safe1" : "safeN",
-                  controller: resolved.controller,
-                  controllerSource: resolved.controllerSource,
-                  threshold: threshold.toString(),
-                  owners: owners,
-                  trace: trace
-                };
-              }
-            }
-
+          return classifyKey(inner, depth + 1).then(function (k) {
             return {
-              category: "other",
-              controller: resolved.controller,
-              controllerSource: resolved.controllerSource,
-              trace: trace
+              category: k.category,
+              address: addr,
+              inner: k.address,
+              threshold: k.threshold,
+              owners: k.owners
             };
           });
         });
       });
     });
+  }
+
+  var RANK = { eoa: 6, safe0: 6, safe1: 5, other: 3, safeN: 1 };
+
+  function classify(address) {
+    usedUrls = [];
+    return getCode(address).then(function (code) {
+      if (code === "0x" || isDelegatedEoaCode(code)) {
+        return { category: "notcontract", keys: [], implementation: null, delegated: code !== "0x", rpcUrlsUsed: usedUrls.slice() };
+      }
+      return Promise.all([
+        ethCall(address, SELECTORS.owner),
+        ethCall(address, SELECTORS.admin),
+        getSlotAddress(address, SLOTS.eip1967Admin),
+        getSlotAddress(address, SLOTS.zosAdmin),
+        getSlotAddress(address, SLOTS.eip1967Beacon),
+        getSlotAddress(address, SLOTS.eip1967Impl),
+        getSlotAddress(address, SLOTS.zosImpl)
+      ]).then(function (r) {
+        var ownerAddr = decodeAddress(r[0]);
+        var adminAddr = decodeAddress(r[1]);
+        var explicitZero = isZeroAddress(ownerAddr) || isZeroAddress(adminAddr);
+        var found = [];
+        function add(role, a) {
+          if (!a || isZeroAddress(a)) return;
+          for (var j = 0; j < found.length; j++) {
+            if (found[j].address.toLowerCase() === a.toLowerCase()) {
+              found[j].roles.push(role);
+              return;
+            }
+          }
+          found.push({ address: a, roles: [role] });
+        }
+        add("owner()", ownerAddr);
+        add("admin()", adminAddr);
+        add("Upgrade admin (EIP-1967 admin slot)", r[2]);
+        add("Upgrade admin (legacy ZeppelinOS admin slot)", r[3]);
+        add("Upgrade beacon (EIP-1967 beacon slot)", r[4]);
+        var implementation = r[5] || r[6] || null;
+
+        return Promise.all(found.map(function (f) { return classifyKey(f.address, 0); })).then(function (keys) {
+          keys.forEach(function (k, idx) { k.roles = found[idx].roles; });
+          var category;
+          if (!keys.length) {
+            category = explicitZero ? "renounced" : "unknown";
+          } else {
+            category = keys.reduce(function (worst, k) {
+              return RANK[k.category] > RANK[worst] ? k.category : worst;
+            }, keys[0].category);
+          }
+          return { category: category, keys: keys, implementation: implementation, rpcUrlsUsed: usedUrls.slice() };
+        });
+      });
+    });
+  }
+
+  /* ==== CORE END ==== */
+
+  /* ---------------------------------------------------------------------
+   * Case dataset (from the showcase README).
+   * ------------------------------------------------------------------- */
+  var DATASET = {"known_identifiers":[{"identifier":"tokenworks.eth","display_name":"tokenworks.eth","severity":"Critical","one_line_context":"owner() on the Fake World Assets (FWA) token resolves to this bare EOA, tagged tokenworks.eth on Etherscan and matching the project's own declared Twitter handle (token_works), so it is the team's own key with real control over redirecting purchase proceeds."},{"identifier":"sifu.eth","display_name":"sifu.eth","severity":"High","one_line_context":"The UwU Lend governance/reward token's owner() is this bare EOA, tagged sifu.eth and publicly associated with the project's founder; it still holds onlyOwner mint/burn power over the token more than a year after UwU's 2024 hack."},{"identifier":"wasabideployer.eth","display_name":"wasabideployer.eth","severity":"Not rated: this is the Wasabi Protocol anchor incident, not one of the 23 cases in the severity table.","one_line_context":"On 2026-04-30 an attacker compromised this key's private key, which held unchecked admin authority (no multisig, no timelock) over every one of Wasabi Protocol's upgradeable vaults, causing the ~$5.9M loss across Ethereum, Base, Berachain and Blast that anchors this research."}],"truncated_addresses_excluded_count":4};
+
+  /* ENS names in the dataset, forward-resolved on Ethereum mainnet on
+   * 2026-09-30, kept only where the address's reverse record returns the
+   * same name. Used for matching only. wasabideployer.eth has no reverse
+   * record, so it is not matched automatically. */
+  var ENS_RESOLVED = {
+    "tokenworks.eth": "0x019817aD02a31B990433542097bE29D97613E8Cb",
+    "sifu.eth": "0x5DD596C901987A2b28C38A9C1DfBf86fFFc15d77"
+  };
+
+  function entryAddress(item) {
+    if (isValidAddress(item.identifier)) return item.identifier;
+    return ENS_RESOLVED[item.identifier] || null;
   }
 
   /* ---- Dataset matching ---------------------------------------------- */
@@ -760,13 +789,8 @@
     if (!isValidAddress(addr)) return [];
     var normalized = addr.toLowerCase();
     return DATASET.known_identifiers.filter(function (item) {
-      return isValidAddress(item.identifier) && item.identifier.toLowerCase() === normalized;
-    });
-  }
-
-  function ensNamedEntries() {
-    return DATASET.known_identifiers.filter(function (item) {
-      return !isValidAddress(item.identifier);
+      var a = entryAddress(item);
+      return a !== null && a.toLowerCase() === normalized;
     });
   }
 
@@ -789,11 +813,9 @@
   }
 
   // Severity badges are a compact pill meant for a one-word label
-  // (Critical/High/Medium/Low). One dataset entry (wasabideployer.eth)
-  // carries a long explanatory sentence in its severity field instead,
-  // because it's the anchor incident, not one of the 12 rated cases.
-  // The badge shows a short label; the full original text is still
-  // shown in full below it (via renderDatasetEntry), never dropped.
+  // (Critical/High/Medium/Low). The Wasabi anchor entry carries a long
+  // explanatory sentence in its severity field instead; the badge shows a
+  // short label and the full text is still shown below it.
   function severityShortLabel(sev) {
     var s = (sev || "").trim();
     var low = s.toLowerCase();
@@ -823,28 +845,36 @@
   function renderOtherCases() {
     var list = document.getElementById("other-cases-list");
     list.textContent = "";
-    var entries = ensNamedEntries();
+    var entries = DATASET.known_identifiers;
+    var matchable = 0;
     entries.forEach(function (item) {
+      if (entryAddress(item)) matchable += 1;
       renderDatasetEntry(list, item);
     });
     var note = document.getElementById("ens-note");
-    note.textContent = "These " + entries.length + " dataset entries are ENS names, not raw addresses. Matching an ENS name against a resolved on-chain address needs a separate forward or reverse ENS lookup this tool does not perform, so they are listed here for context rather than auto-matched against your result above. " + DATASET.truncated_addresses_excluded_count + " address(es) named only in truncated form in the source README were excluded rather than guessed.";
+    note.textContent = matchable + " of these " + entries.length + " entries are matched automatically against the input contract and every key a check finds (ENS names resolved to their address on Ethereum mainnet, kept only where the reverse record agrees). " + DATASET.truncated_addresses_excluded_count + " address(es) named only in truncated form in the source README are not included.";
   }
 
   var CATEGORY_META = {
+    notcontract: { label: "Not a contract on Ethereum mainnet", cls: "cat-other" },
     renounced: { label: "Renounced (0x0)", cls: "cat-renounced" },
+    unknown: { label: "No admin getter found (needs manual review)", cls: "cat-other" },
     eoa: { label: "Bare EOA", cls: "cat-eoa" },
+    safe0: { label: "Uninitialized Safe (threshold 0)", cls: "cat-eoa" },
     safe1: { label: "1-of-N Safe", cls: "cat-safe1" },
     safeN: { label: "Real multisig (Safe, threshold >= 2)", cls: "cat-safeN" },
     other: { label: "Other contract (needs manual review)", cls: "cat-other" }
   };
 
   var CATEGORY_EXPLAIN = {
-    renounced: "owner() and admin() both reverted, or the resolved controller is the zero address. There is no live key that can call admin functions on this contract through either path.",
-    eoa: "The resolved controlling address has no contract code. A single private key can call admin functions on this contract directly, with no multisig and no timelock in front of it.",
-    safe1: "The controller is a Gnosis Safe, but its threshold is 1. Any single one of its owner keys can execute a transaction alone, so in practice this behaves like a bare EOA with extra steps.",
-    safeN: "The controller is a Gnosis Safe with a threshold of 2 or higher. Multiple independent keys must cooperate to execute an admin action.",
-    other: "The controller has code, but it is not a Gnosis Safe (getOwners() and getThreshold() both reverted). This is likely a Timelock or a custom governance module. This tool cannot classify it further; it needs a manual look."
+    notcontract: "There is no contract code at this address on Ethereum mainnet. It is a plain wallet (EOA), a mistyped address, or a contract deployed only on another chain such as Base, Arbitrum or Berachain. This tool reads Ethereum mainnet only, so it gives no verdict here.",
+    renounced: "owner() or admin() explicitly returns the zero address, and no proxy admin or beacon is stored in the standard EIP-1967 or legacy ZeppelinOS slots. No admin key was found through these paths. Role-based access control, immutable proxy admins and modules are not covered by this check.",
+    unknown: "The contract has code, but neither owner() nor admin() returned an address and no proxy admin or beacon is stored in the standard slots. It may use role-based access control (for example OpenZeppelin AccessControl), an immutable proxy admin, or have no admin at all. This check cannot tell which: it needs a manual look. This is not a \"renounced\" verdict.",
+    eoa: "At least one key found has no contract code. A single private key can call admin functions on this contract, or upgrade it, with no multisig and no timelock in front of it.",
+    safe0: "At least one key found is a Safe with a threshold of 0, which means it was never set up. Treat it as unprotected until checked by hand.",
+    safe1: "The weakest key found is a Gnosis Safe with a threshold of 1. Any single one of its owner keys can execute a transaction alone, so in practice this behaves like a bare EOA with extra steps.",
+    safeN: "Every key found is a Gnosis Safe with a threshold of 2 or higher. Multiple independent keys must cooperate to execute an admin action.",
+    other: "At least one key found is a contract that is not a Gnosis Safe (for example a Timelock or a custom governance module), and one owner() hop did not resolve it. This tool cannot classify it further: it needs a manual look."
   };
 
   function addField(container, label, value) {
@@ -865,6 +895,14 @@
     container.appendChild(row);
   }
 
+  function describeKey(k) {
+    var text = CATEGORY_META[k.category].label;
+    if (k.threshold !== undefined) text += ", threshold " + k.threshold + " of " + k.owners.length;
+    if (k.delegated) text += " (with an EIP-7702 delegation, still controlled by one private key)";
+    if (k.inner) text = "Contract whose owner() is the address below: " + text;
+    return text;
+  }
+
   function renderResult(inputAddress, result) {
     var panel = document.getElementById("result-panel");
     panel.style.display = "block";
@@ -878,13 +916,19 @@
     var rows = document.getElementById("field-rows");
     rows.textContent = "";
     addField(rows, "Input address", inputAddress);
-    addField(rows, "Resolved via", result.controllerSource || "none (both owner() and admin() failed)");
-    addField(rows, "Controlling address", result.controller);
-    if (result.threshold !== undefined) {
-      addField(rows, "Safe threshold", result.threshold + " of " + result.owners.length);
+    addField(rows, "Chain read", "Ethereum mainnet (chain ID 1)");
+    if (result.delegated) addField(rows, "Account type", "Wallet (EOA) with an EIP-7702 delegation, not a contract");
+    if (result.implementation) addField(rows, "Proxy implementation", result.implementation);
+    result.keys.forEach(function (k) {
+      addField(rows, k.roles.join(" + "), k.address);
+      addField(rows, "Type", describeKey(k));
+      if (k.inner) addField(rows, "Owner of that contract", k.inner);
+    });
+    if (result.category === "renounced" || result.category === "unknown") {
+      addField(rows, "Keys found", "none through owner(), admin() or the standard proxy slots");
     }
-    if (result.trace && result.trace.rpcUrlsUsed.length) {
-      addField(rows, "RPC endpoint(s) used", result.trace.rpcUrlsUsed.join(", "));
+    if (result.rpcUrlsUsed && result.rpcUrlsUsed.length) {
+      addField(rows, "RPC endpoint(s) used", result.rpcUrlsUsed.join(", "));
     }
 
     document.getElementById("explain").textContent = CATEGORY_EXPLAIN[result.category];
@@ -892,13 +936,17 @@
     var matchSection = document.getElementById("match-section");
     matchSection.textContent = "";
 
+    var candidates = [inputAddress];
+    result.keys.forEach(function (k) {
+      candidates.push(k.address);
+      if (k.inner) candidates.push(k.inner);
+    });
     var matches = [];
-    findAddressMatches(result.controller).forEach(function (m) { matches.push(m); });
-    if (inputAddress.toLowerCase() !== (result.controller || "").toLowerCase()) {
-      findAddressMatches(inputAddress).forEach(function (m) {
+    candidates.forEach(function (a) {
+      findAddressMatches(a).forEach(function (m) {
         if (matches.indexOf(m) === -1) matches.push(m);
       });
-    }
+    });
 
     if (matches.length) {
       var heading = el("div", "field-label", "Dataset match found:");
@@ -906,11 +954,11 @@
       matches.forEach(function (item) {
         renderDatasetEntry(matchSection, item, "hit");
       });
-    } else {
+    } else if (result.category !== "notcontract") {
       matchSection.appendChild(el(
         "div",
         "no-match-line",
-        "No match in the embedded case dataset above. This is a live classification only, not a check against every case in the research. The full research covers 70+ protocols by hand."
+        "No match with the cases listed below. This is a live classification only, not a check against every case in the research. The full research covers 99 protocols and Morpho vault owners checked by hand."
       ));
     }
 
@@ -924,7 +972,7 @@
     panel.style.display = "block";
     var badge = document.getElementById("category-badge");
     badge.className = "category-badge cat-fail";
-    badge.textContent = "Could not complete check";
+    badge.textContent = "Could not verify, retry";
     document.getElementById("field-rows").textContent = "";
     document.getElementById("explain").textContent = message;
     document.getElementById("match-section").textContent = "";
@@ -992,7 +1040,7 @@
 
     button.disabled = true;
     document.getElementById("result-panel").style.display = "none";
-    setStatus("Calling owner() / admin()...");
+    setStatus("Reading the contract on Ethereum mainnet...");
 
     classify(raw).then(function (result) {
       setStatus(null);
@@ -1002,7 +1050,7 @@
     }).catch(function (err) {
       setStatus(null);
       button.disabled = false;
-      renderFailure("Could not reach any of the public RPC endpoints, or the response could not be parsed. Try again in a moment. (" + (err && err.message ? err.message : "unknown error") + ")");
+      renderFailure("Could not verify: a public RPC endpoint returned an error (for example a rate limit) or did not answer, so no verdict is shown. An RPC error is never read as an answer. Retry in a moment. (" + (err && err.message ? err.message : "unknown error") + ")");
     });
   }
 
