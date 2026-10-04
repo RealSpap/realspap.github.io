@@ -765,17 +765,16 @@
   /* ==== CORE END ==== */
 
   /* ---------------------------------------------------------------------
-   * Case dataset (from the showcase README).
+   * Case dataset (from the showcase research).
    * ------------------------------------------------------------------- */
-  var DATASET = {"known_identifiers":[{"identifier":"tokenworks.eth","display_name":"tokenworks.eth","severity":"Critical","one_line_context":"owner() on the Fake World Assets (FWA) token resolves to this bare EOA, tagged tokenworks.eth on Etherscan and matching the project's own declared Twitter handle (token_works), so it is the team's own key with real control over redirecting purchase proceeds."},{"identifier":"sifu.eth","display_name":"sifu.eth","severity":"High","one_line_context":"The UwU Lend governance/reward token's owner() is this bare EOA, tagged sifu.eth and publicly associated with the project's founder; it still holds onlyOwner mint/burn power over the token more than a year after UwU's 2024 hack."},{"identifier":"wasabideployer.eth","display_name":"wasabideployer.eth","severity":"Not rated: this is the Wasabi Protocol anchor incident, not one of the 23 cases in the severity table.","one_line_context":"On 2026-04-30 an attacker compromised this key's private key, which held unchecked admin authority (no multisig, no timelock) over every one of Wasabi Protocol's upgradeable vaults, causing the ~$5.9M loss across Ethereum, Base, Berachain and Blast that anchors this research."}],"truncated_addresses_excluded_count":4};
+  var DATASET = {"known_identifiers":[{"identifier":"tokenworks.eth","display_name":"tokenworks.eth","severity":"Critical","one_line_context":"owner() on the Fake World Assets (FWA) token resolves to this bare EOA, tagged tokenworks.eth on Etherscan and matching the project's own declared Twitter handle (token_works), so it is the team's own key with real control over redirecting purchase proceeds."},{"identifier":"UwU Lend token owner key","display_name":"UwU Lend token owner key","severity":"High","one_line_context":"The UwU Lend governance/reward token's owner() is a bare EOA, a single key rather than a multisig; it still holds onlyOwner mint/burn power over the token more than a year after UwU's 2024 hack."},{"identifier":"wasabideployer.eth","display_name":"wasabideployer.eth","severity":"Not rated: this is the Wasabi Protocol anchor incident, not one of the 23 cases in the severity table.","one_line_context":"On 2026-04-30 an attacker compromised this key's private key, which held unchecked admin authority (no multisig, no timelock) over every one of Wasabi Protocol's upgradeable vaults, causing the ~$5.9M loss across Ethereum, Base, Berachain and Blast that anchors this research."}],"truncated_addresses_excluded_count":4};
 
   /* ENS names in the dataset, forward-resolved on Ethereum mainnet on
    * 2026-09-30, kept only where the address's reverse record returns the
    * same name. Used for matching only. wasabideployer.eth has no reverse
    * record, so it is not matched automatically. */
   var ENS_RESOLVED = {
-    "tokenworks.eth": "0x019817aD02a31B990433542097bE29D97613E8Cb",
-    "sifu.eth": "0x5DD596C901987A2b28C38A9C1DfBf86fFFc15d77"
+    "tokenworks.eth": "0x019817aD02a31B990433542097bE29D97613E8Cb"
   };
 
   function entryAddress(item) {

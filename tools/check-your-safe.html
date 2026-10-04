@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E">
 <title>Check Your Safe</title>
-<meta name="description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already named in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
+<meta name="description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://realspap.github.io/tools/check-your-safe.html">
 <meta property="og:title" content="Check Your Safe | Spap">
-<meta property="og:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already named in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
+<meta property="og:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
 <meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Check Your Safe | Spap">
-<meta name="twitter:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already named in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
+<meta name="twitter:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
 <meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
 
 <script>(function(){try{var t=localStorage.getItem('spap-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
@@ -417,7 +417,7 @@
       <p class="subtitle">
         A small public utility from the
         <a href="https://github.com/RealSpap/multisig-overlap-showcase" target="_blank" rel="noopener noreferrer">multisig-overlap-showcase</a>
-        research project. It reads a Safe's owner list directly from chain, in your browser, and checks each owner against the identities already named in that project's public README.
+        research project. It reads a Safe's owner list directly from chain, in your browser, and checks each owner against the signers already documented in that project's public README.
       </p>
     </header>
 
@@ -453,8 +453,8 @@
 'use strict';
 
 /* Embedded reference dataset: three signer addresses documented in the
-   multisig-overlap-showcase research (one confirmed identity, two pseudonymous). */
-var FLAGGED_DATA = {"flagged_addresses": [{"address": "0x8f02b4a44Eacd9b8eE7739aa0BA58833DD45d002", "display_name": "Pablo Veyrat", "protocols": ["Morpho Blue", "Angle Protocol"], "confidence": "Confirmed identity: named with this exact address in the Morpho Association forum post MIP 91 (forum.morpho.org/t/mip-91-update-multisig-signers/1400)", "one_line_context": "Owner of both Morpho Blue's governance Safe (8 Superchain chains) and Angle Protocol's Guardian Safe (Optimism, Base, Celo): eleven Superchain Safe deployments plus both protocols' Ethereum mainnet Safes, and Morpho Blue's DAO Safe on Arbitrum."}, {"address": "0x9A73D57BB1fB280C5672A13f655675De25F13b70", "display_name": "Unnamed (pseudonymous, reported at address level only)", "protocols": ["Compound III", "Resolv"], "confidence": "Pseudonymous: the address recurs across protocols but no primary source ties it to a real name", "one_line_context": "Owner of both Compound III's Pause Guardian Safe (Base, Optimism, Unichain) and Resolv's Base and Soneium Token Owner Safes: two protocols with no institutional relationship."}, {"address": "0xb291232F480F41c75802C4a60F1D2AC03404Afef", "display_name": "Unnamed (pseudonymous, reported at address level only)", "protocols": ["Aave"], "confidence": "Pseudonymous: no primary source ties this address to a real name", "one_line_context": "Confirmed on Aave's core Protocol Guardian Safe on four chains (Optimism, Base, Soneium, Celo) plus a separate cluster controlling four of Aave's Ink and Celo role-specific Safes (AFC, Budget Incentive, Ahab, Alc): seven Safe formations across five chains, all within Aave alone (a single-protocol concentration, not a cross-protocol one)."}]};
+   multisig-overlap-showcase research (one confirmed, two pseudonymous; no personal names). */
+var FLAGGED_DATA = {"flagged_addresses": [{"address": "0x8f02b4a44Eacd9b8eE7739aa0BA58833DD45d002", "display_name": "This owner is a signer shared by Morpho Blue and Angle Protocol", "protocols": ["Morpho Blue", "Angle Protocol"], "confidence": "Confirmed: this exact address was checked against the protocols' own public signer disclosures; the named mapping is not published here", "one_line_context": "Owner of both Morpho Blue's governance Safe (8 Superchain chains) and Angle Protocol's Guardian Safe (Optimism, Base, Celo): eleven Superchain Safe deployments plus both protocols' Ethereum mainnet Safes, and Morpho Blue's DAO Safe on Arbitrum."}, {"address": "0x9A73D57BB1fB280C5672A13f655675De25F13b70", "display_name": "This owner is a signer shared by Compound III and Resolv", "protocols": ["Compound III", "Resolv"], "confidence": "Pseudonymous: the address recurs across protocols but no primary source ties it to its holder", "one_line_context": "Owner of both Compound III's Pause Guardian Safe (Base, Optimism, Unichain) and Resolv's Base and Soneium Token Owner Safes: two protocols with no institutional relationship."}, {"address": "0xb291232F480F41c75802C4a60F1D2AC03404Afef", "display_name": "This owner is a signer shared by seven of Aave's own Safes", "protocols": ["Aave"], "confidence": "Pseudonymous: no primary source ties this address to its holder", "one_line_context": "Confirmed on Aave's core Protocol Guardian Safe on four chains (Optimism, Base, Soneium, Celo) plus a separate cluster controlling four of Aave's Ink and Celo role-specific Safes (AFC, Budget Incentive, Ahab, Alc): seven Safe formations across five chains, all within Aave alone (a single-protocol concentration, not a cross-protocol one)."}]};
 
 /* getOwners() has no arguments, so the call data is just the 4-byte selector. */
 var SELECTOR = '0xa0e67e2b';
@@ -701,8 +701,8 @@ function renderResult(owners) {
     var matchesHeader = document.createElement('div');
     matchesHeader.className = 'matches-header';
     matchesHeader.textContent = matches.length === 1
-      ? 'One owner overlaps with an identity already public in this research:'
-      : matches.length + ' owners overlap with identities already public in this research:';
+      ? 'One owner overlaps with a signer already documented in this research:'
+      : matches.length + ' owners overlap with signers already documented in this research:';
     resultsEl.appendChild(matchesHeader);
 
     for (var m = 0; m < matches.length; m++) {
@@ -711,7 +711,7 @@ function renderResult(owners) {
   } else {
     var noMatch = document.createElement('div');
     noMatch.className = 'no-match';
-    noMatch.textContent = 'No overlap with the identities already public in this research. This only checks the owners above against a short list of three signer addresses documented in this research, not the full dataset (391 protocol entries, 729 multisig addresses) behind the licensed method, so this result does not mean the Safe is clean or safe, only that it does not match this small public list.';
+    noMatch.textContent = 'No overlap with the signers already documented in this research. This only checks the owners above against a short list of three signer addresses documented in this research, not the full dataset (391 protocol entries, 729 multisig addresses) behind the licensed method, so this result does not mean the Safe is clean or safe, only that it does not match this small public list.';
     resultsEl.appendChild(noMatch);
   }
 
