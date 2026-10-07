@@ -388,7 +388,10 @@
     .stats-grid{ grid-template-columns:repeat(3,1fr); }
     .stats-grid .stat-tile:last-child:nth-child(odd){ grid-column:auto; }
   }
-  @media (min-width:980px){ .stats-grid{ grid-template-columns:repeat(5,1fr); } }
+  .honesty{ list-style:none; margin:0 0 2.25rem; padding:0; display:grid; gap:.75rem; }
+  @media (min-width:760px){ .honesty{ grid-template-columns:repeat(3,1fr); gap:1.25rem; } }
+  .honesty li{ font-size:.9rem; color:var(--text-muted); line-height:1.45; }
+  .honesty strong{ color:var(--text); font-weight:600; }
   .stat-tile{
     background:var(--surface);
     padding:1.6rem 1.4rem;
@@ -661,10 +664,19 @@
           <span class="stat-label">Lost across those 55 incidents, $584.2M independently recomputed</span>
         </div>
         <div class="stat-tile reveal">
+          <span class="stat-num">34</span>
+          <span class="stat-label">Press and DefiLlama figures corrected, reconciled or first surfaced (<a href="https://github.com/RealSpap/onchain-postmortems/blob/main/CORRECTIONS.md">log</a>)</span>
+        </div>
+        <div class="stat-tile reveal">
           <span class="stat-num">23</span>
           <span class="stat-label">Single-key admin cases (of 99 protocols and vault owners checked by hand)</span>
         </div>
       </div>
+      <ul class="honesty reveal">
+        <li><strong>Net, not headline.</strong> Funds an attacker returned, or that were reversed on-chain, are deducted. A figure taken from a protocol, the press or DefiLlama is marked † and kept out of the recomputed total.</li>
+        <li><strong>Reproducible.</strong> Every incident ships the script and raw proof files used to rebuild it, and the full index is available as <a href="https://github.com/RealSpap/onchain-postmortems/tree/main/data">JSON and CSV</a>.</li>
+        <li><strong>Independent.</strong> No protocol pays for its coverage. Corrections are welcome and logged in public.</li>
+      </ul>
     </div>
   </section>
 
