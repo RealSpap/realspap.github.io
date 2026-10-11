@@ -1,0 +1,110 @@
+{
+ "name": "Euler V2 eVaultFactory",
+ "named_from": "dashboard",
+ "chain": "Plasma",
+ "address": "0x42388213c6f56d7e1477632b58ae6bba9adeeea3",
+ "composite": 72,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 70,
+  "multisigScore": 80,
+  "timelockScore": 68,
+  "oracleAuthorityScore": 2,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths not all checked",
+ "tvl_usd": 1983143.750225309,
+ "category": "Lending",
+ "at_risk_usd": 555280.2500630865,
+ "narrative": {
+  "summary": "A fully-traced chain: Governor \u2192 a real 4-day Timelock \u2192 a 4-of-8 DAO Safe, with a separate 2-of-3 securityCouncil able to cancel. Despite Euler\u2019s own \u201cDAO\u201d naming, this is Safe-and-Timelock-gated, not a token-vote DAO.",
+  "tag": "best-governed target on this chain, cross-exposure: 80 (pushed on-chain 2026-09-20)",
+  "detail": "Pushed on-chain 2026-09-20: the DAO Safe\u2019s 8 signers are identical, as an exact set, to the signers of Euler\u2019s DAO Safe on Monad (a different Safe address per chain), so crossExposureScore is folded to a flat 80 against a dated 2026-09-19 snapshot of Monad\u2019s DAO signers; admin, multisig and timelock are unchanged. 156 vaults deployed through this factory; at least one confirmed live to be retroactively upgradeable by this exact authority chain. A real, disclosed concentration: securityCouncil\u2019s third signer is itself the separate \"labs\" Safe, and all 6 of labs\u2019 own signers are a subset of the DAO Safe\u2019s 8, so a smaller group of people sits behind more than one nominally-separate committee here. Not covered by the score: PAUSE_GUARDIAN_ROLE on the Governor is held by the Labs Safe and two bare EOAs, and either EOA alone can pause the factory (confirmed by eth_call simulation), an instant availability freeze that the timelock does not gate."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T18:03:45Z",
+   "composite": 72,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/plasma/0x42388213c6f56d7e1477632b58ae6bba9adeeea3.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.plasma.to",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3",
+  "block": "0x224022f",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3\"},\"0x224022f\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5900,
+  "text": "collateral factor 59.00% (score 72)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 70,
+  "to": 88,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791655425,
+ "stale": false,
+ "methodology_hash": "0x6a1d6a17504a5faeab692225b82e197898a47dbd96137e4c1a3cc17cf977e754",
+ "block": 35914287,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x42388213c6f56d7e1477632b58ae6bba9adeeea3",
+ "page": "https://realspap.github.io/oracle/p/plasma-0x42388213c6f56d7e1477632b58ae6bba9adeeea3.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

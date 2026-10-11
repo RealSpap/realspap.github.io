@@ -1,0 +1,93 @@
+{
+ "name": "Jupiter Aggregator v6",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+ "composite": 47,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 55,
+  "multisigScore": 83,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 40
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "Upgrades sit behind a 4-of-7 Squads v3 multisig, and Squads v3 has no delay field, so an approved upgrade can land with no notice. A swap router holds no deposits between transactions, which limits what an upgrade could reach.",
+  "tag": "same authority upgrades 22 other ProgramData accounts",
+  "detail": "The upgrade authority is a PDA, resolved to authority index 1 of a Squads v3 multisig and re-derived offline on every run. All 7 members are plain on-curve keys. The same PDA is the upgrade authority of 22 other ProgramData accounts (a blast-radius note, not scored), and the same multisig is also the admin of Jupiter Perpetual Exchange. Other paths are bounded: a hardcoded close_token operator only reaches the program's own token accounts, and claim sweeps to a fixed wallet. The on-chain IDL has no oracle account, so the oracle sub-score is not applicable."
+ },
+ "score_account": "65Zt5pU2sf6Lu4WeEz3Dz8h3Mr7rHYDrdwweiSXyNZz2",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 47 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 55,
+  "to": 87,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData 4Ec7Zx\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
+  "holder": "CvQZZ23qYDWF2RUpxYJ8y9K4skmuvYEEjH7fK58jtipQ",
+  "kind": "pda",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown"
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662427,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+ "page": "https://realspap.github.io/oracle/p/solana-JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

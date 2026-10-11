@@ -1,0 +1,143 @@
+{
+ "name": "WBTC (Wrapped BTC)",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+ "composite": 52,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 55,
+  "multisigScore": 100,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 9776490225.674772,
+ "category": "Bridge",
+ "at_risk_usd": 4692715308.323891,
+ "narrative": {
+  "summary": "WBTC.owner() is the WBTC Controller, whose owner is a legacy Gnosis MultiSigWallet (6-of-10, not a Safe) with no timelock. That multisig can replace the Factory (the only address the Controller lets mint or burn), replace the Members registry, pause or unpause the token and start a transfer of the token\u2019s own ownership.",
+  "tag": "$9.50B TVL, no delay",
+  "detail": "Only 4 transactions have ever been submitted through the wallet (3 executed, each in the block of its sixth confirmation, so no delay in practice) and its dailyLimit is 0; three of its ten signers are themselves contracts. Scored like Ethena\u2019s minting contract (admin 55: a multisig over a multi-billion token with no delay). The BTC backing sits with off-chain custodians, outside this oracle\u2019s on-chain scope."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "data": "0x8da5cb5b"
+     },
+     "0x18f56c0"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2260fac5e5542a773aa44fbcfedf7c193bc2c599\",\"data\":\"0x8da5cb5b\"},\"0x18f56c0\"]}'",
+  "block": "0x18f56c0",
+  "note": "read between blocks 26171071 and 26171072 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-11T02:50:28Z",
+   "composite": 52,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d00000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599",
+  "block": "0xb57b19",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599\"},\"0xb57b19\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 52 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 55,
+  "to": 74,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (contract)",
+  "holder": "0xca06411bd7a7296d7dbdd0050dfc846e95febeb7",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "behind": {
+   "address": "0x972eed35781f09987a5c40f761f6a24623c570de",
+   "kind": "contract",
+   "via": "owner() of the holder"
+  },
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 9776490225.674772,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11893529,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

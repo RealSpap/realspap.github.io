@@ -1,0 +1,110 @@
+{
+ "name": "Ventuals vHYPE staking (HyperEVM)",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0x8888888192a4a0593c13532ba48449fc24c3beda",
+ "composite": 31,
+ "band": "weak",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 50,
+  "multisigScore": 35,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 470547.690008247,
+ "category": "Interface",
+ "at_risk_usd": 324677.9061056904,
+ "narrative": {
+  "summary": "A liquid staking token whose three authority paths all resolve to the same 2-of-3 Safe, with no delay. It scores higher than para's vault because every layer has verified source.",
+  "tag": "L1 cap binds: 31 becomes 26",
+  "detail": "About 6,317 HYPE delegated, roughly $583K, the lightest tracked target. It was found through the deployer address of the dormant dex vntl. The RoleRegistry owner, OPERATOR_ROLE and the MANAGER_ROLE holder (a verified StakingVaultManager) all resolve to one 2-of-3 Safe. That last link was resolved by reading verified source, where every discretionary admin function is owner-gated; processBatch and finalizeBatch are permissionless but non-discretionary. The check is tied to one implementation and re-confirmed on every run. The Safe's owners are not attributed to named people."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T19:58:11Z",
+   "composite": 31,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0x8888888192a4a0593c13532ba48449fc24c3beda.xml",
+ "reproduce": {
+  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d00000000000000000000000008888888192a4a0593c13532ba48449fc24c3beda",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008888888192a4a0593c13532ba48449fc24c3beda\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 31 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 50,
+  "to": 73,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791662291,
+ "stale": false,
+ "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
+ "block": 66597018,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x8888888192a4a0593c13532ba48449fc24c3beda",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888192a4a0593c13532ba48449fc24c3beda.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,164 @@
+{
+ "name": "Morpho Steakhouse USDG vault",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0xbeeff033f34c046626b8d0a041844c5d1a5409dd",
+ "composite": 44,
+ "band": "moderate",
+ "keys_to_move": 1,
+ "react_hours": 0,
+ "money_per_key_usd": 551558255.7294582,
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 65,
+  "timelockScore": 75,
+  "oracleAuthorityScore": 2,
+  "crossExposureScore": 40
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": true
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths checked",
+ "tvl_usd": 551242738.8578634,
+ "category": "Risk Curators",
+ "at_risk_usd": 308695933.7604035,
+ "narrative": {
+  "summary": "Root owner resolves to a bare EOA two hops down; the real 7-day timelock never covers setOwner / setCurator / setIsSentinel. Shares its curator Safe with the Ethena x Steakhouse vault.",
+  "tag": "cross-exposure: 80",
+  "detail": "curator() is a real 3-of-7 Safe, and isSentinel() is true for a 1-of-7 Safe sharing the same seven owners - but owner() points through an 8,609-byte contract to a bare EOA two hops down. Per-function timelocks are real (604,800s / 7 days) on addAdapter / removeAdapter / cap changes, but setOwner, setCurator, setIsSentinel and decreaseAbsoluteCap all resolve to 0. A curator/sentinel layer that looks like real multisig protection sits behind a root that isn\u2019t multisig-protected at all. Its curator Safe's all 7 owners are shared with the Morpho Ethena x Steakhouse USDG vault (batch 7 crossExposureScore: 80/100) - the only overlap found across all 15 tracked signer groups."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "curator()": {
+   "kind": "safe",
+   "threshold": 3,
+   "owners": 7,
+   "holder": "0x9023\u2026d2fb"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDG",
+  "amount": 551679260.402718,
+  "price_usd": 0.9997806611885838,
+  "held_usd": 551558255.7294582,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.11,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xbeeff033f34c046626b8d0a041844c5d1a5409dd",
+      "data": "0x8da5cb5b"
+     },
+     "0x5210ddc"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeeff033f34c046626b8d0a041844c5d1a5409dd\",\"data\":\"0x8da5cb5b\"},\"0x5210ddc\"]}'",
+  "block": "0x5210ddc",
+  "note": "read between blocks 86051800 and 86052316 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 19,
+   "from": "first"
+  },
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 44,
+   "from": "watch"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xbeeff033f34c046626b8d0a041844c5d1a5409dd.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000beeff033f34c046626b8d0a041844c5d1a5409dd",
+  "block": "0x7ef0e36",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000beeff033f34c046626b8d0a041844c5d1a5409dd\"},\"0x7ef0e36\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 44 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 5,
+  "to": 44,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (eoa)",
+  "holder": "0xca50d23f1c18c1dfaff5d3cae3aa4b9dc5c8db73",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "behind": {
+   "address": "0x337f\u20267660",
+   "kind": "eoa",
+   "via": "owner() of the holder"
+  },
+  "posture": "admin: a plain key behind a bare contract; delay: none",
+  "exposure": {
+   "keys_to_move": 1,
+   "react_hours": 0,
+   "tvl_usd": 551558255.7294582,
+   "money_per_key_usd": 551558255.7294582,
+   "money_source": "contract",
+   "held_symbol": "USDG",
+   "held_amount": 551679260.402718
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133107254,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeeff033f34c046626b8d0a041844c5d1a5409dd",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff033f34c046626b8d0a041844c5d1a5409dd.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

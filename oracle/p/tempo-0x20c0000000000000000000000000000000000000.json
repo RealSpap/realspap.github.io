@@ -1,0 +1,110 @@
+{
+ "name": "pathUSD",
+ "named_from": "dashboard",
+ "chain": "Tempo",
+ "address": "0x20c0000000000000000000000000000000000000",
+ "composite": 9,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 10,
+  "multisigScore": 15,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 60
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "One bare EOA, delegated to a contract through EIP-7702, is the only DEFAULT_ADMIN of the upgradeable bridge controller that holds ISSUER_ROLE on pathUSD, USDB and DLUSD, so a single key can replace the minting logic of all three.",
+  "tag": "composite 9, the lowest on Tempo: about $132M of combined supply under one key",
+  "detail": "Traced live on 2026-09-20 on two RPCs: the ISSUER_ROLE holder is the UUPS AccessControlEnumerable controller 0x8354D80E\u20269058, which has exactly one DEFAULT_ADMIN member, 0x79C6631F\u20264a4E (code is an EIP-7702 delegation designator, 7 transactions), with no timelock and no Safe in front of it. pathUSD is also the token the chain itself runs on for gas. The 10/15/0 score is therefore not a placeholder: it is what a single uncontested bare key scores. Supply read on 2026-09-20: pathUSD about $50.4M, USDB about $78.1M, DLUSD about $3.5M. USDB (idx 4) and DLUSD (idx 7) share the same controller and key, which is why cross-exposure reads 60."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T19:56:06Z",
+   "composite": 9,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/tempo-moderato/0x20c0000000000000000000000000000000000000.xml",
+ "reproduce": {
+  "rpc": "https://rpc.moderato.tempo.xyz",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d000000000000000000000000020c0000000000000000000000000000000000000",
+  "block": "0x2559dfb",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c0000000000000000000000000000000000000\"},\"0x2559dfb\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 9 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 10,
+  "to": 38,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791662166,
+ "stale": false,
+ "methodology_hash": "0x134e33c2b59f03981c62fbafe19942062b82862cc2f79fa62d23294eeb97d268",
+ "block": 39165435,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x20c0000000000000000000000000000000000000",
+ "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000000000000000000000.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

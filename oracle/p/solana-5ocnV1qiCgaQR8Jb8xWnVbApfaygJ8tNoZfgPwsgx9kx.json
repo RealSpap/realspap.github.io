@@ -1,0 +1,100 @@
+{
+ "name": "Sanctum Infinity (S Controller)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx",
+ "composite": 46,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 55,
+  "multisigScore": 80,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 20
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 213106452.2849738,
+ "category": "Dexs",
+ "at_risk_usd": 115077484.23388585,
+ "narrative": {
+  "summary": "Two paths bind the score: a 6-of-11 Squads v3 program upgrade and a 4-of-8 Squads v4 pool admin with no delay, which decides how every LST is valued.",
+  "tag": "pool admin binds the score",
+  "detail": "The pool admin can call SetSolValueCalculator and SetPricingProgram, which decide how each LST is valued; the seven calculator and pricing programs share the same upgrade authority. The rebalance authority is a single on-curve key but bounded: EndRebalance must follow in the same transaction and rejects any drop in pool SOL value, so it is disclosed and not scored. DefiLlama listed over $150M TVL on 2026-09-17."
+ },
+ "score_account": "P3GS5XibuM17sS8XPZuqAhxjdDQ4xGREFHjiDUSFy6f",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 46 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 55,
+  "to": 89,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData ALmAxh\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
+  "holder": "47SND7bGKvNXrqfP1bjsLCbwTgZhFBzAgmZ42QSkRScz",
+  "kind": "pda",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown",
+  "shares_admin_with": [
+   {
+    "chain": "solana",
+    "target": "SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY"
+   }
+  ],
+  "cluster_tvl_usd": 2055361575.4963078
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662470,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx",
+ "page": "https://realspap.github.io/oracle/p/solana-5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,172 @@
+{
+ "name": "Snuggle: MaxFi Robinhood vault",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x1195c074f898b7644ba732407619c9804dfe6dce",
+ "composite": 1,
+ "band": "critical",
+ "keys_to_move": 1,
+ "react_hours": 0,
+ "money_per_key_usd": 6481403.466458566,
+ "sub": {
+  "adminKeyScore": 2,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 6481403.466458566,
+ "category": "Liquidity Manager",
+ "at_risk_usd": 6416589.431793979,
+ "narrative": {
+  "summary": "The ProxyAdmin owner and the vault owner are the identical bare EOA (759 real transactions, a live key) - a 24h-delayed AdminSatellite exists, but it only covers two of the levers that actually matter, not the ones that do.",
+  "tag": "~$6.2M TVL, 11,849 real LP positions held",
+  "detail": "addPool() (which can point the vault\u2019s NFTs at an arbitrary position adapter) and updatePoolRewardAdapter() are instant; setAdminSatellite() is directly onlyOwner. The same EOA can also upgrade the implementation instantly through the ProxyAdmin - the 24h delay gates nothing that key cannot route around."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "the admin slot of the proxy (EIP-1967): the word is the admin address",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0x1195c074f898b7644ba732407619c9804dfe6dce",
+     "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+     "0x5210ddc"
+    ]
+   },
+   {
+    "what": "owner() on the address the slot returned (a ProxyAdmin): the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<address from the slot>",
+      "data": "0x8da5cb5b"
+     },
+     "0x5210ddc"
+    ]
+   },
+   {
+    "what": "eth_getCode on the holder: 0x means a plain key",
+    "method": "eth_getCode",
+    "params": [
+     "<holder>",
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0x1195c074f898b7644ba732407619c9804dfe6dce",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   },
+   {
+    "what": "eth_getTransactionCount on the holder: how many transactions this key has sent (1326 at the read)",
+    "method": "eth_getTransactionCount",
+    "params": [
+     "<holder>",
+     "0x5210ddc"
+    ]
+   }
+  ],
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x1195c074f898b7644ba732407619c9804dfe6dce\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x5210ddc\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x5210ddc\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x1195c074f898b7644ba732407619c9804dfe6dce\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (1326 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x5210ddc\"]}'",
+  "block": "0x5210ddc",
+  "note": "read between blocks 86051800 and 86052316 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 1,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x1195c074f898b7644ba732407619c9804dfe6dce.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d00000000000000000000000001195c074f898b7644ba732407619c9804dfe6dce",
+  "block": "0x7ef0e36",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000001195c074f898b7644ba732407619c9804dfe6dce\"},\"0x7ef0e36\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 1 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 2,
+  "to": 49,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "holder": "0x6ac5\u202625ff",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "eoa",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a plain key, 1326 transactions sent; delay: none",
+  "exposure": {
+   "keys_to_move": 1,
+   "react_hours": 0,
+   "tvl_usd": 6481403.466458566,
+   "money_per_key_usd": 6481403.466458566,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133107254,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x1195c074f898b7644ba732407619c9804dfe6dce",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x1195c074f898b7644ba732407619c9804dfe6dce.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

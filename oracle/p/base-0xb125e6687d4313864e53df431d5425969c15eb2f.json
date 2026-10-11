@@ -1,0 +1,175 @@
+{
+ "name": "Compound V3 (Comet, USDC market)",
+ "named_from": "dashboard",
+ "chain": "Base",
+ "address": "0xb125e6687d4313864e53df431d5425969c15eb2f",
+ "composite": 78,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 24,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 75,
+  "multisigScore": 100,
+  "timelockScore": 60,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths not all checked",
+ "tvl_usd": 26801320.594568234,
+ "category": "Lending",
+ "at_risk_usd": 5896290.530805012,
+ "narrative": {
+  "summary": "A fully closed chain: Comet.governor() is a LocalTimelock that also controls upgrades (confirmed via the EIP-1967 admin slot), answering to Compound\u2019s real Ethereum-mainnet Governance Timelock via a bridge receiver.",
+  "tag": "$24.9M TVL",
+  "detail": "LocalTimelock\u2019s own delay() is re-confirmed live at a real 86,400s (1 day) - the actually-enforced LOCAL delay on Base. The L1 Compound Timelock\u2019s own separate delay is out of scope for this Base-RPC-only scorer."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "pauseGuardian()": {
+   "kind": "safe",
+   "threshold": 5,
+   "owners": 9,
+   "holder": "0x3cb4\u2026d2ee"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://mainnet.base.org",
+  "steps": [
+   {
+    "what": "the admin slot of the proxy (EIP-1967): the word is the admin address",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xb125e6687d4313864e53df431d5425969c15eb2f",
+     "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+     "0x320bdc1"
+    ]
+   },
+   {
+    "what": "owner() on the address the slot returned (a ProxyAdmin): the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<address from the slot>",
+      "data": "0x8da5cb5b"
+     },
+     "0x320bdc1"
+    ]
+   },
+   {
+    "what": "delay() on the holder (Compound-style timelock), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xcc3e7c85bb0ee4f09380e041fee95a0caedd4a02",
+      "data": "0x6a42b8f8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xb125e6687d4313864e53df431d5425969c15eb2f",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xb125e6687d4313864e53df431d5425969c15eb2f\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x320bdc1\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x320bdc1\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcc3e7c85bb0ee4f09380e041fee95a0caedd4a02\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xb125e6687d4313864e53df431d5425969c15eb2f\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x320bdc1",
+  "note": "read between blocks 52477371 and 52477377 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T17:38:05Z",
+   "composite": 78,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/base-sepolia/0xb125e6687d4313864e53df431d5425969c15eb2f.xml",
+ "reproduce": {
+  "rpc": "https://sepolia.base.org",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000b125e6687d4313864e53df431d5425969c15eb2f",
+  "block": "0x2dc3b9b",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000b125e6687d4313864e53df431d5425969c15eb2f\"},\"0x2dc3b9b\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 6350,
+  "text": "collateral factor 63.50% (score 78)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 75,
+  "to": 79,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "holder": "0xcc3e7c85bb0ee4f09380e041fee95a0caedd4a02",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 86400,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a timelock; delay: 24 h on the timelock",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 24,
+   "tvl_usd": 26801320.594568234,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791653885,
+ "stale": false,
+ "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
+ "block": 47987611,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xb125e6687d4313864e53df431d5425969c15eb2f",
+ "page": "https://realspap.github.io/oracle/p/base-0xb125e6687d4313864e53df431d5425969c15eb2f.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

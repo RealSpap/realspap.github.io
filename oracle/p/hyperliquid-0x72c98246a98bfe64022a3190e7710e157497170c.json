@@ -1,0 +1,138 @@
+{
+ "name": "HyperLend Pooled (Aave v3 fork)",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0x72c98246a98bfe64022a3190e7710e157497170c",
+ "composite": 61,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 80,
+  "timelockScore": 35,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 358003417.6267919,
+ "category": "Lending",
+ "at_risk_usd": 139621332.87444884,
+ "narrative": {
+  "summary": "Upgrades sit behind a 7-day timelock and risk and listing changes behind a 6-hour one, each proposed by a 4-of-8 Safe and executed by a separate 5-of-9 Safe. The score follows the weaker 6-hour path.",
+  "tag": "L1 cap binds: 61 becomes 26",
+  "detail": "Timelock A (7 days) covers pool upgrades, POOL_ADMIN and ACL admin; Timelock B (6 hours) covers RISK_ADMIN and ASSET_LISTING_ADMIN (caps, new listings). The proposing Governance Safe and executing Treasury Safe share no owner and execution is not open to anyone: mitigating, not scored. EMERGENCY_ADMIN is two Safes (3-of-8 and 4-of-6) with no delay that can pause but, per Aave v3 semantics, not move funds; 5 of the 8 Governance signers also sign the 3-of-8 one. Not traced: the price feeds behind the oracle. Listed reserves inherit Kinetiq kHYPE and Unit treasury authority. DefiLlama TVL about $474.3M (2026-09-17)."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.hyperliquid.xyz/evm",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x72c98246a98bfe64022a3190e7710e157497170c",
+      "data": "0x8da5cb5b"
+     },
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x72c98246a98bfe64022a3190e7710e157497170c\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'",
+  "block": "latest",
+  "note": "read between blocks 48278914 and 48278922 of the chain; the RPC answers at latest whatever block is asked"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T19:58:11Z",
+   "composite": 61,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0x72c98246a98bfe64022a3190e7710e157497170c.xml",
+ "reproduce": {
+  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d000000000000000000000000072c98246a98bfe64022a3190e7710e157497170c",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000072c98246a98bfe64022a3190e7710e157497170c\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5075,
+  "text": "collateral factor 50.75% (score 61)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "timelock",
+  "from": 35,
+  "to": 99,
+  "what": "a confirmed delay before changes apply"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x0a0d1d19107d2658b127c872fbeb97f5f9bd5d42",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 358003417.6267919,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791662291,
+ "stale": false,
+ "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
+ "block": 66597018,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x72c98246a98bfe64022a3190e7710e157497170c",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

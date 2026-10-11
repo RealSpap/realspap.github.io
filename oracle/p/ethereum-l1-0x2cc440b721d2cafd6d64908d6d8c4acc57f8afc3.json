@@ -1,0 +1,194 @@
+{
+ "name": "Ethena EthenaMinting (retired minter)",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3",
+ "composite": 52,
+ "band": "moderate",
+ "keys_to_move": 5,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 55,
+  "multisigScore": 100,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 20
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "This contract was USDe\u2019s minter until 2024-07-08 and has been inert since: USDe.mint() called from it reverts, and it holds no collateral. Its owner is the 5-of-10 Safe directly, with no delay, which is what its on-chain entry still reads (55/100/0, composite 52, last written by the 2026-09-19 push).",
+  "tag": "retired 2026-09-20, stale historical reading, no longer refreshed",
+  "detail": "Found by the unscored-role sweep: USDe.minter() has pointed at a different EthenaMinting (the idx 14 card, USDe live minter) since block 20261016, and re-pointing it here would need USDe.setMinter, which sits behind the 24h timelock. The oracle has no removal function, so this target is retired by ceasing to refresh it: the 2026-09-20 push wrote the live minter as index 14 (Ethereum L1 now tracks 15 targets, 14 of them refreshed) and left index 3 untouched. Its on-chain entry stays as a historical reading and turns stale nine days after its last update, which was the 2026-09-19 push. The old number was right about this contract and irrelevant to USDe."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "ethereum-l1:0x3b0a\u20261862",
+   "nonce": 742,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3",
+      "data": "0x8da5cb5b"
+     },
+     "0x18f56c0"
+    ]
+   },
+   {
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
+    "params": [
+     "<holder>",
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3\",\"data\":\"0x8da5cb5b\"},\"0x18f56c0\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x18f56c0",
+  "note": "read between blocks 26171071 and 26171072 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-09-23T16:16:34Z",
+   "composite": 52,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d00000000000000000000000002cc440b721d2cafd6d64908d6d8c4acc57f8afc3",
+  "block": "0xb57b19",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000002cc440b721d2cafd6d64908d6d8c4acc57f8afc3\"},\"0xb57b19\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "revert",
+  "text": "it would revert (StaleScore): the score is older than the oracle allows"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 55,
+  "to": 74,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x3b0a\u20261862",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "threshold": 5,
+  "owners": 10,
+  "keys_to_act": 5,
+  "keys_lost_to_freeze": 6,
+  "kind": "safe",
+  "since": "2026-10-10T06:54:09Z",
+  "owners_kinds": {
+   "eoa": 10
+  },
+  "posture": "admin: Safe 5-of-10 of 10 plain keys; delay: none",
+  "exposure": {
+   "keys_to_move": 5,
+   "react_hours": 0,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1790180194,
+ "stale": true,
+ "methodology_hash": "0xac9104d9774a01ae1bbb28a4725f597425697a1d7e68b1d8cf915439eec6b167",
+ "block": 11893529,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

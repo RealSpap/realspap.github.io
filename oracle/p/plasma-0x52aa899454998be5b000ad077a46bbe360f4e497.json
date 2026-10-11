@@ -1,0 +1,164 @@
+{
+ "name": "Fluid (Instadapp) Liquidity",
+ "named_from": "dashboard",
+ "chain": "Plasma",
+ "address": "0x52aa899454998be5b000ad077a46bbe360f4e497",
+ "composite": 59,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 24,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 55,
+  "timelockScore": 55,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bounded bypass",
+ "tvl_usd": 40005710.11735593,
+ "category": "Lending",
+ "at_risk_usd": 16402341.148115931,
+ "narrative": {
+  "summary": "A self-administered TimelockController with a real, confirmed 24-hour delay controls both governance and proxy upgrades on one shared storage slot. Its proposer is an Avocado multisig (6 of 12 signers) and its executor a 3-of-5 Safe, the same committee as Fluid on Arbitrum One.",
+  "tag": "67 to 59, cross-exposure 100 to 80 (pushed on-chain 2026-09-20, Plasma testnet block 34100595)",
+  "detail": "owner() reverts by design (a custom \"infinite proxy\", not Ownable): the real admin getter is getAdmin(), independently re-derived via keccak256 rather than copied from docs. The proposer answers requiredSigners() = 6 and signers() = 12 (an Avocado multisig, not a Safe: the first pass tried only the Safe interface), the executor is a Safe v1.4.1, 3-of-5, and both read identically on Arbitrum One. Four of the five executor owners are also among the twelve signers. Four active Liquidity auths (config-handler contracts whose TEAM_MULTISIG() is the same multisig) and the guardian act without the delay, so timelockScore is capped at 55. The oracle was rewritten with these values on 2026-09-20 (the earlier 40 / 100 / 70, composite 67, is superseded)."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.plasma.to",
+  "steps": [
+   {
+    "what": "the admin slot of the proxy (EIP-1967): the word is the admin address",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0x52aa899454998be5b000ad077a46bbe360f4e497",
+     "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+     "0x2130ca1"
+    ]
+   },
+   {
+    "what": "getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x4d6ce4f4498d59eed397bcbc687805a07f9b2346",
+      "data": "0xf27a0c92"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0x52aa899454998be5b000ad077a46bbe360f4e497",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x52aa899454998be5b000ad077a46bbe360f4e497\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x2130ca1\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x4d6ce4f4498d59eed397bcbc687805a07f9b2346\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x52aa899454998be5b000ad077a46bbe360f4e497\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x2130ca1",
+  "note": "read between blocks 34802839 and 34802849 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:03:45Z",
+   "composite": 59,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/plasma/0x52aa899454998be5b000ad077a46bbe360f4e497.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.plasma.to",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d000000000000000000000000052aa899454998be5b000ad077a46bbe360f4e497",
+  "block": "0x224022f",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000052aa899454998be5b000ad077a46bbe360f4e497\"},\"0x224022f\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 59 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "timelock",
+  "from": 55,
+  "to": 57,
+  "what": "a confirmed delay before changes apply"
+ },
+ "independent_read": {
+  "path": "EIP-1967 admin",
+  "holder": "0x4d6ce4f4498d59eed397bcbc687805a07f9b2346",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 86400,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a timelock; delay: 24 h on the timelock",
+  "shares_admin_with": [
+   {
+    "chain": "arbitrum",
+    "target": "0x52aa899454998be5b000ad077a46bbe360f4e497"
+   }
+  ],
+  "cluster_tvl_usd": 178694663.22928637,
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 24,
+   "tvl_usd": 40005710.11735593,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791655425,
+ "stale": false,
+ "methodology_hash": "0x6a1d6a17504a5faeab692225b82e197898a47dbd96137e4c1a3cc17cf977e754",
+ "block": 35914287,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x52aa899454998be5b000ad077a46bbe360f4e497",
+ "page": "https://realspap.github.io/oracle/p/plasma-0x52aa899454998be5b000ad077a46bbe360f4e497.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

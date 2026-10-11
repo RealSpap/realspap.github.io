@@ -1,0 +1,138 @@
+{
+ "name": "Fables PoolRegistry",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x159a113e012593d9b3cc63ad45e30f0467e13ef3",
+ "composite": 2,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 36914269.834133804,
+ "category": "Dexs",
+ "at_risk_usd": 36175984.43745113,
+ "narrative": {
+  "summary": "A hook-native ve(3,3) DEX on Uniswap v4. A full RoleGranted/RoleRevoked replay from genesis finds exactly one ADMIN_ROLE holder, ever - an EIP-7702-delegated EOA with 470 real transactions, not a multisig.",
+  "tag": "~$21.8M TVL",
+  "detail": "EIP-7702 delegation gives the address code (a smart-account implementation), but does not itself imply multi-party signing - no owners/threshold interface resolves at this address. Scored as a real, active bare-EOA equivalent: sole control, no delay on register/deregister/setAuthority."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "authority() on the contract (AccessManaged): the AccessManager that holds every role",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x159a113e012593d9b3cc63ad45e30f0467e13ef3",
+      "data": "0xbf7e214f"
+     },
+     "0x5210ddc"
+    ]
+   }
+  ],
+  "curl": "# authority() on the contract (AccessManaged): the AccessManager that holds every role\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x159a113e012593d9b3cc63ad45e30f0467e13ef3\",\"data\":\"0xbf7e214f\"},\"0x5210ddc\"]}'",
+  "block": "0x5210ddc",
+  "note": "read between blocks 86051800 and 86052316 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 2,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x159a113e012593d9b3cc63ad45e30f0467e13ef3.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000159a113e012593d9b3cc63ad45e30f0467e13ef3",
+  "block": "0x7ef0e36",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000159a113e012593d9b3cc63ad45e30f0467e13ef3\"},\"0x7ef0e36\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 2 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 5,
+  "to": 49,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "authority() (AccessManaged: the AccessManager holds every role)",
+  "holder": "0xa362d98b33a7bb5b5e2180a05f995a70fb404f30",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 36914269.834133804,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133107254,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x159a113e012593d9b3cc63ad45e30f0467e13ef3",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x159a113e012593d9b3cc63ad45e30f0467e13ef3.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,110 @@
+{
+ "name": "Legacy USDC bridge (Bridge2, Arbitrum One)",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0x2df1c51e09aecf9cacb7bc98cb1742757f163df7",
+ "composite": 48,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 59,
+  "timelockScore": 15,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 399934114.61848974,
+ "category": "Bridge",
+ "at_risk_usd": 207965739.60161468,
+ "narrative": {
+  "summary": "A non-upgradeable contract governed by a 3-of-4 set of unidentified keys with a 200 s dispute window. The last live read recorded over $544M still held, though the docs call it deprecated in favor of Circle CCTP.",
+  "tag": "unresolved: 4-key set vs 27 active validators",
+  "detail": "Withdrawals and admin changes need more than 2/3 of an equal-weight hot or cold set, currently 4 keys installed at epoch 7 by an emergencyUnlock transaction. Any 2 lockers can pause a pending change within the 200 s window. None of the 8 bridge keys matches any of the 35 registered L1 validator or signer addresses. Why the set is a fixed 4-key committee instead of tracking the 27 active validators, an intentional freeze or a sync that stopped, cannot be told from chain data and is left unresolved. Docs say the bridge holds under 10% of HyperCore USDC."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T19:58:11Z",
+   "composite": 48,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0x2df1c51e09aecf9cacb7bc98cb1742757f163df7.xml",
+ "reproduce": {
+  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d00000000000000000000000002df1c51e09aecf9cacb7bc98cb1742757f163df7",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000002df1c51e09aecf9cacb7bc98cb1742757f163df7\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 48 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 94,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "native",
+  "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791662291,
+ "stale": false,
+ "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
+ "block": 66597018,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x2df1c51e09aecf9cacb7bc98cb1742757f163df7",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0x2df1c51e09aecf9cacb7bc98cb1742757f163df7.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

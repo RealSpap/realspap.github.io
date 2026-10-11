@@ -1,0 +1,1963 @@
+{
+ "about": "address (EVM lowercase, Solana as written) -> the pages that score it, one per chain",
+ "count": 179,
+ "addresses": {
+  "0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "GMX V2 (Synthetics) RoleStore",
+    "score": 19,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.json"
+   }
+  ],
+  "0x1a3c9b1d2f0529d97f2afc5136cc23e58f1fd35b": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Camelot AMMv3 (Algebra) Factory",
+    "score": 31,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x1a3c9b1d2f0529d97f2afc5136cc23e58f1fd35b.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x1a3c9b1d2f0529d97f2afc5136cc23e58f1fd35b.json"
+   }
+  ],
+  "0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Radiant Capital LendingPool (V2 Core)",
+    "score": 55,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886.json"
+   }
+  ],
+  "0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Arbitrum Security Council Emergency Safe",
+    "score": 64,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641.json"
+   }
+  ],
+  "0xa97684ead0e402dc232d5a977953df7ecbab3cdb": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Aave V3 Pool (Arbitrum)",
+    "score": 71,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0xa97684ead0e402dc232d5a977953df7ecbab3cdb.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0xa97684ead0e402dc232d5a977953df7ecbab3cdb.json"
+   }
+  ],
+  "0x9c4ec768c28520b50860ea7a15bd7213a9ff58bf": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Compound V3",
+    "score": 78,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x9c4ec768c28520b50860ea7a15bd7213a9ff58bf.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x9c4ec768c28520b50860ea7a15bd7213a9ff58bf.json"
+   }
+  ],
+  "0x888888888889758f76e7103c6cbf23abbf58f946": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Pendle V2",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x888888888889758f76e7103c6cbf23abbf58f946.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x888888888889758f76e7103c6cbf23abbf58f946.json"
+   },
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Pendle (Router + Market Factory V6)",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x888888888889758f76e7103c6cbf23abbf58f946.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x888888888889758f76e7103c6cbf23abbf58f946.json"
+   }
+  ],
+  "0x52aa899454998be5b000ad077a46bbe360f4e497": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Fluid Liquidity (Arbitrum)",
+    "score": 59,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x52aa899454998be5b000ad077a46bbe360f4e497.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x52aa899454998be5b000ad077a46bbe360f4e497.json"
+   },
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Fluid (Instadapp) Liquidity",
+    "score": 59,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x52aa899454998be5b000ad077a46bbe360f4e497.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x52aa899454998be5b000ad077a46bbe360f4e497.json"
+   }
+  ],
+  "0x1f98431c8ad98523631ae4a59f267346ea31f984": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "Uniswap V3 Factory (Arbitrum One)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x1f98431c8ad98523631ae4a59f267346ea31f984.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x1f98431c8ad98523631ae4a59f267346ea31f984.json"
+   },
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Uniswap V3 Factory",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x1f98431c8ad98523631ae4a59f267346ea31f984.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x1f98431c8ad98523631ae4a59f267346ea31f984.json"
+   }
+  ],
+  "0x489ee077994b6658eafa855c308275ead8097c4a": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "GMX V1 Perps",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x489ee077994b6658eafa855c308275ead8097c4a.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x489ee077994b6658eafa855c308275ead8097c4a.json"
+   }
+  ],
+  "0x6bd780e7fdf01d77e4d475c821f1e7ae05409072": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "DolomiteMargin (verified source)",
+    "score": 40,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0x6bd780e7fdf01d77e4d475c821f1e7ae05409072.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0x6bd780e7fdf01d77e4d475c821f1e7ae05409072.json"
+   }
+  ],
+  "0xffa10065ce1d1c42fabc46e06b84ed8ffeb4bae5": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "OAdapter (verified source)",
+    "score": 8,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0xffa10065ce1d1c42fabc46e06b84ed8ffeb4bae5.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0xffa10065ce1d1c42fabc46e06b84ed8ffeb4bae5.json"
+   }
+  ],
+  "0xff162c694eaa571f685030649814282ea457f169": [
+   {
+    "chain": "Arbitrum",
+    "key": "arbitrum",
+    "name": "GNSMultiCollatDiamond (verified source)",
+    "score": 4,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/arbitrum-0xff162c694eaa571f685030649814282ea457f169.html",
+    "json": "https://realspap.github.io/oracle/p/arbitrum-0xff162c694eaa571f685030649814282ea457f169.json"
+   }
+  ],
+  "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Morpho Blue (singleton)",
+    "score": 55,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/base-0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb.html",
+    "json": "https://realspap.github.io/oracle/p/base-0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb.json"
+   },
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Morpho Blue (singleton, Ethereum L1)",
+    "score": 56,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb.json"
+   }
+  ],
+  "0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Aave V3 Base",
+    "score": 71,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/base-0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d.html",
+    "json": "https://realspap.github.io/oracle/p/base-0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d.json"
+   }
+  ],
+  "0x420dd381b31aef6683db6b902084cb0ffece40da": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Aerodrome Finance PoolFactory",
+    "score": 46,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/base-0x420dd381b31aef6683db6b902084cb0ffece40da.html",
+    "json": "https://realspap.github.io/oracle/p/base-0x420dd381b31aef6683db6b902084cb0ffece40da.json"
+   }
+  ],
+  "0x33128a8fc17869897dce68ed026d694621f6fdfd": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Uniswap V3 Factory (Base)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/base-0x33128a8fc17869897dce68ed026d694621f6fdfd.html",
+    "json": "https://realspap.github.io/oracle/p/base-0x33128a8fc17869897dce68ed026d694621f6fdfd.json"
+   }
+  ],
+  "0xb125e6687d4313864e53df431d5425969c15eb2f": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Compound V3 (Comet, USDC market)",
+    "score": 78,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/base-0xb125e6687d4313864e53df431d5425969c15eb2f.html",
+    "json": "https://realspap.github.io/oracle/p/base-0xb125e6687d4313864e53df431d5425969c15eb2f.json"
+   }
+  ],
+  "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Aerodrome Slipstream CLFactory",
+    "score": 46,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/base-0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a.html",
+    "json": "https://realspap.github.io/oracle/p/base-0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a.json"
+   }
+  ],
+  "0x8909dc15e40173ff4699343b6eb8132c65e18ec6": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Uniswap V2 Factory (Base)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/base-0x8909dc15e40173ff4699343b6eb8132c65e18ec6.html",
+    "json": "https://realspap.github.io/oracle/p/base-0x8909dc15e40173ff4699343b6eb8132c65e18ec6.json"
+   }
+  ],
+  "0x498581ff718922c3f8e6a244956af099b2652b2b": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Uniswap V4 PoolManager (Base)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/base-0x498581ff718922c3f8e6a244956af099b2652b2b.html",
+    "json": "https://realspap.github.io/oracle/p/base-0x498581ff718922c3f8e6a244956af099b2652b2b.json"
+   }
+  ],
+  "0xfbb21d0380bee3312b33c4353c8936a0f13ef26c": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Moonwell Comptroller (Unitroller)",
+    "score": 71,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/base-0xfbb21d0380bee3312b33c4353c8936a0f13ef26c.html",
+    "json": "https://realspap.github.io/oracle/p/base-0xfbb21d0380bee3312b33c4353c8936a0f13ef26c.json"
+   }
+  ],
+  "0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Gauntlet USDC Prime (gtUSDCp)",
+    "score": 66,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/base-0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61.html",
+    "json": "https://realspap.github.io/oracle/p/base-0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61.json"
+   }
+  ],
+  "0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Spark USDC Vault (sparkUSDC)",
+    "score": 63,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/base-0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a.html",
+    "json": "https://realspap.github.io/oracle/p/base-0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a.json"
+   }
+  ],
+  "0xbeef010f9cb27031ad51e3333f9af9c6b1228183": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Steakhouse USDC",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/base-0xbeef010f9cb27031ad51e3333f9af9c6b1228183.html",
+    "json": "https://realspap.github.io/oracle/p/base-0xbeef010f9cb27031ad51e3333f9af9c6b1228183.json"
+   }
+  ],
+  "0xbeef2d50b428675a1921bc6bbf4bfb9d8cf1461a": [
+   {
+    "chain": "Base",
+    "key": "base",
+    "name": "Grove x Steakhouse USDC High Yield (grove-bbqUSDC)",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/base-0xbeef2d50b428675a1921bc6bbf4bfb9d8cf1461a.html",
+    "json": "https://realspap.github.io/oracle/p/base-0xbeef2d50b428675a1921bc6bbf4bfb9d8cf1461a.json"
+   }
+  ],
+  "0x2f39d218133afab8f2b819b1066c7e434ad94e9e": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Aave V3 Ethereum Pool",
+    "score": 78,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x2f39d218133afab8f2b819b1066c7e434ad94e9e.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x2f39d218133afab8f2b819b1066c7e434ad94e9e.json"
+   }
+  ],
+  "0xbe286431454714f511008713973d3b053a2d38f3": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "MakerDAO / Sky governance (MCD_PAUSE)",
+    "score": 81,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbe286431454714f511008713973d3b053a2d38f3.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xbe286431454714f511008713973d3b053a2d38f3.json"
+   }
+  ],
+  "0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Ethena EthenaMinting (retired minter)",
+    "score": 52,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3.json"
+   }
+  ],
+  "0xc139190f447e929f090edeb554d95abb8b18ac1c": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "USDtb (Ethena Labs)",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xc139190f447e929f090edeb554d95abb8b18ac1c.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xc139190f447e929f090edeb554d95abb8b18ac1c.json"
+   }
+  ],
+  "0x73e35c5c35a274e34ade6eb13cc7f62aee323728": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "USDtb PSM (peg-stability module)",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x73e35c5c35a274e34ade6eb13cc7f62aee323728.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x73e35c5c35a274e34ade6eb13cc7f62aee323728.json"
+   }
+  ],
+  "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Ethena LayerZero OFTAdapters (0x5d3a\u2026ef34)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.json"
+   },
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Ethena USDe OFT",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.json"
+   }
+  ],
+  "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Ethena LayerZero OFTAdapters (0x211c\u2026e5d2)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2.json"
+   }
+  ],
+  "0x58538e6a46e07434d7e7375bc268d3cb839c0133": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Ethena LayerZero OFTAdapters (0x5853\u20260133)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x58538e6a46e07434d7e7375bc268d3cb839c0133.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x58538e6a46e07434d7e7375bc268d3cb839c0133.json"
+   }
+  ],
+  "0xc3d688b66703497daa19211eedff47f25384cdc3": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Compound V3 cUSDCv3 (Comet USDC)",
+    "score": 79,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xc3d688b66703497daa19211eedff47f25384cdc3.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xc3d688b66703497daa19211eedff47f25384cdc3.json"
+   }
+  ],
+  "0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "SparkLend PoolAddressesProvider",
+    "score": 78,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee.json"
+   }
+  ],
+  "0x000000000004444c5dc75cb358380d2e3de08a90": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Uniswap V4 PoolManager",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x000000000004444c5dc75cb358380d2e3de08a90.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x000000000004444c5dc75cb358380d2e3de08a90.json"
+   }
+  ],
+  "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "WBTC (Wrapped BTC)",
+    "score": 52,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.json"
+   }
+  ],
+  "0xe3490297a08d6fc8da46edb7b6142e4f461b62d3": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Ethena EthenaMinting (USDe live minter)",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xe3490297a08d6fc8da46edb7b6142e4f461b62d3.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xe3490297a08d6fc8da46edb7b6142e4f461b62d3.json"
+   }
+  ],
+  "0xae7ab96520de3a18e5e111b5eaab095312d7fe84": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Lido stETH",
+    "score": 80,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xae7ab96520de3a18e5e111b5eaab095312d7fe84.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xae7ab96520de3a18e5e111b5eaab095312d7fe84.json"
+   }
+  ],
+  "0x858646372cc42e1a627fce94aa7a7033e7cf075a": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "EigenLayer StrategyManager",
+    "score": 60,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x858646372cc42e1a627fce94aa7a7033e7cf075a.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x858646372cc42e1a627fce94aa7a7033e7cf075a.json"
+   }
+  ],
+  "0x6a8cbed756804b16e05e741edabd5cb544ae21bf": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Curve Stableswap-NG factory",
+    "score": 81,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x6a8cbed756804b16e05e741edabd5cb544ae21bf.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x6a8cbed756804b16e05e741edabd5cb544ae21bf.json"
+   }
+  ],
+  "0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Rocket Pool RocketStorage",
+    "score": 22,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.json"
+   }
+  ],
+  "0x5d39e06b825c1f2b80bf2756a73e28efaa128ba0": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Unnamed contract 0x5d39\u20268ba0",
+    "score": 47,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x5d39e06b825c1f2b80bf2756a73e28efaa128ba0.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x5d39e06b825c1f2b80bf2756a73e28efaa128ba0.json"
+   }
+  ],
+  "0xf403c135812408bfbe8713b5a23a04b3d48aae31": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Convex Finance",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xf403c135812408bfbe8713b5a23a04b3d48aae31.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xf403c135812408bfbe8713b5a23a04b3d48aae31.json"
+   }
+  ],
+  "0x55555815a5595991c3a0ff119b59aef6c8b55555": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Adpend USDC (adpUSDC)",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x55555815a5595991c3a0ff119b59aef6c8b55555.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x55555815a5595991c3a0ff119b59aef6c8b55555.json"
+   }
+  ],
+  "0x94643e86aa5e38ddac6c7791c1297f4e40cd96c1": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "1337 USDC (1337USDC)",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x94643e86aa5e38ddac6c7791c1297f4e40cd96c1.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x94643e86aa5e38ddac6c7791c1297f4e40cd96c1.json"
+   }
+  ],
+  "0xbeef047a543e45807105e51a8bbefcc5950fcfba": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Steakhouse USDT (steakUSDT)",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef047a543e45807105e51a8bbefcc5950fcfba.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef047a543e45807105e51a8bbefcc5950fcfba.json"
+   }
+  ],
+  "0xbeef01735c132ada46aa9aa4c54623caa92a64cb": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Steakhouse USDC (steakUSDC)",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef01735c132ada46aa9aa4c54623caa92a64cb.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef01735c132ada46aa9aa4c54623caa92a64cb.json"
+   }
+  ],
+  "0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Hyperliquid L1 (HyperCore validator set)",
+    "score": 26,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c.json"
+   }
+  ],
+  "0x88806a71d74ad0a510b350545c9ae490912f0888": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "HIP-3 dex xyz (trade[XYZ])",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x88806a71d74ad0a510b350545c9ae490912f0888.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x88806a71d74ad0a510b350545c9ae490912f0888.json"
+   }
+  ],
+  "0x320c8988e3d1b5198f335802d7bfd2728a8fcac6": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "HIP-3 dex io",
+    "score": 32,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x320c8988e3d1b5198f335802d7bfd2728a8fcac6.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x320c8988e3d1b5198f335802d7bfd2728a8fcac6.json"
+   }
+  ],
+  "0x30e96fbd515243d47703e78581b88cba60f51360": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "HIP-3 dex para (Paragon)",
+    "score": 5,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x30e96fbd515243d47703e78581b88cba60f51360.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x30e96fbd515243d47703e78581b88cba60f51360.json"
+   }
+  ],
+  "0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "HIP-3 dex mkts (Markets by Kinetiq)",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc.json"
+   }
+  ],
+  "0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Kinetiq HIP3StakingManager (kmHYPE)",
+    "score": 4,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec.json"
+   }
+  ],
+  "0x8888888c43cbb7e1c4132542e46831bffd866ed3": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "para StakingVault (HyperEVM)",
+    "score": 4,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888c43cbb7e1c4132542e46831bffd866ed3.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888c43cbb7e1c4132542e46831bffd866ed3.json"
+   }
+  ],
+  "0x8888888192a4a0593c13532ba48449fc24c3beda": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Ventuals vHYPE staking (HyperEVM)",
+    "score": 31,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888192a4a0593c13532ba48449fc24c3beda.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888192a4a0593c13532ba48449fc24c3beda.json"
+   }
+  ],
+  "0x393d0b87ed38fc779fd9611144ae649ba6082109": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Kinetiq kHYPE StakingManager (HyperEVM)",
+    "score": 4,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x393d0b87ed38fc779fd9611144ae649ba6082109.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x393d0b87ed38fc779fd9611144ae649ba6082109.json"
+   }
+  ],
+  "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Hyperliquidity Provider (HLP) vault",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0xdfc24b077bc1425ad1dea75bcb6f8158e10df303.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0xdfc24b077bc1425ad1dea75bcb6f8158e10df303.json"
+   }
+  ],
+  "0x574bafce69d9411f662a433896e74e4f153096fa": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Unit UBTC, UETH and USOL treasuries (0x574b\u202696fa)",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x574bafce69d9411f662a433896e74e4f153096fa.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x574bafce69d9411f662a433896e74e4f153096fa.json"
+   }
+  ],
+  "0x8dafbe89302656a7df43c470e9ebcb4c540835c0": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Unit UBTC, UETH and USOL treasuries (0x8daf\u202635c0)",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8dafbe89302656a7df43c470e9ebcb4c540835c0.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x8dafbe89302656a7df43c470e9ebcb4c540835c0.json"
+   }
+  ],
+  "0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Unit UBTC, UETH and USOL treasuries (0xa822\u2026d748)",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748.json"
+   }
+  ],
+  "0x2df1c51e09aecf9cacb7bc98cb1742757f163df7": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "Legacy USDC bridge (Bridge2, Arbitrum One)",
+    "score": 48,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x2df1c51e09aecf9cacb7bc98cb1742757f163df7.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x2df1c51e09aecf9cacb7bc98cb1742757f163df7.json"
+   }
+  ],
+  "0x72c98246a98bfe64022a3190e7710e157497170c": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "HyperLend Pooled (Aave v3 fork)",
+    "score": 61,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.json"
+   }
+  ],
+  "0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Echo Protocol eBTC",
+    "score": 37,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/monad-0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.json"
+   }
+  ],
+  "0x188d586ddcf52439676ca21a244753fa19f9ea8e": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Uniswap v4 PoolManager",
+    "score": 80,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/monad-0x188d586ddcf52439676ca21a244753fa19f9ea8e.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0x188d586ddcf52439676ca21a244753fa19f9ea8e.json"
+   }
+  ],
+  "0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Monad Native Bridge (Wormhole NTT)",
+    "score": 60,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/monad-0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95.json"
+   }
+  ],
+  "0xd651346d7c789536ebf06dc72ae3c8502cd695cc": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Kuru Router + MarginAccount",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/monad-0xd651346d7c789536ebf06dc72ae3c8502cd695cc.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0xd651346d7c789536ebf06dc72ae3c8502cd695cc.json"
+   }
+  ],
+  "0x32841a8511d5c2c5b253f45668780b99139e476d": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Morpho Vault: Grove x Steakhouse High Yield AUSD",
+    "score": 67,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/monad-0x32841a8511d5c2c5b253f45668780b99139e476d.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0x32841a8511d5c2c5b253f45668780b99139e476d.json"
+   }
+  ],
+  "0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Curve Finance StableSwap Factory",
+    "score": 4,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/monad-0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.json"
+   },
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Curve DEX",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.json"
+   }
+  ],
+  "0xad663ac84052b52be4ed1b27ba416505e84a00bf": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Curvance Emergency Council",
+    "score": 44,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/monad-0xad663ac84052b52be4ed1b27ba416505e84a00bf.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0xad663ac84052b52be4ed1b27ba416505e84a00bf.json"
+   }
+  ],
+  "0x34793fb9935f7bb5e5ae920fb963f39063e7a615": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Aave V3 Pool",
+    "score": 49,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/monad-0x34793fb9935f7bb5e5ae920fb963f39063e7a615.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0x34793fb9935f7bb5e5ae920fb963f39063e7a615.json"
+   }
+  ],
+  "0xba4dd672062de8feedb665dd4410658864483f1e": [
+   {
+    "chain": "Monad",
+    "key": "monad",
+    "name": "Euler V2 eVaultFactory",
+    "score": 64,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/monad-0xba4dd672062de8feedb665dd4410658864483f1e.html",
+    "json": "https://realspap.github.io/oracle/p/monad-0xba4dd672062de8feedb665dd4410658864483f1e.json"
+   }
+  ],
+  "0x6c50b8ca8eeaa1c75dee5b5ea79772acabc92f48": [
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Plasma L1 validator-set authority (Aquila)",
+    "score": 35,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x6c50b8ca8eeaa1c75dee5b5ea79772acabc92f48.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x6c50b8ca8eeaa1c75dee5b5ea79772acabc92f48.json"
+   }
+  ],
+  "0x061d8e131f26512348ee5fa42e2df1ba9d6505e9": [
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Aave V3 Pool",
+    "score": 71,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x061d8e131f26512348ee5fa42e2df1ba9d6505e9.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x061d8e131f26512348ee5fa42e2df1ba9d6505e9.json"
+   }
+  ],
+  "0x42388213c6f56d7e1477632b58ae6bba9adeeea3": [
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Euler V2 eVaultFactory",
+    "score": 72,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x42388213c6f56d7e1477632b58ae6bba9adeeea3.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x42388213c6f56d7e1477632b58ae6bba9adeeea3.json"
+   }
+  ],
+  "0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c": [
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Euler V2 AccessControlEmergencyGovernor",
+    "score": 68,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c.json"
+   }
+  ],
+  "0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66": [
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Telos Consilium TelosC Surge",
+    "score": 30,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/plasma-0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66.json"
+   }
+  ],
+  "0x6695c0f8706c5ace3bdf8995073179cca47926dc": [
+   {
+    "chain": "Plasma",
+    "key": "plasma",
+    "name": "Yuzu Money yzUSD",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/plasma-0x6695c0f8706c5ace3bdf8995073179cca47926dc.html",
+    "json": "https://realspap.github.io/oracle/p/plasma-0x6695c0f8706c5ace3bdf8995073179cca47926dc.json"
+   }
+  ],
+  "0xbeeff033f34c046626b8d0a041844c5d1a5409dd": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Morpho Steakhouse USDG vault",
+    "score": 44,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff033f34c046626b8d0a041844c5d1a5409dd.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xbeeff033f34c046626b8d0a041844c5d1a5409dd.json"
+   }
+  ],
+  "0x1f7d7550b1b028f7571e69a784071f0205fd2efa": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Uniswap v2 + v3 + v4 + UniswapX (0x1f7d\u20262efa)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x1f7d7550b1b028f7571e69a784071f0205fd2efa.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x1f7d7550b1b028f7571e69a784071f0205fd2efa.json"
+   }
+  ],
+  "0x8366a39cc670b4001a1121b8f6a443a643e40951": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Uniswap v2 + v3 + v4 + UniswapX (0x8366\u20260951)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x8366a39cc670b4001a1121b8f6a443a643e40951.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x8366a39cc670b4001a1121b8f6a443a643e40951.json"
+   }
+  ],
+  "0x94bab9693ba2f6358507effcbd372b0660afff9d": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Lighter (zkLighter) Escrow proxy",
+    "score": 54,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x94bab9693ba2f6358507effcbd372b0660afff9d.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x94bab9693ba2f6358507effcbd372b0660afff9d.json"
+   }
+  ],
+  "0x000000007a1c8e570011eedf86a2a35593013cba": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Uniswap v2 + v3 + v4 + UniswapX (0x0000\u20263cba)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x000000007a1c8e570011eedf86a2a35593013cba.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x000000007a1c8e570011eedf86a2a35593013cba.json"
+   }
+  ],
+  "0xde770c84fe66e063336b31737cfe9790f18c4087": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Spark Savings USDG (spUSDG)",
+    "score": 32,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xde770c84fe66e063336b31737cfe9790f18c4087.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xde770c84fe66e063336b31737cfe9790f18c4087.json"
+   }
+  ],
+  "0x544bf81c855ae84c1e8b65d5e38770898d01eee2": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Pendle V2",
+    "score": 42,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x544bf81c855ae84c1e8b65d5e38770898d01eee2.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x544bf81c855ae84c1e8b65d5e38770898d01eee2.json"
+   }
+  ],
+  "0x00000000000014aa86c5d3c41765bb24e11bd701": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Ekubo Core",
+    "score": 100,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x00000000000014aa86c5d3c41765bb24e11bd701.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x00000000000014aa86c5d3c41765bb24e11bd701.json"
+   }
+  ],
+  "0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Uniswap v2 + v3 + v4 + UniswapX (0x8bce\u2026937f)",
+    "score": 85,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f.json"
+   }
+  ],
+  "0x9c3663fa9ab976e67b42939486ec4966cb41a0bb": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Arcus pToken factory + pBTC + pBTC3x (0x9c36\u2026a0bb)",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x9c3663fa9ab976e67b42939486ec4966cb41a0bb.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x9c3663fa9ab976e67b42939486ec4966cb41a0bb.json"
+   }
+  ],
+  "0x925f92f055edb79c42b5d45e64a1b74143b90ea0": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Arcus pToken factory + pBTC + pBTC3x (0x925f\u20260ea0)",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x925f92f055edb79c42b5d45e64a1b74143b90ea0.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x925f92f055edb79c42b5d45e64a1b74143b90ea0.json"
+   }
+  ],
+  "0x4472c69d299382f8847ebce4fc6ed8e295510e3e": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Arcus pToken factory + pBTC + pBTC3x (0x4472\u20260e3e)",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x4472c69d299382f8847ebce4fc6ed8e295510e3e.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x4472c69d299382f8847ebce4fc6ed8e295510e3e.json"
+   }
+  ],
+  "0x322f0929c4625ed5bad873c95208d54e1c003b2d": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled) (0x322f\u20263b2d)",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x322f0929c4625ed5bad873c95208d54e1c003b2d.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x322f0929c4625ed5bad873c95208d54e1c003b2d.json"
+   }
+  ],
+  "0x12f190a9f9d7d37a250758b26824b97ce941bf54": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled) (0x12f1\u2026bf54)",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x12f190a9f9d7d37a250758b26824b97ce941bf54.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x12f190a9f9d7d37a250758b26824b97ce941bf54.json"
+   }
+  ],
+  "0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled) (0x894e\u20264f2a)",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a.json"
+   }
+  ],
+  "0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled) (0xe044\u202691e8)",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8.json"
+   }
+  ],
+  "0x86923f96303d656e4aa86d9d42d1e57ad2023fdc": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled) (0x8692\u20263fdc)",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x86923f96303d656e4aa86d9d42d1e57ad2023fdc.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x86923f96303d656e4aa86d9d42d1e57ad2023fdc.json"
+   }
+  ],
+  "0x99347d5f70d3838763f6bddcf80304c8aa953b57": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Morpho NetNet Credit vault",
+    "score": 25,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x99347d5f70d3838763f6bddcf80304c8aa953b57.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x99347d5f70d3838763f6bddcf80304c8aa953b57.json"
+   }
+  ],
+  "0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Morpho Purinta USDG vault",
+    "score": 63,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8.json"
+   }
+  ],
+  "0xbeeff0fb1dc19344a87b8479dab60a2e16160737": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Morpho Ethena x Steakhouse USDG vault",
+    "score": 70,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff0fb1dc19344a87b8479dab60a2e16160737.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xbeeff0fb1dc19344a87b8479dab60a2e16160737.json"
+   }
+  ],
+  "0x026df18fbd2a7639089d0a16293383ec687a5ca1": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Longbow (0x026d\u20265ca1)",
+    "score": 33,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x026df18fbd2a7639089d0a16293383ec687a5ca1.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x026df18fbd2a7639089d0a16293383ec687a5ca1.json"
+   }
+  ],
+  "0x65dc90cd3a0bcde967c8ae6019d6790b616e78f7": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Longbow (0x65dc\u202678f7)",
+    "score": 33,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x65dc90cd3a0bcde967c8ae6019d6790b616e78f7.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x65dc90cd3a0bcde967c8ae6019d6790b616e78f7.json"
+   }
+  ],
+  "0xe129d4cb2d454c4acfac909d1576453a9b835f61": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Longbow (0xe129\u20265f61)",
+    "score": 33,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xe129d4cb2d454c4acfac909d1576453a9b835f61.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xe129d4cb2d454c4acfac909d1576453a9b835f61.json"
+   }
+  ],
+  "0x23a19d23e89166adedbdcb432518ab01e4272d94": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood Chain\u2019s own L1 rollup authority (0x23a1\u20262d94)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x23a19d23e89166adedbdcb432518ab01e4272d94.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x23a19d23e89166adedbdcb432518ab01e4272d94.json"
+   }
+  ],
+  "0xbd0d173eeb87d57a09521c24388a12789f33ba96": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood Chain\u2019s own L1 rollup authority (0xbd0d\u2026ba96)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xbd0d173eeb87d57a09521c24388a12789f33ba96.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xbd0d173eeb87d57a09521c24388a12789f33ba96.json"
+   }
+  ],
+  "0x1232813bdd40aa9d53066a880de78a4be70b90fd": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood Chain\u2019s own L1 rollup authority (0x1232\u202690fd)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x1232813bdd40aa9d53066a880de78a4be70b90fd.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x1232813bdd40aa9d53066a880de78a4be70b90fd.json"
+   }
+  ],
+  "0x1a07cc4bd17e0118bdb54d70990d2158abad7a2d": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood Chain\u2019s own L1 rollup authority (0x1a07\u20267a2d)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x1a07cc4bd17e0118bdb54d70990d2158abad7a2d.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x1a07cc4bd17e0118bdb54d70990d2158abad7a2d.json"
+   }
+  ],
+  "0xdf8755334ce7a73ccf6b581c02ea649ae3e864b3": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood Chain\u2019s own L1 rollup authority (0xdf87\u202664b3)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xdf8755334ce7a73ccf6b581c02ea649ae3e864b3.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xdf8755334ce7a73ccf6b581c02ea649ae3e864b3.json"
+   }
+  ],
+  "0xf0ce991ea4a0d2400a4ab49b20ae333f6dce3de9": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Robinhood Chain\u2019s own L1 rollup authority (0xf0ce\u20263de9)",
+    "score": 57,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xf0ce991ea4a0d2400a4ab49b20ae333f6dce3de9.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xf0ce991ea4a0d2400a4ab49b20ae333f6dce3de9.json"
+   }
+  ],
+  "0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Ramses CL V2 (0xe0c4\u202654a8)",
+    "score": 8,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8.json"
+   }
+  ],
+  "0x4b37359bf291abe8453692db58d515a8b013dca9": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Ramses CL V2 (0x4b37\u2026dca9)",
+    "score": 8,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x4b37359bf291abe8453692db58d515a8b013dca9.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x4b37359bf291abe8453692db58d515a8b013dca9.json"
+   }
+  ],
+  "0x83341f891f898cb5e0cacc8a70501bba83d9cecf": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Ramses CL V2 (0x8334\u2026cecf)",
+    "score": 8,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x83341f891f898cb5e0cacc8a70501bba83d9cecf.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x83341f891f898cb5e0cacc8a70501bba83d9cecf.json"
+   }
+  ],
+  "0xa203a21dccb461e415daa342e8e635b6cee0ccb3": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Ramses CL V2 (0xa203\u2026ccb3)",
+    "score": 8,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xa203a21dccb461e415daa342e8e635b6cee0ccb3.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xa203a21dccb461e415daa342e8e635b6cee0ccb3.json"
+   }
+  ],
+  "0xee27d5ae494300902d90454e8630a3f1c68c9c52": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Chainlink Price Feed Admin (Robinhood Chain)",
+    "score": 52,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xee27d5ae494300902d90454e8630a3f1c68c9c52.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xee27d5ae494300902d90454e8630a3f1c68c9c52.json"
+   }
+  ],
+  "0x6f475642a6e85809b1c36fa62763669b1b48dd5b": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "LayerZero V2 messaging core (0x6f47\u2026dd5b)",
+    "score": 48,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x6f475642a6e85809b1c36fa62763669b1b48dd5b.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x6f475642a6e85809b1c36fa62763669b1b48dd5b.json"
+   }
+  ],
+  "0xc39161c743d0307eb9bcc9fef03eeb9dc4802de7": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "LayerZero V2 messaging core (0xc391\u20262de7)",
+    "score": 48,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xc39161c743d0307eb9bcc9fef03eeb9dc4802de7.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xc39161c743d0307eb9bcc9fef03eeb9dc4802de7.json"
+   }
+  ],
+  "0xe1844c5d63a9543023008d332bd3d2e6f1fe1043": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "LayerZero V2 messaging core (0xe184\u20261043)",
+    "score": 48,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xe1844c5d63a9543023008d332bd3d2e6f1fe1043.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xe1844c5d63a9543023008d332bd3d2e6f1fe1043.json"
+   }
+  ],
+  "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "PancakeSwap V3 Factory",
+    "score": 44,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865.json"
+   }
+  ],
+  "0xe51960f1b45f1c9fb6d166e6a884f866fc70433b": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "SushiSwap V3 Factory",
+    "score": 31,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xe51960f1b45f1c9fb6d166e6a884f866fc70433b.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xe51960f1b45f1c9fb6d166e6a884f866fc70433b.json"
+   }
+  ],
+  "0x292fc50e4eb66c3f6514b9e402dbc25961824d62": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Symbiosis Portal",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x292fc50e4eb66c3f6514b9e402dbc25961824d62.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x292fc50e4eb66c3f6514b9e402dbc25961824d62.json"
+   }
+  ],
+  "0x0dc846db6a4ec7b5a3e542f7db88049e9add2541": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "STRATO Bridge depositRouter (Robinhood side)",
+    "score": 29,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x0dc846db6a4ec7b5a3e542f7db88049e9add2541.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x0dc846db6a4ec7b5a3e542f7db88049e9add2541.json"
+   }
+  ],
+  "0x159a113e012593d9b3cc63ad45e30f0467e13ef3": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Fables PoolRegistry",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x159a113e012593d9b3cc63ad45e30f0467e13ef3.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x159a113e012593d9b3cc63ad45e30f0467e13ef3.json"
+   }
+  ],
+  "0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Beefy: SPY-WETH vault (representative)",
+    "score": 50,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62.json"
+   }
+  ],
+  "0x1195c074f898b7644ba732407619c9804dfe6dce": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Snuggle: MaxFi Robinhood vault",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x1195c074f898b7644ba732407619c9804dfe6dce.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x1195c074f898b7644ba732407619c9804dfe6dce.json"
+   }
+  ],
+  "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "PancakeSwap AMM (V2) Factory",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e.json"
+   }
+  ],
+  "0xbeeff039907422219fb367e525954ddc092854d9": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Morpho Grove x Steakhouse + Steakhouse Turbo USDG vaults",
+    "score": 40,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff039907422219fb367e525954ddc092854d9.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xbeeff039907422219fb367e525954ddc092854d9.json"
+   }
+  ],
+  "0xbeefff136e3684273e6aa75a1669b784b373a4fd": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Morpho Grove x Steakhouse + Steakhouse Turbo USDG vaults",
+    "score": 66,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xbeefff136e3684273e6aa75a1669b784b373a4fd.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xbeefff136e3684273e6aa75a1669b784b373a4fd.json"
+   }
+  ],
+  "0xfd2fd4b046136b540a56c11c75ac679ae7d1db24": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Spark Liquidity Layer (ALMProxy)",
+    "score": 32,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.json"
+   }
+  ],
+  "0xd540f47f214dc7d6d244e62a6ae7e06b586ef44a": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Meridian Perps (ExchangeGateway + merUSD)",
+    "score": 16,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xd540f47f214dc7d6d244e62a6ae7e06b586ef44a.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xd540f47f214dc7d6d244e62a6ae7e06b586ef44a.json"
+   }
+  ],
+  "0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Morpho Blue (singleton, Robinhood Chain)",
+    "score": 55,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010.json"
+   }
+  ],
+  "0x7f03effbd7ceb22a3f80dd468f67ef27826acd85": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "NOXA Fun Launch Locker",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x7f03effbd7ceb22a3f80dd468f67ef27826acd85.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x7f03effbd7ceb22a3f80dd468f67ef27826acd85.json"
+   }
+  ],
+  "0xf28704c691290547924e2129d407da36bda8ce0f": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "UNCX Network V3 Locker",
+    "score": 31,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xf28704c691290547924e2129d407da36bda8ce0f.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xf28704c691290547924e2129d407da36bda8ce0f.json"
+   }
+  ],
+  "0x14b107cf534239c59571b066cb6497a321da897c": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Arcus Perps BridgeVault",
+    "score": 31,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x14b107cf534239c59571b066cb6497a321da897c.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x14b107cf534239c59571b066cb6497a321da897c.json"
+   }
+  ],
+  "0xd5c6c79692715145098a65d1eb1f2a10c524f8e8": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "T3tris Finance WBTC vault",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xd5c6c79692715145098a65d1eb1f2a10c524f8e8.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xd5c6c79692715145098a65d1eb1f2a10c524f8e8.json"
+   }
+  ],
+  "0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "up v3 Factory",
+    "score": 32,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3.json"
+   }
+  ],
+  "0x16494a80e08bcb9285d87b67149d7b01774d82f8": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Alandale V3 Factory",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x16494a80e08bcb9285d87b67149d7b01774d82f8.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x16494a80e08bcb9285d87b67149d7b01774d82f8.json"
+   }
+  ],
+  "0xb24b143ad6bb5be9559ccc75f34a2261b7456904": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "RestrictedVaultFactory (verified source)",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xb24b143ad6bb5be9559ccc75f34a2261b7456904.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xb24b143ad6bb5be9559ccc75f34a2261b7456904.json"
+   }
+  ],
+  "0x128a800cbc615cc110bff16e475865c67631603a": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "UNCX V4 Lock (UNCX-V4-LOCK)",
+    "score": 31,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x128a800cbc615cc110bff16e475865c67631603a.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x128a800cbc615cc110bff16e475865c67631603a.json"
+   }
+  ],
+  "0x5c98b2d892b37c9a1d3b69472bddc172a64cdc09": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Unnamed contract 0x5c98\u2026dc09",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0x5c98b2d892b37c9a1d3b69472bddc172a64cdc09.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0x5c98b2d892b37c9a1d3b69472bddc172a64cdc09.json"
+   }
+  ],
+  "0xd01c774d4a66408326bc65728ac5ae5aaf004032": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "CLPoolManager (verified source)",
+    "score": 46,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xd01c774d4a66408326bc65728ac5ae5aaf004032.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xd01c774d4a66408326bc65728ac5ae5aaf004032.json"
+   }
+  ],
+  "0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Vault (verified source)",
+    "score": 1,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d.json"
+   }
+  ],
+  "0xd42174d3db28b0fa2bd25381c3521b18ae9db490": [
+   {
+    "chain": "Robinhood Chain",
+    "key": "robinhood",
+    "name": "Flock Credit Vault (fcVAULT)",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/robinhood-0xd42174d3db28b0fa2bd25381c3521b18ae9db490.html",
+    "json": "https://realspap.github.io/oracle/p/robinhood-0xd42174d3db28b0fa2bd25381c3521b18ae9db490.json"
+   }
+  ],
+  "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Jupiter Aggregator v6",
+    "score": 47,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4.html",
+    "json": "https://realspap.github.io/oracle/p/solana-JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4.json"
+   }
+  ],
+  "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Kamino Lend, main market (SOL/BTC)",
+    "score": 56,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.html",
+    "json": "https://realspap.github.io/oracle/p/solana-7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.json"
+   }
+  ],
+  "7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Solend DAO governance realm",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/solana-7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn.html",
+    "json": "https://realspap.github.io/oracle/p/solana-7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn.json"
+   }
+  ],
+  "dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Drift Protocol",
+    "score": 48,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH.html",
+    "json": "https://realspap.github.io/oracle/p/solana-dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH.json"
+   }
+  ],
+  "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Raydium (AMM v4, CLMM, CPMM)",
+    "score": 14,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/solana-CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK.html",
+    "json": "https://realspap.github.io/oracle/p/solana-CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK.json"
+   }
+  ],
+  "4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "marginfi main lending group",
+    "score": 33,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/solana-4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.html",
+    "json": "https://realspap.github.io/oracle/p/solana-4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.json"
+   }
+  ],
+  "GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Kamino Liquidity (yvaults)",
+    "score": 54,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.html",
+    "json": "https://realspap.github.io/oracle/p/solana-GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.json"
+   }
+  ],
+  "H4ND9aYttUVLFmNypZqLjZ52FYiGvdEB45GmwNoKEjTj": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Jupiter Perpetual Exchange",
+    "score": 46,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-H4ND9aYttUVLFmNypZqLjZ52FYiGvdEB45GmwNoKEjTj.html",
+    "json": "https://realspap.github.io/oracle/p/solana-H4ND9aYttUVLFmNypZqLjZ52FYiGvdEB45GmwNoKEjTj.json"
+   }
+  ],
+  "7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Jupiter Lend",
+    "score": 55,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z.html",
+    "json": "https://realspap.github.io/oracle/p/solana-7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z.json"
+   }
+  ],
+  "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "PumpSwap and pump.fun bonding curve",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.html",
+    "json": "https://realspap.github.io/oracle/p/solana-ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.json"
+   }
+  ],
+  "cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Meteora DAMM v2",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/solana-cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG.html",
+    "json": "https://realspap.github.io/oracle/p/solana-cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG.json"
+   }
+  ],
+  "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Orca Whirlpool",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/solana-2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ.html",
+    "json": "https://realspap.github.io/oracle/p/solana-2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ.json"
+   }
+  ],
+  "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Marinade Liquid Staking",
+    "score": 45,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC.html",
+    "json": "https://realspap.github.io/oracle/p/solana-8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC.json"
+   }
+  ],
+  "So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Save (ex Solend) lending program",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/solana-So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo.html",
+    "json": "https://realspap.github.io/oracle/p/solana-So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo.json"
+   }
+  ],
+  "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "SPL Stake Pool program (shared infrastructure)",
+    "score": 54,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.html",
+    "json": "https://realspap.github.io/oracle/p/solana-SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.json"
+   }
+  ],
+  "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "JitoSOL (Jito Liquid Staking)",
+    "score": 54,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb.html",
+    "json": "https://realspap.github.io/oracle/p/solana-Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb.json"
+   }
+  ],
+  "5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Sanctum Infinity (S Controller)",
+    "score": 46,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx.html",
+    "json": "https://realspap.github.io/oracle/p/solana-5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx.json"
+   }
+  ],
+  "SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Sanctum validator LSTs (SanctumSpl, SanctumSplMulti)",
+    "score": 54,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.html",
+    "json": "https://realspap.github.io/oracle/p/solana-SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.json"
+   }
+  ],
+  "0xcccccccc00000000000000000000000000000001": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "Tempo L1 validator registry (ValidatorConfigV2)",
+    "score": 31,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/tempo-0xcccccccc00000000000000000000000000000001.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0xcccccccc00000000000000000000000000000001.json"
+   }
+  ],
+  "0x20c000000000000000000000b9537d11c60e8b50": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "USDC.e",
+    "score": 55,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c000000000000000000000b9537d11c60e8b50.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c000000000000000000000b9537d11c60e8b50.json"
+   }
+  ],
+  "0x20c00000000000000000000014f22ca97301eb73": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "USDT0",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c00000000000000000000014f22ca97301eb73.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c00000000000000000000014f22ca97301eb73.json"
+   }
+  ],
+  "0x20c0000000000000000000000000000000000000": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "pathUSD",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000000000000000000000.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000000000000000000000.json"
+   }
+  ],
+  "0x20c0000000000000000000003158081efd85bfc2": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "USDB",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000003158081efd85bfc2.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000003158081efd85bfc2.json"
+   }
+  ],
+  "0x20c000000000000000000000c412ec89d0c08be5": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "cbBTC",
+    "score": 39,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c000000000000000000000c412ec89d0c08be5.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c000000000000000000000c412ec89d0c08be5.json"
+   }
+  ],
+  "0x20c00000000000000000000058d0b8b2cfdb358c": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "PRIME",
+    "score": 39,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c00000000000000000000058d0b8b2cfdb358c.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c00000000000000000000058d0b8b2cfdb358c.json"
+   }
+  ],
+  "0x20c0000000000000000000006fd9a167923ba194": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "DLUSD",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000006fd9a167923ba194.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000006fd9a167923ba194.json"
+   }
+  ],
+  "0x20c0000000000000000000001621e21f71cf12fb": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "EURC.e",
+    "score": 55,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000001621e21f71cf12fb.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000001621e21f71cf12fb.json"
+   }
+  ],
+  "0x20c0000000000000000000000520792dcccccccc": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "cUSD",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000000520792dcccccccc.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000000520792dcccccccc.json"
+   }
+  ],
+  "0x9a044ae05e5e6290dcf56afd69548565e957a626": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "Sentora pathUSD (Morpho Vault V2)",
+    "score": 27,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x9a044ae05e5e6290dcf56afd69548565e957a626.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x9a044ae05e5e6290dcf56afd69548565e957a626.json"
+   }
+  ],
+  "0x83a1491f3e7f8daab8f787a631334b9ca7a87023": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "Unnamed pathUSD Vault V2 feeding Sentora",
+    "score": 9,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x83a1491f3e7f8daab8f787a631334b9ca7a87023.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x83a1491f3e7f8daab8f787a631334b9ca7a87023.json"
+   }
+  ],
+  "0xc609656ed9ef219c98c8e549bf729144f211f06e": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "Tempo Earn (Morpho Vault V2, Gauntlet-curated)",
+    "score": 61,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/tempo-0xc609656ed9ef219c98c8e549bf729144f211f06e.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0xc609656ed9ef219c98c8e549bf729144f211f06e.json"
+   }
+  ],
+  "0x10ee9aac980a180dd4dcfc96c746d60b0ea88f97": [
+   {
+    "chain": "Tempo",
+    "key": "tempo",
+    "name": "Morpho Blue core",
+    "score": 55,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/tempo-0x10ee9aac980a180dd4dcfc96c746d60b0ea88f97.html",
+    "json": "https://realspap.github.io/oracle/p/tempo-0x10ee9aac980a180dd4dcfc96c746d60b0ea88f97.json"
+   }
+  ]
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "name": "Echo Protocol eBTC",
+ "named_from": "dashboard",
+ "chain": "Monad",
+ "address": "0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9",
+ "composite": 37,
+ "band": "weak",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 55,
+  "multisigScore": 50,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "A bare EOA holding every admin role (no multisig, no mint cap) was compromised on 2026-05-18 and minted 1,000 unbacked eBTC in one transaction - ~$76.6M notional, ~$816K realized after laundering. Not hypothetical: independently confirmed on-chain via the exact transaction.",
+  "tag": "real, dated exploit - now on a 3-of-4 Safe",
+  "detail": "This card shows the CURRENT state, not the incident-era one: within ~10 hours the key was rotated, through two hops, to a real 3-of-4 Gnosis Safe - confirmed live via hasRole()/getOwners()/getThreshold(), with both the original compromised EOA and the attacker address independently confirmed to no longer hold the admin role. MINTER_ROLE currently has no holder at all (minting is effectively paused). Composite reflects a genuine but recent, exploit-driven remediation - moderate, not high, since the rotation happened under active-exploit duress only 4 months before this pass."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T18:15:26Z",
+   "composite": 37,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/monad/0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.monad.xyz/",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9",
+  "block": "0x42eeb2c",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9\"},\"0x42eeb2c\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 37 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 55,
+  "to": 62,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "AccessControl (ERC-165) whose admin-role holders are not enumerable on-chain: read them from RoleGranted events; nothing for this reader to compare"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791656126,
+ "stale": false,
+ "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
+ "block": 70183724,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9",
+ "page": "https://realspap.github.io/oracle/p/monad-0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

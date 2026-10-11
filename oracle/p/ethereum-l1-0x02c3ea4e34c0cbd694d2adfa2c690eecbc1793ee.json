@@ -1,0 +1,138 @@
+{
+ "name": "SparkLend PoolAddressesProvider",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
+ "composite": 78,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 75,
+  "multisigScore": 100,
+  "timelockScore": 60,
+  "oracleAuthorityScore": 20,
+  "crossExposureScore": 40
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths not all checked",
+ "tvl_usd": 5183399754.876525,
+ "category": "Lending",
+ "at_risk_usd": 1140347946.0728354,
+ "narrative": {
+  "summary": "PoolAddressesProvider.owner() is SparkProxy, whose three wards are Sky\u2019s MCD_PAUSE_PROXY (behind the same 2-day-delay governance already scored for MCD_PAUSE), an ESM whose threshold is set to the uint256 maximum so it cannot fire, and StarGuard, itself warded only by MCD_PAUSE_PROXY. A separate FreezerMom can freeze or pause markets with no delay, through the Sky Chief\u2019s current hat or a 3-of-5 Safe.",
+  "tag": "cross-exposure: 80, same Sky root as MCD_PAUSE",
+  "detail": "The instant seat can only freeze or pause markets, an availability risk rather than fund redirection, and it is why timelockScore is 60 instead of MCD_PAUSE\u2019s 70. Two other RISK_ADMIN holders (KillSwitchOracle and CapAutomator) are automated contracts administered by SparkProxy, disclosed but not scored."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
+      "data": "0x8da5cb5b"
+     },
+     "0x18f56c0"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee\",\"data\":\"0x8da5cb5b\"},\"0x18f56c0\"]}'",
+  "block": "0x18f56c0",
+  "note": "read between blocks 26171071 and 26171072 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-11T02:50:28Z",
+   "composite": 78,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d000000000000000000000000002c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
+  "block": "0xb57b19",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d000000000000000000000000002c3ea4e34c0cbd694d2adfa2c690eecbc1793ee\"},\"0xb57b19\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 6350,
+  "text": "collateral factor 63.50% (score 78)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 75,
+  "to": 79,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x3300f198988e4c9c63f75df86de36421f06af8c4",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 5183399754.876525,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11893529,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

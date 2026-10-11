@@ -1,0 +1,113 @@
+{
+ "name": "Orca Whirlpool",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+ "composite": 2,
+ "band": "critical",
+ "keys_to_move": 5,
+ "react_hours": 24,
+ "money_per_key_usd": 62382741.696834385,
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 311913708.4841719,
+ "category": "Dexs",
+ "at_risk_usd": 305675434.3144885,
+ "narrative": {
+  "summary": "Upgrades look strong (24-hour delay, 5-of-13), but a separate reward authority on the same config is a 1-of-8 multisig with no delay, which scores like a single key. Counting it as full-power is a disclosed judgment call.",
+  "tag": "judgment call: reward authority counted as full-power",
+  "detail": "WhirlpoolsConfig holds three authorities. fee_authority is the same Squads v4 vault as the program upgrade (5-of-13, 9 can vote, 24h delay). collect_protocol_fees_authority is a bare wallet but only withdraws already accrued fees, so it is bounded and not scored. reward_emissions_super_authority is a different Squads v4 vault, 1-of-8, no delay. It can reassign the reward authority of any pool without that pool's consent, and that authority can set the pool's emission rate. A reviewer could argue it is bounded, and the scorer lays out the reasoning. DefiLlama listed over $200M TVL on 2026-09-17."
+ },
+ "score_account": "ACfvdeDF3K3fZdBUwokWGcwBAyL1KuHw34HjmgGYdJnF",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 2 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 5,
+  "to": 49,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "account owned by program whirLbMi\u2026 -&gt; program -&gt; ProgramData CtXfPz\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+  "holder": "GwH3Hiv5mACLX3ufTw1pFsrhSPon5tdw252DBs4Rx4PV",
+  "threshold": 5,
+  "owners": 13,
+  "delay_seconds": 86400,
+  "owners_kinds": {
+   "eoa": 13,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 5,
+  "keys_lost_to_freeze": 5,
+  "kind": "squads",
+  "since": "2026-10-10T06:54:09Z",
+  "disagree": "the score says one key does everything (5), the upgrade authority is a Squads v4 via account owned by program whirLbMi\u2026 -&gt; program -&gt; ProgramData CtXfPz\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF; the multisig score says no real multisig (0), the Squads multisig is a 5-of-13; the timelock score says no delay (0), the Squads multisig enforces a native time lock of 24 h",
+  "posture": "admin: Squads 5-of-13, 9 can vote of 13 plain keys; delay: 24 h Squads time lock",
+  "exposure": {
+   "keys_to_move": 5,
+   "react_hours": 24,
+   "tvl_usd": 311913708.4841719,
+   "money_per_key_usd": 62382741.696834385,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662458,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+ "page": "https://realspap.github.io/oracle/p/solana-2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

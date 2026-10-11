@@ -1,0 +1,222 @@
+{
+ "name": "Morpho NetNet Credit vault",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x99347d5f70d3838763f6bddcf80304c8aa953b57",
+ "composite": 25,
+ "band": "weak",
+ "keys_to_move": 1,
+ "react_hours": 0,
+ "money_per_key_usd": 1270959.8290930544,
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 15,
+  "timelockScore": 60,
+  "oracleAuthorityScore": 2,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths not all checked",
+ "tvl_usd": 1270959.8290930544,
+ "category": null,
+ "at_risk_usd": 953219.8718197908,
+ "narrative": {
+  "summary": "Curator and owner collapse into the identical 1-of-1 Safe - one private key wearing a Safe wrapper.",
+  "tag": "automated vs. manual: see note",
+  "detail": "The sole signer of that 1-of-1 Safe is itself confirmed a bare EOA. The live oracle\u2019s automated re-scorer doesn\u2019t special-case a 1-of-1 Safe as functionally EOA-equivalent the way the original manual pass did - a known, disclosed limitation documented directly in the scorer source, not a silent discrepancy. Manual pass: 8/100. Automated re-score, shown above: differs by design, not error."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "curator()": {
+   "kind": "safe",
+   "threshold": 1,
+   "owners": 1,
+   "holder": "0x3bb7\u20265f42"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "robinhood:0x3bb7\u20265f42",
+   "nonce": 381,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDG",
+  "amount": 1271238.66107,
+  "price_usd": 0.9997806611885838,
+  "held_usd": 1270959.8290930544,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.01,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x99347d5f70d3838763f6bddcf80304c8aa953b57",
+      "data": "0x8da5cb5b"
+     },
+     "0x5210ddc"
+    ]
+   },
+   {
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
+    "params": [
+     "<holder>",
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x99347d5f70d3838763f6bddcf80304c8aa953b57\",\"data\":\"0x8da5cb5b\"},\"0x5210ddc\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x5210ddc",
+  "note": "read between blocks 86051800 and 86052316 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 22,
+   "from": "first"
+  },
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 25,
+   "from": "watch"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x99347d5f70d3838763f6bddcf80304c8aa953b57.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d000000000000000000000000099347d5f70d3838763f6bddcf80304c8aa953b57",
+  "block": "0x7ef0e36",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d000000000000000000000000099347d5f70d3838763f6bddcf80304c8aa953b57\"},\"0x7ef0e36\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 25 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 5,
+  "to": 43,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x3bb7\u20265f42",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "threshold": 1,
+  "owners": 1,
+  "keys_to_act": 1,
+  "keys_lost_to_freeze": 1,
+  "kind": "safe",
+  "since": "2026-10-10T06:54:09Z",
+  "owners_kinds": {
+   "eoa": 1
+  },
+  "owners_detail": [
+   {
+    "owner": "0xe7e8\u202696f6",
+    "kind": "eoa"
+   }
+  ],
+  "posture": "admin: Safe 1-of-1 of 1 plain key; delay: none",
+  "exposure": {
+   "keys_to_move": 1,
+   "react_hours": 0,
+   "tvl_usd": 1270959.8290930544,
+   "money_per_key_usd": 1270959.8290930544,
+   "money_source": "contract",
+   "held_symbol": "USDG",
+   "held_amount": 1271238.66107
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133107254,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x99347d5f70d3838763f6bddcf80304c8aa953b57",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x99347d5f70d3838763f6bddcf80304c8aa953b57.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

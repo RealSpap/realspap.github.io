@@ -1,0 +1,110 @@
+{
+ "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled)",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
+ "composite": 1,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 3,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "One bare EOA holds sole DEFAULT_ADMIN_ROLE on the beacon behind all ~230 tokenized stock/ETF contracts - can upgrade or freeze/blocklist any holder, chain-wide, with zero delay.",
+  "tag": "worst on-theme finding",
+  "detail": "TSLA, AMZN, PLTR, NFLX, AMD (five sampled) are byte-identical 283-byte beacon proxies pointing at one shared beacon. DEFAULT_ADMIN_ROLE\u2019s grant/revoke history was walked from genesis: deployer \u2192 reassigned at block 7802 \u2192 deployer\u2019s own role revoked at block 8695, leaving exactly one current holder, confirmed a bare EOA. That one key can upgradeTo(), pause()/unpause(), and blockAccounts()/unblockAccounts() any holder - zero delay, no second signer anywhere. Scores worse than every other target on the chain, on the chain\u2019s own flagship, on-theme product."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 1,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000e0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
+  "block": "0x7ef0e36",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000e0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8\"},\"0x7ef0e36\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 1 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 3,
+  "to": 49,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133107254,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

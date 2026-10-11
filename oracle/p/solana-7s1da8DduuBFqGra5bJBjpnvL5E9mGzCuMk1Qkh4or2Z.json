@@ -1,0 +1,112 @@
+{
+ "name": "Jupiter Lend",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z",
+ "composite": 55,
+ "band": "moderate",
+ "keys_to_move": 4,
+ "react_hours": 12,
+ "money_per_key_usd": 286259776.81574607,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 83,
+  "timelockScore": 13,
+  "oracleAuthorityScore": 20,
+  "crossExposureScore": 60
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 1145039107.2629843,
+ "category": "Lending",
+ "at_risk_usd": 515267598.2683429,
+ "narrative": {
+  "summary": "Four programs share one 4-of-6 upgrade multisig with a 12-hour delay, while the liquidity admin is a separate 5-of-10 multisig with a 6-hour delay. The score is a bound: three of the four admin accounts were not re-read.",
+  "tag": "bound, not final: 3 of 4 admins not re-read",
+  "detail": "The liquidity, lending, vaults and oracle programs share one Squads v4 upgrade vault, 4-of-6, 12h delay. Liquidity.authority is a different Squads v4 vault, 5-of-10, 6h delay, and its shorter delay lowered the score from the scouted upper bound. Scouting reported the same vault for the lending, vaults and oracle admin accounts, but only the Liquidity account was re-read byte for byte; any difference could only match or weaken it. AuthorizationList (auth_users, guardians) was not decoded. Scouting noted the oracle program shares the lending upgrade multisig, so one quorum can change code and price source. DefiLlama listed over $900M TVL."
+ },
+ "score_account": "B5smEtafyMrurnGJ6d1CBxfvkLtgkKcdcQy5upuZS7y4",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 55 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 77,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "account owned by program jupeiUmn\u2026 -&gt; program -&gt; ProgramData J6Ry5y\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig J3mJ3wz6xkVUk3T8qHnuAYNxsRH3ixHsryYNZAU2vG8P",
+  "holder": "4MsgBB5VPoTrUSp5XnfbViV386C1UnsTdifLBw33ZMSJ",
+  "threshold": 4,
+  "owners": 7,
+  "delay_seconds": 43200,
+  "owners_kinds": {
+   "eoa": 7,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 4,
+  "keys_lost_to_freeze": 4,
+  "kind": "squads",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: Squads 4-of-7 of 7 plain keys; delay: 12 h Squads time lock",
+  "exposure": {
+   "keys_to_move": 4,
+   "react_hours": 12,
+   "tvl_usd": 1145039107.2629843,
+   "money_per_key_usd": 286259776.81574607,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662446,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z",
+ "page": "https://realspap.github.io/oracle/p/solana-7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

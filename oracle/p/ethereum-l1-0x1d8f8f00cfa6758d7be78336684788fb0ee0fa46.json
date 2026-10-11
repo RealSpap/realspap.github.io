@@ -1,0 +1,110 @@
+{
+ "name": "Rocket Pool RocketStorage",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
+ "composite": 22,
+ "band": "weak",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 55,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 1320351571.582418,
+ "category": "Liquid Staking",
+ "at_risk_usd": 1029874225.8342861,
+ "narrative": {
+  "summary": "The guardian is a bare EOA, but its blanket write access is closed (getDeployedStatus is true) and the protocol DAO\u2019s bootstrap mode is disabled. What is left to that key is the guardian handover itself, with no delay in that path.",
+  "tag": "$1.36B TVL, bare-EOA guardian with retired powers, composite 22",
+  "detail": "Pushed on-chain 2026-09-20 as target index 18 (same transaction). Scored 55 / 0 / 0: the admin score is not the 2 to 10 of a live bare-EOA admin because the powers are confirmed retired, and it is not a DAO score because an EOA still holds a named role. See score_rocketpool_storage()."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-11T02:50:28Z",
+   "composite": 22,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46",
+  "block": "0xb57b19",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46\"},\"0xb57b19\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 22 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 55,
+  "to": 99,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11893529,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

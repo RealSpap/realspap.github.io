@@ -1,0 +1,165 @@
+{
+ "name": "GNSMultiCollatDiamond (verified source)",
+ "named_from": "verified source name (Sourcify)",
+ "chain": "Arbitrum",
+ "address": "0xff162c694eaa571f685030649814282ea457f169",
+ "composite": 4,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": 336,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 10,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": null,
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://arb1.arbitrum.io/rpc",
+  "steps": [
+   {
+    "what": "the admin slot of the proxy (EIP-1967): the word is the admin address",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xff162c694eaa571f685030649814282ea457f169",
+     "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+     "0x1ea174c5"
+    ]
+   },
+   {
+    "what": "owner() on the address the slot returned (a ProxyAdmin): the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<address from the slot>",
+      "data": "0x8da5cb5b"
+     },
+     "0x1ea174c5"
+    ]
+   },
+   {
+    "what": "getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x5f5e4892bab94d94dc57a3edea3c138167c4df0f",
+      "data": "0xf27a0c92"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xff162c694eaa571f685030649814282ea457f169",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xff162c694eaa571f685030649814282ea457f169\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x1ea174c5\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x1ea174c5\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5f5e4892bab94d94dc57a3edea3c138167c4df0f\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xff162c694eaa571f685030649814282ea457f169\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x1ea174c5",
+  "note": "read between blocks 513897654 and 513897669 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:57:30Z",
+   "composite": 4,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/arbitrum-sepolia/0xff162c694eaa571f685030649814282ea457f169.xml",
+ "reproduce": {
+  "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000ff162c694eaa571f685030649814282ea457f169",
+  "block": "0x12f6bc05",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ff162c694eaa571f685030649814282ea457f169\"},\"0x12f6bc05\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 4 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 10,
+  "to": 49,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "holder": "0x5f5e4892bab94d94dc57a3edea3c138167c4df0f",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 1209600,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "disagree": "the score says one key does everything (10), the live read finds a timelock (1209600s) via EIP-1967 admin -&gt; ProxyAdmin owner(); the timelock score says no delay (0), the live read finds a timelock of 336 h in the admin path via EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "posture": "admin: a timelock; delay: 336 h on the timelock",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 336,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791658650,
+ "stale": false,
+ "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
+ "block": 318159877,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xff162c694eaa571f685030649814282ea457f169",
+ "page": "https://realspap.github.io/oracle/p/arbitrum-0xff162c694eaa571f685030649814282ea457f169.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,178 @@
+{
+ "name": "Yuzu Money yzUSD",
+ "named_from": "dashboard",
+ "chain": "Plasma",
+ "address": "0x6695c0f8706c5ace3bdf8995073179cca47926dc",
+ "composite": 43,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 48,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 55,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 65789256.259880856,
+ "category": "Yield",
+ "at_risk_usd": 37499876.06813209,
+ "narrative": {
+  "summary": "yzUSD, syzUSD and yzPP are proxies owned by a 2-day timelock (4-of-5 Safe), each token\u2019s ADMIN_ROLE sits with a second timelock on a 12-hour delay (3-of-5 Safe, the same five bare-EOA signers), and that 3-of-5 Safe also holds an instant, uncapped pool-valuation seat on the yzPP first-loss pool with no delay in front of it.",
+  "tag": "$61.5M TVL (DefiLlama), placeholder replaced: 55 to 43 (pushed on-chain 2026-09-20)",
+  "detail": "Traced live on 2026-09-20 on two RPCs and adversarially re-verified, pushed on-chain the same day (Plasma testnet block 34083939). The old adminKey 20 was a placeholder built on a false negative: it tested the OpenZeppelin-4 TIMELOCK_ADMIN_ROLE hash on OpenZeppelin-5 timelocks, which administer through DEFAULT_ADMIN_ROLE, and both timelocks are in fact their own only admin. Only the 2-day timelock (owner of every ProxyAdmin) can upgrade the logic. Through the 12-hour timelock the same keys can setTreasury (deposits are forwarded straight to a bare-EOA treasury), move fee and cap levers, and by granting roles mark NAV down and mint against nothing. The weakest path is the Safe\u2019s direct POOL_MANAGER and DISTRIBUTOR seat on yzPP: updatePool can write the pool\u2019s value in one batch, and four of the five signers use it weekly. Neither timelock has a bypass, but their only cancellers are the proposer Safe and one of its own signers, so the delay is a visibility window, not a veto. Scored 65/55/0 by the instant-Safe-seat convention (Radiant, Monad Aave). Pause seats, bounded EOA powers and the bare-EOA custody of the roughly $56M reserve are disclosed, not scored. The same five keys also own Safes on Ethereum and Monad, where Yuzu is not tracked. Full trace: data/finding_2026-09-20-yuzu-authority-trace.md."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDT0",
+  "amount": 59362666.015048,
+  "price_usd": 0.9990199746365294,
+  "held_usd": 59304489.09671001,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.0,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.plasma.to",
+  "steps": [
+   {
+    "what": "the admin slot of the proxy (EIP-1967): the word is the admin address",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0x6695c0f8706c5ace3bdf8995073179cca47926dc",
+     "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+     "0x2130ca1"
+    ]
+   },
+   {
+    "what": "owner() on the address the slot returned (a ProxyAdmin): the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<address from the slot>",
+      "data": "0x8da5cb5b"
+     },
+     "0x2130ca1"
+    ]
+   },
+   {
+    "what": "getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x2130457539612ae9838e0314cda1a8abbdb7cfbc",
+      "data": "0xf27a0c92"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0x6695c0f8706c5ace3bdf8995073179cca47926dc",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x6695c0f8706c5ace3bdf8995073179cca47926dc\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x2130ca1\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x2130ca1\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2130457539612ae9838e0314cda1a8abbdb7cfbc\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x6695c0f8706c5ace3bdf8995073179cca47926dc\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x2130ca1",
+  "note": "read between blocks 34802839 and 34802849 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:03:45Z",
+   "composite": 43,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/plasma/0x6695c0f8706c5ace3bdf8995073179cca47926dc.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.plasma.to",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d00000000000000000000000006695c0f8706c5ace3bdf8995073179cca47926dc",
+  "block": "0x224022f",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000006695c0f8706c5ace3bdf8995073179cca47926dc\"},\"0x224022f\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 43 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "timelock",
+  "from": 0,
+  "to": 57,
+  "what": "a confirmed delay before changes apply"
+ },
+ "independent_read": {
+  "path": "EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "holder": "0x2130457539612ae9838e0314cda1a8abbdb7cfbc",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 172800,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "disagree": "the timelock score says no delay (0), the live read finds a timelock of 48 h in the admin path via EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "posture": "admin: a timelock; delay: 48 h on the timelock",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 48,
+   "tvl_usd": 59304489.09671001,
+   "money_per_key_usd": null,
+   "money_source": "contract",
+   "held_symbol": "USDT0",
+   "held_amount": 59362666.015048
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791655425,
+ "stale": false,
+ "methodology_hash": "0x6a1d6a17504a5faeab692225b82e197898a47dbd96137e4c1a3cc17cf977e754",
+ "block": 35914287,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x6695c0f8706c5ace3bdf8995073179cca47926dc",
+ "page": "https://realspap.github.io/oracle/p/plasma-0x6695c0f8706c5ace3bdf8995073179cca47926dc.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

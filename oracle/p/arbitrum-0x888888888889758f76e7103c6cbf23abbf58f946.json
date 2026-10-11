@@ -1,0 +1,206 @@
+{
+ "name": "Pendle V2",
+ "named_from": "dashboard",
+ "chain": "Arbitrum",
+ "address": "0x888888888889758f76e7103c6cbf23abbf58f946",
+ "composite": 43,
+ "band": "moderate",
+ "keys_to_move": 3,
+ "react_hours": 0,
+ "money_per_key_usd": 56798213.9841248,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 55,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 170394641.9523744,
+ "category": "Yield",
+ "at_risk_usd": 97124945.91285342,
+ "narrative": {
+  "summary": "Router owner, factory proxy admin and the governance proxy\u2019s DEFAULT_ADMIN_ROLE all converge on one 3-of-5 Safe, with no timelock.",
+  "tag": "cross-exposure: 60 - same Safe on Plasma + Robinhood Chain",
+  "detail": "The same Safe address with the same 5 owners is the tracked Pendle root on Plasma and on Robinhood Chain as well: one committee, three chains."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "arbitrum:0x7877\u202675ac",
+   "nonce": 162,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://arb1.arbitrum.io/rpc",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x888888888889758f76e7103c6cbf23abbf58f946",
+      "data": "0x8da5cb5b"
+     },
+     "0x1ea174c5"
+    ]
+   },
+   {
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
+    "params": [
+     "<holder>",
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x888888888889758f76e7103c6cbf23abbf58f946\",\"data\":\"0x8da5cb5b\"},\"0x1ea174c5\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x1ea174c5",
+  "note": "read between blocks 513897654 and 513897669 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:57:30Z",
+   "composite": 43,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/arbitrum-sepolia/0x888888888889758f76e7103c6cbf23abbf58f946.xml",
+ "reproduce": {
+  "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000888888888889758f76e7103c6cbf23abbf58f946",
+  "block": "0x12f6bc05",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000888888888889758f76e7103c6cbf23abbf58f946\"},\"0x12f6bc05\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 43 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "timelock",
+  "from": 0,
+  "to": 57,
+  "what": "a confirmed delay before changes apply"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x7877\u202675ac",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "threshold": 3,
+  "owners": 5,
+  "keys_to_act": 3,
+  "keys_lost_to_freeze": 3,
+  "kind": "safe",
+  "since": "2026-10-10T06:54:09Z",
+  "owners_kinds": {
+   "eoa": 5
+  },
+  "posture": "admin: Safe 3-of-5 of 5 plain keys; delay: none",
+  "shares_admin_with": [
+   {
+    "chain": "plasma",
+    "target": "0x888888888889758f76e7103c6cbf23abbf58f946"
+   },
+   {
+    "chain": "robinhood",
+    "target": "0x544bf81c855ae84c1e8b65d5e38770898d01eee2"
+   }
+  ],
+  "cluster_tvl_usd": 214110968.0981922,
+  "exposure": {
+   "keys_to_move": 3,
+   "react_hours": 0,
+   "tvl_usd": 170394641.9523744,
+   "money_per_key_usd": 56798213.9841248,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791658650,
+ "stale": false,
+ "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
+ "block": 318159877,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x888888888889758f76e7103c6cbf23abbf58f946",
+ "page": "https://realspap.github.io/oracle/p/arbitrum-0x888888888889758f76e7103c6cbf23abbf58f946.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,204 @@
+{
+ "name": "Kuru Router + MarginAccount",
+ "named_from": "dashboard",
+ "chain": "Monad",
+ "address": "0xd651346d7c789536ebf06dc72ae3c8502cd695cc",
+ "composite": 43,
+ "band": "moderate",
+ "keys_to_move": 3,
+ "react_hours": 0,
+ "money_per_key_usd": 335342.07005785906,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 55,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 1006026.2101735772,
+ "category": "Dexs",
+ "at_risk_usd": 573434.939798939,
+ "narrative": {
+  "summary": "A real, actively-used 3-of-5 Safe (70 prior transactions) with no timelock at all - the same Safe can pause the protocol and upgrade every deployed OrderBook market\u2019s logic.",
+  "tag": "composite 43",
+  "detail": "Per Kuru\u2019s own docs, this Safe is \u201cthe default owner of all markets and can be used to upgrade markets to a new implementation\u201d - though market creation itself is a separate, permissionless path, not owner-gated."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "monad:0x8b73\u2026788b",
+   "nonce": 70,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.monad.xyz",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xd651346d7c789536ebf06dc72ae3c8502cd695cc",
+      "data": "0x8da5cb5b"
+     },
+     "0x6b54525"
+    ]
+   },
+   {
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
+    "params": [
+     "<holder>",
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xd651346d7c789536ebf06dc72ae3c8502cd695cc",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xd651346d7c789536ebf06dc72ae3c8502cd695cc\",\"data\":\"0x8da5cb5b\"},\"0x6b54525\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xd651346d7c789536ebf06dc72ae3c8502cd695cc\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x6b54525",
+  "note": "read between blocks 112542996 and 112543013 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:15:26Z",
+   "composite": 43,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/monad/0xd651346d7c789536ebf06dc72ae3c8502cd695cc.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.monad.xyz/",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000d651346d7c789536ebf06dc72ae3c8502cd695cc",
+  "block": "0x42eeb2c",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000d651346d7c789536ebf06dc72ae3c8502cd695cc\"},\"0x42eeb2c\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 43 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "timelock",
+  "from": 0,
+  "to": 57,
+  "what": "a confirmed delay before changes apply"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x8b73\u2026788b",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "threshold": 3,
+  "owners": 5,
+  "keys_to_act": 3,
+  "keys_lost_to_freeze": 3,
+  "kind": "safe",
+  "since": "2026-10-10T06:54:09Z",
+  "owners_kinds": {
+   "eoa": 5
+  },
+  "posture": "admin: Safe 3-of-5 of 5 plain keys; delay: none",
+  "exposure": {
+   "keys_to_move": 3,
+   "react_hours": 0,
+   "tvl_usd": 1006026.2101735772,
+   "money_per_key_usd": 335342.07005785906,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791656126,
+ "stale": false,
+ "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
+ "block": 70183724,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xd651346d7c789536ebf06dc72ae3c8502cd695cc",
+ "page": "https://realspap.github.io/oracle/p/monad-0xd651346d7c789536ebf06dc72ae3c8502cd695cc.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

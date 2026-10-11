@@ -1,0 +1,112 @@
+{
+ "name": "Kamino Lend, main market (SOL/BTC)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+ "composite": 56,
+ "band": "moderate",
+ "keys_to_move": 5,
+ "react_hours": 24,
+ "money_per_key_usd": 266701220.69250017,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 76,
+  "timelockScore": 25,
+  "oracleAuthorityScore": 45,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 1333506103.4625008,
+ "category": "Lending",
+ "at_risk_usd": 586742685.5235003,
+ "narrative": {
+  "summary": "Upgrades wait 24 hours and risk changes 12, but a ten-signer group can re-map the price source behind the SOL and USDC reserves with no delay, even to a fixed price. That undelayed path caps the oracle sub-score.",
+  "tag": "undelayed price-source path",
+  "detail": "Seven authority paths exist and four feed a score. Program upgrade is a 5-of-10 Squads v4 multisig with a 24h delay, the market owner is 4-of-10 with 12h, the Scope price aggregator admin is 4-of-10 with none, and Scope's own upgrade is 5-of-10 with 24h. The upgrade, Scope admin and Scope upgrade multisigs use the same 10 keys, and the market owner shares 9 of them. Klend rejects prices more than 1,000 bps (SOL) or 300 bps (USDC) from the TWAP, but the same admin can re-map the TWAP source, so no credit was given. Scoring the providers behind Scope is still open, and the emergency council (restrict-only) has an unresolved controller."
+ },
+ "score_account": "FMTQ8rBhwpLfz1JmmrLqJkYBv79o5SZsu81PoM7WYCHa",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 56 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 73,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "account owned by program KLend2g3\u2026 -&gt; program -&gt; ProgramData 9uSbGW\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+  "holder": "GzFgdRJXmawPhGeBsyRCDLx4jAKPsvbUqoqitzppkzkW",
+  "threshold": 5,
+  "owners": 10,
+  "delay_seconds": 86400,
+  "owners_kinds": {
+   "eoa": 10,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 5,
+  "keys_lost_to_freeze": 6,
+  "kind": "squads",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: Squads 5-of-10 of 10 plain keys; delay: 24 h Squads time lock",
+  "exposure": {
+   "keys_to_move": 5,
+   "react_hours": 24,
+   "tvl_usd": 1333506103.4625008,
+   "money_per_key_usd": 266701220.69250017,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662429,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+ "page": "https://realspap.github.io/oracle/p/solana-7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

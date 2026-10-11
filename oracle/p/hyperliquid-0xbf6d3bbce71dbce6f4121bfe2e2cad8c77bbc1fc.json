@@ -1,0 +1,109 @@
+{
+ "name": "HIP-3 dex mkts (Markets by Kinetiq)",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc",
+ "composite": 9,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 10,
+  "multisigScore": 15,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 15,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "The deployer identity resolves to a single EOA and is shared with the dormant dex km, so a compromise is not a small-dex problem. The same address also runs Kinetiq's kmHYPE staking contract; no dex-admin path was found in it.",
+  "tag": "cross-exposure: 80, shared deployer with km",
+  "detail": "About $6.4M to $6.7M open interest and 24 listed assets at promotion on 2026-09-17; km showed zero. The deployer address carries a proxy to Kinetiq's HIP3StakingManager. A first read suggested a second root-control path, but the verified source shows every CoreWriter call is a staking or trading helper, so nothing was folded into the score; the earlier finding notes a raw-action passthrough was not fully ruled out, though the ABI suggests none. The API wallet can only be set through EXManager, which needs a signature from exWalletAdmin, a plain EOA. The haltTrading and setOracle sub-deployers are plain keys. Stored under a derived key."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-09-24T19:43:56Z",
+   "composite": 9,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc.xml",
+ "reproduce": {
+  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000bf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000bf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "revert",
+  "text": "it would revert (StaleScore): the score is older than the oracle allows"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 10,
+  "to": 38,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "native",
+  "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
+ },
+ "score_cluster": null,
+ "last_pushed": 1790279036,
+ "stale": true,
+ "methodology_hash": "0xfbf38ff91abf710728e2df3d5370bf18eeb2a9085168612fa03955b13cc958ad",
+ "block": 66597018,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,110 @@
+{
+ "name": "Unit UBTC, UETH and USOL treasuries",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748",
+ "composite": 9,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 10,
+  "multisigScore": 15,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 1018519050.3663718,
+ "category": "Bridge",
+ "at_risk_usd": 926852335.8333983,
+ "narrative": {
+  "summary": "Each treasury is one HyperCore key holding over 99.9% of the token's max supply. HIP-1 has no mint after genesis, so this balance is the effective mint authority. Unit's 2-of-3 MPC claim cannot be verified on chain.",
+  "tag": "on-chain single key vs documented 2-of-3 MPC",
+  "detail": "The treasuries hold 99.9669%, 99.9411% and 99.9286% of max supply for UBTC, UETH and USOL, and each reads as a plain single key. Tokens it sends are indistinguishable from backed ones on HyperCore, and they serve as collateral elsewhere: HyperLend lists all three. Unit's docs say the key is a 2-of-3 threshold signature held by Unit, Hyperliquid and Infinite Field; that is recorded as context, not scored, because the chain cannot confirm it. The three share one token deployer (a native 2-of-3 multisig at a different address), a real correlation not counted in cross-exposure."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T19:58:11Z",
+   "composite": 9,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748.xml",
+ "reproduce": {
+  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000a822a9ceb6d6cb5b565bd10098abcfa9cf18d748",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000a822a9ceb6d6cb5b565bd10098abcfa9cf18d748\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 9 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 10,
+  "to": 38,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "native",
+  "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791662291,
+ "stale": false,
+ "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
+ "block": 66597018,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

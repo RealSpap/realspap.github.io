@@ -1,0 +1,102 @@
+{
+ "name": "Solend DAO governance realm",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn",
+ "composite": 2,
+ "band": "critical",
+ "keys_to_move": 1,
+ "react_hours": 0,
+ "money_per_key_usd": 90249207.47564329,
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 90249207.47564329,
+ "category": "Lending",
+ "at_risk_usd": 88444223.32613043,
+ "narrative": {
+  "summary": "Two bare wallets sit above the DAO vote: one can rewrite the voting rules with no proposal, the other can replace the governance program's code. Neither is renounced, and the DAO has not taken over the realm authority.",
+  "tag": "retroactive backtest of the June 2022 vote",
+  "detail": "Solend runs its own governance program, not the shared default instance, confirmed live. The realm authority is an active on-curve wallet, and the governance program's upgrade authority is another one. The token-vote path has no council, a 1% yes threshold as decoded (not confirmed by a second method), no execution hold-up and 3 days of voting. In the June 2022 backtest, SLND1 passed with 97.46% yes after a 6-hour vote and SLND2 reversed it the next day; neither touched the realm authority. The backtest is retrospective, not a live catch. The flat token-voting baseline ignores vote concentration, an open gap."
+ },
+ "score_account": "3Ppaq1anjP1qSXgyYhcr5eDNygawbpyxYqezkKu6iMpv",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 2 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 5,
+  "to": 49,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "account owned by program A7kmu2kU\u2026 -&gt; program -&gt; ProgramData DBvb9p\u2026 -&gt; upgrade authority (on the curve: a plain key)",
+  "holder": "6EpduY\u2026rqUT",
+  "kind": "eoa",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a plain key; delay: none",
+  "exposure": {
+   "keys_to_move": 1,
+   "react_hours": 0,
+   "tvl_usd": 90249207.47564329,
+   "money_per_key_usd": 90249207.47564329,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662430,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn",
+ "page": "https://realspap.github.io/oracle/p/solana-7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

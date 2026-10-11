@@ -1,0 +1,203 @@
+{
+ "name": "Morpho Blue (singleton, Ethereum L1)",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+ "composite": 56,
+ "band": "moderate",
+ "keys_to_move": 6,
+ "react_hours": 0,
+ "money_per_key_usd": 863692041.5096979,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 100,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 5182152249.0581875,
+ "category": "Lending",
+ "at_risk_usd": 2280146989.5856023,
+ "narrative": {
+  "summary": "owner() is a 5-of-9 Gnosis Safe reached in one hop (all nine signers are plain EOAs), with no Timelock and no delay. Its owner-only powers are setOwner, enableIrm, enableLltv, setFee (capped at 25%) and setFeeRecipient, so by Morpho\u2019s immutable-core design it cannot withdraw funds from existing markets.",
+  "tag": "cross-exposure: 80 (pushed on-chain 2026-09-20), same 9 signers as the Base, Robinhood and Tempo Morpho Safes",
+  "detail": "The owner Safe\u2019s 9 signers are identical, at the same 5-of-9 threshold, to the Morpho Blue owner Safes on Base, Robinhood Chain and Tempo, so one committee gates all four deployments. Pushed on-chain 2026-09-20: that cross-ecosystem overlap is folded into crossExposureScore as a flat 80, where the within-Ethereum-L1 comparison alone would leave it at 100; composite is unchanged. The scorer compares the freshly read owner set against a dated snapshot of the committee and opens no second RPC connection. Scored with the same rule as the Base card (admin 65 for a threshold of 3 or more, timelock 0), so one protocol keeps one convention across ecosystems."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "ethereum-l1:0xcba2\u20269afa",
+   "nonce": 282,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+      "data": "0x8da5cb5b"
+     },
+     "0x18f56c0"
+    ]
+   },
+   {
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
+    "params": [
+     "<holder>",
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb\",\"data\":\"0x8da5cb5b\"},\"0x18f56c0\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x18f56c0",
+  "note": "read between blocks 26171071 and 26171072 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-11T02:50:28Z",
+   "composite": 56,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d0000000000000000000000000bbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+  "block": "0xb57b19",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000bbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb\"},\"0xb57b19\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 56 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 74,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0xcba2\u20269afa",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "threshold": 6,
+  "owners": 10,
+  "keys_to_act": 6,
+  "keys_lost_to_freeze": 5,
+  "kind": "safe",
+  "since": "2026-10-10T06:54:09Z",
+  "owners_kinds": {
+   "safe": 1,
+   "eoa": 9
+  },
+  "posture": "admin: Safe 6-of-10 of 9 plain keys, 1 Safe; delay: none",
+  "shares_admin_with": [
+   {
+    "chain": "base",
+    "target": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb"
+   }
+  ],
+  "cluster_tvl_usd": 9663494001.18614,
+  "exposure": {
+   "keys_to_move": 6,
+   "react_hours": 0,
+   "tvl_usd": 5182152249.0581875,
+   "money_per_key_usd": 863692041.5096979,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11893529,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

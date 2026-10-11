@@ -1,0 +1,117 @@
+{
+ "name": "Aerodrome Finance PoolFactory",
+ "named_from": "dashboard",
+ "chain": "Base",
+ "address": "0x420dd381b31aef6683db6b902084cb0ffece40da",
+ "composite": 46,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 65,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 148159189.00085527,
+ "category": "Dexs",
+ "at_risk_usd": 80005962.06046185,
+ "narrative": {
+  "summary": "pauser()/feeManager() AND Voter.governor() are confirmed the exact same 3-of-7 Safe - one key can pause pools, redirect where AERO emissions flow, and reassign itself, with no timelock anywhere.",
+  "tag": "$322.7M TVL - largest Base-native target",
+  "detail": "A separate, genuinely distinct emergencyCouncil Safe (3-of-5, zero owner overlap, re-checked live every run) also exists - but its only powers (killGauge/reviveGauge) are bounded: one gauge at a time, reversible, cannot touch other gauges or move claimed funds. Disclosed, not folded into the composite, the same restrict-only convention this project already applies to Kamino\u2019s emergency council on Solana."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "pauser()": {
+   "kind": "safe",
+   "threshold": 3,
+   "owners": 7,
+   "holder": "0xe6a4\u20262075"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T17:38:05Z",
+   "composite": 46,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/base-sepolia/0x420dd381b31aef6683db6b902084cb0ffece40da.xml",
+ "reproduce": {
+  "rpc": "https://sepolia.base.org",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000420dd381b31aef6683db6b902084cb0ffece40da",
+  "block": "0x2dc3b9b",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000420dd381b31aef6683db6b902084cb0ffece40da\"},\"0x2dc3b9b\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 46 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 100,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791653885,
+ "stale": false,
+ "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
+ "block": 47987611,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x420dd381b31aef6683db6b902084cb0ffece40da",
+ "page": "https://realspap.github.io/oracle/p/base-0x420dd381b31aef6683db6b902084cb0ffece40da.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,171 @@
+{
+ "name": "Morpho Grove x Steakhouse + Steakhouse Turbo USDG vaults",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0xbeeff039907422219fb367e525954ddc092854d9",
+ "composite": 40,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 24,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 20,
+  "multisigScore": 30,
+  "timelockScore": 75,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 40
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": true
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths checked",
+ "tvl_usd": 551242738.8578634,
+ "category": "Risk Curators",
+ "at_risk_usd": 330745643.31471807,
+ "narrative": {
+  "summary": "Two more Steakhouse-curated Morpho vaults on this chain, found via the curator registry DefiLlama\u2019s own dashboard actually reads from (not the per-protocol page, which 404s) - confirmed live before being added, not trusted from the registry file alone.",
+  "tag": "batch 13 - closed a DefiLlama-adapter gap",
+  "detail": "Both vaults\u2019 curator()/owner()/asset() (USDG) resolved live on two independent RPCs before either was tracked. Same chain-wide zero-delay setOwner/setCurator gap already disclosed for every other Morpho vault on this chain - not a new finding specific to these two."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "curator()": {
+   "kind": "safe",
+   "threshold": 2,
+   "owners": 2,
+   "holder": "0x622e\u2026c0fc"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDG",
+  "amount": 100003.166728,
+  "price_usd": 0.9997806611885838,
+  "held_usd": 99981.23215227202,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.0,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xbeeff039907422219fb367e525954ddc092854d9",
+      "data": "0x8da5cb5b"
+     },
+     "0x5210ddc"
+    ]
+   },
+   {
+    "what": "delay() on the holder (Compound-style timelock), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x5ff98717a18833de1a49e11b498866d6fa1c9296",
+      "data": "0x6a42b8f8"
+     },
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeeff039907422219fb367e525954ddc092854d9\",\"data\":\"0x8da5cb5b\"},\"0x5210ddc\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5ff98717a18833de1a49e11b498866d6fa1c9296\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'",
+  "block": "0x5210ddc",
+  "note": "read between blocks 86051800 and 86052316 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 44,
+   "from": "first"
+  },
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 40,
+   "from": "watch"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xbeeff039907422219fb367e525954ddc092854d9.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000beeff039907422219fb367e525954ddc092854d9",
+  "block": "0x7ef0e36",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000beeff039907422219fb367e525954ddc092854d9\"},\"0x7ef0e36\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 40 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 20,
+  "to": 70,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x5ff98717a18833de1a49e11b498866d6fa1c9296",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 86400,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a timelock; delay: 24 h on the timelock",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 24,
+   "tvl_usd": 99981.23215227202,
+   "money_per_key_usd": null,
+   "money_source": "contract",
+   "held_symbol": "USDG",
+   "held_amount": 100003.166728
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133107254,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeeff039907422219fb367e525954ddc092854d9",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff039907422219fb367e525954ddc092854d9.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

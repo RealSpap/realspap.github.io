@@ -1,0 +1,100 @@
+{
+ "name": "SPL Stake Pool program (shared infrastructure)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+ "composite": 54,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 60,
+  "multisigScore": 100,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 20
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "Upgrades need 6 of 10 signers of a Squads v3 committee, which has no delay field, and the same program backs JitoSOL and other stake pools.",
+  "tag": "shared infrastructure, 5 signers overlap Sanctum",
+  "detail": "Squads v3 authority index 1 of the 6-of-10 multisig, re-derived offline on every run. Jito's docs describe the upgrade keys as a committee of Solana staking ecosystem participants. Five of its ten signers are also signers of Sanctum's 6-of-11, and one key matches a Marinade council key, so cross-exposure reads low for this whole cluster."
+ },
+ "score_account": "5z4hz41a7JhumadVJfu2sPaqyULwyoHZgQ5zxkxaghTZ",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 54 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 60,
+  "to": 74,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData EmiU8A\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
+  "holder": "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+  "kind": "pda",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown",
+  "shares_admin_with": [
+   {
+    "chain": "solana",
+    "target": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
+   }
+  ],
+  "cluster_tvl_usd": 1168318979.6707668
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662465,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+ "page": "https://realspap.github.io/oracle/p/solana-SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

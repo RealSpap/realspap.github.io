@@ -1,0 +1,112 @@
+{
+ "name": "marginfi main lending group",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8",
+ "composite": 33,
+ "band": "weak",
+ "keys_to_move": 7,
+ "react_hours": 0,
+ "money_per_key_usd": 5723759.564988096,
+ "sub": {
+  "adminKeyScore": 45,
+  "multisigScore": 50,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 40066316.95491667,
+ "category": "Lending",
+ "at_risk_usd": 26844432.35979417,
+ "narrative": {
+  "summary": "Upgrades need 7 of 15 signers and group admin actions only 5 of 17, both with no delay, and the upgrade voters are a subset of the admin group. The score is still an upper bound.",
+  "tag": "upper bound: 7 more admin fields not decoded",
+  "detail": "Program upgrade is a Squads v4 multisig, 7-of-15, all 15 can vote, no delay. MarginfiGroup.admin is a different Squads v4 multisig, 5-of-17 (15 listed members can vote), also no delay. All 15 upgrade voters sit inside the admin multisig, so this is one governing body under a lower bar, not two independent checks. The on-chain IDL lists seven more admin-named fields on the group (emode_admin, risk_admin and five others) that were not decoded, and each could only lower the score. Oracle authority is not scored for this target (a flat 100 in code)."
+ },
+ "score_account": "DwFJ63PirUVnWvQsVY7c3qrEHnMh1CqvCqD76CseEuxk",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 33 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 45,
+  "to": 62,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "account owned by program MFv2hWf3\u2026 -&gt; program -&gt; ProgramData 4Q8u2n\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 7FCPipJWVbPbdHymVt1gJYwKciakkJz5GahdQySemvHk",
+  "holder": "J3oBkTkDXU3TcAggJEa3YeBZE5om5yNAdTtLVNXFD47",
+  "threshold": 7,
+  "owners": 15,
+  "delay_seconds": 0,
+  "owners_kinds": {
+   "eoa": 15,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 7,
+  "keys_lost_to_freeze": 9,
+  "kind": "squads",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: Squads 7-of-15 of 15 plain keys; delay: none",
+  "exposure": {
+   "keys_to_move": 7,
+   "react_hours": 0,
+   "tvl_usd": 40066316.95491667,
+   "money_per_key_usd": 5723759.564988096,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662434,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8",
+ "page": "https://realspap.github.io/oracle/p/solana-4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

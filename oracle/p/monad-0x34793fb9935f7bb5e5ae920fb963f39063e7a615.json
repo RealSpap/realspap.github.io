@@ -1,0 +1,143 @@
+{
+ "name": "Aave V3 Pool",
+ "named_from": "dashboard",
+ "chain": "Monad",
+ "address": "0x34793fb9935f7bb5e5ae920fb963f39063e7a615",
+ "composite": 49,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 75,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 349246675.7925897,
+ "category": "Lending",
+ "at_risk_usd": 178115804.65422076,
+ "narrative": {
+  "summary": "Same BGD Labs Aave Governance V3 pattern as Ethereum L1, Arbitrum, Base and Plasma: PoolAddressesProvider.owner() is an Executor owned by a PayloadsController that is owned by that same Executor, with a real 1-day delay on Level_1, the only configured tier. That delay does not bind every upgrade path: the ACLManager also gives POOL_ADMIN to the PROTOCOL_GUARDIAN Safe (4-of-7), which can swap a reserve\u2019s aToken or debt-token implementation with no delay. Separately, the 5-of-9 guardian Safe that can cancel payloads has the same 9 signers as the guardians on Ethereum L1, Arbitrum, Base and Plasma, so one committee holds that seat on at least five chains.",
+  "tag": "PROTOCOL_GUARDIAN Safe holds POOL_ADMIN, cross-exposure: 80",
+  "detail": "Level_1 has an 86,400s delay and all payloads created so far were executed at least that long after queueing, while Level_2 reads the zero address with a 0s delay here (Ethereum L1 has a Level_2 executor with a 7-day delay). The DAO path covers the Monad-side Executor and PayloadsController, whose message originator is Ethereum\u2019s Aave Governance V3 core (chain id 1); that Ethereum root itself was not re-verified here. Pushed on-chain 2026-09-20 (Monad testnet block 64022942; previously 65 / 100 / 50 with composite 71): the ACLManager, read live through getACLManager(), reports isPoolAdmin and isEmergencyAdmin both true for the PROTOCOL_GUARDIAN Safe, a 4-of-7 (four bare-EOA owners and three nested 1-of-3 Safes) whose 7 owners are identical to Ethereum L1\u2019s PROTOCOL_GUARDIAN and to the emergency-admin Safes on Arbitrum, Base and Plasma. isPoolAdmin lets it upgrade every reserve\u2019s aToken and variableDebtToken implementation at once (state-override simulation, 2026-09-19), so the 1-day Executor delay does not bind it. The Executor holds DEFAULT_ADMIN and can revoke the seat, and the Safe cannot grant roles; both are disclosed and not score inputs. The scorer therefore applies the Safe-with-no-timelock rule: admin key 65 (threshold of 3 or more, never raised above the DAO-path value), multisig 75 (4 \u00d7 15 + 3 \u00d7 5), timelock 0, composite 49. If the Safe is confirmed not to hold isPoolAdmin it falls back to the DAO-path scoring (65 / 100 / 50), and if the seat cannot be read it degrades to 20 / 20 / 0. Cross-exposure is 80 while the 9-signer guardian committee matches."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.monad.xyz",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x34793fb9935f7bb5e5ae920fb963f39063e7a615",
+      "data": "0x8da5cb5b"
+     },
+     "0x6b54525"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x34793fb9935f7bb5e5ae920fb963f39063e7a615\",\"data\":\"0x8da5cb5b\"},\"0x6b54525\"]}'",
+  "block": "0x6b54525",
+  "note": "read between blocks 112542996 and 112543013 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:15:26Z",
+   "composite": 49,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/monad/0x34793fb9935f7bb5e5ae920fb963f39063e7a615.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.monad.xyz/",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d000000000000000000000000034793fb9935f7bb5e5ae920fb963f39063e7a615",
+  "block": "0x42eeb2c",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000034793fb9935f7bb5e5ae920fb963f39063e7a615\"},\"0x42eeb2c\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 49 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 93,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (contract)",
+  "holder": "0xa9d0eaff48ce1df468f9eaeb7e628c413343f6a2",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "behind": {
+   "address": "0x442ca936e5e6db875357d0a16481145c96dd9a82",
+   "kind": "contract",
+   "via": "owner() of the holder"
+  },
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 349246675.7925897,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791656126,
+ "stale": false,
+ "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
+ "block": 70183724,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x34793fb9935f7bb5e5ae920fb963f39063e7a615",
+ "page": "https://realspap.github.io/oracle/p/monad-0x34793fb9935f7bb5e5ae920fb963f39063e7a615.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,212 @@
+{
+ "name": "Telos Consilium TelosC Surge",
+ "named_from": "dashboard",
+ "chain": "Plasma",
+ "address": "0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
+ "composite": 30,
+ "band": "weak",
+ "keys_to_move": 2,
+ "react_hours": 24,
+ "money_per_key_usd": 49953094.38206784,
+ "sub": {
+  "adminKeyScore": 40,
+  "multisigScore": 45,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 34,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 139457.2413549545,
+ "category": "Risk Curators",
+ "at_risk_usd": 97620.06894846814,
+ "narrative": {
+  "summary": "One 2-of-5 Gnosis Safe is both owner and curator of this ~$100M USDT0 EulerEarn vault, no guardian is set, and the owner address also passes every curator, allocator and guardian check. Its owner-only calls (setCurator, setIsAllocator, setFee, setFeeRecipient) take effect immediately, outside the vault\u2019s 1-day timelock.",
+  "tag": "~$100M USDT0, owner = curator, no guardian",
+  "detail": "In the euler-earn source the 1-day delay covers only raising a market\u2019s supply cap, removing a market, lowering the timelock and replacing an existing guardian, so timelockScore is 0: this project scores the gap, not the mere presence of a delay. crossExposureScore of 100 means no overlap was found among the addresses this repository names (an address search, not a full cross-chain comparison)."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "curator()": {
+   "kind": "safe",
+   "threshold": 2,
+   "owners": 5,
+   "holder": "0x7d07\u2026dcd8"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "plasma:0x7d07\u2026dcd8",
+   "nonce": 186,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDT0",
+  "amount": 100004195.412093,
+  "price_usd": 0.9990199746365294,
+  "held_usd": 99906188.76413567,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.0,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.plasma.to",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
+      "data": "0x8da5cb5b"
+     },
+     "0x2130ca1"
+    ]
+   },
+   {
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
+    "params": [
+     "<holder>",
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66\",\"data\":\"0x8da5cb5b\"},\"0x2130ca1\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x2130ca1",
+  "note": "read between blocks 34802839 and 34802849 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:03:45Z",
+   "composite": 30,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/plasma/0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.plasma.to",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000a9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
+  "block": "0x224022f",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000a9c251f8304b1b3fc2b9e8fcae78d94eff82ac66\"},\"0x224022f\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 30 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 40,
+  "to": 65,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x7d07\u2026dcd8",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": 86400,
+  "threshold": 2,
+  "owners": 5,
+  "keys_to_act": 2,
+  "keys_lost_to_freeze": 4,
+  "kind": "safe",
+  "since": "2026-10-10T06:54:09Z",
+  "owners_kinds": {
+   "eoa": 5
+  },
+  "disagree": "the timelock score says no delay (0), the contract enforces its own timelock of 24 h (timelock())",
+  "posture": "admin: Safe 2-of-5 of 5 plain keys; delay: 24 h the contract enforces itself",
+  "exposure": {
+   "keys_to_move": 2,
+   "react_hours": 24,
+   "tvl_usd": 99906188.76413567,
+   "money_per_key_usd": 49953094.38206784,
+   "money_source": "contract",
+   "held_symbol": "USDT0",
+   "held_amount": 100004195.412093
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791655425,
+ "stale": false,
+ "methodology_hash": "0x6a1d6a17504a5faeab692225b82e197898a47dbd96137e4c1a3cc17cf977e754",
+ "block": 35914287,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
+ "page": "https://realspap.github.io/oracle/p/plasma-0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

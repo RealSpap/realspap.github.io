@@ -1,0 +1,103 @@
+{
+ "name": "Uniswap V2 Factory (Base)",
+ "named_from": "dashboard",
+ "chain": "Base",
+ "address": "0x8909dc15e40173ff4699343b6eb8132c65e18ec6",
+ "composite": 85,
+ "band": "strong",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 80,
+  "multisigScore": 100,
+  "timelockScore": 75,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": true
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths checked",
+ "tvl_usd": 98695702.28127499,
+ "category": "Dexs",
+ "at_risk_usd": 14804355.342191247,
+ "narrative": {
+  "summary": "feeToSetter() is an OP-stack cross-domain forwarder (CrossChainAccount) that only forwards calls relayed by the L2CrossDomainMessenger from Uniswap\u2019s Ethereum-mainnet Governance Timelock, which enforces a 2-day delay (172,800s) and is administered by GovernorBravo. It is the same forwarder that owns the V3 Factory\u2019s fee adapter, with no Safe and no bare EOA in the chain.",
+  "tag": "$89.1M Base TVL, same DAO root as V3 and V4",
+  "detail": "Scope is narrow: per the deployed Factory and Pair source, feeToSetter can only call setFeeTo or setFeeToSetter (the V2 protocol-fee switch), with no pool upgrade and no access to LP principal. crossExposureScore 100 is not a claim of independence: V2, V3 and V4 on Base share this one forwarder and L1 Timelock, but DAO-rooted targets are left out of the signer-overlap score."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T17:38:05Z",
+   "composite": 85,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/base-sepolia/0x8909dc15e40173ff4699343b6eb8132c65e18ec6.xml",
+ "reproduce": {
+  "rpc": "https://sepolia.base.org",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6",
+  "block": "0x2dc3b9b",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6\"},\"0x2dc3b9b\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 6875,
+  "text": "collateral factor 68.75% (score 85)"
+ },
+ "cheapest_fix": null,
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791653885,
+ "stale": false,
+ "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
+ "block": 47987611,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x8909dc15e40173ff4699343b6eb8132c65e18ec6",
+ "page": "https://realspap.github.io/oracle/p/base-0x8909dc15e40173ff4699343b6eb8132c65e18ec6.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}
