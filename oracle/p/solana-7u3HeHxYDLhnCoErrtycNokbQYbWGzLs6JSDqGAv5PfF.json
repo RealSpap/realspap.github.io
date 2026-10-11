@@ -7,7 +7,7 @@
  "band": "moderate",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 266701220.69250017,
+ "money_per_key_usd": 266949814.9848597,
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 76,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1333506103.4625008,
+ "tvl_usd": 1334749074.9242985,
  "category": "Lending",
- "at_risk_usd": 586742685.5235003,
+ "at_risk_usd": 587289592.9666914,
  "narrative": {
   "summary": "Upgrades wait 24 hours and risk changes 12, but a ten-signer group can re-map the price source behind the SOL and USDC reserves with no delay, even to a fixed price. That undelayed path caps the oracle sub-score.",
   "tag": "undelayed price-source path",
@@ -94,8 +94,8 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 1333506103.4625008,
-   "money_per_key_usd": 266701220.69250017,
+   "tvl_usd": 1334749074.9242985,
+   "money_per_key_usd": 266949814.9848597,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

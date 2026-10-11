@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 6553869289.903746,
+ "tvl_usd": 6556083274.681337,
  "category": "Bridge",
- "at_risk_usd": 4849863274.528772,
+ "at_risk_usd": 4851501623.26419,
  "narrative": {
   "summary": "Validators auto-pull a signed node binary with no public node source and no documented upgrade notice. Five validators labeled Hyper Foundation hold 47.98% of active stake, enough to halt but not to finalize alone.",
   "tag": "caps every other Hyperliquid target",
@@ -68,14 +68,14 @@
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c.xml",
  "reproduce": {
-  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "rpc": "https://998.rpc.thirdweb.com",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000ea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c",
   "block": "latest",
   "composite_word": 6,
   "block_honoured": false,
   "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
-  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c\"},\"latest\"]}'"
+  "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c\"},\"latest\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -103,7 +103,7 @@
  "last_pushed": 1791662291,
  "stale": false,
  "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
- "block": 66597018,
+ "block": 66649672,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

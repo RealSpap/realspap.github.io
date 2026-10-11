@@ -7,7 +7,7 @@
  "band": "moderate",
  "keys_to_move": 5,
  "react_hours": 0,
- "money_per_key_usd": 896268350.4255905,
+ "money_per_key_usd": 897093010.4365015,
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 95,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 4481341752.127953,
+ "tvl_usd": 4485465052.1825075,
  "category": "Lending",
- "at_risk_usd": 2016603788.4575787,
+ "at_risk_usd": 2018459273.4821284,
  "narrative": {
   "summary": "owner() resolves to a real Gnosis Safe in one hop, fully closed - but by Morpho\u2019s own immutable-core design, owner() can only set fees and enable new markets, never touch funds in existing markets directly.",
   "tag": "$3.90B TVL - largest target in this expansion",
@@ -77,7 +77,7 @@
       "to": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
       "data": "0x8da5cb5b"
      },
-     "0x320bdc1"
+     "0x320ced2"
     ]
    },
    {
@@ -123,9 +123,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb\",\"data\":\"0x8da5cb5b\"},\"0x320bdc1\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x320bdc1",
-  "note": "read between blocks 52477371 and 52477377 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb\",\"data\":\"0x8da5cb5b\"},\"0x320ced2\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x320ced2",
+  "note": "read between blocks 52481740 and 52481746 of the chain"
  },
  "history": [
   {
@@ -139,11 +139,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000bbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
-  "block": "0x2dc3b9b",
+  "block": "0x2dc4cd7",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000bbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb\"},\"0x2dc3b9b\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000bbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb\"},\"0x2dc4cd7\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -180,12 +180,12 @@
     "target": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb"
    }
   ],
-  "cluster_tvl_usd": 9663494001.18614,
+  "cluster_tvl_usd": 9672576842.958004,
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 0,
-   "tvl_usd": 4481341752.127953,
-   "money_per_key_usd": 896268350.4255905,
+   "tvl_usd": 4485465052.1825075,
+   "money_per_key_usd": 897093010.4365015,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
@@ -195,7 +195,7 @@
  "last_pushed": 1791653885,
  "stale": false,
  "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
- "block": 47987611,
+ "block": 47992023,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
  "page": "https://realspap.github.io/oracle/p/base-0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

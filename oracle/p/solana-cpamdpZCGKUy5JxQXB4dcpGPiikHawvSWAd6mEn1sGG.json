@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 24401824.703568824,
+ "tvl_usd": 24589514.120702427,
  "category": "Dexs",
- "at_risk_usd": 23913788.209497448,
+ "at_risk_usd": 24097723.838288378,
  "narrative": {
   "summary": "Program upgrades need 4 of 7 signers, but the program's root admin is a hardcoded pair of bare keys where either one alone is enough. That pair sits at the top of the permission tree, which drives the score near the floor.",
   "tag": "root admin: two hardcoded bare keys, either suffices",

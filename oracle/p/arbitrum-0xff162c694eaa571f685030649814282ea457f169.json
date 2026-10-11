@@ -63,7 +63,7 @@
     "params": [
      "0xff162c694eaa571f685030649814282ea457f169",
      "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
-     "0x1ea174c5"
+     "0x1ea1eec9"
     ]
    },
    {
@@ -74,7 +74,7 @@
       "to": "<address from the slot>",
       "data": "0x8da5cb5b"
      },
-     "0x1ea174c5"
+     "0x1ea1eec9"
     ]
    },
    {
@@ -98,9 +98,9 @@
     ]
    }
   ],
-  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xff162c694eaa571f685030649814282ea457f169\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x1ea174c5\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x1ea174c5\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5f5e4892bab94d94dc57a3edea3c138167c4df0f\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xff162c694eaa571f685030649814282ea457f169\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x1ea174c5",
-  "note": "read between blocks 513897654 and 513897669 of the chain"
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xff162c694eaa571f685030649814282ea457f169\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x1ea1eec9\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x1ea1eec9\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5f5e4892bab94d94dc57a3edea3c138167c4df0f\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xff162c694eaa571f685030649814282ea457f169\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x1ea1eec9",
+  "note": "read between blocks 513928889 and 513928905 of the chain"
  },
  "history": [
   {
@@ -114,11 +114,11 @@
   "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000ff162c694eaa571f685030649814282ea457f169",
-  "block": "0x12f6bc05",
+  "block": "0x12f74224",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ff162c694eaa571f685030649814282ea457f169\"},\"0x12f6bc05\"]}'"
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ff162c694eaa571f685030649814282ea457f169\"},\"0x12f74224\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -158,7 +158,7 @@
  "last_pushed": 1791658650,
  "stale": false,
  "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
- "block": 318159877,
+ "block": 318194212,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xff162c694eaa571f685030649814282ea457f169",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0xff162c694eaa571f685030649814282ea457f169.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

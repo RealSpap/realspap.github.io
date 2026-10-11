@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 185182.76045604967,
+ "tvl_usd": 185291.59675487207,
  "category": "Lending",
- "at_risk_usd": 83332.24220522236,
+ "at_risk_usd": 83381.21853969243,
  "narrative": {
   "summary": "The pool\u2019s token-upgrade and reserve-configuration path is gated by getPoolAdmin(), a 4-of-11 Gnosis Safe with no delay in front of it, not by the 72-hour TimelockController that owns the PoolAddressesProvider. This is the protocol that lost ~$50M on 2024-10-16 to compromised multisig-signer devices, a failure mode a timelock does not defend against.",
   "tag": "pool-admin Safe bypasses the 72h timelock",
@@ -72,8 +72,8 @@
    }
   ],
   "curl": "# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x1ea174c5",
-  "note": "read between blocks 513897654 and 513897669 of the chain"
+  "block": "0x1ea1eec9",
+  "note": "read between blocks 513928889 and 513928905 of the chain"
  },
  "history": [
   {
@@ -87,11 +87,11 @@
   "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000e23b4ae3624fb6f7cdef29bc8ead912f1ede6886",
-  "block": "0x12f6bc05",
+  "block": "0x12f74224",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000e23b4ae3624fb6f7cdef29bc8ead912f1ede6886\"},\"0x12f6bc05\"]}'"
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000e23b4ae3624fb6f7cdef29bc8ead912f1ede6886\"},\"0x12f74224\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -125,7 +125,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 72,
-   "tvl_usd": 185182.76045604967,
+   "tvl_usd": 185291.59675487207,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -136,7 +136,7 @@
  "last_pushed": 1791658650,
  "stale": false,
  "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
- "block": 318159877,
+ "block": 318194212,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

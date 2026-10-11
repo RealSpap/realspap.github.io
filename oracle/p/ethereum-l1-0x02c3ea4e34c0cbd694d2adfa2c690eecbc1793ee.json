@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 5183399754.876525,
+ "tvl_usd": 5189456750.514507,
  "category": "Lending",
- "at_risk_usd": 1140347946.0728354,
+ "at_risk_usd": 1141680485.1131916,
  "narrative": {
   "summary": "PoolAddressesProvider.owner() is SparkProxy, whose three wards are Sky\u2019s MCD_PAUSE_PROXY (behind the same 2-day-delay governance already scored for MCD_PAUSE), an ESM whose threshold is set to the uint256 maximum so it cannot fire, and StarGuard, itself warded only by MCD_PAUSE_PROXY. A separate FreezerMom can freeze or pause markets with no delay, through the Sky Chief\u2019s current hat or a 3-of-5 Safe.",
   "tag": "cross-exposure: 80, same Sky root as MCD_PAUSE",
@@ -69,13 +69,13 @@
       "to": "0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
       "data": "0x8da5cb5b"
      },
-     "0x18f56c0"
+     "0x18f5995"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee\",\"data\":\"0x8da5cb5b\"},\"0x18f56c0\"]}'",
-  "block": "0x18f56c0",
-  "note": "read between blocks 26171071 and 26171072 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee\",\"data\":\"0x8da5cb5b\"},\"0x18f5995\"]}'",
+  "block": "0x18f5995",
+  "note": "read between blocks 26171796 and 26171797 of the chain"
  },
  "history": [
   {
@@ -89,11 +89,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d000000000000000000000000002c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
-  "block": "0xb57b19",
+  "block": "0xb57df6",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d000000000000000000000000002c3ea4e34c0cbd694d2adfa2c690eecbc1793ee\"},\"0xb57b19\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d000000000000000000000000002c3ea4e34c0cbd694d2adfa2c690eecbc1793ee\"},\"0xb57df6\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -120,7 +120,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 0,
-   "tvl_usd": 5183399754.876525,
+   "tvl_usd": 5189456750.514507,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -131,7 +131,7 @@
  "last_pushed": 1791687028,
  "stale": false,
  "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11893529,
+ "block": 11894262,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

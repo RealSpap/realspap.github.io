@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1735.6636059948573,
+ "tvl_usd": 0,
  "category": "Onchain Capital Allocator",
- "at_risk_usd": 1180.251252076503,
+ "at_risk_usd": 0.0,
  "narrative": {
   "summary": "Left open in an earlier pass as an unrecognized proxy shape - turned out not to be a proxy at all, but Spark\u2019s own ALMProxy dispatcher, gated by the identical executor contract already traced for Spark Savings USDG.",
   "tag": "resolved a real open thread, not repeated",
@@ -83,11 +83,11 @@
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
   "data": "0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24",
-  "block": "0x7ef0e36",
+  "block": "0x7eff97a",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24\"},\"0x7ef0e36\"]}'"
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24\"},\"0x7eff97a\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -115,7 +115,7 @@
  "last_pushed": 1791664867,
  "stale": false,
  "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133107254,
+ "block": 133167482,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

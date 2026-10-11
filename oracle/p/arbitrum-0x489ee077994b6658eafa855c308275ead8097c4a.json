@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1341553.1474569484,
+ "tvl_usd": 1342355.4264325937,
  "category": "Derivatives",
- "at_risk_usd": 576867.8534064878,
+ "at_risk_usd": 577212.8333660153,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -67,11 +67,11 @@
   "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000489ee077994b6658eafa855c308275ead8097c4a",
-  "block": "0x12f6bc05",
+  "block": "0x12f74224",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000489ee077994b6658eafa855c308275ead8097c4a\"},\"0x12f6bc05\"]}'"
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000489ee077994b6658eafa855c308275ead8097c4a\"},\"0x12f74224\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -99,7 +99,7 @@
  "last_pushed": 1791658650,
  "stale": false,
  "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
- "block": 318159877,
+ "block": 318194212,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x489ee077994b6658eafa855c308275ead8097c4a",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x489ee077994b6658eafa855c308275ead8097c4a.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

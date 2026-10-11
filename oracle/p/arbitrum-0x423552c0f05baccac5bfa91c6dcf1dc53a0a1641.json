@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1371836836.5285115,
+ "tvl_usd": 1371256551.2144687,
  "category": null,
- "at_risk_usd": 493861261.15026414,
+ "at_risk_usd": 493652358.4372087,
  "narrative": {
   "summary": "A real, publicly-named 9-of-12 Safe that can bypass the ordinary L2 core Timelock\u2019s 8-day delay in an emergency - the chain\u2019s own systemic root, not a bounded protocol authority.",
   "tag": "every protocol above inherits this",
@@ -71,11 +71,11 @@
   "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000423552c0f05baccac5bfa91c6dcf1dc53a0a1641",
-  "block": "0x12f6bc05",
+  "block": "0x12f74224",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000423552c0f05baccac5bfa91c6dcf1dc53a0a1641\"},\"0x12f6bc05\"]}'"
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000423552c0f05baccac5bfa91c6dcf1dc53a0a1641\"},\"0x12f74224\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -103,7 +103,7 @@
  "last_pushed": 1791658650,
  "stale": false,
  "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
- "block": 318159877,
+ "block": 318194212,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

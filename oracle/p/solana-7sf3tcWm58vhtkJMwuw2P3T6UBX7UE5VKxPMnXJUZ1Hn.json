@@ -7,7 +7,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 90249207.47564329,
+ "money_per_key_usd": 89981854.94372727,
  "sub": {
   "adminKeyScore": 5,
   "multisigScore": 0,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 90249207.47564329,
+ "tvl_usd": 89981854.94372727,
  "category": "Lending",
- "at_risk_usd": 88444223.32613043,
+ "at_risk_usd": 88182217.84485273,
  "narrative": {
   "summary": "Two bare wallets sit above the DAO vote: one can rewrite the voting rules with no proposal, the other can replace the governance program's code. Neither is renounced, and the DAO has not taken over the realm authority.",
   "tag": "retroactive backtest of the June 2022 vote",
@@ -84,8 +84,8 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 90249207.47564329,
-   "money_per_key_usd": 90249207.47564329,
+   "tvl_usd": 89981854.94372727,
+   "money_per_key_usd": 89981854.94372727,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

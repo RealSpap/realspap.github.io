@@ -7,7 +7,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 1,
- "money_per_key_usd": 160610.28579840492,
+ "money_per_key_usd": 160611.80987556028,
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 70,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 642441.1431936197,
+ "tvl_usd": 642447.2395022411,
  "category": "Derivatives",
- "at_risk_usd": 334069.39446068223,
+ "at_risk_usd": 334072.56454116537,
  "narrative": {
   "summary": "In April 2026 a 2-of-5 multisig with no delay, which held Drift's admin key, was used to reassign it to an attacker (press reports $285M drained). The upgrade multisig is now 4-of-7 with a 1-hour delay, still short of strong.",
   "tag": "retroactive backtest of the 2026-04-01 exploit",
@@ -94,8 +94,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 1,
-   "tvl_usd": 642441.1431936197,
-   "money_per_key_usd": 160610.28579840492,
+   "tvl_usd": 642447.2395022411,
+   "money_per_key_usd": 160611.80987556028,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

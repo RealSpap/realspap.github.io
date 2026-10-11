@@ -7,7 +7,7 @@
  "band": "weak",
  "keys_to_move": 7,
  "react_hours": 0,
- "money_per_key_usd": 5723759.564988096,
+ "money_per_key_usd": 5743766.950685163,
  "sub": {
   "adminKeyScore": 45,
   "multisigScore": 50,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 40066316.95491667,
+ "tvl_usd": 40206368.65479614,
  "category": "Lending",
- "at_risk_usd": 26844432.35979417,
+ "at_risk_usd": 26938266.99871341,
  "narrative": {
   "summary": "Upgrades need 7 of 15 signers and group admin actions only 5 of 17, both with no delay, and the upgrade voters are a subset of the admin group. The score is still an upper bound.",
   "tag": "upper bound: 7 more admin fields not decoded",
@@ -94,8 +94,8 @@
   "exposure": {
    "keys_to_move": 7,
    "react_hours": 0,
-   "tvl_usd": 40066316.95491667,
-   "money_per_key_usd": 5723759.564988096,
+   "tvl_usd": 40206368.65479614,
+   "money_per_key_usd": 5743766.950685163,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

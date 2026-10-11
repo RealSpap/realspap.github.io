@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 180199789.96061477,
+ "tvl_usd": 180182750.5622033,
  "category": "Derivatives",
- "at_risk_usd": 163981808.86415946,
+ "at_risk_usd": 163966303.011605,
  "narrative": {
   "summary": "One plain HyperCore key leads HLP and its 7 child strategy vaults, about $186M of account value in total. It has trading and allocation power but cannot withdraw funds to itself, and depositors face a 4-day lock.",
   "tag": "trading power, not custody",
@@ -68,14 +68,14 @@
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0xdfc24b077bc1425ad1dea75bcb6f8158e10df303.xml",
  "reproduce": {
-  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "rpc": "https://998.rpc.thirdweb.com",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000dfc24b077bc1425ad1dea75bcb6f8158e10df303",
   "block": "latest",
   "composite_word": 6,
   "block_honoured": false,
   "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
-  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000dfc24b077bc1425ad1dea75bcb6f8158e10df303\"},\"latest\"]}'"
+  "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000dfc24b077bc1425ad1dea75bcb6f8158e10df303\"},\"latest\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -103,7 +103,7 @@
  "last_pushed": 1791662291,
  "stale": false,
  "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
- "block": 66597018,
+ "block": 66649672,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xdfc24b077bc1425ad1dea75bcb6f8158e10df303.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

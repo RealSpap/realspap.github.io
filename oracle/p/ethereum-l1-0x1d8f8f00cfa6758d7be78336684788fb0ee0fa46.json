@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1320351571.582418,
+ "tvl_usd": 1321640240.2896397,
  "category": "Liquid Staking",
- "at_risk_usd": 1029874225.8342861,
+ "at_risk_usd": 1030879387.425919,
  "narrative": {
   "summary": "The guardian is a bare EOA, but its blanket write access is closed (getDeployedStatus is true) and the protocol DAO\u2019s bootstrap mode is disabled. What is left to that key is the guardian handover itself, with no delay in that path.",
   "tag": "$1.36B TVL, bare-EOA guardian with retired powers, composite 22",
@@ -71,11 +71,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46",
-  "block": "0xb57b19",
+  "block": "0xb57df6",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46\"},\"0xb57b19\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46\"},\"0xb57df6\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -103,7 +103,7 @@
  "last_pushed": 1791687028,
  "stale": false,
  "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11893529,
+ "block": 11894262,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

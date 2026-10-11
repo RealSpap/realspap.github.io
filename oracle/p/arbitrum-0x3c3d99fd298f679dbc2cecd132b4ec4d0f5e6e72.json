@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 203879733.22674263,
+ "tvl_usd": 203935518.48395476,
  "category": "Derivatives",
- "at_risk_usd": 165142583.9136615,
+ "at_risk_usd": 165187769.97200334,
  "narrative": {
   "summary": "CORRECTED 2026-09-19 (71 to 22): TIMELOCK_ADMIN on the live RoleStore includes a bare EOA (GMX\u2019s own timelock_admin_2) that can queue a grant of ANY role through TimelockConfig and execute it after 24h. The 5-of-8 Safe can only veto (cancel / revokeRole).",
   "tag": "CORRECTION: a single key starts the clock",
@@ -71,11 +71,11 @@
   "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000003c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72",
-  "block": "0x12f6bc05",
+  "block": "0x12f74224",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000003c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72\"},\"0x12f6bc05\"]}'"
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000003c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72\"},\"0x12f74224\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -103,7 +103,7 @@
  "last_pushed": 1791658650,
  "stale": false,
  "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
- "block": 318159877,
+ "block": 318194212,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

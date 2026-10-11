@@ -7,7 +7,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 90249207.47564329,
+ "money_per_key_usd": 89981854.94372727,
  "sub": {
   "adminKeyScore": 5,
   "multisigScore": 0,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 90249207.47564329,
+ "tvl_usd": 89981854.94372727,
  "category": "Lending",
- "at_risk_usd": 88444223.32613043,
+ "at_risk_usd": 88182217.84485273,
  "narrative": {
   "summary": "The lending program's upgrade authority is a single on-curve key with no multisig wrapper: one signature can replace its code, with no delay. That is the bottom rung of the scale.",
   "tag": "bare key, bottom rung",
@@ -84,8 +84,8 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 90249207.47564329,
-   "money_per_key_usd": 90249207.47564329,
+   "tvl_usd": 89981854.94372727,
+   "money_per_key_usd": 89981854.94372727,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

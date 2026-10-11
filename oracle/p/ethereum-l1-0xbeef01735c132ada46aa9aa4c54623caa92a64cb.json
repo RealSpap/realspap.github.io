@@ -7,7 +7,7 @@
  "band": "decent",
  "keys_to_move": 5,
  "react_hours": 168,
- "money_per_key_usd": 13062902.00147663,
+ "money_per_key_usd": 13066584.491041668,
  "sub": {
   "adminKeyScore": 70,
   "multisigScore": 75,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 65314510.00738315,
+ "tvl_usd": 65332922.45520834,
  "category": null,
- "at_risk_usd": 17634917.70199345,
+ "at_risk_usd": 17639889.06290625,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -73,9 +73,9 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDC",
-  "amount": 65338520.90508,
-  "price_usd": 0.9996325154386074,
-  "held_usd": 65314510.00738315,
+  "amount": 65355012.96273,
+  "price_usd": 0.9996619921484178,
+  "held_usd": 65332922.45520834,
   "stale": null,
   "price_stale": null,
   "amount_change_pct": 0.0,
@@ -93,7 +93,7 @@
       "to": "0xbeef01735c132ada46aa9aa4c54623caa92a64cb",
       "data": "0x8da5cb5b"
      },
-     "0x18f56c0"
+     "0x18f5995"
     ]
    },
    {
@@ -139,9 +139,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeef01735c132ada46aa9aa4c54623caa92a64cb\",\"data\":\"0x8da5cb5b\"},\"0x18f56c0\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x18f56c0",
-  "note": "read between blocks 26171071 and 26171072 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeef01735c132ada46aa9aa4c54623caa92a64cb\",\"data\":\"0x8da5cb5b\"},\"0x18f5995\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x18f5995",
+  "note": "read between blocks 26171796 and 26171797 of the chain"
  },
  "history": [
   {
@@ -165,11 +165,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d0000000000000000000000000beef01735c132ada46aa9aa4c54623caa92a64cb",
-  "block": "0xb57b19",
+  "block": "0xb57df6",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000beef01735c132ada46aa9aa4c54623caa92a64cb\"},\"0xb57b19\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000beef01735c132ada46aa9aa4c54623caa92a64cb\"},\"0xb57df6\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -218,22 +218,22 @@
     "target": "0x32841a8511d5c2c5b253f45668780b99139e476d"
    }
   ],
-  "cluster_tvl_usd": 29473792.950552348,
+  "cluster_tvl_usd": 29508091.951656777,
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 168,
-   "tvl_usd": 65314510.00738315,
-   "money_per_key_usd": 13062902.00147663,
+   "tvl_usd": 65332922.45520834,
+   "money_per_key_usd": 13066584.491041668,
    "money_source": "contract",
    "held_symbol": "USDC",
-   "held_amount": 65338520.90508
+   "held_amount": 65355012.96273
   }
  },
  "score_cluster": null,
  "last_pushed": 1791687028,
  "stale": false,
  "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11893529,
+ "block": 11894262,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeef01735c132ada46aa9aa4c54623caa92a64cb",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef01735c132ada46aa9aa4c54623caa92a64cb.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

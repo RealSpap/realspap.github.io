@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 63856.06025488396,
+ "tvl_usd": 63872.81839640396,
  "category": null,
- "at_risk_usd": 62578.939049786284,
+ "at_risk_usd": 62595.36202847589,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -54,12 +54,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDG",
-  "amount": 63870.06944,
-  "price_usd": 0.9997806611885838,
-  "held_usd": 63856.06025488396,
+  "amount": 63883.873423,
+  "price_usd": 0.9998269512162665,
+  "held_usd": 63872.81839640396,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": 0.03,
+  "amount_change_pct": 0.01,
   "vanished": null
  },
  "dispute": null,
@@ -76,11 +76,11 @@
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
   "data": "0xd47875d0000000000000000000000000d42174d3db28b0fa2bd25381c3521b18ae9db490",
-  "block": "0x7ef0e36",
+  "block": "0x7eff97a",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000d42174d3db28b0fa2bd25381c3521b18ae9db490\"},\"0x7ef0e36\"]}'"
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000d42174d3db28b0fa2bd25381c3521b18ae9db490\"},\"0x7eff97a\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -108,7 +108,7 @@
  "last_pushed": 1791664867,
  "stale": false,
  "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133107254,
+ "block": 133167482,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xd42174d3db28b0fa2bd25381c3521b18ae9db490",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xd42174d3db28b0fa2bd25381c3521b18ae9db490.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

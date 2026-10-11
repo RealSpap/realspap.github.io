@@ -1,0 +1,112 @@
+{
+ "name": "Huma Finance (Permissionless, Institutional)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "HumaXepHnjaRCpjYTokxY4UtaJcmx41prQ8cxGmFC5fn",
+ "composite": 66,
+ "band": "decent",
+ "keys_to_move": 5,
+ "react_hours": 12,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 70,
+  "multisigScore": 100,
+  "timelockScore": 25,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "The program upgrade authority is a Squads v4 multisig: 5-of-7 voters out of 9 members, with a 12-hour time lock. This is an upper bound: only the program upgrade path is scored, the in-state admin, mint and config authorities are not traced.",
+  "tag": "5-of-7 voters out of 9 members, composite 66",
+  "detail": "Pushed on-chain 2026-10-10 (first publication of this target). Scored 70 / 100 / 25. The program's upgrade authority is re-read on every run and must equal the offline vault PDA of the named Squads multisig. Both programs share the upgrade authority."
+ },
+ "score_account": "DpxDGp4FyuXGFRKSxfzcutxMR9YjYQaxkFf5aVSXZRqB",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/HumaXepHnjaRCpjYTokxY4UtaJcmx41prQ8cxGmFC5fn.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5450,
+  "text": "collateral factor 54.50% (score 66)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "timelock",
+  "from": 25,
+  "to": 72,
+  "what": "a confirmed delay before changes apply"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData TBMC1J\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig uGLhzjot32i9nNKZKUoCzr7sG8bFAXQRN3uZPTUr7gX",
+  "holder": "D6GEJYVtQGVrLVj1QSZbxWW73NnKJyHEzMBDAtCzraaF",
+  "threshold": 5,
+  "owners": 9,
+  "delay_seconds": 43200,
+  "owners_kinds": {
+   "eoa": 9,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 5,
+  "keys_lost_to_freeze": 3,
+  "kind": "squads",
+  "since": "2026-10-10T21:07:35Z",
+  "posture": "admin: Squads 5-of-9, 7 can vote of 9 plain keys; delay: 12 h Squads time lock",
+  "exposure": {
+   "keys_to_move": 5,
+   "react_hours": 12,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662480,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=HumaXepHnjaRCpjYTokxY4UtaJcmx41prQ8cxGmFC5fn",
+ "page": "https://realspap.github.io/oracle/p/solana-HumaXepHnjaRCpjYTokxY4UtaJcmx41prQ8cxGmFC5fn.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

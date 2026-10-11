@@ -7,7 +7,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 12,
- "money_per_key_usd": 286259776.81574607,
+ "money_per_key_usd": 286549127.07700324,
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 83,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1145039107.2629843,
+ "tvl_usd": 1146196508.308013,
  "category": "Lending",
- "at_risk_usd": 515267598.2683429,
+ "at_risk_usd": 515788428.7386058,
  "narrative": {
   "summary": "Four programs share one 4-of-6 upgrade multisig with a 12-hour delay, while the liquidity admin is a separate 5-of-10 multisig with a 6-hour delay. The score is a bound: three of the four admin accounts were not re-read.",
   "tag": "bound, not final: 3 of 4 admins not re-read",
@@ -94,8 +94,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 12,
-   "tvl_usd": 1145039107.2629843,
-   "money_per_key_usd": 286259776.81574607,
+   "tvl_usd": 1146196508.308013,
+   "money_per_key_usd": 286549127.07700324,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

@@ -68,14 +68,14 @@
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0x30e96fbd515243d47703e78581b88cba60f51360.xml",
  "reproduce": {
-  "rpc": "https://rpc.hyperliquid-testnet.xyz/evm",
+  "rpc": "https://998.rpc.thirdweb.com",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000030e96fbd515243d47703e78581b88cba60f51360",
   "block": "latest",
   "composite_word": 6,
   "block_honoured": false,
   "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
-  "curl": "curl -s -X POST https://rpc.hyperliquid-testnet.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000030e96fbd515243d47703e78581b88cba60f51360\"},\"latest\"]}'"
+  "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000030e96fbd515243d47703e78581b88cba60f51360\"},\"latest\"]}'"
  },
  "consumer_example": {
   "verdict": "revert",
@@ -102,7 +102,7 @@
  "last_pushed": 1790279036,
  "stale": true,
  "methodology_hash": "0xfbf38ff91abf710728e2df3d5370bf18eeb2a9085168612fa03955b13cc958ad",
- "block": 66597018,
+ "block": 66649672,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x30e96fbd515243d47703e78581b88cba60f51360",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x30e96fbd515243d47703e78581b88cba60f51360.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

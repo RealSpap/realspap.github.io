@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 31581279.653720476,
+ "tvl_usd": 31931783.733139593,
  "category": "Dexs",
- "at_risk_usd": 6316255.930744095,
+ "at_risk_usd": 6386356.746627918,
  "narrative": {
   "summary": "The best-governed target found on Monad: owned via a Wormhole message relay by Uniswap\u2019s own UNI-token-holder-governed Ethereum Timelock - a real 2-day delay, not a Monad-local multisig.",
   "tag": "composite 80 - strongest target on this chain",
@@ -69,13 +69,13 @@
       "to": "0x188d586ddcf52439676ca21a244753fa19f9ea8e",
       "data": "0x8da5cb5b"
      },
-     "0x6b54525"
+     "0x6b5b613"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x188d586ddcf52439676ca21a244753fa19f9ea8e\",\"data\":\"0x8da5cb5b\"},\"0x6b54525\"]}'",
-  "block": "0x6b54525",
-  "note": "read between blocks 112542996 and 112543013 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x188d586ddcf52439676ca21a244753fa19f9ea8e\",\"data\":\"0x8da5cb5b\"},\"0x6b5b613\"]}'",
+  "block": "0x6b5b613",
+  "note": "read between blocks 112571907 and 112571923 of the chain"
  },
  "history": [
   {
@@ -89,11 +89,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000188d586ddcf52439676ca21a244753fa19f9ea8e",
-  "block": "0x42eeb2c",
+  "block": "0x42f5d3e",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000188d586ddcf52439676ca21a244753fa19f9ea8e\"},\"0x42eeb2c\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000188d586ddcf52439676ca21a244753fa19f9ea8e\"},\"0x42f5d3e\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -113,7 +113,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 0,
-   "tvl_usd": 31581279.653720476,
+   "tvl_usd": 31931783.733139593,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -124,7 +124,7 @@
  "last_pushed": 1791656126,
  "stale": false,
  "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
- "block": 70183724,
+ "block": 70212926,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x188d586ddcf52439676ca21a244753fa19f9ea8e",
  "page": "https://realspap.github.io/oracle/p/monad-0x188d586ddcf52439676ca21a244753fa19f9ea8e.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

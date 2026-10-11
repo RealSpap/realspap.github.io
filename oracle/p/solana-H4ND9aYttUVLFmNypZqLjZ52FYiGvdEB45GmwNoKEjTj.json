@@ -7,7 +7,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 24,
- "money_per_key_usd": 195078014.95477173,
+ "money_per_key_usd": 194496174.31929618,
  "sub": {
   "adminKeyScore": 55,
   "multisigScore": 80,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 780312059.8190869,
+ "tvl_usd": 777984697.2771847,
  "category": "Derivatives",
- "at_risk_usd": 421368512.3023069,
+ "at_risk_usd": 420111736.5296797,
  "narrative": {
   "summary": "The perps program's upgrade multisig has a 24-hour delay, but its application admin is a 4-of-7 Squads v3 multisig with no delay field, so the delay is bypassed. That multisig also controls Jupiter Aggregator v6 upgrades.",
   "tag": "admin path bypasses the 24h upgrade delay",
@@ -95,8 +95,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 24,
-   "tvl_usd": 780312059.8190869,
-   "money_per_key_usd": 195078014.95477173,
+   "tvl_usd": 777984697.2771847,
+   "money_per_key_usd": 194496174.31929618,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

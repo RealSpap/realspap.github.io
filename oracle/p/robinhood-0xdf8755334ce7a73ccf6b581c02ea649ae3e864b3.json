@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1058413720.3679734,
+ "tvl_usd": 1060923920.4991401,
  "category": null,
- "at_risk_usd": 455117899.7582286,
+ "at_risk_usd": 456197285.81463027,
  "narrative": {
   "summary": "A real, publicly-named 7-of-8 Security Council Safe, plus a Timelock that - corrected in batch 8 - turns out to genuinely gate changes now, just with no separation between who can propose and who can veto.",
   "tag": "every dApp above inherits this",
@@ -71,11 +71,11 @@
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
   "data": "0xd47875d0000000000000000000000000df8755334ce7a73ccf6b581c02ea649ae3e864b3",
-  "block": "0x7ef0e36",
+  "block": "0x7eff97a",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000df8755334ce7a73ccf6b581c02ea649ae3e864b3\"},\"0x7ef0e36\"]}'"
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000df8755334ce7a73ccf6b581c02ea649ae3e864b3\"},\"0x7eff97a\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -103,7 +103,7 @@
  "last_pushed": 1791664867,
  "stale": false,
  "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133107254,
+ "block": 133167482,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xdf8755334ce7a73ccf6b581c02ea649ae3e864b3",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xdf8755334ce7a73ccf6b581c02ea649ae3e864b3.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

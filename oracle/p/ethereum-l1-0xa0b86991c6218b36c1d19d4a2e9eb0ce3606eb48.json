@@ -1,0 +1,159 @@
+{
+ "name": "USDC (Circle FiatTokenProxy)",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+ "composite": 2,
+ "band": "critical",
+ "keys_to_move": 1,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "The proxy admin, the owner, the blacklister and the pauser are all accounts with no code, and so is the owner of the masterMinter contract. Any of them can upgrade, blacklist, pause or set minters, with no delay.",
+  "tag": "accounts with no code, no timelock, composite 2",
+  "detail": "Added 2026-10-11. Scored 5 / 0 / 0 (composite 2): the componentwise minimum over five controllers, all read on two independent RPCs the same day. Whether one key, an HSM or an MPC service holds an account with no code cannot be observed on chain; the score treats it as a bare EOA, the methodology's convention. The implementation slot holds 0x4350\u202602dd, so the logic can be replaced by the proxy admin. This reads who holds the controls, not how they are operated: it is a statement about on-chain authority, not a prediction of loss."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "pauser()": {
+   "kind": "eoa",
+   "holder": "0x4914\u20268566"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "data": "0x8da5cb5b"
+     },
+     "0x18f5995"
+    ]
+   },
+   {
+    "what": "eth_getCode on the holder: 0x means a plain key",
+    "method": "eth_getCode",
+    "params": [
+     "<holder>",
+     "latest"
+    ]
+   },
+   {
+    "what": "eth_getTransactionCount on the holder: how many transactions this key has sent (6 at the read)",
+    "method": "eth_getTransactionCount",
+    "params": [
+     "<holder>",
+     "0x18f5995"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48\",\"data\":\"0x8da5cb5b\"},\"0x18f5995\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (6 at the read)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x18f5995\"]}'",
+  "block": "0x18f5995",
+  "note": "read between blocks 26171796 and 26171797 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-11T06:34:38Z",
+   "composite": 2,
+   "from": "watch"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d0000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "block": "0xb57df6",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48\"},\"0xb57df6\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 2 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 5,
+  "to": 49,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0xfcb1\u2026ae3a",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "eoa",
+  "since": "2026-10-11T06:43:46Z",
+  "posture": "admin: a plain key, 6 transactions sent; delay: none",
+  "exposure": {
+   "keys_to_move": 1,
+   "react_hours": 0,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11894262,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 6027858380.3083105,
+ "tvl_usd": 6024805934.402743,
  "category": "CDP",
- "at_risk_usd": 1145293092.258579,
+ "at_risk_usd": 1144713127.5365212,
  "narrative": {
   "summary": "MCD_PAUSE.delay() is a real, confirmed 2-day delay, gated by DSChief - whose current \"hat\" is a governance spell executed just 6 days before this scorer ran.",
   "tag": "$5.06B TVL (Sky Lending)",
@@ -69,13 +69,13 @@
       "to": "0xbe286431454714f511008713973d3b053a2d38f3",
       "data": "0xbf7e214f"
      },
-     "0x18f56c0"
+     "0x18f5995"
     ]
    }
   ],
-  "curl": "# authority() on the contract (AccessManaged): the AccessManager that holds every role\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbe286431454714f511008713973d3b053a2d38f3\",\"data\":\"0xbf7e214f\"},\"0x18f56c0\"]}'",
-  "block": "0x18f56c0",
-  "note": "read between blocks 26171071 and 26171072 of the chain"
+  "curl": "# authority() on the contract (AccessManaged): the AccessManager that holds every role\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbe286431454714f511008713973d3b053a2d38f3\",\"data\":\"0xbf7e214f\"},\"0x18f5995\"]}'",
+  "block": "0x18f5995",
+  "note": "read between blocks 26171796 and 26171797 of the chain"
  },
  "history": [
   {
@@ -89,11 +89,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d0000000000000000000000000be286431454714f511008713973d3b053a2d38f3",
-  "block": "0xb57b19",
+  "block": "0xb57df6",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000be286431454714f511008713973d3b053a2d38f3\"},\"0xb57b19\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000be286431454714f511008713973d3b053a2d38f3\"},\"0xb57df6\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -113,7 +113,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 0,
-   "tvl_usd": 6027858380.3083105,
+   "tvl_usd": 6024805934.402743,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -124,7 +124,7 @@
  "last_pushed": 1791687028,
  "stale": false,
  "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11893529,
+ "block": 11894262,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbe286431454714f511008713973d3b053a2d38f3",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbe286431454714f511008713973d3b053a2d38f3.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

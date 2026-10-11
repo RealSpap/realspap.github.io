@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 255600878.9357784,
+ "tvl_usd": 253929779.3710219,
  "category": "Liquid Staking",
- "at_risk_usd": 140580483.41467813,
+ "at_risk_usd": 139661378.65406203,
  "narrative": {
   "summary": "A 6-of-13 legacy multisig with no delay upgrades the program, and a council of 5 (3 votes pass) can change every top-level authority. Counting that council path as full-power is a disclosed judgment call.",
   "tag": "judgment call: admin path counted as full-power",

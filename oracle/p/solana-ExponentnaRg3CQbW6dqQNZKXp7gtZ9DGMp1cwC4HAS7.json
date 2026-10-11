@@ -1,0 +1,112 @@
+{
+ "name": "Exponent (Core)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "ExponentnaRg3CQbW6dqQNZKXp7gtZ9DGMp1cwC4HAS7",
+ "composite": 51,
+ "band": "moderate",
+ "keys_to_move": 3,
+ "react_hours": 10,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 60,
+  "multisigScore": 69,
+  "timelockScore": 21,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "The program upgrade authority is a Squads v4 multisig: 3-of-5 voters out of 5 members, with a 10-hour time lock. This is an upper bound: only the program upgrade path is scored, the in-state admin, mint and config authorities are not traced.",
+  "tag": "3-of-5 voters out of 5 members, composite 51",
+  "detail": "Pushed on-chain 2026-10-10 (first publication of this target). Scored 60 / 69 / 21. The program's upgrade authority is re-read on every run and must equal the offline vault PDA of the named Squads multisig. The time lock was 4 hours when the target was first scored and is 10 hours now (the Watch reported the change)."
+ },
+ "score_account": "H8EGbxFPxGFcsRBujnvocTmNUUNCJayC2Ai91s8uonMG",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/ExponentnaRg3CQbW6dqQNZKXp7gtZ9DGMp1cwC4HAS7.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 51 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 60,
+  "to": 82,
+  "what": "admin power taken away from a bare key"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData BA7Hr3\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 51smH7pBDKJDgmVnVks3gMWaPQFfmQ5s4Fc223yHcjuH",
+  "holder": "2tX7aHkV1r7am6bnTPqQJNBbEkbqDpNWHBYPahSQb9TP",
+  "threshold": 3,
+  "owners": 5,
+  "delay_seconds": 36000,
+  "owners_kinds": {
+   "eoa": 5,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 3,
+  "keys_lost_to_freeze": 3,
+  "kind": "squads",
+  "since": "2026-10-10T21:07:35Z",
+  "posture": "admin: Squads 3-of-5 of 5 plain keys; delay: 10 h Squads time lock",
+  "exposure": {
+   "keys_to_move": 3,
+   "react_hours": 10,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662488,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=ExponentnaRg3CQbW6dqQNZKXp7gtZ9DGMp1cwC4HAS7",
+ "page": "https://realspap.github.io/oracle/p/solana-ExponentnaRg3CQbW6dqQNZKXp7gtZ9DGMp1cwC4HAS7.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

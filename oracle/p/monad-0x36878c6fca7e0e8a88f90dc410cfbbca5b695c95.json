@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1000701600.1174442,
+ "tvl_usd": 1000533317.4663242,
  "category": null,
- "at_risk_usd": 400280640.0469777,
+ "at_risk_usd": 400213326.9865297,
  "narrative": {
   "summary": "The chain\u2019s own officially blessed bridge, governed by a live-verified 13-of-19 Wormhole Guardian quorum - read directly from Monad\u2019s own deployed Core Bridge contract, not assumed from generic docs.",
   "tag": "composite 60 - 13-of-19 global guardian quorum",
@@ -74,7 +74,7 @@
       "to": "0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
       "data": "0x8da5cb5b"
      },
-     "0x6b54525"
+     "0x6b5b613"
     ]
    },
    {
@@ -87,9 +87,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"data\":\"0x8da5cb5b\"},\"0x6b54525\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x6b54525",
-  "note": "read between blocks 112542996 and 112543013 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"data\":\"0x8da5cb5b\"},\"0x6b5b613\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x6b5b613",
+  "note": "read between blocks 112571907 and 112571923 of the chain"
  },
  "history": [
   {
@@ -103,11 +103,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95",
-  "block": "0x42eeb2c",
+  "block": "0x42f5d3e",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95\"},\"0x42eeb2c\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95\"},\"0x42f5d3e\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -134,7 +134,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 0,
-   "tvl_usd": 1000701600.1174442,
+   "tvl_usd": 1000533317.4663242,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -145,7 +145,7 @@
  "last_pushed": 1791656126,
  "stale": false,
  "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
- "block": 70183724,
+ "block": 70212926,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
  "page": "https://realspap.github.io/oracle/p/monad-0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

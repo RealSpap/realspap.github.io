@@ -1,6 +1,6 @@
 {
  "about": "address (EVM lowercase, Solana as written) -> the pages that score it, one per chain",
- "count": 179,
+ "count": 197,
  "addresses": {
   "0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72": [
    {
@@ -586,6 +586,105 @@
     "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef01735c132ada46aa9aa4c54623caa92a64cb.json"
    }
   ],
+  "0xbeef088055857739c12cd3765f20b7679def0f51": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Morpho Vault V2: Steakhouse Prime USDC (Ethereum L1)",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef088055857739c12cd3765f20b7679def0f51.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef088055857739c12cd3765f20b7679def0f51.json"
+   }
+  ],
+  "0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Morpho Vault V2: Steakhouse Prime EURCV (Ethereum L1)",
+    "score": 73,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f.json"
+   }
+  ],
+  "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "WETH9 (Wrapped Ether)",
+    "score": 100,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.json"
+   }
+  ],
+  "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "USDC (Circle FiatTokenProxy)",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.json"
+   }
+  ],
+  "0xdac17f958d2ee523a2206206994597c13d831ec7": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "USDT (Tether)",
+    "score": 40,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xdac17f958d2ee523a2206206994597c13d831ec7.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xdac17f958d2ee523a2206206994597c13d831ec7.json"
+   }
+  ],
+  "0x6b175474e89094c44da98b954eedeac495271d0f": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "DAI (Sky)",
+    "score": 81,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x6b175474e89094c44da98b954eedeac495271d0f.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x6b175474e89094c44da98b954eedeac495271d0f.json"
+   }
+  ],
+  "0xdc035d45d973e3ec169d2276ddab16f1e407384f": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "USDS (Sky)",
+    "score": 81,
+    "band": "strong",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xdc035d45d973e3ec169d2276ddab16f1e407384f.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xdc035d45d973e3ec169d2276ddab16f1e407384f.json"
+   }
+  ],
+  "0x6c3ea9036406852006290770bedfcaba0e23a0e8": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "PYUSD (Paxos)",
+    "score": 2,
+    "band": "critical",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x6c3ea9036406852006290770bedfcaba0e23a0e8.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x6c3ea9036406852006290770bedfcaba0e23a0e8.json"
+   }
+  ],
+  "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "FDUSD (First Digital)",
+    "score": 47,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xc5f0f7b66764f6ec8c8dff7ba683102295e16409.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xc5f0f7b66764f6ec8c8dff7ba683102295e16409.json"
+   }
+  ],
   "0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c": [
    {
     "chain": "Hyperliquid",
@@ -749,6 +848,17 @@
     "band": "decent",
     "page": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.html",
     "json": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.json"
+   }
+  ],
+  "0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1": [
+   {
+    "chain": "Hyperliquid",
+    "key": "hyperliquid",
+    "name": "stHYPE liquid staking (HyperEVM)",
+    "score": 47,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.html",
+    "json": "https://realspap.github.io/oracle/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.json"
    }
   ],
   "0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9": [
@@ -1803,6 +1913,94 @@
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/solana-SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.html",
     "json": "https://realspap.github.io/oracle/p/solana-SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.json"
+   }
+  ],
+  "USXyiSTsPEWz55pSK7sZoUL79ntoVGQbaTDT57tH6bx": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Solstice (USX, YieldVault, Aux)",
+    "score": 35,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/solana-USXyiSTsPEWz55pSK7sZoUL79ntoVGQbaTDT57tH6bx.html",
+    "json": "https://realspap.github.io/oracle/p/solana-USXyiSTsPEWz55pSK7sZoUL79ntoVGQbaTDT57tH6bx.json"
+   }
+  ],
+  "Gmso1uvJnLbawvw7yezdfCDcPydwW2s2iqG3w6MDucLo": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "GMSOL (GMTrade, six programs)",
+    "score": 51,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-Gmso1uvJnLbawvw7yezdfCDcPydwW2s2iqG3w6MDucLo.html",
+    "json": "https://realspap.github.io/oracle/p/solana-Gmso1uvJnLbawvw7yezdfCDcPydwW2s2iqG3w6MDucLo.json"
+   }
+  ],
+  "1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Loopscale (Loopscale, Beam)",
+    "score": 70,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/solana-1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78.html",
+    "json": "https://realspap.github.io/oracle/p/solana-1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78.json"
+   }
+  ],
+  "HumaXepHnjaRCpjYTokxY4UtaJcmx41prQ8cxGmFC5fn": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Huma Finance (Permissionless, Institutional)",
+    "score": 66,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/solana-HumaXepHnjaRCpjYTokxY4UtaJcmx41prQ8cxGmFC5fn.html",
+    "json": "https://realspap.github.io/oracle/p/solana-HumaXepHnjaRCpjYTokxY4UtaJcmx41prQ8cxGmFC5fn.json"
+   }
+  ],
+  "FL3X2pRsQ9zHENpZSKDRREtccwJuei8yg9fwDu9UN69Q": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Lulo (FlexLend)",
+    "score": 38,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/solana-FL3X2pRsQ9zHENpZSKDRREtccwJuei8yg9fwDu9UN69Q.html",
+    "json": "https://realspap.github.io/oracle/p/solana-FL3X2pRsQ9zHENpZSKDRREtccwJuei8yg9fwDu9UN69Q.json"
+   }
+  ],
+  "ExponentnaRg3CQbW6dqQNZKXp7gtZ9DGMp1cwC4HAS7": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Exponent (Core)",
+    "score": 51,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-ExponentnaRg3CQbW6dqQNZKXp7gtZ9DGMp1cwC4HAS7.html",
+    "json": "https://realspap.github.io/oracle/p/solana-ExponentnaRg3CQbW6dqQNZKXp7gtZ9DGMp1cwC4HAS7.json"
+   }
+  ],
+  "FLASH6Lo6h3iasJKWDs2F8TkW2UKf3s15C8PMGuVfgBn": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Flash Trade (Perpetuals)",
+    "score": 39,
+    "band": "weak",
+    "page": "https://realspap.github.io/oracle/p/solana-FLASH6Lo6h3iasJKWDs2F8TkW2UKf3s15C8PMGuVfgBn.html",
+    "json": "https://realspap.github.io/oracle/p/solana-FLASH6Lo6h3iasJKWDs2F8TkW2UKf3s15C8PMGuVfgBn.json"
+   }
+  ],
+  "sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn": [
+   {
+    "chain": "Solana",
+    "key": "solana",
+    "name": "Solayer (sSOL staking, Endo)",
+    "score": 40,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/solana-sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn.html",
+    "json": "https://realspap.github.io/oracle/p/solana-sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn.json"
    }
   ],
   "0xcccccccc00000000000000000000000000000001": [

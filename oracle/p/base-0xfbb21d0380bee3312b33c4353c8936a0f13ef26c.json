@@ -7,7 +7,7 @@
  "band": "decent",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 3786302.792597747,
+ "money_per_key_usd": 3755125.0247910824,
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 100,
@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 11358908.377793241,
+ "tvl_usd": 11265375.074373247,
  "category": "Lending",
- "at_risk_usd": 3294083.42956004,
+ "at_risk_usd": 3266958.7715682415,
  "narrative": {
   "summary": "Unitroller.admin() is a TemporalGovernor whose only trusted Wormhole sender is one Ethereum address, Moonwell\u2019s MultichainGovernor V2 proxy, and it executes that sender\u2019s messages after a 1-day delay. A 3-of-5 guardian Safe can pause once and then fast-track a valid message past that delay.",
   "tag": "$14.0M Base TVL, guardian can fast-track past the delay",
@@ -84,13 +84,13 @@
       "to": "0xfbb21d0380bee3312b33c4353c8936a0f13ef26c",
       "data": "0xf851a440"
      },
-     "0x320bdc1"
+     "0x320ced2"
     ]
    }
   ],
-  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xfbb21d0380bee3312b33c4353c8936a0f13ef26c\",\"data\":\"0xf851a440\"},\"0x320bdc1\"]}'",
-  "block": "0x320bdc1",
-  "note": "read between blocks 52477371 and 52477377 of the chain"
+  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xfbb21d0380bee3312b33c4353c8936a0f13ef26c\",\"data\":\"0xf851a440\"},\"0x320ced2\"]}'",
+  "block": "0x320ced2",
+  "note": "read between blocks 52481740 and 52481746 of the chain"
  },
  "history": [
   {
@@ -104,11 +104,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000fbb21d0380bee3312b33c4353c8936a0f13ef26c",
-  "block": "0x2dc3b9b",
+  "block": "0x2dc4cd7",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000fbb21d0380bee3312b33c4353c8936a0f13ef26c\"},\"0x2dc3b9b\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000fbb21d0380bee3312b33c4353c8936a0f13ef26c\"},\"0x2dc4cd7\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -142,8 +142,8 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 11358908.377793241,
-   "money_per_key_usd": 3786302.792597747,
+   "tvl_usd": 11265375.074373247,
+   "money_per_key_usd": 3755125.0247910824,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
@@ -153,7 +153,7 @@
  "last_pushed": 1791653885,
  "stale": false,
  "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
- "block": 47987611,
+ "block": 47992023,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfbb21d0380bee3312b33c4353c8936a0f13ef26c",
  "page": "https://realspap.github.io/oracle/p/base-0xfbb21d0380bee3312b33c4353c8936a0f13ef26c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

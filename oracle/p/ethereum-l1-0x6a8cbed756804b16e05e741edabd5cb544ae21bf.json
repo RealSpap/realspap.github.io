@@ -42,9 +42,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 1176400530.9220388,
+ "tvl_usd": 1177150803.4425726,
  "category": "Dexs",
- "at_risk_usd": 223516100.87518737,
+ "at_risk_usd": 223658652.6540888,
  "narrative": {
   "summary": "factory.admin() is the Curve DAO Ownership Agent, an Aragon Agent on Curve\u2019s own deployment, driven by the Ownership Voting app: a 7-day vote, 51% support and 30% quorum. No multisig sits in the path.",
   "tag": "$1.24B TVL, DAO vote, composite 81",
@@ -69,13 +69,13 @@
       "to": "0x6a8cbed756804b16e05e741edabd5cb544ae21bf",
       "data": "0xf851a440"
      },
-     "0x18f56c0"
+     "0x18f5995"
     ]
    }
   ],
-  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x6a8cbed756804b16e05e741edabd5cb544ae21bf\",\"data\":\"0xf851a440\"},\"0x18f56c0\"]}'",
-  "block": "0x18f56c0",
-  "note": "read between blocks 26171071 and 26171072 of the chain"
+  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x6a8cbed756804b16e05e741edabd5cb544ae21bf\",\"data\":\"0xf851a440\"},\"0x18f5995\"]}'",
+  "block": "0x18f5995",
+  "note": "read between blocks 26171796 and 26171797 of the chain"
  },
  "history": [
   {
@@ -89,11 +89,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000006a8cbed756804b16e05e741edabd5cb544ae21bf",
-  "block": "0xb57b19",
+  "block": "0xb57df6",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000006a8cbed756804b16e05e741edabd5cb544ae21bf\"},\"0xb57b19\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000006a8cbed756804b16e05e741edabd5cb544ae21bf\"},\"0xb57df6\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -113,7 +113,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 0,
-   "tvl_usd": 1176400530.9220388,
+   "tvl_usd": 1177150803.4425726,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -124,7 +124,7 @@
  "last_pushed": 1791687028,
  "stale": false,
  "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11893529,
+ "block": 11894262,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x6a8cbed756804b16e05e741edabd5cb544ae21bf",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x6a8cbed756804b16e05e741edabd5cb544ae21bf.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

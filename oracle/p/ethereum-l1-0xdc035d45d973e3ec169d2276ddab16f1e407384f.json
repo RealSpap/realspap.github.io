@@ -1,0 +1,103 @@
+{
+ "name": "USDS (Sky)",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+ "composite": 81,
+ "band": "strong",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "sub": {
+  "adminKeyScore": 75,
+  "multisigScore": 100,
+  "timelockScore": 70,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 40
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths not all checked",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "An EIP-1967 upgradeable proxy whose mint and upgrade rights are wards: the Sky governance pause proxy and the UsdsJoin adapter. Nobody else holds one.",
+  "tag": "Sky governance, 2-day pause, composite 81",
+  "detail": "Added 2026-10-11. Scored with the Sky pause target's own values (75 / 100 / 70, composite 81). The ward set is replayed from the token's Rely and Deny history on every pass and must be exactly those two; a third ward degrades the score. Shares its root with the Sky pause, SparkLend and DAI."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-11T06:34:38Z",
+   "composite": 81,
+   "from": "watch"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0xdc035d45d973e3ec169d2276ddab16f1e407384f.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d0000000000000000000000000dc035d45d973e3ec169d2276ddab16f1e407384f",
+  "block": "0xb57df6",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000dc035d45d973e3ec169d2276ddab16f1e407384f\"},\"0xb57df6\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 6575,
+  "text": "collateral factor 65.75% (score 81)"
+ },
+ "cheapest_fix": null,
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11894262,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xdc035d45d973e3ec169d2276ddab16f1e407384f.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}
