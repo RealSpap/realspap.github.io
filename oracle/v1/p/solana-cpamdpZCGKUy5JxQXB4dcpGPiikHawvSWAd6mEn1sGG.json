@@ -1,0 +1,104 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Meteora DAMM v2",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG",
+ "composite": 2,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 60
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 24589514.120702427,
+ "category": "Dexs",
+ "at_risk_usd": 24097723.838288378,
+ "narrative": {
+  "summary": "Program upgrades need 4 of 7 signers, but the program's root admin is a hardcoded pair of bare keys where either one alone is enough. That pair sits at the top of the permission tree, which drives the score near the floor.",
+  "tag": "root admin: two hardcoded bare keys, either suffices",
+  "detail": "The admin list is a compile-time constant in the program source (MeteoraAg/damm-v2), so no account read can show it. It was copied from the verified source and locked with a regression test. Its two keys are on-curve wallets and either alone can create or close operator accounts. Every other privileged action is gated by an operator record that only those keys can set, so the pair is the root of the permission tree. The upgrade path is a Squads v3 multisig, 4-of-7, no delay, shared with Meteora DLMM and DAMM v1. Those two are deliberately not scored: transaction evidence suggests the same keys, but their source is not public."
+ },
+ "score_account": "J9z7kne6ABZecnSyvRVufpD9kX1vqtmv1e7worKEaqA7",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 2 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 5,
+  "to": 49,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData AUh8bm\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
+  "holder": "JADaUV8kvDpDbJr55wxXJHVaBS3VCj8thZZHjfeuCVLd",
+  "kind": "pda",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown"
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662453,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG",
+ "page": "https://realspap.github.io/oracle/p/solana-cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

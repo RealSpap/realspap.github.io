@@ -1,0 +1,122 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "GMX V2 (Synthetics) RoleStore",
+ "named_from": "dashboard",
+ "chain": "Arbitrum",
+ "address": "0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72",
+ "composite": 19,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 10,
+  "multisigScore": 0,
+  "timelockScore": 50,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 203959960.80551273,
+ "category": "Derivatives",
+ "at_risk_usd": 165207568.2524653,
+ "narrative": {
+  "summary": "CORRECTED 2026-09-19 (71 to 22): TIMELOCK_ADMIN on the live RoleStore includes a bare EOA (GMX\u2019s own timelock_admin_2) that can queue a grant of ANY role through TimelockConfig and execute it after 24h. The 5-of-8 Safe can only veto (cancel / revokeRole).",
+  "tag": "CORRECTION: a single key starts the clock",
+  "detail": "The earlier score checked a ConfigTimelockController (0xC77E\u2026) that holds no role on the live RoleStore. The live ROLE_ADMIN holders are the GMX DAO timelock, ConfigTimelockController 0x2Dd99f39\u2026 and TimelockConfig 0xE7706986\u2026 (both Sourcify-verified), all with a 24h delay. Verified on 2 RPCs. See chains/arbitrum-ecosystem/data/rotation_audit_2026-09-19-index0-gmx-rolestore.md. Pushed on-chain 2026-09-20 (composite 22 to 19, Arbitrum Sepolia block 310866307): the GMX DAO timelock 0x4bd1cdAa\u2026, the other ROLE_ADMIN timelock (24h), has a second bare EOA (0xE7BfFf2a\u2026) holding PROPOSER, EXECUTOR and CANCELLER next to the Governor contract, and the 5-of-8 Safe holds none of those roles there; a schedule of a ROLE_ADMIN grant simulates fine from that EOA and reverts from a random address and from the Safe. So a single key can queue and, after 24h, execute a grant with no Governor vote and no Safe veto, and the veto credit drops (timelock 60 to 50). Admin and multisig were already at the bare-EOA floor."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T18:57:30Z",
+   "composite": 19,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/arbitrum-sepolia/0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.xml",
+ "reproduce": {
+  "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d00000000000000000000000003c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000003c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 19 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "timelock",
+  "from": 50,
+  "to": 52,
+  "what": "a confirmed delay before changes apply"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791658650,
+ "stale": false,
+ "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
+ "block": 318246260,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72",
+ "page": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

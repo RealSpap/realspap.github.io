@@ -1,0 +1,122 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Loopscale (Loopscale, Beam)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78",
+ "composite": 70,
+ "band": "decent",
+ "keys_to_move": 4,
+ "react_hours": 24,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
+ "sub": {
+  "adminKeyScore": 75,
+  "multisigScore": 83,
+  "timelockScore": 50,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "The program upgrade authority is a Squads v4 multisig: 4-of-7 voters out of 9 members, with a 24-hour time lock. This is an upper bound: only the program upgrade path is scored, the in-state admin, mint and config authorities are not traced.",
+  "tag": "4-of-7 voters out of 9 members, composite 70",
+  "detail": "Pushed on-chain 2026-10-10 (first publication of this target). Scored 75 / 83 / 50. The program's upgrade authority is re-read on every run and must equal the offline vault PDA of the named Squads multisig. Loopscale and Beam share the upgrade authority."
+ },
+ "score_account": "7oDf7peR2VfUQwAbDb7EzbU1Ei75QXdP9EAPbnRsbNBN",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5750,
+  "text": "collateral factor 57.50% (score 70)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 75,
+  "to": 99,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData 8KbXd8\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig C4awuufiuL8DNT5wMDP27HneKKqbgynrsbCa4XYGSuPk",
+  "holder": "DwBXwJDZ4Av4miT62sEssWJUinkzwkmPPB4Fg3fKEfft",
+  "threshold": 4,
+  "owners": 9,
+  "delay_seconds": 86400,
+  "owners_kinds": {
+   "eoa": 9,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 4,
+  "keys_lost_to_freeze": 4,
+  "kind": "squads",
+  "since": "2026-10-10T21:07:35Z",
+  "posture": "admin: Squads 4-of-9, 7 can vote of 9 plain keys; delay: 24 h Squads time lock",
+  "exposure": {
+   "keys_to_move": 4,
+   "react_hours": 24,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662478,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78",
+ "page": "https://realspap.github.io/oracle/p/solana-1oopBoJG58DgkUVKkEzKgyG9dvRmpgeEm1AVjoHkF78.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,179 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Ethena EthenaMinting (USDe live minter)",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0xe3490297a08d6fc8da46edb7b6142e4f461b62d3",
+ "composite": 73,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 24,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 100,
+  "timelockScore": 55,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 20
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bounded bypass",
+ "tvl_usd": 4757883722.632232,
+ "category": "Basis Trading",
+ "at_risk_usd": 1284628605.1107025,
+ "narrative": {
+  "summary": "USDe\u2019s only mint authority is administered by a real 24-hour timelock whose sole proposer and canceller is a 5-of-10 Gnosis Safe. Every call that would redirect funds or create unbacked USDe sits behind that delay; a few freeze and configuration calls do not.",
+  "tag": "~4.84B USDe supply, composite 73 (pushed on-chain 2026-09-20)",
+  "detail": "Pushed on-chain 2026-09-20 as target index 14 (Sepolia block 11740952, tx 0x14b0466a\u20267a98), so Ethereum L1 now tracks 15 targets and this card reads the live minter directly. Same convention as the USDtb PSM: adminKey 65, multisig 100, timelock 55 (oracle 100, crossExposure 20, composite 73 as pushed; the 20 is the same-root-Safe overlap with four other tracked Ethena targets, the USDtb PSM and the three LayerZero OFTAdapters, 100 minus 20 for each). USDe.minter(), the minter\u2019s owner and DEFAULT_ADMIN_ROLE and USDe\u2019s own owner all resolve to one EthenaTimelockController (getMinDelay 86,400s); USDe.setMinter, the strongest control, and the six admin selectors that would redirect funds or mint unbacked USDe (grantRole, transferAdmin, addCustodianAddress, addSupportedAsset, setTokenType, setStablesDeltaLimit) are confirmed not whitelisted, so the full delay applies. Instant lanes: the Safe alone can revokeRole and add or remove whitelisted benefactors, which freeze or configure but cannot mint; four other whitelist entries (disableMintRedeem and three role removals) are dead because the timelock does not hold GATEKEEPER_ROLE. Disclosed, not scored: the Safe also holds COLLATERAL_MANAGER_ROLE directly, so it can sweep the minter\u2019s roughly $93M (USDC, USDT and USDtb, about $31M each) to one of five registered custodian EOAs with no delay (adding a custodian is delayed), and four bare-EOA gatekeepers can halt minting and strip roles instantly, though the Safe can revoke them instantly too. The Safe also has an EthenaSafeGuard installed since 2026-07-06 (a positive control, not scored). A compromised MINTER key alone cannot create unbacked USDe: an order needs a whitelisted benefactor\u2019s EIP-712 signature and real collateral routed to a registered custodian. Seven collateral assets are active (USDC, USDT, DAI, USDtb, PYUSD, USDm, USDG), all valued 1:1 by decimals and never priced, so issuer or depeg risk of those tokens, notably the thin USDm, is the remaining route to a bad mint that needs no delayed admin action. Open points: role-holder completeness rests on an indexer\u2019s logs because free RPCs cannot replay history, the timelock\u2019s source is only a partial verification match (behaviour confirmed by simulation), and the custodians\u2019 real controllers are not attributable on-chain."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xe3490297a08d6fc8da46edb7b6142e4f461b62d3",
+      "data": "0x8da5cb5b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xe8dc0fab349ea169283c48ccfd09d797e6db7c94",
+      "data": "0xf27a0c92"
+     },
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe3490297a08d6fc8da46edb7b6142e4f461b62d3\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8dc0fab349ea169283c48ccfd09d797e6db7c94\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "latest",
+  "note": "read between blocks 26172918 and 26172919 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+ },
+ "history": [
+  {
+   "t": "2026-10-11T02:50:28Z",
+   "composite": 73,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0xe3490297a08d6fc8da46edb7b6142e4f461b62d3.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d0000000000000000000000000e3490297a08d6fc8da46edb7b6142e4f461b62d3",
+  "block": "0xb5824f",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000e3490297a08d6fc8da46edb7b6142e4f461b62d3\"},\"0xb5824f\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5975,
+  "text": "collateral factor 59.75% (score 73)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 65,
+  "to": 83,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0xe8dc0fab349ea169283c48ccfd09d797e6db7c94",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 86400,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a timelock; delay: 24 h on the timelock",
+  "shares_admin_with": [
+   {
+    "chain": "ethereum-l1",
+    "target": "0x73e35c5c35a274e34ade6eb13cc7f62aee323728"
+   },
+   {
+    "chain": "ethereum-l1",
+    "target": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34"
+   },
+   {
+    "chain": "ethereum-l1",
+    "target": "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2"
+   },
+   {
+    "chain": "ethereum-l1",
+    "target": "0x58538e6a46e07434d7e7375bc268d3cb839c0133"
+   }
+  ],
+  "cluster_tvl_usd": 5228174619.697269,
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 24,
+   "tvl_usd": 4757883722.632232,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11895375,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xe3490297a08d6fc8da46edb7b6142e4f461b62d3",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xe3490297a08d6fc8da46edb7b6142e4f461b62d3.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

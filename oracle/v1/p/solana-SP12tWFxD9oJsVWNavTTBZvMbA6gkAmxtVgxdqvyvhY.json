@@ -1,0 +1,111 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Sanctum validator LSTs (SanctumSpl, SanctumSplMulti)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY",
+ "composite": 54,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 60,
+  "multisigScore": 100,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 20
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 1830791747.4339478,
+ "category": "Liquid Staking",
+ "at_risk_usd": 842164203.819616,
+ "narrative": {
+  "summary": "Both stake pool programs share Sanctum Infinity's 6-of-11 upgrade committee, with no delay. This is an upper bound: the per-LST pool managers were not enumerated.",
+  "tag": "upper bound: pool managers not enumerated",
+  "detail": "Both programs are re-read on every run and must resolve to the same Squads v3 committee. Each LST's pool manager is a bounded role class, like JitoSOL's, but they were not listed, so only the shared upgrade path is scored. Pools such as JupSOL inherit this target once their addresses are confirmed from a primary source. DefiLlama listed over $1.0B for sanctum-validator-lsts on 2026-09-17."
+ },
+ "score_account": "3JLU3F3JUksE2ncf11kzshfqQ4aiX6m9z4ruAr2xyAub",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 54 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 60,
+  "to": 74,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData Cn5feg\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
+  "holder": "47SND7bGKvNXrqfP1bjsLCbwTgZhFBzAgmZ42QSkRScz",
+  "kind": "pda",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown",
+  "shares_admin_with": [
+   {
+    "chain": "solana",
+    "target": "5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx"
+   }
+  ],
+  "cluster_tvl_usd": 2041028003.9178987
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662471,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY",
+ "page": "https://realspap.github.io/oracle/p/solana-SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

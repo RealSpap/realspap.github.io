@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "HIP-3 dex xyz (trade[XYZ])",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -8,6 +10,12 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
  "sub": {
   "adminKeyScore": 10,
   "multisigScore": 15,
@@ -74,7 +82,7 @@
   "block": "latest",
   "composite_word": 6,
   "block_honoured": false,
-  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
   "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000088806a71d74ad0a510b350545c9ae490912f0888\"},\"latest\"]}'"
  },
  "consumer_example": {
@@ -88,7 +96,11 @@
   "axis": "admin key",
   "from": 10,
   "to": 38,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": null,
@@ -103,7 +115,7 @@
  "last_pushed": 1791662291,
  "stale": false,
  "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
- "block": 66649672,
+ "block": 66663335,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x88806a71d74ad0a510b350545c9ae490912f0888",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x88806a71d74ad0a510b350545c9ae490912f0888.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

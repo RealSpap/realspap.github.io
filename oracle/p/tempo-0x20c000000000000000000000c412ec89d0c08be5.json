@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "cbBTC",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -8,6 +10,13 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 42,
@@ -70,11 +79,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000020c000000000000000000000c412ec89d0c08be5",
-  "block": "0x255d668",
+  "block": "0x2562c39",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c000000000000000000000c412ec89d0c08be5\"},\"0x255d668\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c000000000000000000000c412ec89d0c08be5\"},\"0x2562c39\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -89,6 +98,10 @@
   "to": 3,
   "what": "a confirmed delay before changes apply"
  },
+ "main_gap": {
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "Too few people need to agree"
+ },
  "independent_read": {
   "path": null,
   "holder": null,
@@ -102,7 +115,7 @@
  "last_pushed": 1791662166,
  "stale": false,
  "methodology_hash": "0x134e33c2b59f03981c62fbafe19942062b82862cc2f79fa62d23294eeb97d268",
- "block": 39179880,
+ "block": 39201849,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x20c000000000000000000000c412ec89d0c08be5",
  "page": "https://realspap.github.io/oracle/p/tempo-0x20c000000000000000000000c412ec89d0c08be5.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

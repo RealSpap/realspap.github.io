@@ -1,0 +1,202 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Morpho Blue (singleton, Robinhood Chain)",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010",
+ "composite": 55,
+ "band": "moderate",
+ "keys_to_move": 5,
+ "react_hours": 0,
+ "money_per_key_usd": 124634341.63884032,
+ "not_assessed": [],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 95,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 623171708.1942016,
+ "category": "Lending",
+ "at_risk_usd": 280427268.6873907,
+ "narrative": {
+  "summary": "By chain-specific TVL, the single largest authority surface on this chain, and previously miscategorized as \"already covered\" by the individual vaults built on top of it. It is not: the singleton\u2019s own owner is a separate, additional layer underneath every vault and market here.",
+  "tag": "~$538M chain TVL, cross-exposure: 80 (pushed on-chain 2026-09-20)",
+  "detail": "owner() resolves to a real Gnosis Safe. Per Morpho\u2019s own immutable-core design, it can only enable new IRMs/LLTVs for future markets and set the (capped) protocol fee, so it cannot touch funds already deposited in existing markets, including Longbow\u2019s 55 isolated markets built on this same singleton. Scored on the root mechanism itself, the same convention as every other Safe-rooted target here. Pushed on-chain 2026-09-20: the owner Safe\u2019s 9 signers at 5-of-9 are the same committee as the Morpho Blue owner Safes on Ethereum L1, Base and Tempo (the Safe address differs on some of these chains, the owner set does not), so crossExposureScore is folded to a flat 80 (composite unchanged). It is a dated flag on this target\u2019s signer group, not a live comparison against the other chains."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "robinhood:0x0605\u20269728",
+   "nonce": 0,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": true
+  }
+ ],
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010",
+      "data": "0x8da5cb5b"
+     },
+     "0x5245a5f"
+    ]
+   },
+   {
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
+    "params": [
+     "<holder>",
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010\",\"data\":\"0x8da5cb5b\"},\"0x5245a5f\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 55,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d00000000000000000000000009d53d5e3bd5e8d4cbfa6db1ca238aea02e651010",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000009d53d5e3bd5e8d4cbfa6db1ca238aea02e651010\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 55 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 78,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x0605\u20269728",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "threshold": 5,
+  "owners": 9,
+  "keys_to_act": 5,
+  "keys_lost_to_freeze": 5,
+  "kind": "safe",
+  "since": "2026-10-10T06:54:09Z",
+  "owners_kinds": {
+   "eoa": 9
+  },
+  "posture": "admin: Safe 5-of-9 of 9 plain keys; delay: none",
+  "exposure": {
+   "keys_to_move": 5,
+   "react_hours": 0,
+   "tvl_usd": 623171708.1942016,
+   "money_per_key_usd": 124634341.63884032,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x9d53d5e3bd5e8d4cbfa6db1ca238aea02e651010.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

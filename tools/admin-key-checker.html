@@ -441,8 +441,8 @@
   </button>
   <div class="eyebrow">DeFi admin-key research</div>
   <div class="hero-stat">
-    <div class="hero-number">23</div>
-    <div class="hero-caption">single-key admin cases (2 Critical, 6 High, 7 Medium, 8 Low) among 99 DeFi protocols and Morpho vault owners checked by hand on-chain. The same pattern was behind Wasabi Protocol's <strong>$5.9M</strong> loss.</div>
+    <div class="hero-number">30</div>
+    <div class="hero-caption">single-key admin cases (2 Critical, 13 High, 7 Medium, 8 Low) among 108 DeFi protocols and Morpho vault owners checked by hand on-chain. The same pattern was behind Wasabi Protocol's <strong>$5.9M</strong> loss.</div>
   </div>
   <h1>Check your protocol's admin key</h1>
   <p>Paste a contract address on Ethereum mainnet. This runs a simplified, free subset of the research method, live in your browser: owner(), admin(), the standard proxy admin and beacon slots, and the owners and threshold of any Safe found. It does not read role-based access control (AccessControl) or immutable proxy admins. When you press Check, the address is sent only to the three public RPC endpoints named at the bottom of this page. The page loads no third-party fonts, scripts or trackers.</p>
@@ -767,7 +767,7 @@
   /* ---------------------------------------------------------------------
    * Case dataset (from the showcase research).
    * ------------------------------------------------------------------- */
-  var DATASET = {"known_identifiers":[{"identifier":"tokenworks.eth","display_name":"tokenworks.eth","severity":"Critical","one_line_context":"owner() on the Fake World Assets (FWA) token resolves to this bare EOA, tagged tokenworks.eth on Etherscan and matching the project's own declared Twitter handle (token_works), so it is the team's own key with real control over redirecting purchase proceeds."},{"identifier":"UwU Lend token owner key","display_name":"UwU Lend token owner key","severity":"High","one_line_context":"The UwU Lend governance/reward token's owner() is a bare EOA, a single key rather than a multisig; it still holds onlyOwner mint/burn power over the token more than a year after UwU's 2024 hack."},{"identifier":"wasabideployer.eth","display_name":"wasabideployer.eth","severity":"Not rated: this is the Wasabi Protocol anchor incident, not one of the 23 cases in the severity table.","one_line_context":"On 2026-04-30 an attacker compromised this key's private key, which held unchecked admin authority (no multisig, no timelock) over every one of Wasabi Protocol's upgradeable vaults, causing the ~$5.9M loss across Ethereum, Base, Berachain and Blast that anchors this research."}],"truncated_addresses_excluded_count":4};
+  var DATASET = {"known_identifiers":[{"identifier":"tokenworks.eth","display_name":"tokenworks.eth","severity":"Critical","one_line_context":"owner() on the Fake World Assets (FWA) token resolves to this bare EOA, tagged tokenworks.eth on Etherscan and matching the project's own declared Twitter handle (token_works), so it is the team's own key with real control over redirecting purchase proceeds."},{"identifier":"UwU Lend token owner key","display_name":"UwU Lend token owner key","severity":"High","one_line_context":"The UwU Lend governance/reward token's owner() is a bare EOA, a single key rather than a multisig; it still holds onlyOwner mint/burn power over the token more than a year after UwU's 2024 hack."},{"identifier":"wasabideployer.eth","display_name":"wasabideployer.eth","severity":"Not rated: this is the Wasabi Protocol anchor incident, not one of the 30 cases in the severity table.","one_line_context":"On 2026-04-30 an attacker compromised this key's private key, which held unchecked admin authority (no multisig, no timelock) over every one of Wasabi Protocol's upgradeable vaults, causing the ~$5.9M loss across Ethereum, Base, Berachain and Blast that anchors this research."}],"truncated_addresses_excluded_count":4};
 
   /* ENS names in the dataset, forward-resolved on Ethereum mainnet on
    * 2026-09-30, kept only where the address's reverse record returns the
@@ -957,7 +957,7 @@
       matchSection.appendChild(el(
         "div",
         "no-match-line",
-        "No match with the cases listed below. This is a live classification only, not a check against every case in the research. The full research covers 99 protocols and Morpho vault owners checked by hand."
+        "No match with the cases listed below. This is a live classification only, not a check against every case in the research. The full research covers 108 protocols and Morpho vault owners checked by hand."
       ));
     }
 

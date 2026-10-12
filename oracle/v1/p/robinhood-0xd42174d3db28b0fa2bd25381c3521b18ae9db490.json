@@ -1,0 +1,127 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Flock Credit Vault (fcVAULT)",
+ "named_from": "on-chain name() and symbol()",
+ "chain": "Robinhood Chain",
+ "address": "0xd42174d3db28b0fa2bd25381c3521b18ae9db490",
+ "composite": 2,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 63896.74323671141,
+ "category": null,
+ "at_risk_usd": 62618.80837197718,
+ "narrative": null,
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDG",
+  "amount": 63905.301994,
+  "price_usd": 0.9998660712488395,
+  "held_usd": 63896.74323671141,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.03,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 2,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xd42174d3db28b0fa2bd25381c3521b18ae9db490.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000d42174d3db28b0fa2bd25381c3521b18ae9db490",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000d42174d3db28b0fa2bd25381c3521b18ae9db490\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 2 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 5,
+  "to": 49,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xd42174d3db28b0fa2bd25381c3521b18ae9db490",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xd42174d3db28b0fa2bd25381c3521b18ae9db490.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

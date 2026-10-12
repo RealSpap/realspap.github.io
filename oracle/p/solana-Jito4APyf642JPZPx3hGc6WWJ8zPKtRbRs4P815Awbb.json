@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "JitoSOL (Jito Liquid Staking)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -8,6 +10,11 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 60,
   "multisigScore": 100,
@@ -42,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1164923308.640039,
+ "tvl_usd": 1160910498.6301646,
  "category": "Liquid Staking",
- "at_risk_usd": 535864721.9744179,
+ "at_risk_usd": 534018829.3698757,
  "narrative": {
   "summary": "New pool code could move all stake, and that path is the SPL Stake Pool upgrade committee (6 of 10, no delay). The pool's own roles are bounded: fee changes are delayed or capped, and no human key can mint JitoSOL.",
   "tag": "inherits the stake pool committee",
@@ -73,7 +80,11 @@
   "axis": "admin key",
   "from": 60,
   "to": 74,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "account owned by program SPoo1Ku8\u2026 -&gt; program -&gt; ProgramData EmiU8A\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
@@ -87,7 +98,7 @@
     "target": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy"
    }
   ],
-  "cluster_tvl_usd": 1164923308.640039
+  "cluster_tvl_usd": 1160910498.6301646
  },
  "score_cluster": "devnet",
  "last_pushed": 1791662468,

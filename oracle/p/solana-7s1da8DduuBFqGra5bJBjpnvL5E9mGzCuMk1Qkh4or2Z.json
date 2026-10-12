@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Jupiter Lend",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 12,
- "money_per_key_usd": 286549127.07700324,
+ "money_per_key_usd": 280773030.8391914,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 83,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1146196508.308013,
+ "tvl_usd": 1123092123.3567655,
  "category": "Lending",
- "at_risk_usd": 515788428.7386058,
+ "at_risk_usd": 505391455.51054454,
  "narrative": {
   "summary": "Four programs share one 4-of-6 upgrade multisig with a 12-hour delay, while the liquidity admin is a separate 5-of-10 multisig with a 6-hour delay. The score is a bound: three of the four admin accounts were not re-read.",
   "tag": "bound, not final: 3 of 4 admins not re-read",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 65,
   "to": 77,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "account owned by program jupeiUmn\u2026 -&gt; program -&gt; ProgramData J6Ry5y\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig J3mJ3wz6xkVUk3T8qHnuAYNxsRH3ixHsryYNZAU2vG8P",
@@ -94,8 +101,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 12,
-   "tvl_usd": 1146196508.308013,
-   "money_per_key_usd": 286549127.07700324,
+   "tvl_usd": 1123092123.3567655,
+   "money_per_key_usd": 280773030.8391914,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

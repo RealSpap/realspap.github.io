@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Orca Whirlpool",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "critical",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 62382741.696834385,
+ "money_per_key_usd": 62045717.645773076,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
   "multisigScore": 0,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 311913708.4841719,
+ "tvl_usd": 310228588.2288654,
  "category": "Dexs",
- "at_risk_usd": 305675434.3144885,
+ "at_risk_usd": 304024016.46428806,
  "narrative": {
   "summary": "Upgrades look strong (24-hour delay, 5-of-13), but a separate reward authority on the same config is a 1-of-8 multisig with no delay, which scores like a single key. Counting it as full-power is a disclosed judgment call.",
   "tag": "judgment call: reward authority counted as full-power",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 5,
   "to": 49,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": "account owned by program whirLbMi\u2026 -&gt; program -&gt; ProgramData CtXfPz\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
@@ -95,8 +102,8 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 311913708.4841719,
-   "money_per_key_usd": 62382741.696834385,
+   "tvl_usd": 310228588.2288654,
+   "money_per_key_usd": 62045717.645773076,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

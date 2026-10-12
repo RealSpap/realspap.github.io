@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Uniswap v4 PoolManager",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -8,6 +10,10 @@
  "keys_to_move": null,
  "react_hours": 0,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 80,
   "multisigScore": 100,
@@ -69,13 +75,13 @@
       "to": "0x188d586ddcf52439676ca21a244753fa19f9ea8e",
       "data": "0x8da5cb5b"
      },
-     "0x6b5b613"
+     "0x6b664c8"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x188d586ddcf52439676ca21a244753fa19f9ea8e\",\"data\":\"0x8da5cb5b\"},\"0x6b5b613\"]}'",
-  "block": "0x6b5b613",
-  "note": "read between blocks 112571907 and 112571923 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x188d586ddcf52439676ca21a244753fa19f9ea8e\",\"data\":\"0x8da5cb5b\"},\"0x6b664c8\"]}'",
+  "block": "0x6b664c8",
+  "note": "read between blocks 112616627 and 112616648 of the chain"
  },
  "history": [
   {
@@ -89,11 +95,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000188d586ddcf52439676ca21a244753fa19f9ea8e",
-  "block": "0x42f5d3e",
+  "block": "0x4300acb",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000188d586ddcf52439676ca21a244753fa19f9ea8e\"},\"0x42f5d3e\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000188d586ddcf52439676ca21a244753fa19f9ea8e\"},\"0x4300acb\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -101,6 +107,10 @@
   "text": "collateral factor 65.00% (score 80)"
  },
  "cheapest_fix": null,
+ "main_gap": {
+  "requirement": "Bypass paths of the delay checked and ruled out",
+  "reason": "The waiting time may be skipped"
+ },
  "independent_read": {
   "path": "owner()",
   "holder": "0xe783de89a7f0408687f051e3e6d0beb62719ebad",
@@ -124,7 +134,7 @@
  "last_pushed": 1791656126,
  "stale": false,
  "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
- "block": 70212926,
+ "block": 70257355,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x188d586ddcf52439676ca21a244753fa19f9ea8e",
  "page": "https://realspap.github.io/oracle/p/monad-0x188d586ddcf52439676ca21a244753fa19f9ea8e.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

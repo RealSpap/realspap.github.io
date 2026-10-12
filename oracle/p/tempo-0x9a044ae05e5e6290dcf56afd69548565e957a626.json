@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Sentora pathUSD (Morpho Vault V2)",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -7,7 +9,8 @@
  "band": "weak",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 40015042.294443674,
+ "money_per_key_usd": 40012022.89150156,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 10,
   "multisigScore": 15,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 64806385.66958821,
+ "tvl_usd": 64986087.611741185,
  "category": "Risk Curators",
- "at_risk_usd": 47308661.53879939,
+ "at_risk_usd": 47439843.956571065,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -69,12 +72,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "pathUSD",
-  "amount": 39881927.56173,
+  "amount": 39878918.203186,
   "price_usd": 1.0033377206381924,
-  "held_usd": 40015042.294443674,
+  "held_usd": 40012022.89150156,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": -0.0,
+  "amount_change_pct": -0.01,
   "vanished": null
  },
  "dispute": null,
@@ -89,7 +92,7 @@
       "to": "0x9a044ae05e5e6290dcf56afd69548565e957a626",
       "data": "0x8da5cb5b"
      },
-     "0x29ab329"
+     "0x29b120b"
     ]
    },
    {
@@ -135,9 +138,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9a044ae05e5e6290dcf56afd69548565e957a626\",\"data\":\"0x8da5cb5b\"},\"0x29ab329\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x29ab329",
-  "note": "read between blocks 43692832 and 43692841 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9a044ae05e5e6290dcf56afd69548565e957a626\",\"data\":\"0x8da5cb5b\"},\"0x29b120b\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xe8c9c99ecad0686a14a00d8521c572281e938008\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x29b120b",
+  "note": "read between blocks 43717120 and 43717131 of the chain"
  },
  "history": [
   {
@@ -151,11 +154,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000009a044ae05e5e6290dcf56afd69548565e957a626",
-  "block": "0x255d668",
+  "block": "0x2562c39",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000009a044ae05e5e6290dcf56afd69548565e957a626\"},\"0x255d668\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000009a044ae05e5e6290dcf56afd69548565e957a626\"},\"0x2562c39\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -168,7 +171,11 @@
   "axis": "admin key",
   "from": 10,
   "to": 43,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": "owner()",
@@ -195,18 +202,18 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 40015042.294443674,
-   "money_per_key_usd": 40015042.294443674,
+   "tvl_usd": 40012022.89150156,
+   "money_per_key_usd": 40012022.89150156,
    "money_source": "contract",
    "held_symbol": "pathUSD",
-   "held_amount": 39881927.56173
+   "held_amount": 39878918.203186
   }
  },
  "score_cluster": null,
  "last_pushed": 1791662166,
  "stale": false,
  "methodology_hash": "0x134e33c2b59f03981c62fbafe19942062b82862cc2f79fa62d23294eeb97d268",
- "block": 39179880,
+ "block": 39201849,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x9a044ae05e5e6290dcf56afd69548565e957a626",
  "page": "https://realspap.github.io/oracle/p/tempo-0x9a044ae05e5e6290dcf56afd69548565e957a626.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

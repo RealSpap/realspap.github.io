@@ -1,0 +1,162 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Monad Native Bridge (Wormhole NTT)",
+ "named_from": "dashboard",
+ "chain": "Monad",
+ "address": "0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
+ "composite": 60,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 75,
+  "multisigScore": 100,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 994944459.5260404,
+ "category": null,
+ "at_risk_usd": 397977783.81041616,
+ "narrative": {
+  "summary": "The chain\u2019s own officially blessed bridge, governed by a live-verified 13-of-19 Wormhole Guardian quorum - read directly from Monad\u2019s own deployed Core Bridge contract, not assumed from generic docs.",
+  "tag": "composite 60 - 13-of-19 global guardian quorum",
+  "detail": "owner()/pauser() on the NTT Manager resolves to a small, non-upgradeable Wormhole governance relay that holds no independent power - it only forwards a call given a Guardian-signed message that clears quorum. getCurrentGuardianSetIndex()=7 and quorum(19)=13, both read live. No time delay: a valid quorum executes immediately."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "pauser()": {
+   "kind": "contract",
+   "holder": "0x574b7864119c9223a9870ea614dc91a8ee09e512"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.monad.xyz",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
+      "data": "0x8da5cb5b"
+     },
+     "0x6b664c8"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"data\":\"0x8da5cb5b\"},\"0x6b664c8\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x6b664c8",
+  "note": "read between blocks 112616627 and 112616648 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:15:26Z",
+   "composite": 60,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/monad/0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.monad.xyz/",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95",
+  "block": "0x4300acb",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95\"},\"0x4300acb\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5000,
+  "text": "collateral factor 50.00% (score 60)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "timelock",
+  "from": 0,
+  "to": 65,
+  "what": "a confirmed delay before changes apply"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x574b7864119c9223a9870ea614dc91a8ee09e512",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 994944459.5260404,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791656126,
+ "stale": false,
+ "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
+ "block": 70257355,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
+ "page": "https://realspap.github.io/oracle/p/monad-0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

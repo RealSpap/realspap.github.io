@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Lulo (FlexLend)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -8,6 +10,10 @@
  "keys_to_move": 3,
  "react_hours": 0,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
  "sub": {
   "adminKeyScore": 50,
   "multisigScore": 60,
@@ -73,7 +79,11 @@
   "axis": "admin key",
   "from": 50,
   "to": 54,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "program -&gt; ProgramData 4J4gnm\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 8Sr4rQJL2aQT3EL97mbrk1T9VMw4pCS2mxMPp2QBzHQq",

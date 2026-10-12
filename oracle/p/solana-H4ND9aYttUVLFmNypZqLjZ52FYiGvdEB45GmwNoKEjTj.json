@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Jupiter Perpetual Exchange",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 24,
- "money_per_key_usd": 194496174.31929618,
+ "money_per_key_usd": 194248274.57475233,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 55,
   "multisigScore": 80,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 777984697.2771847,
+ "tvl_usd": 776993098.2990093,
  "category": "Derivatives",
- "at_risk_usd": 420111736.5296797,
+ "at_risk_usd": 419576273.081465,
  "narrative": {
   "summary": "The perps program's upgrade multisig has a 24-hour delay, but its application admin is a 4-of-7 Squads v3 multisig with no delay field, so the delay is bypassed. That multisig also controls Jupiter Aggregator v6 upgrades.",
   "tag": "admin path bypasses the 24h upgrade delay",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 55,
   "to": 89,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "account owned by program PERPHjGB\u2026 -&gt; program -&gt; ProgramData C258Lj\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig AxkJ8oH5aDu4ZRWfsujPtxdb6Vhq4gDehpoReBgrUUSm",
@@ -95,8 +102,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 24,
-   "tvl_usd": 777984697.2771847,
-   "money_per_key_usd": 194496174.31929618,
+   "tvl_usd": 776993098.2990093,
+   "money_per_key_usd": 194248274.57475233,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

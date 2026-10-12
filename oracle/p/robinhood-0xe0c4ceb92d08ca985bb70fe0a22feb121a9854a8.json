@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Ramses CL V2",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -8,6 +10,12 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 15,
   "multisigScore": 5,
@@ -42,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 6355768.842304715,
+ "tvl_usd": 6280564.541607773,
  "category": "Dexs",
- "at_risk_usd": 5847307.334920337,
+ "at_risk_usd": 5778119.37827915,
  "narrative": {
   "summary": "A real DEX with $6.3M TVL, governed through a Timelock whose delay is deliberately set to zero - arguably worse than no timelock at all.",
   "detail": "Governed through a centralized AccessHub rather than per-contract Ownable. DEFAULT_ADMIN_ROLE is held by both \"RamsesTimelock\" and an address labeled \"Ramses Team Multisig\" - traced one hop further rather than trusting the label: that \"multisig\" is a Safe with exactly one owner and threshold 1, the sole signer a bare EOA. RamsesTimelock.getMinDelay() returns 0 - a real, deployed timelock-shaped contract with none of the substance. Batch 8 pinned down RamsesTimelock\u2019s exact address (previously undistinguished from AccessHub) and found PROPOSER_ROLE, CANCELLER_ROLE and EXECUTOR_ROLE are all held by that same single \"Team Multisig\" address - a timelock in name only, on every axis, not just its delay."
@@ -70,11 +78,11 @@
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
   "data": "0xd47875d0000000000000000000000000e0c4ceb92d08ca985bb70fe0a22feb121a9854a8",
-  "block": "0x7eff97a",
+  "block": "latest",
   "composite_word": 6,
-  "block_honoured": true,
-  "note": null,
-  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000e0c4ceb92d08ca985bb70fe0a22feb121a9854a8\"},\"0x7eff97a\"]}'"
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000e0c4ceb92d08ca985bb70fe0a22feb121a9854a8\"},\"latest\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -87,7 +95,11 @@
   "axis": "admin key",
   "from": 15,
   "to": 45,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": null,
@@ -102,7 +114,7 @@
  "last_pushed": 1791664867,
  "stale": false,
  "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133167482,
+ "block": 133264276,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

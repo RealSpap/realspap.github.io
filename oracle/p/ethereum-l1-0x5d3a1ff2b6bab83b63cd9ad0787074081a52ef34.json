@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Ethena LayerZero OFTAdapters",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -8,6 +10,10 @@
  "keys_to_move": null,
  "react_hours": 24,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 55,
   "multisigScore": 100,
@@ -42,9 +48,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 4759107814.172623,
+ "tvl_usd": 4757883722.632232,
  "category": "Basis Trading",
- "at_risk_usd": 2046416360.0942278,
+ "at_risk_usd": 2045890000.7318597,
  "narrative": {
   "summary": "Same EthenaTimelockController as the PSM above governs all three cross-chain bridges - but here the bypassable function is setPeer(), which redirects the trusted remote counterpart.",
   "tag": "more severe than the PSM\u2019s gap",
@@ -69,7 +75,7 @@
       "to": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
       "data": "0x8da5cb5b"
      },
-     "0x18f5995"
+     "latest"
     ]
    },
    {
@@ -84,9 +90,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34\",\"data\":\"0x8da5cb5b\"},\"0x18f5995\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8dc0fab349ea169283c48ccfd09d797e6db7c94\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
-  "block": "0x18f5995",
-  "note": "read between blocks 26171796 and 26171797 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8dc0fab349ea169283c48ccfd09d797e6db7c94\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "latest",
+  "note": "read between blocks 26172918 and 26172919 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
@@ -100,11 +106,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
-  "block": "0xb57df6",
+  "block": "0xb5824f",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34\"},\"0xb57df6\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34\"},\"0xb5824f\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -117,7 +123,11 @@
   "axis": "admin key",
   "from": 55,
   "to": 63,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "owner()",
@@ -147,11 +157,11 @@
     "target": "0xe3490297a08d6fc8da46edb7b6142e4f461b62d3"
    }
   ],
-  "cluster_tvl_usd": 5229410496.315897,
+  "cluster_tvl_usd": 5228174619.697269,
   "exposure": {
    "keys_to_move": null,
    "react_hours": 24,
-   "tvl_usd": 4759107814.172623,
+   "tvl_usd": 4757883722.632232,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -162,7 +172,7 @@
  "last_pushed": 1791687028,
  "stale": false,
  "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11894262,
+ "block": 11895375,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

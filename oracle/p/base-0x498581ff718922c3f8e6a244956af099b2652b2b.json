@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Uniswap V4 PoolManager (Base)",
  "named_from": "dashboard",
  "chain": "Base",
@@ -8,6 +10,10 @@
  "keys_to_move": null,
  "react_hours": 0,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 80,
   "multisigScore": 100,
@@ -69,13 +75,13 @@
       "to": "0x498581ff718922c3f8e6a244956af099b2652b2b",
       "data": "0x8da5cb5b"
      },
-     "0x320ced2"
+     "0x320e92d"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x498581ff718922c3f8e6a244956af099b2652b2b\",\"data\":\"0x8da5cb5b\"},\"0x320ced2\"]}'",
-  "block": "0x320ced2",
-  "note": "read between blocks 52481740 and 52481746 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x498581ff718922c3f8e6a244956af099b2652b2b\",\"data\":\"0x8da5cb5b\"},\"0x320e92d\"]}'",
+  "block": "0x320e92d",
+  "note": "read between blocks 52488484 and 52488493 of the chain"
  },
  "history": [
   {
@@ -89,11 +95,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b",
-  "block": "0x2dc4cd7",
+  "block": "0x2dc6706",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b\"},\"0x2dc4cd7\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b\"},\"0x2dc6706\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -101,6 +107,10 @@
   "text": "collateral factor 68.75% (score 85)"
  },
  "cheapest_fix": null,
+ "main_gap": {
+  "requirement": "No key shared with another tracked protocol",
+  "reason": "The same keys control other protocols"
+ },
  "independent_read": {
   "path": "owner()",
   "holder": "0x31fafd4889fa1269f7a13a66ee0fb458f27d72a9",
@@ -124,7 +134,7 @@
  "last_pushed": 1791653885,
  "stale": false,
  "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
- "block": 47992023,
+ "block": 47998726,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x498581ff718922c3f8e6a244956af099b2652b2b",
  "page": "https://realspap.github.io/oracle/p/base-0x498581ff718922c3f8e6a244956af099b2652b2b.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

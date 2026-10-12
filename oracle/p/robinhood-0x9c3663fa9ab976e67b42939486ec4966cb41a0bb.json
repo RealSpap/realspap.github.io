@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Arcus pToken factory + pBTC + pBTC3x",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -7,7 +9,8 @@
  "band": "moderate",
  "keys_to_move": 2,
  "react_hours": 0,
- "money_per_key_usd": 374400.2320331996,
+ "money_per_key_usd": 373595.8425663475,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 55,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 748800.4640663991,
+ "tvl_usd": 747191.685132695,
  "category": "Derivatives",
- "at_risk_usd": 426816.2645178475,
+ "at_risk_usd": 425899.26052563614,
  "narrative": {
   "summary": "A real 2-of-3 Safe, but it\u2019s a single point of control over every pToken issued through the shared beacon - with zero timelock anywhere.",
   "detail": "beacon.owner() and the factory\u2019s DEFAULT_ADMIN_ROLE both resolve to the same active 2-of-3 Gnosis Safe. One upgradeTo() call rewrites the shared implementation for pBTC, pBTC3x, and anything deployed later - no timelock anywhere in the chain protects that call. Scored identically across the factory and both live pTokens since they share the exact same authority chain."
@@ -76,7 +79,7 @@
       "to": "0x9c3663fa9ab976e67b42939486ec4966cb41a0bb",
       "data": "0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
      },
-     "0x522595f"
+     "0x5245a5f"
     ]
    },
    {
@@ -131,9 +134,9 @@
     ]
    }
   ],
-  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9c3663fa9ab976e67b42939486ec4966cb41a0bb\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x522595f\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x9c3663fa9ab976e67b42939486ec4966cb41a0bb\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x522595f",
-  "note": "read between blocks 86136683 and 86137183 of the chain"
+  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9c3663fa9ab976e67b42939486ec4966cb41a0bb\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x5245a5f\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x9c3663fa9ab976e67b42939486ec4966cb41a0bb\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain"
  },
  "history": [
   {
@@ -147,11 +150,11 @@
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
   "data": "0xd47875d00000000000000000000000009c3663fa9ab976e67b42939486ec4966cb41a0bb",
-  "block": "0x7eff97a",
+  "block": "latest",
   "composite_word": 6,
-  "block_honoured": true,
-  "note": null,
-  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000009c3663fa9ab976e67b42939486ec4966cb41a0bb\"},\"0x7eff97a\"]}'"
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000009c3663fa9ab976e67b42939486ec4966cb41a0bb\"},\"latest\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -165,6 +168,10 @@
   "from": 0,
   "to": 57,
   "what": "a confirmed delay before changes apply"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "DEFAULT_ADMIN_ROLE member 1 of 1 (AccessControl)",
@@ -193,12 +200,12 @@
     "target": "0x4472c69d299382f8847ebce4fc6ed8e295510e3e"
    }
   ],
-  "cluster_tvl_usd": 748800.4640663991,
+  "cluster_tvl_usd": 747191.685132695,
   "exposure": {
    "keys_to_move": 2,
    "react_hours": 0,
-   "tvl_usd": 748800.4640663991,
-   "money_per_key_usd": 374400.2320331996,
+   "tvl_usd": 747191.685132695,
+   "money_per_key_usd": 373595.8425663475,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
@@ -208,7 +215,7 @@
  "last_pushed": 1791664867,
  "stale": false,
  "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133167482,
+ "block": 133264276,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x9c3663fa9ab976e67b42939486ec4966cb41a0bb",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x9c3663fa9ab976e67b42939486ec4966cb41a0bb.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

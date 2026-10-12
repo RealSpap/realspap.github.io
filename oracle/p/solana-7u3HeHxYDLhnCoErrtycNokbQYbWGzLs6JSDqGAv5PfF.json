@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Kamino Lend, main market (SOL/BTC)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "moderate",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 266949814.9848597,
+ "money_per_key_usd": 264795530.16242415,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 76,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1334749074.9242985,
+ "tvl_usd": 1323977650.8121207,
  "category": "Lending",
- "at_risk_usd": 587289592.9666914,
+ "at_risk_usd": 582550166.3573331,
  "narrative": {
   "summary": "Upgrades wait 24 hours and risk changes 12, but a ten-signer group can re-map the price source behind the SOL and USDC reserves with no delay, even to a fixed price. That undelayed path caps the oracle sub-score.",
   "tag": "undelayed price-source path",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 65,
   "to": 73,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "account owned by program KLend2g3\u2026 -&gt; program -&gt; ProgramData 9uSbGW\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
@@ -94,8 +101,8 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 1334749074.9242985,
-   "money_per_key_usd": 266949814.9848597,
+   "tvl_usd": 1323977650.8121207,
+   "money_per_key_usd": 264795530.16242415,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Kinetiq HIP3StakingManager (kmHYPE)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -7,7 +9,8 @@
  "band": "critical",
  "keys_to_move": 4,
  "react_hours": 0,
- "money_per_key_usd": 11188932.399764089,
+ "money_per_key_usd": 11231937.23661254,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 10,
   "multisigScore": 0,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 44755729.599056356,
+ "tvl_usd": 44927748.94645016,
  "category": "Liquid Staking",
- "at_risk_usd": 42965500.4150941,
+ "at_risk_usd": 43130638.98859215,
  "narrative": {
   "summary": "This is kmHYPE's staking manager, not kHYPE's. The admin and treasury Safes have no module or guard, but OPERATOR_ROLE is a bare EOA that can call withdrawFromSpot and processL1Operations, and it binds the score.",
   "tag": "this is kmHYPE, not kHYPE",
@@ -57,9 +60,9 @@
  "safe_activity": [
   {
    "safe": "hyperliquid:0x18a8\u2026f8f1",
-   "nonce": 68,
-   "idle_since": "2026-10-10T21:12:49Z",
-   "last_moved": null,
+   "nonce": 69,
+   "idle_since": "2026-10-12T00:55:18Z",
+   "last_moved": "2026-10-12T00:55:18Z",
    "never_executed": false
   }
  ],
@@ -143,7 +146,7 @@
   ],
   "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"latest\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 48287796 and 48287806 of the chain; the RPC answers at latest whatever block is asked"
+  "note": "read between blocks 48301525 and 48301533 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
@@ -160,7 +163,7 @@
   "block": "latest",
   "composite_word": 6,
   "block_honoured": false,
-  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
   "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000071f0019cc7fa79e4f42587fb7b9a817d8d2429ec\"},\"latest\"]}'"
  },
  "consumer_example": {
@@ -174,7 +177,11 @@
   "axis": "admin key",
   "from": 10,
   "to": 49,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": "EIP-1967 admin -&gt; ProxyAdmin owner()",
@@ -199,12 +206,12 @@
     "target": "0x393d0b87ed38fc779fd9611144ae649ba6082109"
    }
   ],
-  "cluster_tvl_usd": 978541862.1382675,
+  "cluster_tvl_usd": 981535823.5671997,
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 0,
-   "tvl_usd": 44755729.599056356,
-   "money_per_key_usd": 11188932.399764089,
+   "tvl_usd": 44927748.94645016,
+   "money_per_key_usd": 11231937.23661254,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
@@ -214,7 +221,7 @@
  "last_pushed": 1791662291,
  "stale": false,
  "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
- "block": 66649672,
+ "block": 66663335,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

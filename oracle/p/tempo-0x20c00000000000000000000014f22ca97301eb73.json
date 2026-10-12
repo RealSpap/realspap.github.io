@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "USDT0",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -8,6 +10,12 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 58,
@@ -42,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 3313701505.2188916,
+ "tvl_usd": 3318609398.5641985,
  "category": "Bridge",
- "at_risk_usd": 1888809857.9747684,
+ "at_risk_usd": 1891607357.181593,
  "narrative": {
   "summary": "Policy-3 blacklist admin is the USDT0 Safe itself, a real 3-of-5 - the compliance/blacklist lever and the token\u2019s own operational Safe are the same authority, not a separately-controlled one.",
   "tag": "composite 43"
@@ -70,11 +78,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000020c00000000000000000000014f22ca97301eb73",
-  "block": "0x255d668",
+  "block": "0x2562c39",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c00000000000000000000014f22ca97301eb73\"},\"0x255d668\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c00000000000000000000014f22ca97301eb73\"},\"0x2562c39\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -89,6 +97,10 @@
   "to": 54,
   "what": "a confirmed delay before changes apply"
  },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
  "independent_read": {
   "path": null,
   "holder": null,
@@ -102,7 +114,7 @@
  "last_pushed": 1791662166,
  "stale": false,
  "methodology_hash": "0x134e33c2b59f03981c62fbafe19942062b82862cc2f79fa62d23294eeb97d268",
- "block": 39179880,
+ "block": 39201849,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x20c00000000000000000000014f22ca97301eb73",
  "page": "https://realspap.github.io/oracle/p/tempo-0x20c00000000000000000000014f22ca97301eb73.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

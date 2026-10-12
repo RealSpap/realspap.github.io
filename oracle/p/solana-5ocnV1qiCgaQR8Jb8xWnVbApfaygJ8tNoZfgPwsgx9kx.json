@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Sanctum Infinity (S Controller)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -8,6 +10,11 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 55,
   "multisigScore": 80,
@@ -42,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 211721704.39796722,
+ "tvl_usd": 210236256.4839509,
  "category": "Dexs",
- "at_risk_usd": 114329720.37490231,
+ "at_risk_usd": 113527578.50133349,
  "narrative": {
   "summary": "Two paths bind the score: a 6-of-11 Squads v3 program upgrade and a 4-of-8 Squads v4 pool admin with no delay, which decides how every LST is valued.",
   "tag": "pool admin binds the score",
@@ -73,7 +80,11 @@
   "axis": "admin key",
   "from": 55,
   "to": 89,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "program -&gt; ProgramData ALmAxh\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
@@ -87,7 +98,7 @@
     "target": "SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY"
    }
   ],
-  "cluster_tvl_usd": 2048434392.3198953
+  "cluster_tvl_usd": 2041028003.9178987
  },
  "score_cluster": "devnet",
  "last_pushed": 1791662470,

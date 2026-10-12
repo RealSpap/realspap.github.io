@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Solend DAO governance realm",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 89981854.94372727,
+ "money_per_key_usd": 89752657.03720473,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
   "multisigScore": 0,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 89981854.94372727,
+ "tvl_usd": 89752657.03720473,
  "category": "Lending",
- "at_risk_usd": 88182217.84485273,
+ "at_risk_usd": 87957603.89646062,
  "narrative": {
   "summary": "Two bare wallets sit above the DAO vote: one can rewrite the voting rules with no proposal, the other can replace the governance program's code. Neither is renounced, and the DAO has not taken over the realm authority.",
   "tag": "retroactive backtest of the June 2022 vote",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 5,
   "to": 49,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": "account owned by program A7kmu2kU\u2026 -&gt; program -&gt; ProgramData DBvb9p\u2026 -&gt; upgrade authority (on the curve: a plain key)",
@@ -84,8 +91,8 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 89981854.94372727,
-   "money_per_key_usd": 89981854.94372727,
+   "tvl_usd": 89752657.03720473,
+   "money_per_key_usd": 89752657.03720473,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

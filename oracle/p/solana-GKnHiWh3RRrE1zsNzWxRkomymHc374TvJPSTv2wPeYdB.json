@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Kamino Liquidity (yvaults)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "moderate",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 14651589.516786288,
+ "money_per_key_usd": 14651483.062651742,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 60,
   "multisigScore": 100,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 73257947.58393145,
+ "tvl_usd": 73257415.31325871,
  "category": "Liquidity Manager",
- "at_risk_usd": 33698655.88860846,
+ "at_risk_usd": 33698411.044099,
  "narrative": {
   "summary": "Upgrades are a 5-of-7 multisig with a 24-hour delay, but the strategy admin is a different 5-of-7 multisig with no delay at all, so the undelayed path sets the timelock score.",
   "tag": "same signer shape, zero delay on the admin path",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 60,
   "to": 74,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "account owned by program 6LtLpnUF\u2026 -&gt; program -&gt; ProgramData 8n11WG\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig E7994UpSGhSpbpnuSepPXHBuMy3eRvHJL36DjTs1kb2b",
@@ -95,8 +102,8 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 73257947.58393145,
-   "money_per_key_usd": 14651589.516786288,
+   "tvl_usd": 73257415.31325871,
+   "money_per_key_usd": 14651483.062651742,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Huma Finance (Permissionless, Institutional)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -8,6 +10,10 @@
  "keys_to_move": 5,
  "react_hours": 12,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
  "sub": {
   "adminKeyScore": 70,
   "multisigScore": 100,
@@ -74,6 +80,10 @@
   "from": 25,
   "to": 72,
   "what": "a confirmed delay before changes apply"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "program -&gt; ProgramData TBMC1J\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig uGLhzjot32i9nNKZKUoCzr7sG8bFAXQRN3uZPTUr7gX",

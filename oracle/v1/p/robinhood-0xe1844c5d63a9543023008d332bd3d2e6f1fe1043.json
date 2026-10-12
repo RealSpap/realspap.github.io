@@ -1,0 +1,160 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "LayerZero V2 messaging core",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0xe1844c5d63a9543023008d332bd3d2e6f1fe1043",
+ "composite": 48,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "shared control: the score says no key is shared, but this contract's own independent read lists another tracked contract with the same admin (unresolved, 12/10: do not read \"no key shared\" as established)",
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 55,
+  "multisigScore": 85,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 949738.7757615036,
+ "category": "Bridge",
+ "at_risk_usd": 493864.1633959819,
+ "narrative": {
+  "summary": "A real, heavily-used cross-chain messaging layer - 709 OApps already registered - owned by a bespoke 5-of-7 multisig that isn\u2019t a Gnosis Safe at all.",
+  "tag": "new in batch 8",
+  "detail": "A live eth_getLogs replay of DelegateSet on LayerZero\u2019s own EndpointV2, from genesis to the chain tip, found 965 events from 709 distinct OApp addresses already registered - a real, active messaging surface an order of magnitude larger than everything this oracle tracked before, and structurally separate from the chain\u2019s own L1 rollup bridge above. EndpointV2, SendUln302 and ReceiveUln302 were each checked independently and all three share the identical owner() - deliberately NOT a Gnosis Safe (getOwners()/getThreshold() both revert on it), but a bespoke on-chain multisig confirmed live as a real 5-of-7 via its own getSigners()/threshold() interface. Executor, a fourth LayerZero contract, was deliberately excluded: its own admin resolves to a third, still-unidentified contract matching neither pattern - an open thread, not guessed at. Only this shared infrastructure is scored - the 709 individual OApps built on top of it are not tracked one by one."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xe1844c5d63a9543023008d332bd3d2e6f1fe1043",
+      "data": "0x8da5cb5b"
+     },
+     "0x5245a5f"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe1844c5d63a9543023008d332bd3d2e6f1fe1043\",\"data\":\"0x8da5cb5b\"},\"0x5245a5f\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 48,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xe1844c5d63a9543023008d332bd3d2e6f1fe1043.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000e1844c5d63a9543023008d332bd3d2e6f1fe1043",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000e1844c5d63a9543023008d332bd3d2e6f1fe1043\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 48 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 55,
+  "to": 85,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0xe590\u20263942",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "shares_admin_with": [
+   {
+    "chain": "robinhood",
+    "target": "0x6f475642a6e85809b1c36fa62763669b1b48dd5b"
+   },
+   {
+    "chain": "robinhood",
+    "target": "0xc39161c743d0307eb9bcc9fef03eeb9dc4802de7"
+   }
+  ],
+  "cluster_tvl_usd": 949738.7757615036,
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 949738.7757615036,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xe1844c5d63a9543023008d332bd3d2e6f1fe1043",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xe1844c5d63a9543023008d332bd3d2e6f1fe1043.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

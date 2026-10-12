@@ -1,0 +1,141 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Uniswap V4 PoolManager (Base)",
+ "named_from": "dashboard",
+ "chain": "Base",
+ "address": "0x498581ff718922c3f8e6a244956af099b2652b2b",
+ "composite": 85,
+ "band": "strong",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 80,
+  "multisigScore": 100,
+  "timelockScore": 75,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": true
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths checked",
+ "tvl_usd": 69641366.88037132,
+ "category": "Dexs",
+ "at_risk_usd": 10446205.032055698,
+ "narrative": {
+  "summary": "PoolManager.owner() is the same cross-domain forwarder that owns the V3 Factory\u2019s fee adapter and acts as the V2 Factory\u2019s feeToSetter, so the root is Uniswap\u2019s Ethereum-mainnet Governance Timelock (2-day delay, 172,800s), not a Base-side key.",
+  "tag": "$59.3M Base TVL, same DAO root as V2 and V3",
+  "detail": "Blast radius is narrow: the deployed source has only two onlyOwner functions, setProtocolFeeController and transferOwnership; the controller sets per-pool protocol fees (capped at 0.1% per direction by isValidProtocolFee) and collects accrued protocol fees, and PoolManager is not a proxy and has no upgrade function. Scored exactly like V2 and V3 (80 / 100 / 75), so crossExposureScore 100 means DAO-rooted targets are excluded from signer overlap, not independence from those two."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://mainnet.base.org",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x498581ff718922c3f8e6a244956af099b2652b2b",
+      "data": "0x8da5cb5b"
+     },
+     "0x320e92d"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x498581ff718922c3f8e6a244956af099b2652b2b\",\"data\":\"0x8da5cb5b\"},\"0x320e92d\"]}'",
+  "block": "0x320e92d",
+  "note": "read between blocks 52488484 and 52488493 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T17:38:05Z",
+   "composite": 85,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/base-sepolia/0x498581ff718922c3f8e6a244956af099b2652b2b.xml",
+ "reproduce": {
+  "rpc": "https://sepolia.base.org",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b",
+  "block": "0x2dc6706",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b\"},\"0x2dc6706\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 6875,
+  "text": "collateral factor 68.75% (score 85)"
+ },
+ "cheapest_fix": null,
+ "main_gap": {
+  "requirement": "No key shared with another tracked protocol",
+  "reason": "The same keys control other protocols"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x31fafd4889fa1269f7a13a66ee0fb458f27d72a9",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 69641366.88037132,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791653885,
+ "stale": false,
+ "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
+ "block": 47998726,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x498581ff718922c3f8e6a244956af099b2652b2b",
+ "page": "https://realspap.github.io/oracle/p/base-0x498581ff718922c3f8e6a244956af099b2652b2b.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

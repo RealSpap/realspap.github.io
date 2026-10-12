@@ -1,0 +1,119 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "PumpSwap and pump.fun bonding curve",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+ "composite": 43,
+ "band": "moderate",
+ "keys_to_move": 3,
+ "react_hours": 0,
+ "money_per_key_usd": 124511864.2408611,
+ "not_assessed": [],
+ "sub": {
+  "adminKeyScore": 50,
+  "multisigScore": 75,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 373535592.7225833,
+ "category": "Dexs",
+ "at_risk_usd": 212915287.85187247,
+ "narrative": {
+  "summary": "Both programs share one 3-of-4 Squads v4 upgrade multisig with no delay, and their config admin is a different multisig with the same 3-of-4 threshold, so the admin path does not lower the score.",
+  "tag": "confirmed by the second path, not lowered",
+  "detail": "The AMM and the bonding curve share one upgrade vault (3-of-4, no time lock). GlobalConfig.admin (PumpSwap) and Global.authority (bonding curve) both resolve to a different Squads v4 vault, also 3-of-4. The on-chain IDL shows admin as the first field, and a live transaction from that multisig updated both fields together, so it is not a coincidental match. Scouting noted frequent upgrades (2026-09-12 and 2026-09-15) with no delay. It listed over $250M TVL for PumpSwap, while pump.fun itself lists none."
+ },
+ "score_account": "Hhxa41nq8KDfUWrcQQ3rGsiLfkz9qTKw3i9bDapXQ9ah",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 43 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 50,
+  "to": 93,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "account owned by program pAMMBay6\u2026 -&gt; program -&gt; ProgramData 6naEzK\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+  "holder": "7gZufwwAo17y5kg8FMyJy2phgpvv9RSdzWtdXiWHjFr8",
+  "threshold": 3,
+  "owners": 4,
+  "delay_seconds": 0,
+  "owners_kinds": {
+   "eoa": 4,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 3,
+  "keys_lost_to_freeze": 2,
+  "kind": "squads",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: Squads 3-of-4 of 4 plain keys; delay: none",
+  "exposure": {
+   "keys_to_move": 3,
+   "react_hours": 0,
+   "tvl_usd": 373535592.7225833,
+   "money_per_key_usd": 124511864.2408611,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662451,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+ "page": "https://realspap.github.io/oracle/p/solana-ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

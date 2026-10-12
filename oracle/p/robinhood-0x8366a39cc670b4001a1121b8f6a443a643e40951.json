@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Uniswap v2 + v3 + v4 + UniswapX",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -8,6 +10,10 @@
  "keys_to_move": null,
  "react_hours": 48,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 80,
   "multisigScore": 100,
@@ -42,9 +48,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 53397048.37414257,
+ "tvl_usd": 53321027.90973109,
  "category": "Dexs",
- "at_risk_usd": 8009557.256121386,
+ "at_risk_usd": 7998154.186459663,
  "narrative": {
   "summary": "RESOLVED 2026-09-17: the address controlling v3 Factory, v4 PoolManager, the UniswapX reactor, and v2\u2019s feeToSetter is the real Uniswap L1 Governance Timelock\u2019s Arbitrum bridge alias, not a vanity-ground key. Re-scored to 85/100, independently re-confirming the L1 Timelock and GovernorBravo live on every run.",
   "tag": "1 identity, 4 surfaces - external L1 DAO via bridge alias",
@@ -69,7 +75,7 @@
       "to": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
       "data": "0x8da5cb5b"
      },
-     "0x522595f"
+     "0x5245a5f"
     ]
    },
    {
@@ -84,9 +90,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x8366a39cc670b4001a1121b8f6a443a643e40951\",\"data\":\"0x8da5cb5b\"},\"0x522595f\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x1a9c8182c09f50c8318d769245bea52c32be35bc\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'",
-  "block": "0x522595f",
-  "note": "read between blocks 86136683 and 86137183 of the chain; an alias-resolved holder (Arbitrum stack) is read on Ethereum L1 instead"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x8366a39cc670b4001a1121b8f6a443a643e40951\",\"data\":\"0x8da5cb5b\"},\"0x5245a5f\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x1a9c8182c09f50c8318d769245bea52c32be35bc\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain; an alias-resolved holder (Arbitrum stack) is read on Ethereum L1 instead"
  },
  "history": [
   {
@@ -100,11 +106,11 @@
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
   "data": "0xd47875d00000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
-  "block": "0x7eff97a",
+  "block": "latest",
   "composite_word": 6,
-  "block_honoured": true,
-  "note": null,
-  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951\"},\"0x7eff97a\"]}'"
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951\"},\"latest\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -112,6 +118,10 @@
   "text": "collateral factor 68.75% (score 85)"
  },
  "cheapest_fix": null,
+ "main_gap": {
+  "requirement": "No key shared with another tracked protocol",
+  "reason": "The same keys control other protocols"
+ },
  "independent_read": {
   "path": "owner() (Arbitrum L1 alias of 0x1a9c8182c09f50c8318d769245bea52c32be35bc on Ethereum L1)",
   "holder": "0x1a9c8182c09f50c8318d769245bea52c32be35bc",
@@ -133,11 +143,11 @@
     "target": "0x000000007a1c8e570011eedf86a2a35593013cba"
    }
   ],
-  "cluster_tvl_usd": 828282064.8179497,
+  "cluster_tvl_usd": 828206044.3535383,
   "exposure": {
    "keys_to_move": null,
    "react_hours": 48,
-   "tvl_usd": 53397048.37414257,
+   "tvl_usd": 53321027.90973109,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -148,7 +158,7 @@
  "last_pushed": 1791664867,
  "stale": false,
  "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133167482,
+ "block": 133264276,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8366a39cc670b4001a1121b8f6a443a643e40951",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x8366a39cc670b4001a1121b8f6a443a643e40951.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

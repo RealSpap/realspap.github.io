@@ -1,0 +1,122 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "PancakeSwap AMM (V2) Factory",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e",
+ "composite": 2,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 5,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 93176.25195281305,
+ "category": "Dexs",
+ "at_risk_usd": 91312.72691375678,
+ "narrative": {
+  "summary": "Pairs are immutable (no upgrade surface at all) - but feeToSetter is a bare, actively-used EOA (real nonce 20) that alone can redirect protocol fees or hand off control, with zero delay.",
+  "tag": "$1.9B TVL across all chains (DefiLlama)",
+  "detail": "The blast radius here is fee-routing control only, not a rug of pooled funds - but it is still a single, uncontested key over that entire surface, the same shape already tracked for Curve DEX on this chain."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 2,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d000000000000000000000000002a84c1b3bbd7401a5f7fa98a384ebc70bb5749e",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d000000000000000000000000002a84c1b3bbd7401a5f7fa98a384ebc70bb5749e\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 2 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 5,
+  "to": 49,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,160 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Beefy: SPY-WETH vault (representative)",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62",
+ "composite": 50,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 60,
+  "timelockScore": 20,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 2819015.8621665305,
+ "category": "Yield Aggregator",
+ "at_risk_usd": 1409507.9310832652,
+ "narrative": {
+  "summary": "Vault and strategy each sit behind a separate real TimelockController, both governed by the identical 3-of-6 Safe - the vault-level delay is 0, but the strategy-swap path (the highest-value action) carries a real 6h delay two ways over.",
+  "tag": "~$2.57M TVL across ~14 vaults, one sampled",
+  "detail": "The deployer\u2019s own TIMELOCK_ADMIN_ROLE was revoked one block after deployment on both Timelocks - each self-administers now. Same Safe holds PROPOSER_ROLE and CANCELLER_ROLE on both, so there is no independent veto path, the same limitation already scored this way for this chain\u2019s own L1 rollup authority."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62",
+      "data": "0x8da5cb5b"
+     },
+     "0x5245a5f"
+    ]
+   },
+   {
+    "what": "getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x03193ef8c3f75c22faf2995540602399cdcd4cbc",
+      "data": "0xf27a0c92"
+     },
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62\",\"data\":\"0x8da5cb5b\"},\"0x5245a5f\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x03193ef8c3f75c22faf2995540602399cdcd4cbc\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 50,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d000000000000000000000000087673a619fc4f3fc08068a0bb04f60aa2d04ca62",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d000000000000000000000000087673a619fc4f3fc08068a0bb04f60aa2d04ca62\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 50 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 89,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner()",
+  "holder": "0x03193ef8c3f75c22faf2995540602399cdcd4cbc",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 0,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a timelock; delay: none",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 2819015.8621665305,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

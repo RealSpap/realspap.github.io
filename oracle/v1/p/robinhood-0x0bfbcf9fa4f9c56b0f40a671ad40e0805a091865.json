@@ -1,0 +1,159 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "PancakeSwap V3 Factory",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+ "composite": 44,
+ "band": "moderate",
+ "keys_to_move": 3,
+ "react_hours": 0,
+ "money_per_key_usd": 914128.8060524239,
+ "not_assessed": [],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 60,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 2742386.4181572716,
+ "category": "Dexs",
+ "at_risk_usd": 1535736.3941680721,
+ "narrative": {
+  "summary": "Factory.owner() is a UUPS proxy wrapper whose own owner is a plain 3-of-6 Safe - the same Safe PancakeSwap uses as a 3-of-7 on Ethereum/Arbitrum/Base/BSC, one owner short here.",
+  "detail": "Deterministic CREATE3 address shared with every other PancakeSwap V3 chain (sourced from PancakeSwap\u2019s own official docs, not a lookalike). The Safe controls both factory ownership and upgrades of the wrapper itself - no timelock found anywhere in the chain."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "robinhood:0xfa20\u20266047",
+   "nonce": 39,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+      "data": "0x8da5cb5b"
+     },
+     "0x5245a5f"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865\",\"data\":\"0x8da5cb5b\"},\"0x5245a5f\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 44,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d00000000000000000000000000bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000000bfbcf9fa4f9c56b0f40a671ad40e0805a091865\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 44 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "timelock",
+  "from": 0,
+  "to": 52,
+  "what": "a confirmed delay before changes apply"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (safe 3-of-6)",
+  "holder": "0x543ada9eaba5d8c2b1097c3540ac970dcdbf1c2a",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "behind": {
+   "address": "0xfa20\u20266047",
+   "kind": "safe",
+   "via": "owner() of the holder",
+   "threshold": 3,
+   "owners": 6
+  },
+  "posture": "admin: Safe 3-of-6 behind a bare contract; delay: none",
+  "exposure": {
+   "keys_to_move": 3,
+   "react_hours": 0,
+   "tvl_usd": 2742386.4181572716,
+   "money_per_key_usd": 914128.8060524239,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

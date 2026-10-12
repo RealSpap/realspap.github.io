@@ -1,0 +1,123 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "para StakingVault (HyperEVM)",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0x8888888c43cbb7e1c4132542e46831bffd866ed3",
+ "composite": 4,
+ "band": "critical",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
+ "sub": {
+  "adminKeyScore": 10,
+  "multisigScore": 0,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "A HYPE staking vault, about $41.7M delegated at the 2026-09-17 read. Every fund-moving function sits behind MANAGER_ROLE, held by a proxy with an unverified implementation, so the score treats it as the binding constraint.",
+  "tag": "unverified MANAGER_ROLE holder binds the score",
+  "detail": "That is 500,801 HYPE delegated to validators. Access control is deferred to an external RoleRegistry: its owner, a 1-of-1 Safe, can upgrade the vault and grant roles, and OPERATOR_ROLE is a separate 1-of-3 Safe that counts the owner Safe among its signers. MANAGER_ROLE gates deposit, stake, unstake, spotSend and the other fund-moving calls, and its holder's implementation was deliberately not reverse-engineered. If it is itself gated by the RoleRegistry owner, real risk may be lower; not assumed either way. Ventuals has the same design but verified source, and scores much higher. No dex-admin path was found."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T19:58:11Z",
+   "composite": 4,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0x8888888c43cbb7e1c4132542e46831bffd866ed3.xml",
+ "reproduce": {
+  "rpc": "https://998.rpc.thirdweb.com",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d00000000000000000000000008888888c43cbb7e1c4132542e46831bffd866ed3",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008888888c43cbb7e1c4132542e46831bffd866ed3\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 4 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "weak",
+  "next": 20,
+  "axis": "admin key",
+  "from": 10,
+  "to": 49,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791662291,
+ "stale": false,
+ "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
+ "block": 66663335,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x8888888c43cbb7e1c4132542e46831bffd866ed3",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888c43cbb7e1c4132542e46831bffd866ed3.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

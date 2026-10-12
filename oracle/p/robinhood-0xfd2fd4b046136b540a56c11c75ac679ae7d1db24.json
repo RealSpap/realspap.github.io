@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Spark Liquidity Layer (ALMProxy)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -8,6 +10,12 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 50,
   "multisigScore": 30,
@@ -83,11 +91,11 @@
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
   "data": "0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24",
-  "block": "0x7eff97a",
+  "block": "latest",
   "composite_word": 6,
-  "block_honoured": true,
-  "note": null,
-  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24\"},\"0x7eff97a\"]}'"
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24\"},\"latest\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -100,7 +108,11 @@
   "axis": "admin key",
   "from": 50,
   "to": 69,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "Too few people need to agree"
  },
  "independent_read": {
   "path": null,
@@ -115,7 +127,7 @@
  "last_pushed": 1791664867,
  "stale": false,
  "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133167482,
+ "block": 133264276,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

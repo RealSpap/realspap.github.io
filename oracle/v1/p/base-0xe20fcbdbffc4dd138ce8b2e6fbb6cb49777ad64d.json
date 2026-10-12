@@ -1,0 +1,153 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Aave V3 Base",
+ "named_from": "dashboard",
+ "chain": "Base",
+ "address": "0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
+ "composite": 71,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 100,
+  "timelockScore": 50,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 546020191.2716099,
+ "category": "Lending",
+ "at_risk_usd": 158345855.46876687,
+ "narrative": {
+  "summary": "Same BGD Labs Aave Governance V3 pattern as Arbitrum and Ethereum L1, real 1-day delay - and the mirror of Arbitrum\u2019s cross-chain finding: this guardian Safe is the identical 9-of-9 owner set at 5-of-9 threshold as Arbitrum\u2019s own.",
+  "tag": "cross-exposure: 80 - shared committee with Arbitrum",
+  "detail": "$500.8M TVL. The Ethereum-mainnet Aave DAO root (proposal counts, quorum) is out of scope for this Base-only scorer - see the Ethereum L1 tab\u2019s own Aave card for that root directly."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://mainnet.base.org",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
+      "data": "0x8da5cb5b"
+     },
+     "0x320e92d"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d\",\"data\":\"0x8da5cb5b\"},\"0x320e92d\"]}'",
+  "block": "0x320e92d",
+  "note": "read between blocks 52488484 and 52488493 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T17:38:05Z",
+   "composite": 71,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/base-sepolia/0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d.xml",
+ "reproduce": {
+  "rpc": "https://sepolia.base.org",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000e20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
+  "block": "0x2dc6706",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000e20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d\"},\"0x2dc6706\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5825,
+  "text": "collateral factor 58.25% (score 71)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 65,
+  "to": 87,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (contract)",
+  "holder": "0x9390b1735def18560c509e2d0bc090e9d6ba257a",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "behind": {
+   "address": "0x2dc219e716793fb4b21548c0f009ba3af753ab01",
+   "kind": "contract",
+   "via": "owner() of the holder"
+  },
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 546020191.2716099,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791653885,
+ "stale": false,
+ "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
+ "block": 47998726,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
+ "page": "https://realspap.github.io/oracle/p/base-0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

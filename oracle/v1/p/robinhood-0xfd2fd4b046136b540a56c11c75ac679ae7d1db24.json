@@ -1,0 +1,134 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Spark Liquidity Layer (ALMProxy)",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
+ "composite": 32,
+ "band": "weak",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "who holds the admin power: the independent reader could not classify the holder",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 50,
+  "multisigScore": 30,
+  "timelockScore": 10,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 0,
+ "category": "Onchain Capital Allocator",
+ "at_risk_usd": 0.0,
+ "narrative": {
+  "summary": "Left open in an earlier pass as an unrecognized proxy shape - turned out not to be a proxy at all, but Spark\u2019s own ALMProxy dispatcher, gated by the identical executor contract already traced for Spark Savings USDG.",
+  "tag": "resolved a real open thread, not repeated",
+  "detail": "A DEFAULT_ADMIN_ROLE replay from genesis confirms one current holder, matched by address AND bytecode size (8,113 bytes) to the exact same executor instance administering Spark Savings USDG - its L1-authenticated governance chain (resolving to Sky/MakerDAO\u2019s own verified \"SubProxy\") is therefore identical too, re-verified live rather than assumed."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": {
+  "role": "DEFAULT_ADMIN_ROLE",
+  "probed": 30,
+  "answered": 30,
+  "holders": [
+   {
+    "holder": "0x826aeaeee9233fa8ba199518dd8621a5962b1d02",
+    "kind": "timelock",
+    "delay_seconds": 0
+   }
+  ],
+  "complete": false
+ },
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 32,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000fd2fd4b046136b540a56c11c75ac679ae7d1db24\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 32 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 50,
+  "to": 69,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "Too few people need to agree"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "unreadable",
+  "why": "AccessControl (ERC-165) whose admin-role holders are not enumerable on-chain: read them from RoleGranted events; nothing for this reader to compare"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

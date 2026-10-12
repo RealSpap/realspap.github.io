@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Marinade Liquid Staking",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -8,6 +10,11 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 60,
   "multisigScore": 69,
@@ -42,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 253929779.3710219,
+ "tvl_usd": 253241473.97196025,
  "category": "Liquid Staking",
- "at_risk_usd": 139661378.65406203,
+ "at_risk_usd": 139282810.68457812,
  "narrative": {
   "summary": "A 6-of-13 legacy multisig with no delay upgrades the program, and a council of 5 (3 votes pass) can change every top-level authority. Counting that council path as full-power is a disclosed judgment call.",
   "tag": "judgment call: admin path counted as full-power",
@@ -73,7 +80,11 @@
   "axis": "admin key",
   "from": 60,
   "to": 97,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "account owned by program MarBmsSg\u2026 -&gt; program -&gt; ProgramData 4PQH9Y\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",

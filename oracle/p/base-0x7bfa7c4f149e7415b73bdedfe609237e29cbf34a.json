@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Spark USDC Vault (sparkUSDC)",
  "named_from": "on-chain name() and symbol()",
  "chain": "Base",
@@ -8,6 +10,10 @@
  "keys_to_move": null,
  "react_hours": 240,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 60,
   "multisigScore": 55,
@@ -42,9 +48,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 390675498.863403,
+ "tvl_usd": 392167470.7245584,
  "category": null,
- "at_risk_usd": 144549934.5794591,
+ "at_risk_usd": 145101964.16808662,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -67,12 +73,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDC",
-  "amount": 390811662.727465,
-  "price_usd": 0.9996515869994471,
-  "held_usd": 390675498.863403,
+  "amount": 392296887.135091,
+  "price_usd": 0.9996701059458368,
+  "held_usd": 392167470.7245584,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": 0.02,
+  "amount_change_pct": 0.38,
   "vanished": null
  },
  "dispute": null,
@@ -87,7 +93,7 @@
       "to": "0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a",
       "data": "0x8da5cb5b"
      },
-     "0x320ced2"
+     "0x320e92d"
     ]
    },
    {
@@ -102,9 +108,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a\",\"data\":\"0x8da5cb5b\"},\"0x320ced2\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xf93b7122450a50af3e5a76e1d546e95ac1d0f579\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'",
-  "block": "0x320ced2",
-  "note": "read between blocks 52481740 and 52481746 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a\",\"data\":\"0x8da5cb5b\"},\"0x320e92d\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xf93b7122450a50af3e5a76e1d546e95ac1d0f579\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'",
+  "block": "0x320e92d",
+  "note": "read between blocks 52488484 and 52488493 of the chain"
  },
  "history": [
   {
@@ -118,11 +124,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000007bfa7c4f149e7415b73bdedfe609237e29cbf34a",
-  "block": "0x2dc4cd7",
+  "block": "0x2dc6706",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000007bfa7c4f149e7415b73bdedfe609237e29cbf34a\"},\"0x2dc4cd7\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000007bfa7c4f149e7415b73bdedfe609237e29cbf34a\"},\"0x2dc6706\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -130,6 +136,10 @@
   "text": "collateral factor 52.25% (score 63)"
  },
  "cheapest_fix": null,
+ "main_gap": {
+  "requirement": "Price feed not under one hand",
+  "reason": "One party controls the price"
+ },
  "independent_read": {
   "path": "owner()",
   "holder": "0xf93b7122450a50af3e5a76e1d546e95ac1d0f579",
@@ -143,18 +153,18 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 240,
-   "tvl_usd": 390675498.863403,
+   "tvl_usd": 392167470.7245584,
    "money_per_key_usd": null,
    "money_source": "contract",
    "held_symbol": "USDC",
-   "held_amount": 390811662.727465
+   "held_amount": 392296887.135091
   }
  },
  "score_cluster": null,
  "last_pushed": 1791653885,
  "stale": false,
  "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
- "block": 47992023,
+ "block": 47998726,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a",
  "page": "https://realspap.github.io/oracle/p/base-0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

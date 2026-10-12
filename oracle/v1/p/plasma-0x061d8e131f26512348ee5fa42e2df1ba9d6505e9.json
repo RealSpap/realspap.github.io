@@ -1,0 +1,153 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Aave V3 Pool",
+ "named_from": "dashboard",
+ "chain": "Plasma",
+ "address": "0x061d8e131f26512348ee5fa42e2df1ba9d6505e9",
+ "composite": 71,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 100,
+  "timelockScore": 50,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 450134841.45266044,
+ "category": "Lending",
+ "at_risk_usd": 130539104.02127153,
+ "narrative": {
+  "summary": "Same BGD Labs Aave Governance V3 pattern already tracked on Ethereum L1/Arbitrum/Base, real 1-day delay - and a THIRD chain sharing the identical 9-signer, 5-of-9 guardian committee already found on Arbitrum and Base.",
+  "tag": "cross-exposure: 80 - shared committee, now 3 chains",
+  "detail": "~$496M TVL, ~87% of all of Plasma\u2019s DeFi TVL - the dominant lender on this chain. The guardian Safe\u2019s owner set was independently re-derived live and matches Arbitrum\u2019s and Base\u2019s own guardian committees exactly, byte for byte - the same 9 people can now cancel the emergency path on three separate chains."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.plasma.to",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x061d8e131f26512348ee5fa42e2df1ba9d6505e9",
+      "data": "0x8da5cb5b"
+     },
+     "0x2136376"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x061d8e131f26512348ee5fa42e2df1ba9d6505e9\",\"data\":\"0x8da5cb5b\"},\"0x2136376\"]}'",
+  "block": "0x2136376",
+  "note": "read between blocks 34825067 and 34825078 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:03:45Z",
+   "composite": 71,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/plasma/0x061d8e131f26512348ee5fa42e2df1ba9d6505e9.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.plasma.to",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000061d8e131f26512348ee5fa42e2df1ba9d6505e9",
+  "block": "0x224590d",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000061d8e131f26512348ee5fa42e2df1ba9d6505e9\"},\"0x224590d\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5825,
+  "text": "collateral factor 58.25% (score 71)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 65,
+  "to": 87,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (contract)",
+  "holder": "0x47aadaae1f05c978e6abb7568d11b7f6e0fc4d6a",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "behind": {
+   "address": "0xe76eb348e65ef163d85ce282125ff5a7f5712a1d",
+   "kind": "contract",
+   "via": "owner() of the holder"
+  },
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 450134841.45266044,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791655425,
+ "stale": false,
+ "methodology_hash": "0x6a1d6a17504a5faeab692225b82e197898a47dbd96137e4c1a3cc17cf977e754",
+ "block": 35936525,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x061d8e131f26512348ee5fa42e2df1ba9d6505e9",
+ "page": "https://realspap.github.io/oracle/p/plasma-0x061d8e131f26512348ee5fa42e2df1ba9d6505e9.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

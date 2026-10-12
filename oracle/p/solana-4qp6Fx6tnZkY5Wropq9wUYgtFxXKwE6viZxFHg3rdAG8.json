@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "marginfi main lending group",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "weak",
  "keys_to_move": 7,
  "react_hours": 0,
- "money_per_key_usd": 5743766.950685163,
+ "money_per_key_usd": 5516471.897662043,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 45,
   "multisigScore": 50,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 40206368.65479614,
+ "tvl_usd": 38615303.2836343,
  "category": "Lending",
- "at_risk_usd": 26938266.99871341,
+ "at_risk_usd": 25872253.20003498,
  "narrative": {
   "summary": "Upgrades need 7 of 15 signers and group admin actions only 5 of 17, both with no delay, and the upgrade voters are a subset of the admin group. The score is still an upper bound.",
   "tag": "upper bound: 7 more admin fields not decoded",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 45,
   "to": 62,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": "account owned by program MFv2hWf3\u2026 -&gt; program -&gt; ProgramData 4Q8u2n\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 7FCPipJWVbPbdHymVt1gJYwKciakkJz5GahdQySemvHk",
@@ -94,8 +101,8 @@
   "exposure": {
    "keys_to_move": 7,
    "react_hours": 0,
-   "tvl_usd": 40206368.65479614,
-   "money_per_key_usd": 5743766.950685163,
+   "tvl_usd": 38615303.2836343,
+   "money_per_key_usd": 5516471.897662043,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

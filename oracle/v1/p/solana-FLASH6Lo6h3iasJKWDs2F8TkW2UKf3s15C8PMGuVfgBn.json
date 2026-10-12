@@ -1,0 +1,122 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Flash Trade (Perpetuals)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "FLASH6Lo6h3iasJKWDs2F8TkW2UKf3s15C8PMGuVfgBn",
+ "composite": 39,
+ "band": "weak",
+ "keys_to_move": 3,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
+ "sub": {
+  "adminKeyScore": 50,
+  "multisigScore": 62,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "The program upgrade authority is a Squads v4 multisig: 3-of-7 voters out of 7 members, with no time lock. This is an upper bound: only the program upgrade path is scored, the in-state admin, mint and config authorities are not traced.",
+  "tag": "3-of-7 voters out of 7 members, composite 39",
+  "detail": "Pushed on-chain 2026-10-10 (first publication of this target). Scored 50 / 62 / 0. The program's upgrade authority is re-read on every run and must equal the offline vault PDA of the named Squads multisig. "
+ },
+ "score_account": "3fB9mg7fzwPszwS3FDkVgo1u3AAwLPrb8YEhMnpbca1T",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/FLASH6Lo6h3iasJKWDs2F8TkW2UKf3s15C8PMGuVfgBn.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 39 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "timelock",
+  "from": 0,
+  "to": 3,
+  "what": "a confirmed delay before changes apply"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData 8ta4NR\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig Gb33UeQNnQ4XDuobtGq9M6PVKRVfoH77p8d6JXsgqyXF",
+  "holder": "dhfZwJfdesv7fNW3nngCSjeGbx9zWUusLtfPaWbVKvo",
+  "threshold": 3,
+  "owners": 7,
+  "delay_seconds": 0,
+  "owners_kinds": {
+   "eoa": 7,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 3,
+  "keys_lost_to_freeze": 5,
+  "kind": "squads",
+  "since": "2026-10-10T21:07:35Z",
+  "posture": "admin: Squads 3-of-7 of 7 plain keys; delay: none",
+  "exposure": {
+   "keys_to_move": 3,
+   "react_hours": 0,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662491,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=FLASH6Lo6h3iasJKWDs2F8TkW2UKf3s15C8PMGuVfgBn",
+ "page": "https://realspap.github.io/oracle/p/solana-FLASH6Lo6h3iasJKWDs2F8TkW2UKf3s15C8PMGuVfgBn.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

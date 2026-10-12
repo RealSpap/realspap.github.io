@@ -1,0 +1,123 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Solstice (USX, YieldVault, Aux)",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "USXyiSTsPEWz55pSK7sZoUL79ntoVGQbaTDT57tH6bx",
+ "composite": 35,
+ "band": "weak",
+ "keys_to_move": 3,
+ "react_hours": 24,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
+ "sub": {
+  "adminKeyScore": 45,
+  "multisigScore": 57,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": false
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "The program upgrade authority is a Squads v4 multisig: 3-of-7 voters out of 7 members, with a 24-hour time lock. This is an upper bound: only the program upgrade path is scored, the in-state admin, mint and config authorities are not traced.",
+  "tag": "3-of-7 voters out of 7 members, composite 35",
+  "detail": "Pushed on-chain 2026-10-10 (first publication of this target). Scored 45 / 57 / 0. The program's upgrade authority is re-read on every run and must equal the offline vault PDA of the named Squads multisig. USX and YieldVault resolve to vault 0 and vault 1 of the same multisig."
+ },
+ "score_account": "49NtDLH4jnGN2TC1J989U45F8z9dV1oFcbUNFhssgEiL",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/USXyiSTsPEWz55pSK7sZoUL79ntoVGQbaTDT57tH6bx.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 35 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 45,
+  "to": 56,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
+ },
+ "independent_read": {
+  "path": "program -&gt; ProgramData 3P5mNf\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig AEb1u8FK8EuXLcPtprCy8s4NkqBNoP5mfbuEEop2dJGf",
+  "holder": "BzMuMbtah9bqN4HERkPo2PsVoaQKD2xfvYq1xfDCFwEb",
+  "threshold": 3,
+  "owners": 7,
+  "delay_seconds": 86400,
+  "owners_kinds": {
+   "eoa": 7,
+   "pda": 0
+  },
+  "multisig_program": "Squads v4",
+  "keys_to_act": 3,
+  "keys_lost_to_freeze": 5,
+  "kind": "squads",
+  "since": "2026-10-10T21:07:35Z",
+  "disagree": "the timelock score says no delay (0), the Squads multisig enforces a native time lock of 24 h",
+  "posture": "admin: Squads 3-of-7 of 7 plain keys; delay: 24 h Squads time lock",
+  "exposure": {
+   "keys_to_move": 3,
+   "react_hours": 24,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662474,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=USXyiSTsPEWz55pSK7sZoUL79ntoVGQbaTDT57tH6bx",
+ "page": "https://realspap.github.io/oracle/p/solana-USXyiSTsPEWz55pSK7sZoUL79ntoVGQbaTDT57tH6bx.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

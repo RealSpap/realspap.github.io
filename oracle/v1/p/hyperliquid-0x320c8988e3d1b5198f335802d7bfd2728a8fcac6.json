@@ -1,0 +1,122 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "HIP-3 dex io",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0x320c8988e3d1b5198f335802d7bfd2728a8fcac6",
+ "composite": 32,
+ "band": "weak",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "a fresh score: the one shown is older than the oracle's staleness window",
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
+ "sub": {
+  "adminKeyScore": 50,
+  "multisigScore": 39,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 58,
+  "crossExposureScore": 60
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "For price pushes, the deployer's own 3-of-5 binds, because it can reassign sub-deployers and reach setOracle anyway. The L1 cap binds too: 26 against its own 32. It shares root keys with two dormant dexes.",
+  "tag": "cross-exposure: 60, shares keys with flx and hyna",
+  "detail": "Picked over flx after a live sweep: io had about $55.4M open interest and about $39.5M net deposit at the 2026-09-17 read, while flx, with more listed assets, had zero open interest. The 4-of-6 oracle updater is stronger than the 3-of-5 deployer, but the deployer stays in the oracle set, so the weaker key binds; the weakest haltTrading key is a 2-of-3. One signer signs for both the flx and io deployers, and five signers alone meet the 4-of-6 threshold of both io's oracle updater and hyna's setOracle sub-deployer. flx and hyna both showed zero open interest at the 2026-09-19 re-read."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-09-24T19:43:56Z",
+   "composite": 32,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0x320c8988e3d1b5198f335802d7bfd2728a8fcac6.xml",
+ "reproduce": {
+  "rpc": "https://998.rpc.thirdweb.com",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000320c8988e3d1b5198f335802d7bfd2728a8fcac6",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000320c8988e3d1b5198f335802d7bfd2728a8fcac6\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "revert",
+  "text": "it would revert (StaleScore): the score is older than the oracle allows"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 50,
+  "to": 70,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "Too few people need to agree"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "native",
+  "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
+ },
+ "score_cluster": null,
+ "last_pushed": 1790279036,
+ "stale": true,
+ "methodology_hash": "0xfbf38ff91abf710728e2df3d5370bf18eeb2a9085168612fa03955b13cc958ad",
+ "block": 66663335,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x320c8988e3d1b5198f335802d7bfd2728a8fcac6",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0x320c8988e3d1b5198f335802d7bfd2728a8fcac6.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Ethena EthenaMinting (retired minter)",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -8,6 +10,11 @@
  "keys_to_move": 5,
  "react_hours": 0,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "a fresh score: the one shown is older than the oracle's staleness window",
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
  "sub": {
   "adminKeyScore": 55,
   "multisigScore": 100,
@@ -77,7 +84,7 @@
       "to": "0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3",
       "data": "0x8da5cb5b"
      },
-     "0x18f5995"
+     "latest"
     ]
    },
    {
@@ -123,9 +130,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3\",\"data\":\"0x8da5cb5b\"},\"0x18f5995\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x18f5995",
-  "note": "read between blocks 26171796 and 26171797 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "latest",
+  "note": "read between blocks 26172918 and 26172919 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
@@ -139,11 +146,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000002cc440b721d2cafd6d64908d6d8c4acc57f8afc3",
-  "block": "0xb57df6",
+  "block": "0xb5824f",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000002cc440b721d2cafd6d64908d6d8c4acc57f8afc3\"},\"0xb57df6\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000002cc440b721d2cafd6d64908d6d8c4acc57f8afc3\"},\"0xb5824f\"]}'"
  },
  "consumer_example": {
   "verdict": "revert",
@@ -155,7 +162,11 @@
   "axis": "admin key",
   "from": 55,
   "to": 74,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "owner()",
@@ -187,7 +198,7 @@
  "last_pushed": 1790180194,
  "stale": true,
  "methodology_hash": "0xac9104d9774a01ae1bbb28a4725f597425697a1d7e68b1d8cf915439eec6b167",
- "block": 11894262,
+ "block": 11895375,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x2cc440b721d2cafd6d64908d6d8c4acc57f8afc3.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

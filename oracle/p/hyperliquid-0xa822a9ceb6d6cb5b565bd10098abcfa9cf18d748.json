@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Unit UBTC, UETH and USOL treasuries",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -8,6 +10,11 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
  "sub": {
   "adminKeyScore": 10,
   "multisigScore": 15,
@@ -42,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1025273412.4875414,
+ "tvl_usd": 1019944537.7576377,
  "category": "Bridge",
- "at_risk_usd": 932998805.3636627,
+ "at_risk_usd": 928149529.3594503,
  "narrative": {
   "summary": "Each treasury is one HyperCore key holding over 99.9% of the token's max supply. HIP-1 has no mint after genesis, so this balance is the effective mint authority. Unit's 2-of-3 MPC claim cannot be verified on chain.",
   "tag": "on-chain single key vs documented 2-of-3 MPC",
@@ -74,7 +81,7 @@
   "block": "latest",
   "composite_word": 6,
   "block_honoured": false,
-  "note": "this RPC answers for the latest block whatever block is asked (measured): the call reproduces the current value, not the one of the build",
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
   "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000a822a9ceb6d6cb5b565bd10098abcfa9cf18d748\"},\"latest\"]}'"
  },
  "consumer_example": {
@@ -88,7 +95,11 @@
   "axis": "admin key",
   "from": 10,
   "to": 38,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": null,
@@ -103,7 +114,7 @@
  "last_pushed": 1791662291,
  "stale": false,
  "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
- "block": 66649672,
+ "block": 66663335,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

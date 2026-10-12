@@ -1,0 +1,180 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "stHYPE liquid staking (HyperEVM)",
+ "named_from": "dashboard",
+ "chain": "Hyperliquid",
+ "address": "0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
+ "composite": 47,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 48,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 70,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": null,
+ "category": null,
+ "at_risk_usd": null,
+ "narrative": {
+  "summary": "defaultAdmin() and the REBASER_ROLE holder, an intermediary Overseer V1 controller whose owner() was checked live, both resolve to the same 4-of-6 Gnosis Safe. No delay stands in front of it.",
+  "tag": "4-of-6 Safe, no delay, composite 47",
+  "detail": "Pushed on-chain 2026-10-10. Scored 65 / 70 / 0 with an oracle-authority score of 100 and crossExposure 100. The audited token is stHYPE (0xffaa4a3d\u20266cc1), not wstHYPE, the ERC-4626 wrapper around it. The root Safe was checked for signer overlap with the root Safes of Kinetiq, HyperLend and para, and none was found."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.hyperliquid.xyz/evm",
+  "steps": [
+   {
+    "what": "the admin slot of the proxy (EIP-1967): the word is the admin address",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
+     "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+     "latest"
+    ]
+   },
+   {
+    "what": "owner() on the address the slot returned (a ProxyAdmin): the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<address from the slot>",
+      "data": "0x8da5cb5b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xc5ded4f7f53919c714059a17d31371ae847e23d2",
+      "data": "0xf27a0c92"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"latest\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xc5ded4f7f53919c714059a17d31371ae847e23d2\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "latest",
+  "note": "read between blocks 48301525 and 48301533 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 47,
+   "from": "watch"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/hyperliquid-hyperevm/0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.xml",
+ "reproduce": {
+  "rpc": "https://998.rpc.thirdweb.com",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000ffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://998.rpc.thirdweb.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ffaa4a3d97fe9107cef8a3f48c069f577ff76cc1\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 47 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 97,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "holder": "0xc5ded4f7f53919c714059a17d31371ae847e23d2",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 172800,
+  "kind": "timelock",
+  "since": "2026-10-10T21:07:35Z",
+  "disagree": "the timelock score says no delay (0), the live read finds a timelock of 48 h in the admin path via EIP-1967 admin -&gt; ProxyAdmin owner()",
+  "posture": "admin: a timelock; delay: 48 h on the timelock",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 48,
+   "tvl_usd": null,
+   "money_per_key_usd": null,
+   "money_source": null,
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791662291,
+ "stale": false,
+ "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
+ "block": 66663335,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
+ "page": "https://realspap.github.io/oracle/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,104 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Marinade Liquid Staking",
+ "named_from": "dashboard",
+ "chain": "Solana",
+ "address": "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC",
+ "composite": 45,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 60,
+  "multisigScore": 69,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 20
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 253241473.97196025,
+ "category": "Liquid Staking",
+ "at_risk_usd": 139282810.68457812,
+ "narrative": {
+  "summary": "A 6-of-13 legacy multisig with no delay upgrades the program, and a council of 5 (3 votes pass) can change every top-level authority. Counting that council path as full-power is a disclosed judgment call.",
+  "tag": "judgment call: admin path counted as full-power",
+  "detail": "The upgrade authority is a 2021-era multisig forked from the archived Serum template, 6-of-13, with no timelock field in its code. State.admin_authority is the treasury of a council-only governance record (community voting is disabled): 5 members with 1 vote each and a 50% threshold. It can reassign the other authorities and so choose validators, and the cap on stake moved per epoch has no enforced ceiling. No instruction sends user principal to an admin address. One key sits on both the upgrade multisig and the council, so one compromise reaches both paths. The score moved down from the scouted upper bound. DefiLlama listed over $200M TVL."
+ },
+ "score_account": "9uMJuH3qCmEiiib3UZpVGtXjs7weYWRLrL6Cg7q7gHXE",
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": null,
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC.xml",
+ "reproduce": null,
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 45 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 60,
+  "to": 97,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "account owned by program MarBmsSg\u2026 -&gt; program -&gt; ProgramData 4PQH9Y\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
+  "holder": "551FBXSXdhcRDDkdcb3ThDRg84Mwe5Zs6YjJ1EEoyzBp",
+  "kind": "pda",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown"
+ },
+ "score_cluster": "devnet",
+ "last_pushed": 1791662460,
+ "stale": false,
+ "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "block": null,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC",
+ "page": "https://realspap.github.io/oracle/p/solana-8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

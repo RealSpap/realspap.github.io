@@ -1,0 +1,181 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Morpho Grove x Steakhouse + Steakhouse Turbo USDG vaults",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0xbeefff136e3684273e6aa75a1669b784b373a4fd",
+ "composite": 66,
+ "band": "decent",
+ "keys_to_move": 5,
+ "react_hours": 0,
+ "money_per_key_usd": 10149.165341891387,
+ "not_assessed": [],
+ "sub": {
+  "adminKeyScore": 70,
+  "multisigScore": 65,
+  "timelockScore": 60,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 40
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths not all checked",
+ "tvl_usd": 548664727.3671865,
+ "category": "Risk Curators",
+ "at_risk_usd": 186546007.30484346,
+ "narrative": {
+  "summary": "Two more Steakhouse-curated Morpho vaults on this chain, found via the curator registry DefiLlama\u2019s own dashboard actually reads from (not the per-protocol page, which 404s) - confirmed live before being added, not trusted from the registry file alone.",
+  "tag": "batch 13 - closed a DefiLlama-adapter gap",
+  "detail": "Both vaults\u2019 curator()/owner()/asset() (USDG) resolved live on two independent RPCs before either was tracked. Same chain-wide zero-delay setOwner/setCurator gap already disclosed for every other Morpho vault on this chain - not a new finding specific to these two."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "curator()": {
+   "kind": "safe",
+   "threshold": 3,
+   "owners": 7,
+   "holder": "0x9023\u2026d2fb"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "robinhood:0xd062\u20265ef4",
+   "nonce": 6,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDG",
+  "amount": 50752.623945,
+  "price_usd": 0.9998660712488395,
+  "held_usd": 50745.82670945693,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.0,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xbeefff136e3684273e6aa75a1669b784b373a4fd",
+      "data": "0x8da5cb5b"
+     },
+     "0x5245a5f"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeefff136e3684273e6aa75a1669b784b373a4fd\",\"data\":\"0x8da5cb5b\"},\"0x5245a5f\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 46,
+   "from": "first"
+  },
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 66,
+   "from": "watch"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xbeefff136e3684273e6aa75a1669b784b373a4fd.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000beefff136e3684273e6aa75a1669b784b373a4fd",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000beefff136e3684273e6aa75a1669b784b373a4fd\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5450,
+  "text": "collateral factor 54.50% (score 66)"
+ },
+ "cheapest_fix": null,
+ "main_gap": {
+  "requirement": "Bypass paths of the delay checked and ruled out",
+  "reason": "The waiting time may be skipped"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (safe 5-of-10)",
+  "holder": "0x261a3b7a37904b45e57ae14206314ccf4bbcf2b1",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T06:54:09Z",
+  "behind": {
+   "address": "0xd062\u20265ef4",
+   "kind": "safe",
+   "via": "owner() of the holder",
+   "threshold": 5,
+   "owners": 10
+  },
+  "posture": "admin: Safe 5-of-10 behind a bare contract; delay: none",
+  "shares_admin_with": [
+   {
+    "chain": "robinhood",
+    "target": "0xbeeff0fb1dc19344a87b8479dab60a2e16160737"
+   }
+  ],
+  "cluster_tvl_usd": 548664727.3671865,
+  "exposure": {
+   "keys_to_move": 5,
+   "react_hours": 0,
+   "tvl_usd": 50745.82670945693,
+   "money_per_key_usd": 10149.165341891387,
+   "money_source": "contract",
+   "held_symbol": "USDG",
+   "held_amount": 50752.623945
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeefff136e3684273e6aa75a1669b784b373a4fd",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xbeefff136e3684273e6aa75a1669b784b373a4fd.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

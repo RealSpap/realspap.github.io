@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "SPL Stake Pool program (shared infrastructure)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -8,6 +10,12 @@
  "keys_to_move": null,
  "react_hours": null,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
  "sub": {
   "adminKeyScore": 60,
   "multisigScore": 100,
@@ -73,7 +81,11 @@
   "axis": "admin key",
   "from": 60,
   "to": 74,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "program -&gt; ProgramData EmiU8A\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly)",
@@ -87,7 +99,7 @@
     "target": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
    }
   ],
-  "cluster_tvl_usd": 1164923308.640039
+  "cluster_tvl_usd": 1160910498.6301646
  },
  "score_cluster": "devnet",
  "last_pushed": 1791662465,

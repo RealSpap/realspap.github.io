@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Raydium (AMM v4, CLMM, CPMM)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "critical",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 414942172.08815426,
+ "money_per_key_usd": 419232509.0748375,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 20,
   "multisigScore": 20,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1244826516.2644627,
+ "tvl_usd": 1257697527.2245126,
  "category": "Dexs",
- "at_risk_usd": 1070550803.9874378,
+ "at_risk_usd": 1081619873.4130807,
  "narrative": {
   "summary": "The three programs share one 3-of-4 Squads v4 upgrade multisig with no delay. A separate hardcoded admin key resolves to an older 2-of-3 Squads v3 multisig that still sets fees and pool status.",
   "tag": "config admin weaker than the upgrade path",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 20,
   "to": 34,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": "program -&gt; ProgramData HzD2cC\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
@@ -94,8 +101,8 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 1244826516.2644627,
-   "money_per_key_usd": 414942172.08815426,
+   "tvl_usd": 1257697527.2245126,
+   "money_per_key_usd": 419232509.0748375,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E">
 <title>Check Your Safe</title>
-<meta name="description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
+<meta name="description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (401 protocol entries, 25 chains). No account needed.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://realspap.github.io/tools/check-your-safe.html">
 <meta property="og:title" content="Check Your Safe | Spap">
-<meta property="og:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
+<meta property="og:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (401 protocol entries, 25 chains). No account needed.">
 <meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Check Your Safe | Spap">
-<meta name="twitter:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (391 protocol entries, 25 chains). No account needed.">
+<meta name="twitter:description" content="Reads a Gnosis Safe's owners live from Ethereum mainnet and checks them against signers already documented in public multisig overlap research (401 protocol entries, 25 chains). No account needed.">
 <meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
 
 <script>(function(){try{var t=localStorage.getItem('spap-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
@@ -435,7 +435,7 @@
 
       <section class="context-note">
         <p>
-          This free check only looks at three signer addresses documented in this research. The full check behind this project cross-references 391 protocol entries and 729 multisig addresses. If that fuller check is relevant to your organization, ask about it at
+          This free check only looks at three signer addresses documented in this research. The full check behind this project cross-references 401 protocol entries and 739 multisig addresses. If that fuller check is relevant to your organization, ask about it at
           <a href="https://x.com/RealSpap" target="_blank" rel="noopener noreferrer">x.com/RealSpap</a>.
         </p>
       </section>
@@ -711,7 +711,7 @@ function renderResult(owners) {
   } else {
     var noMatch = document.createElement('div');
     noMatch.className = 'no-match';
-    noMatch.textContent = 'No overlap with the signers already documented in this research. This only checks the owners above against a short list of three signer addresses documented in this research, not the full dataset (391 protocol entries, 729 multisig addresses) behind the full check, so this result does not mean the Safe is clean or safe, only that it does not match this small public list.';
+    noMatch.textContent = 'No overlap with the signers already documented in this research. This only checks the owners above against a short list of three signer addresses documented in this research, not the full dataset (401 protocol entries, 739 multisig addresses) behind the full check, so this result does not mean the Safe is clean or safe, only that it does not match this small public list.';
     resultsEl.appendChild(noMatch);
   }
 

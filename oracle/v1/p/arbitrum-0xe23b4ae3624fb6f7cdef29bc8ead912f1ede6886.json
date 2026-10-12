@@ -1,0 +1,153 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Radiant Capital LendingPool (V2 Core)",
+ "named_from": "dashboard",
+ "chain": "Arbitrum",
+ "address": "0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886",
+ "composite": 55,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": 72,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 65,
+  "multisigScore": 95,
+  "timelockScore": 0,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 185332.1994068206,
+ "category": "Lending",
+ "at_risk_usd": 83399.48973306928,
+ "narrative": {
+  "summary": "The pool\u2019s token-upgrade and reserve-configuration path is gated by getPoolAdmin(), a 4-of-11 Gnosis Safe with no delay in front of it, not by the 72-hour TimelockController that owns the PoolAddressesProvider. This is the protocol that lost ~$50M on 2024-10-16 to compromised multisig-signer devices, a failure mode a timelock does not defend against.",
+  "tag": "pool-admin Safe bypasses the 72h timelock",
+  "detail": "Pushed on-chain 2026-09-20 (Arbitrum Sepolia block 310697409; previously 55 / 100 / 55 with composite 69): PoolAddressesProvider.owner() is a real 72-hour TimelockController (getMinDelay 259,200s), but getPoolAdmin() is a different address, a 4-of-11 Safe, and that Safe alone gates the LendingPoolConfigurator\u2019s onlyPoolAdmin functions: updateAToken and the two debt-token upgrades (which upgrade the token proxies), freezeReserve, setReserveFactor, caps, the interest-rate strategy and batchInitReserve. A 2026-09-20 eth_call simulation, not re-run by the scorer, passed from that Safe and reverted CALLER_NOT_POOL_ADMIN from the timelock. The Safe also holds PROPOSER and CANCELLER on the timelock and 6 of its 11 owners hold EXECUTOR, so the delay still covers the provider-level owner functions but not the token-upgrade path. It is therefore scored as a Safe with no timelock: admin key 65 (threshold of 3 or more), multisig 95 (4 \u00d7 15 + 7 \u00d7 5, capped at 100), timelock 0, composite 55; an unread pool admin or provider owner degrades to 20 / 0 / 0. getEmergencyAdmin() is a separate 1-of-5 Safe whose five owners are all owners of the 4-of-11; it can only pause, so it is disclosed and not scored. Cross-exposure stays 100 on a dated check of the pool-admin and emergency-admin Safes against the 70 root-signer groups tracked across 7 ecosystems, which found no overlap (found none, not proof that none exists). The 2024-10-16 exploit (corroborated by DefiLlama\u2019s hacks dataset and Radiant\u2019s own remediation docs) compromised the SIGNERS themselves via blind-signing, not the timelock mechanism, so the delay would not have stopped it. This project scores the current authority mechanism, not historical incidents against it, but discloses the context since it bears directly on how much trust to place in the admin-key dimension here."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://arb1.arbitrum.io/rpc",
+  "steps": [
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "latest",
+  "note": "read between blocks 513971633 and 513971650 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:57:30Z",
+   "composite": 55,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/arbitrum-sepolia/0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886.xml",
+ "reproduce": {
+  "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d0000000000000000000000000e23b4ae3624fb6f7cdef29bc8ead912f1ede6886",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://sepolia-rollup.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000e23b4ae3624fb6f7cdef29bc8ead912f1ede6886\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 55 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 65,
+  "to": 78,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "admin fixed in the proxy's bytecode (transparent proxy) -&gt; owner() of the holder (timelock 259200s)",
+  "holder": "0x454a8daf74b24037ee2fa073ce1be9277ed6160a",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T21:07:35Z",
+  "behind": {
+   "address": "0x27fc8f3be99e9799fa1b720d471647e6662aff92",
+   "kind": "timelock",
+   "via": "owner() of the holder",
+   "delay_seconds": 259200
+  },
+  "disagree": "the timelock score says no delay (0), the holder's owner is a timelock of 72 h",
+  "posture": "admin: a timelock behind a bare contract; delay: 72 h on the timelock",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 72,
+   "tvl_usd": 185332.1994068206,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791658650,
+ "stale": false,
+ "methodology_hash": "0xf178bca63c9d3257a306dd7cf6a4e5b3e3817a4ae59fd289ae3486d7bbc25374",
+ "block": 318246260,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886",
+ "page": "https://realspap.github.io/oracle/p/arbitrum-0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

@@ -1,0 +1,160 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Euler V2 AccessControlEmergencyGovernor",
+ "named_from": "dashboard",
+ "chain": "Plasma",
+ "address": "0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c",
+ "composite": 68,
+ "band": "decent",
+ "keys_to_move": null,
+ "react_hours": 48,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 68,
+  "multisigScore": 80,
+  "timelockScore": 55,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 80
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a delay with a bounded bypass",
+ "tvl_usd": 1983534.079431493,
+ "category": "Lending",
+ "at_risk_usd": 634730.9054180778,
+ "narrative": {
+  "summary": "The same Governor \u2192 Timelock \u2192 Safe shape as the factory above, but for per-vault risk parameters, with a real 2-day delay, genuinely not instant despite the \"Emergency\" name.",
+  "tag": "cross-exposure: 80 (pushed on-chain 2026-09-20), same DAO Safe as the factory",
+  "detail": "Not confirmed this pass: which, if any, of the 156 deployed vaults actually point their own governor() at this specific address (a vault\u2019s creator chooses at deploy time). Scored on the mechanism\u2019s own confirmed-live strength, not on unconfirmed reach. Pushed on-chain 2026-09-20: the DAO Safe that proposes on this governor\u2019s timelock is the same 4-of-8 Safe as the factory\u2019s, whose 8 signers are identical to Euler\u2019s DAO Safe on Monad, so crossExposureScore is folded to a flat 80 (admin, multisig and timelock unchanged)."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.plasma.to",
+  "steps": [
+   {
+    "what": "getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c",
+      "data": "0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+     },
+     "0x2136376"
+    ]
+   },
+   {
+    "what": "getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x61d942d4809482e6f761a326471053b343ee1921",
+      "data": "0xf27a0c92"
+     },
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x2136376\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x61d942d4809482e6f761a326471053b343ee1921\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "0x2136376",
+  "note": "read between blocks 34825067 and 34825078 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T18:03:45Z",
+   "composite": 68,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/plasma/0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c.xml",
+ "reproduce": {
+  "rpc": "https://testnet-rpc.plasma.to",
+  "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
+  "data": "0xd47875d00000000000000000000000009b3ceb22cab2f1b9ace4cd3132c8a123552eda2c",
+  "block": "0x224590d",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000009b3ceb22cab2f1b9ace4cd3132c8a123552eda2c\"},\"0x224590d\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5600,
+  "text": "collateral factor 56.00% (score 68)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 68,
+  "to": 98,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": "DEFAULT_ADMIN_ROLE member 1 of 1 (AccessControl)",
+  "holder": "0x61d942d4809482e6f761a326471053b343ee1921",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 172800,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a timelock; delay: 48 h on the timelock",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 48,
+   "tvl_usd": 1983534.079431493,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791655425,
+ "stale": false,
+ "methodology_hash": "0x6a1d6a17504a5faeab692225b82e197898a47dbd96137e4c1a3cc17cf977e754",
+ "block": 35936525,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c",
+ "page": "https://realspap.github.io/oracle/p/plasma-0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

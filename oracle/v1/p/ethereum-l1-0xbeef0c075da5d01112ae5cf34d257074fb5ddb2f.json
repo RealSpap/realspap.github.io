@@ -1,0 +1,188 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Morpho Vault V2: Steakhouse Prime EURCV (Ethereum L1)",
+ "named_from": "dashboard",
+ "chain": "Ethereum",
+ "address": "0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f",
+ "composite": 73,
+ "band": "decent",
+ "keys_to_move": 5,
+ "react_hours": 0,
+ "money_per_key_usd": 29648543.618941236,
+ "not_assessed": [],
+ "sub": {
+  "adminKeyScore": 70,
+  "multisigScore": 75,
+  "timelockScore": 75,
+  "oracleAuthorityScore": 52,
+  "crossExposureScore": 40
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": true
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": true
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": false
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": false
+  }
+ ],
+ "exit_window": "a confirmed delay, bypass paths checked",
+ "tvl_usd": 148242718.09470618,
+ "category": null,
+ "at_risk_usd": 40025533.88557067,
+ "narrative": {
+  "summary": "The owner is a VaultV2Supervisor whose owner is Steakhouse's 5-of-10 Safe, the same Safe that owns four of the Morpho V1 vaults tracked here; the curator is a 3-of-9 Safe. Every fund-redirecting action sits behind a 7-day timelock, and several exit gates are permanently abdicated.",
+  "tag": "5-of-10 owner Safe, 7-day timelock, composite 73",
+  "detail": "Pushed on-chain 2026-10-10. Scored 70 / 75 / 75 with an oracle-authority score of 52, the weakest controller among the price paths that carry at least 1% of the vault: a Chainlink proxy owner, a 4-of-9 Safe with no timelock above it. The send-assets gate is the one exit gate not abdicated: the curator controls it behind a 7-day timelock. The sister vault Steakhouse Prime USDC has the same owner and curator Safes."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": {
+  "curator()": {
+   "kind": "safe",
+   "threshold": 3,
+   "owners": 9,
+   "holder": "0x827e\u2026ecdb"
+  }
+ },
+ "side_pending": null,
+ "safe_activity": [
+  {
+   "safe": "ethereum-l1:0x0a0e\u2026f8dd",
+   "nonce": 139,
+   "idle_since": "2026-10-10T21:12:49Z",
+   "last_moved": null,
+   "never_executed": false
+  }
+ ],
+ "admin_probe": null,
+ "held": {
+  "symbol": "EURCV",
+  "amount": 132315087.56910907,
+  "price_usd": 1.120376525596735,
+  "held_usd": 148242718.09470618,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": -0.04,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f",
+      "data": "0x8da5cb5b"
+     },
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'",
+  "block": "latest",
+  "note": "read between blocks 26172918 and 26172919 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T21:01:36Z",
+   "composite": 73,
+   "from": "watch"
+  },
+  {
+   "t": "2026-10-11T02:50:28Z",
+   "composite": 73,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f.xml",
+ "reproduce": {
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
+  "data": "0xd47875d0000000000000000000000000beef0c075da5d01112ae5cf34d257074fb5ddb2f",
+  "block": "0xb5824f",
+  "composite_word": 6,
+  "block_honoured": true,
+  "note": null,
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000beef0c075da5d01112ae5cf34d257074fb5ddb2f\"},\"0xb5824f\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "factor",
+  "collateral_factor_bps": 5975,
+  "text": "collateral factor 59.75% (score 73)"
+ },
+ "cheapest_fix": {
+  "band": "strong",
+  "next": 80,
+  "axis": "admin key",
+  "from": 70,
+  "to": 87,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Price feed not under one hand",
+  "reason": "One party controls the price"
+ },
+ "independent_read": {
+  "path": "owner() -&gt; owner() of the holder (safe 5-of-10)",
+  "holder": "0x4d7bd498bb24098ca281c05519629c605407f71d",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "contract",
+  "since": "2026-10-10T21:07:35Z",
+  "behind": {
+   "address": "0x0a0e\u2026f8dd",
+   "kind": "safe",
+   "via": "owner() of the holder",
+   "threshold": 5,
+   "owners": 10
+  },
+  "posture": "admin: Safe 5-of-10 behind a bare contract; delay: none",
+  "shares_admin_with": [
+   {
+    "chain": "ethereum-l1",
+    "target": "0xbeef088055857739c12cd3765f20b7679def0f51"
+   }
+  ],
+  "cluster_tvl_usd": 0.0,
+  "exposure": {
+   "keys_to_move": 5,
+   "react_hours": 0,
+   "tvl_usd": 148242718.09470618,
+   "money_per_key_usd": 29648543.618941236,
+   "money_source": "contract",
+   "held_symbol": "EURCV",
+   "held_amount": 132315087.56910907
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791687028,
+ "stale": false,
+ "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
+ "block": 11895375,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f",
+ "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

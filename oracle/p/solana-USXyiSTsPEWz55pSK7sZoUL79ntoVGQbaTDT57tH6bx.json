@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Solstice (USX, YieldVault, Aux)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -8,6 +10,10 @@
  "keys_to_move": 3,
  "react_hours": 24,
  "money_per_key_usd": null,
+ "not_assessed": [
+  "the money behind one key (no money figure, or no key count)",
+  "the protocol's total value locked (no DefiLlama match)"
+ ],
  "sub": {
   "adminKeyScore": 45,
   "multisigScore": 57,
@@ -73,7 +79,11 @@
   "axis": "admin key",
   "from": 45,
   "to": 56,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "Admin power is not a bare key",
+  "reason": "One key, or a tiny group, can change it"
  },
  "independent_read": {
   "path": "program -&gt; ProgramData 3P5mNf\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig AEb1u8FK8EuXLcPtprCy8s4NkqBNoP5mfbuEEop2dJGf",

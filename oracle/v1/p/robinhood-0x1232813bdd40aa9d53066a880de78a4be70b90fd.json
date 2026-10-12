@@ -1,0 +1,121 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Robinhood Chain\u2019s own L1 rollup authority",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0x1232813bdd40aa9d53066a880de78a4be70b90fd",
+ "composite": 57,
+ "band": "moderate",
+ "keys_to_move": null,
+ "react_hours": null,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the time anyone has to react",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 78,
+  "multisigScore": 75,
+  "timelockScore": 10,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": true
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 1060123764.6610672,
+ "category": null,
+ "at_risk_usd": 455853218.8042589,
+ "narrative": {
+  "summary": "A real, publicly-named 7-of-8 Security Council Safe, plus a Timelock that - corrected in batch 8 - turns out to genuinely gate changes now, just with no separation between who can propose and who can veto.",
+  "tag": "every dApp above inherits this",
+  "detail": "Six core L1 contracts on Ethereum mainnet (Rollup, SequencerInbox, CoreProxyAdmin, DelayedInbox, Bridge, Outbox - not the L2 itself) share one authority chain. EXECUTOR_ROLE is held directly by a 7-of-8 Gnosis Safe named by Robinhood\u2019s own governance docs: Robinhood (2 seats), BitGo, Chainlink Labs, Fireblocks, Offchain Labs, Paxos and Talos - though no public source maps a specific address to a specific institution. A second EXECUTOR_ROLE holder is a real, correctly-configured 7-day TimelockController. Batch 8 found and fixed a real bug here: this scorer had a hardcoded note from batch 4 claiming zero PROPOSER_ROLE holders, silently asserted as current fact on every push since - a live replay now shows a real holder (a 6-of-8 Safe), so the timelock does gate something today. But that same Safe also holds CANCELLER_ROLE - whoever can propose a change can also cancel any attempt to veto it, so there\u2019s still no real separation of powers. This group's 14 root signers (7 direct Safe seats + 7 owners of one nested 3-of-7 seat) share none with any other tracked group (crossExposureScore: 100)."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": null,
+ "dispute": null,
+ "independent_read_reproduce": null,
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 57,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0x1232813bdd40aa9d53066a880de78a4be70b90fd.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d00000000000000000000000001232813bdd40aa9d53066a880de78a4be70b90fd",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d00000000000000000000000001232813bdd40aa9d53066a880de78a4be70b90fd\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 57 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "decent",
+  "next": 60,
+  "axis": "admin key",
+  "from": 78,
+  "to": 85,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
+ },
+ "independent_read": {
+  "path": null,
+  "holder": null,
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "kind": "native",
+  "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0x1232813bdd40aa9d53066a880de78a4be70b90fd",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0x1232813bdd40aa9d53066a880de78a4be70b90fd.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}

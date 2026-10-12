@@ -1,4 +1,6 @@
 {
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
  "name": "Drift Protocol",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -7,7 +9,8 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 1,
- "money_per_key_usd": 160611.80987556028,
+ "money_per_key_usd": 160618.08775593742,
+ "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
   "multisigScore": 70,
@@ -42,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 642447.2395022411,
+ "tvl_usd": 642472.3510237497,
  "category": "Derivatives",
- "at_risk_usd": 334072.56454116537,
+ "at_risk_usd": 334085.62253234984,
  "narrative": {
   "summary": "In April 2026 a 2-of-5 multisig with no delay, which held Drift's admin key, was used to reassign it to an attacker (press reports $285M drained). The upgrade multisig is now 4-of-7 with a 1-hour delay, still short of strong.",
   "tag": "retroactive backtest of the 2026-04-01 exploit",
@@ -73,7 +76,11 @@
   "axis": "admin key",
   "from": 65,
   "to": 95,
-  "what": "admin power taken away from a bare key"
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "program -&gt; ProgramData 7dLgmt\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 7qipzLR9j1JcvdxE1XJEFgvoyFmgBpgw5hMdHBMPcJtM",
@@ -94,8 +101,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 1,
-   "tvl_usd": 642447.2395022411,
-   "money_per_key_usd": 160611.80987556028,
+   "tvl_usd": 642472.3510237497,
+   "money_per_key_usd": 160618.08775593742,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

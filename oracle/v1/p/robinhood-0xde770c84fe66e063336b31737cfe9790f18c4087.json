@@ -1,0 +1,178 @@
+{
+ "version": "v1",
+ "generatedAt": "2026-10-12T06:48:47Z",
+ "name": "Spark Savings USDG (spUSDG)",
+ "named_from": "dashboard",
+ "chain": "Robinhood Chain",
+ "address": "0xde770c84fe66e063336b31737cfe9790f18c4087",
+ "composite": 32,
+ "band": "weak",
+ "keys_to_move": null,
+ "react_hours": 0,
+ "money_per_key_usd": null,
+ "not_assessed": [
+  "how many keys it takes to move it",
+  "the money behind one key (no money figure, or no key count)"
+ ],
+ "sub": {
+  "adminKeyScore": 50,
+  "multisigScore": 30,
+  "timelockScore": 10,
+  "oracleAuthorityScore": 100,
+  "crossExposureScore": 100
+ },
+ "requirements": [
+  {
+   "label": "Admin power is not a bare key",
+   "met": true
+  },
+  {
+   "label": "At least a 3-of-5 multisig",
+   "met": false
+  },
+  {
+   "label": "A confirmed delay before changes apply, no bypass",
+   "met": false
+  },
+  {
+   "label": "Bypass paths of the delay checked and ruled out",
+   "met": false
+  },
+  {
+   "label": "Price feed not under one hand",
+   "met": true
+  },
+  {
+   "label": "No key shared with another tracked protocol",
+   "met": true
+  }
+ ],
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 10197546.139128616,
+ "category": "Yield",
+ "at_risk_usd": 6934331.37460746,
+ "narrative": {
+  "summary": "Revised from 22 (batch 3): the admin-role holder\u2019s own controller is now traced to Sky/MakerDAO\u2019s own verified \"SubProxy\" contract on Ethereum mainnet - a real, identifiable chain, not an unknown.",
+  "tag": "revised this batch",
+  "detail": "Batch 3 pushed 22/100 with an explicit caveat: the admin-role holder was a real, non-Safe, non-EOA contract whose own controller wasn\u2019t identified. This pass closed that gap: the executor self-administers its own role, and a second role (gating its queue-style action) resolves through an ArbitrumReceiver-pattern contract to Sky\u2019s \"SubProxy\" on L1 - verified via Etherscan\u2019s own source name. A real, identifiable governance chain scores better than an unknown, even though the local L2 delay is confirmably 0."
+ },
+ "score_account": null,
+ "paused": null,
+ "side_roles": null,
+ "side_pending": null,
+ "safe_activity": null,
+ "admin_probe": null,
+ "held": {
+  "symbol": "USDG",
+  "amount": 10200903.496499,
+  "price_usd": 0.9998660712488395,
+  "held_usd": 10199537.302233005,
+  "stale": null,
+  "price_stale": null,
+  "amount_change_pct": 0.03,
+  "vanished": null
+ },
+ "dispute": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "steps": [
+   {
+    "what": "getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0xde770c84fe66e063336b31737cfe9790f18c4087",
+      "data": "0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+     },
+     "0x5245a5f"
+    ]
+   },
+   {
+    "what": "delay() on the holder (Compound-style timelock), in seconds",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x826aeaeee9233fa8ba199518dd8621a5962b1d02",
+      "data": "0x6a42b8f8"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word",
+    "method": "eth_getStorageAt",
+    "params": [
+     "0xde770c84fe66e063336b31737cfe9790f18c4087",
+     "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xde770c84fe66e063336b31737cfe9790f18c4087\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x5245a5f\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x826aeaeee9233fa8ba199518dd8621a5962b1d02\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xde770c84fe66e063336b31737cfe9790f18c4087\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x5245a5f",
+  "note": "read between blocks 86268089 and 86268511 of the chain"
+ },
+ "history": [
+  {
+   "t": "2026-10-10T20:41:07Z",
+   "composite": 32,
+   "from": "push"
+  }
+ ],
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xde770c84fe66e063336b31737cfe9790f18c4087.xml",
+ "reproduce": {
+  "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
+  "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
+  "data": "0xd47875d0000000000000000000000000de770c84fe66e063336b31737cfe9790f18c4087",
+  "block": "latest",
+  "composite_word": 6,
+  "block_honoured": false,
+  "note": "this RPC cannot replay the block of the build (it ignores the block tag, or no longer serves old state): the call reproduces the current value, not the one of the build; compare the composite and lastUpdated with this page",
+  "curl": "curl -s -X POST https://rpc.testnet.chain.robinhood.com/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52\",\"data\":\"0xd47875d0000000000000000000000000de770c84fe66e063336b31737cfe9790f18c4087\"},\"latest\"]}'"
+ },
+ "consumer_example": {
+  "verdict": "zero",
+  "collateral_factor_bps": 0,
+  "text": "collateral factor 0 (score 32 is under MIN_SAFE_SCORE 60)"
+ },
+ "cheapest_fix": {
+  "band": "moderate",
+  "next": 40,
+  "axis": "admin key",
+  "from": 50,
+  "to": 69,
+  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+ },
+ "main_gap": {
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "Too few people need to agree"
+ },
+ "independent_read": {
+  "path": "DEFAULT_ADMIN_ROLE member 1 of 1 (AccessControl)",
+  "holder": "0x826aeaeee9233fa8ba199518dd8621a5962b1d02",
+  "pending_admin": null,
+  "pending_via": null,
+  "self_delay_seconds": null,
+  "delay_seconds": 0,
+  "kind": "timelock",
+  "since": "2026-10-10T06:54:09Z",
+  "posture": "admin: a timelock; delay: none",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": 0,
+   "tvl_usd": 10199537.302233005,
+   "money_per_key_usd": null,
+   "money_source": "contract",
+   "held_symbol": "USDG",
+   "held_amount": 10200903.496499
+  }
+ },
+ "score_cluster": null,
+ "last_pushed": 1791664867,
+ "stale": false,
+ "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
+ "block": 133264276,
+ "live": "https://realspap.github.io/oracle/#chain=all&q=0xde770c84fe66e063336b31737cfe9790f18c4087",
+ "page": "https://realspap.github.io/oracle/p/robinhood-0xde770c84fe66e063336b31737cfe9790f18c4087.html",
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+}
