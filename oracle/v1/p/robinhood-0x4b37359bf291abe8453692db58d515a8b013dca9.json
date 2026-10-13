@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Ramses CL V2",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 6280564.541607773,
+ "tvl_usd": 5992552.038200795,
  "category": "Dexs",
- "at_risk_usd": 5778119.37827915,
+ "at_risk_usd": 5513147.875144731,
  "narrative": {
   "summary": "A real DEX with $6.3M TVL, governed through a Timelock whose delay is deliberately set to zero - arguably worse than no timelock at all.",
   "detail": "Governed through a centralized AccessHub rather than per-contract Ownable. DEFAULT_ADMIN_ROLE is held by both \"RamsesTimelock\" and an address labeled \"Ramses Team Multisig\" - traced one hop further rather than trusting the label: that \"multisig\" is a Safe with exactly one owner and threshold 1, the sole signer a bare EOA. RamsesTimelock.getMinDelay() returns 0 - a real, deployed timelock-shaped contract with none of the substance. Batch 8 pinned down RamsesTimelock\u2019s exact address (previously undistinguished from AccessHub) and found PROPOSER_ROLE, CANCELLER_ROLE and EXECUTOR_ROLE are all held by that same single \"Team Multisig\" address - a timelock in name only, on every axis, not just its delay."
@@ -68,7 +68,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-10T20:41:07Z",
+   "t": "2026-10-13T03:26:46Z",
    "composite": 8,
    "from": "push"
   }
@@ -111,10 +111,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791664867,
+ "last_pushed": 1791862006,
  "stale": false,
- "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133264276,
+ "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
+ "block": 134484968,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x4b37359bf291abe8453692db58d515a8b013dca9",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x4b37359bf291abe8453692db58d515a8b013dca9.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

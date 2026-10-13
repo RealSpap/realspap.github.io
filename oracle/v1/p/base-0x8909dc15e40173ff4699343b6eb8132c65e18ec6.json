@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Uniswap V2 Factory (Base)",
  "named_from": "dashboard",
  "chain": "Base",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 98695702.28127499,
+ "tvl_usd": 93719435.25684227,
  "category": "Dexs",
- "at_risk_usd": 14804355.342191247,
+ "at_risk_usd": 14057915.28852634,
  "narrative": {
   "summary": "feeToSetter() is an OP-stack cross-domain forwarder (CrossChainAccount) that only forwards calls relayed by the L2CrossDomainMessenger from Uniswap\u2019s Ethereum-mainnet Governance Timelock, which enforces a 2-day delay (172,800s) and is administered by GovernorBravo. It is the same forwarder that owns the V3 Factory\u2019s fee adapter, with no Safe and no bare EOA in the chain.",
   "tag": "$89.1M Base TVL, same DAO root as V3 and V4",
@@ -69,7 +69,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-10T17:38:05Z",
+   "t": "2026-10-12T23:32:10Z",
    "composite": 85,
    "from": "push"
   }
@@ -79,11 +79,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6",
-  "block": "0x2dc6706",
+  "block": "0x2dd9056",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6\"},\"0x2dc6706\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6\"},\"0x2dd9056\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -105,10 +105,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791653885,
+ "last_pushed": 1791847930,
  "stale": false,
- "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
- "block": 47998726,
+ "methodology_hash": "0x0ffe08e65a4a36a26b89b8257fca91ff5c4c558f13e367f9bf457231d6848c70",
+ "block": 48074838,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8909dc15e40173ff4699343b6eb8132c65e18ec6",
  "page": "https://realspap.github.io/oracle/p/base-0x8909dc15e40173ff4699343b6eb8132c65e18ec6.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

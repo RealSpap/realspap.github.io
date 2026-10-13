@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Arcus Perps BridgeVault",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 53267473.15762399,
+ "tvl_usd": 55836264.854368046,
  "category": "Derivatives",
- "at_risk_usd": 36754556.478760555,
+ "at_risk_usd": 38527022.749513954,
  "narrative": {
   "summary": "Deposit and withdrawal custody vault for Arcus Perps. Its admin role is held by a real 24-hour timelock and, in parallel, by a validator contract whose 2-of-3 bare-EOA quorum can, per Arcus\u2019s published ABI, run arbitrary calls with only a deadline field, so the delay may not bind that path.",
   "tag": "24.2M arcUSDG held, cross-exposure 80",
@@ -75,7 +75,7 @@
       "to": "0x14b107cf534239c59571b066cb6497a321da897c",
       "data": "0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
      },
-     "0x5245a5f"
+     "0x53afc59"
     ]
    },
    {
@@ -99,13 +99,13 @@
     ]
    }
   ],
-  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x14b107cf534239c59571b066cb6497a321da897c\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x5245a5f\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x0da180b14721ce46a83669b4816cb652caa1001d\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x14b107cf534239c59571b066cb6497a321da897c\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x5245a5f",
-  "note": "read between blocks 86268089 and 86268511 of the chain"
+  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x14b107cf534239c59571b066cb6497a321da897c\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x53afc59\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x0da180b14721ce46a83669b4816cb652caa1001d\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x14b107cf534239c59571b066cb6497a321da897c\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x53afc59",
+  "note": "read between blocks 87751363 and 87751769 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-10T20:41:07Z",
+   "t": "2026-10-13T03:26:46Z",
    "composite": 31,
    "from": "push"
   }
@@ -152,7 +152,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 24,
-   "tvl_usd": 53267473.15762399,
+   "tvl_usd": 55836264.854368046,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -160,10 +160,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791664867,
+ "last_pushed": 1791862006,
  "stale": false,
- "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133264276,
+ "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
+ "block": 134484968,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x14b107cf534239c59571b066cb6497a321da897c",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x14b107cf534239c59571b066cb6497a321da897c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Kamino Lend, main market (SOL/BTC)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 264795530.16242415,
+ "money_per_key_usd": 262585853.3923162,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1323977650.8121207,
+ "tvl_usd": 1312929266.961581,
  "category": "Lending",
- "at_risk_usd": 582550166.3573331,
+ "at_risk_usd": 577688877.4630957,
  "narrative": {
   "summary": "Upgrades wait 24 hours and risk changes 12, but a ten-signer group can re-map the price source behind the SOL and USDC reserves with no delay, even to a fixed price. That undelayed path caps the oracle sub-score.",
   "tag": "undelayed price-source path",
@@ -101,17 +101,17 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 1323977650.8121207,
-   "money_per_key_usd": 264795530.16242415,
+   "tvl_usd": 1312929266.961581,
+   "money_per_key_usd": 262585853.3923162,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1791662429,
+ "last_pushed": 1791859621,
  "stale": false,
- "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
  "page": "https://realspap.github.io/oracle/p/solana-7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.html",

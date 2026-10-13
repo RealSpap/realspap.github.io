@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Hyperliquidity Provider (HLP) vault",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 180186517.19938543,
+ "tvl_usd": 180267427.3516496,
  "category": "Derivatives",
- "at_risk_usd": 163969730.65144074,
+ "at_risk_usd": 164043358.89000115,
  "narrative": {
   "summary": "One plain HyperCore key leads HLP and its 7 child strategy vaults, about $186M of account value in total. It has trading and allocation power but cannot withdraw funds to itself, and depositors face a 4-day lock.",
   "tag": "trading power, not custody",
@@ -68,7 +68,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-10T19:58:11Z",
+   "t": "2026-10-12T05:46:08Z",
    "composite": 9,
    "from": "push"
   }
@@ -111,10 +111,10 @@
   "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
  },
  "score_cluster": null,
- "last_pushed": 1791662291,
+ "last_pushed": 1791783968,
  "stale": false,
- "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
- "block": 66663335,
+ "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
+ "block": 66817988,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xdfc24b077bc1425ad1dea75bcb6f8158e10df303.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

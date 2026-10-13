@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Moonwell Comptroller (Unitroller)",
  "named_from": "dashboard",
  "chain": "Base",
@@ -9,7 +9,7 @@
  "band": "decent",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 3752813.073080862,
+ "money_per_key_usd": 3677097.373471513,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 11258439.219242586,
+ "tvl_usd": 11031292.120414538,
  "category": "Lending",
- "at_risk_usd": 3264947.3735803496,
+ "at_risk_usd": 3199074.7149202162,
  "narrative": {
   "summary": "Unitroller.admin() is a TemporalGovernor whose only trusted Wormhole sender is one Ethereum address, Moonwell\u2019s MultichainGovernor V2 proxy, and it executes that sender\u2019s messages after a 1-day delay. A 3-of-5 guardian Safe can pause once and then fast-track a valid message past that delay.",
   "tag": "$14.0M Base TVL, guardian can fast-track past the delay",
@@ -87,17 +87,17 @@
       "to": "0xfbb21d0380bee3312b33c4353c8936a0f13ef26c",
       "data": "0xf851a440"
      },
-     "0x320e92d"
+     "0x322127e"
     ]
    }
   ],
-  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xfbb21d0380bee3312b33c4353c8936a0f13ef26c\",\"data\":\"0xf851a440\"},\"0x320e92d\"]}'",
-  "block": "0x320e92d",
-  "note": "read between blocks 52488484 and 52488493 of the chain"
+  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xfbb21d0380bee3312b33c4353c8936a0f13ef26c\",\"data\":\"0xf851a440\"},\"0x322127e\"]}'",
+  "block": "0x322127e",
+  "note": "read between blocks 52564598 and 52564606 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-10T17:38:05Z",
+   "t": "2026-10-12T23:32:10Z",
    "composite": 71,
    "from": "push"
   }
@@ -107,11 +107,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000fbb21d0380bee3312b33c4353c8936a0f13ef26c",
-  "block": "0x2dc6706",
+  "block": "0x2dd9056",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000fbb21d0380bee3312b33c4353c8936a0f13ef26c\"},\"0x2dc6706\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000fbb21d0380bee3312b33c4353c8936a0f13ef26c\"},\"0x2dd9056\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -149,18 +149,18 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 11258439.219242586,
-   "money_per_key_usd": 3752813.073080862,
+   "tvl_usd": 11031292.120414538,
+   "money_per_key_usd": 3677097.373471513,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": null,
- "last_pushed": 1791653885,
+ "last_pushed": 1791847930,
  "stale": false,
- "methodology_hash": "0x4fad7e994ac7045d9e23e7bda2f85c5c3f210b8ac57da920ea123896f807df9d",
- "block": 47998726,
+ "methodology_hash": "0x0ffe08e65a4a36a26b89b8257fca91ff5c4c558f13e367f9bf457231d6848c70",
+ "block": 48074838,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfbb21d0380bee3312b33c4353c8936a0f13ef26c",
  "page": "https://realspap.github.io/oracle/p/base-0xfbb21d0380bee3312b33c4353c8936a0f13ef26c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

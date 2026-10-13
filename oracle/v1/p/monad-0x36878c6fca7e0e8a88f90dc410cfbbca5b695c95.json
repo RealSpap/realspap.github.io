@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Monad Native Bridge (Wormhole NTT)",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -8,10 +8,11 @@
  "composite": 60,
  "band": "decent",
  "keys_to_move": null,
- "react_hours": 0,
+ "react_hours": null,
  "money_per_key_usd": null,
  "not_assessed": [
   "how many keys it takes to move it",
+  "the time anyone has to react",
   "the money behind one key (no money figure, or no key count)"
  ],
  "sub": {
@@ -48,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 994944459.5260404,
+ "tvl_usd": 1031103823.5310427,
  "category": null,
- "at_risk_usd": 397977783.81041616,
+ "at_risk_usd": 412441529.41241705,
  "narrative": {
   "summary": "The chain\u2019s own officially blessed bridge, governed by a live-verified 13-of-19 Wormhole Guardian quorum - read directly from Monad\u2019s own deployed Core Bridge contract, not assumed from generic docs.",
   "tag": "composite 60 - 13-of-19 global guardian quorum",
@@ -80,7 +81,7 @@
       "to": "0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
       "data": "0x8da5cb5b"
      },
-     "0x6b664c8"
+     "0x6be1636"
     ]
    },
    {
@@ -93,13 +94,13 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"data\":\"0x8da5cb5b\"},\"0x6b664c8\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x6b664c8",
-  "note": "read between blocks 112616627 and 112616648 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"data\":\"0x8da5cb5b\"},\"0x6be1636\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x6be1636",
+  "note": "read between blocks 113120800 and 113120822 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-10T18:15:26Z",
+   "t": "2026-10-13T00:12:09Z",
    "composite": 60,
    "from": "push"
   }
@@ -109,11 +110,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95",
-  "block": "0x4300acb",
+  "block": "0x437b1cb",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95\"},\"0x4300acb\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000036878c6fca7e0e8a88f90dc410cfbbca5b695c95\"},\"0x437b1cb\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -143,8 +144,8 @@
   "posture": "admin: a contract the reader cannot classify; delay: unknown",
   "exposure": {
    "keys_to_move": null,
-   "react_hours": 0,
-   "tvl_usd": 994944459.5260404,
+   "react_hours": null,
+   "tvl_usd": 1031103823.5310427,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -152,10 +153,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791656126,
+ "last_pushed": 1791850329,
  "stale": false,
- "methodology_hash": "0xc4646c69178e9032868eadce229305ce026b8a28cae49546218c82834f7e28a7",
- "block": 70257355,
+ "methodology_hash": "0x4988d9ca0f32092144d3ced871e2c454f9e6d071f4d1ab71c97f6970a925ed4f",
+ "block": 70758859,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95",
  "page": "https://realspap.github.io/oracle/p/monad-0x36878c6fca7e0e8a88f90dc410cfbbca5b695c95.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

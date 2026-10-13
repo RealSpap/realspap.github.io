@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "para StakingVault (HyperEVM)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -70,7 +70,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-10T19:58:11Z",
+   "t": "2026-10-12T05:46:08Z",
    "composite": 4,
    "from": "push"
   }
@@ -113,10 +113,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791662291,
+ "last_pushed": 1791783968,
  "stale": false,
- "methodology_hash": "0xf39ff2bfb9ca0b609b00f3f3058fc2ef40d3d8abbcb08228bfc8091235a5fbd4",
- "block": 66663335,
+ "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
+ "block": 66817988,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8888888c43cbb7e1c4132542e46831bffd866ed3",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888c43cbb7e1c4132542e46831bffd866ed3.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "USDtb PSM (peg-stability module)",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "a delay with a bounded bypass",
- "tvl_usd": 470290897.06503737,
+ "tvl_usd": 473418497.27249384,
  "category": "RWA",
- "at_risk_usd": 126978542.20756008,
+ "at_risk_usd": 127822994.26357335,
  "narrative": {
   "summary": "A real 24h Timelock + 5-of-10 Safe govern this - but 3 freeze-type functions are instantly bypassable by a single role holder. The fund-redirect functions are not.",
   "tag": "nuanced: freeze bypass, funds protected",
@@ -92,11 +92,11 @@
   ],
   "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x73e35c5c35a274e34ade6eb13cc7f62aee323728\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8dc0fab349ea169283c48ccfd09d797e6db7c94\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 26172918 and 26172919 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+  "note": "read between blocks 26185567 and 26185569 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
-   "t": "2026-10-11T02:50:28Z",
+   "t": "2026-10-13T01:45:10Z",
    "composite": 73,
    "from": "push"
   }
@@ -106,11 +106,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d000000000000000000000000073e35c5c35a274e34ade6eb13cc7f62aee323728",
-  "block": "0xb5824f",
+  "block": "0xb5b3bb",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d000000000000000000000000073e35c5c35a274e34ade6eb13cc7f62aee323728\"},\"0xb5824f\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d000000000000000000000000073e35c5c35a274e34ade6eb13cc7f62aee323728\"},\"0xb5b3bb\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -157,11 +157,11 @@
     "target": "0xe3490297a08d6fc8da46edb7b6142e4f461b62d3"
    }
   ],
-  "cluster_tvl_usd": 5228174619.697269,
+  "cluster_tvl_usd": 5229164026.077553,
   "exposure": {
    "keys_to_move": null,
    "react_hours": 24,
-   "tvl_usd": 470290897.06503737,
+   "tvl_usd": 473418497.27249384,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -169,10 +169,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791687028,
+ "last_pushed": 1791855910,
  "stale": false,
- "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11895375,
+ "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
+ "block": 11908027,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x73e35c5c35a274e34ade6eb13cc7f62aee323728",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x73e35c5c35a274e34ade6eb13cc7f62aee323728.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

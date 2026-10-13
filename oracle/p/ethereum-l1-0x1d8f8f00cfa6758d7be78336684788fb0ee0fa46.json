@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Rocket Pool RocketStorage",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1322103671.8944092,
+ "tvl_usd": 1311237565.7760534,
  "category": "Liquid Staking",
- "at_risk_usd": 1031240864.0776391,
+ "at_risk_usd": 1022765301.3053217,
  "narrative": {
   "summary": "The guardian is a bare EOA, but its blanket write access is closed (getDeployedStatus is true) and the protocol DAO\u2019s bootstrap mode is disabled. What is left to that key is the guardian handover itself, with no delay in that path.",
   "tag": "$1.36B TVL, bare-EOA guardian with retired powers, composite 22",
@@ -69,7 +69,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-11T02:50:28Z",
+   "t": "2026-10-13T01:45:10Z",
    "composite": 22,
    "from": "push"
   }
@@ -79,11 +79,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46",
-  "block": "0xb5824f",
+  "block": "0xb5b3bb",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46\"},\"0xb5824f\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46\"},\"0xb5b3bb\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -112,10 +112,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791687028,
+ "last_pushed": 1791855910,
  "stale": false,
- "methodology_hash": "0xa39b4e35813b802d9f7b0daf2e685521ca2ffae61b210674e8ea97493c54f84b",
- "block": 11895375,
+ "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
+ "block": 11908027,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

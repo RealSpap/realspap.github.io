@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Spark Savings USDG (spUSDG)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -8,10 +8,11 @@
  "composite": 32,
  "band": "weak",
  "keys_to_move": null,
- "react_hours": 0,
+ "react_hours": null,
  "money_per_key_usd": null,
  "not_assessed": [
   "how many keys it takes to move it",
+  "the time anyone has to react",
   "the money behind one key (no money figure, or no key count)"
  ],
  "sub": {
@@ -48,9 +49,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 10197546.139128616,
+ "tvl_usd": 9783444.262025595,
  "category": "Yield",
- "at_risk_usd": 6934331.37460746,
+ "at_risk_usd": 6652742.098177404,
  "narrative": {
   "summary": "Revised from 22 (batch 3): the admin-role holder\u2019s own controller is now traced to Sky/MakerDAO\u2019s own verified \"SubProxy\" contract on Ethereum mainnet - a real, identifiable chain, not an unknown.",
   "tag": "revised this batch",
@@ -64,12 +65,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDG",
-  "amount": 10200903.496499,
-  "price_usd": 0.9998660712488395,
-  "held_usd": 10199537.302233005,
+  "amount": 9782413.903398,
+  "price_usd": 1.0001478153592533,
+  "held_usd": 9783859.894423496,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": 0.03,
+  "amount_change_pct": 0.0,
   "vanished": null
  },
  "dispute": null,
@@ -84,7 +85,7 @@
       "to": "0xde770c84fe66e063336b31737cfe9790f18c4087",
       "data": "0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
      },
-     "0x5245a5f"
+     "0x53afc59"
     ]
    },
    {
@@ -108,13 +109,13 @@
     ]
    }
   ],
-  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xde770c84fe66e063336b31737cfe9790f18c4087\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x5245a5f\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x826aeaeee9233fa8ba199518dd8621a5962b1d02\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xde770c84fe66e063336b31737cfe9790f18c4087\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x5245a5f",
-  "note": "read between blocks 86268089 and 86268511 of the chain"
+  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xde770c84fe66e063336b31737cfe9790f18c4087\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x53afc59\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x826aeaeee9233fa8ba199518dd8621a5962b1d02\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xde770c84fe66e063336b31737cfe9790f18c4087\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x53afc59",
+  "note": "read between blocks 87751363 and 87751769 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-10T20:41:07Z",
+   "t": "2026-10-13T03:26:46Z",
    "composite": 32,
    "from": "push"
   }
@@ -159,19 +160,19 @@
   "posture": "admin: a timelock; delay: none",
   "exposure": {
    "keys_to_move": null,
-   "react_hours": 0,
-   "tvl_usd": 10199537.302233005,
+   "react_hours": null,
+   "tvl_usd": 9783859.894423496,
    "money_per_key_usd": null,
    "money_source": "contract",
    "held_symbol": "USDG",
-   "held_amount": 10200903.496499
+   "held_amount": 9782413.903398
   }
  },
  "score_cluster": null,
- "last_pushed": 1791664867,
+ "last_pushed": 1791862006,
  "stale": false,
- "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133264276,
+ "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
+ "block": 134484968,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xde770c84fe66e063336b31737cfe9790f18c4087",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xde770c84fe66e063336b31737cfe9790f18c4087.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

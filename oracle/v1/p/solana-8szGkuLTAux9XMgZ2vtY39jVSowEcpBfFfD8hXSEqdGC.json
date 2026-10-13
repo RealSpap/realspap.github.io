@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Marinade Liquid Staking",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 253241473.97196025,
+ "tvl_usd": 246113571.64688116,
  "category": "Liquid Staking",
- "at_risk_usd": 139282810.68457812,
+ "at_risk_usd": 135362464.40578464,
  "narrative": {
   "summary": "A 6-of-13 legacy multisig with no delay upgrades the program, and a council of 5 (3 votes pass) can change every top-level authority. Counting that council path as full-power is a disclosed judgment call.",
   "tag": "judgment call: admin path counted as full-power",
@@ -94,9 +94,9 @@
   "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown"
  },
  "score_cluster": "devnet",
- "last_pushed": 1791662460,
+ "last_pushed": 1791859646,
  "stale": false,
- "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC",
  "page": "https://realspap.github.io/oracle/p/solana-8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC.html",

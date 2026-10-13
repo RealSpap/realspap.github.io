@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Curve DEX",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 621549.9171401146,
+ "money_per_key_usd": 613691.917276396,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 2,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 621549.9171401146,
+ "tvl_usd": 613691.917276396,
  "category": "Dexs",
- "at_risk_usd": 615334.4179687134,
+ "at_risk_usd": 607554.998103632,
  "narrative": {
   "summary": "The exact same bare EOA is both the AMM factory\u2019s admin() and the fee-receiver/x-gov vault\u2019s owner(), so one key controls the DEX\u2019s parameters and its protocol fees.",
   "tag": "single-RPC only, cross-exposure: 80 (pushed on-chain 2026-09-20)",
@@ -72,7 +72,7 @@
       "to": "0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad",
       "data": "0xf851a440"
      },
-     "0x5245a5f"
+     "0x53afc59"
     ]
    },
    {
@@ -88,17 +88,17 @@
     "method": "eth_getTransactionCount",
     "params": [
      "<holder>",
-     "0x5245a5f"
+     "0x53afc59"
     ]
    }
   ],
-  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad\",\"data\":\"0xf851a440\"},\"0x5245a5f\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (1 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x5245a5f\"]}'",
-  "block": "0x5245a5f",
-  "note": "read between blocks 86268089 and 86268511 of the chain"
+  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad\",\"data\":\"0xf851a440\"},\"0x53afc59\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (1 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x53afc59\"]}'",
+  "block": "0x53afc59",
+  "note": "read between blocks 87751363 and 87751769 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-10T20:41:07Z",
+   "t": "2026-10-13T03:26:46Z",
    "composite": 1,
    "from": "push"
   }
@@ -146,22 +146,22 @@
     "target": "0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad"
    }
   ],
-  "cluster_tvl_usd": 10666354.74386549,
+  "cluster_tvl_usd": 10563282.744489595,
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 621549.9171401146,
-   "money_per_key_usd": 621549.9171401146,
+   "tvl_usd": 613691.917276396,
+   "money_per_key_usd": 613691.917276396,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": null,
- "last_pushed": 1791664867,
+ "last_pushed": 1791862006,
  "stale": false,
- "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133264276,
+ "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
+ "block": 134484968,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

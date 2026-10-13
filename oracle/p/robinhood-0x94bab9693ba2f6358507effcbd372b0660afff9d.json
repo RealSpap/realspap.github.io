@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Lighter (zkLighter) Escrow proxy",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -8,10 +8,11 @@
  "composite": 54,
  "band": "moderate",
  "keys_to_move": null,
- "react_hours": 0,
+ "react_hours": null,
  "money_per_key_usd": null,
  "not_assessed": [
   "how many keys it takes to move it",
+  "the time anyone has to react",
   "the money behind one key (no money figure, or no key count)"
  ],
  "sub": {
@@ -48,9 +49,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 111405352.18728112,
+ "tvl_usd": 112847961.3404684,
  "category": "Derivatives",
- "at_risk_usd": 51246462.006149314,
+ "at_risk_usd": 51910062.21661547,
  "narrative": {
   "summary": "A real 3-of-5 Safe behind a real 21-day upgrade delay - undercut by a single bare-EOA override that can zero the delay on demand.",
   "detail": "UpgradeGatekeeper enforces a genuine 21-day notice period (1,814,400s) before the 3-of-5 \"master\" Safe\u2019s upgrade takes effect. But the gatekeeper\u2019s own verified source exposes cutUpgradeNoticePeriod(), callable by a single securityCouncilAddress - confirmed on-chain as a bare EOA, not the \"3-of-5 security council\" third-party write-ups (L2BEAT, a Medium post) describe. One private key can zero the 21-day window the instant the Safe queues an upgrade."
@@ -72,7 +73,7 @@
     "params": [
      "0x94bab9693ba2f6358507effcbd372b0660afff9d",
      "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
-     "0x5245a5f"
+     "0x53afc59"
     ]
    },
    {
@@ -85,13 +86,13 @@
     ]
    }
   ],
-  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x5245a5f\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x5245a5f",
-  "note": "read between blocks 86268089 and 86268511 of the chain"
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x53afc59\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x53afc59",
+  "note": "read between blocks 87751363 and 87751769 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-10T20:41:07Z",
+   "t": "2026-10-13T03:26:46Z",
    "composite": 54,
    "from": "push"
   }
@@ -135,8 +136,8 @@
   "posture": "admin: a contract the reader cannot classify; delay: unknown",
   "exposure": {
    "keys_to_move": null,
-   "react_hours": 0,
-   "tvl_usd": 111405352.18728112,
+   "react_hours": null,
+   "tvl_usd": 112847961.3404684,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -144,10 +145,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791664867,
+ "last_pushed": 1791862006,
  "stale": false,
- "methodology_hash": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5",
- "block": 133264276,
+ "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
+ "block": 134484968,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x94bab9693ba2f6358507effcbd372b0660afff9d",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x94bab9693ba2f6358507effcbd372b0660afff9d.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

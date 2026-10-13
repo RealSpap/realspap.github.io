@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-12T06:48:47Z",
+ "generatedAt": "2026-10-13T19:59:56Z",
  "name": "Jupiter Aggregator v6",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -95,9 +95,9 @@
   "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown"
  },
  "score_cluster": "devnet",
- "last_pushed": 1791662427,
+ "last_pushed": 1791859619,
  "stale": false,
- "methodology_hash": "0x79b73242ae50124e8d706211eb7f67dd3a891d87b9192fe3973da17fdc63b49d",
+ "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
  "page": "https://realspap.github.io/oracle/p/solana-JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4.html",
