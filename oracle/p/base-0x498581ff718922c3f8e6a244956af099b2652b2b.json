@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Uniswap V4 PoolManager (Base)",
  "named_from": "dashboard",
  "chain": "Base",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 70512044.7044736,
+ "tvl_usd": 70181588.0477398,
  "category": "Dexs",
- "at_risk_usd": 10576806.70567104,
+ "at_risk_usd": 10527238.207160972,
  "narrative": {
   "summary": "PoolManager.owner() is the same cross-domain forwarder that owns the V3 Factory\u2019s fee adapter and acts as the V2 Factory\u2019s feeToSetter, so the root is Uniswap\u2019s Ethereum-mainnet Governance Timelock (2-day delay, 172,800s), not a Base-side key.",
   "tag": "$59.3M Base TVL, same DAO root as V2 and V3",
@@ -76,13 +76,13 @@
       "to": "0x498581ff718922c3f8e6a244956af099b2652b2b",
       "data": "0x8da5cb5b"
      },
-     "0x3226612"
+     "0x322900a"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x498581ff718922c3f8e6a244956af099b2652b2b\",\"data\":\"0x8da5cb5b\"},\"0x3226612\"]}'",
-  "block": "0x3226612",
-  "note": "read between blocks 52585995 and 52586002 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x498581ff718922c3f8e6a244956af099b2652b2b\",\"data\":\"0x8da5cb5b\"},\"0x322900a\"]}'",
+  "block": "0x322900a",
+  "note": "read between blocks 52596738 and 52596746 of the chain"
  },
  "history": [
   {
@@ -96,11 +96,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b",
-  "block": "0x2dde3f6",
+  "block": "0x2de0deb",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b\"},\"0x2dde3f6\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b\"},\"0x2de0deb\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -124,7 +124,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 70512044.7044736,
+   "tvl_usd": 70181588.0477398,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -135,7 +135,7 @@
  "last_pushed": 1791847930,
  "stale": false,
  "methodology_hash": "0x0ffe08e65a4a36a26b89b8257fca91ff5c4c558f13e367f9bf457231d6848c70",
- "block": 48096246,
+ "block": 48106987,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x498581ff718922c3f8e6a244956af099b2652b2b",
  "page": "https://realspap.github.io/oracle/p/base-0x498581ff718922c3f8e6a244956af099b2652b2b.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

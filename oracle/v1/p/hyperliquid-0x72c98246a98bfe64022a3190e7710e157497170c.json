@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "HyperLend Pooled (Aave v3 fork)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 342204995.89723414,
+ "tvl_usd": 338644647.62193835,
  "category": "Lending",
- "at_risk_usd": 133459948.39992133,
+ "at_risk_usd": 132071412.57255596,
  "narrative": {
   "summary": "Upgrades sit behind a 7-day timelock and risk and listing changes behind a 6-hour one, each proposed by a 4-of-8 Safe and executed by a separate 5-of-9 Safe. The score follows the weaker 6-hour path.",
   "tag": "L1 cap binds: 61 becomes 26",
@@ -115,7 +115,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66861543,
+ "block": 66883377,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x72c98246a98bfe64022a3190e7710e157497170c",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

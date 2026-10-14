@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Spark Liquidity Layer (ALMProxy)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -127,7 +127,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 134856522,
+ "block": 135056600,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

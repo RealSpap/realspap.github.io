@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Jupiter Lend",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 12,
- "money_per_key_usd": 276419098.2445688,
+ "money_per_key_usd": 275401484.4511942,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1105676392.9782753,
+ "tvl_usd": 1101605937.804777,
  "category": "Lending",
- "at_risk_usd": 486497612.91044116,
+ "at_risk_usd": 484706612.63410187,
  "narrative": {
   "summary": "Four programs share one 4-of-6 upgrade multisig with a 12-hour delay, while the liquidity admin is a separate 5-of-10 multisig with a 6-hour delay. The score is a bound: three of the four admin accounts were not re-read.",
   "tag": "bound, not final: 3 of 4 admins not re-read",
@@ -101,8 +101,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 12,
-   "tvl_usd": 1105676392.9782753,
-   "money_per_key_usd": 276419098.2445688,
+   "tvl_usd": 1101605937.804777,
+   "money_per_key_usd": 275401484.4511942,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

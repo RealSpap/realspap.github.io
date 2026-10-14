@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "marginfi main lending group",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "weak",
  "keys_to_move": 7,
  "react_hours": 0,
- "money_per_key_usd": 5530284.771318071,
+ "money_per_key_usd": 5500284.5067632925,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 45,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 38711993.399226494,
+ "tvl_usd": 38501991.547343045,
  "category": "Lending",
- "at_risk_usd": 25937035.57748175,
+ "at_risk_usd": 25796334.33671984,
  "narrative": {
   "summary": "Upgrades need 7 of 15 signers and group admin actions only 5 of 17, both with no delay, and the upgrade voters are a subset of the admin group. The score is still an upper bound.",
   "tag": "upper bound: 7 more admin fields not decoded",
@@ -101,8 +101,8 @@
   "exposure": {
    "keys_to_move": 7,
    "react_hours": 0,
-   "tvl_usd": 38711993.399226494,
-   "money_per_key_usd": 5530284.771318071,
+   "tvl_usd": 38501991.547343045,
+   "money_per_key_usd": 5500284.5067632925,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

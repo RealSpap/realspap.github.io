@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -116,7 +116,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 134856522,
+ "block": 135056600,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

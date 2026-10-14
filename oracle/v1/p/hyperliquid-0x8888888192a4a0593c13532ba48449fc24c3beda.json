@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Ventuals vHYPE staking (HyperEVM)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 444497.4793431341,
+ "tvl_usd": 442419.04527839844,
  "category": "Interface",
- "at_risk_usd": 306703.2607467625,
+ "at_risk_usd": 305269.1412420949,
  "narrative": {
   "summary": "A liquid staking token whose three authority paths all resolve to the same 2-of-3 Safe, with no delay. It scores higher than para's vault because every layer has verified source.",
   "tag": "L1 cap binds: 31 becomes 26",
@@ -115,7 +115,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66861543,
+ "block": 66883377,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8888888192a4a0593c13532ba48449fc24c3beda",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8888888192a4a0593c13532ba48449fc24c3beda.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

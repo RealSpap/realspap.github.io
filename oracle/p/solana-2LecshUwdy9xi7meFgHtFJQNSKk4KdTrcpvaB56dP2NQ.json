@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Orca Whirlpool",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 60511735.47839953,
+ "money_per_key_usd": 59924995.85730513,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 302558677.39199764,
+ "tvl_usd": 299624979.28652567,
  "category": "Dexs",
- "at_risk_usd": 296507503.8441577,
+ "at_risk_usd": 293632479.7007951,
  "narrative": {
   "summary": "Upgrades look strong (24-hour delay, 5-of-13), but a separate reward authority on the same config is a 1-of-8 multisig with no delay, which scores like a single key. Counting it as full-power is a disclosed judgment call.",
   "tag": "judgment call: reward authority counted as full-power",
@@ -102,8 +102,8 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 302558677.39199764,
-   "money_per_key_usd": 60511735.47839953,
+   "tvl_usd": 299624979.28652567,
+   "money_per_key_usd": 59924995.85730513,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

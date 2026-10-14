@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "GMX V1 Perps",
  "named_from": "DefiLlama match",
  "chain": "Arbitrum",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1334087.5198152454,
+ "tvl_usd": 1334706.7058333433,
  "category": "Derivatives",
- "at_risk_usd": 573657.6335205554,
+ "at_risk_usd": 573923.8835083377,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -111,7 +111,7 @@
  "last_pushed": 1791852875,
  "stale": false,
  "methodology_hash": "0x51163f3cce4612011bca19a651e2c0b650d9c670559f9036a37acfadf0532f54",
- "block": 319008940,
+ "block": 319092025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x489ee077994b6658eafa855c308275ead8097c4a",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x489ee077994b6658eafa855c308275ead8097c4a.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

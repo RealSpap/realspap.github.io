@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Uniswap v2 + v3 + v4 + UniswapX",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 52830269.932512306,
+ "tvl_usd": 56211175.29060804,
  "category": "Dexs",
- "at_risk_usd": 7924540.489876846,
+ "at_risk_usd": 8431676.293591207,
  "narrative": {
   "summary": "RESOLVED 2026-09-17: the address controlling v3 Factory, v4 PoolManager, the UniswapX reactor, and v2\u2019s feeToSetter is the real Uniswap L1 Governance Timelock\u2019s Arbitrum bridge alias, not a vanity-ground key. Re-scored to 85/100, independently re-confirming the L1 Timelock and GovernorBravo live on every run.",
   "tag": "1 identity, 4 surfaces - external L1 DAO via bridge alias",
@@ -75,7 +75,7 @@
       "to": "0x000000007a1c8e570011eedf86a2a35593013cba",
       "data": "0x8da5cb5b"
      },
-     "0x5416c47"
+     "0x544af1d"
     ]
    },
    {
@@ -90,9 +90,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x000000007a1c8e570011eedf86a2a35593013cba\",\"data\":\"0x8da5cb5b\"},\"0x5416c47\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x1a9c8182c09f50c8318d769245bea52c32be35bc\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'",
-  "block": "0x5416c47",
-  "note": "read between blocks 88173313 and 88173639 of the chain; an alias-resolved holder (Arbitrum stack) is read on Ethereum L1 instead"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x000000007a1c8e570011eedf86a2a35593013cba\",\"data\":\"0x8da5cb5b\"},\"0x544af1d\"]}'\n# delay() on the holder (Compound-style timelock), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x1a9c8182c09f50c8318d769245bea52c32be35bc\",\"data\":\"0x6a42b8f8\"},\"latest\"]}'",
+  "block": "0x544af1d",
+  "note": "read between blocks 88386886 and 88387357 of the chain; an alias-resolved holder (Arbitrum stack) is read on Ethereum L1 instead"
  },
  "history": [
   {
@@ -143,11 +143,11 @@
     "target": "0x8366a39cc670b4001a1121b8f6a443a643e40951"
    }
   ],
-  "cluster_tvl_usd": 757594978.0420328,
+  "cluster_tvl_usd": 824320488.314154,
   "exposure": {
    "keys_to_move": null,
    "react_hours": 48,
-   "tvl_usd": 52830269.932512306,
+   "tvl_usd": 56211175.29060804,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -158,7 +158,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 134856522,
+ "block": 135056600,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x000000007a1c8e570011eedf86a2a35593013cba",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x000000007a1c8e570011eedf86a2a35593013cba.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

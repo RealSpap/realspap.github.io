@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "LayerZero V2 messaging core",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 947802.9085773914,
+ "tvl_usd": 927556.7767364351,
  "category": "Bridge",
- "at_risk_usd": 492857.51246024354,
+ "at_risk_usd": 482329.52390294627,
  "narrative": {
   "summary": "A real, heavily-used cross-chain messaging layer - 709 OApps already registered - owned by a bespoke 5-of-7 multisig that isn\u2019t a Gnosis Safe at all.",
   "tag": "new in batch 8",
@@ -77,13 +77,13 @@
       "to": "0x6f475642a6e85809b1c36fa62763669b1b48dd5b",
       "data": "0x8da5cb5b"
      },
-     "0x5416c47"
+     "0x544af1d"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x6f475642a6e85809b1c36fa62763669b1b48dd5b\",\"data\":\"0x8da5cb5b\"},\"0x5416c47\"]}'",
-  "block": "0x5416c47",
-  "note": "read between blocks 88173313 and 88173639 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x6f475642a6e85809b1c36fa62763669b1b48dd5b\",\"data\":\"0x8da5cb5b\"},\"0x544af1d\"]}'",
+  "block": "0x544af1d",
+  "note": "read between blocks 88386886 and 88387357 of the chain"
  },
  "history": [
   {
@@ -139,11 +139,11 @@
     "target": "0xe1844c5d63a9543023008d332bd3d2e6f1fe1043"
    }
   ],
-  "cluster_tvl_usd": 947802.9085773914,
+  "cluster_tvl_usd": 927556.7767364351,
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 947802.9085773914,
+   "tvl_usd": 927556.7767364351,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -154,7 +154,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 134856522,
+ "block": 135056600,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x6f475642a6e85809b1c36fa62763669b1b48dd5b",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x6f475642a6e85809b1c36fa62763669b1b48dd5b.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Uniswap V2 Factory (Base)",
  "named_from": "dashboard",
  "chain": "Base",
@@ -79,11 +79,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6",
-  "block": "0x2dde3f6",
+  "block": "0x2de0deb",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6\"},\"0x2dde3f6\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008909dc15e40173ff4699343b6eb8132c65e18ec6\"},\"0x2de0deb\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -108,7 +108,7 @@
  "last_pushed": 1791847930,
  "stale": false,
  "methodology_hash": "0x0ffe08e65a4a36a26b89b8257fca91ff5c4c558f13e367f9bf457231d6848c70",
- "block": 48096246,
+ "block": 48106987,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8909dc15e40173ff4699343b6eb8132c65e18ec6",
  "page": "https://realspap.github.io/oracle/p/base-0x8909dc15e40173ff4699343b6eb8132c65e18ec6.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

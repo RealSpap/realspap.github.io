@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "Uniswap v2 + v3 + v4 + UniswapX",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 52830269.932512306,
+ "tvl_usd": 56211175.29060804,
  "category": "Dexs",
- "at_risk_usd": 7924540.489876846,
+ "at_risk_usd": 8431676.293591207,
  "narrative": {
   "summary": "RESOLVED 2026-09-17: the address controlling v3 Factory, v4 PoolManager, the UniswapX reactor, and v2\u2019s feeToSetter is the real Uniswap L1 Governance Timelock\u2019s Arbitrum bridge alias, not a vanity-ground key. Re-scored to 85/100, independently re-confirming the L1 Timelock and GovernorBravo live on every run.",
   "tag": "1 identity, 4 surfaces - external L1 DAO via bridge alias",
@@ -108,7 +108,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 134856522,
+ "block": 135056600,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

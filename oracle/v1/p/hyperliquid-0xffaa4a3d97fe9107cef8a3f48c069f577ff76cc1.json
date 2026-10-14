@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T09:22:38Z",
+ "generatedAt": "2026-10-14T13:52:20Z",
  "name": "stHYPE liquid staking (HyperEVM)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -111,7 +111,7 @@
   ],
   "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"latest\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xc5ded4f7f53919c714059a17d31371ae847e23d2\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 48499794 and 48499816 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+  "note": null
  },
  "history": [
   {
@@ -161,7 +161,7 @@
   "self_delay_seconds": null,
   "delay_seconds": 172800,
   "kind": "timelock",
-  "since": "2026-10-13T06:50:02Z",
+  "since": "2026-10-14T13:00:13Z",
   "disagree": "the timelock score says no delay (0), the live read finds a timelock of 48 h in the admin path via EIP-1967 admin -&gt; ProxyAdmin owner()",
   "posture": "admin: a timelock; delay: 48 h on the timelock",
   "exposure": {
@@ -178,7 +178,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66861543,
+ "block": 66883377,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
