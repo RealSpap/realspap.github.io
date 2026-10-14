@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Curvance Emergency Council",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 99451727.6970719,
+ "tvl_usd": 100589804.26520874,
  "category": "Lending",
- "at_risk_usd": 55692967.51036026,
+ "at_risk_usd": 56330290.388516895,
  "narrative": {
   "summary": "A real 4-of-5 Safe with a proven, actively-exercised zero-delay allocation path running in parallel to a 5-day DAO timelock that never actually gates it.",
   "tag": "composite 44 - proven zero-delay bypass",
@@ -66,12 +66,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "AUSD",
-  "amount": 8431651.51802,
-  "price_usd": 0.9990858846872971,
-  "held_usd": 8423944.016256003,
+  "amount": 10116294.697781,
+  "price_usd": 0.9992017743873705,
+  "held_usd": 10108219.612248324,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": 0.04,
+  "amount_change_pct": 4.96,
   "vanished": null
  },
  "dispute": null,
@@ -83,16 +83,16 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/monad/0xad663ac84052b52be4ed1b27ba416505e84a00bf.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/monad/0xad663ac84052b52be4ed1b27ba416505e84a00bf.xml",
  "reproduce": {
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000ad663ac84052b52be4ed1b27ba416505e84a00bf",
-  "block": "0x437b1cb",
+  "block": "0x439d992",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ad663ac84052b52be4ed1b27ba416505e84a00bf\"},\"0x437b1cb\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ad663ac84052b52be4ed1b27ba416505e84a00bf\"},\"0x439d992\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -124,7 +124,7 @@
  "last_pushed": 1791850329,
  "stale": false,
  "methodology_hash": "0x4988d9ca0f32092144d3ced871e2c454f9e6d071f4d1ab71c97f6970a925ed4f",
- "block": 70758859,
+ "block": 70900114,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xad663ac84052b52be4ed1b27ba416505e84a00bf",
  "page": "https://realspap.github.io/oracle/p/monad-0xad663ac84052b52be4ed1b27ba416505e84a00bf.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

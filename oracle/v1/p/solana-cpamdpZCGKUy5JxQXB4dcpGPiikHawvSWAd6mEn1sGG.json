@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Meteora DAMM v2",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 23988398.80519085,
+ "tvl_usd": 23783326.97148045,
  "category": "Dexs",
- "at_risk_usd": 23508630.829087034,
+ "at_risk_usd": 23307660.432050843,
  "narrative": {
   "summary": "Program upgrades need 4 of 7 signers, but the program's root admin is a hardcoded pair of bare keys where either one alone is enough. That pair sits at the top of the permission tree, which drives the score near the floor.",
   "tag": "root admin: two hardcoded bare keys, either suffices",
@@ -67,7 +67,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",

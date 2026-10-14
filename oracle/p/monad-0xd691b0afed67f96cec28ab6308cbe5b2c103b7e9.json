@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Echo Protocol eBTC",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -75,16 +75,16 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/monad/0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/monad/0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.xml",
  "reproduce": {
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9",
-  "block": "0x437b1cb",
+  "block": "0x439d992",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9\"},\"0x437b1cb\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9\"},\"0x439d992\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -116,7 +116,7 @@
  "last_pushed": 1791850329,
  "stale": false,
  "methodology_hash": "0x4988d9ca0f32092144d3ced871e2c454f9e6d071f4d1ab71c97f6970a925ed4f",
- "block": 70758859,
+ "block": 70900114,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9",
  "page": "https://realspap.github.io/oracle/p/monad-0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

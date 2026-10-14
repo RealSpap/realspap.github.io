@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Sanctum validator LSTs (SanctumSpl, SanctumSplMulti)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1804725107.519483,
+ "tvl_usd": 1818093131.3606944,
  "category": "Liquid Staking",
- "at_risk_usd": 830173549.4589622,
+ "at_risk_usd": 836322840.4259195,
  "narrative": {
   "summary": "Both stake pool programs share Sanctum Infinity's 6-of-11 upgrade committee, with no delay. This is an upper bound: the per-LST pool managers were not enumerated.",
   "tag": "upper bound: pool managers not enumerated",
@@ -67,7 +67,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -98,7 +98,7 @@
     "target": "5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx"
    }
   ],
-  "cluster_tvl_usd": 2005681782.962482
+  "cluster_tvl_usd": 2019100063.204201
  },
  "score_cluster": "devnet",
  "last_pushed": 1791859655,

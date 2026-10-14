@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Save (ex Solend) lending program",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 86741022.57208213,
+ "money_per_key_usd": 86411676.80900878,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 86741022.57208213,
+ "tvl_usd": 86411676.80900878,
  "category": "Lending",
- "at_risk_usd": 85006202.12064049,
+ "at_risk_usd": 84683443.2728286,
  "narrative": {
   "summary": "The lending program's upgrade authority is a single on-curve key with no multisig wrapper: one signature can replace its code, with no delay. That is the bottom rung of the scale.",
   "tag": "bare key, bottom rung",
@@ -63,7 +63,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -91,8 +91,8 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 86741022.57208213,
-   "money_per_key_usd": 86741022.57208213,
+   "tvl_usd": 86411676.80900878,
+   "money_per_key_usd": 86411676.80900878,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

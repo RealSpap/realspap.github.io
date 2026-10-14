@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Solayer (sSOL staking, Endo)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -66,7 +66,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",

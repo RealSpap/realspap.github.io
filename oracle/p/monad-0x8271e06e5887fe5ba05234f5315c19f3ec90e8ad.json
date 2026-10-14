@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Curve Finance StableSwap Factory",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 9949590.8272132,
+ "money_per_key_usd": 9974213.4952901,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 10,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 9949590.8272132,
+ "tvl_usd": 9974213.4952901,
  "category": "Dexs",
- "at_risk_usd": 9551607.194124673,
+ "at_risk_usd": 9575244.955478497,
  "narrative": {
   "summary": "The weakest authority shape found on any chain this project tracks: admin is a single bare EOA - not a Safe, not a timelock.",
   "tag": "composite 4 - lowest on Monad",
@@ -72,7 +72,7 @@
       "to": "0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad",
       "data": "0xf851a440"
      },
-     "0x6be1636"
+     "0x6c03fc0"
     ]
    },
    {
@@ -88,13 +88,13 @@
     "method": "eth_getTransactionCount",
     "params": [
      "<holder>",
-     "0x6be1636"
+     "0x6c03fc0"
     ]
    }
   ],
-  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad\",\"data\":\"0xf851a440\"},\"0x6be1636\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (2 at the read)\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x6be1636\"]}'",
-  "block": "0x6be1636",
-  "note": "read between blocks 113120800 and 113120822 of the chain"
+  "curl": "# admin() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad\",\"data\":\"0xf851a440\"},\"0x6c03fc0\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (2 at the read)\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x6c03fc0\"]}'",
+  "block": "0x6c03fc0",
+  "note": "read between blocks 113262509 and 113262528 of the chain"
  },
  "history": [
   {
@@ -103,16 +103,16 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/monad/0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/monad/0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.xml",
  "reproduce": {
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000008271e06e5887fe5ba05234f5315c19f3ec90e8ad",
-  "block": "0x437b1cb",
+  "block": "0x439d992",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008271e06e5887fe5ba05234f5315c19f3ec90e8ad\"},\"0x437b1cb\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000008271e06e5887fe5ba05234f5315c19f3ec90e8ad\"},\"0x439d992\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -146,12 +146,12 @@
     "target": "0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad"
    }
   ],
-  "cluster_tvl_usd": 10563282.744489595,
+  "cluster_tvl_usd": 10587655.193559583,
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 9949590.8272132,
-   "money_per_key_usd": 9949590.8272132,
+   "tvl_usd": 9974213.4952901,
+   "money_per_key_usd": 9974213.4952901,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
@@ -161,7 +161,7 @@
  "last_pushed": 1791850329,
  "stale": false,
  "methodology_hash": "0x4988d9ca0f32092144d3ced871e2c454f9e6d071f4d1ab71c97f6970a925ed4f",
- "block": 70758859,
+ "block": 70900114,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad",
  "page": "https://realspap.github.io/oracle/p/monad-0x8271e06e5887fe5ba05234f5315c19f3ec90e8ad.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Ethena LayerZero OFTAdapters",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 4755745528.8050585,
+ "tvl_usd": 4762165305.213771,
  "category": "Basis Trading",
- "at_risk_usd": 2044970577.3861752,
+ "at_risk_usd": 2047731081.2419214,
  "narrative": {
   "summary": "Same EthenaTimelockController as the PSM above governs all three cross-chain bridges - but here the bypassable function is setPeer(), which redirects the trusted remote counterpart.",
   "tag": "more severe than the PSM\u2019s gap",
@@ -92,7 +92,7 @@
   ],
   "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x58538e6a46e07434d7e7375bc268d3cb839c0133\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe8dc0fab349ea169283c48ccfd09d797e6db7c94\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 26185567 and 26185569 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+  "note": "read between blocks 26189115 and 26189116 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
@@ -101,16 +101,16 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0x58538e6a46e07434d7e7375bc268d3cb839c0133.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/ethereum-l1-sepolia/0x58538e6a46e07434d7e7375bc268d3cb839c0133.xml",
  "reproduce": {
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d000000000000000000000000058538e6a46e07434d7e7375bc268d3cb839c0133",
-  "block": "0xb5b3bb",
+  "block": "0xb5c1a0",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d000000000000000000000000058538e6a46e07434d7e7375bc268d3cb839c0133\"},\"0xb5b3bb\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d000000000000000000000000058538e6a46e07434d7e7375bc268d3cb839c0133\"},\"0xb5c1a0\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -157,11 +157,11 @@
     "target": "0xe3490297a08d6fc8da46edb7b6142e4f461b62d3"
    }
   ],
-  "cluster_tvl_usd": 5229164026.077553,
+  "cluster_tvl_usd": 5235633301.114632,
   "exposure": {
    "keys_to_move": null,
    "react_hours": 24,
-   "tvl_usd": 4755745528.8050585,
+   "tvl_usd": 4762165305.213771,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -172,7 +172,7 @@
  "last_pushed": 1791855910,
  "stale": false,
  "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
- "block": 11908027,
+ "block": 11911584,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x58538e6a46e07434d7e7375bc268d3cb839c0133",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x58538e6a46e07434d7e7375bc268d3cb839c0133.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

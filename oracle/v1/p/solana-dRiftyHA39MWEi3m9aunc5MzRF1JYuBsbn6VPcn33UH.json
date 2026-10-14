@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Drift Protocol",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 1,
- "money_per_key_usd": 160630.29033795782,
+ "money_per_key_usd": 160632.52392623306,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 642521.1613518313,
+ "tvl_usd": 642530.0957049322,
  "category": "Derivatives",
- "at_risk_usd": 334111.00390295224,
+ "at_risk_usd": 334115.6497665647,
  "narrative": {
   "summary": "In April 2026 a 2-of-5 multisig with no delay, which held Drift's admin key, was used to reassign it to an attacker (press reports $285M drained). The upgrade multisig is now 4-of-7 with a 1-hour delay, still short of strong.",
   "tag": "retroactive backtest of the 2026-04-01 exploit",
@@ -63,7 +63,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -101,8 +101,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 1,
-   "tvl_usd": 642521.1613518313,
-   "money_per_key_usd": 160630.29033795782,
+   "tvl_usd": 642530.0957049322,
+   "money_per_key_usd": 160632.52392623306,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

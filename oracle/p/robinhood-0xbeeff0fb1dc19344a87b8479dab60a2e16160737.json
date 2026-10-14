@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Morpho Ethena x Steakhouse USDG vault",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,7 +9,7 @@
  "band": "decent",
  "keys_to_move": 5,
  "react_hours": 0,
- "money_per_key_usd": 1.479957528122323,
+ "money_per_key_usd": 1.479878939820075,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 70,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 539376250.5816531,
+ "tvl_usd": 544852573.7930664,
  "category": "Risk Curators",
- "at_risk_usd": 161812875.17449594,
+ "at_risk_usd": 163455772.13791993,
  "narrative": {
   "summary": "The largest raw multisig found on this chain - a real 5-of-10 Safe at owner - still capped by the same zero-delay authority gap, and shares its curator Safe with the Steakhouse vault.",
   "tag": "cross-exposure: 80",
@@ -77,8 +77,8 @@
  "held": {
   "symbol": "USDG",
   "amount": 7.398694,
-  "price_usd": 1.0001478153592533,
-  "held_usd": 7.399787640611615,
+  "price_usd": 1.000094705781909,
+  "held_usd": 7.399394699100375,
   "stale": null,
   "price_stale": null,
   "amount_change_pct": 0.0,
@@ -96,13 +96,13 @@
       "to": "0xbeeff0fb1dc19344a87b8479dab60a2e16160737",
       "data": "0x8da5cb5b"
      },
-     "0x53afc59"
+     "0x5416c47"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeeff0fb1dc19344a87b8479dab60a2e16160737\",\"data\":\"0x8da5cb5b\"},\"0x53afc59\"]}'",
-  "block": "0x53afc59",
-  "note": "read between blocks 87751363 and 87751769 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeeff0fb1dc19344a87b8479dab60a2e16160737\",\"data\":\"0x8da5cb5b\"},\"0x5416c47\"]}'",
+  "block": "0x5416c47",
+  "note": "read between blocks 88173313 and 88173639 of the chain"
  },
  "history": [
   {
@@ -121,7 +121,7 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/robinhood-chain/0xbeeff0fb1dc19344a87b8479dab60a2e16160737.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/robinhood-chain/0xbeeff0fb1dc19344a87b8479dab60a2e16160737.xml",
  "reproduce": {
   "rpc": "https://rpc.testnet.chain.robinhood.com/rpc",
   "to": "0x9BF45734D09bC7CA39238e767B2af9AAc62a7f52",
@@ -171,12 +171,12 @@
     "target": "0xbeefff136e3684273e6aa75a1669b784b373a4fd"
    }
   ],
-  "cluster_tvl_usd": 539376250.5816531,
+  "cluster_tvl_usd": 544852573.7930664,
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 0,
-   "tvl_usd": 7.399787640611615,
-   "money_per_key_usd": 1.479957528122323,
+   "tvl_usd": 7.399394699100375,
+   "money_per_key_usd": 1.479878939820075,
    "money_source": "contract",
    "held_symbol": "USDG",
    "held_amount": 7.398694
@@ -186,7 +186,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 134484968,
+ "block": 134856522,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeeff0fb1dc19344a87b8479dab60a2e16160737",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff0fb1dc19344a87b8479dab60a2e16160737.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

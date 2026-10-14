@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Arbitrum Security Council Emergency Safe",
  "named_from": "dashboard",
  "chain": "Arbitrum",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1394450577.620065,
+ "tvl_usd": 1399318915.4775155,
  "category": null,
- "at_risk_usd": 502002207.9432234,
+ "at_risk_usd": 503754809.5719056,
  "narrative": {
   "summary": "A real, publicly-named 9-of-12 Safe that can bypass the ordinary L2 core Timelock\u2019s 8-day delay in an emergency - the chain\u2019s own systemic root, not a bounded protocol authority.",
   "tag": "every protocol above inherits this",
@@ -74,7 +74,7 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/arbitrum-sepolia/0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/arbitrum-sepolia/0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641.xml",
  "reproduce": {
   "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
@@ -115,7 +115,7 @@
  "last_pushed": 1791852875,
  "stale": false,
  "methodology_hash": "0x51163f3cce4612011bca19a651e2c0b650d9c670559f9036a37acfadf0532f54",
- "block": 318841770,
+ "block": 319008940,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "marginfi main lending group",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "weak",
  "keys_to_move": 7,
  "react_hours": 0,
- "money_per_key_usd": 5537773.541633039,
+ "money_per_key_usd": 5530284.771318071,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 45,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 38764414.79143127,
+ "tvl_usd": 38711993.399226494,
  "category": "Lending",
- "at_risk_usd": 25972157.910258953,
+ "at_risk_usd": 25937035.57748175,
  "narrative": {
   "summary": "Upgrades need 7 of 15 signers and group admin actions only 5 of 17, both with no delay, and the upgrade voters are a subset of the admin group. The score is still an upper bound.",
   "tag": "upper bound: 7 more admin fields not decoded",
@@ -63,7 +63,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -101,8 +101,8 @@
   "exposure": {
    "keys_to_move": 7,
    "react_hours": 0,
-   "tvl_usd": 38764414.79143127,
-   "money_per_key_usd": 5537773.541633039,
+   "tvl_usd": 38711993.399226494,
+   "money_per_key_usd": 5530284.771318071,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

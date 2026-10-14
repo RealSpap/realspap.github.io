@@ -4,8 +4,8 @@
 
 ## Start here
 
-- [Catalogue of every published file](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/catalog.json): where each file is, what it holds, its schema, and which one answers which question
-- [Reference for every field](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/API.md): the meaning of every file and every key of the contract pages
+- [Catalogue of every published file](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/catalog.json): where each file is, what it holds, its schema, and which one answers which question
+- [Reference for every field](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/API.md): the meaning of every file and every key of the contract pages
 - [One contract as JSON](https://realspap.github.io/oracle/p/{chain}-{address}.json): score, sub-scores, the independent read of the admin, held assets, pause, roles, admin Safe activity
 - [Dashboard](https://realspap.github.io/oracle/): the same data for people, with filters and a live check per row
 - [One contract's dossier in one command](https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/scripts/dossier.py): python3 scripts/dossier.py <chain> <address>, from a clone, no network, unread sources said as such
@@ -28,8 +28,8 @@
 
 ## Integrity
 
-- [Signed manifest of every run](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/signature.json): sha256 of each published file and the head of the hash-chained event log; check it with scripts/sign_run.py --verify
-- [Event log](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/events.jsonl): one line per score move or finding, each line commits to the previous one
+- [Signed manifest of every run](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/signature.json): sha256 of each published file and the head of the hash-chained event log; check it with scripts/sign_run.py --verify
+- [Event log](https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/events.jsonl): one line per score move or finding, each line commits to the previous one
 
 ## Limits
 

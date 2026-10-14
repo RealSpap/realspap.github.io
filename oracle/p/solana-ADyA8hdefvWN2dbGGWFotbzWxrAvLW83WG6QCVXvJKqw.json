@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "PumpSwap and pump.fun bonding curve",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 119508637.51823157,
+ "money_per_key_usd": 119212340.38347071,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 50,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 358525912.5546947,
+ "tvl_usd": 357637021.15041214,
  "category": "Dexs",
- "at_risk_usd": 204359770.156176,
+ "at_risk_usd": 203853102.05573493,
  "narrative": {
   "summary": "Both programs share one 3-of-4 Squads v4 upgrade multisig with no delay, and their config admin is a different multisig with the same 3-of-4 threshold, so the admin path does not lower the score.",
   "tag": "confirmed by the second path, not lowered",
@@ -63,7 +63,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -101,8 +101,8 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 358525912.5546947,
-   "money_per_key_usd": 119508637.51823157,
+   "tvl_usd": 357637021.15041214,
+   "money_per_key_usd": 119212340.38347071,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

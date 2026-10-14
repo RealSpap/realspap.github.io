@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Rocket Pool RocketStorage",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1311237565.7760534,
+ "tvl_usd": 1307072398.6525302,
  "category": "Liquid Staking",
- "at_risk_usd": 1022765301.3053217,
+ "at_risk_usd": 1019516470.9489735,
  "narrative": {
   "summary": "The guardian is a bare EOA, but its blanket write access is closed (getDeployedStatus is true) and the protocol DAO\u2019s bootstrap mode is disabled. What is left to that key is the guardian handover itself, with no delay in that path.",
   "tag": "$1.36B TVL, bare-EOA guardian with retired powers, composite 22",
@@ -74,16 +74,16 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/ethereum-l1-sepolia/0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/ethereum-l1-sepolia/0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.xml",
  "reproduce": {
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46",
-  "block": "0xb5b3bb",
+  "block": "0xb5c1a0",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46\"},\"0xb5b3bb\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000001d8f8f00cfa6758d7be78336684788fb0ee0fa46\"},\"0xb5c1a0\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -115,7 +115,7 @@
  "last_pushed": 1791855910,
  "stale": false,
  "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
- "block": 11908027,
+ "block": 11911584,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

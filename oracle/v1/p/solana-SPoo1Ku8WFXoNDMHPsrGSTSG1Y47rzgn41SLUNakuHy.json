@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "SPL Stake Pool program (shared infrastructure)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -68,7 +68,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -99,7 +99,7 @@
     "target": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
    }
   ],
-  "cluster_tvl_usd": 1121544912.2165172
+  "cluster_tvl_usd": 1123408373.8747797
  },
  "score_cluster": "devnet",
  "last_pushed": 1791859649,

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Solend DAO governance realm",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 86741022.57208213,
+ "money_per_key_usd": 86411676.80900878,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 86741022.57208213,
+ "tvl_usd": 86411676.80900878,
  "category": "Lending",
- "at_risk_usd": 85006202.12064049,
+ "at_risk_usd": 84683443.2728286,
  "narrative": {
   "summary": "Two bare wallets sit above the DAO vote: one can rewrite the voting rules with no proposal, the other can replace the governance program's code. Neither is renounced, and the DAO has not taken over the realm authority.",
   "tag": "retroactive backtest of the June 2022 vote",
@@ -63,7 +63,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/7sf3tcWm58vhtkJMwuw2P3T6UBX7UE5VKxPMnXJUZ1Hn.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -91,8 +91,8 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 86741022.57208213,
-   "money_per_key_usd": 86741022.57208213,
+   "tvl_usd": 86411676.80900878,
+   "money_per_key_usd": 86411676.80900878,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

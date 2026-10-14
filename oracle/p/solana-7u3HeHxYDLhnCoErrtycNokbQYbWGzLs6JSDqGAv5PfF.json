@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Kamino Lend, main market (SOL/BTC)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 262585853.3923162,
+ "money_per_key_usd": 263563266.94960046,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1312929266.961581,
+ "tvl_usd": 1317816334.7480023,
  "category": "Lending",
- "at_risk_usd": 577688877.4630957,
+ "at_risk_usd": 579839187.289121,
  "narrative": {
   "summary": "Upgrades wait 24 hours and risk changes 12, but a ten-signer group can re-map the price source behind the SOL and USDC reserves with no delay, even to a fixed price. That undelayed path caps the oracle sub-score.",
   "tag": "undelayed price-source path",
@@ -63,7 +63,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -101,8 +101,8 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 1312929266.961581,
-   "money_per_key_usd": 262585853.3923162,
+   "tvl_usd": 1317816334.7480023,
+   "money_per_key_usd": 263563266.94960046,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

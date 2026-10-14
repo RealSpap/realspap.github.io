@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Kamino Liquidity (yvaults)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 14493418.57150375,
+ "money_per_key_usd": 14539034.155523753,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 60,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 72467092.85751875,
+ "tvl_usd": 72695170.77761877,
  "category": "Liquidity Manager",
- "at_risk_usd": 33334862.714458622,
+ "at_risk_usd": 33439778.55770463,
  "narrative": {
   "summary": "Upgrades are a 5-of-7 multisig with a 24-hour delay, but the strategy admin is a different 5-of-7 multisig with no delay at all, so the undelayed path sets the timelock score.",
   "tag": "same signer shape, zero delay on the admin path",
@@ -63,7 +63,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -102,8 +102,8 @@
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 72467092.85751875,
-   "money_per_key_usd": 14493418.57150375,
+   "tvl_usd": 72695170.77761877,
+   "money_per_key_usd": 14539034.155523753,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

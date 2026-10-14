@@ -1,0 +1,2 @@
+(function () { var t = document.querySelectorAll('time[data-utc]'); function ago(s) { var d = Math.max(0, (Date.now() - Date.parse(s)) / 60000); return d < 90 ? Math.round(d) + ' minutes ago' : d < 2880 ? Math.round(d / 60) + ' hours ago' : Math.round(d / 1440) + ' days ago'; }
+  [].forEach.call(t, function (e) { var s = e.getAttribute('data-utc'); if (!isNaN(Date.parse(s))) e.textContent = ago(s); }); })();

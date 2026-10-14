@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "Sanctum Infinity (S Controller)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 200956675.44299898,
+ "tvl_usd": 201006931.84350654,
  "category": "Dexs",
- "at_risk_usd": 108516604.73921946,
+ "at_risk_usd": 108543743.19549352,
  "narrative": {
   "summary": "Two paths bind the score: a 6-of-11 Squads v3 program upgrade and a 4-of-8 Squads v4 pool admin with no delay, which decides how every LST is valued.",
   "tag": "pool admin binds the score",
@@ -67,7 +67,7 @@
  "dispute": null,
  "independent_read_reproduce": null,
  "history": null,
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/solana-devnet/5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx.xml",
  "reproduce": null,
  "consumer_example": {
   "verdict": "zero",
@@ -98,7 +98,7 @@
     "target": "SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY"
    }
   ],
-  "cluster_tvl_usd": 2005681782.962482
+  "cluster_tvl_usd": 2019100063.204201
  },
  "score_cluster": "devnet",
  "last_pushed": 1791859653,

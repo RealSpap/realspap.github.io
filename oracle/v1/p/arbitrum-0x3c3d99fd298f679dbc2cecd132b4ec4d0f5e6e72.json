@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-13T19:59:56Z",
+ "generatedAt": "2026-10-14T08:40:40Z",
  "name": "GMX V2 (Synthetics) RoleStore",
  "named_from": "dashboard",
  "chain": "Arbitrum",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 205607308.88085654,
+ "tvl_usd": 205205395.752141,
  "category": "Derivatives",
- "at_risk_usd": 166541920.1934938,
+ "at_risk_usd": 166216370.5592342,
  "narrative": {
   "summary": "CORRECTED 2026-09-19 (71 to 22): TIMELOCK_ADMIN on the live RoleStore includes a bare EOA (GMX\u2019s own timelock_admin_2) that can queue a grant of ANY role through TimelockConfig and execute it after 24h. The 5-of-8 Safe can only veto (cancel / revokeRole).",
   "tag": "CORRECTION: a single key starts the clock",
@@ -74,7 +74,7 @@
    "from": "push"
   }
  ],
- "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/main/watch/feed/arbitrum-sepolia/0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.xml",
+ "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/arbitrum-sepolia/0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.xml",
  "reproduce": {
   "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
@@ -115,7 +115,7 @@
  "last_pushed": 1791852875,
  "stale": false,
  "methodology_hash": "0x51163f3cce4612011bca19a651e2c0b650d9c670559f9036a37acfadf0532f54",
- "block": 318841770,
+ "block": 319008940,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
