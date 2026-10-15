@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Kinetiq kHYPE StakingManager (HyperEVM)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 4,
  "react_hours": 0,
- "money_per_key_usd": 219448996.61782643,
+ "money_per_key_usd": 219110499.68483663,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 10,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 877795986.4713057,
+ "tvl_usd": 876441998.7393465,
  "category": "Liquid Staking",
- "at_risk_usd": 842684147.0124534,
+ "at_risk_usd": 841384318.7897726,
  "narrative": {
   "summary": "Kinetiq's flagship staking manager, about $1.05B of DefiLlama TVL at the 2026-09-17 read. Admin roles sit with a 4-of-8 Safe, but a bare EOA holds OPERATOR_ROLE and binds the score. Its oracle push is size-capped.",
   "tag": "same root Safe as kmHYPE and mkts, not in the score",
@@ -207,12 +207,12 @@
     "target": "0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec"
    }
   ],
-  "cluster_tvl_usd": 920045393.1189718,
+  "cluster_tvl_usd": 918749281.4277867,
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 0,
-   "tvl_usd": 877795986.4713057,
-   "money_per_key_usd": 219448996.61782643,
+   "tvl_usd": 876441998.7393465,
+   "money_per_key_usd": 219110499.68483663,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
@@ -222,7 +222,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66883377,
+ "block": 66993098,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x393d0b87ed38fc779fd9611144ae649ba6082109",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x393d0b87ed38fc779fd9611144ae649ba6082109.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

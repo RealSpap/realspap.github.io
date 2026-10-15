@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "HIP-3 dex mkts (Markets by Kinetiq)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -115,7 +115,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66883377,
+ "block": 66993098,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

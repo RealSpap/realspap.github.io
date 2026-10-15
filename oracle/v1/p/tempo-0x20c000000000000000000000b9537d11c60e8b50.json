@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "USDC.e",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -80,11 +80,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000020c000000000000000000000b9537d11c60e8b50",
-  "block": "0x25b9050",
+  "block": "0x25e408f",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c000000000000000000000b9537d11c60e8b50\"},\"0x25b9050\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c000000000000000000000b9537d11c60e8b50\"},\"0x25e408f\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -116,7 +116,7 @@
  "last_pushed": 1791856659,
  "stale": false,
  "methodology_hash": "0x0a3df5ccf0492a8006278d8f559a8ee72202d8b3d3b01ff5561fa9729045c276",
- "block": 39555152,
+ "block": 39731343,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x20c000000000000000000000b9537d11c60e8b50",
  "page": "https://realspap.github.io/oracle/p/tempo-0x20c000000000000000000000b9537d11c60e8b50.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

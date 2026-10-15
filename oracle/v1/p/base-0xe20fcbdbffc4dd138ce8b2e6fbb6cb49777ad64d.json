@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Aave V3 Base",
  "named_from": "dashboard",
  "chain": "Base",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 549779668.1570014,
+ "tvl_usd": 552191901.3784947,
  "category": "Lending",
- "at_risk_usd": 159436103.7655304,
+ "at_risk_usd": 160135651.39976346,
  "narrative": {
   "summary": "Same BGD Labs Aave Governance V3 pattern as Arbitrum and Ethereum L1, real 1-day delay - and the mirror of Arbitrum\u2019s cross-chain finding: this guardian Safe is the identical 9-of-9 owner set at 5-of-9 threshold as Arbitrum\u2019s own.",
   "tag": "cross-exposure: 80 - shared committee with Arbitrum",
@@ -76,13 +76,13 @@
       "to": "0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
       "data": "0x8da5cb5b"
      },
-     "0x322900a"
+     "0x32362db"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d\",\"data\":\"0x8da5cb5b\"},\"0x322900a\"]}'",
-  "block": "0x322900a",
-  "note": "read between blocks 52596738 and 52596746 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d\",\"data\":\"0x8da5cb5b\"},\"0x32362db\"]}'",
+  "block": "0x32362db",
+  "note": "read between blocks 52650708 and 52650715 of the chain"
  },
  "history": [
   {
@@ -96,11 +96,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000e20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
-  "block": "0x2de0deb",
+  "block": "0x2dee0b9",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000e20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d\"},\"0x2de0deb\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000e20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d\"},\"0x2dee0b9\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -136,7 +136,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 549779668.1570014,
+   "tvl_usd": 552191901.3784947,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -147,7 +147,7 @@
  "last_pushed": 1791847930,
  "stale": false,
  "methodology_hash": "0x0ffe08e65a4a36a26b89b8257fca91ff5c4c558f13e367f9bf457231d6848c70",
- "block": 48106987,
+ "block": 48160953,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
  "page": "https://realspap.github.io/oracle/p/base-0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

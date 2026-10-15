@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Jupiter Perpetual Exchange",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 24,
- "money_per_key_usd": 188510422.43006,
+ "money_per_key_usd": 187618810.88953325,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 55,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 754041689.72024,
+ "tvl_usd": 750475243.558133,
  "category": "Derivatives",
- "at_risk_usd": 407182512.4489296,
+ "at_risk_usd": 405256631.5213918,
  "narrative": {
   "summary": "The perps program's upgrade multisig has a 24-hour delay, but its application admin is a 4-of-7 Squads v3 multisig with no delay field, so the delay is bypassed. That multisig also controls Jupiter Aggregator v6 upgrades.",
   "tag": "admin path bypasses the 24h upgrade delay",
@@ -102,8 +102,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 24,
-   "tvl_usd": 754041689.72024,
-   "money_per_key_usd": 188510422.43006,
+   "tvl_usd": 750475243.558133,
+   "money_per_key_usd": 187618810.88953325,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Meteora DAMM v2",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 23545177.66079934,
+ "tvl_usd": 23521745.30250743,
  "category": "Dexs",
- "at_risk_usd": 23074274.10758335,
+ "at_risk_usd": 23051310.39645728,
  "narrative": {
   "summary": "Program upgrades need 4 of 7 signers, but the program's root admin is a hardcoded pair of bare keys where either one alone is enough. That pair sits at the top of the permission tree, which drives the score near the floor.",
   "tag": "root admin: two hardcoded bare keys, either suffices",

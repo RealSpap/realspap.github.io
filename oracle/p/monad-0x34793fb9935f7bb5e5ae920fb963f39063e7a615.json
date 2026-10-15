@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Aave V3 Pool",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 408095768.26356137,
+ "tvl_usd": 399457552.7406457,
  "category": "Lending",
- "at_risk_usd": 208128841.81441632,
+ "at_risk_usd": 203723351.8977293,
  "narrative": {
   "summary": "Same BGD Labs Aave Governance V3 pattern as Ethereum L1, Arbitrum, Base and Plasma: PoolAddressesProvider.owner() is an Executor owned by a PayloadsController that is owned by that same Executor, with a real 1-day delay on Level_1, the only configured tier. That delay does not bind every upgrade path: the ACLManager also gives POOL_ADMIN to the PROTOCOL_GUARDIAN Safe (4-of-7), which can swap a reserve\u2019s aToken or debt-token implementation with no delay. Separately, the 5-of-9 guardian Safe that can cancel payloads has the same 9 signers as the guardians on Ethereum L1, Arbitrum, Base and Plasma, so one committee holds that seat on at least five chains.",
   "tag": "PROTOCOL_GUARDIAN Safe holds POOL_ADMIN, cross-exposure: 80",
@@ -76,13 +76,13 @@
       "to": "0x34793fb9935f7bb5e5ae920fb963f39063e7a615",
       "data": "0x8da5cb5b"
      },
-     "0x6c155ad"
+     "0x6c6c938"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x34793fb9935f7bb5e5ae920fb963f39063e7a615\",\"data\":\"0x8da5cb5b\"},\"0x6c155ad\"]}'",
-  "block": "0x6c155ad",
-  "note": "read between blocks 113333656 and 113333677 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.monad.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x34793fb9935f7bb5e5ae920fb963f39063e7a615\",\"data\":\"0x8da5cb5b\"},\"0x6c6c938\"]}'",
+  "block": "0x6c6c938",
+  "note": "read between blocks 113690920 and 113690936 of the chain"
  },
  "history": [
   {
@@ -96,11 +96,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000034793fb9935f7bb5e5ae920fb963f39063e7a615",
-  "block": "0x43aef4c",
+  "block": "0x4405f9e",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000034793fb9935f7bb5e5ae920fb963f39063e7a615\"},\"0x43aef4c\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000034793fb9935f7bb5e5ae920fb963f39063e7a615\"},\"0x4405f9e\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -136,7 +136,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 408095768.26356137,
+   "tvl_usd": 399457552.7406457,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -147,7 +147,7 @@
  "last_pushed": 1791850329,
  "stale": false,
  "methodology_hash": "0x4988d9ca0f32092144d3ced871e2c454f9e6d071f4d1ab71c97f6970a925ed4f",
- "block": 70971212,
+ "block": 71327646,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x34793fb9935f7bb5e5ae920fb963f39063e7a615",
  "page": "https://realspap.github.io/oracle/p/monad-0x34793fb9935f7bb5e5ae920fb963f39063e7a615.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

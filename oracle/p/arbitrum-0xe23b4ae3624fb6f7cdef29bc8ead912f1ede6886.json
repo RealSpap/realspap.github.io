@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Radiant Capital LendingPool (V2 Core)",
  "named_from": "dashboard",
  "chain": "Arbitrum",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 183851.52211634404,
+ "tvl_usd": 183077.91504850754,
  "category": "Lending",
- "at_risk_usd": 82733.18495235482,
+ "at_risk_usd": 82385.06177182839,
  "narrative": {
   "summary": "The pool\u2019s token-upgrade and reserve-configuration path is gated by getPoolAdmin(), a 4-of-11 Gnosis Safe with no delay in front of it, not by the 72-hour TimelockController that owns the PoolAddressesProvider. This is the protocol that lost ~$50M on 2024-10-16 to compromised multisig-signer devices, a failure mode a timelock does not defend against.",
   "tag": "pool-admin Safe bypasses the 72h timelock",
@@ -79,7 +79,7 @@
   ],
   "curl": "# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://arb1.arbitrum.io/rpc -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 514746995 and 514747019 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+  "note": "read between blocks 515148086 and 515148107 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
@@ -135,7 +135,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 72,
-   "tvl_usd": 183851.52211634404,
+   "tvl_usd": 183077.91504850754,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -146,7 +146,7 @@
  "last_pushed": 1791852875,
  "stale": false,
  "methodology_hash": "0x51163f3cce4612011bca19a651e2c0b650d9c670559f9036a37acfadf0532f54",
- "block": 319092025,
+ "block": 319507783,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0xe23b4ae3624fb6f7cdef29bc8ead912f1ede6886.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

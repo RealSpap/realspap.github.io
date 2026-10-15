@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Lido stETH",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 24268057252.901493,
+ "tvl_usd": 23583124455.69794,
  "category": "Liquid Staking",
- "at_risk_usd": 4853611450.580298,
+ "at_risk_usd": 4716624891.139588,
  "narrative": {
   "summary": "stETH is an Aragon app proxy whose Agent is now controlled through Dual Governance: the Aragon Voting app no longer holds EXECUTE_ROLE on the Agent, an executor behind a 4-day enforced delay does. A configured emergency-governance path exists and was not fully bounded, so the delay is not credited in full.",
   "tag": "$25.2B TVL, 4-day enforced delay, composite 80 (pushed on-chain 2026-09-20)",
@@ -79,11 +79,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d0000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
-  "block": "0xb5c894",
+  "block": "0xb5eb8d",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84\"},\"0xb5c894\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84\"},\"0xb5eb8d\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -108,7 +108,7 @@
  "last_pushed": 1791855910,
  "stale": false,
  "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
- "block": 11913364,
+ "block": 11922317,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xae7ab96520de3a18e5e111b5eaab095312d7fe84.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

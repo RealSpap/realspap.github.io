@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "stHYPE liquid staking (HyperEVM)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -178,7 +178,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66883377,
+ "block": 66993098,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

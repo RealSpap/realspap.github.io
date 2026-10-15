@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Beefy: SPY-WETH vault (representative)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 2773046.77070532,
+ "tvl_usd": 2751803.67172114,
  "category": "Yield Aggregator",
- "at_risk_usd": 1386523.3853526597,
+ "at_risk_usd": 1375901.83586057,
  "narrative": {
   "summary": "Vault and strategy each sit behind a separate real TimelockController, both governed by the identical 3-of-6 Safe - the vault-level delay is 0, but the strategy-swap path (the highest-value action) carries a real 6h delay two ways over.",
   "tag": "~$2.57M TVL across ~14 vaults, one sampled",
@@ -76,7 +76,7 @@
       "to": "0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62",
       "data": "0x8da5cb5b"
      },
-     "0x544af1d"
+     "0x55508a0"
     ]
    },
    {
@@ -91,9 +91,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62\",\"data\":\"0x8da5cb5b\"},\"0x544af1d\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x03193ef8c3f75c22faf2995540602399cdcd4cbc\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
-  "block": "0x544af1d",
-  "note": "read between blocks 88386886 and 88387357 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62\",\"data\":\"0x8da5cb5b\"},\"0x55508a0\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x03193ef8c3f75c22faf2995540602399cdcd4cbc\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "0x55508a0",
+  "note": "read between blocks 89458462 and 89458848 of the chain"
  },
  "history": [
   {
@@ -143,7 +143,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 2773046.77070532,
+   "tvl_usd": 2751803.67172114,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -154,7 +154,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 135056600,
+ "block": 136039274,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x87673a619fc4f3fc08068a0bb04f60aa2d04ca62.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

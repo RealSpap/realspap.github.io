@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Euler V2 eVaultFactory",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 1983847.683495885,
+ "tvl_usd": 1980501.703450263,
  "category": "Lending",
- "at_risk_usd": 555477.3513788478,
+ "at_risk_usd": 554540.4769660736,
  "narrative": {
   "summary": "A fully-traced chain: Governor \u2192 a real 4-day Timelock \u2192 a 4-of-8 DAO Safe, with a separate 2-of-3 securityCouncil able to cancel. Despite Euler\u2019s own \u201cDAO\u201d naming, this is Safe-and-Timelock-gated, not a token-vote DAO.",
   "tag": "best-governed target on this chain, cross-exposure: 80 (pushed on-chain 2026-09-20)",
@@ -79,11 +79,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3",
-  "block": "0x227a6d2",
+  "block": "0x2294c64",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3\"},\"0x227a6d2\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3\"},\"0x2294c64\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -115,7 +115,7 @@
  "last_pushed": 1791849391,
  "stale": false,
  "methodology_hash": "0x026c7c3b27bb926e395674381dba1df191de242b8b5a46f8fe3359fa6001ad1e",
- "block": 36153042,
+ "block": 36260964,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x42388213c6f56d7e1477632b58ae6bba9adeeea3",
  "page": "https://realspap.github.io/oracle/p/plasma-0x42388213c6f56d7e1477632b58ae6bba9adeeea3.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

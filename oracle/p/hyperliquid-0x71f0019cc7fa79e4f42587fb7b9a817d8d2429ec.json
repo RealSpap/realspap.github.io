@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Kinetiq HIP3StakingManager (kmHYPE)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 4,
  "react_hours": 0,
- "money_per_key_usd": 10562351.66191652,
+ "money_per_key_usd": 10576820.67211005,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 10,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 42249406.64766608,
+ "tvl_usd": 42307282.6884402,
  "category": "Liquid Staking",
- "at_risk_usd": 40559430.381759435,
+ "at_risk_usd": 40614991.380902596,
  "narrative": {
   "summary": "This is kmHYPE's staking manager, not kHYPE's. The admin and treasury Safes have no module or guard, but OPERATOR_ROLE is a bare EOA that can call withdrawFromSpot and processL1Operations, and it binds the score.",
   "tag": "this is kmHYPE, not kHYPE",
@@ -197,22 +197,22 @@
   "since": "2026-10-10T06:54:09Z",
   "disagree": "the score says one key does everything (10), the live read finds a Safe 4-of-8 via EIP-1967 admin -&gt; ProxyAdmin owner(); the multisig score says no real multisig (0), the live read finds a Safe 4-of-8 via EIP-1967 admin -&gt; ProxyAdmin owner()",
   "owners_kinds": {
-   "eoa": 3,
-   "unread": 5
+   "unread": 3,
+   "eoa": 5
   },
-  "posture": "admin: Safe 4-of-8 of 5 not read, 3 plain keys; delay: none",
+  "posture": "admin: Safe 4-of-8 of 5 plain keys, 3 not read; delay: none",
   "shares_admin_with": [
    {
     "chain": "hyperliquid",
     "target": "0x393d0b87ed38fc779fd9611144ae649ba6082109"
    }
   ],
-  "cluster_tvl_usd": 920045393.1189718,
+  "cluster_tvl_usd": 918749281.4277867,
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 0,
-   "tvl_usd": 42249406.64766608,
-   "money_per_key_usd": 10562351.66191652,
+   "tvl_usd": 42307282.6884402,
+   "money_per_key_usd": 10576820.67211005,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
@@ -222,7 +222,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66883377,
+ "block": 66993098,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x71f0019cc7fa79e4f42587fb7b9a817d8d2429ec.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

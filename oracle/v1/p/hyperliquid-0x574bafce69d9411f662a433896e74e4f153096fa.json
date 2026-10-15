@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Unit UBTC, UETH and USOL treasuries",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1000884910.105105,
+ "tvl_usd": 976565733.5665758,
  "category": "Bridge",
- "at_risk_usd": 910805268.1956456,
+ "at_risk_usd": 888674817.545584,
  "narrative": {
   "summary": "Each treasury is one HyperCore key holding over 99.9% of the token's max supply. HIP-1 has no mint after genesis, so this balance is the effective mint authority. Unit's 2-of-3 MPC claim cannot be verified on chain.",
   "tag": "on-chain single key vs documented 2-of-3 MPC",
@@ -114,7 +114,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66883377,
+ "block": 66993098,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x574bafce69d9411f662a433896e74e4f153096fa",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x574bafce69d9411f662a433896e74e4f153096fa.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

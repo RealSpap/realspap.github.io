@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "WBTC (Wrapped BTC)",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 9711051895.894352,
+ "tvl_usd": 9589285849.28566,
  "category": "Bridge",
- "at_risk_usd": 4661304910.029289,
+ "at_risk_usd": 4602857207.657117,
  "narrative": {
   "summary": "WBTC.owner() is the WBTC Controller, whose owner is a legacy Gnosis MultiSigWallet (6-of-10, not a Safe) with no timelock. That multisig can replace the Factory (the only address the Controller lets mint or burn), replace the Members registry, pause or unpause the token and start a transfer of the token\u2019s own ownership.",
   "tag": "$9.50B TVL, no delay",
@@ -82,7 +82,7 @@
   ],
   "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2260fac5e5542a773aa44fbcfedf7c193bc2c599\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 26190901 and 26190902 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+  "note": "read between blocks 26199869 and 26199870 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
@@ -96,11 +96,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599",
-  "block": "0xb5c894",
+  "block": "0xb5eb8d",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599\"},\"0xb5c894\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599\"},\"0xb5eb8d\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -136,7 +136,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 9711051895.894352,
+   "tvl_usd": 9589285849.28566,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -147,7 +147,7 @@
  "last_pushed": 1791855910,
  "stale": false,
  "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
- "block": 11913364,
+ "block": 11922317,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

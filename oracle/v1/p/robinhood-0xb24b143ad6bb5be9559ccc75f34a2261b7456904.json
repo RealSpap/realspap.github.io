@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "RestrictedVaultFactory (verified source)",
  "named_from": "verified source name (Sourcify)",
  "chain": "Robinhood Chain",
@@ -71,7 +71,7 @@
       "to": "0xb24b143ad6bb5be9559ccc75f34a2261b7456904",
       "data": "0x8da5cb5b"
      },
-     "0x544af1d"
+     "0x55508a0"
     ]
    },
    {
@@ -87,13 +87,13 @@
     "method": "eth_getTransactionCount",
     "params": [
      "<holder>",
-     "0x544af1d"
+     "0x55508a0"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xb24b143ad6bb5be9559ccc75f34a2261b7456904\",\"data\":\"0x8da5cb5b\"},\"0x544af1d\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (489 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x544af1d\"]}'",
-  "block": "0x544af1d",
-  "note": "read between blocks 88386886 and 88387357 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xb24b143ad6bb5be9559ccc75f34a2261b7456904\",\"data\":\"0x8da5cb5b\"},\"0x55508a0\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (489 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x55508a0\"]}'",
+  "block": "0x55508a0",
+  "note": "read between blocks 89458462 and 89458848 of the chain"
  },
  "history": [
   {
@@ -154,7 +154,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 135056600,
+ "block": 136039274,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xb24b143ad6bb5be9559ccc75f34a2261b7456904",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xb24b143ad6bb5be9559ccc75f34a2261b7456904.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

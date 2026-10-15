@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "HyperLend Pooled (Aave v3 fork)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -11,7 +11,6 @@
  "react_hours": null,
  "money_per_key_usd": null,
  "not_assessed": [
-  "who holds the admin power: the independent reader could not classify the holder",
   "how many keys it takes to move it",
   "the time anyone has to react",
   "the money behind one key (no money figure, or no key count)"
@@ -50,9 +49,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 338644647.62193835,
+ "tvl_usd": 334365955.0237146,
  "category": "Lending",
- "at_risk_usd": 132071412.57255596,
+ "at_risk_usd": 130402722.45924869,
  "narrative": {
   "summary": "Upgrades sit behind a 7-day timelock and risk and listing changes behind a 6-hour one, each proposed by a 4-of-8 Safe and executed by a separate 5-of-9 Safe. The score follows the weaker 6-hour path.",
   "tag": "L1 cap binds: 61 becomes 26",
@@ -66,7 +65,25 @@
  "admin_probe": null,
  "held": null,
  "dispute": null,
- "independent_read_reproduce": null,
+ "independent_read_reproduce": {
+  "rpc": "https://rpc.hyperliquid.xyz/evm",
+  "steps": [
+   {
+    "what": "owner() on the contract: the holder",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "0x72c98246a98bfe64022a3190e7710e157497170c",
+      "data": "0x8da5cb5b"
+     },
+     "latest"
+    ]
+   }
+  ],
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x72c98246a98bfe64022a3190e7710e157497170c\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'",
+  "block": "latest",
+  "note": null
+ },
  "history": [
   {
    "t": "2026-10-12T05:46:08Z",
@@ -104,18 +121,28 @@
  },
  "independent_read": {
   "path": "owner()",
-  "holder": "0x0a0d\u20265d42",
+  "holder": "0x0a0d1d19107d2658b127c872fbeb97f5f9bd5d42",
   "pending_admin": null,
   "pending_via": null,
   "self_delay_seconds": null,
-  "kind": "unreadable",
-  "why": "holder probes not all answered (RPC)"
+  "kind": "contract",
+  "since": "2026-10-15T13:02:22Z",
+  "posture": "admin: a contract the reader cannot classify; delay: unknown",
+  "exposure": {
+   "keys_to_move": null,
+   "react_hours": null,
+   "tvl_usd": 334365955.0237146,
+   "money_per_key_usd": null,
+   "money_source": "protocol_tvl",
+   "held_symbol": null,
+   "held_amount": null
+  }
  },
  "score_cluster": null,
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66883377,
+ "block": 66993098,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x72c98246a98bfe64022a3190e7710e157497170c",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

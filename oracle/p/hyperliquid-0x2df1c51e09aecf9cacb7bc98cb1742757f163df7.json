@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Legacy USDC bridge (Bridge2, Arbitrum One)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 399081686.5528559,
+ "tvl_usd": 398891835.443075,
  "category": "Bridge",
- "at_risk_usd": 207522477.0074851,
+ "at_risk_usd": 207423754.43039903,
  "narrative": {
   "summary": "A non-upgradeable contract governed by a 3-of-4 set of unidentified keys with a 200 s dispute window. The last live read recorded over $544M still held, though the docs call it deprecated in favor of Circle CCTP.",
   "tag": "unresolved: 4-key set vs 27 active validators",
@@ -114,7 +114,7 @@
  "last_pushed": 1791783968,
  "stale": false,
  "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66883377,
+ "block": 66993098,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x2df1c51e09aecf9cacb7bc98cb1742757f163df7",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x2df1c51e09aecf9cacb7bc98cb1742757f163df7.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

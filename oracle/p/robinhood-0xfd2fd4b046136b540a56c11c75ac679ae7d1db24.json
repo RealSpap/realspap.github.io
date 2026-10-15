@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Spark Liquidity Layer (ALMProxy)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 0,
+ "tvl_usd": 1670.5008599213193,
  "category": "Onchain Capital Allocator",
- "at_risk_usd": 0.0,
+ "at_risk_usd": 1135.940584746497,
  "narrative": {
   "summary": "Left open in an earlier pass as an unrecognized proxy shape - turned out not to be a proxy at all, but Spark\u2019s own ALMProxy dispatcher, gated by the identical executor contract already traced for Spark Savings USDG.",
   "tag": "resolved a real open thread, not repeated",
@@ -127,7 +127,7 @@
  "last_pushed": 1791862006,
  "stale": false,
  "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 135056600,
+ "block": 136039274,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

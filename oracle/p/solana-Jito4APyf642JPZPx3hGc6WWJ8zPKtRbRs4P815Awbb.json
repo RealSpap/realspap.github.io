@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "JitoSOL (Jito Liquid Staking)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1120551487.7106287,
+ "tvl_usd": 1110201004.5581667,
  "category": "Liquid Staking",
- "at_risk_usd": 515453684.3468892,
+ "at_risk_usd": 510692462.0967567,
  "narrative": {
   "summary": "New pool code could move all stake, and that path is the SPL Stake Pool upgrade committee (6 of 10, no delay). The pool's own roles are bounded: fee changes are delayed or capped, and no human key can mint JitoSOL.",
   "tag": "inherits the stake pool committee",
@@ -98,7 +98,7 @@
     "target": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy"
    }
   ],
-  "cluster_tvl_usd": 1120551487.7106287
+  "cluster_tvl_usd": 1110201004.5581667
  },
  "score_cluster": "devnet",
  "last_pushed": 1791859651,

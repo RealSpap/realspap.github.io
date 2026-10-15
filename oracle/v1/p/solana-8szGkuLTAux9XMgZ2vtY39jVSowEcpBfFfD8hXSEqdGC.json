@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Marinade Liquid Staking",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 245062175.60910177,
+ "tvl_usd": 242746327.90620226,
  "category": "Liquid Staking",
- "at_risk_usd": 134784196.58500597,
+ "at_risk_usd": 133510480.34841123,
  "narrative": {
   "summary": "A 6-of-13 legacy multisig with no delay upgrades the program, and a council of 5 (3 votes pass) can change every top-level authority. Counting that council path as full-power is a disclosed judgment call.",
   "tag": "judgment call: admin path counted as full-power",

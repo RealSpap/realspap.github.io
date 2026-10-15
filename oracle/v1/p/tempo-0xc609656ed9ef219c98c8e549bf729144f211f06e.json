@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Tempo Earn (Morpho Vault V2, Gauntlet-curated)",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -9,7 +9,7 @@
  "band": "decent",
  "keys_to_move": 4,
  "react_hours": 0,
- "money_per_key_usd": 67508.8353484918,
+ "money_per_key_usd": 67441.25854502372,
  "not_assessed": [
   "shared control: the score says no key is shared, but this contract's own independent read lists another tracked contract with the same admin (unresolved, 12/10: do not read \"no key shared\" as established)"
  ],
@@ -47,9 +47,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 272695.05539978924,
+ "tvl_usd": 272011.0477559367,
  "category": "Risk Curators",
- "at_risk_usd": 106351.07160591781,
+ "at_risk_usd": 106084.30862481531,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -74,9 +74,9 @@
  "admin_probe": null,
  "held": {
   "symbol": "pathUSD",
-  "amount": 270902.870732,
-  "price_usd": 0.9967976369697056,
-  "held_usd": 270035.3413939672,
+  "amount": 269994.627718,
+  "price_usd": 0.999149636643345,
+  "held_usd": 269765.0341800949,
   "stale": null,
   "price_stale": null,
   "amount_change_pct": 0.0,
@@ -94,7 +94,7 @@
       "to": "0xc609656ed9ef219c98c8e549bf729144f211f06e",
       "data": "0x8da5cb5b"
      },
-     "0x2a104d5"
+     "0x2a3faf7"
     ]
    },
    {
@@ -140,9 +140,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xc609656ed9ef219c98c8e549bf729144f211f06e\",\"data\":\"0x8da5cb5b\"},\"0x2a104d5\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x2a104d5",
-  "note": "read between blocks 44106953 and 44106965 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xc609656ed9ef219c98c8e549bf729144f211f06e\",\"data\":\"0x8da5cb5b\"},\"0x2a3faf7\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x2a3faf7",
+  "note": "read between blocks 44301033 and 44301047 of the chain"
  },
  "history": [
   {
@@ -156,11 +156,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000c609656ed9ef219c98c8e549bf729144f211f06e",
-  "block": "0x25b9050",
+  "block": "0x25e408f",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000c609656ed9ef219c98c8e549bf729144f211f06e\"},\"0x25b9050\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000c609656ed9ef219c98c8e549bf729144f211f06e\"},\"0x25e408f\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -194,22 +194,22 @@
     "target": "0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61"
    }
   ],
-  "cluster_tvl_usd": 272695.05539978924,
+  "cluster_tvl_usd": 272011.0477559367,
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 0,
-   "tvl_usd": 270035.3413939672,
-   "money_per_key_usd": 67508.8353484918,
+   "tvl_usd": 269765.0341800949,
+   "money_per_key_usd": 67441.25854502372,
    "money_source": "contract",
    "held_symbol": "pathUSD",
-   "held_amount": 270902.870732
+   "held_amount": 269994.627718
   }
  },
  "score_cluster": null,
  "last_pushed": 1791856659,
  "stale": false,
  "methodology_hash": "0x0a3df5ccf0492a8006278d8f559a8ee72202d8b3d3b01ff5561fa9729045c276",
- "block": 39555152,
+ "block": 39731343,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xc609656ed9ef219c98c8e549bf729144f211f06e",
  "page": "https://realspap.github.io/oracle/p/tempo-0xc609656ed9ef219c98c8e549bf729144f211f06e.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

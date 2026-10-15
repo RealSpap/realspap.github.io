@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-14T17:45:45Z",
+ "generatedAt": "2026-10-15T21:09:14Z",
  "name": "Drift Protocol",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 1,
- "money_per_key_usd": 160619.47454462203,
+ "money_per_key_usd": 160600.14313614604,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 642477.8981784881,
+ "tvl_usd": 642400.5725445842,
  "category": "Derivatives",
- "at_risk_usd": 334088.50705281383,
+ "at_risk_usd": 334048.29772318376,
  "narrative": {
   "summary": "In April 2026 a 2-of-5 multisig with no delay, which held Drift's admin key, was used to reassign it to an attacker (press reports $285M drained). The upgrade multisig is now 4-of-7 with a 1-hour delay, still short of strong.",
   "tag": "retroactive backtest of the 2026-04-01 exploit",
@@ -101,8 +101,8 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 1,
-   "tvl_usd": 642477.8981784881,
-   "money_per_key_usd": 160619.47454462203,
+   "tvl_usd": 642400.5725445842,
+   "money_per_key_usd": 160600.14313614604,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
