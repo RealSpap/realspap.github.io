@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Unnamed contract 0x5d39\u20268ba0",
  "named_from": "unnamed",
  "chain": "Ethereum",
@@ -21,7 +21,7 @@
   "multisigScore": 70,
   "timelockScore": 0,
   "oracleAuthorityScore": 52,
-  "crossExposureScore": 80
+  "crossExposureScore": 60
  },
  "requirements": [
   {
@@ -79,11 +79,11 @@
   ],
   "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5d39e06b825c1f2b80bf2756a73e28efaa128ba0\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 26199869 and 26199870 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+  "note": "read between blocks 26250101 and 26250103 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
-   "t": "2026-10-13T01:45:10Z",
+   "t": "2026-10-20T00:07:39Z",
    "composite": 47,
    "from": "push"
   }
@@ -93,11 +93,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000005d39e06b825c1f2b80bf2756a73e28efaa128ba0",
-  "block": "0xb5eb8d",
+  "block": "0xb6ab65",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000005d39e06b825c1f2b80bf2756a73e28efaa128ba0\"},\"0xb5eb8d\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000005d39e06b825c1f2b80bf2756a73e28efaa128ba0\"},\"0xb6ab65\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -136,7 +136,7 @@
     "target": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e"
    }
   ],
-  "cluster_tvl_usd": 14247040656.294466,
+  "cluster_tvl_usd": 14022928698.898186,
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
@@ -148,10 +148,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791855910,
+ "last_pushed": 1792454859,
  "stale": false,
- "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
- "block": 11922317,
+ "methodology_hash": "0x0e0dadb9b93f111850c6149be1a61b089f1e14e39d9a2acc56a7e0d4d88ef32b",
+ "block": 11971429,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x5d39e06b825c1f2b80bf2756a73e28efaa128ba0",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x5d39e06b825c1f2b80bf2756a73e28efaa128ba0.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

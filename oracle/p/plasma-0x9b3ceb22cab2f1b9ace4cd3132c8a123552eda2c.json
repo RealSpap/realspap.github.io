@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Euler V2 AccessControlEmergencyGovernor",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "a delay with a bounded bypass",
- "tvl_usd": 1980501.703450263,
+ "tvl_usd": 1492258.5572329026,
  "category": "Lending",
- "at_risk_usd": 633760.5451040842,
+ "at_risk_usd": 477522.73831452883,
  "narrative": {
   "summary": "The same Governor \u2192 Timelock \u2192 Safe shape as the factory above, but for per-vault risk parameters, with a real 2-day delay, genuinely not instant despite the \"Emergency\" name.",
   "tag": "cross-exposure: 80 (pushed on-chain 2026-09-20), same DAO Safe as the factory",
@@ -75,7 +75,7 @@
       "to": "0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c",
       "data": "0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
      },
-     "0x21856af"
+     "0x22190d4"
     ]
    },
    {
@@ -90,13 +90,13 @@
     ]
    }
   ],
-  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x21856af\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x61d942d4809482e6f761a326471053b343ee1921\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
-  "block": "0x21856af",
-  "note": "read between blocks 35149475 and 35149487 of the chain"
+  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x22190d4\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x61d942d4809482e6f761a326471053b343ee1921\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "0x22190d4",
+  "note": "read between blocks 35754187 and 35754196 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-12T23:56:31Z",
+   "t": "2026-10-19T22:01:38Z",
    "composite": 68,
    "from": "push"
   }
@@ -106,11 +106,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000009b3ceb22cab2f1b9ace4cd3132c8a123552eda2c",
-  "block": "0x2294c64",
+  "block": "0x2328694",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000009b3ceb22cab2f1b9ace4cd3132c8a123552eda2c\"},\"0x2294c64\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000009b3ceb22cab2f1b9ace4cd3132c8a123552eda2c\"},\"0x2328694\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -142,7 +142,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 48,
-   "tvl_usd": 1980501.703450263,
+   "tvl_usd": 1492258.5572329026,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -150,10 +150,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791849391,
+ "last_pushed": 1792447298,
  "stale": false,
- "methodology_hash": "0x026c7c3b27bb926e395674381dba1df191de242b8b5a46f8fe3359fa6001ad1e",
- "block": 36260964,
+ "methodology_hash": "0xc1d1ba0a9ddfabd18ba1ec3ed1f66dce9babca05f05eaa76acd37cc1d671034c",
+ "block": 36865684,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c",
  "page": "https://realspap.github.io/oracle/p/plasma-0x9b3ceb22cab2f1b9ace4cd3132c8a123552eda2c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "JitoSOL (Jito Liquid Staking)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 1110201004.5581667,
+ "tvl_usd": 1079636428.292743,
  "category": "Liquid Staking",
- "at_risk_usd": 510692462.0967567,
+ "at_risk_usd": 496632757.0146618,
  "narrative": {
   "summary": "New pool code could move all stake, and that path is the SPL Stake Pool upgrade committee (6 of 10, no delay). The pool's own roles are bounded: fee changes are delayed or capped, and no human key can mint JitoSOL.",
   "tag": "inherits the stake pool committee",
@@ -98,12 +98,12 @@
     "target": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy"
    }
   ],
-  "cluster_tvl_usd": 1110201004.5581667
+  "cluster_tvl_usd": 1079636428.292743
  },
  "score_cluster": "devnet",
- "last_pushed": 1791859651,
+ "last_pushed": 1792445250,
  "stale": false,
- "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
+ "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb",
  "page": "https://realspap.github.io/oracle/p/solana-Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb.html",

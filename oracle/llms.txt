@@ -1,6 +1,6 @@
 # Authority Risk Oracle
 
-> Can one person move this protocol's funds? Scores for 197 contracts on 9 oracles: how many keys it takes to act, and how long anyone has to react. A read-only watch re-reads everything every 6 hours and publishes plain files.
+> Can one person move this protocol's funds? Scores for 202 contracts on 9 oracles: how many keys it takes to act, and how long anyone has to react. A read-only watch re-reads everything every 6 hours and publishes plain files.
 
 ## Start here
 

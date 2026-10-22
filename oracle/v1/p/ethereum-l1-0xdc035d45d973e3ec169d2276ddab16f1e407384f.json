@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "USDS (Sky)",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -75,7 +75,7 @@
    "from": "watch"
   },
   {
-   "t": "2026-10-13T01:45:10Z",
+   "t": "2026-10-20T00:07:39Z",
    "composite": 81,
    "from": "push"
   }
@@ -85,11 +85,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d0000000000000000000000000dc035d45d973e3ec169d2276ddab16f1e407384f",
-  "block": "0xb5eb8d",
+  "block": "0xb6ab65",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000dc035d45d973e3ec169d2276ddab16f1e407384f\"},\"0xb5eb8d\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000dc035d45d973e3ec169d2276ddab16f1e407384f\"},\"0xb6ab65\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -111,10 +111,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791855910,
+ "last_pushed": 1792454859,
  "stale": false,
- "methodology_hash": "0x46a1a85b619e7db0f81e543674e8aa0a3a1afba36b7500fe2cb256e0024db645",
- "block": 11922317,
+ "methodology_hash": "0x0e0dadb9b93f111850c6149be1a61b089f1e14e39d9a2acc56a7e0d4d88ef32b",
+ "block": 11971429,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xdc035d45d973e3ec169d2276ddab16f1e407384f",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xdc035d45d973e3ec169d2276ddab16f1e407384f.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

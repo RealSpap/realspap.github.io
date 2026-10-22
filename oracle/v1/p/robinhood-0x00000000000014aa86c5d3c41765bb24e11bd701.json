@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Ekubo Core",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -50,7 +50,7 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 1407102.1557182185,
+ "tvl_usd": 1302209.4663093712,
  "category": "Dexs",
  "at_risk_usd": 0.0,
  "narrative": {
@@ -69,7 +69,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-13T03:26:46Z",
+   "t": "2026-10-19T22:28:48Z",
    "composite": 100,
    "from": "push"
   }
@@ -102,10 +102,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791862006,
+ "last_pushed": 1792448928,
  "stale": false,
- "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 136039274,
+ "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+ "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x00000000000014aa86c5d3c41765bb24e11bd701",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x00000000000014aa86c5d3c41765bb24e11bd701.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

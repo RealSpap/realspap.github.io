@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Euler V2 eVaultFactory",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 1980501.703450263,
+ "tvl_usd": 1492258.5572329026,
  "category": "Lending",
- "at_risk_usd": 554540.4769660736,
+ "at_risk_usd": 417832.3960252127,
  "narrative": {
   "summary": "A fully-traced chain: Governor \u2192 a real 4-day Timelock \u2192 a 4-of-8 DAO Safe, with a separate 2-of-3 securityCouncil able to cancel. Despite Euler\u2019s own \u201cDAO\u201d naming, this is Safe-and-Timelock-gated, not a token-vote DAO.",
   "tag": "best-governed target on this chain, cross-exposure: 80 (pushed on-chain 2026-09-20)",
@@ -69,7 +69,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-12T23:56:31Z",
+   "t": "2026-10-19T22:01:38Z",
    "composite": 72,
    "from": "push"
   }
@@ -79,11 +79,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3",
-  "block": "0x2294c64",
+  "block": "0x2328694",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3\"},\"0x2294c64\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000042388213c6f56d7e1477632b58ae6bba9adeeea3\"},\"0x2328694\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -112,10 +112,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791849391,
+ "last_pushed": 1792447298,
  "stale": false,
- "methodology_hash": "0x026c7c3b27bb926e395674381dba1df191de242b8b5a46f8fe3359fa6001ad1e",
- "block": 36260964,
+ "methodology_hash": "0xc1d1ba0a9ddfabd18ba1ec3ed1f66dce9babca05f05eaa76acd37cc1d671034c",
+ "block": 36865684,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x42388213c6f56d7e1477632b58ae6bba9adeeea3",
  "page": "https://realspap.github.io/oracle/p/plasma-0x42388213c6f56d7e1477632b58ae6bba9adeeea3.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

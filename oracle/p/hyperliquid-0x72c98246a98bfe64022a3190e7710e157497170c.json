@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "HyperLend Pooled (Aave v3 fork)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 334365955.0237146,
+ "tvl_usd": 307477901.17985326,
  "category": "Lending",
- "at_risk_usd": 130402722.45924869,
+ "at_risk_usd": 119916381.46014276,
  "narrative": {
   "summary": "Upgrades sit behind a 7-day timelock and risk and listing changes behind a 6-hour one, each proposed by a 4-of-8 Safe and executed by a separate 5-of-9 Safe. The score follows the weaker 6-hour path.",
   "tag": "L1 cap binds: 61 becomes 26",
@@ -82,11 +82,11 @@
   ],
   "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x72c98246a98bfe64022a3190e7710e157497170c\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'",
   "block": "latest",
-  "note": null
+  "note": "read between blocks 49246193 and 49246201 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
-   "t": "2026-10-12T05:46:08Z",
+   "t": "2026-10-19T21:34:15Z",
    "composite": 61,
    "from": "push"
   }
@@ -126,12 +126,12 @@
   "pending_via": null,
   "self_delay_seconds": null,
   "kind": "contract",
-  "since": "2026-10-15T13:02:22Z",
+  "since": "2026-10-20T18:58:45Z",
   "posture": "admin: a contract the reader cannot classify; delay: unknown",
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 334365955.0237146,
+   "tvl_usd": 307477901.17985326,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -139,10 +139,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791783968,
+ "last_pushed": 1792445655,
  "stale": false,
- "methodology_hash": "0x36452ea42a84016f691a665855cc3482c3e8bb4d87155901b491b293457a4004",
- "block": 66993098,
+ "methodology_hash": "0xc06d60184165fe36f356e6196dac10f0adf5963726a5d1574b5ab896fbc8c365",
+ "block": 67607486,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x72c98246a98bfe64022a3190e7710e157497170c",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x72c98246a98bfe64022a3190e7710e157497170c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

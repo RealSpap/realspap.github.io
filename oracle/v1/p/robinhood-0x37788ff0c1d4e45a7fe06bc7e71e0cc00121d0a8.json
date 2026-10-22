@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Morpho Purinta USDG vault",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,7 +9,7 @@
  "band": "decent",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 21073.321532242713,
+ "money_per_key_usd": 22794.68804882623,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 60,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 63219.96459672814,
+ "tvl_usd": 68384.06414647869,
  "category": null,
- "at_risk_usd": 23391.38690078941,
+ "at_risk_usd": 25302.103734197113,
  "narrative": {
   "summary": "Real, distinct 3-of-5 Safes for curator and owner, with overlapping membership - one of the two best-separated Morpho vaults found on this chain.",
   "detail": "~$50.4K TVL. No bare-EOA exposure at any traced hop. Still capped in the 30s because the setOwner/setCurator zero-delay gap is systemic across every Morpho vault checked on this chain, not something either vault\u2019s own governance choices could fix."
@@ -75,12 +75,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDG",
-  "amount": 63223.912923,
-  "price_usd": 0.9999375501121439,
-  "held_usd": 63219.96459672814,
+  "amount": 68389.670055,
+  "price_usd": 0.9999180298937427,
+  "held_usd": 68384.06414647869,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": 0.0,
+  "amount_change_pct": 1.49,
   "vanished": null
  },
  "dispute": null,
@@ -95,7 +95,7 @@
       "to": "0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8",
       "data": "0x8da5cb5b"
      },
-     "0x55508a0"
+     "0x5aebe03"
     ]
    },
    {
@@ -141,9 +141,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8\",\"data\":\"0x8da5cb5b\"},\"0x55508a0\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x55508a0",
-  "note": "read between blocks 89458462 and 89458848 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8\",\"data\":\"0x8da5cb5b\"},\"0x5aebe03\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x5aebe03",
+  "note": "read between blocks 95337606 and 95337987 of the chain"
  },
  "history": [
   {
@@ -157,7 +157,7 @@
    "from": "watch"
   },
   {
-   "t": "2026-10-13T03:26:46Z",
+   "t": "2026-10-19T22:28:48Z",
    "composite": 63,
    "from": "push"
   }
@@ -202,18 +202,18 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 63219.96459672814,
-   "money_per_key_usd": 21073.321532242713,
+   "tvl_usd": 68384.06414647869,
+   "money_per_key_usd": 22794.68804882623,
    "money_source": "contract",
    "held_symbol": "USDG",
-   "held_amount": 63223.912923
+   "held_amount": 68389.670055
   }
  },
  "score_cluster": null,
- "last_pushed": 1791862006,
+ "last_pushed": 1792448928,
  "stale": false,
- "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 136039274,
+ "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+ "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

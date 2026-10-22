@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "SPL Stake Pool program (shared infrastructure)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -99,12 +99,12 @@
     "target": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
    }
   ],
-  "cluster_tvl_usd": 1110201004.5581667
+  "cluster_tvl_usd": 1079636428.292743
  },
  "score_cluster": "devnet",
- "last_pushed": 1791859649,
+ "last_pushed": 1792445248,
  "stale": false,
- "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
+ "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
  "page": "https://realspap.github.io/oracle/p/solana-SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.html",

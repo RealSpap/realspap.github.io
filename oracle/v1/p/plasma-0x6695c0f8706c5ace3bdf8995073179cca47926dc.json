@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Yuzu Money yzUSD",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 65877558.508110575,
+ "tvl_usd": 63423477.32708765,
  "category": "Yield",
- "at_risk_usd": 37550208.349623024,
+ "at_risk_usd": 36151382.076439954,
  "narrative": {
   "summary": "yzUSD, syzUSD and yzPP are proxies owned by a 2-day timelock (4-of-5 Safe), each token\u2019s ADMIN_ROLE sits with a second timelock on a 12-hour delay (3-of-5 Safe, the same five bare-EOA signers), and that 3-of-5 Safe also holds an instant, uncapped pool-valuation seat on the yzPP first-loss pool with no delay in front of it.",
   "tag": "$61.5M TVL (DefiLlama), placeholder replaced: 55 to 43 (pushed on-chain 2026-09-20)",
@@ -64,12 +64,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDT0",
-  "amount": 59362666.015048,
-  "price_usd": 0.9989832214887315,
-  "held_usd": 59302307.33187229,
+  "amount": 56008962.163637,
+  "price_usd": 0.9988180772484506,
+  "held_usd": 55942763.89696512,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": 0.0,
+  "amount_change_pct": 0.27,
   "vanished": null
  },
  "dispute": null,
@@ -82,7 +82,7 @@
     "params": [
      "0x6695c0f8706c5ace3bdf8995073179cca47926dc",
      "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
-     "0x21856af"
+     "0x22190d4"
     ]
    },
    {
@@ -93,7 +93,7 @@
       "to": "<address from the slot>",
       "data": "0x8da5cb5b"
      },
-     "0x21856af"
+     "0x22190d4"
     ]
    },
    {
@@ -117,13 +117,13 @@
     ]
    }
   ],
-  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x6695c0f8706c5ace3bdf8995073179cca47926dc\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x21856af\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x21856af\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2130457539612ae9838e0314cda1a8abbdb7cfbc\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x6695c0f8706c5ace3bdf8995073179cca47926dc\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x21856af",
-  "note": "read between blocks 35149475 and 35149487 of the chain"
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x6695c0f8706c5ace3bdf8995073179cca47926dc\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x22190d4\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"0x22190d4\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2130457539612ae9838e0314cda1a8abbdb7cfbc\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x6695c0f8706c5ace3bdf8995073179cca47926dc\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x22190d4",
+  "note": "read between blocks 35754187 and 35754196 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-12T23:56:31Z",
+   "t": "2026-10-19T22:01:38Z",
    "composite": 43,
    "from": "push"
   }
@@ -133,11 +133,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000006695c0f8706c5ace3bdf8995073179cca47926dc",
-  "block": "0x2294c64",
+  "block": "0x2328694",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000006695c0f8706c5ace3bdf8995073179cca47926dc\"},\"0x2294c64\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000006695c0f8706c5ace3bdf8995073179cca47926dc\"},\"0x2328694\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -170,18 +170,18 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 48,
-   "tvl_usd": 59302307.33187229,
+   "tvl_usd": 55942763.89696512,
    "money_per_key_usd": null,
    "money_source": "contract",
    "held_symbol": "USDT0",
-   "held_amount": 59362666.015048
+   "held_amount": 56008962.163637
   }
  },
  "score_cluster": null,
- "last_pushed": 1791849391,
+ "last_pushed": 1792447298,
  "stale": false,
- "methodology_hash": "0x026c7c3b27bb926e395674381dba1df191de242b8b5a46f8fe3359fa6001ad1e",
- "block": 36260964,
+ "methodology_hash": "0xc1d1ba0a9ddfabd18ba1ec3ed1f66dce9babca05f05eaa76acd37cc1d671034c",
+ "block": 36865684,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x6695c0f8706c5ace3bdf8995073179cca47926dc",
  "page": "https://realspap.github.io/oracle/p/plasma-0x6695c0f8706c5ace3bdf8995073179cca47926dc.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

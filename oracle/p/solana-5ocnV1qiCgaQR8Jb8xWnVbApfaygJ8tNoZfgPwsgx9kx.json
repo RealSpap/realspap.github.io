@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Sanctum Infinity (S Controller)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 196992645.11313725,
+ "tvl_usd": 199766642.8497141,
  "category": "Dexs",
- "at_risk_usd": 106376028.36109412,
+ "at_risk_usd": 107873987.13884562,
  "narrative": {
   "summary": "Two paths bind the score: a 6-of-11 Squads v3 program upgrade and a 4-of-8 Squads v4 pool admin with no delay, which decides how every LST is valued.",
   "tag": "pool admin binds the score",
@@ -98,12 +98,12 @@
     "target": "SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY"
    }
   ],
-  "cluster_tvl_usd": 1985407272.9531305
+  "cluster_tvl_usd": 2018380291.4509706
  },
  "score_cluster": "devnet",
- "last_pushed": 1791859653,
+ "last_pushed": 1792445252,
  "stale": false,
- "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
+ "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx",
  "page": "https://realspap.github.io/oracle/p/solana-5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx.html",

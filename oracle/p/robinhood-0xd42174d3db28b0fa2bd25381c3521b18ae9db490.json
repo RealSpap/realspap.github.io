@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Flock Credit Vault (fcVAULT)",
  "named_from": "on-chain name() and symbol()",
  "chain": "Robinhood Chain",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 58098.36170322992,
+ "tvl_usd": 65340.443337851844,
  "category": null,
- "at_risk_usd": 56936.39446916533,
+ "at_risk_usd": 64033.6344710948,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -62,19 +62,19 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDG",
-  "amount": 58101.990166,
-  "price_usd": 0.9999375501121439,
-  "held_usd": 58098.36170322992,
+  "amount": 65345.79974,
+  "price_usd": 0.9999180298937427,
+  "held_usd": 65340.443337851844,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": 0.04,
+  "amount_change_pct": 0.02,
   "vanished": null
  },
  "dispute": null,
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-13T03:26:46Z",
+   "t": "2026-10-19T22:28:48Z",
    "composite": 2,
    "from": "push"
   }
@@ -117,10 +117,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791862006,
+ "last_pushed": 1792448928,
  "stale": false,
- "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 136039274,
+ "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+ "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xd42174d3db28b0fa2bd25381c3521b18ae9db490",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xd42174d3db28b0fa2bd25381c3521b18ae9db490.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Morpho Steakhouse USDG vault",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 524779260.7159262,
+ "money_per_key_usd": 538040572.5344527,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 524843054.6728863,
+ "tvl_usd": 539934740.6387963,
  "category": "Risk Curators",
- "at_risk_usd": 293912110.61681634,
+ "at_risk_usd": 302363454.75772595,
  "narrative": {
   "summary": "Root owner resolves to a bare EOA two hops down; the real 7-day timelock never covers setOwner / setCurator / setIsSentinel. Shares its curator Safe with the Ethena x Steakhouse vault.",
   "tag": "cross-exposure: 80",
@@ -68,12 +68,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDG",
-  "amount": 524812035.168668,
-  "price_usd": 0.9999375501121439,
-  "held_usd": 524779260.7159262,
+  "amount": 538084679.392798,
+  "price_usd": 0.9999180298937427,
+  "held_usd": 538040572.5344527,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": -0.09,
+  "amount_change_pct": -1.0,
   "vanished": null
  },
  "dispute": null,
@@ -88,13 +88,13 @@
       "to": "0xbeeff033f34c046626b8d0a041844c5d1a5409dd",
       "data": "0x8da5cb5b"
      },
-     "0x55508a0"
+     "0x5aebe03"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeeff033f34c046626b8d0a041844c5d1a5409dd\",\"data\":\"0x8da5cb5b\"},\"0x55508a0\"]}'",
-  "block": "0x55508a0",
-  "note": "read between blocks 89458462 and 89458848 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeeff033f34c046626b8d0a041844c5d1a5409dd\",\"data\":\"0x8da5cb5b\"},\"0x5aebe03\"]}'",
+  "block": "0x5aebe03",
+  "note": "read between blocks 95337606 and 95337987 of the chain"
  },
  "history": [
   {
@@ -108,7 +108,7 @@
    "from": "watch"
   },
   {
-   "t": "2026-10-13T03:26:46Z",
+   "t": "2026-10-19T22:28:48Z",
    "composite": 44,
    "from": "push"
   }
@@ -158,18 +158,18 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 524779260.7159262,
-   "money_per_key_usd": 524779260.7159262,
+   "tvl_usd": 538040572.5344527,
+   "money_per_key_usd": 538040572.5344527,
    "money_source": "contract",
    "held_symbol": "USDG",
-   "held_amount": 524812035.168668
+   "held_amount": 538084679.392798
   }
  },
  "score_cluster": null,
- "last_pushed": 1791862006,
+ "last_pushed": 1792448928,
  "stale": false,
- "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 136039274,
+ "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+ "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeeff033f34c046626b8d0a041844c5d1a5409dd",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff033f34c046626b8d0a041844c5d1a5409dd.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

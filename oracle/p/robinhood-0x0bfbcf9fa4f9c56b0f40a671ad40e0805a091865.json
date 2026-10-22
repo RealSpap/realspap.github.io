@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "PancakeSwap V3 Factory",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 909597.7879626044,
+ "money_per_key_usd": 906074.3853883636,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 2728793.3638878134,
+ "tvl_usd": 2718223.156165091,
  "category": "Dexs",
- "at_risk_usd": 1528124.2837771755,
+ "at_risk_usd": 1522204.967452451,
  "narrative": {
   "summary": "Factory.owner() is a UUPS proxy wrapper whose own owner is a plain 3-of-6 Safe - the same Safe PancakeSwap uses as a 3-of-7 on Ethereum/Arbitrum/Base/BSC, one owner short here.",
   "detail": "Deterministic CREATE3 address shared with every other PancakeSwap V3 chain (sourced from PancakeSwap\u2019s own official docs, not a lookalike). The Safe controls both factory ownership and upgrades of the wrapper itself - no timelock found anywhere in the chain."
@@ -59,9 +59,9 @@
  "safe_activity": [
   {
    "safe": "robinhood:0xfa20\u20266047",
-   "nonce": 42,
-   "idle_since": "2026-10-13T12:52:11Z",
-   "last_moved": "2026-10-13T12:52:11Z",
+   "nonce": 47,
+   "idle_since": "2026-10-22T19:01:48Z",
+   "last_moved": "2026-10-22T19:01:48Z",
    "never_executed": false
   }
  ],
@@ -79,17 +79,17 @@
       "to": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
       "data": "0x8da5cb5b"
      },
-     "0x55508a0"
+     "0x5aebe03"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865\",\"data\":\"0x8da5cb5b\"},\"0x55508a0\"]}'",
-  "block": "0x55508a0",
-  "note": "read between blocks 89458462 and 89458848 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865\",\"data\":\"0x8da5cb5b\"},\"0x5aebe03\"]}'",
+  "block": "0x5aebe03",
+  "note": "read between blocks 95337606 and 95337987 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-13T03:26:46Z",
+   "t": "2026-10-19T22:28:48Z",
    "composite": 44,
    "from": "push"
   }
@@ -141,18 +141,18 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 2728793.3638878134,
-   "money_per_key_usd": 909597.7879626044,
+   "tvl_usd": 2718223.156165091,
+   "money_per_key_usd": 906074.3853883636,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": null,
- "last_pushed": 1791862006,
+ "last_pushed": 1792448928,
  "stale": false,
- "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 136039274,
+ "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+ "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "about": "address (EVM lowercase, Solana as written) -> the pages that score it, one per chain",
- "count": 197,
+ "count": 202,
  "addresses": {
   "0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72": [
    {
@@ -79,6 +79,15 @@
     "json": "https://realspap.github.io/oracle/p/arbitrum-0x888888888889758f76e7103c6cbf23abbf58f946.json"
    },
    {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "PendleRouterV4 (verified source)",
+    "score": 43,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x888888888889758f76e7103c6cbf23abbf58f946.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x888888888889758f76e7103c6cbf23abbf58f946.json"
+   },
+   {
     "chain": "Plasma",
     "key": "plasma",
     "name": "Pendle (Router + Market Factory V6)",
@@ -97,6 +106,15 @@
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/arbitrum-0x52aa899454998be5b000ad077a46bbe360f4e497.html",
     "json": "https://realspap.github.io/oracle/p/arbitrum-0x52aa899454998be5b000ad077a46bbe360f4e497.json"
+   },
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "FluidLiquidityDummyImpl (verified source)",
+    "score": 77,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x52aa899454998be5b000ad077a46bbe360f4e497.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x52aa899454998be5b000ad077a46bbe360f4e497.json"
    },
    {
     "chain": "Plasma",
@@ -155,8 +173,8 @@
     "chain": "Arbitrum",
     "key": "arbitrum",
     "name": "OAdapter (verified source)",
-    "score": 8,
-    "band": "critical",
+    "score": 40,
+    "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/arbitrum-0xffa10065ce1d1c42fabc46e06b84ed8ffeb4bae5.html",
     "json": "https://realspap.github.io/oracle/p/arbitrum-0xffa10065ce1d1c42fabc46e06b84ed8ffeb4bae5.json"
    }
@@ -296,7 +314,7 @@
     "chain": "Base",
     "key": "base",
     "name": "Spark USDC Vault (sparkUSDC)",
-    "score": 63,
+    "score": 65,
     "band": "decent",
     "page": "https://realspap.github.io/oracle/p/base-0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a.html",
     "json": "https://realspap.github.io/oracle/p/base-0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a.json"
@@ -547,7 +565,7 @@
     "chain": "Ethereum",
     "key": "ethereum-l1",
     "name": "Adpend USDC (adpUSDC)",
-    "score": 2,
+    "score": 19,
     "band": "critical",
     "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x55555815a5595991c3a0ff119b59aef6c8b55555.html",
     "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x55555815a5595991c3a0ff119b59aef6c8b55555.json"
@@ -683,6 +701,39 @@
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xc5f0f7b66764f6ec8c8dff7ba683102295e16409.html",
     "json": "https://realspap.github.io/oracle/p/ethereum-l1-0xc5f0f7b66764f6ec8c8dff7ba683102295e16409.json"
+   }
+  ],
+  "0x8315177ab297ba92a06054ce80a67ed4dbd7ed3a": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "Bridge (verified source)",
+    "score": 60,
+    "band": "decent",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x8315177ab297ba92a06054ce80a67ed4dbd7ed3a.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x8315177ab297ba92a06054ce80a67ed4dbd7ed3a.json"
+   }
+  ],
+  "0x08ae3be30958cdd1847ec58fffd4c451a87fdf01": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "AccessManagerEnumerable (verified source)",
+    "score": 53,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x08ae3be30958cdd1847ec58fffd4c451a87fdf01.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x08ae3be30958cdd1847ec58fffd4c451a87fdf01.json"
+   }
+  ],
+  "0x49048044d57e1c92a77f79988d21fa8faf74e97e": [
+   {
+    "chain": "Ethereum",
+    "key": "ethereum-l1",
+    "name": "OptimismPortal2 (verified source)",
+    "score": 56,
+    "band": "moderate",
+    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x49048044d57e1c92a77f79988d21fa8faf74e97e.html",
+    "json": "https://realspap.github.io/oracle/p/ethereum-l1-0x49048044d57e1c92a77f79988d21fa8faf74e97e.json"
    }
   ],
   "0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c": [
@@ -1095,7 +1146,7 @@
     "chain": "Robinhood Chain",
     "key": "robinhood",
     "name": "Spark Savings USDG (spUSDG)",
-    "score": 32,
+    "score": 29,
     "band": "weak",
     "page": "https://realspap.github.io/oracle/p/robinhood-0xde770c84fe66e063336b31737cfe9790f18c4087.html",
     "json": "https://realspap.github.io/oracle/p/robinhood-0xde770c84fe66e063336b31737cfe9790f18c4087.json"
@@ -1535,7 +1586,7 @@
     "chain": "Robinhood Chain",
     "key": "robinhood",
     "name": "Morpho Grove x Steakhouse + Steakhouse Turbo USDG vaults",
-    "score": 40,
+    "score": 49,
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff039907422219fb367e525954ddc092854d9.html",
     "json": "https://realspap.github.io/oracle/p/robinhood-0xbeeff039907422219fb367e525954ddc092854d9.json"
@@ -1557,7 +1608,7 @@
     "chain": "Robinhood Chain",
     "key": "robinhood",
     "name": "Spark Liquidity Layer (ALMProxy)",
-    "score": 32,
+    "score": 29,
     "band": "weak",
     "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
     "json": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.json"
@@ -1810,7 +1861,7 @@
     "chain": "Solana",
     "key": "solana",
     "name": "Jupiter Lend",
-    "score": 56,
+    "score": 55,
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/solana-7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z.html",
     "json": "https://realspap.github.io/oracle/p/solana-7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z.json"

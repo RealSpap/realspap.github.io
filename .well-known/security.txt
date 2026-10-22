@@ -1,6 +1,6 @@
 Contact: https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Security%20report
 Contact: https://github.com/RealSpap/authority-risk-oracle-showcase/security/advisories/new
-Expires: 2027-10-15T23:59:59Z
+Expires: 2027-10-22T23:59:59Z
 Preferred-Languages: en, fr
 Canonical: https://realspap.github.io/.well-known/security.txt
 Policy: https://github.com/RealSpap/authority-risk-oracle-showcase#readme

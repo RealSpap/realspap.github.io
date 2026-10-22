@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Fables PoolRegistry",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 35921047.35788042,
+ "tvl_usd": 26277525.026312985,
  "category": "Dexs",
- "at_risk_usd": 35202626.410722815,
+ "at_risk_usd": 25751974.525786724,
  "narrative": {
   "summary": "A hook-native ve(3,3) DEX on Uniswap v4. A full RoleGranted/RoleRevoked replay from genesis finds exactly one ADMIN_ROLE holder, ever - an EIP-7702-delegated EOA with 470 real transactions, not a multisig.",
   "tag": "~$21.8M TVL",
@@ -76,17 +76,17 @@
       "to": "0x159a113e012593d9b3cc63ad45e30f0467e13ef3",
       "data": "0xbf7e214f"
      },
-     "0x55508a0"
+     "0x5aebe03"
     ]
    }
   ],
-  "curl": "# authority() on the contract (AccessManaged): the AccessManager that holds every role\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x159a113e012593d9b3cc63ad45e30f0467e13ef3\",\"data\":\"0xbf7e214f\"},\"0x55508a0\"]}'",
-  "block": "0x55508a0",
-  "note": "read between blocks 89458462 and 89458848 of the chain"
+  "curl": "# authority() on the contract (AccessManaged): the AccessManager that holds every role\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x159a113e012593d9b3cc63ad45e30f0467e13ef3\",\"data\":\"0xbf7e214f\"},\"0x5aebe03\"]}'",
+  "block": "0x5aebe03",
+  "note": "read between blocks 95337606 and 95337987 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-13T03:26:46Z",
+   "t": "2026-10-19T22:28:48Z",
    "composite": 2,
    "from": "push"
   }
@@ -131,7 +131,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 35921047.35788042,
+   "tvl_usd": 26277525.026312985,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -139,10 +139,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791862006,
+ "last_pushed": 1792448928,
  "stale": false,
- "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 136039274,
+ "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+ "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x159a113e012593d9b3cc63ad45e30f0467e13ef3",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x159a113e012593d9b3cc63ad45e30f0467e13ef3.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

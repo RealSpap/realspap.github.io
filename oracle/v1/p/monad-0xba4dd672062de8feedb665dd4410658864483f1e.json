@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Euler V2 eVaultFactory",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 206412124.31822821,
+ "tvl_usd": 203235108.43915227,
  "category": "Lending",
- "at_risk_usd": 74308364.75456215,
+ "at_risk_usd": 73164639.03809482,
  "narrative": {
   "summary": "eVaultFactory.upgradeAdmin() is a Governor whose only admin is a 4-day TimelockController: a 4-of-8 DAO Safe is the sole proposer and anyone can execute once the delay passes, so no on-chain token vote is in the path. The delay has one bypass: PAUSE_GUARDIAN_ROLE, held by a 2-of-6 Labs Safe and two bare EOAs, can put every upgradeable vault into read-only mode instantly.",
   "tag": "cross-exposure: 80, same 8 DAO signers as Plasma",
@@ -69,7 +69,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-13T00:12:09Z",
+   "t": "2026-10-19T21:42:47Z",
    "composite": 64,
    "from": "push"
   }
@@ -79,11 +79,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000ba4dd672062de8feedb665dd4410658864483f1e",
-  "block": "0x4405f9e",
+  "block": "0x45ec12a",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ba4dd672062de8feedb665dd4410658864483f1e\"},\"0x4405f9e\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ba4dd672062de8feedb665dd4410658864483f1e\"},\"0x45ec12a\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -112,10 +112,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791850329,
+ "last_pushed": 1792446167,
  "stale": false,
- "methodology_hash": "0x4988d9ca0f32092144d3ced871e2c454f9e6d071f4d1ab71c97f6970a925ed4f",
- "block": 71327646,
+ "methodology_hash": "0xf4a5c40caa27b1952c9235737d4bcc6b134faaea8d54c2db3a963aacf896a904",
+ "block": 73318698,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xba4dd672062de8feedb665dd4410658864483f1e",
  "page": "https://realspap.github.io/oracle/p/monad-0xba4dd672062de8feedb665dd4410658864483f1e.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

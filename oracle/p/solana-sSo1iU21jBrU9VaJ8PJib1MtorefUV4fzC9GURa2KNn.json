@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Solayer (sSOL staking, Endo)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -112,9 +112,9 @@
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1791859674,
+ "last_pushed": 1792445274,
  "stale": false,
- "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
+ "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn",
  "page": "https://realspap.github.io/oracle/p/solana-sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn.html",

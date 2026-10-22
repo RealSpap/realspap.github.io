@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "marginfi main lending group",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "weak",
  "keys_to_move": 7,
  "react_hours": 0,
- "money_per_key_usd": 5301678.671329884,
+ "money_per_key_usd": 5082431.073038718,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 45,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 37111750.699309185,
+ "tvl_usd": 35577017.51127102,
  "category": "Lending",
- "at_risk_usd": 24864872.968537156,
+ "at_risk_usd": 23836601.732551586,
  "narrative": {
   "summary": "Upgrades need 7 of 15 signers and group admin actions only 5 of 17, both with no delay, and the upgrade voters are a subset of the admin group. The score is still an upper bound.",
   "tag": "upper bound: 7 more admin fields not decoded",
@@ -101,17 +101,17 @@
   "exposure": {
    "keys_to_move": 7,
    "react_hours": 0,
-   "tvl_usd": 37111750.699309185,
-   "money_per_key_usd": 5301678.671329884,
+   "tvl_usd": 35577017.51127102,
+   "money_per_key_usd": 5082431.073038718,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1791859631,
+ "last_pushed": 1792445226,
  "stale": false,
- "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
+ "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8",
  "page": "https://realspap.github.io/oracle/p/solana-4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.html",

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Ethena USDe OFT",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -48,9 +48,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 4716582133.185993,
+ "tvl_usd": 4650060260.438541,
  "category": "Basis Trading",
- "at_risk_usd": 2028130317.269977,
+ "at_risk_usd": 1999525911.9885726,
  "narrative": {
   "summary": "A real 5-of-10 Safe - and the same 10 signers, as an exact set, already control Ethereum L1\u2019s own tracked Ethena Safe. A real delay is queued (Ownable2Step pending) but not active yet.",
   "tag": "cross-exposure: 80 - same 10 signers as Ethereum L1",
@@ -75,7 +75,7 @@
       "to": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
       "data": "0x8da5cb5b"
      },
-     "0x21856af"
+     "0x22190d4"
     ]
    },
    {
@@ -90,13 +90,13 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34\",\"data\":\"0x8da5cb5b\"},\"0x21856af\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xabd3645ba0bb60c238bede64378826e1206f5072\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
-  "block": "0x21856af",
-  "note": "read between blocks 35149475 and 35149487 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34\",\"data\":\"0x8da5cb5b\"},\"0x22190d4\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xabd3645ba0bb60c238bede64378826e1206f5072\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "0x22190d4",
+  "note": "read between blocks 35754187 and 35754196 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-12T23:56:31Z",
+   "t": "2026-10-19T22:01:38Z",
    "composite": 57,
    "from": "push"
   }
@@ -106,11 +106,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
-  "block": "0x2294c64",
+  "block": "0x2328694",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34\"},\"0x2294c64\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34\"},\"0x2328694\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -142,7 +142,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 24,
-   "tvl_usd": 4716582133.185993,
+   "tvl_usd": 4650060260.438541,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -150,10 +150,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1791849391,
+ "last_pushed": 1792447298,
  "stale": false,
- "methodology_hash": "0x026c7c3b27bb926e395674381dba1df191de242b8b5a46f8fe3359fa6001ad1e",
- "block": 36260964,
+ "methodology_hash": "0xc1d1ba0a9ddfabd18ba1ec3ed1f66dce9babca05f05eaa76acd37cc1d671034c",
+ "block": 36865684,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
  "page": "https://realspap.github.io/oracle/p/plasma-0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

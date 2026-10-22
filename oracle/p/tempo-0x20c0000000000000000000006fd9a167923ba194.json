@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "DLUSD",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -70,7 +70,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-13T01:57:39Z",
+   "t": "2026-10-19T21:31:02Z",
    "composite": 9,
    "from": "push"
   }
@@ -80,11 +80,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000020c0000000000000000000006fd9a167923ba194",
-  "block": "0x25e408f",
+  "block": "0x26d7193",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c0000000000000000000006fd9a167923ba194\"},\"0x25e408f\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c0000000000000000000006fd9a167923ba194\"},\"0x26d7193\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -113,10 +113,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1791856659,
+ "last_pushed": 1792445462,
  "stale": false,
- "methodology_hash": "0x0a3df5ccf0492a8006278d8f559a8ee72202d8b3d3b01ff5561fa9729045c276",
- "block": 39731343,
+ "methodology_hash": "0xe267de1a8e2c7ace54eac7fd4376bfbd66cb87cba7b39e30d883e4cda7ab787a",
+ "block": 40726931,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x20c0000000000000000000006fd9a167923ba194",
  "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000006fd9a167923ba194.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

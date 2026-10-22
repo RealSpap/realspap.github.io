@@ -1,19 +1,19 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Jupiter Lend",
  "named_from": "dashboard",
  "chain": "Solana",
  "address": "7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z",
- "composite": 56,
+ "composite": 55,
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 12,
- "money_per_key_usd": 278353050.60750526,
+ "money_per_key_usd": 257462392.08681348,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 65,
-  "multisigScore": 87,
+  "multisigScore": 83,
   "timelockScore": 13,
   "oracleAuthorityScore": 20,
   "crossExposureScore": 60
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1113412202.430021,
+ "tvl_usd": 1029849568.3472539,
  "category": "Lending",
- "at_risk_usd": 489901369.0692093,
+ "at_risk_usd": 463432305.75626427,
  "narrative": {
   "summary": "Four programs share one 4-of-6 upgrade multisig with a 12-hour delay, while the liquidity admin is a separate 5-of-10 multisig with a 6-hour delay. The score is a bound: three of the four admin accounts were not re-read.",
   "tag": "bound, not final: 3 of 4 admins not re-read",
@@ -68,14 +68,14 @@
  "consumer_example": {
   "verdict": "zero",
   "collateral_factor_bps": 0,
-  "text": "collateral factor 0 (score 56 is under MIN_SAFE_SCORE 60)"
+  "text": "collateral factor 0 (score 55 is under MIN_SAFE_SCORE 60)"
  },
  "cheapest_fix": {
   "band": "decent",
   "next": 60,
   "axis": "admin key",
   "from": 65,
-  "to": 74,
+  "to": 77,
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
@@ -101,17 +101,17 @@
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 12,
-   "tvl_usd": 1113412202.430021,
-   "money_per_key_usd": 278353050.60750526,
+   "tvl_usd": 1029849568.3472539,
+   "money_per_key_usd": 257462392.08681348,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1791859636,
+ "last_pushed": 1792445234,
  "stale": false,
- "methodology_hash": "0x4f8c4019b9c9e75b1aaef679a3a699b9ec7926ee504c57696cc693641a2b3b3a",
+ "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z",
  "page": "https://realspap.github.io/oracle/p/solana-7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z.html",

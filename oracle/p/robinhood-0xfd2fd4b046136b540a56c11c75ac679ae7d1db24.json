@@ -1,11 +1,11 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-15T21:09:14Z",
+ "generatedAt": "2026-10-22T20:07:41Z",
  "name": "Spark Liquidity Layer (ALMProxy)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
  "address": "0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
- "composite": 32,
+ "composite": 29,
  "band": "weak",
  "keys_to_move": null,
  "react_hours": null,
@@ -19,7 +19,7 @@
  "sub": {
   "adminKeyScore": 50,
   "multisigScore": 30,
-  "timelockScore": 10,
+  "timelockScore": 0,
   "oracleAuthorityScore": 100,
   "crossExposureScore": 100
  },
@@ -49,10 +49,10 @@
    "met": true
   }
  ],
- "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1670.5008599213193,
+ "exit_window": "none: a change applies at once",
+ "tvl_usd": 861.8280877932219,
  "category": "Onchain Capital Allocator",
- "at_risk_usd": 1135.940584746497,
+ "at_risk_usd": 611.8979423331876,
  "narrative": {
   "summary": "Left open in an earlier pass as an unrecognized proxy shape - turned out not to be a proxy at all, but Spark\u2019s own ALMProxy dispatcher, gated by the identical executor contract already traced for Spark Savings USDG.",
   "tag": "resolved a real open thread, not repeated",
@@ -81,9 +81,14 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-13T03:26:46Z",
+   "t": "2026-10-20T00:54:24Z",
    "composite": 32,
-   "from": "push"
+   "from": "first"
+  },
+  {
+   "t": "2026-10-20T00:54:24Z",
+   "composite": 29,
+   "from": "watch"
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/robinhood-chain/0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.xml",
@@ -100,14 +105,14 @@
  "consumer_example": {
   "verdict": "zero",
   "collateral_factor_bps": 0,
-  "text": "collateral factor 0 (score 32 is under MIN_SAFE_SCORE 60)"
+  "text": "collateral factor 0 (score 29 is under MIN_SAFE_SCORE 60)"
  },
  "cheapest_fix": {
   "band": "moderate",
   "next": 40,
   "axis": "admin key",
   "from": 50,
-  "to": 69,
+  "to": 77,
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
@@ -124,10 +129,10 @@
   "why": "AccessControl (ERC-165) whose admin-role holders are not enumerable on-chain: read them from RoleGranted events; nothing for this reader to compare"
  },
  "score_cluster": null,
- "last_pushed": 1791862006,
+ "last_pushed": 1792448928,
  "stale": false,
- "methodology_hash": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
- "block": 136039274,
+ "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+ "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
