@@ -65,7 +65,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20LayerZero%20V2%20messaging%20core%20on%20Robinhood%20Chain%20%280x6f475642%E2%80%A6%29&body=Target%3A%200x6f475642a6e85809b1c36fa62763669b1b48dd5b%20on%20Robinhood%20Chain%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://rpc.mainnet.chain.robinhood.com",
   "steps": [
@@ -157,5 +157,6 @@
  "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x6f475642a6e85809b1c36fa62763669b1b48dd5b",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x6f475642a6e85809b1c36fa62763669b1b48dd5b.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

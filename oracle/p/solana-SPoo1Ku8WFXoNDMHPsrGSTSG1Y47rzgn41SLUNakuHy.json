@@ -65,7 +65,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20SPL%20Stake%20Pool%20program%20%28shared%20infrastructure%29%20on%20Solana%20%28SPoo1Ku8WF%E2%80%A6%29&body=Target%3A%20SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy%20on%20Solana%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": null,
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.xml",
@@ -108,5 +108,6 @@
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
  "page": "https://realspap.github.io/oracle/p/solana-SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

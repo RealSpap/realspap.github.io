@@ -84,7 +84,7 @@
   "amount_change_pct": 0.0,
   "vanished": null
  },
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Telos%20Consilium%20TelosC%20Surge%20on%20Plasma%20%280xa9c251f8%E2%80%A6%29&body=Target%3A%200xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66%20on%20Plasma%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://rpc.plasma.to",
   "steps": [
@@ -215,5 +215,6 @@
  "block": 36865684,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
  "page": "https://realspap.github.io/oracle/p/plasma-0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

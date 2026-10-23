@@ -65,7 +65,7 @@
   "amount_change_pct": 0.55,
   "vanished": null
  },
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%201337%20USDC%20%281337USDC%29%20on%20Ethereum%20%280x94643e86%E2%80%A6%29&body=Target%3A%200x94643e86aa5e38ddac6c7791c1297f4e40cd96c1%20on%20Ethereum%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://ethereum-rpc.publicnode.com",
   "steps": [
@@ -162,5 +162,6 @@
  "block": 11971429,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x94643e86aa5e38ddac6c7791c1297f4e40cd96c1",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x94643e86aa5e38ddac6c7791c1297f4e40cd96c1.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

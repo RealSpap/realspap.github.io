@@ -90,7 +90,7 @@
   "amount_change_pct": 0.0,
   "vanished": null
  },
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Morpho%20Vault%3A%20Grove%20x%20Steakhouse%20High%20Yield%20AUSD%20on%20Monad%20%280x32841a85%E2%80%A6%29&body=Target%3A%200x32841a8511d5c2c5b253f45668780b99139e476d%20on%20Monad%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://rpc.monad.xyz",
   "steps": [
@@ -239,5 +239,6 @@
  "block": 73318698,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x32841a8511d5c2c5b253f45668780b99139e476d",
  "page": "https://realspap.github.io/oracle/p/monad-0x32841a8511d5c2c5b253f45668780b99139e476d.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

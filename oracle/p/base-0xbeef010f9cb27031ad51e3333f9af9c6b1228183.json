@@ -84,7 +84,7 @@
   "amount_change_pct": -0.06,
   "vanished": null
  },
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Steakhouse%20USDC%20on%20Base%20%280xbeef010f%E2%80%A6%29&body=Target%3A%200xbeef010f9cb27031ad51e3333f9af9c6b1228183%20on%20Base%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://mainnet.base.org",
   "steps": [
@@ -233,5 +233,6 @@
  "block": 48865284,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeef010f9cb27031ad51e3333f9af9c6b1228183",
  "page": "https://realspap.github.io/oracle/p/base-0xbeef010f9cb27031ad51e3333f9af9c6b1228183.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

@@ -65,7 +65,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Euler%20V2%20eVaultFactory%20on%20Monad%20%280xba4dd672%E2%80%A6%29&body=Target%3A%200xba4dd672062de8feedb665dd4410658864483f1e%20on%20Monad%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -118,5 +118,6 @@
  "block": 73318698,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xba4dd672062de8feedb665dd4410658864483f1e",
  "page": "https://realspap.github.io/oracle/p/monad-0xba4dd672062de8feedb665dd4410658864483f1e.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

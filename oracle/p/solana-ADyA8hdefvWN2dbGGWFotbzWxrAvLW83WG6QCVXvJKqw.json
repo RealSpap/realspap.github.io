@@ -60,7 +60,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20PumpSwap%20and%20pump.fun%20bonding%20curve%20on%20Solana%20%28ADyA8hdefv%E2%80%A6%29&body=Target%3A%20ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw%20on%20Solana%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": null,
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.xml",
@@ -115,5 +115,6 @@
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
  "page": "https://realspap.github.io/oracle/p/solana-ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

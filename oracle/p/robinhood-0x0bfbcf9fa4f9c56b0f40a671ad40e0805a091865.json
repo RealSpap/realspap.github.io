@@ -67,7 +67,7 @@
  ],
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20PancakeSwap%20V3%20Factory%20on%20Robinhood%20Chain%20%280x0bfbcf9f%E2%80%A6%29&body=Target%3A%200x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865%20on%20Robinhood%20Chain%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://rpc.mainnet.chain.robinhood.com",
   "steps": [
@@ -155,5 +155,6 @@
  "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

@@ -66,7 +66,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Robinhood%20tokenized%20stocks/ETFs%20%285%20of%20~230%20sampled%29%20on%20Robinhood%20Chain%20%280x86923f96%E2%80%A6%29&body=Target%3A%200x86923f96303d656e4aa86d9d42d1e57ad2023fdc%20on%20Robinhood%20Chain%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -119,5 +119,6 @@
  "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x86923f96303d656e4aa86d9d42d1e57ad2023fdc",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x86923f96303d656e4aa86d9d42d1e57ad2023fdc.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

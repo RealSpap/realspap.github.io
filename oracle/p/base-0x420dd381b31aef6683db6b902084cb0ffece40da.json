@@ -72,7 +72,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Aerodrome%20Finance%20PoolFactory%20on%20Base%20%280x420dd381%E2%80%A6%29&body=Target%3A%200x420dd381b31aef6683db6b902084cb0ffece40da%20on%20Base%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -125,5 +125,6 @@
  "block": 48865284,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x420dd381b31aef6683db6b902084cb0ffece40da",
  "page": "https://realspap.github.io/oracle/p/base-0x420dd381b31aef6683db6b902084cb0ffece40da.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

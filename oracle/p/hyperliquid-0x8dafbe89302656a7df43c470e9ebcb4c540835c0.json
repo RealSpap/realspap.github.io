@@ -64,7 +64,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Unit%20UBTC%2C%20UETH%20and%20USOL%20treasuries%20on%20Hyperliquid%20%280x8dafbe89%E2%80%A6%29&body=Target%3A%200x8dafbe89302656a7df43c470e9ebcb4c540835c0%20on%20Hyperliquid%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -117,5 +117,6 @@
  "block": 67607486,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x8dafbe89302656a7df43c470e9ebcb4c540835c0",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x8dafbe89302656a7df43c470e9ebcb4c540835c0.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

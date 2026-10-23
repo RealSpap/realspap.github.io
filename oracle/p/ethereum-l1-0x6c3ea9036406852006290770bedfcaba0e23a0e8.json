@@ -63,7 +63,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20PYUSD%20%28Paxos%29%20on%20Ethereum%20%280x6c3ea903%E2%80%A6%29&body=Target%3A%200x6c3ea9036406852006290770bedfcaba0e23a0e8%20on%20Ethereum%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://ethereum-rpc.publicnode.com",
   "steps": [
@@ -165,5 +165,6 @@
  "block": 11971429,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x6c3ea9036406852006290770bedfcaba0e23a0e8",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x6c3ea9036406852006290770bedfcaba0e23a0e8.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

@@ -70,7 +70,7 @@
   "amount_change_pct": 0.02,
   "vanished": null
  },
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Flock%20Credit%20Vault%20%28fcVAULT%29%20on%20Robinhood%20Chain%20%280xd42174d3%E2%80%A6%29&body=Target%3A%200xd42174d3db28b0fa2bd25381c3521b18ae9db490%20on%20Robinhood%20Chain%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -123,5 +123,6 @@
  "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xd42174d3db28b0fa2bd25381c3521b18ae9db490",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xd42174d3db28b0fa2bd25381c3521b18ae9db490.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

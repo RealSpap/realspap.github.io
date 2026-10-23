@@ -65,7 +65,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20HIP-3%20dex%20xyz%20%28trade%5BXYZ%5D%29%20on%20Hyperliquid%20%280x88806a71%E2%80%A6%29&body=Target%3A%200x88806a71d74ad0a510b350545c9ae490912f0888%20on%20Hyperliquid%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -118,5 +118,6 @@
  "block": 67607486,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x88806a71d74ad0a510b350545c9ae490912f0888",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x88806a71d74ad0a510b350545c9ae490912f0888.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

@@ -66,7 +66,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Chainlink%20Price%20Feed%20Admin%20%28Robinhood%20Chain%29%20on%20Robinhood%20Chain%20%280xee27d5ae%E2%80%A6%29&body=Target%3A%200xee27d5ae494300902d90454e8630a3f1c68c9c52%20on%20Robinhood%20Chain%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -119,5 +119,6 @@
  "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xee27d5ae494300902d90454e8630a3f1c68c9c52",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xee27d5ae494300902d90454e8630a3f1c68c9c52.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

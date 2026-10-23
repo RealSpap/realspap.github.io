@@ -81,7 +81,7 @@
   "amount_change_pct": -0.1,
   "vanished": null
  },
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Spark%20USDC%20Vault%20%28sparkUSDC%29%20on%20Base%20%280x7bfa7c4f%E2%80%A6%29&body=Target%3A%200x7bfa7c4f149e7415b73bdedfe609237e29cbf34a%20on%20Base%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://mainnet.base.org",
   "steps": [
@@ -179,5 +179,6 @@
  "block": 48865284,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a",
  "page": "https://realspap.github.io/oracle/p/base-0x7bfa7c4f149e7415b73bdedfe609237e29cbf34a.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

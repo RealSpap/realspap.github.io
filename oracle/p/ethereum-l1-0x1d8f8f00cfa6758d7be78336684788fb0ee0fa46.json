@@ -65,7 +65,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Rocket%20Pool%20RocketStorage%20on%20Ethereum%20%280x1d8f8f00%E2%80%A6%29&body=Target%3A%200x1d8f8f00cfa6758d7be78336684788fb0ee0fa46%20on%20Ethereum%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": [
   {
@@ -118,5 +118,6 @@
  "block": 11971429,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x1d8f8f00cfa6758d7be78336684788fb0ee0fa46.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

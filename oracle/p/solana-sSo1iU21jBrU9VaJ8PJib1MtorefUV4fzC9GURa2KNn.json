@@ -63,7 +63,7 @@
  "safe_activity": null,
  "admin_probe": null,
  "held": null,
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Solayer%20%28sSOL%20staking%2C%20Endo%29%20on%20Solana%20%28sSo1iU21jB%E2%80%A6%29&body=Target%3A%20sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn%20on%20Solana%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": null,
  "history": null,
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn.xml",
@@ -118,5 +118,6 @@
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn",
  "page": "https://realspap.github.io/oracle/p/solana-sSo1iU21jBrU9VaJ8PJib1MtorefUV4fzC9GURa2KNn.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }

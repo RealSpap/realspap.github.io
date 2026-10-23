@@ -76,7 +76,7 @@
   "amount_change_pct": 0.0,
   "vanished": null
  },
- "dispute": null,
+ "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Arcus%20pToken%20factory%20%2B%20pBTC%20%2B%20pBTC3x%20on%20Robinhood%20Chain%20%280x4472c69d%E2%80%A6%29&body=Target%3A%200x4472c69d299382f8847ebce4fc6ed8e295510e3e%20on%20Robinhood%20Chain%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
  "independent_read_reproduce": {
   "rpc": "https://rpc.mainnet.chain.robinhood.com",
   "steps": [
@@ -216,5 +216,6 @@
  "block": 140889025,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x4472c69d299382f8847ebce4fc6ed8e295510e3e",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x4472c69d299382f8847ebce4fc6ed8e295510e3e.html",
- "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
+ "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
+ "first_published": "2026-10-11"
 }
