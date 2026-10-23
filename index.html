@@ -5,17 +5,17 @@
 <script>(function(){try{var t=localStorage.getItem('spap-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spap: On-Chain Research</title>
-<meta name="description" content="Independent on-chain research: shared multisig signers across 411 DeFi protocol entries on 25 chains, 30 single-key admin cases among 108 protocols checked by hand, and 57 exploits reconstructed from raw chain data.">
+<meta name="description" content="Independent on-chain research: shared multisig signers across 411 DeFi protocol entries on 25 chains, 30 single-key admin cases among 108 protocols checked by hand, and 64 exploits reconstructed from raw chain data, all but one (Tectonic on Cronos, whose chain was rolled back past the attack).">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://realspap.github.io/">
 <meta property="og:title" content="Spap: On-Chain Research">
-<meta property="og:description" content="Independent on-chain research: shared multisig signers across 411 DeFi protocol entries on 25 chains, 30 single-key admin cases among 108 protocols checked by hand, and 57 exploits reconstructed from raw chain data.">
+<meta property="og:description" content="Independent on-chain research: shared multisig signers across 411 DeFi protocol entries on 25 chains, 30 single-key admin cases among 108 protocols checked by hand, and 64 exploits reconstructed from raw chain data, all but one (Tectonic on Cronos, whose chain was rolled back past the attack).">
 <meta property="og:image" content="https://realspap.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Spap: On-Chain Research">
-<meta name="twitter:description" content="Independent on-chain research: shared multisig signers across 411 DeFi protocol entries on 25 chains, 30 single-key admin cases among 108 protocols checked by hand, and 57 exploits reconstructed from raw chain data.">
+<meta name="twitter:description" content="Independent on-chain research: shared multisig signers across 411 DeFi protocol entries on 25 chains, 30 single-key admin cases among 108 protocols checked by hand, and 64 exploits reconstructed from raw chain data, all but one (Tectonic on Cronos, whose chain was rolled back past the attack).">
 <meta name="twitter:image" content="https://realspap.github.io/assets/og-image.png">
 <link rel="canonical" href="https://realspap.github.io/">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -623,7 +623,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Independent on-chain research</p>
           <h1 class="reveal">Spap</h1>
-          <p class="bio reveal">Who really holds the keys in DeFi, read directly from the chain: shared multisig signers, single-key admin control, and exploits reconstructed transaction by transaction. <strong>Findings and on-chain sources are always public and free to reuse with credit. Want the same checks on your protocol? Ask on X.</strong></p>
+          <p class="bio reveal">Who really holds the keys in DeFi, read directly from the chain: shared multisig signers, single-key admin control, and exploits reconstructed transaction by transaction, all but one (Tectonic on Cronos, whose chain was rolled back past the attack). <strong>Findings and on-chain sources are always public and free to reuse with credit. Want the same checks on your protocol? Ask on X.</strong></p>
           <ul class="trust-row reveal">
             <li class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>RPC-verified</li>
             <li class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>Sources cited</li>
@@ -658,12 +658,12 @@
           <span class="stat-label">Protocol entries checked for multisig overlap</span>
         </div>
         <div class="stat-tile reveal">
-          <span class="stat-num">57</span>
+          <span class="stat-num">64</span>
           <span class="stat-label">Exploit incidents reconstructed on-chain</span>
         </div>
         <div class="stat-tile reveal">
-          <span class="stat-num">$921.8M</span>
-          <span class="stat-label">Lost across those 57 incidents, $584.8M independently recomputed</span>
+          <span class="stat-num">$926.0M</span>
+          <span class="stat-label">Lost across those 64 incidents, $589.1M independently recomputed</span>
         </div>
         <div class="stat-tile reveal">
           <span class="stat-num">34</span>
@@ -748,13 +748,13 @@
 
         <!-- Exploit postmortems -->
         <article class="card card-std reveal">
-          <span class="badge">57 Incidents</span>
+          <span class="badge">64 Incidents</span>
           <h3>Exploit postmortems</h3>
-          <p class="desc">What happened on-chain after a protocol gets hit, transaction by transaction, not the announcement thread. Example: press reported only the Ethereum leg of the Sandbox bridge exploit; the reconstruction finds 405.83 WETH gross across Base and Ethereum, about 5.2 times the press figure. 34 entries correct, reconcile or newly surface a press or DefiLlama figure (23 corrections, 8 reconciliations, 3 discoveries). 57 incidents, $921.8M in losses, $584.8M of it independently recomputed.</p>
+          <p class="desc">What happened on-chain after a protocol gets hit, transaction by transaction, not the announcement thread. Example: press reported only the Ethereum leg of the Sandbox bridge exploit; the reconstruction finds 405.83 WETH gross across Base and Ethereum, about 5.2 times the press figure. 38 rows for 36 entries correct, reconcile or newly surface a press or DefiLlama figure (26 corrections, 9 reconciliations, 3 discoveries; 3 of the corrections are to this repository's own earlier text). 64 incidents, $926.0M in losses, $589.1M of it independently recomputed.</p>
           <div class="totals-row" aria-hidden="true">
-            <div><span class="total-num">57</span><span class="total-lbl">Incidents</span></div>
-            <div><span class="total-num">$921.8M</span><span class="total-lbl">Total losses</span></div>
-            <div><span class="total-num">$584.8M</span><span class="total-lbl">Recomputed</span></div>
+            <div><span class="total-num">64</span><span class="total-lbl">Incidents</span></div>
+            <div><span class="total-num">$926.0M</span><span class="total-lbl">Total losses</span></div>
+            <div><span class="total-num">$589.1M</span><span class="total-lbl">Recomputed</span></div>
           </div>
           <div class="link-row">
             <a class="text-link" href="https://github.com/RealSpap/onchain-postmortems">GitHub repo ↗</a>
