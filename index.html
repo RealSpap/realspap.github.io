@@ -531,7 +531,7 @@
     background:var(--bg-alt); overflow:hidden;
   }
   .ratio-fill{
-    position:absolute; inset:0; width:23%;
+    position:absolute; inset:0; width:28%;
     background:var(--gold); border-radius:999px;
   }
   .ratio-caption{
@@ -650,11 +650,11 @@
     <div class="wrap">
       <div class="stats-grid">
         <div class="stat-tile reveal">
-          <span class="stat-num">729</span>
+          <span class="stat-num">749</span>
           <span class="stat-label">Confirmed multisig contracts, 25 chains</span>
         </div>
         <div class="stat-tile reveal">
-          <span class="stat-num">391</span>
+          <span class="stat-num">411</span>
           <span class="stat-label">Protocol entries checked for multisig overlap</span>
         </div>
         <div class="stat-tile reveal">
@@ -676,7 +676,7 @@
       </div>
       <ul class="honesty reveal">
         <li><strong>Net, not headline.</strong> Funds an attacker returned, or that were reversed on-chain, are deducted. A figure taken from a protocol, the press or DefiLlama is marked † and kept out of the recomputed total.</li>
-        <li><strong>Reproducible.</strong> Every incident ships the script and raw proof files used to rebuild it, and the full index is available as <a href="https://github.com/RealSpap/onchain-postmortems/tree/main/data">JSON and CSV</a>.</li>
+        <li><strong>Reproducible.</strong> Every incident ships a script and raw proof files used to rebuild it (one script reads the chain&#8217;s current state rather than replaying the incident), and the full index is available as <a href="https://github.com/RealSpap/onchain-postmortems/tree/main/data">JSON and CSV</a>.</li>
         <li><strong>Independent.</strong> No protocol pays for its coverage. Corrections are welcome and logged in public.</li>
       </ul>
     </div>
@@ -717,9 +717,9 @@
       <div class="card-grid card-grid-3">
         <!-- Multisig overlap -->
         <article class="card card-std reveal">
-          <span class="badge">391 Protocol entries</span>
+          <span class="badge">411 Protocol entries</span>
           <h3>Multisig overlap</h3>
-          <p class="desc">391 protocol entries, 729 confirmed multisig contracts, 25 chains, same method throughout. The widest single signer key sits on 5 independent protocols at once, and one Safe governs the core L1 contracts of 5 Superchain chains. On Ethereum mainnet alone, 8 signers hold keys on 2 or more independent protocols; 7 of them match the protocols&#39; own public signer disclosures. Dozens of protocols reuse the same or an overlapping signer set across multiple chains.</p>
+          <p class="desc">411 protocol entries, 749 confirmed multisig contracts, 25 chains, same method throughout. The widest single signer key sits on 5 independent protocols at once, and one Safe governs the core L1 contracts of 5 Superchain chains. On Ethereum mainnet alone, 8 signers hold keys on 2 or more independent protocols; 7 of them match the protocols&#39; own public signer disclosures. Dozens of protocols reuse the same or an overlapping signer set across multiple chains.</p>
           <div class="link-row">
             <a class="text-link" href="https://github.com/RealSpap/multisig-overlap-showcase">GitHub repo ↗</a>
           </div>
@@ -733,10 +733,10 @@
         <article class="card card-std reveal">
           <span class="badge">30 Cases</span>
           <h3>DeFi admin-key risk</h3>
-          <p class="desc">A single key (a bare EOA or a 1-of-N Safe) still holding an admin role that can mint, pause, or redirect funds: the pattern behind Wasabi Protocol's $5.9M loss in April 2026. 108 DeFi protocols and Morpho vault owners checked by hand on-chain; 30 single-key admin cases (2 Critical, 13 High, 7 Medium, 8 Low). Several are bounded by a timelock or a guardian, and each case says so.</p>
+          <p class="desc">A single key (a bare EOA or a 1-of-N Safe) still holding an admin role that can mint, pause, or redirect funds: the pattern behind Wasabi Protocol's $5.9M loss in April 2026. 108 DeFi protocols and Morpho vault owners checked by hand on-chain; 30 single-key admin cases (2 Critical, 13 High, 7 Medium, 8 Low). Several are bounded by a timelock or a guardian, and each case says so where one exists.</p>
           <div class="ratio-figure">
             <div class="ratio-track" aria-hidden="true"><div class="ratio-fill"></div></div>
-            <div class="ratio-caption"><span><b>23</b> cases</span><span>99 checked</span></div>
+            <div class="ratio-caption"><span><b>30</b> cases</span><span>108 checked</span></div>
           </div>
           <div class="link-row">
             <a class="text-link" href="https://github.com/RealSpap/defi-admin-key-risk-showcase">GitHub repo ↗</a>
