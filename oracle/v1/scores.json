@@ -398,7 +398,7 @@
    "chain": "Ethereum",
    "key": "ethereum-l1",
    "address": "0xc139190f447e929f090edeb554d95abb8b18ac1c",
-   "name": "USDtb (Ethena Labs)",
+   "name": "USDtb",
    "composite": 2,
    "band": "critical",
    "keys_to_move": 1,

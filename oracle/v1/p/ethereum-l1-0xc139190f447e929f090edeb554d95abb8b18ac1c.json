@@ -1,7 +1,7 @@
 {
  "version": "v1",
  "generatedAt": "2026-10-22T20:07:41Z",
- "name": "USDtb (Ethena Labs)",
+ "name": "USDtb",
  "named_from": "dashboard",
  "chain": "Ethereum",
  "address": "0xc139190f447e929f090edeb554d95abb8b18ac1c",
@@ -49,9 +49,9 @@
  "category": "RWA",
  "at_risk_usd": 467454550.9031607,
  "narrative": {
-  "summary": "A single bare EOA - a real, actively-used key, not vanity-mined - holds both DEFAULT_ADMIN_ROLE and the ProxyAdmin owner() on a $483M stablecoin. No Safe, no Timelock, no DAO anywhere.",
-  "tag": "critical: bare EOA on $483M",
-  "detail": "The same EOA also independently holds admin on two other proxies (fUSD, aBTC) with negligible real usage, so those aren\u2019t scored as their own targets - but the blast radius is real. Genuinely inconsistent within Ethena\u2019s own infrastructure: USDtb\u2019s own PSM (next card) migrated from a Safe to a real 24h Timelock on 2026-07-13; this token\u2019s upgrade authority never got the same treatment."
+  "summary": "One EOA (an account with no contract code) holds both DEFAULT_ADMIN_ROLE and the ProxyAdmin owner() of this stablecoin, whose supply was about 475M tokens on 2026-10-28. We found no multisig, timelock or DAO on that path.",
+  "tag": "critical: one EOA, about 475M tokens",
+  "detail": "The same EOA also holds admin on two other proxies (fUSD, aBTC) with negligible real usage, so those are not scored as their own targets. The USDtb PSM (next card) moved from a multisig to a 24h Timelock on 2026-07-13; for the upgrade path of this token we found no similar change. The docs say the token has been issued by Anchorage Digital Bank since October 2025 (docs.ethena.fi), so the key may belong to the issuer. We have not confirmed who holds it."
  },
  "score_account": null,
  "paused": null,

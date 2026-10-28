@@ -379,7 +379,7 @@
    {
     "chain": "Ethereum",
     "key": "ethereum-l1",
-    "name": "USDtb (Ethena Labs)",
+    "name": "USDtb",
     "score": 2,
     "band": "critical",
     "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xc139190f447e929f090edeb554d95abb8b18ac1c.html",
