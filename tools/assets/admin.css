@@ -1,0 +1,30 @@
+/* Admin key checker : seulement des classes x-admin-* (aucune règle sur body, html, header, footer, h1, h2 ou a nus). Aucune couleur de gravité : un fait n'a pas de couleur d'alerte. Jetons, thème et en-tête : la coque du site. */
+.x-admin-shared{margin:12px 0 0;padding:10px 12px;border-radius:10px;border:1px solid var(--accent);background:var(--accent-bg);font-size:14px;color:var(--text)}
+.x-admin-err{margin:12px 0 0;padding:10px 12px;border-radius:10px;border:1px solid var(--panel-border);background:var(--panel-2);font-size:14px;color:var(--text)}
+.x-admin-err::before{content:"\25B2\00a0"}
+.x-admin-noscript{margin:16px 0;padding:12px 14px;border-radius:10px;border:1px solid var(--panel-border);background:var(--panel-2);font-size:14px}
+.x-admin-nodes{font:12.5px var(--mono);color:var(--text-faint);word-break:break-all}
+.xp .x-admin-meta{word-break:normal;overflow-wrap:anywhere}
+.x-admin-unread{border:1px solid var(--accent);background:var(--accent-bg)}
+.x-admin-pre-actions{display:flex;gap:8px;margin-top:8px}
+.x-admin-pre-actions button{padding:9px 14px;font-size:14px}
+.x-admin-opt[hidden]{display:none !important}
+.xp-page .x-admin-sec{margin-top:44px}
+.x-admin-scroll{scroll-margin-top:120px}
+.xp-page .xp-list.x-admin-keys{max-width:none;width:100%}
+.xp-page .x-admin-keys li{max-width:none}
+.xp-page .x-admin-unread li{font-size:14px;line-height:1.5}
+.xp-page .x-admin-pre-actions button{min-height:44px}
+.xp-page .x-admin-chips button{min-height:44px}
+.xp-page .x-admin-opt{min-height:44px}
+.xp-page a.x-admin-opt:not(.xp-card):not([hidden]){display:inline-flex;align-items:center}
+.xp-page [id]{scroll-margin-top:112px}
+/* Contour du champ : le contour hérité (blanc à 9 %) mesure 1,3:1 sur le fond ; WCAG 1.4.11 demande 3:1 pour la limite d'un champ */
+.xp-page .xp-try input.x-admin-input{border-color:rgb(143,137,120)}
+/* Écran étroit : le champ et le bouton passent avant le paragraphe d'introduction, au-dessus de la barre du bas fixe (360 x 740 : bouton visible sans défiler) */
+@media (max-width:560px){
+  .x-admin-hook{display:flex;flex-direction:column}
+  .x-admin-hook .xp-lede{order:3}
+  .x-admin-hook .xp-try,.x-admin-hook .x-admin-chips,.x-admin-hook .x-admin-shared,.x-admin-hook .x-admin-err,.x-admin-hook .xp-progress{order:2}
+  .x-admin-hook .xp-fine,.x-admin-hook .x-admin-noscript{order:4}
+}
