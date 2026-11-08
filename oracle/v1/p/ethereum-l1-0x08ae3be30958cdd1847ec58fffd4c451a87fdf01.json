@@ -27,30 +27,42 @@
  "requirements": [
   {
    "label": "Admin power is not a bare key",
-   "met": true
+   "met": true,
+   "read": true,
+   "applies": true
   },
   {
    "label": "At least a 3-of-5 multisig",
-   "met": true
+   "met": true,
+   "read": true,
+   "applies": true
   },
   {
    "label": "A confirmed delay before changes apply, no bypass",
-   "met": false
+   "met": false,
+   "read": false,
+   "applies": true
   },
   {
    "label": "Bypass paths of the delay checked and ruled out",
-   "met": false
+   "met": false,
+   "read": false,
+   "applies": true
   },
   {
    "label": "Price feed not under one hand",
-   "met": true
+   "met": false,
+   "read": false,
+   "applies": true
   },
   {
    "label": "No key shared with another tracked protocol",
-   "met": false
+   "met": false,
+   "read": true,
+   "applies": true
   }
  ],
- "exit_window": "none: a change applies at once",
+ "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
  "tvl_usd": null,
  "category": null,
  "at_risk_usd": null,
@@ -107,8 +119,8 @@
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
-  "requirement": "A confirmed delay before changes apply, no bypass",
-  "reason": "Changes can apply with no waiting time"
+  "requirement": "No key shared with another tracked protocol",
+  "reason": "The same keys control other protocols"
  },
  "independent_read": {
   "path": null,

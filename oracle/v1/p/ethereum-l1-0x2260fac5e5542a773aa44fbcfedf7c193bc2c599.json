@@ -25,30 +25,42 @@
  "requirements": [
   {
    "label": "Admin power is not a bare key",
-   "met": true
+   "met": true,
+   "read": true,
+   "applies": true
   },
   {
    "label": "At least a 3-of-5 multisig",
-   "met": true
+   "met": true,
+   "read": true,
+   "applies": true
   },
   {
    "label": "A confirmed delay before changes apply, no bypass",
-   "met": false
+   "met": false,
+   "read": false,
+   "applies": true
   },
   {
    "label": "Bypass paths of the delay checked and ruled out",
-   "met": false
+   "met": false,
+   "read": false,
+   "applies": true
   },
   {
    "label": "Price feed not under one hand",
-   "met": true
+   "met": false,
+   "read": false,
+   "applies": false
   },
   {
    "label": "No key shared with another tracked protocol",
-   "met": true
+   "met": true,
+   "read": true,
+   "applies": true
   }
  ],
- "exit_window": "none: a change applies at once",
+ "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
  "tvl_usd": 8831607673.312622,
  "category": "Bridge",
  "at_risk_usd": 4239171683.1900587,
@@ -118,7 +130,7 @@
  },
  "main_gap": {
   "requirement": "A confirmed delay before changes apply, no bypass",
-  "reason": "Changes can apply with no waiting time"
+  "reason": "not read: this requirement could not be checked"
  },
  "independent_read": {
   "path": "owner() -&gt; owner() of the holder (contract)",

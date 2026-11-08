@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5yGFvOTOM3BfbZXLGrsZDOwwQ2GQqg/vZaGG87Cq4pc=' 'sha256-IFZ2WoDBQOR/crkOZX8JMkOM5oYsliiG891OUq8sl+4=' 'sha256-t9lKv7q5m/ow1PHhZhmVvnnqd/YL9Yj1GRstp6RDgkY=' 'unsafe-eval'; style-src 'unsafe-inline'; img-src 'self' data: blob: https://icons.llamao.fi https://img.shields.io https://raw.githubusercontent.com; font-src data:; manifest-src 'self'; connect-src 'self' https://api.devnet.solana.com https://api.github.com https://api.mainnet-beta.solana.com https://api.openchain.xyz https://api.testnet.cipherscan.app https://arb1.arbitrum.io https://arbiscan.io https://basescan.org https://blocksec.com https://cdn.jsdelivr.net https://cointelegraph.com https://decrypt.co https://eth.blockscout.com https://ethereum-rpc.publicnode.com https://ethereum-sepolia-rpc.publicnode.com https://etherscan.io https://explore.tempo.xyz https://explore.testnet.tempo.xyz https://explorer.solana.com https://explorer.testnet.chain.robinhood.com https://financefeeds.com https://github.com https://icons.llamao.fi https://img.shields.io https://mainnet.base.org https://medium.com https://monadvision.com https://plasmascan.to https://r.jina.ai https://raw.githubusercontent.com https://realspap.github.io https://rekt.news https://robinhoodchain.blockscout.com https://rpc.hyperliquid-testnet.xyz https://rpc.hyperliquid.xyz https://rpc.mainnet.chain.robinhood.com https://rpc.moderato.tempo.xyz https://rpc.monad.xyz https://rpc.plasma.to https://rpc.tempo.xyz https://rpc.testnet.chain.robinhood.com https://sepolia-rollup.arbitrum.io https://sepolia.arbiscan.io https://sepolia.base.org https://sepolia.basescan.org https://sepolia.etherscan.io https://solana-rpc.publicnode.com https://solscan.io https://testnet-rpc.monad.xyz https://testnet-rpc.plasma.to https://testnet.cipherscan.app https://testnet.monadvision.com https://testnet.plasmascan.to https://twitter.com https://www.bleepingcomputer.com https://www.chainalysis.com https://www.githubstatus.com https://www.halborn.com https://www.nccgroup.com https://www.quillaudits.com https://www.theblock.co; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'"><meta name="referrer" content="no-referrer">
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5yGFvOTOM3BfbZXLGrsZDOwwQ2GQqg/vZaGG87Cq4pc=' 'sha256-WidWy5HpDJWGZfP1oyAmbwyI1m1cq52nB4oHIrpZ74s=' 'sha256-t9lKv7q5m/ow1PHhZhmVvnnqd/YL9Yj1GRstp6RDgkY=' 'unsafe-eval'; style-src 'unsafe-inline'; img-src 'self' data: blob: https://icons.llamao.fi https://img.shields.io https://raw.githubusercontent.com; font-src data:; manifest-src 'self'; connect-src 'self' https://api.devnet.solana.com https://api.github.com https://api.mainnet-beta.solana.com https://api.openchain.xyz https://api.testnet.cipherscan.app https://arb1.arbitrum.io https://arbiscan.io https://basescan.org https://blocksec.com https://cdn.jsdelivr.net https://cointelegraph.com https://decrypt.co https://eth.blockscout.com https://ethereum-rpc.publicnode.com https://ethereum-sepolia-rpc.publicnode.com https://etherscan.io https://explore.tempo.xyz https://explore.testnet.tempo.xyz https://explorer.solana.com https://explorer.testnet.chain.robinhood.com https://financefeeds.com https://github.com https://icons.llamao.fi https://img.shields.io https://mainnet.base.org https://medium.com https://monadvision.com https://plasmascan.to https://r.jina.ai https://raw.githubusercontent.com https://realspap.github.io https://rekt.news https://robinhoodchain.blockscout.com https://rpc.hyperliquid-testnet.xyz https://rpc.hyperliquid.xyz https://rpc.mainnet.chain.robinhood.com https://rpc.moderato.tempo.xyz https://rpc.monad.xyz https://rpc.plasma.to https://rpc.tempo.xyz https://rpc.testnet.chain.robinhood.com https://sepolia-rollup.arbitrum.io https://sepolia.arbiscan.io https://sepolia.base.org https://sepolia.basescan.org https://sepolia.etherscan.io https://solana-rpc.publicnode.com https://solscan.io https://testnet-rpc.monad.xyz https://testnet-rpc.plasma.to https://testnet.cipherscan.app https://testnet.monadvision.com https://testnet.plasmascan.to https://twitter.com https://www.bleepingcomputer.com https://www.chainalysis.com https://www.githubstatus.com https://www.halborn.com https://www.nccgroup.com https://www.quillaudits.com https://www.theblock.co; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'"><meta name="referrer" content="no-referrer">
 <script>(function(){try{var t=localStorage.getItem('spap-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Authority Risk Oracle | Spap</title>
@@ -636,6 +636,7 @@
   .pc-req li small { grid-column: 2; color: var(--text-faint); font-size: 12px; }
   .pc-req li.ok { border-color: color-mix(in srgb, var(--band-strong) 45%, var(--border)); } .pc-req li.ok i { color: var(--bg); background: var(--band-strong); transform: scale(1.08); } .pc-req li.ok i::before { content: "\2713"; }
   .pc-req li.no i { color: var(--band-critical); background: var(--band-critical-bg); } .pc-req li.no i::before { content: "\2715"; }
+  .pc-req li.nr i { color: var(--text-faint); box-shadow: inset 0 0 0 1px var(--text-faint); } .pc-req li.nr i::before { content: "?"; } .pc-req li.na i { color: var(--text-faint); box-shadow: inset 0 0 0 1px var(--text-faint); } .pc-req li.na i::before { content: "\2013"; }   /* U1-A: not read is neither a pass nor a fail */
   .pc-risk { margin: 12px 0 0; font-size: 13px; color: var(--text-dim); } .pc-risk b { font-family: var(--mono); color: var(--text); font-variant-numeric: tabular-nums; }
   .pc-sliders { display: grid; gap: 10px; }
   .pc-row { display: grid; grid-template-columns: 128px 1fr 34px; gap: 10px; align-items: center; font-size: 14px; }
@@ -3925,8 +3926,30 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
     var slug = Object.keys(WATCH_SLUGS).filter(function (s) { return WATCH_SLUGS[s] === r.key; })[0];
     return '<button type="button" class="lnk" data-embed="' + esc(snip) + '" title="a small live card (iframe)">embed card</button> · <a class="lnk" href="https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/og/' + esc(slug) + '/' + esc(addrKey(r)) + '.png" target="_blank" rel="noopener" title="the image shown under a shared link on X, Discord, Telegram">preview the share card ↗</a>';
   }
-  function reqMet(r) { return [r.sub[0] >= 50, r.sub[1] >= 55, r.sub[2] >= 60, r.sub[2] >= 75, r.sub[3] >= 60, r.sub[4] >= 100].filter(Boolean).length; }
-  function exitWindow(r) { var t = r.sub[2]; return t >= 75 ? ['a confirmed delay, bypass paths checked', 'strong'] : t >= 60 ? ['a confirmed delay, bypass paths not all checked', 'moderate'] : t >= 55 ? ['a delay with a bounded bypass', 'moderate'] : t > 0 ? ['a delay with a bypass, or one not ruled out', 'weak'] : ['none: a change applies at once', 'critical']; }
+  /*REQ-READ-START*/
+  // U1-A (urgent, 07/11/2026): a value that was not read is never shown as a result. A requirement drawn from the price-feed or shared-control score is met only when the Watch says the value was COMPUTED
+  // (oracleAuthorityBasis, crossExposureBasis of watch/scores/*.json): true / false when computed, 'na' when the Watch says it does not apply, null (not read) for not_computed or a file with no basis. The 100 of a placeholder is not a pass.
+  // The two delay requirements are not read when the delay score is 0 and the independent reader gave no hours to react (a delay score of 0 with nothing read is not a read delay of zero).
+  function reqBasis(basis, ok) { return basis === 'computed' ? ok : basis === 'not_applicable' ? 'na' : null; }
+  function reqStates(r, hours) {
+    var delayUnread = r.sub[2] === 0 && (hours === null || hours === undefined) && r.sub[0] > 10;   // a read single key (admin score <= 10) with no delay is a READ 'none': it keeps its sentence
+    return [r.sub[0] >= 50, r.sub[1] >= 55, delayUnread ? null : r.sub[2] >= 60, delayUnread ? null : r.sub[2] >= 75, reqBasis(r.ob, r.sub[3] >= 60), reqBasis(r.cb, r.sub[4] >= 100)];
+  }
+  // 'Not resolved' = the scorer fell to its placeholder floor ((20, 20, 0) or (20, 0, 0)) AND the independent reader did not resolve the holder either (no reading, or kind 'unreadable'): the floor values alone are not enough
+  // (Raydium has the floor and a Squads 3-of-4 read by the reader: a real reading). `so` is the reader's record of the contract (allState.soAll), or null.
+  function unresolvedSub(sub, so) { return sub[0] === 20 && sub[2] === 0 && (sub[1] === 20 || sub[1] === 0) && !(so && so.kind && so.kind !== 'unreadable'); }
+  function readerOf(r) { return (typeof allState !== 'undefined' && allState.soAll || {})[r.key + ':' + String(r.address).toLowerCase()] || null; }
+  function unresolvedRow(r) { return typeof allState !== 'undefined' && !!allState.soAll && unresolvedSub(r.sub, readerOf(r)); }   // no reader loaded (yet, or at all) = nothing can be called unresolved: the figure stays the head's until the reader answers
+  // The hours to react: the reader's own figure, else the delay it read on the holder (a timelock or a Squads multisig read with a delay of 0 is a READ delay), else null (not read).
+  function hoursRead(r) { var h = factOf(r, 1, null); if (h !== null) return h; var so = readerOf(r); return so && so.delay_seconds !== null && so.delay_seconds !== undefined ? so.delay_seconds / 3600 : null; }
+  function reqMet(r) { return reqStates(r, hoursRead(r)).filter(function (x) { return x === true; }).length; }
+  // the requirement list of the All chains detail: `REQ` = [label, state, detail] with state true, false, 'na' (does not apply) or null (not read). One function so a test can run it.
+  function reqListHtml(REQ) {
+    var met = REQ.filter(function (q) { return q[1] === true; }).length, nrd = REQ.filter(function (q) { return q[1] === null; }).length, nap = REQ.filter(function (q) { return q[1] === 'na'; }).length;
+    return '<p class="hist-t">' + met + ' of ' + (REQ.length - nap) + ' applicable requirements met' + (nap ? ', ' + nap + ' does not apply' : '') + (nrd ? ', ' + nrd + ' not read' : '') + '</p><ul class="req">' + REQ.map(function (q) { return '<li class="' + (q[1] === true ? 'ok' : q[1] === false ? 'no' : 'nr') + '"><i>' + (q[1] === true ? '✓' : q[1] === false ? '✗' : q[1] === 'na' ? '–' : '?') + '</i><span>' + q[0] + '</span><small>' + esc(q[2]) + '</small></li>'; }).join('') + '</ul>';
+  }
+  /*REQ-READ-END*/
+  function exitWindow(r) { var t = r.sub[2]; if (t === 0 && hoursRead(r) === null && r.sub[0] > 10) return ['not read: no delay was read for this contract, which is not the same as no delay', 'na']; return t >= 75 ? ['a confirmed delay, bypass paths checked', 'strong'] : t >= 60 ? ['a confirmed delay, bypass paths not all checked', 'moderate'] : t >= 55 ? ['a delay with a bounded bypass', 'moderate'] : t > 0 ? ['a delay with a bypass, or one not ruled out', 'weak'] : ['none: a change applies at once', 'critical']; }
   // The protocol logo when DefiLlama knows the target; the chain logo for a chain-level contract; a monogram otherwise, and on any failure
   var CHAIN_ICON = { 'ethereum-l1': 'ethereum', arbitrum: 'arbitrum', base: 'base', monad: 'monad', plasma: 'plasma', hyperliquid: 'hyperliquid', tempo: 'tempo', robinhood: 'robinhood', solana: 'solana' };
   function monogram(r) { var ch = (r.title || '?').replace(/^0x/, '').trim().charAt(0).toUpperCase() || '?'; return '<span class="logo mono" aria-hidden="true">' + esc(ch) + '</span>'; }
@@ -4094,7 +4117,8 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
         allState.methVer = { v: mver, d: mvd, un: (mt.unregistered || []).length };
         parts.push('<span class="mchg" title="the newest version of the scoring method read on the oracles (from the registry of versions, with the date of its push), and the dated log of what changed">method ' + (mver ? esc(String(mver)) + (mvd ? ' of ' + esc(mvd.slice(0, 10)) : '') : (mdate ? 'last changed ' + esc(mdate.slice(0, 10)) : 'version not read')) + ' · <a href="/oracle/changelog/">changelog</a></span>'); }
       allState.proof = { sig: sg, chain: c, runs: u };   /* read by the Evidence tiles of the shell */
-      if (parts.length) { allState.integrity = parts.join(' · '); if (allState.rows) headline(allState.rows); }   /* the hero is drawn by headline(); before the rows exist, the first draw picks it up by itself */
+      if (parts.length) allState.integrity = parts.join(' · ');
+      if (allState.rows && (parts.length || allState.soAll)) headline(allState.rows);   /* the hero is drawn by headline(); before the rows exist, the first draw picks it up by itself */
     });
   }
   function shortAddr(a) { a = String(a || ''); return a.length > 14 ? a.slice(0, 6) + '…' + a.slice(-4) : a; }
@@ -4216,7 +4240,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
     var dispute = WATCH_REPO + '/issues/new?title=' + encodeURIComponent('Score dispute: ' + r.title.split(' - ')[0] + ' on ' + r.chain + ' (' + r.address.slice(0, 10) + '…)') + '&body=' + encodeURIComponent('Target: ' + r.address + ' on ' + r.chain + '\nPublished score: ' + r.composite + '/100\n\nWhat the score gets wrong, with the on-chain evidence (tx, contract, role):\n');
     var slug = Object.keys(WATCH_SLUGS).filter(function (s) { return WATCH_SLUGS[s] === r.key; })[0];
     var md2 = '[![authority requirements](https://img.shields.io/endpoint?url=' + encodeURIComponent(WATCH_RAW + 'badge/' + slug + '/' + addrKey(r) + '-req.json') + ')](https://realspap.github.io/oracle/p/' + r.key + '-' + addrKey(r) + '.html)';
-    var verdict = r.title.split(' - ')[0] + ' on ' + r.chain + ': authority ' + r.composite + '/100 (' + String(band(r.composite).label).toLowerCase() + '), ' + reqMet(r) + ' of 6 requirements, exit window ' + exitWindow(r)[0] + (r.tvl ? ', ' + fmtUsd(r.tvl) + ' behind it' : '') + '. realspap.github.io/oracle/p/' + r.key + '-' + addrKey(r) + '.html';
+    var verdict = r.title.split(' - ')[0] + ' on ' + r.chain + ': authority ' + r.composite + '/100 (' + (unresolvedRow(r) ? 'not resolved' : String(band(r.composite).label).toLowerCase()) + '), ' + reqMet(r) + ' of 6 requirements, exit window ' + exitWindow(r)[0] + (r.tvl ? ', ' + fmtUsd(r.tvl) + ' behind it' : '') + '. realspap.github.io/oracle/p/' + r.key + '-' + addrKey(r) + '.html';
     return 'For your README or your site: <button type="button" class="lnk" data-badge="' + esc(md) + '" title="a live shields.io badge with the score">score badge</button> · <button type="button" class="lnk" data-badge="' + esc(soMd) + '" title="copy the Markdown of the independent-read badge: agrees / disagrees / not readable, with what was read">independent-read badge</button> · <button type="button" class="lnk" data-badge="' + esc(md2) + '" title="a live shields.io badge: N of 6 requirements">requirements badge</button> · <button type="button" class="lnk" data-copy-text="' + esc(verdict) + '" title="one line to paste anywhere">copy a one-line verdict</button> · <a class="lnk" href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(verdict) + '" target="_blank" rel="noopener" title="opens X with the verdict prefilled; nothing is posted without you">post it on X</a> · ' + embedBlock(r) + ' · <a href="https://realspap.github.io/oracle/p/' + r.key + '-' + addrKey(r) + '.html" target="_blank" rel="noopener">its own page</a> · <a href="' + dispute + '" target="_blank" rel="noopener" title="open a GitHub issue with the address and the score prefilled">dispute this score</a>';
   }
 
@@ -4279,7 +4303,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
               composite: Number(t.compositeScore), prev: (t.previousComposite === undefined || t.previousComposite === null ? null : Number(t.previousComposite)),
               delta: (t.previousComposite === null || t.previousComposite === undefined) ? null : t.compositeScore - t.previousComposite,
               sub: [t.adminKeyScore, t.multisigScore, t.timelockScore, t.oracleAuthorityScore, t.crossExposureScore].map(Number),
-              stale: !!t.stale, lastUpdated: t.lastUpdated, kind: f.d.kind || 'evm', method: /^0x[0-9a-fA-F]{64}$/.test(String(t.methodologyHash)) ? t.methodologyHash : null });
+              ob: t.oracleAuthorityBasis, cb: t.crossExposureBasis, stale: !!t.stale, lastUpdated: t.lastUpdated, kind: f.d.kind || 'evm', method: /^0x[0-9a-fA-F]{64}$/.test(String(t.methodologyHash)) ? t.methodologyHash : null });
           });
         });
         return Promise.all([fetchJson(WATCH_RAW + 'tvl.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'paper_trail.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'tvl_scope.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'names.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'held_assets.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'pause_state.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'side_roles.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'safe_activity.json').catch(function () { return null; }), fetchJson(WATCH_RAW + 'admin_probe.json').catch(function () { return null; })]).then(function (both) {
@@ -4303,7 +4327,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
   }
   function fmtUsd(v) { if (v === null || v === undefined) return null; if (v >= 1e9) return '$' + (v / 1e9).toFixed(v >= 1e10 ? 0 : 1) + 'B'; if (v >= 1e6) return '$' + (v / 1e6).toFixed(v >= 1e8 ? 0 : 1) + 'M'; if (v >= 1e3) return '$' + (v / 1e3).toFixed(0) + 'k'; return '$' + Math.round(v); }
   // Money behind a set of rows, one entry per (protocol, chain) so four contracts of one deployment count once; the weakest contract sets the score.
-  function moneyBehind(rows) { var seen = {}, totals = {}; rows.forEach(function (r) { if (!r.tvlMeta) return; var s = r.tvlMeta.slug || r.tvlMeta.name, tot = r.tvlMeta.scope === 'total', k = s + '|' + (tot ? '*' : (r.tvlMeta.chain || '')); if (tot) totals[s] = 1; if (!seen[k] || r.composite < seen[k].composite) seen[k] = { tvl: r.tvl, composite: r.composite, name: r.tvlMeta.name, chain: r.chain, s: s, tot: tot }; });
+  function moneyBehind(rows) { var seen = {}, totals = {}; rows.forEach(function (r) { if (!r.tvlMeta) return; var s = r.tvlMeta.slug || r.tvlMeta.name, tot = r.tvlMeta.scope === 'total', k = s + '|' + (tot ? '*' : (r.tvlMeta.chain || '')); if (tot) totals[s] = 1; if (!seen[k] || r.composite < seen[k].composite) seen[k] = { tvl: r.tvl, composite: r.composite, unres: unresolvedRow(r), name: r.tvlMeta.name, chain: r.chain, s: s, tot: tot }; });
     // a protocol matched on its all-chain total (no per-chain figure on DefiLlama) counts once, at the weakest of its setups
     Object.keys(seen).forEach(function (k) { var e = seen[k]; if (totals[e.s] && !e.tot) { var t = seen[e.s + '|*']; if (e.composite < t.composite) t.composite = e.composite; delete seen[k]; } });
     return Object.keys(seen).map(function (k) { return seen[k]; }); }
@@ -4385,7 +4409,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
     rows.forEach(function (r) { var k = band(r.composite).key; counts[k] = (counts[k] || 0) + 1; });
     var n = rows.length, crit = counts.critical || 0, weak = counts.weak || 0;
     var chains = {}; rows.forEach(function (r) { chains[r.key] = 1; });
-    var mb = moneyBehind(rows), under = mb.filter(function (x) { return x.composite < 40; }), sumU = under.reduce(function (s, x) { return s + x.tvl; }, 0), sumA = mb.reduce(function (s, x) { return s + x.tvl; }, 0); allState.heroRisk = sumU; allState.heroTotal = sumA;
+    var mb = moneyBehind(rows), under = mb.filter(function (x) { return x.composite < 40 && !x.unres; }), sumU = under.reduce(function (s, x) { return s + x.tvl; }, 0), sumA = mb.reduce(function (s, x) { return s + x.tvl; }, 0); allState.heroRisk = sumU; allState.heroTotal = sumA;
     var hist = []; for (var i = 0; i <= 100; i++) hist[i] = 0; rows.forEach(function (r) { hist[Math.max(0, Math.min(100, r.composite))]++; }); var hmax = Math.max.apply(null, hist);
     var sorted = rows.map(function (r) { return r.composite; }).sort(function (a, b) { return a - b; }), median = sorted.length ? sorted[Math.floor(sorted.length / 2)] : 0;
     var pins = [{ s: 4, name: 'Drift · KelpDAO', what: 'one admin key (Drift, $285M) and a 1-of-1 bridge verifier (KelpDAO, $292M), both 2026' }].concat(INCIDENTS_REF.map(function (inc) { var s = safeReplay(inc.t, inc.n); return { s: s, name: inc.name.split(',')[0], what: inc.name + ', a ' + inc.t + '-of-' + inc.n + ' multisig' }; })).map(function (p) { p.k = rows.filter(function (r) { return r.composite <= p.s; }).length; return p; });
@@ -4473,18 +4497,19 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
   function whyRow(r) {
     var g = (CHAINS[r.key].groups || []).filter(function (x) { return x.idx.indexOf(r.index) !== -1; })[0];
     // five requirements, pass or fail, derived from the published sub-scores (the thresholds are the scorer's own conventions)
+    var RS = reqStates(r, hoursRead(r)), NODELAY = ': no delay was read for this contract';
     var REQ = [
-      ['Admin power is not a bare key', r.sub[0] >= 50, 'admin key ' + r.sub[0] + (r.sub[0] >= 50 ? '' : ': one key or a very small group can change the contract')],
-      ['At least a 3-of-5 multisig', r.sub[1] >= 55, 'multisig ' + r.sub[1] + (r.sub[1] >= 55 ? '' : ': too few signatures are needed')],
-      ['A confirmed delay before changes apply, no bypass', r.sub[2] >= 60, 'timelock ' + r.sub[2] + (r.sub[2] >= 60 ? '' : r.sub[2] > 0 ? ': a delay exists but a bypass is possible or was not ruled out' : ': a change applies at once, nobody has time to react')],
-      ['Bypass paths of the delay checked and ruled out', r.sub[2] >= 75, 'timelock ' + r.sub[2] + (r.sub[2] >= 75 ? '' : ': a bypass of the delay is possible, or was not ruled out')],
-      ['Price feed not under one hand', r.sub[3] >= 60, 'price feed ' + r.sub[3]],
-      ['No key shared with another tracked protocol', r.sub[4] >= 100, 'shared control ' + r.sub[4] + (r.sub[4] >= 100 ? '' : ': the same people control another protocol here')]
+      ['Admin power is not a bare key', RS[0], 'admin key ' + r.sub[0] + (r.sub[0] >= 50 ? '' : ': one key or a very small group can change the contract')],
+      ['At least a 3-of-5 multisig', RS[1], 'multisig ' + r.sub[1] + (r.sub[1] >= 55 ? '' : ': too few signatures are needed')],
+      ['A confirmed delay before changes apply, no bypass', RS[2], 'timelock ' + r.sub[2] + (RS[2] === null ? NODELAY : r.sub[2] >= 60 ? '' : r.sub[2] > 0 ? ': a delay exists but a bypass is possible or was not ruled out' : ': a change applies at once, nobody has time to react')],
+      ['Bypass paths of the delay checked and ruled out', RS[3], 'timelock ' + r.sub[2] + (RS[3] === null ? NODELAY : r.sub[2] >= 75 ? '' : ': a bypass of the delay is possible, or was not ruled out')],
+      ['Price feed not under one hand', RS[4], 'price feed ' + r.sub[3] + (RS[4] === null ? ': not read (this value is a placeholder, not a finding)' : RS[4] === 'na' ? ': does not apply to this contract' : '')],
+      ['No key shared with another tracked protocol', RS[5], 'shared control ' + r.sub[4] + (RS[5] === null ? ': not checked for this contract (the 100 is a placeholder, not a finding)' : RS[5] === 'na' ? ': nothing to compare' : r.sub[4] >= 100 ? '' : ': the same people control another protocol here')]
     ];
-    var met = REQ.filter(function (q) { return q[1]; }).length;
+    var met = REQ.filter(function (q) { return q[1] === true; }).length, nrd = REQ.filter(function (q) { return q[1] === null; }).length, nap = REQ.filter(function (q) { return q[1] === 'na'; }).length;
     var fw = r.title.toLowerCase().split(/[\s(\-]/)[0], sib = fw.length > 2 && fw !== 'untitled' ? allState.rows.filter(function (o) { return o !== r && o.key !== r.key && o.title.toLowerCase().split(/[\s(\-]/)[0] === fw; }) : [];
     var elsewhere = sib.length ? '<p class="fine elsewhere">Same protocol elsewhere: ' + sib.slice(0, 8).map(function (o) { return '<button type="button" class="inc2-btn" data-open-q="' + esc(o.key + ':' + o.address) + '">' + esc(o.chain) + ' ' + pill(o.composite) + '</button>'; }).join(' ') + (sib.length > 8 ? ' +' + (sib.length - 8) : '') + (sib.some(function (o) { return o.composite !== r.composite; }) ? ' <span class="fine">(same name, different setup: the chain changes who holds the keys)</span>' : '') + '</p>' : '';
-    var lines = elsewhere + '<p class="hist-t">' + met + ' of ' + REQ.length + ' requirements met</p><ul class="req">' + REQ.map(function (q) { return '<li class="' + (q[1] ? 'ok' : 'no') + '"><i>' + (q[1] ? '✓' : '✗') + '</i><span>' + q[0] + '</span><small>' + esc(q[2]) + '</small></li>'; }).join('') + '</ul>';
+    var lines = elsewhere + reqListHtml(REQ);
     var exitW = exitWindow(r);
     var deep = '<p class="exitw">Exit window <span class="chip b-' + exitW[1] + '">' + exitW[0] + '</span> <span class="fine">the time a user has to leave after a harmful change is queued</span></p>' + pathTo(r);   // the long methodology sentence lives in METHODOLOGY.md, not in every row
     var sum = '';
@@ -4834,11 +4859,11 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
   function myRules() { var v = lsGet(LS_RULES, []); return Array.isArray(v) ? v : []; }
   function alertsPanel() {
     var el = document.getElementById('alertsPanel'); if (!el) return;
-    Promise.all([fetchJson(WATCH_RAW + 'alerts.json'), pendingOps().catch(function () { return null; })]).then(function (both) {
+    Promise.all([fetchJson(WATCH_RAW + 'alerts.json').catch(function () { return null; }), pendingOps().catch(function () { return null; })]).then(function (both) {
       var A = both[0], P = both[1], qb = {}, rb = {};
       var PK = { ethereum: 'ethereum-l1' };
       if (P) P.results.forEach(function (tl) { var ck = (PK[tl.chain] || tl.chain) + ':'; (tl.pending || []).forEach(function (op) { var k = ck + op.target.toLowerCase(); (qb[k] = qb[k] || []).push({ timelock: tl.name, chain: tl.chain, tx: op.tx, selector: op.selector, signature: op.signature, ready_at: op.ready_at, state: op.state }); }); (tl.recent || []).forEach(function (op) { var k = ck + op.target.toLowerCase(); (rb[k] = rb[k] || []).push(op); }); });
-      allState.queuedBy = qb; allState.recentBy = rb; allState.serverAlerts = A;
+      allState.queuedBy = qb; allState.recentBy = rb; allState.serverAlerts = A; allState.pendingRead = !!P; allState.alertsRead = !!(A && Array.isArray(A.active));   // U1-A (3): what was READ this load; a file that did not answer is not 'nothing open'
       var mine = myRules(), fold = document.getElementById('alerts-fold'), st = document.getElementById('alertsStatus');
       var myFires = mine.map(function (src) { try { return ruleFires(compileRule(src), allState.rows).length; } catch (e) { return 0; } }), myTotal = myFires.reduce(function (s, n) { return s + n; }, 0);
       function summary() { var sm = document.querySelector('#alerts-fold > summary'), hi = A.active.filter(function (x) { return x.severity === 'high'; }).length; if (sm) sm.innerHTML = 'Alerts <span class="sm-chips">' + (hi ? '<span class="sm-chip now">' + hi + ' high</span>' : '') + '<span class="sm-chip">' + A.active.length + ' firing</span>' + (mine.length ? '<span class="sm-chip' + (myTotal ? ' now' : '') + '">your ' + mine.length + ' rule' + (mine.length > 1 ? 's' : '') + ': ' + myTotal + ' hit' + (myTotal !== 1 ? 's' : '') + '</span>' : '') + '</span>'; }
@@ -4882,7 +4907,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
         wireMine();
       }
       render();
-    }).catch(function () { var fold = document.getElementById('alerts-fold'); if (fold) fold.style.display = 'none'; });
+    }).catch(function () { allState.alertsRead = false; var fold = document.getElementById('alerts-fold'); if (fold) fold.style.display = 'none'; });
   }
   // The keys fold is one number: the signer index (who can reach what) is a targeting map and is not published; the job
   // publishes only the union of groups the ten most connected signers sit on, without addresses (keys_summary.json).
@@ -5210,7 +5235,21 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
   function playComposite(s) { return Math.floor((4 * s[0] + 3 * s[1] + 3 * s[2] + 5) / 10); }   // the published formula, in integers (scripts/whatif.py has the same)
   var PLAY_REQS = [['Admin power is not a bare key', 0, 50], ['At least a 3-of-5 multisig', 1, 55], ['A confirmed delay before changes apply, no bypass', 2, 60], ['Bypass paths of the delay checked and ruled out', 2, 75],
                    ['Price feed not under one hand', 3, 60], ['No key shared with another tracked protocol', 4, 100]];
-  function playMet(s) { return PLAY_REQS.map(function (q) { return s[q[1]] >= q[2]; }); }
+  // U1-A (urgent, 07/11/2026): a requirement the Watch did not READ is neither met nor failed. `nr` (optional, from playUnread) marks the requirements that were not read: true for one met, false for one failed,
+  // null for one not read, 'na' for one that does not apply. Called with the scores alone (no `nr`) it answers as before: true or false for each of the six.
+  function playMet(s, nr) { return PLAY_REQS.map(function (q, i) { return nr && nr[i] ? (nr[i] === 'na' ? 'na' : null) : s[q[1]] >= q[2]; }); }
+  // Which requirements of the PUBLISHED reading were not read: the price-feed and shared-control ones unless the Watch says computed (`ob`, `cb` of the row: oracleAuthorityBasis, crossExposureBasis), the two delay ones when the delay score is 0
+  // and the independent reader gave no hours to react. A slider the visitor moved is a what-if, not a reading: only an untouched axis keeps its mark.
+  function playUnread(row, s, hours) {
+    var nr = [false, false, false, false, false, false], bas = function (b) { return b === 'computed' ? false : b === 'not_applicable' ? 'na' : true; };
+    if (s[2] === row.sub[2] && row.sub[2] === 0 && (hours === null || hours === undefined) && row.sub[0] > 10) { nr[2] = true; nr[3] = true; }   // a read single key (admin score <= 10) with no delay is a READ none
+    if (s[3] === row.sub[3]) nr[4] = bas(row.ob);
+    if (s[4] === row.sub[4]) nr[5] = bas(row.cb);
+    return nr;
+  }
+  function playCount(met) { return met.filter(function (x) { return x === true; }).length; }
+  // the sentence of the Authority Facts label under "Admin power": met of applicable, then what does not apply and what was not read (`mm` = the six states of playMet)
+  function playReqLine(mm) { var m = playCount(mm), nr = mm.filter(function (x) { return x === null; }).length, na = mm.filter(function (x) { return x === 'na'; }).length; return m + ' of ' + (mm.length - na) + ' applicable requirements met' + (na ? ', ' + na + ' does not apply' : '') + (nr ? ', ' + nr + ' not read' : ''); }
   function playNext(c) { var n = Math.floor(c / 20) * 20 + 20; return n > 100 ? null : n; }
   function playClamp(v) { v = Math.round(Number(v)); return isNaN(v) ? 0 : Math.max(0, Math.min(100, v)); }
   /*PLAY-MATH-END*/
@@ -5232,6 +5271,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       critical: ['Stormy', CLOUD + '<path d="M12.5 12l-2.2 3.6h3l-2 3.6"/>'], weak: ['Rainy', CLOUD + '<path d="M8.5 20l.6-1.6M12.5 20l.6-1.6M16.5 20l.6-1.6"/>'], moderate: ['Cloudy', CLOUD],
       decent: ['Mostly clear', '<circle cx="8" cy="8" r="2.6"/><path d="M8 2.6v1.2M2.6 8h1.2M4.2 4.2l.9.9M11.8 4.2l-.9.9"/><path d="M8.5 19a3.2 3.2 0 0 1-.3-6.4 4.4 4.4 0 0 1 8.5-.9A3.3 3.3 0 0 1 17 19z"/>'], strong: ['Clear', '<circle cx="12" cy="12" r="3.6"/><path d="M12 3.5v2M12 18.5v2M3.5 12h2M18.5 12h2M6 6l1.4 1.4M16.6 16.6L18 18M18 6l-1.4 1.4M7.4 16.6L6 18"/>'] };
     function wxHtml(key) { var w = WX[key] || WX.moderate; return '<svg viewBox="0 0 24 24" class="wx-i" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + w[1] + '</svg><b>' + w[0] + '</b>'; }
+    var VERDICT_UNRES = 'Authority not resolved: nobody has read who holds the power.';   // U1-A: a placeholder score is not a finding
     var VERDICT = { critical: 'One person can change this and move the money.', weak: 'A small group can act fast. Little stands in the way.', moderate: 'Some protection, with real gaps.', decent: 'Reasonably protected, a few gaps left.', strong: 'Hard for any one person to move.' };
     var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
     var st = { row: null, s: null, base: null, goal: null, touched: false, won: false, daily: false, moves: 0, drag: false, hint: false, reward: null };   // moves: one per slider drag and per use of the smallest fix, the number the mission asks to keep low
@@ -5354,7 +5394,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       return '<svg viewBox="0 0 140 140" class="pc-ringsvg" aria-hidden="true">' + grid + '<polygon class="pc-poly" id="pcPoly" points="' + polyPts([0, 0, 0, 0, 0]) + '"/>' + lab + '</svg><div class="pc-num"><b id="pcNum">0</b><small id="pcBand"></small></div>'; }
     function morphPoly(from, to) { var poly = $('pcPoly'); if (!poly) return; if (reduce) { poly.setAttribute('points', polyPts(to)); return; } var t0 = null; (function f(ts) { if (t0 === null) t0 = ts; var p = Math.min(1, (ts - t0) / 380), e = 1 - Math.pow(1 - p, 3); poly.setAttribute('points', polyPts(to.map(function (v, i) { return from[i] + (v - from[i]) * e; }))); if (p < 1) requestAnimationFrame(f); })(performance.now()); }
     function reasons(s) {
-      var met = playMet(s), out = []; met.forEach(function (ok, i) { if (!ok) out.push(i === 2 && s[2] > 0 ? 'The waiting time can be bypassed' : REASON[i]); });
+      var met = playMet(s, playUnread(st.row, s, hoursRead(st.row))), out = []; met.forEach(function (ok, i) { if (ok === false) out.push(i === 2 && s[2] > 0 ? 'The waiting time can be bypassed' : REASON[i]); });
       return out;
     }
 
@@ -5381,7 +5421,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       st.goal = playNext(r.composite); $('playSteps').hidden = true; drawCard(); update(true); syncUrl();
     }
     function labelHtml(r) {   // the Authority Facts label (AUTHORITY-FACTS-SPEC.md v0.1) drawn as a cheque: the same eight lines in the same order, each one a field of the cheque. "not read" for what could not be read, never zero. It shows the PUBLISHED reading, not the sliders.
-      var k = r.key + ':' + String(r.address).toLowerCase(), so = (allState.soAll || {})[k] || null, ex = so && so.exposure && typeof so.exposure === 'object' ? so.exposure : null, NR = '<em>not read</em>', b = band(r.composite), met = playMet(r.sub).filter(Boolean).length;
+      var k = r.key + ':' + String(r.address).toLowerCase(), so = (allState.soAll || {})[k] || null, ex = so && so.exposure && typeof so.exposure === 'object' ? so.exposure : null, NR = '<em>not read</em>', b = band(r.composite), mm = playMet(r.sub, playUnread(r, r.sub, hoursRead(r))), met = playCount(mm), notRead = mm.filter(function (x) { return x === null; }).length, noApply = mm.filter(function (x) { return x === 'na'; }).length;
       var kind = so && so.kind, readable = so && kind && kind !== 'unreadable' && kind !== 'native', dis = allState.so && allState.so[k], ack = allState.soAck && allState.soAck[k];   // an open disagreement and a reviewed one are both disagreements: the label never smooths one into "agrees"
       var when = r.lastUpdated ? new Date(r.lastUpdated * 1000).toISOString().slice(0, 10) : null, keys = ex && ex.keys_to_move != null ? ex.keys_to_move : null;
       function f(line, label, v, cls) { return '<div class="chq-f' + (cls ? ' ' + cls : '') + '" data-line="' + line + '"><small>' + label + '</small><span>' + v + '</span></div>'; }
@@ -5390,7 +5430,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
         '<div class="chq-to">PAY TO THE ORDER OF <b>' + (keys == null ? 'holders not read' : keys === 1 ? 'whoever holds the key' : keys + ' people who agree') + '</b></div>' +
         '<div class="chq-mid">' + f('money', 'Money behind one key', ex && ex.money_per_key_usd ? esc(fmtUsd(ex.money_per_key_usd)) : NR, 'chq-amt') + '<div class="chq-stamp" data-line="score"><small>Score</small><b>' + r.composite + '</b><span>/100 ' + esc(b.label || b.key) + '</span></div></div>' +
         '<div class="chq-sigs" data-line="keys"><small>Keys to move the money</small><div>' + sigs + '</div><span>' + (keys == null ? NR : keys + (keys === 1 ? ' signature is enough' : ' signatures needed')) + '</span></div>' +
-        '<div class="chq-row">' + f('hours', 'Hours to react', ex && ex.react_hours != null ? (ex.react_hours === 0 ? 'cashable at once' : 'cashable in ' + ex.react_hours + ' h') : NR) + f('admin', 'Admin power', met + ' of 6 requirements met') + f('independent', 'Independent reading', readable ? (dis ? 'disagrees' : (ack ? 'disagrees, reviewed' : 'agrees')) : NR) + '</div>' +
+        '<div class="chq-row">' + f('hours', 'Hours to react', ex && ex.react_hours != null ? (ex.react_hours === 0 ? 'cashable at once' : 'cashable in ' + ex.react_hours + ' h') : NR) + f('admin', 'Admin power', playReqLine(mm)) + f('independent', 'Independent reading', readable ? (dis ? 'disagrees' : (ack ? 'disagrees, reviewed' : 'agrees')) : NR) + '</div>' +
         '<p class="chq-f2">Read from the chain, not declared by the protocol. Not an audit, not advice. Authority Facts v0.1.</p></div>';
     }
     function drawCard() {
@@ -5409,13 +5449,13 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       st.shown = { c: null, risk: null }; st.poly = [0, 0, 0, 0, 0];
     }
     function update(first) {
-      var r = st.row, s = st.s, c = playComposite(s), prev = st.shown ? st.shown.c : null, b = band(c), met = playMet(s), n = met.filter(Boolean).length, delta = c - r.composite;
+      var r = st.row, s = st.s, c = playComposite(s), prev = st.shown ? st.shown.c : null, b = band(c), met = playMet(s, playUnread(r, s, hoursRead(r))), n = playCount(met), delta = c - r.composite, unres = unresolvedSub(s, readerOf(r)) && unresolvedRow(r);
       morphPoly(st.poly || [0, 0, 0, 0, 0], s.slice()); st.poly = s.slice();
-      $('pcRing').className = 'pc-ring b-' + b.key; tween($('pcNum'), prev === null ? 0 : prev, c, 650); $('pcBand').textContent = String(b.label).toLowerCase();
-      $('pcWx').className = 'pc-wx wx-' + b.key; $('pcWx').innerHTML = wxHtml(b.key);
-      $('pcVerdict').innerHTML = '<b>' + esc(VERDICT[b.key] || '') + '</b>' + (delta ? ' <span class="pc-delta ' + (delta > 0 ? 'up' : 'down') + '">' + (delta > 0 ? '+' : '−') + Math.abs(delta) + ' vs today</span>' : '');
-      var why = reasons(s); $('pcWhy').innerHTML = why.length ? why.slice(0, 2).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + (why.length > 2 ? '<li class="more">+' + (why.length - 2) + ' more in the checklist</li>' : '') : '<li class="good">Every check passes.</li>';
-      met.forEach(function (ok, i) { var li = $('pcR' + i); var cls = ok ? 'ok' : 'no'; if (li.className !== cls) { li.style.transitionDelay = first || reduce ? '0ms' : (i * 40) + 'ms'; li.className = cls; } $('pcRs' + i).textContent = ok ? 'passed' : 'not passed'; });
+      $('pcRing').className = 'pc-ring b-' + b.key; tween($('pcNum'), prev === null ? 0 : prev, c, 650); $('pcBand').textContent = unres ? 'not resolved' : String(b.label).toLowerCase();
+      $('pcWx').className = 'pc-wx wx-' + (unres ? 'na' : b.key); $('pcWx').innerHTML = unres ? '<b>Not resolved</b>' : wxHtml(b.key);
+      $('pcVerdict').innerHTML = '<b>' + esc(unres ? VERDICT_UNRES : (VERDICT[b.key] || '')) + '</b>' + (delta ? ' <span class="pc-delta ' + (delta > 0 ? 'up' : 'down') + '">' + (delta > 0 ? '+' : '−') + Math.abs(delta) + ' vs today</span>' : '');
+      var why = reasons(s); $('pcWhy').innerHTML = why.length ? why.slice(0, 2).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + (why.length > 2 ? '<li class="more">+' + (why.length - 2) + ' more in the checklist</li>' : '') : (met.every(function (x) { return x === true; }) ? '<li class="good">Every check passes.</li>' : '<li class="good">No check failed' + (met.filter(function (x) { return x === null; }).length ? '; ' + met.filter(function (x) { return x === null; }).length + ' not read.' : '.') + '</li>');
+      met.forEach(function (ok, i) { var li = $('pcR' + i); var cls = ok === true ? 'ok' : ok === false ? 'no' : ok === 'na' ? 'na' : 'nr'; if (li.className !== cls) { li.style.transitionDelay = first || reduce ? '0ms' : (i * 40) + 'ms'; li.className = cls; } $('pcRs' + i).textContent = ok === true ? 'passed' : ok === false ? 'not passed' : ok === 'na' ? 'does not apply' : 'not read'; });
       s.forEach(function (v, i) { $('pcS' + i).value = v; $('pcO' + i).textContent = v; $('pcS' + i).style.setProperty('--pub', r.sub[i] + '%'); $('pcS' + i).setAttribute('aria-valuetext', SUBP[i] + ' ' + v + (v !== r.sub[i] ? ', today ' + r.sub[i] : '')); });
       var risk = r.tvl ? r.tvl * (100 - c) / 100 : null, re = $('pcRisk'); if (re) { var before = st.shown.risk === null ? r.tvl * (100 - r.composite) / 100 : st.shown.risk; tween(re, before, risk, 650, function (v) { return fmtUsd(v) || '$0'; }); }
       st.shown = { c: c, risk: risk };
@@ -5502,7 +5542,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
         if (b.id === 'pdRemind') { remindIcs(b); return; }
         if (b.id === 'pdShare') { var d2 = dailyPick(); if (d2) copy('Today’s Authority Risk challenge: take ' + name(d2) + ' on ' + d2.chain + ' from ' + d2.composite + ' to ' + playNext(d2.composite) + ' in as few moves as you can (one precise move is three stars). ' + location.origin + location.pathname + '?play=' + encodeURIComponent(rid(d2)), b, 'Copied'); }
       });
-      $('play').addEventListener('change', function (e) { var t = e.target; if (!t.classList || !t.classList.contains('pc-rng') || !st.row) return; st.drag = false; var c = playComposite(st.s), n = playMet(st.s).filter(Boolean).length; $('pcLive').textContent = SUBP[Number(t.getAttribute('data-i'))] + ' ' + t.value + ': score ' + c + ' of 100, ' + n + ' of 6 checks passed' + (st.won ? ', goal reached' : ''); });   // said once when a slider is released, not at every step of a drag
+      $('play').addEventListener('change', function (e) { var t = e.target; if (!t.classList || !t.classList.contains('pc-rng') || !st.row) return; st.drag = false; var c = playComposite(st.s), n = playCount(playMet(st.s, playUnread(st.row, st.s, hoursRead(st.row)))); $('pcLive').textContent = SUBP[Number(t.getAttribute('data-i'))] + ' ' + t.value + ': score ' + c + ' of 100, ' + n + ' of 6 checks passed' + (st.won ? ', goal reached' : ''); });   // said once when a slider is released, not at every step of a drag
       $('play').addEventListener('input', function (e) { var t = e.target; if (!t.classList || !t.classList.contains('pc-rng')) return; if (!st.drag) { st.drag = true; st.moves++; } st.s[Number(t.getAttribute('data-i'))] = playClamp(t.value); st.touched = true; update(); clearTimeout(bind.t); bind.t = setTimeout(syncUrl, 300); });
     }
     function fromUrl() {
@@ -5684,7 +5724,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
     // the top of Rankings: a title, one line, and the bands as tabs with their counts (as a risk table groups its rows); a tab presses the band filter of the list below, "All" clears it
     var DIVS = [['critical', 'Critical'], ['weak', 'Weak'], ['moderate', 'Moderate'], ['decent', 'Decent'], ['strong', 'Strong']];
     function leagueRows() { var c = allState.chains; return (allState.rows || []).filter(function (r) { return !c || !c.size || c.has(r.key); }); }   // the tabs follow the chain filter, so their counts are the list's counts
-    function leagueSig() { var rs = leagueRows(); return rs.map(function (r) { return r.composite + ':' + (r.tvl || 0); }).join(',').length + ':' + rs.length + ':' + Array.from(allState.chains || []).join(','); }
+    function leagueSig() { var rs = leagueRows(); return rs.map(function (r) { return r.composite + ':' + (r.tvl || 0); }).join(',').length + ':' + rs.length + ':u' + rs.filter(unresolvedRow).length + ':' + Array.from(allState.chains || []).join(','); }
     function pickBand(k) {
       var cur = allState.bands ? Array.from(allState.bands) : []; cur.forEach(function (x) { var b = $('#cards .band-btn[data-band="' + x + '"]'); if (b && !(k !== 'all' && x === k && cur.length === 1)) b.click(); });
       if (k !== 'all' && !(cur.length === 1 && cur[0] === k)) { var nb = $('#cards .band-btn[data-band="' + k + '"]'); if (nb) nb.click(); }
@@ -5695,7 +5735,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       if (!sec) { sec = document.createElement('section'); sec.id = 'shLeague'; sec.className = 'sh-league'; sec.setAttribute('data-sh', 'rank'); sec.setAttribute('aria-labelledby', 'lgT'); headline.parentNode.insertBefore(sec, headline); sec.addEventListener('click', function (e) { var b = e.target.closest('.bt-tab'); if (b) pickBand(b.getAttribute('data-pick')); }); }
       sec.setAttribute('data-sig', sig);
       var rows = leagueRows(), filtered = !!(allState.chains && allState.chains.size), cnt = {}, held = 0, under = 0; DIVS.forEach(function (d) { cnt[d[0]] = 0; });
-      rows.forEach(function (r) { cnt[band(r.composite).key]++; held += r.tvl || 0; if (r.composite < 40) under += r.tvl || 0; });
+      rows.forEach(function (r) { cnt[band(r.composite).key]++; held += r.tvl || 0; if (r.composite < 40 && !unresolvedRow(r)) under += r.tvl || 0; });
       var up = 0, down = 0, order = DIVS.map(function (d) { return d[0]; }); rows.forEach(function (r) { if (!r.delta) return; var a = band(r.composite - r.delta).key, b = band(r.composite).key; if (a !== b) { if (order.indexOf(b) > order.indexOf(a)) up++; else down++; } });
       var how = $('#headline .pl-how') || $('#shLeague .pl-how');
       var uv = filtered ? under : allState.heroRisk, tv = filtered ? held : (allState.heroTotal || held), pct = tv > 0 ? Math.round(100 * uv / tv) : 0, where = filtered ? Array.from(allState.chains).map(function (k) { return (CHAINS[k] || {}).label || k; }).join(', ') : rows.length + ' contracts on ' + Object.keys(rows.reduce(function (o, r) { o[r.key] = 1; return o; }, {})).length + ' chains';
@@ -5831,6 +5871,12 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
     function daysRead() { var d = lsGet(CHD, []); return Array.isArray(d) ? d : []; }
     function briefStreak() { var d = daysRead(), n = 0, t = Date.now() / 1000; if (d.indexOf(dayKey(t)) < 0) t -= 86400; while (d.indexOf(dayKey(t)) >= 0) { n++; t -= 86400; } return n; }
     function rowByKey(k) { return (allState.rows || []).filter(function (q) { return q.key + ':' + String(q.address).toLowerCase() === k; })[0] || null; }
+    /*READ-STATE-START*/
+    // U1-A (urgent, 07/11/2026): "nothing open" is said only about files that were READ. alerts.json that did not answer, or a queue that could not be listed, is "not read", never an empty list.
+    function alertsOk() { var A = allState.serverAlerts; return allState.alertsRead === true && !!(A && Array.isArray(A.active)); }
+    function pendingOk() { return allState.pendingRead === true; }
+    function unreadFiles() { return !alertsOk() || !pendingOk(); }   // one of the two files not read is enough to forbid "Sunny"
+    /*READ-STATE-END*/
     function dayWeather() {   // the day in the site's own words, from the data and nothing else: stormy = something needs you, rainy = a change can run or is due within a day, cloudy = the rest is open, sunny = nothing
       var now = Date.now() / 1000, rev = revGet(), open = needList().filter(function (xs) { return !rev[needKey(xs)]; }).length, A = allState.serverAlerts, list = (A && A.active) || [], q = 0, ready = 0, soon = 0;
       Object.keys(allState.queuedBy || {}).forEach(function (k) { (allState.queuedBy[k] || []).forEach(function (o) { if (o.state === 'expired') return; q++; if (o.ready_at && o.ready_at <= now) ready++; else if (o.ready_at && o.ready_at - now < 86400) soon++; }); });
@@ -5839,6 +5885,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       if (ready) return ['rain', '🌧', 'Rainy', ready + ' can run now'];
       if (med || soon) return ['rain', '🌧', 'Rainy', (med ? med + ' to check' : '') + (med && soon ? ', ' : '') + (soon ? soon + ' within a day' : '')];
       if (list.length || q) return ['cloud', '⛅', 'Cloudy', (list.length + q) + ' open'];
+      if (unreadFiles()) return ['na', '·', 'Not read', (alertsOk() ? '' : 'alerts') + (!alertsOk() && !pendingOk() ? ' and ' : '') + (pendingOk() ? '' : 'the queue') + ' not read'];
       return ['sun', '☀️', 'Sunny', 'nothing open'];
     }
     function renderTop() {
@@ -5898,7 +5945,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       var cnt = { all: open.length, high: 0, medium: 0, info: 0 }; open.forEach(function (it) { cnt[it.sev]++; });
       var shown = sortItems(open.filter(function (it) { return chAlSev === 'all' || it.sev === chAlSev; })), max = shown.reduce(function (m, it) { return Math.max(m, it.tvl); }, 0), html = '';
       html += '<div class="ch-sevf" role="group" aria-label="Severity">' + [['all', 'All'], ['high', 'High'], ['medium', 'Medium'], ['info', 'Info']].map(function (f) { return '<button type="button" class="s-' + f[0] + '" data-sevf="' + f[0] + '" aria-pressed="' + (chAlSev === f[0] ? 'true' : 'false') + '">' + f[1] + '<em>' + cnt[f[0]] + '</em></button>'; }).join('') + '</div>';
-      if (!shown.length) html += '<p class="ch-zero"><b>✓ Nothing needs you</b>' + (chAlSev !== 'all' ? ' <span>at this severity</span>' : '') + (chMine && !followed().length ? ' <span>Tap ☆ on any line to follow a contract.</span>' : '') + '</p>';
+      if (!alertsOk()) html += '<p class="ch-zero"><b>? Alerts not read this load</b> <span>The alerts file did not answer: this is not the same as no alert.</span></p>'; else if (!shown.length) html += '<p class="ch-zero"><b>✓ Nothing needs you</b>' + (chAlSev !== 'all' ? ' <span>at this severity</span>' : '') + (chMine && !followed().length ? ' <span>Tap ☆ on any line to follow a contract.</span>' : '') + '</p>';
       else {
         var head = function (k, label) { return '<button type="button" class="ch-hd' + (chAlSort === k ? ' on' : '') + '" data-sort="' + k + '" aria-pressed="' + (chAlSort === k ? 'true' : 'false') + '">' + label + (chAlSort === k ? ' ▾' : '') + '</button>'; };
         html += '<div class="ch-ar-h" role="group" aria-label="Sort by">' + head('sev', 'Finding') + head('money', 'Money') + head('score', 'Score') + '<span>Delay</span></div><ul class="ch-ars">' + shown.map(function (it) { return itemRow(it, max); }).join('') + '</ul>';
@@ -5932,6 +5979,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
       var box = $('#chSoon'); if (!box) return; var all0 = soonItems(); all0.forEach(function (x) { if (x.op.tx) chAbove[x.op.tx] = 1; });   // a queued change is listed here, so the feed does not say it twice
       var sn = $('#chSoonN'); if (sn) sn.textContent = all0.length ? String(all0.length) : '';
       var cnt = { all: all0.length, ready: 0, day: 0, later: 0 }; all0.forEach(function (x) { if (cnt[x.bucket] !== undefined) cnt[x.bucket]++; else cnt.later++; });
+      if (!pendingOk()) { box.innerHTML = '<p class="ch-zero"><b>? Queue not read this load</b> <span>The list of queued changes did not answer: this is not the same as nothing queued.</span></p>'; return; }
       if (!all0.length) { box.innerHTML = '<p class="ch-zero"><b>✓ Nothing queued</b>' + (chMine && !followed().length ? ' <span>Tap ☆ on any line to follow a contract.</span>' : '') + '</p>'; return; }
       var shown = all0.filter(function (x) { return chSoFlt === 'all' || (chSoFlt === 'later' ? (x.bucket === 'later' || x.bucket === 'expired') : x.bucket === chSoFlt); });
       shown.sort(function (a, b) { return chSoSort === 'money' ? b.tvl - a.tvl || (a.rd || 9e12) - (b.rd || 9e12) : (a.rd || 9e12) - (b.rd || 9e12) || b.tvl - a.tvl; });
