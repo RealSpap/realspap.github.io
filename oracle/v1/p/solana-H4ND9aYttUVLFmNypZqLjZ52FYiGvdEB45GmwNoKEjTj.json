@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Jupiter Perpetual Exchange",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 4,
  "react_hours": 24,
- "money_per_key_usd": 181036959.6975325,
+ "money_per_key_usd": 165734151.6364279,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 55,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 724147838.79013,
+ "tvl_usd": 662936606.5457116,
  "category": "Derivatives",
- "at_risk_usd": 391039832.94667023,
+ "at_risk_usd": 357985767.5346843,
  "narrative": {
   "summary": "The perps program's upgrade multisig has a 24-hour delay, but its application admin is a 4-of-7 Squads v3 multisig with no delay field, so the delay is bypassed. That multisig also controls Jupiter Aggregator v6 upgrades.",
   "tag": "admin path bypasses the 24h upgrade delay",
@@ -97,22 +97,21 @@
   "keys_lost_to_freeze": 5,
   "kind": "squads",
   "since": "2026-10-10T06:54:09Z",
-  "disagree": "the timelock score says no delay (0), the Squads multisig enforces a native time lock of 24 h",
   "posture": "admin: Squads 4-of-8 of 8 plain keys; delay: 24 h Squads time lock",
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 24,
-   "tvl_usd": 724147838.79013,
-   "money_per_key_usd": 181036959.6975325,
+   "tvl_usd": 662936606.5457116,
+   "money_per_key_usd": 165734151.6364279,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1792445233,
+ "last_pushed": 1793656385,
  "stale": false,
- "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
+ "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=H4ND9aYttUVLFmNypZqLjZ52FYiGvdEB45GmwNoKEjTj",
  "page": "https://realspap.github.io/oracle/p/solana-H4ND9aYttUVLFmNypZqLjZ52FYiGvdEB45GmwNoKEjTj.html",

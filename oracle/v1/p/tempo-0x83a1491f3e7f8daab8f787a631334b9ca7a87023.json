@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Unnamed pathUSD Vault V2 feeding Sentora",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 212310.7662716769,
+ "money_per_key_usd": 5778.236446018771,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 10,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 212310.7662716769,
+ "tvl_usd": 5778.236446018771,
  "category": null,
- "at_risk_usd": 193202.797307226,
+ "at_risk_usd": 5258.195165877081,
  "narrative": {
   "summary": "owner and curator are the same single EOA - the weakest Vault V2 shape this project tracks anywhere: one key holds both roles a Vault V2 is designed to separate.",
   "tag": "composite 9 - owner = curator = one EOA",
@@ -66,9 +66,9 @@
  "admin_probe": null,
  "held": {
   "symbol": "pathUSD",
-  "amount": 212749.133472,
-  "price_usd": 0.997939511230109,
-  "held_usd": 212310.7662716769,
+  "amount": 5765.719283,
+  "price_usd": 1.002170962963056,
+  "held_usd": 5778.236446018771,
   "stale": null,
   "price_stale": null,
   "amount_change_pct": 0.0,
@@ -86,7 +86,7 @@
       "to": "0x83a1491f3e7f8daab8f787a631334b9ca7a87023",
       "data": "0x8da5cb5b"
      },
-     "0x2b49000"
+     "0x2d9b92e"
     ]
    },
    {
@@ -102,19 +102,20 @@
     "method": "eth_getTransactionCount",
     "params": [
      "<holder>",
-     "0x2b49000"
+     "0x2d9b92e"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x83a1491f3e7f8daab8f787a631334b9ca7a87023\",\"data\":\"0x8da5cb5b\"},\"0x2b49000\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (0 at the read)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x2b49000\"]}'",
-  "block": "0x2b49000",
-  "note": "read between blocks 45387764 and 45387776 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x83a1491f3e7f8daab8f787a631334b9ca7a87023\",\"data\":\"0x8da5cb5b\"},\"0x2d9b92e\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (0 at the read)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x2d9b92e\"]}'",
+  "block": "0x2d9b92e",
+  "note": "read between blocks 47823137 and 47823150 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-19T21:31:02Z",
+   "t": "2026-11-02T20:41:41Z",
    "composite": 9,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/tempo-moderato/0x83a1491f3e7f8daab8f787a631334b9ca7a87023.xml",
@@ -122,11 +123,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000083a1491f3e7f8daab8f787a631334b9ca7a87023",
-  "block": "0x26d7193",
+  "block": "0x28fa77e",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000083a1491f3e7f8daab8f787a631334b9ca7a87023\"},\"0x26d7193\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000083a1491f3e7f8daab8f787a631334b9ca7a87023\"},\"0x28fa77e\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -157,18 +158,18 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 212310.7662716769,
-   "money_per_key_usd": 212310.7662716769,
+   "tvl_usd": 5778.236446018771,
+   "money_per_key_usd": 5778.236446018771,
    "money_source": "contract",
    "held_symbol": "pathUSD",
-   "held_amount": 212749.133472
+   "held_amount": 5765.719283
   }
  },
  "score_cluster": null,
- "last_pushed": 1792445462,
+ "last_pushed": 1793652101,
  "stale": false,
- "methodology_hash": "0xe267de1a8e2c7ace54eac7fd4376bfbd66cb87cba7b39e30d883e4cda7ab787a",
- "block": 40726931,
+ "methodology_hash": "0x4b8b9f250720ac31fdabaebb0a869cf64699eed816cb0f02de3ef13bcf637368",
+ "block": 42968958,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x83a1491f3e7f8daab8f787a631334b9ca7a87023",
  "page": "https://realspap.github.io/oracle/p/tempo-0x83a1491f3e7f8daab8f787a631334b9ca7a87023.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

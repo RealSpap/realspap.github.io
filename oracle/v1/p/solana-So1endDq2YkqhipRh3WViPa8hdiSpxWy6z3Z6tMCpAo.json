@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Save (ex Solend) lending program",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 84908391.37856214,
+ "money_per_key_usd": 71650135.23191,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 84908391.37856214,
+ "tvl_usd": 71650135.23191,
  "category": "Lending",
- "at_risk_usd": 83210223.5509909,
+ "at_risk_usd": 70217132.5272718,
  "narrative": {
   "summary": "The lending program's upgrade authority is a single on-curve key with no multisig wrapper: one signature can replace its code, with no delay. That is the bottom rung of the scale.",
   "tag": "bare key, bottom rung",
@@ -91,17 +91,17 @@
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 84908391.37856214,
-   "money_per_key_usd": 84908391.37856214,
+   "tvl_usd": 71650135.23191,
+   "money_per_key_usd": 71650135.23191,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1792445246,
+ "last_pushed": 1793656403,
  "stale": false,
- "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
+ "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo",
  "page": "https://realspap.github.io/oracle/p/solana-So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo.html",

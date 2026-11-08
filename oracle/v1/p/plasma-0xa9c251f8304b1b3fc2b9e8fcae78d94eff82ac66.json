@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Telos Consilium TelosC Surge",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -9,7 +9,7 @@
  "band": "weak",
  "keys_to_move": 2,
  "react_hours": 24,
- "money_per_key_usd": 49945372.04613487,
+ "money_per_key_usd": 49956038.39918586,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 40,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 126678.30662983636,
+ "tvl_usd": 94438.52672844913,
  "category": "Risk Curators",
- "at_risk_usd": 88674.81464088544,
+ "at_risk_usd": 66106.96870991439,
  "narrative": {
   "summary": "One 2-of-5 Gnosis Safe is both owner and curator of this ~$100M USDT0 EulerEarn vault, no guardian is set, and the owner address also passes every curator, allocator and guardian check. Its owner-only calls (setCurator, setIsAllocator, setFee, setFeeRecipient) take effect immediately, outside the vault\u2019s 1-day timelock.",
   "tag": "~$100M USDT0, owner = curator, no guardian",
@@ -76,9 +76,9 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDT0",
-  "amount": 100008946.942019,
-  "price_usd": 0.9988180772484506,
-  "held_usd": 99890744.09226973,
+  "amount": 100015621.86091,
+  "price_usd": 0.9989647111060083,
+  "held_usd": 99912076.79837172,
   "stale": null,
   "price_stale": null,
   "amount_change_pct": 0.0,
@@ -96,7 +96,7 @@
       "to": "0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
       "data": "0x8da5cb5b"
      },
-     "0x22190d4"
+     "0x235edc6"
     ]
    },
    {
@@ -142,15 +142,16 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66\",\"data\":\"0x8da5cb5b\"},\"0x22190d4\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x22190d4",
-  "note": "read between blocks 35754187 and 35754196 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66\",\"data\":\"0x8da5cb5b\"},\"0x235edc6\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x235edc6",
+  "note": "read between blocks 37088695 and 37088710 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-19T22:01:38Z",
+   "t": "2026-11-02T20:57:36Z",
    "composite": 30,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/plasma/0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66.xml",
@@ -158,11 +159,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000a9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
-  "block": "0x2328694",
+  "block": "0x246e42a",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000a9c251f8304b1b3fc2b9e8fcae78d94eff82ac66\"},\"0x2328694\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000a9c251f8304b1b3fc2b9e8fcae78d94eff82ac66\"},\"0x246e42a\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -201,18 +202,18 @@
   "exposure": {
    "keys_to_move": 2,
    "react_hours": 24,
-   "tvl_usd": 99890744.09226973,
-   "money_per_key_usd": 49945372.04613487,
+   "tvl_usd": 99912076.79837172,
+   "money_per_key_usd": 49956038.39918586,
    "money_source": "contract",
    "held_symbol": "USDT0",
-   "held_amount": 100008946.942019
+   "held_amount": 100015621.86091
   }
  },
  "score_cluster": null,
- "last_pushed": 1792447298,
+ "last_pushed": 1793653056,
  "stale": false,
- "methodology_hash": "0xc1d1ba0a9ddfabd18ba1ec3ed1f66dce9babca05f05eaa76acd37cc1d671034c",
- "block": 36865684,
+ "methodology_hash": "0x3aa3cbf80cdcf7d08aaa4e4a4441cfe56dea15f1a7ea336e20662dc4f262d4ac",
+ "block": 38200362,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66",
  "page": "https://realspap.github.io/oracle/p/plasma-0xa9c251f8304b1b3fc2b9e8fcae78d94eff82ac66.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Uniswap V4 PoolManager (Base)",
  "named_from": "dashboard",
  "chain": "Base",
@@ -20,7 +20,7 @@
   "multisigScore": 100,
   "timelockScore": 75,
   "oracleAuthorityScore": 100,
-  "crossExposureScore": 80
+  "crossExposureScore": 40
  },
  "requirements": [
   {
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 106403972.24544503,
+ "tvl_usd": 89542066.81201279,
  "category": "Dexs",
- "at_risk_usd": 15960595.836816754,
+ "at_risk_usd": 13431310.02180192,
  "narrative": {
   "summary": "PoolManager.owner() is the same cross-domain forwarder that owns the V3 Factory\u2019s fee adapter and acts as the V2 Factory\u2019s feeToSetter, so the root is Uniswap\u2019s Ethereum-mainnet Governance Timelock (2-day delay, 172,800s), not a Base-side key.",
   "tag": "$59.3M Base TVL, same DAO root as V2 and V3",
@@ -76,19 +76,20 @@
       "to": "0x498581ff718922c3f8e6a244956af099b2652b2b",
       "data": "0x8da5cb5b"
      },
-     "0x327fffc"
+     "0x33b2421"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x498581ff718922c3f8e6a244956af099b2652b2b\",\"data\":\"0x8da5cb5b\"},\"0x327fffc\"]}'",
-  "block": "0x327fffc",
-  "note": "read between blocks 52953077 and 52953084 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x498581ff718922c3f8e6a244956af099b2652b2b\",\"data\":\"0x8da5cb5b\"},\"0x33b2421\"]}'",
+  "block": "0x33b2421",
+  "note": "read between blocks 54207429 and 54207521 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-19T21:38:45Z",
+   "t": "2026-11-02T20:51:19Z",
    "composite": 85,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/base-sepolia/0x498581ff718922c3f8e6a244956af099b2652b2b.xml",
@@ -96,11 +97,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b",
-  "block": "0x2e9a004",
+  "block": "0x34f8fb1",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b\"},\"0x2e9a004\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b\"},\"0x34f8fb1\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -124,7 +125,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 106403972.24544503,
+   "tvl_usd": 89542066.81201279,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -132,10 +133,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1792445925,
+ "last_pushed": 1793652679,
  "stale": false,
- "methodology_hash": "0xb55a2d7d5c9f1c87b278a0c86beeca7d03a2540019f031930109b54b653d3b74",
- "block": 48865284,
+ "methodology_hash": "0x39ed8891e019d83889c7b6f2e853ef182a57190fd394f4f1a7167fee1a741bc0",
+ "block": 55545777,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x498581ff718922c3f8e6a244956af099b2652b2b",
  "page": "https://realspap.github.io/oracle/p/base-0x498581ff718922c3f8e6a244956af099b2652b2b.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

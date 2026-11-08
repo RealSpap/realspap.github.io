@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "HIP-3 dex xyz (trade[XYZ])",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -69,9 +69,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-19T21:34:15Z",
+   "t": "2026-11-02T21:16:49Z",
    "composite": 9,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/hyperliquid-hyperevm/0x88806a71d74ad0a510b350545c9ae490912f0888.xml",
@@ -112,10 +113,10 @@
   "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
  },
  "score_cluster": null,
- "last_pushed": 1792445655,
+ "last_pushed": 1793654209,
  "stale": false,
- "methodology_hash": "0xc06d60184165fe36f356e6196dac10f0adf5963726a5d1574b5ab896fbc8c365",
- "block": 67607486,
+ "methodology_hash": "0xb595576050a45dcdeeb0479747f6b283eaaca756e6cd7e70a176a194021bed65",
+ "block": 68962265,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x88806a71d74ad0a510b350545c9ae490912f0888",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x88806a71d74ad0a510b350545c9ae490912f0888.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "cUSD",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -69,9 +69,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-19T21:31:02Z",
+   "t": "2026-11-02T20:41:41Z",
    "composite": 43,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/tempo-moderato/0x20c0000000000000000000000520792dcccccccc.xml",
@@ -79,11 +80,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000020c0000000000000000000000520792dcccccccc",
-  "block": "0x26d7193",
+  "block": "0x28fa77e",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c0000000000000000000000520792dcccccccc\"},\"0x26d7193\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c0000000000000000000000520792dcccccccc\"},\"0x28fa77e\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -112,10 +113,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1792445462,
+ "last_pushed": 1793652101,
  "stale": false,
- "methodology_hash": "0xe267de1a8e2c7ace54eac7fd4376bfbd66cb87cba7b39e30d883e4cda7ab787a",
- "block": 40726931,
+ "methodology_hash": "0x4b8b9f250720ac31fdabaebb0a869cf64699eed816cb0f02de3ef13bcf637368",
+ "block": 42968958,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x20c0000000000000000000000520792dcccccccc",
  "page": "https://realspap.github.io/oracle/p/tempo-0x20c0000000000000000000000520792dcccccccc.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

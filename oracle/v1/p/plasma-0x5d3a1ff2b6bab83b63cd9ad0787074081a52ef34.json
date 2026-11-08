@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Ethena USDe OFT",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -19,7 +19,7 @@
   "multisigScore": 100,
   "timelockScore": 15,
   "oracleAuthorityScore": 100,
-  "crossExposureScore": 80
+  "crossExposureScore": 85
  },
  "requirements": [
   {
@@ -48,12 +48,12 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 4650060260.438541,
+ "tvl_usd": 4920147950.458165,
  "category": "Basis Trading",
- "at_risk_usd": 1999525911.9885726,
+ "at_risk_usd": 2115663618.697011,
  "narrative": {
   "summary": "A real 5-of-10 Safe - and the same 10 signers, as an exact set, already control Ethereum L1\u2019s own tracked Ethena Safe. A real delay is queued (Ownable2Step pending) but not active yet.",
-  "tag": "cross-exposure: 80 - same 10 signers as Ethereum L1",
+  "tag": "shared signers - same 10 signers as Ethereum L1",
   "detail": "owner() is the current, active authority (the 5-of-10 Safe); pendingOwner() shows an in-progress transfer to a real TimelockController with a 1-day delay, on which that same Safe already holds every role - so even once accepted, authority doesn\u2019t change hands, just gets a delay. Scored on the CURRENT state (no delay in effect), not the pending one."
  },
  "score_account": null,
@@ -75,7 +75,7 @@
       "to": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
       "data": "0x8da5cb5b"
      },
-     "0x22190d4"
+     "0x235edc6"
     ]
    },
    {
@@ -90,15 +90,16 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34\",\"data\":\"0x8da5cb5b\"},\"0x22190d4\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xabd3645ba0bb60c238bede64378826e1206f5072\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
-  "block": "0x22190d4",
-  "note": "read between blocks 35754187 and 35754196 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34\",\"data\":\"0x8da5cb5b\"},\"0x235edc6\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xabd3645ba0bb60c238bede64378826e1206f5072\",\"data\":\"0xf27a0c92\"},\"latest\"]}'",
+  "block": "0x235edc6",
+  "note": "read between blocks 37088695 and 37088710 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-19T22:01:38Z",
+   "t": "2026-11-02T20:57:36Z",
    "composite": 57,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/plasma/0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.xml",
@@ -106,11 +107,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
-  "block": "0x2328694",
+  "block": "0x246e42a",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34\"},\"0x2328694\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d00000000000000000000000005d3a1ff2b6bab83b63cd9ad0787074081a52ef34\"},\"0x246e42a\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -142,7 +143,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": 24,
-   "tvl_usd": 4650060260.438541,
+   "tvl_usd": 4920147950.458165,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -150,10 +151,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1792447298,
+ "last_pushed": 1793653056,
  "stale": false,
- "methodology_hash": "0xc1d1ba0a9ddfabd18ba1ec3ed1f66dce9babca05f05eaa76acd37cc1d671034c",
- "block": 36865684,
+ "methodology_hash": "0x3aa3cbf80cdcf7d08aaa4e4a4441cfe56dea15f1a7ea336e20662dc4f262d4ac",
+ "block": 38200362,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
  "page": "https://realspap.github.io/oracle/p/plasma-0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

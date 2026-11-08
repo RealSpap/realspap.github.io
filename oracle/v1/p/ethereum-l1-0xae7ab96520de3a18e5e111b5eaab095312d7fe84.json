@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Lido stETH",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 22998454593.15372,
+ "tvl_usd": 21789788530.19399,
  "category": "Liquid Staking",
- "at_risk_usd": 4599690918.630744,
+ "at_risk_usd": 4357957706.038797,
  "narrative": {
   "summary": "stETH is an Aragon app proxy whose Agent is now controlled through Dual Governance: the Aragon Voting app no longer holds EXECUTE_ROLE on the Agent, an executor behind a 4-day enforced delay does. A configured emergency-governance path exists and was not fully bounded, so the delay is not credited in full.",
   "tag": "$25.2B TVL, 4-day enforced delay, composite 80 (pushed on-chain 2026-09-20)",
@@ -69,9 +69,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-20T00:07:39Z",
+   "t": "2026-11-03T20:50:33Z",
    "composite": 80,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/ethereum-l1-sepolia/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.xml",
@@ -79,11 +80,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d0000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84",
-  "block": "0xb6ab65",
+  "block": "0xb85a45",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84\"},\"0xb6ab65\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d0000000000000000000000000ae7ab96520de3a18e5e111b5eaab095312d7fe84\"},\"0xb85a45\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -105,10 +106,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1792454859,
+ "last_pushed": 1793739033,
  "stale": false,
- "methodology_hash": "0x0e0dadb9b93f111850c6149be1a61b089f1e14e39d9a2acc56a7e0d4d88ef32b",
- "block": 11971429,
+ "methodology_hash": "0xa37efe09736cbdf0d29c1f49b85da3169704337c3b89e95453ef57079f9f6439",
+ "block": 12081733,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xae7ab96520de3a18e5e111b5eaab095312d7fe84.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

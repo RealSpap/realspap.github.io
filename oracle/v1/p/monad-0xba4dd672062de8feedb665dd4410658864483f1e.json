@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Euler V2 eVaultFactory",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -21,7 +21,7 @@
   "multisigScore": 80,
   "timelockScore": 60,
   "oracleAuthorityScore": 2,
-  "crossExposureScore": 80
+  "crossExposureScore": 85
  },
  "requirements": [
   {
@@ -50,12 +50,12 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 203235108.43915227,
+ "tvl_usd": 208289286.78273973,
  "category": "Lending",
- "at_risk_usd": 73164639.03809482,
+ "at_risk_usd": 74984143.2417863,
  "narrative": {
   "summary": "eVaultFactory.upgradeAdmin() is a Governor whose only admin is a 4-day TimelockController: a 4-of-8 DAO Safe is the sole proposer and anyone can execute once the delay passes, so no on-chain token vote is in the path. The delay has one bypass: PAUSE_GUARDIAN_ROLE, held by a 2-of-6 Labs Safe and two bare EOAs, can put every upgradeable vault into read-only mode instantly.",
-  "tag": "cross-exposure: 80, same 8 DAO signers as Plasma",
+  "tag": "shared signers, same 8 DAO signers as Plasma",
   "detail": "Every vault this factory has deployed is flagged upgradeable, so its implementation reaches all of them. The DAO Safe\u2019s 8 signers are identical to Euler\u2019s DAO Safe on Plasma at a different Safe address. The 2-of-3 Security Council Safe holds only CANCELLER_ROLE on the factory timelock, and no role on the factory Governor, the emergency governor or either emergency timelock. The same two bare EOAs hold PAUSE_GUARDIAN_ROLE on Plasma\u2019s Euler Governor too."
  },
  "score_account": null,
@@ -69,9 +69,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-19T21:42:47Z",
+   "t": "2026-11-02T20:51:45Z",
    "composite": 64,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/monad/0xba4dd672062de8feedb665dd4410658864483f1e.xml",
@@ -79,11 +80,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000ba4dd672062de8feedb665dd4410658864483f1e",
-  "block": "0x45ec12a",
+  "block": "0x4a1214b",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ba4dd672062de8feedb665dd4410658864483f1e\"},\"0x45ec12a\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ba4dd672062de8feedb665dd4410658864483f1e\"},\"0x4a1214b\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -112,10 +113,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1792446167,
+ "last_pushed": 1793652705,
  "stale": false,
- "methodology_hash": "0xf4a5c40caa27b1952c9235737d4bcc6b134faaea8d54c2db3a963aacf896a904",
- "block": 73318698,
+ "methodology_hash": "0x0ecf34c47dbe50b94fd1882dd54ae9adf4c44f8a47b142a1e0cbac17e59c0fbd",
+ "block": 77668683,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xba4dd672062de8feedb665dd4410658864483f1e",
  "page": "https://realspap.github.io/oracle/p/monad-0xba4dd672062de8feedb665dd4410658864483f1e.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

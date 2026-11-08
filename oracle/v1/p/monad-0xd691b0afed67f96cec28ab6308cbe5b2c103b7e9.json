@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Echo Protocol eBTC",
  "named_from": "dashboard",
  "chain": "Monad",
@@ -70,9 +70,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-19T21:42:47Z",
+   "t": "2026-11-02T20:51:45Z",
    "composite": 37,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/monad/0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.xml",
@@ -80,11 +81,11 @@
   "rpc": "https://testnet-rpc.monad.xyz/",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9",
-  "block": "0x45ec12a",
+  "block": "0x4a1214b",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9\"},\"0x45ec12a\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.monad.xyz/ -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000d691b0afed67f96cec28ab6308cbe5b2c103b7e9\"},\"0x4a1214b\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -113,10 +114,10 @@
   "why": "AccessControl (ERC-165) whose admin-role holders are not enumerable on-chain: read them from RoleGranted events; nothing for this reader to compare"
  },
  "score_cluster": null,
- "last_pushed": 1792446167,
+ "last_pushed": 1793652705,
  "stale": false,
- "methodology_hash": "0xf4a5c40caa27b1952c9235737d4bcc6b134faaea8d54c2db3a963aacf896a904",
- "block": 73318698,
+ "methodology_hash": "0x0ecf34c47dbe50b94fd1882dd54ae9adf4c44f8a47b142a1e0cbac17e59c0fbd",
+ "block": 77668683,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9",
  "page": "https://realspap.github.io/oracle/p/monad-0xd691b0afed67f96cec28ab6308cbe5b2c103b7e9.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "PancakeSwap AMM (V2) Factory",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 113012.71168454865,
+ "tvl_usd": 108625.8081465213,
  "category": "Dexs",
- "at_risk_usd": 110752.45745085766,
+ "at_risk_usd": 106453.29198359087,
  "narrative": {
   "summary": "Pairs are immutable (no upgrade surface at all) - but feeToSetter is a bare, actively-used EOA (real nonce 20) that alone can redirect protocol fees or hand off control, with zero delay.",
   "tag": "$1.9B TVL across all chains (DefiLlama)",
@@ -69,9 +69,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-19T22:28:48Z",
+   "t": "2026-11-02T21:22:22Z",
    "composite": 2,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/robinhood-chain/0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e.xml",
@@ -112,10 +113,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1792448928,
+ "last_pushed": 1793654542,
  "stale": false,
- "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
- "block": 140889025,
+ "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
+ "block": 149861907,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

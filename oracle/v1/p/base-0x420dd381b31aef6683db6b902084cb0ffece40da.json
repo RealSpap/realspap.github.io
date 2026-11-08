@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Aerodrome Finance PoolFactory",
  "named_from": "dashboard",
  "chain": "Base",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 96700007.44234556,
+ "tvl_usd": 52242851.57935738,
  "category": "Dexs",
- "at_risk_usd": 52218004.018866606,
+ "at_risk_usd": 28211139.852852985,
  "narrative": {
   "summary": "pauser()/feeManager() AND Voter.governor() are confirmed the exact same 3-of-7 Safe - one key can pause pools, redirect where AERO emissions flow, and reassign itself, with no timelock anywhere.",
   "tag": "$322.7M TVL - largest Base-native target",
@@ -76,9 +76,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-19T21:38:45Z",
+   "t": "2026-11-02T20:51:19Z",
    "composite": 46,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/base-sepolia/0x420dd381b31aef6683db6b902084cb0ffece40da.xml",
@@ -86,11 +87,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000420dd381b31aef6683db6b902084cb0ffece40da",
-  "block": "0x2e9a004",
+  "block": "0x34f8fb1",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000420dd381b31aef6683db6b902084cb0ffece40da\"},\"0x2e9a004\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000420dd381b31aef6683db6b902084cb0ffece40da\"},\"0x34f8fb1\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -119,10 +120,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1792445925,
+ "last_pushed": 1793652679,
  "stale": false,
- "methodology_hash": "0xb55a2d7d5c9f1c87b278a0c86beeca7d03a2540019f031930109b54b653d3b74",
- "block": 48865284,
+ "methodology_hash": "0x39ed8891e019d83889c7b6f2e853ef182a57190fd394f4f1a7167fee1a741bc0",
+ "block": 55545777,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x420dd381b31aef6683db6b902084cb0ffece40da",
  "page": "https://realspap.github.io/oracle/p/base-0x420dd381b31aef6683db6b902084cb0ffece40da.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

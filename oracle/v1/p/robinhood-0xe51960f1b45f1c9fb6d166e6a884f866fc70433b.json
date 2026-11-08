@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "SushiSwap V3 Factory",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,7 +9,7 @@
  "band": "weak",
  "keys_to_move": 2,
  "react_hours": 0,
- "money_per_key_usd": 2058187.9752281173,
+ "money_per_key_usd": 1784297.879384465,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 50,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 4116375.9504562346,
+ "tvl_usd": 3568595.75876893,
  "category": "Dexs",
- "at_risk_usd": 2840299.4058148023,
+ "at_risk_usd": 2462331.0735505614,
  "narrative": {
   "summary": "Factory.owner() is an Ownable2Step fee-manager wrapper whose owner is a plain 2-of-3 Safe - not found at the same address on Ethereum/Arbitrum/Base/BSC/Optimism, no public documentation of its signers found.",
   "detail": "Factory and pools are immutable, so the blast radius is fee/tier control, not fund custody. Address sourced from Sushi\u2019s own canonical chain config, not a third-party mirror."
@@ -59,9 +59,9 @@
  "safe_activity": [
   {
    "safe": "robinhood:0x6fa4\u20264657",
-   "nonce": 16,
-   "idle_since": "2026-10-22T07:05:11Z",
-   "last_moved": "2026-10-22T07:05:11Z",
+   "nonce": 19,
+   "idle_since": "2026-11-03T14:26:11Z",
+   "last_moved": "2026-11-03T14:26:11Z",
    "never_executed": false
   }
  ],
@@ -79,19 +79,20 @@
       "to": "0xe51960f1b45f1c9fb6d166e6a884f866fc70433b",
       "data": "0x8da5cb5b"
      },
-     "0x5aebe03"
+     "0x672ee2a"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe51960f1b45f1c9fb6d166e6a884f866fc70433b\",\"data\":\"0x8da5cb5b\"},\"0x5aebe03\"]}'",
-  "block": "0x5aebe03",
-  "note": "read between blocks 95337606 and 95337987 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe51960f1b45f1c9fb6d166e6a884f866fc70433b\",\"data\":\"0x8da5cb5b\"},\"0x672ee2a\"]}'",
+  "block": "0x672ee2a",
+  "note": "read between blocks 108194838 and 108195370 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-19T22:28:48Z",
+   "t": "2026-11-02T21:22:22Z",
    "composite": 31,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/robinhood-chain/0xe51960f1b45f1c9fb6d166e6a884f866fc70433b.xml",
@@ -141,18 +142,18 @@
   "exposure": {
    "keys_to_move": 2,
    "react_hours": 0,
-   "tvl_usd": 4116375.9504562346,
-   "money_per_key_usd": 2058187.9752281173,
+   "tvl_usd": 3568595.75876893,
+   "money_per_key_usd": 1784297.879384465,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": null,
- "last_pushed": 1792448928,
+ "last_pushed": 1793654542,
  "stale": false,
- "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
- "block": 140889025,
+ "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
+ "block": 149861907,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xe51960f1b45f1c9fb6d166e6a884f866fc70433b",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xe51960f1b45f1c9fb6d166e6a884f866fc70433b.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Meteora DAMM v2",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -49,9 +49,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 22830123.319310572,
+ "tvl_usd": 18759359.2531534,
  "category": "Dexs",
- "at_risk_usd": 22373520.85292436,
+ "at_risk_usd": 18384172.06809033,
  "narrative": {
   "summary": "Program upgrades need 4 of 7 signers, but the program's root admin is a hardcoded pair of bare keys where either one alone is enough. That pair sits at the top of the permission tree, which drives the score near the floor.",
   "tag": "root admin: two hardcoded bare keys, either suffices",
@@ -94,9 +94,9 @@
   "posture": "admin: a program-derived address (not a Squads v4 vault); delay: unknown"
  },
  "score_cluster": "devnet",
- "last_pushed": 1792445238,
+ "last_pushed": 1793656396,
  "stale": false,
- "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
+ "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG",
  "page": "https://realspap.github.io/oracle/p/solana-cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG.html",

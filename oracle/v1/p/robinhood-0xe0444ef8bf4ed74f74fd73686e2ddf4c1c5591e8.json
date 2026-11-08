@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Robinhood tokenized stocks/ETFs (5 of ~230 sampled)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -70,9 +70,10 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-10-19T22:28:48Z",
+   "t": "2026-11-02T21:22:22Z",
    "composite": 1,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/robinhood-chain/0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8.xml",
@@ -113,10 +114,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1792448928,
+ "last_pushed": 1793654542,
  "stale": false,
- "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
- "block": 140889025,
+ "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
+ "block": 149861907,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

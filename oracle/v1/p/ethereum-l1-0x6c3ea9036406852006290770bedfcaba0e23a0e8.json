@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "PYUSD (Paxos)",
  "named_from": "dashboard",
  "chain": "Ethereum",
@@ -87,7 +87,7 @@
     ]
    },
    {
-    "what": "eth_getTransactionCount on the holder: how many transactions this key has sent (435 at the read)",
+    "what": "eth_getTransactionCount on the holder: how many transactions this key has sent (542 at the read)",
     "method": "eth_getTransactionCount",
     "params": [
      "<holder>",
@@ -95,20 +95,26 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x6c3ea9036406852006290770bedfcaba0e23a0e8\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (435 at the read)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"latest\"]}'",
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x6c3ea9036406852006290770bedfcaba0e23a0e8\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (542 at the read)\ncurl -s -X POST https://ethereum-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"latest\"]}'",
   "block": "latest",
-  "note": "read between blocks 26250101 and 26250103 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
+  "note": "read between blocks 26361103 and 26361104 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
    "t": "2026-10-11T06:34:38Z",
    "composite": 2,
-   "from": "watch"
+   "from": "watch",
+   "method_break": false
   },
   {
-   "t": "2026-10-20T00:07:39Z",
+   "t": "2026-11-03T20:50:33Z",
    "composite": 2,
-   "from": "push"
+   "from": "push",
+   "method_break": true,
+   "method_change": {
+    "from": "0x0e0dadb9b93f111850c6149be1a61b089f1e14e39d9a2acc56a7e0d4d88ef32b",
+    "to": "0xf1bcef2ca2dbc26e9b6b0a98e883de825d0be73765dbc53447e885de88b3c0ee"
+   }
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/ethereum-l1-sepolia/0x6c3ea9036406852006290770bedfcaba0e23a0e8.xml",
@@ -116,11 +122,11 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "to": "0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906",
   "data": "0xd47875d00000000000000000000000006c3ea9036406852006290770bedfcaba0e23a0e8",
-  "block": "0xb6ab65",
+  "block": "0xb85a45",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000006c3ea9036406852006290770bedfcaba0e23a0e8\"},\"0xb6ab65\"]}'"
+  "curl": "curl -s -X POST https://ethereum-sepolia-rpc.publicnode.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906\",\"data\":\"0xd47875d00000000000000000000000006c3ea9036406852006290770bedfcaba0e23a0e8\"},\"0xb85a45\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -147,7 +153,7 @@
   "self_delay_seconds": null,
   "kind": "eoa",
   "since": "2026-10-11T06:43:46Z",
-  "posture": "admin: a plain key, 435 transactions sent; delay: none",
+  "posture": "admin: a plain key, 542 transactions sent; delay: none",
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
@@ -159,10 +165,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1792454859,
+ "last_pushed": 1793739033,
  "stale": false,
- "methodology_hash": "0x0e0dadb9b93f111850c6149be1a61b089f1e14e39d9a2acc56a7e0d4d88ef32b",
- "block": 11971429,
+ "methodology_hash": "0xa37efe09736cbdf0d29c1f49b85da3169704337c3b89e95453ef57079f9f6439",
+ "block": 12081733,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x6c3ea9036406852006290770bedfcaba0e23a0e8",
  "page": "https://realspap.github.io/oracle/p/ethereum-l1-0x6c3ea9036406852006290770bedfcaba0e23a0e8.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

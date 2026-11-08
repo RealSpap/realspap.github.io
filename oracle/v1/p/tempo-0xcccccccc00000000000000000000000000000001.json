@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Tempo L1 validator registry (ValidatorConfigV2)",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -9,7 +9,7 @@
  "band": "weak",
  "keys_to_move": 2,
  "react_hours": 0,
- "money_per_key_usd": 45707810.628588334,
+ "money_per_key_usd": 52698028.59740617,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 50,
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 91415621.25717667,
+ "tvl_usd": 105396057.19481234,
  "category": null,
- "at_risk_usd": 63076778.667451896,
+ "at_risk_usd": 72723279.46442051,
  "narrative": {
   "summary": "The chain-level baseline every other target on Tempo inherits. A real 2-of-5 Safe, no timelock - any 2 of the 5 signers can change validator config immediately.",
   "tag": "every target below inherits this",
@@ -60,9 +60,9 @@
  "safe_activity": [
   {
    "safe": "tempo:0xdc65\u2026ca33",
-   "nonce": 35,
-   "idle_since": "2026-10-22T13:03:40Z",
-   "last_moved": "2026-10-22T13:03:40Z",
+   "nonce": 37,
+   "idle_since": "2026-11-05T20:16:46Z",
+   "last_moved": "2026-11-05T20:16:46Z",
    "never_executed": false
   }
  ],
@@ -80,7 +80,7 @@
       "to": "0xcccccccc00000000000000000000000000000001",
       "data": "0x8da5cb5b"
      },
-     "0x2b49000"
+     "0x2d9b92e"
     ]
    },
    {
@@ -126,15 +126,16 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcccccccc00000000000000000000000000000001\",\"data\":\"0x8da5cb5b\"},\"0x2b49000\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x2b49000",
-  "note": "read between blocks 45387764 and 45387776 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcccccccc00000000000000000000000000000001\",\"data\":\"0x8da5cb5b\"},\"0x2d9b92e\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xdc659eff2784cf79fba88f85d26b1392270cca33\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x2d9b92e",
+  "note": "read between blocks 47823137 and 47823150 of the chain"
  },
  "history": [
   {
-   "t": "2026-10-19T21:31:02Z",
+   "t": "2026-11-02T20:41:41Z",
    "composite": 31,
-   "from": "push"
+   "from": "push",
+   "method_break": false
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/tempo-moderato/0xcccccccc00000000000000000000000000000001.xml",
@@ -142,11 +143,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000cccccccc00000000000000000000000000000001",
-  "block": "0x26d7193",
+  "block": "0x28fa77e",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000cccccccc00000000000000000000000000000001\"},\"0x26d7193\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000cccccccc00000000000000000000000000000001\"},\"0x28fa77e\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -184,18 +185,18 @@
   "exposure": {
    "keys_to_move": 2,
    "react_hours": 0,
-   "tvl_usd": 91415621.25717667,
-   "money_per_key_usd": 45707810.628588334,
+   "tvl_usd": 105396057.19481234,
+   "money_per_key_usd": 52698028.59740617,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": null,
- "last_pushed": 1792445462,
+ "last_pushed": 1793652101,
  "stale": false,
- "methodology_hash": "0xe267de1a8e2c7ace54eac7fd4376bfbd66cb87cba7b39e30d883e4cda7ab787a",
- "block": 40726931,
+ "methodology_hash": "0x4b8b9f250720ac31fdabaebb0a869cf64699eed816cb0f02de3ef13bcf637368",
+ "block": 42968958,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xcccccccc00000000000000000000000000000001",
  "page": "https://realspap.github.io/oracle/p/tempo-0xcccccccc00000000000000000000000000000001.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

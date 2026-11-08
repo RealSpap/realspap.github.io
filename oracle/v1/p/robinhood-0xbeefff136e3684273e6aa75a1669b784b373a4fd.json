@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Morpho Grove x Steakhouse + Steakhouse Turbo USDG vaults",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,14 +9,14 @@
  "band": "decent",
  "keys_to_move": 5,
  "react_hours": 0,
- "money_per_key_usd": 10160.307269859783,
+ "money_per_key_usd": 10176.501645154365,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 70,
   "multisigScore": 65,
   "timelockScore": 60,
   "oracleAuthorityScore": 52,
-  "crossExposureScore": 40
+  "crossExposureScore": 25
  },
  "requirements": [
   {
@@ -45,9 +45,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths not all checked",
- "tvl_usd": 539934740.6387963,
+ "tvl_usd": 530780387.687343,
  "category": "Risk Curators",
- "at_risk_usd": 183577811.81719074,
+ "at_risk_usd": 180465331.81369662,
  "narrative": {
   "summary": "Two more Steakhouse-curated Morpho vaults on this chain, found via the curator registry DefiLlama\u2019s own dashboard actually reads from (not the per-protocol page, which 404s) - confirmed live before being added, not trusted from the registry file alone.",
   "tag": "batch 13 - closed a DefiLlama-adapter gap",
@@ -76,9 +76,9 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDG",
-  "amount": 50805.700898,
-  "price_usd": 0.9999180298937427,
-  "held_usd": 50801.53634929891,
+  "amount": 50885.85336,
+  "price_usd": 0.999934262,
+  "held_usd": 50882.508225771824,
   "stale": null,
   "price_stale": null,
   "amount_change_pct": 0.0,
@@ -96,29 +96,40 @@
       "to": "0xbeefff136e3684273e6aa75a1669b784b373a4fd",
       "data": "0x8da5cb5b"
      },
-     "0x5aebe03"
+     "0x672ee2a"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeefff136e3684273e6aa75a1669b784b373a4fd\",\"data\":\"0x8da5cb5b\"},\"0x5aebe03\"]}'",
-  "block": "0x5aebe03",
-  "note": "read between blocks 95337606 and 95337987 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xbeefff136e3684273e6aa75a1669b784b373a4fd\",\"data\":\"0x8da5cb5b\"},\"0x672ee2a\"]}'",
+  "block": "0x672ee2a",
+  "note": "read between blocks 108194838 and 108195370 of the chain"
  },
  "history": [
   {
    "t": "2026-10-10T21:01:36Z",
    "composite": 46,
-   "from": "first"
+   "from": "first",
+   "method_break": false
   },
   {
    "t": "2026-10-10T21:01:36Z",
    "composite": 66,
-   "from": "watch"
+   "from": "watch",
+   "method_break": true,
+   "method_change": {
+    "from": "0xf2606acddcba40931e80d6e2a5a45ff06a0788ef4db7a53b60e19de4133b8975",
+    "to": "0x795edc64fdbb202de7639a1c6c1148aee4788c27ffc66050f9aa6cf0e09614c5"
+   }
   },
   {
-   "t": "2026-10-19T22:28:48Z",
+   "t": "2026-11-02T21:22:22Z",
    "composite": 66,
-   "from": "push"
+   "from": "push",
+   "method_break": true,
+   "method_change": {
+    "from": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+    "to": "0x05ae8b2527e36e0cfe794ab3b0eedd011f66b8007af63cb1bd050287799aa465"
+   }
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/robinhood-chain/0xbeefff136e3684273e6aa75a1669b784b373a4fd.xml",
@@ -164,22 +175,22 @@
     "target": "0xbeeff0fb1dc19344a87b8479dab60a2e16160737"
    }
   ],
-  "cluster_tvl_usd": 539934740.6387963,
+  "cluster_tvl_usd": 530780387.687343,
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 0,
-   "tvl_usd": 50801.53634929891,
-   "money_per_key_usd": 10160.307269859783,
+   "tvl_usd": 50882.508225771824,
+   "money_per_key_usd": 10176.501645154365,
    "money_source": "contract",
    "held_symbol": "USDG",
-   "held_amount": 50805.700898
+   "held_amount": 50885.85336
   }
  },
  "score_cluster": null,
- "last_pushed": 1792448928,
+ "last_pushed": 1793654542,
  "stale": false,
- "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
- "block": 140889025,
+ "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
+ "block": 149861907,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbeefff136e3684273e6aa75a1669b784b373a4fd",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xbeefff136e3684273e6aa75a1669b784b373a4fd.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

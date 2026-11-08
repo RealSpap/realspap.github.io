@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Spark Liquidity Layer (ALMProxy)",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -50,9 +50,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 861.8280877932219,
+ "tvl_usd": 1064.518713,
  "category": "Onchain Capital Allocator",
- "at_risk_usd": 611.8979423331876,
+ "at_risk_usd": 755.8082862299999,
  "narrative": {
   "summary": "Left open in an earlier pass as an unrecognized proxy shape - turned out not to be a proxy at all, but Spark\u2019s own ALMProxy dispatcher, gated by the identical executor contract already traced for Spark Savings USDG.",
   "tag": "resolved a real open thread, not repeated",
@@ -83,12 +83,28 @@
   {
    "t": "2026-10-20T00:54:24Z",
    "composite": 32,
-   "from": "first"
+   "from": "first",
+   "method_break": false
   },
   {
    "t": "2026-10-20T00:54:24Z",
    "composite": 29,
-   "from": "watch"
+   "from": "watch",
+   "method_break": true,
+   "method_change": {
+    "from": "0x667dc486af9557a83488110fdb18fe653ba6d3be4773420590ee53b4a052fa45",
+    "to": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606"
+   }
+  },
+  {
+   "t": "2026-11-02T21:22:22Z",
+   "composite": 29,
+   "from": "push",
+   "method_break": true,
+   "method_change": {
+    "from": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
+    "to": "0x05ae8b2527e36e0cfe794ab3b0eedd011f66b8007af63cb1bd050287799aa465"
+   }
   }
  ],
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/robinhood-chain/0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.xml",
@@ -129,10 +145,10 @@
   "why": "AccessControl (ERC-165) whose admin-role holders are not enumerable on-chain: read them from RoleGranted events; nothing for this reader to compare"
  },
  "score_cluster": null,
- "last_pushed": 1792448928,
+ "last_pushed": 1793654542,
  "stale": false,
- "methodology_hash": "0x7a8280d6128fcfffdfcab3e45d617360c4caa1a521e1ecf4f002e4762b4b3606",
- "block": 140889025,
+ "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
+ "block": 149861907,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfd2fd4b046136b540a56c11c75ac679ae7d1db24",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xfd2fd4b046136b540a56c11c75ac679ae7d1db24.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

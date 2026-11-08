@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-07T07:41:09Z",
  "name": "Orca Whirlpool",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,14 +9,14 @@
  "band": "critical",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 61305077.37569074,
+ "money_per_key_usd": 57183950.585803606,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
   "multisigScore": 0,
   "timelockScore": 0,
   "oracleAuthorityScore": 100,
-  "crossExposureScore": 100
+  "crossExposureScore": 80
  },
  "requirements": [
   {
@@ -41,13 +41,13 @@
   },
   {
    "label": "No key shared with another tracked protocol",
-   "met": true
+   "met": false
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 306525386.87845373,
+ "tvl_usd": 285919752.929018,
  "category": "Dexs",
- "at_risk_usd": 300394879.14088464,
+ "at_risk_usd": 280201357.8704377,
  "narrative": {
   "summary": "Upgrades look strong (24-hour delay, 5-of-13), but a separate reward authority on the same config is a 1-of-8 multisig with no delay, which scores like a single key. Counting it as full-power is a disclosed judgment call.",
   "tag": "judgment call: reward authority counted as full-power",
@@ -97,22 +97,21 @@
   "keys_lost_to_freeze": 5,
   "kind": "squads",
   "since": "2026-10-10T06:54:09Z",
-  "disagree": "the score says one key does everything (5), the upgrade authority is a Squads v4 via account owned by program whirLbMi\u2026 -&gt; program -&gt; ProgramData CtXfPz\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF; the multisig score says no real multisig (0), the Squads multisig is a 5-of-13; the timelock score says no delay (0), the Squads multisig enforces a native time lock of 24 h",
   "posture": "admin: Squads 5-of-13, 9 can vote of 13 plain keys; delay: 24 h Squads time lock",
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 306525386.87845373,
-   "money_per_key_usd": 61305077.37569074,
+   "tvl_usd": 285919752.929018,
+   "money_per_key_usd": 57183950.585803606,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1792445243,
+ "last_pushed": 1793656398,
  "stale": false,
- "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
+ "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
  "page": "https://realspap.github.io/oracle/p/solana-2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ.html",
