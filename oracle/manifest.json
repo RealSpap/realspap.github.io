@@ -1,7 +1,7 @@
 {
  "name": "Authority Risk Oracle",
  "short_name": "Authority",
- "description": "Can one person move this protocol's funds? Scores read from the chain, re-read every 6 hours.",
+ "description": "Can one person move this protocol's funds? Scores read from the chain, re-read at each pass of the Watch, scheduled every 6 hours, about 2 passes a day since 4 Nov.",
  "start_url": "/oracle/?v=check",
  "scope": "/oracle/",
  "display": "standalone",
