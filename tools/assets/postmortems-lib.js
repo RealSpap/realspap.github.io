@@ -55,7 +55,7 @@
 
   function pinnedLink(inc, meta) { return inc.sourceLink.replace("/tree/main/", "/tree/" + meta.commit + "/"); }
 
-  /* image de partage : aucun nom de protocole, aucune adresse, aucun score, aucun mot de gravité (décision en attente de Spap pour le nom) */
+  /* image de partage : aucun nom de protocole, aucune adresse, aucun score, aucun mot de gravité (décision en attente de RealSpap pour le nom) */
   function imageSpec(inc, meta) {
     return {
       kicker: "Onchain postmortems",
