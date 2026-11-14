@@ -61,7 +61,7 @@
    "applies": true
   }
  ],
- "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
+ "exit_window": "not read (no delay was read for this contract: that is not the same as no delay; no delay figure exists: the independent reader gave no hours to react and the scorer found no delay (reader: no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered))",
  "tvl_usd": 136352661.83011752,
  "category": "Lending",
  "at_risk_usd": 76357490.62486582,
@@ -122,7 +122,7 @@
  },
  "main_gap": {
   "requirement": "At least a 3-of-5 multisig",
-  "reason": "not read: this requirement could not be checked"
+  "reason": "not read: the independent reader could not read the holder: no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "independent_read": {
   "path": null,

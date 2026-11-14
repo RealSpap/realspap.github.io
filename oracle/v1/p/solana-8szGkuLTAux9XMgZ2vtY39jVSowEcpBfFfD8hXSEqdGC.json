@@ -60,7 +60,7 @@
    "applies": true
   }
  ],
- "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
+ "exit_window": "not read (no delay was read for this contract: that is not the same as no delay; no delay figure exists: the independent reader gave no hours to react and the scorer found no delay)",
  "tvl_usd": 171163178.34731066,
  "category": "Liquid Staking",
  "at_risk_usd": 94139748.09102087,

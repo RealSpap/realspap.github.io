@@ -61,7 +61,7 @@
    "applies": true
   }
  ],
- "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
+ "exit_window": "not read (no delay was read for this contract: that is not the same as no delay; no delay figure exists: the independent reader gave no hours to react and the scorer found no delay (reader: AccessControl (ERC-165) whose admin-role holders are not enumerable on-chain: read them from RoleGranted events; nothing for this reader to ))",
  "tvl_usd": 0,
  "category": "Onchain Capital Allocator",
  "at_risk_usd": 0.0,
@@ -145,7 +145,7 @@
  },
  "main_gap": {
   "requirement": "At least a 3-of-5 multisig",
-  "reason": "not read: this requirement could not be checked"
+  "reason": "not read: the independent reader could not read the holder: AccessControl (ERC-165) whose admin-role holders are not enumerable on-chain: read them from RoleGranted events; nothing for this reader to "
  },
  "independent_read": {
   "path": null,

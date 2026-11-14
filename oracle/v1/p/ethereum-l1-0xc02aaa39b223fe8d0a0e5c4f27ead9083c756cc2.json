@@ -117,7 +117,7 @@
  "cheapest_fix": null,
  "main_gap": {
   "requirement": "At least a 3-of-5 multisig",
-  "reason": "not read: this requirement could not be checked"
+  "reason": "not read: the independent reader could not read the holder: no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "independent_read": {
   "path": null,

@@ -61,7 +61,7 @@
    "applies": true
   }
  ],
- "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
+ "exit_window": "not read (no delay was read for this contract: that is not the same as no delay; no delay figure exists: the independent reader gave no hours to react and the scorer found no delay (reader: no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered))",
  "tvl_usd": 181751478.71808383,
  "category": "Derivatives",
  "at_risk_usd": 96328283.72058444,

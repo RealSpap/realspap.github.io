@@ -61,7 +61,7 @@
    "applies": true
   }
  ],
- "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
+ "exit_window": "not read (no delay was read for this contract: that is not the same as no delay; no delay figure exists: the independent reader gave no hours to react and the scorer found no delay)",
  "tvl_usd": 348234.0140297656,
  "category": "Bridge",
  "at_risk_usd": 177599.34715518047,
@@ -151,7 +151,7 @@
  },
  "main_gap": {
   "requirement": "A confirmed delay before changes apply, no bypass",
-  "reason": "not read: this requirement could not be checked"
+  "reason": "not read: no delay figure exists: the independent reader gave no hours to react and the scorer found no delay"
  },
  "independent_read": {
   "path": "owner()",
