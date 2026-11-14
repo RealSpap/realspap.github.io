@@ -32,7 +32,7 @@
   },
   {
    "label": "At least a 3-of-5 multisig",
-   "met": true,
+   "met": false,
    "read": true,
    "applies": true
   },
@@ -211,8 +211,8 @@
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
-  "requirement": "A confirmed delay before changes apply, no bypass",
-  "reason": "not read: this requirement could not be checked"
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "2 of 2 signers must agree: the requirement is at least 3 signatures and at least 5 signers"
  },
  "independent_read": {
   "path": "EIP-1967 admin -&gt; ProxyAdmin owner()",

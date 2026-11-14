@@ -28,8 +28,8 @@
   {
    "label": "At least a 3-of-5 multisig",
    "met": false,
-   "read": true,
-   "applies": true
+   "read": false,
+   "applies": false
   },
   {
    "label": "A confirmed delay before changes apply, no bypass",
@@ -132,8 +132,8 @@
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
-  "requirement": "At least a 3-of-5 multisig",
-  "reason": "Too few people need to agree"
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "owner() -&gt; owner() of the holder (safe 2-of-3)",

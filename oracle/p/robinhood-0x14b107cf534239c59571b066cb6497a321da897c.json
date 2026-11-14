@@ -31,8 +31,8 @@
   {
    "label": "At least a 3-of-5 multisig",
    "met": false,
-   "read": true,
-   "applies": true
+   "read": false,
+   "applies": false
   },
   {
    "label": "A confirmed delay before changes apply, no bypass",
@@ -168,8 +168,8 @@
   "what": "a confirmed delay before changes apply"
  },
  "main_gap": {
-  "requirement": "At least a 3-of-5 multisig",
-  "reason": "Too few people need to agree"
+  "requirement": "A confirmed delay before changes apply, no bypass",
+  "reason": "Changes can apply with no waiting time"
  },
  "independent_read": {
   "path": "DEFAULT_ADMIN_ROLE member 1 of 3 (AccessControl)",

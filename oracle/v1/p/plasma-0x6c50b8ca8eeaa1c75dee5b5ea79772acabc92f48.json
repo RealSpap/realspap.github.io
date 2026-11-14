@@ -185,7 +185,7 @@
  },
  "main_gap": {
   "requirement": "At least a 3-of-5 multisig",
-  "reason": "Too few people need to agree"
+  "reason": "3 of 4 signers must agree: the requirement is at least 3 signatures and at least 5 signers"
  },
  "independent_read": {
   "path": "owner()",

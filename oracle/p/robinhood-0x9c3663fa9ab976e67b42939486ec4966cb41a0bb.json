@@ -27,7 +27,7 @@
   },
   {
    "label": "At least a 3-of-5 multisig",
-   "met": true,
+   "met": false,
    "read": true,
    "applies": true
   },
@@ -183,8 +183,8 @@
   "what": "a confirmed delay before changes apply"
  },
  "main_gap": {
-  "requirement": "A confirmed delay before changes apply, no bypass",
-  "reason": "Changes can apply with no waiting time"
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "2 of 3 signers must agree: the requirement is at least 3 signatures and at least 5 signers"
  },
  "independent_read": {
   "path": "DEFAULT_ADMIN_ROLE member 1 of 1 (AccessControl)",

@@ -34,7 +34,7 @@
   {
    "label": "At least a 3-of-5 multisig",
    "met": false,
-   "read": true,
+   "read": false,
    "applies": true
   },
   {
@@ -114,7 +114,7 @@
  },
  "main_gap": {
   "requirement": "At least a 3-of-5 multisig",
-  "reason": "Too few people need to agree"
+  "reason": "not read: this requirement could not be checked"
  },
  "independent_read": {
   "path": null,

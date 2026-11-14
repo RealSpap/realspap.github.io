@@ -27,7 +27,7 @@
   },
   {
    "label": "At least a 3-of-5 multisig",
-   "met": true,
+   "met": false,
    "read": true,
    "applies": true
   },
@@ -91,8 +91,8 @@
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
-  "requirement": "A confirmed delay before changes apply, no bypass",
-  "reason": "Changes can apply with no waiting time"
+  "requirement": "At least a 3-of-5 multisig",
+  "reason": "3 of 4 signers must agree: the requirement is at least 3 signatures and at least 5 signers"
  },
  "independent_read": {
   "path": "account owned by program pAMMBay6\u2026 -&gt; program -&gt; ProgramData 6naEzK\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",

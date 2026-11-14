@@ -31,7 +31,7 @@
   },
   {
    "label": "At least a 3-of-5 multisig",
-   "met": false,
+   "met": true,
    "read": true,
    "applies": true
   },

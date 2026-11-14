@@ -32,8 +32,8 @@
   },
   {
    "label": "At least a 3-of-5 multisig",
-   "met": true,
-   "read": true,
+   "met": false,
+   "read": false,
    "applies": true
   },
   {
@@ -121,7 +121,7 @@
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
-  "requirement": "A confirmed delay before changes apply, no bypass",
+  "requirement": "At least a 3-of-5 multisig",
   "reason": "not read: this requirement could not be checked"
  },
  "independent_read": {
