@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "USDT0",
  "named_from": "dashboard",
  "chain": "Tempo",
@@ -62,9 +62,9 @@
   }
  ],
  "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
- "tvl_usd": 3366235016.368583,
+ "tvl_usd": 3563064248.4594617,
  "category": "Bridge",
- "at_risk_usd": 1918753959.3300924,
+ "at_risk_usd": 2030946621.6218934,
  "narrative": {
   "summary": "Policy-3 blacklist admin is the USDT0 Safe itself, a real 3-of-5 - the compliance/blacklist lever and the token\u2019s own operational Safe are the same authority, not a separately-controlled one.",
   "tag": "composite 43"
@@ -80,7 +80,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-11-02T20:41:41Z",
+   "t": "2026-11-10T21:51:30Z",
    "composite": 43,
    "from": "push",
    "method_break": false
@@ -91,11 +91,11 @@
   "rpc": "https://rpc.moderato.tempo.xyz",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000020c00000000000000000000014f22ca97301eb73",
-  "block": "0x28fa77e",
+  "block": "0x2a0df78",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c00000000000000000000014f22ca97301eb73\"},\"0x28fa77e\"]}'"
+  "curl": "curl -s -X POST https://rpc.moderato.tempo.xyz -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000020c00000000000000000000014f22ca97301eb73\"},\"0x2a0df78\"]}'"
  },
  "consumer_example": {
   "verdict": "zero",
@@ -124,10 +124,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1793652101,
+ "last_pushed": 1794347490,
  "stale": false,
  "methodology_hash": "0x4b8b9f250720ac31fdabaebb0a869cf64699eed816cb0f02de3ef13bcf637368",
- "block": 42968958,
+ "block": 44097400,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x20c00000000000000000000014f22ca97301eb73",
  "page": "https://realspap.github.io/oracle/p/tempo-0x20c00000000000000000000014f22ca97301eb73.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

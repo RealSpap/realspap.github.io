@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "SPL Stake Pool program (shared infrastructure)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -111,10 +111,10 @@
     "target": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
    }
   ],
-  "cluster_tvl_usd": 922727812.9623809
+  "cluster_tvl_usd": 770920105.0795
  },
  "score_cluster": "devnet",
- "last_pushed": 1793656406,
+ "last_pushed": 1794347234,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

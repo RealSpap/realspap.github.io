@@ -7,8 +7,8 @@
     "chain": "Arbitrum",
     "key": "arbitrum",
     "name": "GMX V2 (Synthetics) RoleStore",
-    "score": 19,
-    "band": "critical",
+    "score": 47,
+    "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.html",
     "json": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.json"
    }
@@ -303,7 +303,7 @@
     "chain": "Base",
     "key": "base",
     "name": "Gauntlet USDC Prime (gtUSDCp)",
-    "score": 66,
+    "score": 60,
     "band": "decent",
     "page": "https://realspap.github.io/oracle/p/base-0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61.html",
     "json": "https://realspap.github.io/oracle/p/base-0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61.json"
@@ -1465,7 +1465,7 @@
     "chain": "Robinhood Chain",
     "key": "robinhood",
     "name": "LayerZero V2 messaging core (0x6f47\u2026dd5b)",
-    "score": 48,
+    "score": 49,
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/robinhood-0x6f475642a6e85809b1c36fa62763669b1b48dd5b.html",
     "json": "https://realspap.github.io/oracle/p/robinhood-0x6f475642a6e85809b1c36fa62763669b1b48dd5b.json"
@@ -1476,7 +1476,7 @@
     "chain": "Robinhood Chain",
     "key": "robinhood",
     "name": "LayerZero V2 messaging core (0xc391\u20262de7)",
-    "score": 48,
+    "score": 49,
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/robinhood-0xc39161c743d0307eb9bcc9fef03eeb9dc4802de7.html",
     "json": "https://realspap.github.io/oracle/p/robinhood-0xc39161c743d0307eb9bcc9fef03eeb9dc4802de7.json"
@@ -1487,7 +1487,7 @@
     "chain": "Robinhood Chain",
     "key": "robinhood",
     "name": "LayerZero V2 messaging core (0xe184\u20261043)",
-    "score": 48,
+    "score": 49,
     "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/robinhood-0xe1844c5d63a9543023008d332bd3d2e6f1fe1043.html",
     "json": "https://realspap.github.io/oracle/p/robinhood-0xe1844c5d63a9543023008d332bd3d2e6f1fe1043.json"
@@ -1663,8 +1663,8 @@
     "chain": "Robinhood Chain",
     "key": "robinhood",
     "name": "Arcus Perps BridgeVault",
-    "score": 31,
-    "band": "weak",
+    "score": 40,
+    "band": "moderate",
     "page": "https://realspap.github.io/oracle/p/robinhood-0x14b107cf534239c59571b066cb6497a321da897c.html",
     "json": "https://realspap.github.io/oracle/p/robinhood-0x14b107cf534239c59571b066cb6497a321da897c.json"
    }
@@ -1828,7 +1828,7 @@
     "chain": "Solana",
     "key": "solana",
     "name": "marginfi main lending group",
-    "score": 33,
+    "score": 32,
     "band": "weak",
     "page": "https://realspap.github.io/oracle/p/solana-4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.html",
     "json": "https://realspap.github.io/oracle/p/solana-4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8.json"
@@ -1839,8 +1839,8 @@
     "chain": "Solana",
     "key": "solana",
     "name": "Kamino Liquidity (yvaults)",
-    "score": 54,
-    "band": "moderate",
+    "score": 62,
+    "band": "decent",
     "page": "https://realspap.github.io/oracle/p/solana-GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.html",
     "json": "https://realspap.github.io/oracle/p/solana-GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.json"
    }

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "marginfi main lending group",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "weak",
  "keys_to_move": 7,
  "react_hours": 0,
- "money_per_key_usd": 4482025.771753388,
+ "money_per_key_usd": 3892780.645147319,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 45,
@@ -57,9 +57,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 31374180.402273722,
+ "tvl_usd": 27249464.51603123,
  "category": "Lending",
- "at_risk_usd": 21334442.67354613,
+ "at_risk_usd": 18529635.87090124,
  "narrative": {
   "summary": "Upgrades need 7 of 15 signers and group admin actions only 5 of 17, both with no delay, and the upgrade voters are a subset of the admin group. The score is still an upper bound.",
   "tag": "upper bound: 7 more admin fields not decoded",
@@ -98,30 +98,30 @@
   "path": "account owned by program MFv2hWf3\u2026 -&gt; program -&gt; ProgramData 4Q8u2n\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 7FCPipJWVbPbdHymVt1gJYwKciakkJz5GahdQySemvHk",
   "holder": "J3oBkTkDXU3TcAggJEa3YeBZE5om5yNAdTtLVNXFD47",
   "threshold": 7,
-  "owners": 15,
+  "owners": 14,
   "delay_seconds": 0,
   "owners_kinds": {
-   "eoa": 15,
+   "eoa": 14,
    "pda": 0
   },
   "multisig_program": "Squads v4",
   "keys_to_act": 7,
-  "keys_lost_to_freeze": 9,
+  "keys_lost_to_freeze": 8,
   "kind": "squads",
-  "since": "2026-11-06T19:37:22Z",
-  "posture": "admin: Squads 7-of-15 of 15 plain keys; delay: none",
+  "since": "2026-11-12T15:54:00Z",
+  "posture": "admin: Squads 7-of-14 of 14 plain keys; delay: none",
   "exposure": {
    "keys_to_move": 7,
    "react_hours": 0,
-   "tvl_usd": 31374180.402273722,
-   "money_per_key_usd": 4482025.771753388,
+   "tvl_usd": 27249464.51603123,
+   "money_per_key_usd": 3892780.645147319,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1793656382,
+ "last_pushed": 1794347208,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

@@ -1,20 +1,20 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "Kamino Liquidity (yvaults)",
  "named_from": "dashboard",
  "chain": "Solana",
  "address": "GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB",
- "composite": 54,
- "band": "moderate",
+ "composite": 62,
+ "band": "decent",
  "keys_to_move": 5,
  "react_hours": 24,
- "money_per_key_usd": 14458021.579313654,
+ "money_per_key_usd": 12466704.109898303,
  "not_assessed": [],
  "sub": {
-  "adminKeyScore": 60,
+  "adminKeyScore": 70,
   "multisigScore": 100,
-  "timelockScore": 0,
+  "timelockScore": 13,
   "oracleAuthorityScore": 45,
   "crossExposureScore": 80
  },
@@ -56,10 +56,10 @@
    "applies": true
   }
  ],
- "exit_window": "none: a change applies at once",
- "tvl_usd": 72290107.89656827,
+ "exit_window": "a delay with a bypass, or one not ruled out",
+ "tvl_usd": 62333520.54949151,
  "category": "Liquidity Manager",
- "at_risk_usd": 33253449.632421404,
+ "at_risk_usd": 23686737.808806773,
  "narrative": {
   "summary": "Upgrades are a 5-of-7 multisig with a 24-hour delay, but the strategy admin is a different 5-of-7 multisig with no delay at all, so the undelayed path sets the timelock score.",
   "tag": "same signer shape, zero delay on the admin path",
@@ -78,17 +78,17 @@
  "feed": "https://raw.githubusercontent.com/RealSpap/authority-risk-oracle-showcase/watch-data/feed/solana-devnet/GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.xml",
  "reproduce": null,
  "consumer_example": {
-  "verdict": "zero",
-  "collateral_factor_bps": 0,
-  "text": "collateral factor 0 (score 54 is under MIN_SAFE_SCORE 60)"
+  "verdict": "factor",
+  "collateral_factor_bps": 5150,
+  "text": "collateral factor 51.50% (score 62)"
  },
  "cheapest_fix": {
-  "band": "decent",
-  "next": 60,
-  "axis": "admin key",
-  "from": 60,
-  "to": 74,
-  "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
+  "band": "strong",
+  "next": 80,
+  "axis": "timelock",
+  "from": 13,
+  "to": 72,
+  "what": "a confirmed delay before changes apply"
  },
  "main_gap": {
   "requirement": "A confirmed delay before changes apply, no bypass",
@@ -109,22 +109,21 @@
   "keys_lost_to_freeze": 3,
   "kind": "squads",
   "since": "2026-10-10T06:54:09Z",
-  "disagree": "the timelock score says no delay (0), the Squads multisig enforces a native time lock of 24 h",
   "posture": "admin: Squads 5-of-7 of 7 plain keys; delay: 24 h Squads time lock",
   "exposure": {
    "keys_to_move": 5,
    "react_hours": 24,
-   "tvl_usd": 72290107.89656827,
-   "money_per_key_usd": 14458021.579313654,
+   "tvl_usd": 62333520.54949151,
+   "money_per_key_usd": 12466704.109898303,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1792445228,
+ "last_pushed": 1794347211,
  "stale": false,
- "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
+ "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB",
  "page": "https://realspap.github.io/oracle/p/solana-GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB.html",

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "Sanctum Infinity (S Controller)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -61,9 +61,9 @@
   }
  ],
  "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
- "tvl_usd": 169489167.08769503,
+ "tvl_usd": 141573884.82338575,
  "category": "Dexs",
- "at_risk_usd": 91524150.2273553,
+ "at_risk_usd": 76449897.80462831,
  "narrative": {
   "summary": "Two paths bind the score: a 6-of-11 Squads v3 program upgrade and a 4-of-8 Squads v4 pool admin with no delay, which decides how every LST is valued.",
   "tag": "pool admin binds the score",
@@ -110,10 +110,10 @@
     "target": "SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY"
    }
   ],
-  "cluster_tvl_usd": 1763832100.126076
+  "cluster_tvl_usd": 1564569671.173863
  },
  "score_cluster": "devnet",
- "last_pushed": 1793656408,
+ "last_pushed": 1794347236,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

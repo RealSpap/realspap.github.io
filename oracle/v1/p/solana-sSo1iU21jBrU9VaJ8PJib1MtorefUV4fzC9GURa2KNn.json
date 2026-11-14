@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "Solayer (sSOL staking, Endo)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -124,7 +124,7 @@
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1793656425,
+ "last_pushed": 1794347254,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "HIP-3 dex para (Paragon)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -81,7 +81,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-11-02T21:16:49Z",
+   "t": "2026-11-10T22:29:55Z",
    "composite": 5,
    "from": "push",
    "method_break": false
@@ -125,10 +125,10 @@
   "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
  },
  "score_cluster": null,
- "last_pushed": 1793654209,
+ "last_pushed": 1794349795,
  "stale": false,
  "methodology_hash": "0xb595576050a45dcdeeb0479747f6b283eaaca756e6cd7e70a176a194021bed65",
- "block": 68962265,
+ "block": 69577467,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x30e96fbd515243d47703e78581b88cba60f51360",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0x30e96fbd515243d47703e78581b88cba60f51360.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

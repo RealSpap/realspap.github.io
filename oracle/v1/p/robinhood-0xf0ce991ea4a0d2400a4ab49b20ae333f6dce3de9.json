@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "Robinhood Chain\u2019s own L1 rollup authority",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -61,9 +61,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1088493784.3591065,
+ "tvl_usd": 1026750501.9079338,
  "category": null,
- "at_risk_usd": 468052327.2744158,
+ "at_risk_usd": 441502715.8204115,
  "narrative": {
   "summary": "A real, publicly-named 7-of-8 Security Council Safe, plus a Timelock that - corrected in batch 8 - turns out to genuinely gate changes now, just with no separation between who can propose and who can veto.",
   "tag": "every dApp above inherits this",
@@ -80,7 +80,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-11-02T21:22:22Z",
+   "t": "2026-11-10T22:35:20Z",
    "composite": 57,
    "from": "push",
    "method_break": false
@@ -124,10 +124,10 @@
   "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
  },
  "score_cluster": null,
- "last_pushed": 1793654542,
+ "last_pushed": 1794350120,
  "stale": false,
  "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
- "block": 149861907,
+ "block": 153078599,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xf0ce991ea4a0d2400a4ab49b20ae333f6dce3de9",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xf0ce991ea4a0d2400a4ab49b20ae333f6dce3de9.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

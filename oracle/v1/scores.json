@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",
  "count": 202,
  "scores": [
@@ -1052,7 +1052,7 @@
    "composite": 47,
    "band": "moderate",
    "keys_to_move": null,
-   "react_hours": null,
+   "react_hours": 48,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.json",
    "page": "https://realspap.github.io/oracle/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.html"
@@ -2193,8 +2193,8 @@
    "key": "solana",
    "address": "GKnHiWh3RRrE1zsNzWxRkomymHc374TvJPSTv2wPeYdB",
    "name": "Kamino Liquidity (yvaults)",
-   "composite": 54,
-   "band": "moderate",
+   "composite": 62,
+   "band": "decent",
    "keys_to_move": 5,
    "react_hours": 24,
    "stale": false,

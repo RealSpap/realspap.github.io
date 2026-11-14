@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-10-22T20:07:41Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "PumpSwap and pump.fun bonding curve",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 117306080.2526065,
+ "money_per_key_usd": 84894387.96938638,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 50,
@@ -57,9 +57,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 351918240.7578195,
+ "tvl_usd": 254683163.90815914,
  "category": "Dexs",
- "at_risk_usd": 200593397.23195708,
+ "at_risk_usd": 145169403.4276507,
  "narrative": {
   "summary": "Both programs share one 3-of-4 Squads v4 upgrade multisig with no delay, and their config admin is a different multisig with the same 3-of-4 threshold, so the admin path does not lower the score.",
   "tag": "confirmed by the second path, not lowered",
@@ -113,17 +113,17 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 351918240.7578195,
-   "money_per_key_usd": 117306080.2526065,
+   "tvl_usd": 254683163.90815914,
+   "money_per_key_usd": 84894387.96938638,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1792445236,
+ "last_pushed": 1794347220,
  "stale": false,
- "methodology_hash": "0x58be578c4ad50dbee98dc0666a228ec6d0b36c7dc71bb1506393477156219fa5",
+ "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,
  "live": "https://realspap.github.io/oracle/#chain=all&q=ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
  "page": "https://realspap.github.io/oracle/p/solana-ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.html",

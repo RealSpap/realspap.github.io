@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-07T07:41:09Z",
+ "generatedAt": "2026-11-14T08:41:35Z",
  "name": "Hyperliquid L1 (HyperCore validator set)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -61,9 +61,9 @@
   }
  ],
  "exit_window": "not read (no delay was read for this contract: that is not the same as no delay)",
- "tvl_usd": 6218399064.268602,
+ "tvl_usd": 5866467470.277441,
  "category": "Bridge",
- "at_risk_usd": 4601615307.558765,
+ "at_risk_usd": 4341185928.005306,
  "narrative": {
   "summary": "Validators auto-pull a signed node binary with no public node source and no documented upgrade notice. Five validators labeled Hyper Foundation hold 47.98% of active stake, enough to halt but not to finalize alone.",
   "tag": "caps every other Hyperliquid target",
@@ -80,7 +80,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-11-02T21:16:49Z",
+   "t": "2026-11-10T22:29:55Z",
    "composite": 26,
    "from": "push",
    "method_break": false
@@ -124,10 +124,10 @@
   "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
  },
  "score_cluster": null,
- "last_pushed": 1793654209,
+ "last_pushed": 1794349795,
  "stale": false,
  "methodology_hash": "0xb595576050a45dcdeeb0479747f6b283eaaca756e6cd7e70a176a194021bed65",
- "block": 68962265,
+ "block": 69577467,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xea394cd63ca3a5c8a130bb2b955cc71c22e5ea6c.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
