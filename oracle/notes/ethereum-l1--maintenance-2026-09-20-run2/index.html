@@ -22,7 +22,7 @@
 <h3 id="correction-to-a-previous-run-s-wording">Correction to a previous run's wording<a class="anchor" href="#correction-to-a-previous-run-s-wording" aria-label="Link to this section">#</a></h3>
 <p>The Ethena USDe live minter <code>0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3</code> (index 14) is <b>not</b> a finding of this run and is not counted in the 4 above. It entered the repo in commits <code>11657b3</code>, <code>042f805</code> and <code>f7af724</code> and is already published in the table in <code>chains/ethereum-l1/deploy/README.md</code>. A previous worker summary presented it as "1 new USDe minter" without marking it as preexisting; that framing is corrected here, explicitly, per the project's rule that a correction is labelled as one.</p>
 <h2 id="prepared-push-command-for-the-maintainer-to-run">Prepared push command -- for the maintainer to run<a class="anchor" href="#prepared-push-command-for-the-maintainer-to-run" aria-label="Link to this section">#</a></h2>
-<p>The scorer now produces <b>18 targets</b>. Nothing below was executed by this session; the dry run was, and it exits 0 and encodes 10634 bytes of <code>updateScores()</code> calldata (selector <code>0x5fb3feaf</code>).</p>
+<p>The scorer now produces <b>18 targets</b>. Nothing below was executed when this note was written; the dry run was, and it exits 0 and encodes 10634 bytes of <code>updateScores()</code> calldata (selector <code>0x5fb3feaf</code>).</p>
 <p>Step 1, the dry run (safe, read-only, no key, no write RPC):</p>
 <p>python3 chains/ethereum-l1/deploy/update_scores_ethereum_l1.py --dry-run</p>
 <p>Step 2, the real push -- <b>the maintainer runs this</b>, with the pipeline key supplied at that moment:</p>
