@@ -198,7 +198,7 @@
   "owners_kinds": {
    "eoa": 7
   },
-  "posture": "admin: Safe 4-of-7 of 7 plain keys; delay: none",
+  "posture": "admin: Safe 4-of-7 of 7 plain keys; delay: not claimed (the scorer reads one)",
   "shares_admin_with": [
    {
     "chain": "base",
@@ -208,7 +208,7 @@
   "cluster_tvl_usd": 64276.25662811848,
   "exposure": {
    "keys_to_move": 4,
-   "react_hours": 0,
+   "react_hours": null,
    "tvl_usd": 64906.07056283606,
    "money_per_key_usd": 16226.517640709015,
    "money_source": "contract",

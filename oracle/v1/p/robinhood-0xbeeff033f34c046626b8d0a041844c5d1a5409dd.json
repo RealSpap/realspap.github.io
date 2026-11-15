@@ -177,10 +177,10 @@
    "kind": "eoa",
    "via": "owner() of the holder"
   },
-  "posture": "admin: a plain key behind a bare contract; delay: none",
+  "posture": "admin: a plain key behind a bare contract; delay: not claimed (the scorer reads one)",
   "exposure": {
    "keys_to_move": 1,
-   "react_hours": 0,
+   "react_hours": null,
    "tvl_usd": 535356654.1518213,
    "money_per_key_usd": 535356654.1518213,
    "money_source": "contract",

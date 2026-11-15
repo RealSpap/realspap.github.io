@@ -235,10 +235,10 @@
     "kind": "eoa"
    }
   ],
-  "posture": "admin: Safe 1-of-1 of 1 plain key; delay: none",
+  "posture": "admin: Safe 1-of-1 of 1 plain key; delay: not claimed (the scorer reads one)",
   "exposure": {
    "keys_to_move": 1,
-   "react_hours": 0,
+   "react_hours": null,
    "tvl_usd": 664209.4686311989,
    "money_per_key_usd": 664209.4686311989,
    "money_source": "contract",

@@ -177,7 +177,7 @@
    "threshold": 5,
    "owners": 10
   },
-  "posture": "admin: Safe 5-of-10 behind a bare contract; delay: none",
+  "posture": "admin: Safe 5-of-10 behind a bare contract; delay: not claimed (the scorer reads one)",
   "shares_admin_with": [
    {
     "chain": "ethereum-l1",
@@ -187,7 +187,7 @@
   "cluster_tvl_usd": 0.0,
   "exposure": {
    "keys_to_move": 5,
-   "react_hours": 0,
+   "react_hours": null,
    "tvl_usd": 132522026.1432853,
    "money_per_key_usd": 26504405.22865706,
    "money_source": "contract",

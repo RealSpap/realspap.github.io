@@ -187,7 +187,7 @@
    "threshold": 5,
    "owners": 10
   },
-  "posture": "admin: Safe 5-of-10 behind a bare contract; delay: none",
+  "posture": "admin: Safe 5-of-10 behind a bare contract; delay: not claimed (the scorer reads one)",
   "shares_admin_with": [
    {
     "chain": "robinhood",
@@ -197,7 +197,7 @@
   "cluster_tvl_usd": 534787386.38835216,
   "exposure": {
    "keys_to_move": 5,
-   "react_hours": 0,
+   "react_hours": null,
    "tvl_usd": 7.3980592308979425,
    "money_per_key_usd": 1.4796118461795884,
    "money_source": "contract",

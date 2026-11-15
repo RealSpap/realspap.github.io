@@ -221,10 +221,10 @@
   "owners_kinds": {
    "eoa": 5
   },
-  "posture": "admin: Safe 3-of-5 of 5 plain keys; delay: none",
+  "posture": "admin: Safe 3-of-5 of 5 plain keys; delay: not claimed (the scorer reads one)",
   "exposure": {
    "keys_to_move": 3,
-   "react_hours": 0,
+   "react_hours": null,
    "tvl_usd": 67942.06784112833,
    "money_per_key_usd": 22647.355947042775,
    "money_source": "contract",
