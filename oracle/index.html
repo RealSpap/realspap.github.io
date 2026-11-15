@@ -2946,7 +2946,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
   // is used from the start as a CORS-compatible passthrough for the exact same
   // bytes -- disclosed in the panel below, never hidden. Any corrupted byte in
   // transit would break the BLAKE2b-256 match this panel computes, so the
-  // passthrough is tamper-evident even though it is a real trust dependency.
+  // passthrough only detects accidental corruption, and it remains a real trust dependency.
   // Set ZCASH_DIRECT_FETCH to true to try a direct call first again, should
   // cipherscan ever send CORS headers.
   var ZCASH_DIRECT_FETCH = false;
@@ -3012,7 +3012,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
 
   function zcViaNote(via) {
     return via === 'reader-proxy'
-      ? '<div class="zc-note">Fetched via r.jina.ai’s Reader API as a CORS-compatibility passthrough for <code>api.testnet.cipherscan.app</code>: cipherscan’s own API refuses browser cross-origin requests (re-checked 2026-09-20: it sends <code>Cross-Origin-Resource-Policy: same-origin</code> and no <code>Access-Control-Allow-Origin</code>), so this page goes through the proxy from the start instead of trying a direct call that always fails; disclosed rather than hidden. The BLAKE2b-256 check below is tamper-evident regardless: any corrupted byte in transit breaks the match.</div>'
+      ? '<div class="zc-note">Fetched via r.jina.ai’s Reader API as a CORS-compatibility passthrough for <code>api.testnet.cipherscan.app</code>: cipherscan’s own API refuses browser cross-origin requests (re-checked 2026-09-20: it sends <code>Cross-Origin-Resource-Policy: same-origin</code> and no <code>Access-Control-Allow-Origin</code>), so this page goes through the proxy from the start instead of trying a direct call that always fails; disclosed rather than hidden. The BLAKE2b-256 check below detects accidental corruption in transit. It does not prove that the transaction exists: the transaction and its id come from one third-party proxy (r.jina.ai) and the id is not recomputed here.</div>'
       : '';
   }
   function zcTxChip(chain, txid) {
@@ -3112,7 +3112,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
           '</div>' +
           '<div class="zc-verify-result ' + (matched ? 'ok' : 'bad') + '">' +
             (matched
-              ? '✓ MATCH - the commitment ' + zcOnchainWord(t) + ' is cryptographically the same attestation shown below, byte for byte.'
+              ? '✓ MATCH - the commitment ' + zcOnchainWord(t) + ' equals the commitment computed from the attestation shown below.'
               : '✗ MISMATCH - the commitment ' + zcOnchainWord(t) + ' does NOT match the fetched attestation. Do not trust the scores below until this is resolved.') +
           '</div>' +
         '</div>' +
@@ -3276,7 +3276,7 @@ html.embed .sm-down, html.embed .sm-hint { display: none !important; }
           '</div>' +
           '<div class="zc-verify-result ' + (d.matched ? 'ok' : 'bad') + '">' +
             (d.matched
-              ? '✓ MATCH - the ' + n + ' target records shown above are cryptographically the set anchored ' + zcOnchainWord(t) + ', byte for byte. This proves integrity and timing, not that the scores are true.'
+              ? '✓ MATCH - the ' + n + ' target records shown above give the same commitment as the one anchored ' + zcOnchainWord(t) + '. This shows agreement with what the proxy served, not integrity or timing against a hostile proxy, and not that the scores are true.'
               : '✗ MISMATCH - the fetched attestation does NOT match the commitment ' + zcOnchainWord(t) + ' (see the failed checks above). Do not trust the scores above until this is resolved.') +
           '</div>' +
         '</div>' +
