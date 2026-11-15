@@ -8,7 +8,7 @@
  "composite": 61,
  "band": "decent",
  "keys_to_move": 4,
- "react_hours": 0,
+ "react_hours": null,
  "money_per_key_usd": 16226.517640709015,
  "not_assessed": [],
  "sub": {

@@ -8,7 +8,7 @@
  "composite": 27,
  "band": "weak",
  "keys_to_move": 1,
- "react_hours": 0,
+ "react_hours": null,
  "money_per_key_usd": 22820087.428295802,
  "not_assessed": [],
  "sub": {

@@ -675,7 +675,7 @@
    "composite": 73,
    "band": "decent",
    "keys_to_move": 5,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/ethereum-l1-0xbeef088055857739c12cd3765f20b7679def0f51.json",
    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef088055857739c12cd3765f20b7679def0f51.html"
@@ -688,7 +688,7 @@
    "composite": 73,
    "band": "decent",
    "keys_to_move": 5,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/ethereum-l1-0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f.json",
    "page": "https://realspap.github.io/oracle/p/ethereum-l1-0xbeef0c075da5d01112ae5cf34d257074fb5ddb2f.html"
@@ -1299,7 +1299,7 @@
    "composite": 44,
    "band": "moderate",
    "keys_to_move": 1,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/robinhood-0xbeeff033f34c046626b8d0a041844c5d1a5409dd.json",
    "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff033f34c046626b8d0a041844c5d1a5409dd.html"
@@ -1533,7 +1533,7 @@
    "composite": 25,
    "band": "weak",
    "keys_to_move": 1,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/robinhood-0x99347d5f70d3838763f6bddcf80304c8aa953b57.json",
    "page": "https://realspap.github.io/oracle/p/robinhood-0x99347d5f70d3838763f6bddcf80304c8aa953b57.html"
@@ -1546,7 +1546,7 @@
    "composite": 63,
    "band": "decent",
    "keys_to_move": 3,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/robinhood-0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8.json",
    "page": "https://realspap.github.io/oracle/p/robinhood-0x37788ff0c1d4e45a7fe06bc7e71e0cc00121d0a8.html"
@@ -1559,7 +1559,7 @@
    "composite": 70,
    "band": "decent",
    "keys_to_move": 5,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/robinhood-0xbeeff0fb1dc19344a87b8479dab60a2e16160737.json",
    "page": "https://realspap.github.io/oracle/p/robinhood-0xbeeff0fb1dc19344a87b8479dab60a2e16160737.html"
@@ -1910,7 +1910,7 @@
    "composite": 66,
    "band": "decent",
    "keys_to_move": 5,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/robinhood-0xbeefff136e3684273e6aa75a1669b784b373a4fd.json",
    "page": "https://realspap.github.io/oracle/p/robinhood-0xbeefff136e3684273e6aa75a1669b784b373a4fd.html"
@@ -2586,7 +2586,7 @@
    "composite": 27,
    "band": "weak",
    "keys_to_move": 1,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/tempo-0x9a044ae05e5e6290dcf56afd69548565e957a626.json",
    "page": "https://realspap.github.io/oracle/p/tempo-0x9a044ae05e5e6290dcf56afd69548565e957a626.html"
@@ -2612,7 +2612,7 @@
    "composite": 61,
    "band": "decent",
    "keys_to_move": 4,
-   "react_hours": 0,
+   "react_hours": null,
    "stale": false,
    "json": "https://realspap.github.io/oracle/v1/p/tempo-0xc609656ed9ef219c98c8e549bf729144f211f06e.json",
    "page": "https://realspap.github.io/oracle/p/tempo-0xc609656ed9ef219c98c8e549bf729144f211f06e.html"
