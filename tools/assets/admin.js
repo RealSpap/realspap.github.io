@@ -306,7 +306,7 @@
   var T = root.Tunnel;
   var $ = function (id) { return document.getElementById(id); };
   var core = create(function (u, o) { return root.fetch(u, o); });
-  var input = $("x-addr"), btn = $("x-read"), err = $("x-err"), prog = $("x-progress"), resultEl = $("result");
+  var input = $("x-addr"), btn = $("x-read"), err = $("x-err"), prog = $("x-progress"), resultEl = $("result"), btnLabel = btn.textContent;
   var last = null, lastAddr = null, busy = false;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined && text !== null) e.textContent = text; return e; }
@@ -361,16 +361,17 @@
     resultEl.style.display = "none"; last = null; lastAddr = null; $("x-next-safe").hidden = true;
     err.hidden = true; err.textContent = "";
     if (!isValidAddress(address)) { showError("Enter a contract address: 0x followed by 40 hexadecimal characters.", true); return; }
-    busy = true; btn.disabled = true; resultEl.style.display = "none"; $("x-shared").hidden = true; setSteps(1);
+    busy = true; btn.disabled = true; btn.textContent = "Reading the chain\u2026"; resultEl.style.display = "none"; $("x-shared").hidden = true; setSteps(1);
     var lines = ["Asking a public Ethereum node for the latest block…", "Reading owner(), admin() and the proxy slots at one fixed block…", "Looking at each key it finds (account, Safe, other contract)…"];
     var done = false, pending = null;
     function finish() {
       if (!done || !pending) return;
-      var p = pending; pending = null; busy = false; btn.disabled = false;
+      var p = pending; pending = null; busy = false; btn.disabled = false; btn.textContent = btnLabel;
       if (p.error) { setSteps(1); showError("Could not read: a public node returned an error, did not answer, or had not reached the block, so no result is shown. Try again in a moment. (" + p.error + ")"); prog.style.display = "none"; return; }
       render(address, p.res); setSteps(2); prog.style.display = "none"; T.reveal(resultEl, $("x-verdict"));
     }
     T.steps(prog, lines, function () { done = true; finish(); });
+    prog.scrollIntoView({ block: "nearest" });
     core.classify(address).then(function (res) { pending = { res: res }; finish(); }, function (e) { pending = { error: e && e.message ? e.message : "unknown error" }; finish(); });
   }
 

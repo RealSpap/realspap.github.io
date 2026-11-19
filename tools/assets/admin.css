@@ -27,4 +27,5 @@
   .x-admin-hook .xp-lede{order:3}
   .x-admin-hook .xp-try,.x-admin-hook .x-admin-chips,.x-admin-hook .x-admin-shared,.x-admin-hook .x-admin-err,.x-admin-hook .xp-progress{order:2}
   .x-admin-hook .xp-fine,.x-admin-hook .x-admin-noscript{order:4}
+  .x-admin-hook .xp-progress{scroll-margin-bottom:96px}
 }
