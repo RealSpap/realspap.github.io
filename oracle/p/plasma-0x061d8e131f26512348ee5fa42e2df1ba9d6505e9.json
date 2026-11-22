@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Aave V3 Pool",
  "named_from": "dashboard",
  "chain": "Plasma",
@@ -61,9 +61,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 342410575.7062046,
+ "tvl_usd": 319907619.8057116,
  "category": "Lending",
- "at_risk_usd": 99299066.95479932,
+ "at_risk_usd": 92773209.74365637,
  "narrative": {
   "summary": "Same BGD Labs Aave Governance V3 pattern already tracked on Ethereum L1/Arbitrum/Base, real 1-day delay - and a THIRD chain sharing the identical 9-signer, 5-of-9 guardian committee already found on Arbitrum and Base.",
   "tag": "shared signers - shared committee, now 3 chains",
@@ -88,17 +88,17 @@
       "to": "0x061d8e131f26512348ee5fa42e2df1ba9d6505e9",
       "data": "0x8da5cb5b"
      },
-     "0x23f2d22"
+     "0x24a0fbc"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x061d8e131f26512348ee5fa42e2df1ba9d6505e9\",\"data\":\"0x8da5cb5b\"},\"0x23f2d22\"]}'",
-  "block": "0x23f2d22",
-  "note": "read between blocks 37694742 and 37694754 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x061d8e131f26512348ee5fa42e2df1ba9d6505e9\",\"data\":\"0x8da5cb5b\"},\"0x24a0fbc\"]}'",
+  "block": "0x24a0fbc",
+  "note": "read between blocks 38408111 and 38408124 of the chain"
  },
  "history": [
   {
-   "t": "2026-11-10T22:37:07Z",
+   "t": "2026-11-18T20:33:38Z",
    "composite": 71,
    "from": "push",
    "method_break": false
@@ -109,11 +109,11 @@
   "rpc": "https://testnet-rpc.plasma.to",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000061d8e131f26512348ee5fa42e2df1ba9d6505e9",
-  "block": "0x25023d4",
+  "block": "0x25af2e0",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000061d8e131f26512348ee5fa42e2df1ba9d6505e9\"},\"0x25023d4\"]}'"
+  "curl": "curl -s -X POST https://testnet-rpc.plasma.to -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000061d8e131f26512348ee5fa42e2df1ba9d6505e9\"},\"0x25af2e0\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -149,7 +149,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 342410575.7062046,
+   "tvl_usd": 319907619.8057116,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -157,10 +157,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1794350227,
+ "last_pushed": 1795034018,
  "stale": false,
  "methodology_hash": "0x3aa3cbf80cdcf7d08aaa4e4a4441cfe56dea15f1a7ea336e20662dc4f262d4ac",
- "block": 38806484,
+ "block": 39514848,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x061d8e131f26512348ee5fa42e2df1ba9d6505e9",
  "page": "https://realspap.github.io/oracle/p/plasma-0x061d8e131f26512348ee5fa42e2df1ba9d6505e9.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",

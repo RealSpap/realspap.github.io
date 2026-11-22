@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Lighter (zkLighter) Escrow proxy",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -61,9 +61,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 111346696.68458457,
+ "tvl_usd": 97065315.77155897,
  "category": "Derivatives",
- "at_risk_usd": 51219480.4749089,
+ "at_risk_usd": 44650045.25491712,
  "narrative": {
   "summary": "A real 3-of-5 Safe behind a real 21-day upgrade delay - undercut by a single bare-EOA override that can zero the delay on demand.",
   "detail": "UpgradeGatekeeper enforces a genuine 21-day notice period (1,814,400s) before the 3-of-5 \"master\" Safe\u2019s upgrade takes effect. But the gatekeeper\u2019s own verified source exposes cutUpgradeNoticePeriod(), callable by a single securityCouncilAddress - confirmed on-chain as a bare EOA, not the \"3-of-5 security council\" third-party write-ups (L2BEAT, a Medium post) describe. One private key can zero the 21-day window the instant the Safe queues an upgrade."
@@ -85,7 +85,7 @@
     "params": [
      "0x94bab9693ba2f6358507effcbd372b0660afff9d",
      "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
-     "0x6cb0772"
+     "0x7310182"
     ]
    },
    {
@@ -98,13 +98,13 @@
     ]
    }
   ],
-  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x6cb0772\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
-  "block": "0x6cb0772",
-  "note": "read between blocks 113968602 and 113969010 of the chain"
+  "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"0x7310182\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x94bab9693ba2f6358507effcbd372b0660afff9d\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
+  "block": "0x7310182",
+  "note": "read between blocks 120651686 and 120652162 of the chain"
  },
  "history": [
   {
-   "t": "2026-11-10T22:35:20Z",
+   "t": "2026-11-19T21:30:34Z",
    "composite": 54,
    "from": "push",
    "method_break": false
@@ -150,7 +150,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 111346696.68458457,
+   "tvl_usd": 97065315.77155897,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -158,10 +158,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1794350120,
+ "last_pushed": 1795123834,
  "stale": false,
  "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
- "block": 153078599,
+ "block": 156652217,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x94bab9693ba2f6358507effcbd372b0660afff9d",
  "page": "https://realspap.github.io/oracle/p/robinhood-0x94bab9693ba2f6358507effcbd372b0660afff9d.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

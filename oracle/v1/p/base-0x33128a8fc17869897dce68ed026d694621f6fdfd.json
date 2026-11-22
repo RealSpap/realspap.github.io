@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Uniswap V3 Factory (Base)",
  "named_from": "dashboard",
  "chain": "Base",
@@ -61,9 +61,9 @@
   }
  ],
  "exit_window": "a confirmed delay, bypass paths checked",
- "tvl_usd": 295280307.1287949,
+ "tvl_usd": 256726372.49365652,
  "category": "Dexs",
- "at_risk_usd": 44292046.06931924,
+ "at_risk_usd": 38508955.87404848,
  "narrative": {
   "summary": "The cleanest-verified L1-DAO-via-bridge case in this whole project: an explicit, readable storage slot names the canonical OP-stack cross-domain messenger, not an address that has to be reverse-derived.",
   "tag": "$271.0M TVL",
@@ -88,17 +88,17 @@
       "to": "0x33128a8fc17869897dce68ed026d694621f6fdfd",
       "data": "0x8da5cb5b"
      },
-     "0x36962ec"
+     "0x39ff070"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x33128a8fc17869897dce68ed026d694621f6fdfd\",\"data\":\"0x8da5cb5b\"},\"0x36962ec\"]}'",
-  "block": "0x36962ec",
-  "note": "read between blocks 57238173 and 57238252 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x33128a8fc17869897dce68ed026d694621f6fdfd\",\"data\":\"0x8da5cb5b\"},\"0x39ff070\"]}'",
+  "block": "0x39ff070",
+  "note": "read between blocks 60813334 and 60813424 of the chain"
  },
  "history": [
   {
-   "t": "2026-11-10T22:00:23Z",
+   "t": "2026-11-18T20:30:09Z",
    "composite": 85,
    "from": "push",
    "method_break": false
@@ -109,11 +109,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d000000000000000000000000033128a8fc17869897dce68ed026d694621f6fdfd",
-  "block": "0x37dcf88",
+  "block": "0x3b46102",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000033128a8fc17869897dce68ed026d694621f6fdfd\"},\"0x37dcf88\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d000000000000000000000000033128a8fc17869897dce68ed026d694621f6fdfd\"},\"0x3b46102\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -142,7 +142,7 @@
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 295280307.1287949,
+   "tvl_usd": 256726372.49365652,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -150,10 +150,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1794348023,
+ "last_pushed": 1795033809,
  "stale": false,
  "methodology_hash": "0x39ed8891e019d83889c7b6f2e853ef182a57190fd394f4f1a7167fee1a741bc0",
- "block": 58576776,
+ "block": 62152962,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x33128a8fc17869897dce68ed026d694621f6fdfd",
  "page": "https://realspap.github.io/oracle/p/base-0x33128a8fc17869897dce68ed026d694621f6fdfd.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Loopscale (Loopscale, Beam)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -124,7 +124,7 @@
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1794347244,
+ "last_pushed": 1795033338,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

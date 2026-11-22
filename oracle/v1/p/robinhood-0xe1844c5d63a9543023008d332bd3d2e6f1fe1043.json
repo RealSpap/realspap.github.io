@@ -1,11 +1,11 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "LayerZero V2 messaging core",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
  "address": "0xe1844c5d63a9543023008d332bd3d2e6f1fe1043",
- "composite": 49,
+ "composite": 51,
  "band": "moderate",
  "keys_to_move": null,
  "react_hours": null,
@@ -18,7 +18,7 @@
  ],
  "sub": {
   "adminKeyScore": 55,
-  "multisigScore": 90,
+  "multisigScore": 95,
   "timelockScore": 0,
   "oracleAuthorityScore": 100,
   "crossExposureScore": 100
@@ -62,9 +62,9 @@
   }
  ],
  "exit_window": "not read (no delay was read for this contract: that is not the same as no delay; no delay figure exists: the independent reader gave no hours to react and the scorer found no delay)",
- "tvl_usd": 348234.0140297656,
+ "tvl_usd": 312967.3689490333,
  "category": "Bridge",
- "at_risk_usd": 177599.34715518047,
+ "at_risk_usd": 153354.01078502633,
  "narrative": {
   "summary": "A real, heavily-used cross-chain messaging layer - 709 OApps already registered - owned by a bespoke 5-of-7 multisig that isn\u2019t a Gnosis Safe at all.",
   "tag": "new in batch 8",
@@ -89,13 +89,13 @@
       "to": "0xe1844c5d63a9543023008d332bd3d2e6f1fe1043",
       "data": "0x8da5cb5b"
      },
-     "0x6cb0772"
+     "0x7310182"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe1844c5d63a9543023008d332bd3d2e6f1fe1043\",\"data\":\"0x8da5cb5b\"},\"0x6cb0772\"]}'",
-  "block": "0x6cb0772",
-  "note": "read between blocks 113968602 and 113969010 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe1844c5d63a9543023008d332bd3d2e6f1fe1043\",\"data\":\"0x8da5cb5b\"},\"0x7310182\"]}'",
+  "block": "0x7310182",
+  "note": "read between blocks 120651686 and 120652162 of the chain"
  },
  "history": [
   {
@@ -115,9 +115,9 @@
    }
   },
   {
-   "t": "2026-11-10T22:35:20Z",
-   "composite": 49,
-   "from": "push",
+   "t": "2026-11-20T01:00:53Z",
+   "composite": 51,
+   "from": "watch",
    "method_break": true,
    "method_change": {
     "from": "0x05ae8b2527e36e0cfe794ab3b0eedd011f66b8007af63cb1bd050287799aa465",
@@ -139,14 +139,14 @@
  "consumer_example": {
   "verdict": "zero",
   "collateral_factor_bps": 0,
-  "text": "collateral factor 0 (score 49 is under MIN_SAFE_SCORE 60)"
+  "text": "collateral factor 0 (score 51 is under MIN_SAFE_SCORE 60)"
  },
  "cheapest_fix": {
   "band": "decent",
   "next": 60,
   "axis": "admin key",
   "from": 55,
-  "to": 82,
+  "to": 78,
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
@@ -172,11 +172,11 @@
     "target": "0xc39161c743d0307eb9bcc9fef03eeb9dc4802de7"
    }
   ],
-  "cluster_tvl_usd": 348234.0140297656,
+  "cluster_tvl_usd": 312967.3689490333,
   "exposure": {
    "keys_to_move": null,
    "react_hours": null,
-   "tvl_usd": 348234.0140297656,
+   "tvl_usd": 312967.3689490333,
    "money_per_key_usd": null,
    "money_source": "protocol_tvl",
    "held_symbol": null,
@@ -184,10 +184,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1794350120,
+ "last_pushed": 1795123834,
  "stale": false,
  "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
- "block": 153078599,
+ "block": 156652217,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xe1844c5d63a9543023008d332bd3d2e6f1fe1043",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xe1844c5d63a9543023008d332bd3d2e6f1fe1043.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

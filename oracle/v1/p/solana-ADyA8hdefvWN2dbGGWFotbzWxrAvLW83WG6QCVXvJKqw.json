@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "PumpSwap and pump.fun bonding curve",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "moderate",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 84894387.96938638,
+ "money_per_key_usd": 80521206.32473011,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 50,
@@ -57,9 +57,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 254683163.90815914,
+ "tvl_usd": 241563618.97419035,
  "category": "Dexs",
- "at_risk_usd": 145169403.4276507,
+ "at_risk_usd": 137691262.8152885,
  "narrative": {
   "summary": "Both programs share one 3-of-4 Squads v4 upgrade multisig with no delay, and their config admin is a different multisig with the same 3-of-4 threshold, so the admin path does not lower the score.",
   "tag": "confirmed by the second path, not lowered",
@@ -113,15 +113,15 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 254683163.90815914,
-   "money_per_key_usd": 84894387.96938638,
+   "tvl_usd": 241563618.97419035,
+   "money_per_key_usd": 80521206.32473011,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1794347220,
+ "last_pushed": 1795033319,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

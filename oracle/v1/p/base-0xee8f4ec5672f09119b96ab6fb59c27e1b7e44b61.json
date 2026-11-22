@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Gauntlet USDC Prime (gtUSDCp)",
  "named_from": "on-chain name() and symbol()",
  "chain": "Base",
@@ -9,7 +9,7 @@
  "band": "decent",
  "keys_to_move": 4,
  "react_hours": 168,
- "money_per_key_usd": 99711020.067521,
+ "money_per_key_usd": 99153261.81145933,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 60,
@@ -57,9 +57,9 @@
   }
  ],
  "exit_window": "a delay with a bounded bypass",
- "tvl_usd": 398844080.270084,
+ "tvl_usd": 396613047.24583733,
  "category": null,
- "at_risk_usd": 159537632.1080336,
+ "at_risk_usd": 158645218.89833492,
  "narrative": null,
  "score_account": null,
  "paused": null,
@@ -90,12 +90,12 @@
  "admin_probe": null,
  "held": {
   "symbol": "USDC",
-  "amount": 398882259.684452,
-  "price_usd": 0.999904284,
-  "held_usd": 398844080.270084,
+  "amount": 396675491.822425,
+  "price_usd": 0.9998425801999998,
+  "held_usd": 396613047.24583733,
   "stale": null,
   "price_stale": null,
-  "amount_change_pct": -0.02,
+  "amount_change_pct": -0.0,
   "vanished": null
  },
  "dispute": null,
@@ -110,7 +110,7 @@
       "to": "0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61",
       "data": "0x8da5cb5b"
      },
-     "0x36962ec"
+     "0x39ff070"
     ]
    },
    {
@@ -156,9 +156,9 @@
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61\",\"data\":\"0x8da5cb5b\"},\"0x36962ec\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
-  "block": "0x36962ec",
-  "note": "read between blocks 57238173 and 57238252 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61\",\"data\":\"0x8da5cb5b\"},\"0x39ff070\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://mainnet.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0x5a4e19842e09000a582c20a4f524c26fb48dd4d0\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x39ff070",
+  "note": "read between blocks 60813334 and 60813424 of the chain"
  },
  "history": [
   {
@@ -178,7 +178,7 @@
    }
   },
   {
-   "t": "2026-11-10T22:00:23Z",
+   "t": "2026-11-18T20:30:09Z",
    "composite": 60,
    "from": "push",
    "method_break": true,
@@ -193,11 +193,11 @@
   "rpc": "https://sepolia.base.org",
   "to": "0x50840a7667baEa9D05ad4ae3dCeb384724b58720",
   "data": "0xd47875d0000000000000000000000000ee8f4ec5672f09119b96ab6fb59c27e1b7e44b61",
-  "block": "0x37dcf88",
+  "block": "0x3b46102",
   "composite_word": 6,
   "block_honoured": true,
   "note": null,
-  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ee8f4ec5672f09119b96ab6fb59c27e1b7e44b61\"},\"0x37dcf88\"]}'"
+  "curl": "curl -s -X POST https://sepolia.base.org -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x50840a7667baEa9D05ad4ae3dCeb384724b58720\",\"data\":\"0xd47875d0000000000000000000000000ee8f4ec5672f09119b96ab6fb59c27e1b7e44b61\"},\"0x3b46102\"]}'"
  },
  "consumer_example": {
   "verdict": "factor",
@@ -231,22 +231,22 @@
     "target": "0xc609656ed9ef219c98c8e549bf729144f211f06e"
    }
   ],
-  "cluster_tvl_usd": 64276.25662811848,
+  "cluster_tvl_usd": 64525.735694163435,
   "exposure": {
    "keys_to_move": 4,
    "react_hours": 168,
-   "tvl_usd": 398844080.270084,
-   "money_per_key_usd": 99711020.067521,
+   "tvl_usd": 396613047.24583733,
+   "money_per_key_usd": 99153261.81145933,
    "money_source": "contract",
    "held_symbol": "USDC",
-   "held_amount": 398882259.684452
+   "held_amount": 396675491.822425
   }
  },
  "score_cluster": null,
- "last_pushed": 1794348023,
+ "last_pushed": 1795033809,
  "stale": false,
  "methodology_hash": "0x39ed8891e019d83889c7b6f2e853ef182a57190fd394f4f1a7167fee1a741bc0",
- "block": 58576776,
+ "block": 62152962,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61",
  "page": "https://realspap.github.io/oracle/p/base-0xee8f4ec5672f09119b96ab6fb59c27e1b7e44b61.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

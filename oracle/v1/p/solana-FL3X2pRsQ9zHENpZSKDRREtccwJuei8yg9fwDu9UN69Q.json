@@ -1,12 +1,12 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Lulo (FlexLend)",
  "named_from": "dashboard",
  "chain": "Solana",
  "address": "FL3X2pRsQ9zHENpZSKDRREtccwJuei8yg9fwDu9UN69Q",
- "composite": 38,
- "band": "weak",
+ "composite": 41,
+ "band": "moderate",
  "keys_to_move": 3,
  "react_hours": 0,
  "money_per_key_usd": null,
@@ -16,7 +16,7 @@
  ],
  "sub": {
   "adminKeyScore": 50,
-  "multisigScore": 60,
+  "multisigScore": 69,
   "timelockScore": 0,
   "oracleAuthorityScore": 100,
   "crossExposureScore": 100
@@ -83,14 +83,14 @@
  "consumer_example": {
   "verdict": "zero",
   "collateral_factor_bps": 0,
-  "text": "collateral factor 0 (score 38 is under MIN_SAFE_SCORE 60)"
+  "text": "collateral factor 0 (score 41 is under MIN_SAFE_SCORE 60)"
  },
  "cheapest_fix": {
-  "band": "moderate",
-  "next": 40,
+  "band": "decent",
+  "next": 60,
   "axis": "admin key",
   "from": 50,
-  "to": 54,
+  "to": 97,
   "what": "a stronger admin setup (admin power spread beyond one key, or checked by others)"
  },
  "main_gap": {
@@ -111,9 +111,8 @@
   "keys_to_act": 3,
   "keys_lost_to_freeze": 3,
   "kind": "squads",
-  "changed": "admin read changed since the previous run: squads FP1AgtaWxArMHtJqDZkxqMSUCCTwGLC3xgt85by9a1zs 3-of-8 (8 voters), time lock 0s -&gt; squads FP1AgtaWxArMHtJqDZkxqMSUCCTwGLC3xgt85by9a1zs 3-of-5 (5 voters), time lock 0s (via program -&gt; ProgramData 4J4gnm\u2026 -&gt; upgrade authority (a program-derived address, off the curve: a Squads vault or a protocol PDA, no key can sign for it directly) -&gt; Squads v4 vault 0 of multisig 8Sr4rQJL2aQT3EL97mbrk1T9VMw4pCS2mxMPp2QBzHQq)",
   "since": "2026-11-14T06:33:20Z",
-  "posture": "admin: Squads 3-of-5 of 5 plain keys; delay: none; in flight: admin read changed since the previous run",
+  "posture": "admin: Squads 3-of-5 of 5 plain keys; delay: none",
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
@@ -125,7 +124,7 @@
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1794347247,
+ "last_pushed": 1795033343,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

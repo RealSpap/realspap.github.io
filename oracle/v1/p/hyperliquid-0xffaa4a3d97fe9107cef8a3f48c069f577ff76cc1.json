@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "stHYPE liquid staking (HyperEVM)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -123,7 +123,7 @@
   ],
   "curl": "# the admin slot of the proxy (EIP-1967): the word is the admin address\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1\",\"0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103\",\"latest\"]}'\n# owner() on the address the slot returned (a ProxyAdmin): the holder\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<address from the slot>\",\"data\":\"0x8da5cb5b\"},\"latest\"]}'\n# getMinDelay() on the holder (OpenZeppelin TimelockController), in seconds\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xc5ded4f7f53919c714059a17d31371ae847e23d2\",\"data\":\"0xf27a0c92\"},\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.hyperliquid.xyz/evm -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'",
   "block": "latest",
-  "note": null
+  "note": "read between blocks 51947690 and 51947712 of the chain; this RPC cannot replay the block of the read (it ignores the block tag, or no longer serves old state): the answers are the current ones"
  },
  "history": [
   {
@@ -133,7 +133,7 @@
    "method_break": false
   },
   {
-   "t": "2026-11-10T22:29:55Z",
+   "t": "2026-11-19T21:24:46Z",
    "composite": 47,
    "from": "push",
    "method_break": true,
@@ -179,7 +179,7 @@
   "self_delay_seconds": null,
   "delay_seconds": 172800,
   "kind": "timelock",
-  "since": "2026-11-13T19:55:26Z",
+  "since": "2026-11-22T13:10:31Z",
   "posture": "admin: a timelock; delay: 48 h on the timelock",
   "exposure": {
    "keys_to_move": null,
@@ -192,10 +192,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1794349795,
+ "last_pushed": 1795123486,
  "stale": false,
  "methodology_hash": "0xb595576050a45dcdeeb0479747f6b283eaaca756e6cd7e70a176a194021bed65",
- "block": 69577467,
+ "block": 70304056,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xffaa4a3d97fe9107cef8a3f48c069f577ff76cc1.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

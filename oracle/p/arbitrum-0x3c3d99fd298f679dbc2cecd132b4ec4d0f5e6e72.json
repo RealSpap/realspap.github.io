@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "GMX V2 (Synthetics) RoleStore",
  "named_from": "dashboard",
  "chain": "Arbitrum",
@@ -62,9 +62,9 @@
   }
  ],
  "exit_window": "not read (no delay was read for this contract: that is not the same as no delay; no delay figure exists: the independent reader gave no hours to react and the scorer found no delay (reader: no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered))",
- "tvl_usd": 181751478.71808383,
+ "tvl_usd": 165191626.59050915,
  "category": "Derivatives",
- "at_risk_usd": 96328283.72058444,
+ "at_risk_usd": 87551562.09296985,
  "narrative": {
   "summary": "Read again on 2026-10-31 (Arbitrum block 520043942, two RPCs). The 2026-09-19 correction named a bare EOA among the holders of TIMELOCK_ADMIN on the RoleStore: that is no longer so, the role is held by two Safes (5-of-8 and 4-of-6). The same bare EOA still holds PROPOSER, EXECUTOR and CANCELLER on the two ConfigTimelockControllers that are ROLE_ADMIN holders of the RoleStore, and a simulated schedule of a RoleStore ROLE_ADMIN grant from that address is accepted at the 24h minimum delay (refused at zero delay and from a random address). The 5-of-8 Safe holds the same roles there and can cancel inside the 24h window.",
   "tag": "one key can still start the 24h clock (read 2026-10-31)",
@@ -97,7 +97,7 @@
    }
   },
   {
-   "t": "2026-11-10T22:28:22Z",
+   "t": "2026-11-19T21:18:34Z",
    "composite": 47,
    "from": "push",
    "method_break": true,
@@ -145,10 +145,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1794349702,
+ "last_pushed": 1795123114,
  "stale": false,
  "methodology_hash": "0xdfdfedc34ca78e3d78ae1b009e983795c193ba2a39a8e926ae2a6036f755d5a1",
- "block": 329061427,
+ "block": 331681804,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x3c3d99fd298f679dbc2cecd132b4ec4d0f5e6e72.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",

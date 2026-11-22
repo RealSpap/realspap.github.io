@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Raydium (AMM v4, CLMM, CPMM)",
  "named_from": "dashboard",
  "chain": "Solana",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 3,
  "react_hours": 0,
- "money_per_key_usd": 292999804.58942,
+ "money_per_key_usd": 261582439.46897364,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 20,
@@ -57,9 +57,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 878999413.7682601,
+ "tvl_usd": 784747318.4069209,
  "category": "Dexs",
- "at_risk_usd": 755939495.8407037,
+ "at_risk_usd": 674882693.829952,
  "narrative": {
   "summary": "The three programs share one 3-of-4 Squads v4 upgrade multisig with no delay. A separate hardcoded admin key resolves to an older 2-of-3 Squads v3 multisig that still sets fees and pool status.",
   "tag": "config admin weaker than the upgrade path",
@@ -113,15 +113,15 @@
   "exposure": {
    "keys_to_move": 3,
    "react_hours": 0,
-   "tvl_usd": 878999413.7682601,
-   "money_per_key_usd": 292999804.58942,
+   "tvl_usd": 784747318.4069209,
+   "money_per_key_usd": 261582439.46897364,
    "money_source": "protocol_tvl",
    "held_symbol": null,
    "held_amount": null
   }
  },
  "score_cluster": "devnet",
- "last_pushed": 1794347207,
+ "last_pushed": 1795033306,
  "stale": false,
  "methodology_hash": "0x35be9749403c55797c13ba37ef7df5a6291129781661a3125987ae151296a3c9",
  "block": null,

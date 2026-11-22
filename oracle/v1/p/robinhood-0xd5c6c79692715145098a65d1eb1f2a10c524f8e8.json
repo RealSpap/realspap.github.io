@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "T3tris Finance WBTC vault",
  "named_from": "dashboard",
  "chain": "Robinhood Chain",
@@ -9,7 +9,7 @@
  "band": "critical",
  "keys_to_move": 1,
  "react_hours": 0,
- "money_per_key_usd": 503851.59532275936,
+ "money_per_key_usd": 456603.7276834287,
  "not_assessed": [],
  "sub": {
   "adminKeyScore": 5,
@@ -57,9 +57,9 @@
   }
  ],
  "exit_window": "none: a change applies at once",
- "tvl_usd": 714601.8482335209,
+ "tvl_usd": 677139.9336197535,
  "category": "Onchain Capital Allocator",
- "at_risk_usd": 700309.8112688505,
+ "at_risk_usd": 663597.1349473584,
  "narrative": {
   "summary": "One bare EOA is the sole DEFAULT_ADMIN_ROLE holder on this WBTC vault and also holds 46 of its 47 narrower roles, with no Safe and no timelock among any role holder.",
   "tag": "~$610k gross TVL (7.49 WBTC)",
@@ -73,9 +73,9 @@
  "admin_probe": null,
  "held": {
   "symbol": "WBTC",
-  "amount": 7.4861567,
-  "price_usd": 67304.44145294999,
-  "held_usd": 503851.59532275936,
+  "amount": 7.50268454,
+  "price_usd": 60858.71333775,
+  "held_usd": 456603.7276834287,
   "stale": null,
   "price_stale": null,
   "amount_change_pct": 0.0,
@@ -93,7 +93,7 @@
       "to": "0xd5c6c79692715145098a65d1eb1f2a10c524f8e8",
       "data": "0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
      },
-     "0x6cb0772"
+     "0x7310182"
     ]
    },
    {
@@ -114,21 +114,21 @@
     ]
    },
    {
-    "what": "eth_getTransactionCount on the holder: how many transactions this key has sent (93 at the read)",
+    "what": "eth_getTransactionCount on the holder: how many transactions this key has sent (94 at the read)",
     "method": "eth_getTransactionCount",
     "params": [
      "<holder>",
-     "0x6cb0772"
+     "0x7310182"
     ]
    }
   ],
-  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xd5c6c79692715145098a65d1eb1f2a10c524f8e8\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x6cb0772\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xd5c6c79692715145098a65d1eb1f2a10c524f8e8\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (93 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x6cb0772\"]}'",
-  "block": "0x6cb0772",
-  "note": "read between blocks 113968602 and 113969010 of the chain"
+  "curl": "# getRoleMember(DEFAULT_ADMIN_ROLE, 0) on the contract (AccessControl, enumerable): the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xd5c6c79692715145098a65d1eb1f2a10c524f8e8\",\"data\":\"0x9010d07c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"0x7310182\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# the implementation slot of the proxy (EIP-1967): the code behind it, an upgrade changes this word\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"0xd5c6c79692715145098a65d1eb1f2a10c524f8e8\",\"0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (94 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x7310182\"]}'",
+  "block": "0x7310182",
+  "note": "read between blocks 120651686 and 120652162 of the chain"
  },
  "history": [
   {
-   "t": "2026-11-10T22:35:20Z",
+   "t": "2026-11-19T21:30:34Z",
    "composite": 2,
    "from": "push",
    "method_break": false
@@ -170,22 +170,22 @@
   "self_delay_seconds": null,
   "kind": "eoa",
   "since": "2026-10-10T06:54:09Z",
-  "posture": "admin: a plain key, 93 transactions sent; delay: none",
+  "posture": "admin: a plain key, 94 transactions sent; delay: none",
   "exposure": {
    "keys_to_move": 1,
    "react_hours": 0,
-   "tvl_usd": 503851.59532275936,
-   "money_per_key_usd": 503851.59532275936,
+   "tvl_usd": 456603.7276834287,
+   "money_per_key_usd": 456603.7276834287,
    "money_source": "contract",
    "held_symbol": "WBTC",
-   "held_amount": 7.4861567
+   "held_amount": 7.50268454
   }
  },
  "score_cluster": null,
- "last_pushed": 1794350120,
+ "last_pushed": 1795123834,
  "stale": false,
  "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
- "block": 153078599,
+ "block": 156652217,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xd5c6c79692715145098a65d1eb1f2a10c524f8e8",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xd5c6c79692715145098a65d1eb1f2a10c524f8e8.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,16 +1,17 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Vault (verified source)",
  "named_from": "verified source name (Sourcify)",
  "chain": "Robinhood Chain",
  "address": "0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d",
  "composite": 1,
  "band": "critical",
- "keys_to_move": 1,
+ "keys_to_move": 3,
  "react_hours": 0,
  "money_per_key_usd": null,
  "not_assessed": [
+  "shared control: the score says no key is shared, but this contract's own independent read lists another tracked contract with the same admin (unresolved, 12/10: do not read \"no key shared\" as established)",
   "the money behind one key (no money figure, or no key count)",
   "the protocol's total value locked (no DefiLlama match)"
  ],
@@ -68,7 +69,15 @@
  "paused": null,
  "side_roles": null,
  "side_pending": null,
- "safe_activity": null,
+ "safe_activity": [
+  {
+   "safe": "robinhood:0x9db4\u20261a53",
+   "nonce": 64,
+   "idle_since": "2026-11-20T19:13:45Z",
+   "last_moved": "2026-11-20T19:13:45Z",
+   "never_executed": false
+  }
+ ],
  "admin_probe": null,
  "held": null,
  "dispute": "https://github.com/RealSpap/authority-risk-oracle-showcase/issues/new?title=Score%20dispute%3A%20Vault%20%28verified%20source%29%20on%20Robinhood%20Chain%20%280xfe7e25de%E2%80%A6%29&body=Target%3A%200xfe7e25de55e5cbbecccb661f3679f873f72b9b0d%20on%20Robinhood%20Chain%0A%0AWhat%20the%20score%20gets%20wrong%2C%20with%20the%20on-chain%20evidence%20%28tx%2C%20contract%2C%20role%29%3A%0A",
@@ -83,33 +92,59 @@
       "to": "0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d",
       "data": "0x8da5cb5b"
      },
-     "0x6cb0772"
+     "0x7310182"
     ]
    },
    {
-    "what": "eth_getCode on the holder: 0x means a plain key",
-    "method": "eth_getCode",
+    "what": "getThreshold() on the holder (a Safe)",
+    "method": "eth_call",
     "params": [
-     "<holder>",
+     {
+      "to": "<holder>",
+      "data": "0xe75235b8"
+     },
      "latest"
     ]
    },
    {
-    "what": "eth_getTransactionCount on the holder: how many transactions this key has sent (599 at the read)",
-    "method": "eth_getTransactionCount",
+    "what": "getOwners() on the holder: the signer set (word 2 is the count)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xa0e67e2b"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)",
+    "method": "eth_call",
+    "params": [
+     {
+      "to": "<holder>",
+      "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032"
+     },
+     "latest"
+    ]
+   },
+   {
+    "what": "the guard slot of the holder (keccak of guard_manager.guard.address)",
+    "method": "eth_getStorageAt",
     "params": [
      "<holder>",
-     "0x6cb0772"
+     "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+     "latest"
     ]
    }
   ],
-  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d\",\"data\":\"0x8da5cb5b\"},\"0x6cb0772\"]}'\n# eth_getCode on the holder: 0x means a plain key\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<holder>\",\"latest\"]}'\n# eth_getTransactionCount on the holder: how many transactions this key has sent (599 at the read)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionCount\",\"params\":[\"<holder>\",\"0x6cb0772\"]}'",
-  "block": "0x6cb0772",
-  "note": "read between blocks 113968602 and 113969010 of the chain"
+  "curl": "# owner() on the contract: the holder\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d\",\"data\":\"0x8da5cb5b\"},\"0x7310182\"]}'\n# getThreshold() on the holder (a Safe)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xe75235b8\"},\"latest\"]}'\n# getOwners() on the holder: the signer set (word 2 is the count)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xa0e67e2b\"},\"latest\"]}'\n# getModulesPaginated(0x1, 50) on the holder: the modules (a module executes without the signatures)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"<holder>\",\"data\":\"0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000032\"},\"latest\"]}'\n# the guard slot of the holder (keccak of guard_manager.guard.address)\ncurl -s -X POST https://rpc.mainnet.chain.robinhood.com -H 'content-type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getStorageAt\",\"params\":[\"<holder>\",\"0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8\",\"latest\"]}'",
+  "block": "0x7310182",
+  "note": "read between blocks 120651686 and 120652162 of the chain"
  },
  "history": [
   {
-   "t": "2026-11-10T22:35:20Z",
+   "t": "2026-11-19T21:30:34Z",
    "composite": 1,
    "from": "push",
    "method_break": false
@@ -145,15 +180,34 @@
  },
  "independent_read": {
   "path": "owner()",
-  "holder": "0x3b2b\u20262f14",
-  "pending_admin": "0x9db4\u20261a53",
-  "pending_via": "pendingOwner() on the contract (Ownable2Step), a contract",
+  "holder": "0x9db4\u20261a53",
+  "pending_admin": null,
+  "pending_via": null,
   "self_delay_seconds": null,
-  "kind": "eoa",
-  "since": "2026-10-10T06:54:09Z",
-  "posture": "admin: a plain key, 599 transactions sent; delay: none; in flight: admin transfer designated, not accepted",
+  "threshold": 3,
+  "owners": 7,
+  "keys_to_act": 3,
+  "keys_lost_to_freeze": 5,
+  "kind": "safe",
+  "since": "2026-11-21T01:08:33Z",
+  "disagree": "the score says one key does everything (2), the live read finds a Safe 3-of-7 via owner(); the multisig score says no real multisig (0), the live read finds a Safe 3-of-7 via owner()",
+  "owners_kinds": {
+   "eoa": 7
+  },
+  "posture": "admin: Safe 3-of-7 of 7 plain keys; delay: none",
+  "shares_admin_with": [
+   {
+    "chain": "robinhood",
+    "target": "0x5c98b2d892b37c9a1d3b69472bddc172a64cdc09"
+   },
+   {
+    "chain": "robinhood",
+    "target": "0xd01c774d4a66408326bc65728ac5ae5aaf004032"
+   }
+  ],
+  "cluster_tvl_usd": 0.0,
   "exposure": {
-   "keys_to_move": 1,
+   "keys_to_move": 3,
    "react_hours": 0,
    "tvl_usd": null,
    "money_per_key_usd": null,
@@ -163,10 +217,10 @@
   }
  },
  "score_cluster": null,
- "last_pushed": 1794350120,
+ "last_pushed": 1795123834,
  "stale": false,
  "methodology_hash": "0xe2625fb9e688dcffeb302e7cdb5f05f662f60c3d2d439f4fbbe7c3ac4d453d1e",
- "block": 153078599,
+ "block": 156652217,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d",
  "page": "https://realspap.github.io/oracle/p/robinhood-0xfe7e25de55e5cbbecccb661f3679f873f72b9b0d.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle",

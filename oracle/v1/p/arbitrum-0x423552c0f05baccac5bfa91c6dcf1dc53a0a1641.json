@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "Arbitrum Security Council Emergency Safe",
  "named_from": "dashboard",
  "chain": "Arbitrum",
@@ -62,9 +62,9 @@
   }
  ],
  "exit_window": "a delay with a bypass, or one not ruled out",
- "tvl_usd": 1334379607.8370683,
+ "tvl_usd": 1234215047.5028946,
  "category": null,
- "at_risk_usd": 480376658.8213446,
+ "at_risk_usd": 444317417.1010421,
  "narrative": {
   "summary": "A real, publicly-named 9-of-12 Safe that can bypass the ordinary L2 core Timelock\u2019s 8-day delay in an emergency - the chain\u2019s own systemic root, not a bounded protocol authority.",
   "tag": "every protocol above inherits this",
@@ -81,7 +81,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-11-10T22:28:22Z",
+   "t": "2026-11-19T21:18:34Z",
    "composite": 64,
    "from": "push",
    "method_break": false
@@ -125,10 +125,10 @@
   "why": "no admin slot, owner(), admin(), DEFAULT_ADMIN_ROLE member or authority() answered"
  },
  "score_cluster": null,
- "last_pushed": 1794349702,
+ "last_pushed": 1795123114,
  "stale": false,
  "methodology_hash": "0xdfdfedc34ca78e3d78ae1b009e983795c193ba2a39a8e926ae2a6036f755d5a1",
- "block": 329061427,
+ "block": 331681804,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641",
  "page": "https://realspap.github.io/oracle/p/arbitrum-0x423552c0f05baccac5bfa91c6dcf1dc53a0a1641.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"

@@ -1,6 +1,6 @@
 {
  "version": "v1",
- "generatedAt": "2026-11-14T08:41:35Z",
+ "generatedAt": "2026-11-22T15:47:42Z",
  "name": "HIP-3 dex mkts (Markets by Kinetiq)",
  "named_from": "dashboard",
  "chain": "Hyperliquid",
@@ -81,7 +81,7 @@
  "independent_read_reproduce": null,
  "history": [
   {
-   "t": "2026-11-10T22:29:55Z",
+   "t": "2026-11-19T21:24:46Z",
    "composite": 9,
    "from": "push",
    "method_break": false
@@ -125,10 +125,10 @@
   "why": "no code at this address on the chain's mainnet: a derived identifier for a native (non-EVM) entity such as HyperCore, or a contract that lives on another chain (a rollup's own L1 contracts); nothing for this reader to compare here"
  },
  "score_cluster": null,
- "last_pushed": 1794349795,
+ "last_pushed": 1795123486,
  "stale": false,
  "methodology_hash": "0xb595576050a45dcdeeb0479747f6b283eaaca756e6cd7e70a176a194021bed65",
- "block": 69577467,
+ "block": 70304056,
  "live": "https://realspap.github.io/oracle/#chain=all&q=0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc",
  "page": "https://realspap.github.io/oracle/p/hyperliquid-0xbf6d3bbce71dbce6f4121bfe2e2cad8c77bbc1fc.html",
  "license": "CC BY 4.0, attribution: Authority Risk Oracle, realspap.github.io/oracle"
