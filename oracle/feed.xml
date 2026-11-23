@@ -43,14 +43,6 @@
     <category term="Findings" />
   </entry>
   <entry>
-    <id>https://realspap.github.io/oracle/notes/lido-vote-207-script/</id>
-    <title type="text">Lido vote 207: what the script would submit and set</title>
-    <link rel="alternate" href="https://realspap.github.io/oracle/notes/lido-vote-207-script/" />
-    <updated>2026-11-22T15:47:00Z</updated>
-    <summary type="text">I read the script of the open vote 207 of Lido, on Ethereum mainnet (chain ID 1), and the state of each contract it touches, on two public nodes. At the block read, the script has 7 items: it would submit 1 proposal carrying 9 calls and would add 6 Easy Track factories directly and none has run.</summary>
-    <category term="Findings" />
-  </entry>
-  <entry>
     <id>https://realspap.github.io/oracle/notes/compound-619-queued-then-canceled/</id>
     <title type="text">Compound 619: queued, then canceled by the Guardian Safe</title>
     <link rel="alternate" href="https://realspap.github.io/oracle/notes/compound-619-queued-then-canceled/" />
