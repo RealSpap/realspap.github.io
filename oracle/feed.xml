@@ -1,0 +1,1341 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Authority Risk Oracle: notes and corrections</title>
+  <subtitle>Every note of the oracle site and every entry of its errata log, newest first. Each entry has its date and its link.</subtitle>
+  <id>https://realspap.github.io/oracle/feed.xml</id>
+  <link rel="self" type="application/atom+xml" href="https://realspap.github.io/oracle/feed.xml" />
+  <link rel="alternate" type="text/html" href="https://realspap.github.io/oracle/notes/" />
+  <updated>2026-11-24T00:00:00Z</updated>
+  <author>
+    <name>RealSpap</name>
+  </author>
+  <entry>
+    <id>https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-24-the-weekly-job-claim.md</id>
+    <title type="text">Errata E-2026-11-24: the changelog said a workflow pushes the scores every week</title>
+    <link rel="alternate" href="https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-24-the-weekly-job-claim.md" />
+    <updated>2026-11-24T00:00:00Z</updated>
+    <summary type="text">The changelog said a workflow runs the score updates every week; the workflow file is not in this repository and the pushes are done by hand</summary>
+    <category term="Errata" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/the-27-hours/</id>
+    <title type="text">The 27 hours before the PumpSwap upgrade</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/the-27-hours/" />
+    <updated>2026-11-23T00:00:00Z</updated>
+    <published>2026-11-17T00:00:00Z</published>
+    <summary type="text">I replayed the buffer of the PumpSwap upgrade of 15 November 2026 transaction by transaction: its code was fully written at 13:49:06 UTC on 14 November and ran at 17:20:20 UTC on 15 November, 27 hours 31 minutes later.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-23-the-27-hours-last-write.md</id>
+    <title type="text">Errata E-2026-11-23: the note on the PumpSwap buffer took a transfer for the last write</title>
+    <link rel="alternate" href="https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-23-the-27-hours-last-write.md" />
+    <updated>2026-11-23T00:00:00Z</updated>
+    <summary type="text">The note on the PumpSwap buffer gave 13:49:21 UTC, the time of a transaction that sends 1 lamport to each of 19 accounts, as the last write, a wait of 27 h 30 min 59 s, and counted 1,258 transactions as writes; the last write is at 13:49:06 UTC, the wait is 27 h 31 min 14 s, and 1,256 of those transactions hold a write</summary>
+    <category term="Errata" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/compound-628-feeds-on-base/</id>
+    <title type="text">Compound 628: two price feeds the Base message would set</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/compound-628-feeds-on-base/" />
+    <updated>2026-11-22T15:48:00Z</updated>
+    <summary type="text">I read the open Compound proposal 628, on Ethereum mainnet (chain ID 1), and the Base contracts it would call, on two public nodes per chain. Its single action is a message to Base that would set 2 price feeds and upgrade the 2 markets that use them; at the block read the vote is open and nothing has run.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/lido-vote-207-script/</id>
+    <title type="text">Lido vote 207: what the script would submit and set</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/lido-vote-207-script/" />
+    <updated>2026-11-22T15:47:00Z</updated>
+    <summary type="text">I read the script of the open vote 207 of Lido, on Ethereum mainnet (chain ID 1), and the state of each contract it touches, on two public nodes. At the block read, the script has 7 items: it would submit 1 proposal carrying 9 calls and would add 6 Easy Track factories directly and none has run.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/compound-619-queued-then-canceled/</id>
+    <title type="text">Compound 619: queued, then canceled by the Guardian Safe</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/compound-619-queued-then-canceled/" />
+    <updated>2026-11-22T15:46:00Z</updated>
+    <summary type="text">I read the governance of Compound on Ethereum mainnet at the block before one transaction and at a recent block, on two public archive nodes. Proposal 619 went from Queued to Canceled; the Proposal Guardian, the Guardian expiry, the Timelock delay and the Timelock admin read the same on both sides.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/build-on-the-oracle/</id>
+    <title type="text">Build on the oracle</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/build-on-the-oracle/" />
+    <updated>2026-11-22T15:46:00Z</updated>
+    <summary type="text">Three recipes to build on the Authority Risk Oracle, all replayable and all on test networks: read a score on-chain, check the signed files of the Watch without trusting me, and put a guard in front of an action. A score is a reading, not a verdict.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/same-address-other-keys/</id>
+    <title type="text">The same address is not the same keys</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/same-address-other-keys/" />
+    <updated>2026-11-18T15:37:00Z</updated>
+    <summary type="text">I read the same address on six networks for the 89 Safe addresses in the Watch registry: 30 are a Safe on two or more of them, and 11 of those have other signers or another threshold on at least one network. One of them reads 6 of 10 on Ethereum mainnet and 2 of 9 on Arbitrum One.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/pumpswap-upgrade-15-nov/</id>
+    <title type="text">PumpSwap upgrade: a 3-of-4 vault, no time lock</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/pumpswap-upgrade-15-nov/" />
+    <updated>2026-11-16T08:23:00Z</updated>
+    <summary type="text">On 2026-11-15, 17:20:20 UTC, the PumpSwap program on Solana mainnet-beta was upgraded by a Squads vault that needs 3 of 4 signers and has a time lock of 0 seconds. The new code had been on chain in a buffer for about 27 hours.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/the-authority-report-0/</id>
+    <title type="text">The Authority Report, number 0</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/the-authority-report-0/" />
+    <updated>2026-11-16T07:14:00Z</updated>
+    <summary type="text">Who can change what, replayed every Monday. This first number covers 202 targets on nine networks and ends with one question: would a protocol publish a commitment anyone could check every day?</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-16-erc8183-message-459-command.md</id>
+    <title type="text">Errata E-2026-11-16: the command in my message 459 of the ERC-8183 thread could not run</title>
+    <link rel="alternate" href="https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-16-erc8183-message-459-command.md" />
+    <updated>2026-11-16T00:00:00Z</updated>
+    <summary type="text">The command of message 459 of the ERC-8183 thread could not run as displayed: typographic quotation marks in its first version, a backslash before each square bracket in its second</summary>
+    <category term="Errata" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/i-edited-my-own-history/</id>
+    <title type="text">I edited my own history, and the chain noticed</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/i-edited-my-own-history/" />
+    <updated>2026-11-15T08:42:00Z</updated>
+    <summary type="text">Every event my Watch has seen is linked to the one before it by the SHA-256 of that line. I changed one value in line 101 of a copy and the check fell from 291 of 291 to 290 of 291.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/five-new-keys/</id>
+    <title type="text">Five new keys, threshold five</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/five-new-keys/" />
+    <updated>2026-11-15T08:42:00Z</updated>
+    <summary type="text">On 11 November, in one transaction on Ethereum mainnet (chainId 1), a Safe that Aave's address book lists as GOVERNANCE_GUARDIAN replaced five of its nine signers. The five new keys are enough to reach its threshold of five.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/check-my-scores/</id>
+    <title type="text">Check my scores in one command</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/check-my-scores/" />
+    <updated>2026-11-15T08:42:00Z</updated>
+    <summary type="text">I publish risk scores for 202 targets, and nobody should have to take my word for them. One command compares each published score with what eight oracles on test networks hold.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-12-erc8004-validation-registry.md</id>
+    <title type="text">Errata E-2026-11-12: the ValidationRegistry address in my post of 6 November is the team's testnet entry</title>
+    <link rel="alternate" href="https://github.com/RealSpap/authority-risk-oracle-showcase/blob/main/errata/E-2026-11-12-erc8004-validation-registry.md" />
+    <updated>2026-11-12T00:00:00Z</updated>
+    <summary type="text">An address named as the ERC-8004 ValidationRegistry in a thread post of 2026-11-06 is the team's testnet entry; the mainnet entry is a different address</summary>
+    <category term="Errata" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-10-19-control-week-1/</id>
+    <title type="text">Control week #1 (11 to 18 Oct 2026)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-10-19-control-week-1/" />
+    <updated>2026-10-19T00:00:00Z</updated>
+    <summary type="text">1. Robinhood Chain (mainnet, chain 4663): the proxy 0x14b107cf534239c59571b066cb6497a321da897c (the Watch matches it to Arcus Perps on DefiLlama) now points to implementation 0x71fc...6319; it pointed to 0x44c6...bf78 before. Changed in block 89453534 on 15...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-10-17-rule-written-in-advance/</id>
+    <title type="text">A rule written in advance from 2 incidents, then tested on the rest (17 Oct 2026)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-10-17-rule-written-in-advance/" />
+    <updated>2026-10-17T00:00:00Z</updated>
+    <summary type="text">I wrote a rule from just two incidents, froze it, and tested it on the 55 incidents of the Backtest page of this site: the 7 about who controls a contract (which include the two origin cases) and the 48 others. The two origin cases are Term Finance (a...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/audit-2026-10-11-second-review/</id>
+    <title type="text">Audit: second line-by-line review of the scoring library, the dashboard and the push scripts (2026-10-11)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/audit-2026-10-11-second-review/" />
+    <updated>2026-10-11T00:00:00Z</updated>
+    <summary type="text">Six independent reviewers read the shared scoring library, the per-chain scorers, the dashboard script, the Solana and Zcash code and the push scripts, each told to refute the code rather than confirm it. Every finding below was re-checked against the code...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-10-05-price-consumer-scope-study/</id>
+    <title type="text">Which other tracked targets read prices, how to score them, and what that needs decided first</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-10-05-price-consumer-scope-study/" />
+    <updated>2026-10-05T00:00:00Z</updated>
+    <summary type="text">2026-10-05. The price-consumer rule of 2026-10-04 (METHODOLOGY, "oracleAuthorityScore for price consumers") was built for ten lending markets. This study asked the same question of every other tracked target that might read prices. One reader studied each...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-10-04-price-paths-beyond-one-hop/</id>
+    <title type="text">Price paths one hop further upstream than the oracleAuthorityScore looks: disclosed, not scored</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-10-04-price-paths-beyond-one-hop/" />
+    <updated>2026-10-04T00:00:00Z</updated>
+    <summary type="text">2026-10-04. Companion to the METHODOLOGY section "oracleAuthorityScore for price consumers", decided that day. The rule scores whoever controls what a lending market reads directly: a Chainlink proxy, a rate provider, an upgradeable feed. It does not score...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-10-01-backtest-victims-vs-controls/</id>
+    <title type="text">Backtest, victims against controls one month before the incident: the score does not separate them (pre-registered, Ethereum, 5 sets)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-10-01-backtest-victims-vs-controls/" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary type="text">2026-10-01. The test this repository said it lacked (data/research2026-09-21-authority-incidents-evidence-table.md:48-51): read the authority configuration of incident victims 30 days before the incident, and of comparable untouched protocols at the same...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-10-01-aave-capo-price-authority/</id>
+    <title type="text">Who can move the prices Aave V3 Ethereum Core lends against: 58% of supply is priced by Aave's own adapters, moved by a two-key council and one live automated agent, within limits the update path enforces (disclosed, not scored)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-10-01-aave-capo-price-authority/" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary type="text">2026-10-01. Tool: scripts/checklendingpriceauthority.py (read-only, ethcall only), test scripts/tests/testchecklendingpriceauthority.py. Amounts are from the run of about 10:50 UTC. The tool went through two independent reviews that day; the second found that...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--finding-2026-09-30-pyth-governance-lead-not-resolved/</id>
+    <title type="text">Pyth ("$7B secured"): no Solana-side committee at all: it's a pure Wormhole-VAA execution layer, sourced from Pyth's own code, exact emitter PDA not yet re-derived</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--finding-2026-09-30-pyth-governance-lead-not-resolved/" />
+    <updated>2026-09-30T00:00:00Z</updated>
+    <summary type="text">2026-09-30. Third of the 3 SolGov-adjacent candidates never turned into scorers (finding2026-09-26-solgov-registry-verified-live.md listed Hylo, Switchboard, Pyth as untracked; Hylo and Switchboard closed tonight, see their own findings). This one is not...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--finding-2026-09-26-coinbase-address-attribution/</id>
+    <title type="text">Zcash coinbase payout addresses: real attempt at attribution, genuinely inconclusive</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--finding-2026-09-26-coinbase-address-attribution/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. Investigates an open follow-up: attributing the two coinbase payout addresses that have no published label (t1MKn34 29.6%, t1SEgZ 7.7%) to entities through a primary source. Result: the addresses are real and persistent (confirmed live, current...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--finding-2026-09-26-pathusd-reverified-live/</id>
+    <title type="text">Tempo pathUSD: re-verified live, composite 9 unchanged, tracker item already covered</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--finding-2026-09-26-pathusd-reverified-live/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. Closes an open follow-up: the pathUSD ISSUERROLE is a UUPS proxy, upgradable by a single EOA that also holds DEFAULTADMIN, never reviewed since the committed score. It was already covered (scoredtargets2026-09-18-controller-types.md classifies the...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-26-untracked-hip3-dexes-are-empty/</id>
+    <title type="text">The 4 "untracked" HIP-3 dexes flagged by the bounded loop (flx, hyna, abcd, cash) are delisted or empty</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-26-untracked-hip3-dexes-are-empty/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. The 26/09 bounded loop's hyperliquid pass listed four HIP-3 perp dexes the oracle does not track. Checked live, read-only (api.hyperliquid.xyz/info perpDexs and metaAndAssetCtxs per dex, plus ethgetCode on HyperEVM for each address): the...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-26-hyperliquid-bridge-arbitrum-authority/</id>
+    <title type="text">Bridge2 (Hyperliquid's Arbitrum bridge), re-read 2026-09-26: what is new against the 19/09 work (investigation, nothing scored)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-26-hyperliquid-bridge-arbitrum-authority/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">Already covered, and scored. The Hyperliquid oracle tracks this contract as "Hyperliquid legacy USDC bridge (Bridge2, Arbitrum One)" (chains/hyperliquid/scripts/scoringbuild20260918.py::scorebridge2: 3-of-4 equal-weight hot and cold sets, admin 65, multisig...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-26-wbeth-and-ssv-authority/</id>
+    <title type="text">The two largest untracked Ethereum protocols by TVL: one is a single-key token, the other is a 5-of-9 Safe (investigation, nothing scored)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-26-wbeth-and-ssv-authority/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. finding2026-09-26-tvl-coverage-by-ecosystem.md ranks Ethereum's untracked protocols by DefiLlama value: SSV Network ($14.1B) and Binance staked ETH ($9.4B) come first. data/coverage2026-09-21-tvl-by-ecosystem.md had already set both aside as...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-26-sentora-spark-rlusd-subproxy-resolved/</id>
+    <title type="text">Sentora x Spark RLUSD's $250M SubProxy owner: resolved, not a mystery</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-26-sentora-spark-rlusd-subproxy-resolved/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. Closes the one genuinely open point data/finding2026-09-25-vault-v2-inventory.md explicitly left unresolved rather than guessed at: Sentora x Spark RLUSD ($250.0M, Ethereum L1 Vault V2)'s owner, 0x3300f198988e4C9C63F75dF86De36421f06af8c4, is a...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-26-pending-timelock-ops/</id>
+    <title type="text">What is queued behind the watched timelocks (2026-09-26): nothing executable, 24 dead entries, recent traffic listed</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-26-pending-timelock-ops/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">New read-only tool scripts/checkpendingops.py (+ scripts/lib/pendingops.py, 5 tests). A timelock's delay is a promise; the queue is the fact. For each watched timelock it reads the queue events of the last N days (365 by default: an OpenZeppelin queue has no...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-26-issuer-power-tracked-assets/</id>
+    <title type="text">Issuer power on the 4 assets this oracle's own tracked vaults actually hold</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-26-issuer-power-tracked-assets/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. Backlog item 15 (data/finding2026-09-20-competitor-gaps-and-morpho-vault-layer.md:499- 519,717-719: "An issuer-power tag per vault asset (freeze, seize, pause, upgrade, and who holds the roles)... Cheap, because verified ABIs are public"). That...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-26-incident-configurations-vs-published-scores/</id>
+    <title type="text">Between a quarter and a half of what the oracle publishes scores at or below Bybit's configuration before the hack (exposure, not prediction)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-26-incident-configurations-vs-published-scores/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26, revised 2026-09-27 after an independent review (the review's corrections are folded in below). data/research2026-09-21-authority-incidents-evidence-table.md lists 23 authority incidents and concludes that the honest claim is "measured exposure of...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-26-authority-index-and-7702-signers/</id>
+    <title type="text">Authority index ("what can this key touch?") and a first EIP-7702 signer scan</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-26-authority-index-and-7702-signers/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. New read-only tool scripts/whocontrols.py (+ scripts/lib/authorityindex.py, 11 unit tests). It reuses the live resolution checkcrossecosystemoverlap.py already does for every registry group (110 groups, 8 EVM ecosystems), extracted into...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-26-aave-v3-pool-reserve-issuer-power/</id>
+    <title type="text">Issuer power extended to Aave V3 Ethereum Pool's 67 reserve assets ($14.77B TVL)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-26-aave-v3-pool-reserve-issuer-power/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. Extends today's checkissuerpower.py (built for the 9 tracked Morpho V1 vaults' 4 underlying assets) to a much bigger, ALREADY-TRACKED and ALREADY-SCORED target: scoreaavev3pool() (chains/ethereum-l1/scorers.py, $14.77B TVL) scores the Pool's OWN...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/ethereum-l1--finding-2026-09-26-compound-v3-comet-issuer-power/</id>
+    <title type="text">Issuer power extended to all 3 tracked Compound V3 Comet markets (L1, Base, Arbitrum)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/ethereum-l1--finding-2026-09-26-compound-v3-comet-issuer-power/" />
+    <updated>2026-09-26T00:00:00Z</updated>
+    <summary type="text">2026-09-26. Extends today's checkissuerpower.py/checkaavev3poolissuerpower.py pattern to this oracle's 3 already-tracked, already-scored Compound V3 Comet markets (scorecompoundv3cusdc on Ethereum L1, scorecompoundv3cometarbitrumusdc,...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--finding-2026-09-25-wormhole-core-bridge/</id>
+    <title type="text">Wormhole Core Bridge: Guardian quorum traced, doesn't fit the k-of-n model: 2026-09-25</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--finding-2026-09-25-wormhole-core-bridge/" />
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary type="text">Documentation only -- no scorers.py entry created for the Core Bridge itself. This was looked at as a candidate target (worm2ZoG2kUd4vFXhvjh93UUH596ayRfgQ2MgjNMTth, the Wormhole Core Bridge, i.e. the cross-chain messaging program, not the "Portal" token...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-25-vault-v2-inventory/</id>
+    <title type="text">Vault V2 disclosed inventory: $2.87B across 27 vaults, none previously tracked</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-25-vault-v2-inventory/" />
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary type="text">2026-09-25. Continues data/finding2026-09-25-vault-v2-scoring-scope.md (Vault V2 scoring needs a real methodology decision, not built) with the safe next step that finding flagged: a disclosed-only inventory reusing already-settled patterns (owner/curator...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-25-hyperliquid-cross-ecosystem-overlap/</id>
+    <title type="text">Hyperliquid added to the cross-ecosystem signer-overlap registry</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-25-hyperliquid-cross-ecosystem-overlap/" />
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary type="text">2026-09-25. Roadmap item 5 (broad-review round 2): scripts/lib/crossecosystemoverlap.py's GROUPS-based registry (used by checkcrossecosystemoverlap.py, checksafemodulesguards.py and checknestedsigners.py) covered Robinhood Chain, Ethereum L1, Arbitrum, Base,...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-25-exit-capacity-vs-timelock/</id>
+    <title type="text">A vault's timelock next to its actual exit capacity</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-25-exit-capacity-vs-timelock/" />
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary type="text">2026-09-25. Roadmap item 10 (broad-review round 2), continued after the go-ahead. The research already existed in full (data/finding2026-09-20-competitor-gaps-and-morpho-vault-layer.md, "eighth pass": chains/ethereum-l1/scripts/sweepexitcapacity.py, a...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-25-aave-v3-pool-risk-admin-discovery/</id>
+    <title type="text">Aave V3 Ethereum Pool: role-holder discovery extended to the flagship target</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-25-aave-v3-pool-risk-admin-discovery/" />
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary type="text">2026-09-25. Continues the broad-review round 2 roadmap item 4 (extend the role-sweep pattern that already found 2 real bugs on Radiant and Aave V3 Monad). scoreaavev3pool -- $14.77B TVL, this oracle's single largest tracked target by TVL -- had checked...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-25-aave-guardian-18-chains/</id>
+    <title type="text">One 7-signer committee holds Aave V3's emergency-pause seat on 18 of ~19 real deployments</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-25-aave-guardian-18-chains/" />
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary type="text">2026-09-25. Roadmap item 9 (broad-review round 2), continued after the go-ahead. This project already tracked, on 5 chains it monitors (Ethereum L1, Arbitrum, Base, Plasma, Monad), that the SAME 7 signers hold Aave's PROTOCOLGUARDIAN/EMERGENCYADMIN seat -- a...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-25-3-corrections/</id>
+    <title type="text">Arbitrum Ecosystem: 3 targets closed out by an independent verification pass, 2026-09-25</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-25-3-corrections/" />
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary type="text">Not a scouting or maintenance run of this pass's own: an independent verification pass re-checked three gaps this ecosystem's own prior notes had explicitly left open, and handed back the missing facts. Implemented here faithfully (not re-derived from...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--audit-2026-09-21-rotation-index-1/</id>
+    <title type="text">Tempo rotation audit, 2026-09-21: index 1 (USDC.e), non-circular re-derivation</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--audit-2026-09-21-rotation-index-1/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">Result: no divergence. The six dimensions published on the Moderato oracle for USDC.e (0x20C0...8b50) -- adminKey 65, multisig 98, timelock 0, oracleAuthority 100, crossExposure 80, composite 55 -- were each re-derived from Tempo mainnet without running any...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/research-2026-09-21-authority-incidents-evidence-table/</id>
+    <title type="text">Authority-related incidents 2024 to September 2026: evidence table and what it can and cannot calibrate</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/research-2026-09-21-authority-incidents-evidence-table/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">Compiled on 21 Sep 2026 by a research reviewer (web search and page reads only, no on-chain reads), then spot-checked by me. Read this as a lead list, not as verified data. I opened three rows (Humanity, AFX, CrediX) and corrected two details; two more...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-21-who-really-signs/</id>
+    <title type="text">Who really signs the registered root Safes (2026-09-21)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-21-who-really-signs/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">safeownersandthreshold returns a list of owner addresses and a threshold, and every scorer and the cross-ecosystem overlap check treated each owner as one independent key. Some owners are not keys. This pass resolves every registered root Safe's signers down...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-21-safe-modules-and-guards/</id>
+    <title type="text">Safe modules and guards on the registered root Safes (2026-09-21)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-21-safe-modules-and-guards/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">A Safe's owner set and threshold only say who can act if nothing else can. A module executes transactions as the Safe without the owners' signatures; a guard can block them. Until today the shared helper every scorer uses (safeownersandthreshold) read...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-21-implementation-changes/</id>
+    <title type="text">The code behind a target changes; the oracle only scores who controls it (2026-09-21)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-21-implementation-changes/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">The oracle scores authority: who can change a target, how many keys, with what delay. It says nothing about the code they control having changed. A score can be right about the authority and stale about the code. This pass measured how often that happens and...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-21-cross-exposure-consistency-audit/</id>
+    <title type="text">Cross-exposure consistency audit (2026-09-21)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-21-cross-exposure-consistency-audit/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">Question asked of the 8 ecosystems' scorer output, with no new target and no new chain: does the same relation get the same number wherever it appears? Two token-free scans (a same-protocol table across ecosystems, and every address named by two or more...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/coverage-2026-09-21-tvl-by-ecosystem/</id>
+    <title type="text">How much of each ecosystem's value do the tracked targets cover? (2026-09-21)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/coverage-2026-09-21-tvl-by-ecosystem/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">A first measurement, from open data only (DefiLlama's /protocols for TVL per chain, matched by protocol name to the labels of the targets each oracle tracks; for Robinhood Chain also hoodscan's public project registry). It is an estimate with a stated method...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-21-chainlink-layerzero-multisig-formula/</id>
+    <title type="text">Correction: Chainlink and LayerZero on Robinhood Chain used a leftover multisig formula (2026-09-21)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-21-chainlink-layerzero-multisig-formula/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">scripts/lib/scorers.py scores a Safe-rooted target with saferootedscores (the batch-9 convention): adminKeyScore 65 for threshold &gt;= 3, and multisigScore = min(100, 15 threshold + 5 (owners - threshold)), "rewards both threshold and dispersion". Two older...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/base-ecosystem--audit-2026-09-21-rotation-index-1/</id>
+    <title type="text">Rotation audit, Base tracked index 1 - 2026-09-21</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/base-ecosystem--audit-2026-09-21-rotation-index-1/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">Target: Aave V3 Base PoolAddressesProvider 0xe20fCBdBfFC4Dd138cE8b2E6FBb6CB49777ad64D, index 1 of the 9 targets on the Base Sepolia oracle 0x50840a7667baEa9D05ad4ae3dCeb384724b58720.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/audit-abi-returndata-2026-09-21/</id>
+    <title type="text">ABI return-data audit, all ecosystems, 2026-09-21</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/audit-abi-returndata-2026-09-21/" />
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary type="text">Phase: maintenance (transverse). Changes no score, no oracle and no push. Adds a guard that refuses an ABI read whose answer has the wrong size, and a tool that audits every ecosystem's scoreall() with it, and records the first result. Measured on the tree at...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-20-robinhood-chain-index15/</id>
+    <title type="text">Rotation audit (2026-09-19/20): Robinhood Chain, tracked target index 15, plus 1 new target (Saffron Vaults factory)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-20-robinhood-chain-index15/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 15 going into this run. Same discipline as every prior rotation audit: the target is read live from the testnet oracle (trackedTargets(15)), every authority fact is re-derived from scratch on...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/repush-2026-09-20-evening-all-oracles/</id>
+    <title type="text">Re-push of all nine oracles, 2026-09-20 evening</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/repush-2026-09-20-evening-all-oracles/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Run by the maintainer with scripts/repushalloracles.sh (two terminals: the eight shared-key oracles, and Robinhood on its own key), read back with plain ethcall and getProgramAccounts, no key. Every step recomputed each target live before...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/plasma-ecosystem--fluid-liquidity-plasma-2026-09-20-signers/</id>
+    <title type="text">Fluid Liquidity on Plasma: proposer and executor signer sets resolved, 2026-09-20</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/plasma-ecosystem--fluid-liquidity-plasma-2026-09-20-signers/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Phase: maintenance (Plasma). Changes the scorer of one target, scorefluidliquidityplasma(), from 40 / 100 / 70 / cross 100 (composite 67) to 65 / 55 / 55 / cross 80 (composite 59). Pushed on-chain the same evening (Plasma testnet tx...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-20-unscored-role-sweep/</id>
+    <title type="text">Finding (2026-09-20): an unscored-role sweep of every EVM ecosystem, and a second Aave committee on five chains</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-20-unscored-role-sweep/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">On 2026-09-19 an independent verification pass found that the Euler V2 eVaultFactory Governor's PAUSEGUARDIANROLE was held by two bare EOAs and that no scorer or note in the repo had ever seen it, because the scorers checked the role NAMES they knew to look...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-20-uniswap-one-timelock-eleven-targets/</id>
+    <title type="text">One Uniswap Timelock is the root of 11 tracked targets on 5 ecosystems (2026-09-20)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-20-uniswap-one-timelock-eleven-targets/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Found during the registry coverage pass, by asking the one question the cross-exposure field exists for: which tracked targets share a root, across ecosystems, that the oracle still scores as if they did not?</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-20-scorer-test-audit/</id>
+    <title type="text">Scorer test audit, 2026-09-20: what executing the untested scorer bodies found</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-20-scorer-test-audit/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Phase: cross-ecosystem (Zcash, Solana, Ethereum L1, Base, Plasma). Changes two computations (both provably value-preserving on every published score) and pins the rest as tests. Nothing is re-pushed and no anchor changes.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-20-ethena-live-minter/</id>
+    <title type="text">Finding (2026-09-20): the Ethena target was USDe's retired minter, and the live minter now scores 65/100/55</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-20-ethena-live-minter/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Status: corrected in the scorer (chains/ethereum-l1/scorers.py::scoreethenaminting, commit 042f805) and pushed on-chain 2026-09-20 as a new Ethereum L1 target, index 14 (transaction 0x14b0466ab52a7bf6cab54253cda92c73d52ca1b88957632911d79136b99b7a98, block...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-20-cross-exposure-convention-and-score-adjustments/</id>
+    <title type="text">Finding (2026-09-20): crossExposureScore now folds cross-ecosystem overlaps on every EVM ecosystem, and 11 scorer outputs moved</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-20-cross-exposure-convention-and-score-adjustments/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Status: decided and implemented in the scorers on 2026-09-20 (commit 042f805), and pushed on-chain the same day (section 9: six transactions, all status 1, read back with getScore() on all 7 oracles with 0 differences). This file was first written before the...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-20-compound-pause-guardian-three-chains/</id>
+    <title type="text">Finding (2026-09-20): Compound V3's pause guardian is one 9-signer committee on three chains</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-20-compound-pause-guardian-three-chains/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">The cross-ecosystem overlap sweep (scripts/checkcrossecosystemoverlap.py) is the tool that found the Aave guardian committees on five chains and the Morpho committee on four, but its registry only listed the Safes each scorer already knew about. A coverage...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/ethereum-l1--maintenance-2026-09-20-run2/</id>
+    <title type="text">Ethereum L1: maintenance run, 2026-09-20 (second attempt)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/ethereum-l1--maintenance-2026-09-20-run2/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Read-only on Ethereum mainnet (chain 1) and on the Sepolia oracle (0xB6F8474ccC71AF477c31c2DF663B3942ddfbf906). Nothing was pushed on-chain by the pipeline run, by design: the push command is prepared below and left for the maintainer to run.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-20-arbitrum-oracle-scores-csv-stale-gmx/</id>
+    <title type="text">Correction (2026-09-20): the Arbitrum score record published for 2026-09-20 was stale for index 0</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-20-arbitrum-oracle-scores-csv-stale-gmx/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">This corrects an entry that was already published in this repository, it is not a new finding. Nothing changed on any chain because of it: the correction is to a record file that had drifted away from the state the oracle has actually been serving since 14:12...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/audit-oracle-key-collisions-2026-09-20/</id>
+    <title type="text">Oracle key collision audit, all ecosystems, 2026-09-20</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/audit-oracle-key-collisions-2026-09-20/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Phase: maintenance (transverse). Nothing about any score changes and nothing is pushed. This adds a pre-push guard to every push script and a tool that audits every ecosystem at once, and records the first result.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-20-maintenance-gmx-v1/</id>
+    <title type="text">Arbitrum maintenance run, 2026-09-20 (travailleur2): one target added, one scouted and not scored</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-20-maintenance-gmx-v1/" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary type="text">Budget for this run was up to 10 new targets. One was added. That is the honest result, not a target: the one added carries a real authority finding that needed the time, and the second candidate traced (Dolomite) is left explicitly unscored rather than...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--zenzec-mpc-keyring-2026-09-19/</id>
+    <title type="text">Zenrock zenZEC: dMPC custody keyring, resolved (partially) 2026-09-19</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--zenzec-mpc-keyring-2026-09-19/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">&gt; STATUS UPDATE 2026-09-20: the premise of this note (a live custody keyring) no longer holds. See &gt; zenzecstatus2026-09-20.md: the zrchain node it was read from is frozen since 2026-08-10, the product is &gt; winding down, the backing ZEC sits at an address not...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--testnet-oracle-batch-2026-09-19/</id>
+    <title type="text">Zcash native oracle, whole set: ARO2 anchored on Testnet, 2026-09-19</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--testnet-oracle-batch-2026-09-19/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Extends data/testnetoraclepoc2026-09-19.md (ARO1: one score, Zcash L1) to every target chains/zcash/scorers.py scoreall() returns, in ONE on-chain commitment. The format was already built and unit-tested, but never broadcast, by commit 7833263...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--scored-targets-2026-09-19/</id>
+    <title type="text">Zcash: scored targets, 2026-09-19</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--scored-targets-2026-09-19/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Resumes the zenZEC lead data/scoutingcandidates2026-09-18.md deferred: Zenrock's docs/API were re-checked today and are still down (identical HTTP 402/503), but a working alternative primary source (zrchain's own Tendermint RPC, hand-decoded against its own...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--scouted-bridged-tokens-2026-09-19/</id>
+    <title type="text">Tempo: bridged TIP-20 token scouting, 2026-09-19 (closes METHODOLOGY.md section 7, open point 2)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--scouted-bridged-tokens-2026-09-19/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Phase: maintenance (real deploy already done 2026-09-19, see ../deploy/README.md). Read-only Tempo mainnet (chain id 4217). No transaction, no key, no write. This is the follow-up to the open point left in ../METHODOLOGY.md section 7.2: "other,...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-19-morpho-blue/</id>
+    <title type="text">Tempo maintenance run, 2026-09-19: rotation audit index 0 + Morpho Blue core (rule R9)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-19-morpho-blue/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">&gt; CORRECTED 2026-09-20: the Morpho Blue core's crossExposureScore is 80, &gt; not 100. The 9-signer committee shared with Morpho's Ethereum L1, Base and &gt; Robinhood Chain owner Safes, treated below as context that stays out of the &gt; score, is now folded into the...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index9/</id>
+    <title type="text">Rotation audit (2026-09-19): Robinhood Chain, tracked target index 9, plus 1 new target (NOXA Fun Launch Locker)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index9/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 9 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(9) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index8/</id>
+    <title type="text">Rotation audit (2026-09-19): Robinhood Chain, tracked target index 8, plus 1 new target (Morpho Blue singleton)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index8/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 8 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(8) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index14/</id>
+    <title type="text">Rotation audit (2026-09-19): Robinhood Chain, tracked target index 14, plus 1 new target (Alandale V3 Factory)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index14/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 14 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(14) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index13/</id>
+    <title type="text">Rotation audit (2026-09-19): Robinhood Chain, tracked target index 13, plus 1 new target (up v3 Factory)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index13/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 13 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(13) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index12/</id>
+    <title type="text">Rotation audit (2026-09-19): Robinhood Chain, tracked target index 12, plus 1 new target (T3tris Finance WBTC vault)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index12/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 12 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(12) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index11/</id>
+    <title type="text">Rotation audit (2026-09-19): Robinhood Chain, tracked target index 11, plus 1 new target (Arcus Perps BridgeVault)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index11/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 11 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(11) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index10/</id>
+    <title type="text">Rotation audit (2026-09-19): Robinhood Chain, tracked target index 10, plus 1 new target (UNCX Network V3 Locker)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-19-robinhood-chain-index10/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 10 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(10) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/plasma-ecosystem--scouted-targets-2026-09-19-new-mainnet-candidates/</id>
+    <title type="text">Plasma Ecosystem: new mainnet candidate scouting, 2026-09-19</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/plasma-ecosystem--scouted-targets-2026-09-19-new-mainnet-candidates/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Phase: scouting, addendum to the 2026-09-18 batch. Task: find 2-3 NEW legitimate Plasma MAINNET (chain 9745) targets with real Plasma-specific TVL/usage (not global multi-chain TVL), verified on 2+ independent sources/RPCs, and screened for duplicate...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--scored-targets-2026-09-19-hip4-outcome-deployers/</id>
+    <title type="text">Hyperliquid: HIP-4 outcome deployers, scoring_build pass (2026-09-19)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--scored-targets-2026-09-19-hip4-outcome-deployers/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Phase: scoringbuild for a new target family (the ecosystem as a whole is already at deploytestnet, see ../deploy/README.md; this pass does not change that). Read-only, mainnet-only: official HyperCore info API, HyperCore block-explorer endpoint and HyperEVM...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-19-section6-open-questions/</id>
+    <title type="text">Hyperliquid: closing three of METHODOLOGY.md section 6's open questions (2026-09-19)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-19-section6-open-questions/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Read-only, mainnet-only pass (no testnet/devnet write, no key, no funding request). Live reads: python3 chains/hyperliquid/scripts/scout20260919section6.py bridge-vs-l1 and ... hip4-deployers (new script, reuses scout20260917run2.py's own HTTP/RPC helpers...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-19-margin-actions-docs-check/</id>
+    <title type="text">HIP-3 setMarginTableIds / setMarginModes on open positions: docs check (2026-09-19)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--finding-2026-09-19-margin-actions-docs-check/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Status: still OPEN. No score change. This is a documented search, not a resolution.</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-19-monad-new-targets-scouting/</id>
+    <title type="text">Finding (2026-09-19, second pass): 2 new Monad mainnet targets added (Aave V3, Euler V2), 1 found and honestly discarded (Pendle V2)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-19-monad-new-targets-scouting/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Task: find 2-3 legitimate new Monad MAINNET targets with real, Monad-specific TVL (not a protocol's multi-chain total), verify authority structure on 2+ independent sources per candidate, discard anything that turns out to be a duplicate of already-tracked...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-19-monad-cross-ecosystem-overlap/</id>
+    <title type="text">Finding (2026-09-19): two real cross-chain signer/address overlaps, found by wiring Monad into check_cross_ecosystem_overlap.py</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-19-monad-cross-ecosystem-overlap/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Depth work, not new-ecosystem work: after Monad shipped, the standing directive shifted from adding more chains to strengthening what's already built (see [[feedbackoracledepthoverbreadth]] in this pass's own memory). The most concrete, well-scoped piece of...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-19-hyperliquid-khype-kmhype-identity/</id>
+    <title type="text">Finding (2026-09-19): Hyperliquid target #6 was mislabeled kHYPE, is actually kmHYPE</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-19-hyperliquid-khype-kmhype-identity/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Triggered by re-reading the hackathon submission text's Hyperliquid narrative while fixing an unrelated staleness issue: target #6 (scorekinetiqstakingmanager() in chains/hyperliquid/scripts/methodologytest.py, added 2026-09-17) is called "kHYPE...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-19-base-morpho-blue-robinhood-overlap/</id>
+    <title type="text">Finding (2026-09-19): Base's Morpho Blue and Robinhood Chain's Morpho Blue share the identical governance committee: found by sweeping already-established ecosystems, no new chain involved</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-19-base-morpho-blue-robinhood-overlap/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Direct follow-up to the standing directive to improve depth on ecosystems already in scope (see [[feedbackoracledepthoverbreadth]] and [[feedbackecosystemaddition5pointdiscoverygate]] in this pass's own memory) and to the disclosed "worth a systematic sweep...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-19-aave-guardian-ethereum-l1-fifth-chain-and-verifier-corrections/</id>
+    <title type="text">Finding (2026-09-19): the Aave guardian committee is on 5 chains, not 4, plus a list of repo inaccuracies an independent verification pass found</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-19-aave-guardian-ethereum-l1-fifth-chain-and-verifier-corrections/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">19 oracle targets had no hand-written dashboard card (dashboard/index.html rendered them as "Untitled target"). Cards were drafted per chain from scorer docstrings, repo data files and live reads, and every draft was then handed to a SECOND agent whose only...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/ethereum-l1--maintenance-2026-09-19/</id>
+    <title type="text">Ethereum L1: maintenance run, 2026-09-19</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/ethereum-l1--maintenance-2026-09-19/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">First run of the maintenance phase for this ecosystem (pipeline: the private working repository, scheduled pass). Three parts: (a) audit rotation, (b) new targets, (c) README figures check.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/base-ecosystem--scored-targets-2026-09-19-maintenance/</id>
+    <title type="text">Base Ecosystem: maintenance run, 2026-09-19</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/base-ecosystem--scored-targets-2026-09-19-maintenance/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Phase: maintenance (first maintenance run, audit rotation index 0). Evidence folder (pipeline side, outside this repo): the private working repository, runs/2026-09-19-cron/base-ecosystem/.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-19-maintenance/</id>
+    <title type="text">Arbitrum Ecosystem: 4 new targets, 2026-09-19 (maintenance run, budget (b))</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-19-maintenance/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">Budget ceiling was 50 new protocols. 4 were kept: each has real Arbitrum TVL on DefiLlama (api.llama.fi/protocols, chainTvls.Arbitrum, pulled 2026-09-19), an address from the protocol's own repo or docs, an authority chain traced live to its root, a scorer...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/arbitrum-ecosystem--rotation-audit-2026-09-19-index0-gmx-rolestore/</id>
+    <title type="text">Rotation audit (2026-09-19): Arbitrum Ecosystem, tracked target index 0: CORRECTION (GMX V2 RoleStore)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/arbitrum-ecosystem--rotation-audit-2026-09-19-index0-gmx-rolestore/" />
+    <updated>2026-09-19T00:00:00Z</updated>
+    <summary type="text">First maintenance-phase run for this ecosystem, rotation index 0. trackedTargets(0) read live from the Arbitrum Sepolia oracle 0x50840a7667baEa9D05ad4ae3dCeb384724b58720 on 2 RPCs (sepolia-rollup.arbitrum.io/rpc, arbitrum-sepolia-rpc.publicnode.com):...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--scouting-candidates-2026-09-18/</id>
+    <title type="text">Zcash: scouting candidates, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--scouting-candidates-2026-09-18/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Scouting-phase pass. Budget: up to 50 new targets, never forced -- see `METHODOLOGY.md` section 1 for why Zcash's real target universe (no general-purpose contracts) is narrow to begin with. This pass scanned every DefiLlama-tracked protocol for one that...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--scored-targets-2026-09-18/</id>
+    <title type="text">Zcash: scored targets, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--scored-targets-2026-09-18/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Phase scouting -&gt; scoringbuild continued: data/scoutingcandidates2026-09-18.md found Maya Protocol's 2 live Asgard TSS vaults as a new target but deliberately left them unscored (no target type fit them yet). This pass closes that gap: a new target type,...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-18-vault-v2/</id>
+    <title type="text">Tempo: Morpho Vault V2 target type (rule R8), 3 targets scored, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-18-vault-v2/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Closes chains/tempo/data/scoutedtargets2026-09-17-run2.md section 8's open point 4 for Morpho Vault V2 ("Morpho Vault V2 and market oracles need a written target type"). Unlike the same day's other R2 extension (4 controller shapes,...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-18-controller-types/</id>
+    <title type="text">Tempo: 4 controller types resolved, 6 new targets scored, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-18-controller-types/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Closes chains/tempo/data/scoutedtargets2026-09-17-run2.md section 8's open points 1, 2 and 3 in one pass, since all three turned out to share one root cause: rule R2's classify() had no resolution path for 4 real, live controller SHAPES it had never needed...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--scored-targets-2026-09-18-marinade-liquid-staking/</id>
+    <title type="text">Solana: Marinade Liquid Staking scored, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--scored-targets-2026-09-18-marinade-liquid-staking/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Closes two open points at once from scoutedtargets2026-09-17-run2.md (target #3, upper-bound composite 54): "decode State.adminauthority" and Methodology gap H1 ("legacy serum-style multisig has no timelock field, needs to be written into METHODOLOGY.md")....</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-18-batch12/</id>
+    <title type="text">Batch 12 (2026-09-18): PancakeSwap AMM (V2) Factory, plus a crossExposure correction on PancakeSwap V3 Factory it exposed</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-18-batch12/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Scouted from DefiLlama's live protocol list (https://api.llama.fi/protocols, chains containing "Robinhood Chain", 176 protocols listed), sorted by Robinhood Chain TVL, skipping protocols already tracked directly or through a shared authority chain (Morpho...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-18-robinhood-chain-index7/</id>
+    <title type="text">Rotation audit (2026-09-18): Robinhood Chain, tracked target index 7, plus 1 new target (Meridian Perps)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-18-robinhood-chain-index7/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 7 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(7) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-18-robinhood-chain-index6-batch13/</id>
+    <title type="text">Rotation audit (2026-09-18): Robinhood Chain, tracked target index 6, plus batch 13</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-18-robinhood-chain-index6-batch13/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 6 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(6) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/rotation-audit-2026-09-18-robinhood-chain-index5/</id>
+    <title type="text">Rotation audit (2026-09-18): Robinhood Chain, tracked target index 5</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/rotation-audit-2026-09-18-robinhood-chain-index5/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">rotationstate.json -&gt; robinhood-chain -&gt; lastauditedtargetindex was 5 going into this run. Same discipline as every prior rotation audit in this project: trackedTargets(5) read live from the testnet oracle, then every authority fact re-derived from scratch...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/plasma-ecosystem--scouted-targets-2026-09-18/</id>
+    <title type="text">Plasma Ecosystem: scouted targets, 2026-09-18 (scouting phase, run 1)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/plasma-ecosystem--scouted-targets-2026-09-18/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Phase: scouting, Plasma mainnet (chain 9745), read-only. First research pass for this ecosystem -- no prior candidate backlog to draw from (chains/plasma-ecosystem/data/ and scripts/ existed as empty scaffolding before this pass; no plasma commit existed in...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/plasma-ecosystem--scored-targets-2026-09-18/</id>
+    <title type="text">Plasma Ecosystem: scored targets, 2026-09-18 (scoring_build)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/plasma-ecosystem--scored-targets-2026-09-18/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Final live-verified output of chains/plasma-ecosystem/scorers.py::scoreall() against https://rpc.plasma.to (chain 9745), after consolidating several parallel research passes into one clean file and independently re-verifying every address and authority-chain...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/plasma-ecosystem--fluid-liquidity-plasma-2026-09-18/</id>
+    <title type="text">Fluid (Instadapp) on Plasma: raw on-chain trace, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/plasma-ecosystem--fluid-liquidity-plasma-2026-09-18/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Target: Fluid (Instadapp) Liquidity, Plasma mainnet (EVM L1, chain ID 9745, RPC https://rpc.plasma.to, no API key). Companion to chains/plasma-ecosystem/scorers.py's scorefluidliquidityplasma().</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--scored-targets-2026-09-18-scoring-build/</id>
+    <title type="text">Hyperliquid: scoring_build pass, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--scored-targets-2026-09-18-scoring-build/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Closes the 5 "Rules needed before scoringbuild" gaps `scouted_targets_2026-09-17-run2.md` left open, and writes the scorer for every target that file verified live at 3/3 but could not yet score. See `../METHODOLOGY.md` section 4 for the 5 new/extended rules...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-18-ventuals-vhype-staking/</id>
+    <title type="text">Hyperliquid methodology test: Ventuals vHYPE staking, a third HyperEVM-native target (2026-09-18)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-18-ventuals-vhype-staking/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Eighth Hyperliquid target overall, and the THIRD native to HyperEVM rather than HyperCore (after Kinetiq's HIP3StakingManager and para StakingVault, both 2026-09-17). Found while chasing a loose end from the para promotion: hyperevmscan.io flagged a "Similar...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-18-signer-overlap-unresolved-note-registry-leak/</id>
+    <title type="text">Finding (2026-09-18): an unresolved_note group in signer_overlap.py is exempt from being SCORED on overlap, but not from COUNTING as another group's overlap</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-18-signer-overlap-unresolved-note-registry-leak/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Surfaced while writing the first test coverage scripts/lib/signeroverlap.py has ever had (scripts/lib/tests/testsigneroverlap.py, confirmed via grep that zero tests referenced this module before this pass, despite it being real, load-bearing code:...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-18-scorers-hardcoded-score-literals/</id>
+    <title type="text">Finding (2026-09-18): 5 scorers in scripts/lib/scorers.py perform real live reads but never actually condition their score on the result</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-18-scorers-hardcoded-score-literals/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Surfaced as a side effect of the 2026-09-18 test-coverage audit (writing scripts/lib/tests/testrobinhoodsimpleandsaferootedscorers.py, testrobinhoodvaultandinfrascorers.py, and testrobinhoodeventreplayscorers.py), not from a dedicated bug hunt. Each was found...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-18-morpho-generic-1of1-safe-treatment/</id>
+    <title type="text">Finding (2026-09-18): should score_morpho_vault_generic treat a 1-of-1 Safe as EOA-equivalent? Evidence for the decision, not a fix</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-18-morpho-generic-1of1-safe-treatment/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Raised by an open follow-up: should the generic Morpho scorer treat a 1-of-1 Safe as an EOA? (NetNet Credit scores 22 on-chain against 8 by hand.) Pure investigation -- scripts/lib/scorers.py is unmodified by this finding. A change to this scorer's formula...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-18-cross-ecosystem-unresolved-floor-inversion/</id>
+    <title type="text">Finding (2026-09-18): the "unresolved authority" fallback score outranks a confirmed weak authority in most ecosystems: Zcash already fixed it, Solana and Ethereum L1 have not</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-18-cross-ecosystem-unresolved-floor-inversion/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Surfaced from an open follow-up: the 20/20 fallback for an unresolved threshold ranks an unknown above a known 1-of-N. Investigated via a dedicated Explore pass, cross-checked independently against the real source before writing this up. Pure investigation --...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-18-cross-ecosystem-overlap-tempo-aerodrome/</id>
+    <title type="text">Cross-ecosystem check extended to Tempo and Aerodrome's emergencyCouncil (2026-09-18): clean result</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-18-cross-ecosystem-overlap-tempo-aerodrome/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">data/finding2026-09-17-cross-ecosystem-aave-guardian-overlap.md (the day this module first went live) explicitly disclosed: "Does not extend this same check to Solana/Hyperliquid/Tempo/Zcash -- their signer formats ... are not directly comparable to EVM...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-18-cross-chain-dao-bridge-and-multisig-grid/</id>
+    <title type="text">Finding (2026-09-18): the DAO-via-bridge sub-model and the cross-chain multisig grid, quantified</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-18-cross-chain-dao-bridge-and-multisig-grid/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Requested by a tracked GitHub Projects item bundling two related cross-ecosystem questions. Pure investigation -- no scorer file (chains//scorers.py, scripts/lib/scorers.py) is modified by this finding. A change to any of these formulas needs this project's...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-18-competitive-positioning-cross-chain-overlap/</id>
+    <title type="text">Finding (2026-09-18): four targeted competitive checks, not a repeat of the general scan</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-18-competitive-positioning-cross-chain-overlap/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Scope: find new territory that the competition does not cover for the oracle, after two earlier, broader competitive scans this week already covered SolGov, Hypernative/Blockaid, Gauntlet/Chaos Labs/LlamaRisk, DeFiSafety, ERC-8241, RWA platforms, L2Beat's...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/ethereum-l1--deploy-status-2026-09-18/</id>
+    <title type="text">Ethereum L1: deploy_testnet re-check, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/ethereum-l1--deploy-status-2026-09-18/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Two full dress rehearsals of the deploy pipeline on a local anvil fork of Sepolia already exist and are committed: `deploy_rehearsal_2026-09-17.md` (morning, 4-target scorer) and `deploy_rehearsal_2026-09-17-run2.md` (evening, 9-target scorer, current state)....</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-18-ventuals-vhype-staking-adversarial-review/</id>
+    <title type="text">Correction: adversarial review of Ventuals vHYPE staking (2026-09-18)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-18-ventuals-vhype-staking-adversarial-review/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Same-day follow-up to the Ventuals vHYPE staking addition (a third HyperEVM-native Hyperliquid target, found by sweeping every HIP-3 dex deployer's own EIP-1967 implementation slot -- a still-dormant dex, vntl, turned out to carry a real, named liquid-staking...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/base-ecosystem--finding-2026-09-18-aerodrome-voter-governor-identity/</id>
+    <title type="text">Aerodrome Voter's authority, traced: 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/base-ecosystem--finding-2026-09-18-aerodrome-voter-governor-identity/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Closes an open question chains/base-ecosystem/scorers.py's scoreaerodromepoolfactory and data/scoredtargets2026-09-16.md (section 3) both explicitly flagged from the start: Voter at 0x16613524e02ad97eDfeF371bC883F2F5d6C480A5 (confirmed live via...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/base-ecosystem--deploy-rehearsal-2026-09-18/</id>
+    <title type="text">Base Ecosystem: deploy_testnet rehearsal, 2026-09-18</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/base-ecosystem--deploy-rehearsal-2026-09-18/" />
+    <updated>2026-09-18T00:00:00Z</updated>
+    <summary type="text">Phase: deploytestnet (maintained, not yet advanced). Third rehearsal for Base Ecosystem, run after 6db58ac ("base: trace Aerodrome Voter's authority, close open question") changed chains/base-ecosystem/scorers.py since the previous rehearsal...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--scored-targets-2026-09-17/</id>
+    <title type="text">Zcash: scored targets, 2026-09-17</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--scored-targets-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Different in kind from this project's other three 2026-09-17 promotions (Solana, Hyperliquid, Tempo): those each reused a numeric mapping already written and tested a day earlier. Zcash's `METHODOLOGY.md` had qualitative rules (sections 4.1-4.5) but no 0-100...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--pool-trusted-setup-disclosure-2026-09-17/</id>
+    <title type="text">Zcash POOL targets: trusted-setup risk, disclosed as facts, deliberately not scored</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--pool-trusted-setup-disclosure-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">METHODOLOGY.md 4.1's own framing for POOL targets (shielded value pools): "No key. Replaced by setup risk: no SRS (Halo 2) scores higher than an MPC SRS (Groth16)." No formula existed for this framing -- this file is the resolution: the facts, cross-checked...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/zcash--methodology-test-2026-09-17/</id>
+    <title type="text">Zcash methodology test on real targets, 2026-09-17 (second run)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/zcash--methodology-test-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Full tables are in METHODOLOGY.md section 7.3. This file is the short record of what was tested, what held and what changed.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--scouted-targets-2026-09-17-run2/</id>
+    <title type="text">Tempo: scouted targets, 2026-09-17 (run 2)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--scouted-targets-2026-09-17-run2/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Phase: scouting. Read-only Tempo mainnet (chain id 4217), official endpoint https://rpc.tempo.xyz, facts re-read on https://tempo-rpc.publicnode.com. Ethereum reads on https://ethereum-rpc.publicnode.com. No transaction, no key. Two authority checks use...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-17/</id>
+    <title type="text">Tempo: scored targets, 2026-09-17</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--scored-targets-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Promotes `../METHODOLOGY.md` section 4.1's rules (R1-R7) into the standard scorers.py / scoreall() shape every other ecosystem in this project uses: `../scorers.py`. The underlying read-and-score logic was already fully implemented and live-tested in...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--sol-read-refactor-check-2026-09-17/</id>
+    <title type="text">sol_read.py refactor check (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--sol-read-refactor-check-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">scripts/solread.py originally ran main() unconditionally at module scope (no if name == "main": guard), so nothing else in this project could import solread without it immediately crashing on sys.argv. Every decoder also lived inline in main()'s if/elif...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--scored-targets-2026-09-17/</id>
+    <title type="text">Solana: scored targets, 2026-09-17</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--scored-targets-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Promotes `../METHODOLOGY.md` section 6.1's deterministic formulas and the two targets already worked by hand in `methodology_test_2026-09-16.md` into a real, re-runnable scorer: `../scorers.py`. Every number below is re-derived live by scoreall() against...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--methodology-test-2026-09-17-solend-governance/</id>
+    <title type="text">Solana methodology test: Solend DAO governance (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--methodology-test-2026-09-17-solend-governance/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Third Solana target, and the first Realms-governed one -- closes the "(untested: no Realms-governed target scored yet)" flag on METHODOLOGY.md 6.1's Realms governance row. Surfaced as a byproduct of...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--methodology-test-2026-09-17-drift-protocol/</id>
+    <title type="text">Solana methodology test: Drift Protocol (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--methodology-test-2026-09-17-drift-protocol/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Fourth Solana target. Surfaced while researching a third retroactive backtest (data/backtest2026-09-17-drift-protocol-security-council- compromise.md): Drift's own 2026-04-01 Security Council compromise is independently, fully on-chain-verifiable (exact...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-17-batch11/</id>
+    <title type="text">Batch 11 (2026-09-17, evening run): Snuggle (MaxFi Robinhood vault)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-17-batch11/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Scouted from DefiLlama's live protocol list (https://api.llama.fi/protocols, chains containing "Robinhood Chain"), sorted by Robinhood Chain TVL, skipping protocols already tracked directly or through a shared authority chain. One target only. Of the...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-17-batch10/</id>
+    <title type="text">Batch 10 (2026-09-17): Fables PoolRegistry, Beefy SPY-WETH vault</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-17-batch10/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Scouted from DefiLlama's live Robinhood Chain protocol list (https://api.llama.fi/protocols, filtered to chains containing "Robinhood Chain"), re-checked against the same list already covered by README.md's Status table before picking a target -- 175...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--scouted-targets-2026-09-17-run2/</id>
+    <title type="text">Hyperliquid: scouted targets, 2026-09-17 (run 2)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--scouted-targets-2026-09-17-run2/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Resolved 2026-09-18: this file's own "Rules needed before scoringbuild" section (5 items) is now closed and all 10 targets below are scored -- see `../METHODOLOGY.md` section 4 for the 5 new rules and `scored_targets_2026-09-18-scoring-build.md` for the...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--scored-targets-2026-09-17/</id>
+    <title type="text">Hyperliquid: scored targets, 2026-09-17</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--scored-targets-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Updated 2026-09-18: added an 8th target, Ventuals vHYPE staking (a third HyperEVM-native target, found the same way as the two added the day before) -- see this file's own entry below and chains/hyperliquid/...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-17-para-staking-vault/</id>
+    <title type="text">Hyperliquid methodology test: para StakingVault, a second HyperEVM-native target (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-17-para-staking-vault/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Seventh Hyperliquid target, and the second one native to HyperEVM rather than HyperCore (after Kinetiq's HIP3StakingManager, same day). Closes this project's own open question about HIP-3 dex para's EVM-side proxy...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-17-kinetiq-staking-manager/</id>
+    <title type="text">Hyperliquid methodology test: Kinetiq HIP3StakingManager, the first HyperEVM-native target (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-17-kinetiq-staking-manager/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Sixth Hyperliquid target, and the first one native to HyperEVM rather than HyperCore. Surfaced as a byproduct of data/finding2026-09-17-hyperliquid- hip3-evm-proxy-authority.md's investigation into whether HIP-3 dexes mkts/km's shared deployer address (which...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-17-spl-governance-shared-instance-controller/</id>
+    <title type="text">Finding (2026-09-17): who actually controls the SPL Governance shared default instance</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-17-spl-governance-shared-instance-controller/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Closes two open points standing since the 2026-09-16 discovery draft (chains/solana/METHODOLOGY.md section 7): "Identify the controller of the SPL Governance instance authority HF7gCq7B...8y9n" and "Identify program SMPLVC8MxZ5Bf5EfF7PaMiTCxoBAcmkbM2vkrvMK8ho...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-17-hyperliquid-hip3-evm-proxy-authority/</id>
+    <title type="text">Finding (2026-09-17): some HIP-3 dex deployer addresses are ALSO live, upgradeable EVM proxies: the specific one checked turned out to be unrelated infrastructure, corrected after reading its verified source</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-17-hyperliquid-hip3-evm-proxy-authority/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Correction, added after this file's own second revision overclaimed: an earlier version of this file said the evidence gathered (Hyperliquid's own CoreWriter docs plus the implementation bytecode containing the CoreWriter address) made it "likely a real, not...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/finding-2026-09-17-cross-ecosystem-aave-guardian-overlap/</id>
+    <title type="text">Cross-ecosystem finding (2026-09-17): Aave V3's emergency guardian is the SAME 9-person committee on Arbitrum and Base</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/finding-2026-09-17-cross-ecosystem-aave-guardian-overlap/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">This project's own README (SolGov comparison, point 3) states its differentiator against every existing risk tool -- including its own closest precedent, SolGov -- is checking whether the same key sits behind two protocols tracked as independent: "SolGov's...</summary>
+    <category term="Findings" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/ethereum-l1--deploy-rehearsal-2026-09-17/</id>
+    <title type="text">Ethereum L1: deploy_testnet fork rehearsal (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/ethereum-l1--deploy-rehearsal-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">The shared throwaway deployer 0xA08a76457b758aFF9702dBf5b870679E1232B715 (a throwaway testnet key kept outside the repository) still has 0 ETH on real Sepolia, confirmed live on 2 independent RPCs at the start of this run:</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/ethereum-l1--deploy-rehearsal-2026-09-17-run2/</id>
+    <title type="text">Ethereum L1: deploy_testnet fork rehearsal, run 2 (2026-09-17 evening)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/ethereum-l1--deploy-rehearsal-2026-09-17-run2/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">The morning's rehearsal (deployrehearsal2026-09-17.md) proved the pipeline against a 4-target scorer (composite 85/78/81/52, crossExposureScore still a flat 100 placeholder). Between that run and this one, an interactive session pushed 17 commits...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-uniswap-testnet-oracle-sync/</id>
+    <title type="text">Correction (2026-09-17): testnet oracle was still serving the pre-correction Uniswap score</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-uniswap-testnet-oracle-sync/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">This is a follow-up to data/correction2026-09-16-uniswap-bridge-alias.md. That correction, and the same day's later "RESOLVED 2026-09-17" addendum in the same file, fixed scripts/lib/scorers.py, README.md, and dashboard/index.html to describe Uniswap v4...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-tempo-field-name-swap/</id>
+    <title type="text">Correction (2026-09-17): Tempo's scorer used the opposite target/label field convention</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-tempo-field-name-swap/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Building `scripts/validate_all_scorers.py` (a new cross-ecosystem schema check, added the same day after two other real bugs -- see data/correction2026-09-17-missing-crossexposure-field.md -- were only caught by manual audit) and running it against every...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-solend-governance-adversarial-review/</id>
+    <title type="text">Correction: adversarial review of Solend DAO governance (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-solend-governance-adversarial-review/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Same-day follow-up to the Solend DAO governance promotion (chains/solana/scorers.py::scoresolenddaogovernance, chains/solana/data/methodologytest2026-09-17-solend-governance.md, data/backtest2026-09-17-solend-governance-emergency-powers.md). Before...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-rollup-l1-testnet-oracle-sync/</id>
+    <title type="text">Correction (2026-09-17, evening run): testnet oracle still served the pre-revision L1 rollup authority score (60, not 57)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-rollup-l1-testnet-oracle-sync/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Commit 064a30d (same day, afternoon) revised Robinhood Chain's own L1 rollup authority score from 60 to 57/100 in scripts/lib/scorers.py::scorerollupl1authority() and in README.md, after a cross-Safe signer-overlap finding was wired in. That commit did not...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-para-staking-vault-adversarial-review/</id>
+    <title type="text">Correction: adversarial review of para StakingVault (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-para-staking-vault-adversarial-review/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Same-day follow-up to the para StakingVault addition (the second HyperEVM-native Hyperliquid target, closing this project's own explicitly left-open question about HIP-3 dex para's EVM-side proxy: new read helpers and scoreparastakingvault in...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-missing-crossexposure-field/</id>
+    <title type="text">Correction (2026-09-17): crossExposureScore was entirely missing from two ecosystem scorers</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-missing-crossexposure-field/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">While auditing METHODOLOGY.md's claim that crossExposureScore "defaults to 100 (not applicable)" on every scoringbuild-phase ecosystem outside Robinhood Chain, a direct grep for the field across every chains//scorers.py found it absent entirely -- not...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-kinetiq-staking-manager-adversarial-review/</id>
+    <title type="text">Correction: adversarial review of Kinetiq HIP3StakingManager (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-kinetiq-staking-manager-adversarial-review/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Same-day follow-up to the Kinetiq HIP3StakingManager addition (the first HyperEVM-native target this project scores: new read helpers and scorekinetiqstakingmanager in chains/hyperliquid/scripts/ methodologytest.py, wired into chains/hyperliquid/scorers.py,...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-drift-protocol-adversarial-review/</id>
+    <title type="text">Correction: adversarial review of Drift Protocol (2026-09-17)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-drift-protocol-adversarial-review/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Same-day follow-up to the Drift Protocol addition (third retroactive backtest, data/backtest2026-09-17-drift-protocol-security-council- compromise.md, plus a new live scorer, chains/solana/scorers.py:: scoredriftprotocol, and...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-17-adversarial-bug-hunt/</id>
+    <title type="text">Adversarial bug hunt (2026-09-17): 18 confirmed real bugs found and fixed</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-17-adversarial-bug-hunt/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">A deliberate, adversarial audit across all 8 ecosystems plus shared infrastructure and the new cross-ecosystem validator, run via a multi-agent workflow: one agent per area tried to actually BREAK the code (live execution with mocked/edge-case inputs, not...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/base-ecosystem--deploy-rehearsal-2026-09-17-run2/</id>
+    <title type="text">Base Ecosystem: deploy_testnet rehearsal, 2026-09-17 evening (run 2, attempt 1)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/base-ecosystem--deploy-rehearsal-2026-09-17-run2/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Phase: deploytestnet. This is the second rehearsal for Base Ecosystem, run after the afternoon session (17 commits, 14:39-18:51) changed chains/base-ecosystem/scorers.py twice since the morning's rehearsal (see...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/backtest-2026-09-17-wasabi-protocol/</id>
+    <title type="text">Retroactive backtest: Wasabi Protocol ($5.9M, 2026-04-30)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/backtest-2026-09-17-wasabi-protocol/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Item 8 of the after-hackathon roadmap: would this project's methodology have flagged a real, already-happened incident as high risk, using facts anyone can re-verify live today -- not a claim taken on faith from a citation.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/backtest-2026-09-17-solend-governance-emergency-powers/</id>
+    <title type="text">Retroactive backtest: Solend DAO "emergency powers" governance incident (2022-06-19/20)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/backtest-2026-09-17-solend-governance-emergency-powers/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Second backtest of the after-hackathon roadmap (see data/backtest2026-09-17-wasabi-protocol.md for the first). Chosen over the other obvious Solana candidate (Mango Markets, October 2022) because it is a governance/authority-risk failure in this project's own...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/backtest-2026-09-17-drift-protocol-security-council-compromise/</id>
+    <title type="text">Retroactive backtest: Drift Protocol's $285M Security Council compromise (2026-04-01)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/backtest-2026-09-17-drift-protocol-security-council-compromise/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">Third retroactive backtest of the after-hackathon roadmap (see data/backtest2026-09-17-wasabi-protocol.md and data/backtest2026-09-17- solend-governance-emergency-powers.md for the first two). Chosen because it directly ties into this project's own README...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-17/</id>
+    <title type="text">Arbitrum Ecosystem: scored targets, 2026-09-17 (scoring_build phase, attempt 1)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scored-targets-2026-09-17/" />
+    <updated>2026-09-17T00:00:00Z</updated>
+    <summary type="text">&gt; CORRECTION 2026-09-19: the GMX V2 RoleStore row below (composite 71) &gt; is superseded. It is now 22: a bare EOA holds TIMELOCKADMIN, and the &gt; controller this pass checked holds no role on the live RoleStore. See &gt;...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/tempo--methodology-test-2026-09-16/</id>
+    <title type="text">Tempo: methodology test, 2026-09-16</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/tempo--methodology-test-2026-09-16/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Purpose: apply chains/tempo/METHODOLOGY.md end to end to real, significant Tempo mainnet targets, read live, and record every place where the written rules were not enough to produce a number. The fixes are in METHODOLOGY.md (new section 4.1, corrected...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/solana--methodology-test-2026-09-16/</id>
+    <title type="text">Solana methodology test: Jupiter Aggregator v6 and Kamino Lend (2026-09-16)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/solana--methodology-test-2026-09-16/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Purpose: apply `../METHODOLOGY.md` end to end to two real, high-usage Solana protocols, derive every score dimension from live Mainnet Beta state, and record where the written grid was not enough. Nothing was pushed on-chain. All reads are plain JSON-RPC...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-ethereum-l1/</id>
+    <title type="text">Ethereum L1: first 4 targets scored (2026-09-16)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-ethereum-l1/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">the private working repository's automated review scouted and fully verified these 4 targets on 2026-09-16 (scouting phase), including a corrected retry (attempt 2 fixed two real gaps attempt 1 left open: the Aave delay-getter dead...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-batch9/</id>
+    <title type="text">Batch 9: 2026-09-16 (automated pipeline run)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-batch9/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Source of candidates: the local candidate backlog prepared on 2026-09-16 (4 entries, each already sourced from 2+ independent sources with ethgetCode confirmed, but explicitly NOT yet verified live -- two of them had unresolved hops). No new web research this...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-batch8/</id>
+    <title type="text">Batch 8: 2026-09-16</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-batch8/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Prompted by a research question: what in our postmortems (onchain-postmortems, 42 independently-reconstructed exploits) is relevant for authority-risk-oracle? Three cross-cutting patterns came out of that read, cross-checked against exactly what this...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-batch7/</id>
+    <title type="text">Batch 7: 2026-09-16</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-16-batch7/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Two changes in this batch, both structural rather than "one more protocol":</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-16/</id>
+    <title type="text">Hyperliquid: methodology test, 2026-09-16</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/hyperliquid--methodology-test-2026-09-16/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Purpose: apply chains/hyperliquid/METHODOLOGY.md section 4 end to end to real, significant HyperCore targets, read live, and record every place where the written rules were not enough to produce a number. The fixes are in METHODOLOGY.md (sections 4.6, 4.7 and...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-16-uniswap-bridge-alias/</id>
+    <title type="text">Correction (2026-09-16): Uniswap stack's "vanity-ground bare EOA" was wrong</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-16-uniswap-bridge-alias/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">scoreuniswapv3factory, scoreuniswapv4poolmanager, scoreuniswapxreactor, and scoreuniswapv2factoryfeetosetter all resolve owner()/feeToSetter() to 0x2BAD…46CD. Since batch 4, this project has described that address in scorers.py, dashboard/index.html, and...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/correction-2026-09-16-aave-emergency-admin-identified/</id>
+    <title type="text">Correction: Aave V3 Ethereum's EMERGENCY_ADMIN_ROLE holder identified (2026-09-16)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/correction-2026-09-16-aave-emergency-admin-identified/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">chains/ethereum-l1/scorers.py's scoreaavev3pool() originally shipped (commit 4d74261, same day) with an explicitly disclosed open gap: the ACLManager's EMERGENCYADMINROLE holder was checked and not identified -- GOVERNANCEGUARDIAN-style probing failed, the...</summary>
+    <category term="Corrections" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/base-ecosystem--scouted-targets-2026-09-16/</id>
+    <title type="text">Base Ecosystem: scouted targets, 2026-09-16 (scouting phase, run 1)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/base-ecosystem--scouted-targets-2026-09-16/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Phase: scouting, Base mainnet (chain 8453), read-only. First research pass for this ecosystem -- no prior candidate backlog to draw from. Reuses the exact methodology already used for Robinhood Chain and Ethereum L1 (scripts/lib/scorers.py, web3utils.py):...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/base-ecosystem--scored-targets-2026-09-16/</id>
+    <title type="text">Base Ecosystem: scored targets, 2026-09-16 (scoring_build phase, attempt 1)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/base-ecosystem--scored-targets-2026-09-16/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Phase: scoringbuild. Scores the exact 5 targets approved 3/3 in the scouting pass (maker-checker review), documented in full trace in data/scoutedtargets2026-09-16.md. Every number below is re-derived live by chains/base-ecosystem/scorers.py against...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scouted-targets-2026-09-16/</id>
+    <title type="text">Scouted targets: Arbitrum Ecosystem: 2026-09-16 (attempt 2/2)</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/arbitrum-ecosystem--scouted-targets-2026-09-16/" />
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary type="text">Scouting pass 2 for the arbitrum-ecosystem chain (Arbitrum One, chain 42161, mainnet read-only). Distinct from Robinhood Chain, already covered by the root of this repo.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-15/</id>
+    <title type="text">Scored targets - 2026-09-15</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-15/" />
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="text">First real score pushed through the oracle end-to-end (testnet). Every number below comes from a direct ethcall against Robinhood Chain mainnet, not from Morpho's own app UI or any secondhand description - the UI's "7-day timelock" claim for this vault turned...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch5/</id>
+    <title type="text">Scored targets - batch 5, 2026-09-15</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch5/" />
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="text">Four more scores pushed (tx `0x8d2b4a82...`), bringing the total to 32 targets. This batch closes out two of the four candidates left honestly unresolved in batch 4, and deepens the confidence behind the single most consequential finding of the whole project.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch4/</id>
+    <title type="text">Scored targets - batch 4, 2026-09-15</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch4/" />
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="text">Eleven more scores pushed (tx `0x1836bb5e...`), bringing the total to 28 targets. This batch reaches past every dApp already scored to the one authority every one of them ultimately sits on top of: who controls Robinhood Chain itself.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch3/</id>
+    <title type="text">Scored targets - batch 3, 2026-09-15</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch3/" />
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="text">Ten more scores pushed in one updateScores() call (tx `0xb0908404...`), expanding coverage from 7 to 17 targets. This batch found the single worst score on the whole chain so far -- and it belongs to the chain's own flagship product.</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+  <entry>
+    <id>https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch2/</id>
+    <title type="text">Scored targets - batch 2, 2026-09-15</title>
+    <link rel="alternate" href="https://realspap.github.io/oracle/notes/scored-targets-2026-09-15-batch2/" />
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary type="text">Six more real scores pushed in one updateScores() call (tx `0x326a88df...`), closing out every target queued in the first pass. Same standard as before: every number is a live ethcall against Robinhood Chain mainnet, cross-checked at least twice, with any...</summary>
+    <category term="Audits and snapshots" />
+  </entry>
+</feed>
