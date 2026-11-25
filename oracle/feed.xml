@@ -55,7 +55,7 @@
     <title type="text">The same address is not the same keys</title>
     <link rel="alternate" href="https://realspap.github.io/oracle/notes/same-address-other-keys/" />
     <updated>2026-11-18T15:37:00Z</updated>
-    <summary type="text">I read the same address on six networks for the 89 Safe addresses in the Watch registry: 30 are a Safe on two or more of them, and 11 of those have other signers or another threshold on at least one network. One of them reads 6 of 10 on Ethereum mainnet and 2 of 9 on Arbitrum One.</summary>
+    <summary type="text">I read the same address on six networks for the 89 Safe addresses in the Watch registry: 30 are a Safe on two or more of them, and 12 of those have other signers or another threshold on at least one network. One of them reads 6 of 10 on Ethereum mainnet and 2 of 9 on Arbitrum One.</summary>
     <category term="Findings" />
   </entry>
   <entry>
