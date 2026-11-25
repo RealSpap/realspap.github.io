@@ -35,14 +35,6 @@
     <category term="Errata" />
   </entry>
   <entry>
-    <id>https://realspap.github.io/oracle/notes/compound-628-feeds-on-base/</id>
-    <title type="text">Compound 628: two price feeds the Base message would set</title>
-    <link rel="alternate" href="https://realspap.github.io/oracle/notes/compound-628-feeds-on-base/" />
-    <updated>2026-11-22T15:48:00Z</updated>
-    <summary type="text">I read the open Compound proposal 628, on Ethereum mainnet (chain ID 1), and the Base contracts it would call, on two public nodes per chain. Its single action is a message to Base that would set 2 price feeds and upgrade the 2 markets that use them; at the block read the vote is open and nothing has run.</summary>
-    <category term="Findings" />
-  </entry>
-  <entry>
     <id>https://realspap.github.io/oracle/notes/compound-619-queued-then-canceled/</id>
     <title type="text">Compound 619: queued, then canceled by the Guardian Safe</title>
     <link rel="alternate" href="https://realspap.github.io/oracle/notes/compound-619-queued-then-canceled/" />
